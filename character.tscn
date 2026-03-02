@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cy4o15k7ows4u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vu45j"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_glpr6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vu45j"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_glpr6"]
+material = SubResource("StandardMaterial3D_vu45j")
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1051319031]
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, 0, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=112217560]
+shape = SubResource("CapsuleShape3D_vu45j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=792397661]
+mesh = SubResource("CapsuleMesh_glpr6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2077633517]
+transform = Transform3D(-0.0023023323, 0.12016186, 0, -0.21984841, -0.0012583787, 0, 0, 0, 0.09139668, 0.39899996, 0.471, -0.10706626)
+mesh = SubResource("CylinderMesh_glpr6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=461577442]
+transform = Transform3D(-0.0023023323, 0.12016186, 0, -0.21984841, -0.0012583787, 0, 0, 0, 0.09139668, 0.399, 0.471, 0.1)
+mesh = SubResource("CylinderMesh_glpr6")
+
+[node name="EdgeRay" type="RayCast3D" parent="." unique_id=675649447]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0.54195505, 0.22203821, 0)

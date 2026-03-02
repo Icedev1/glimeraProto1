@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cc7rdfj4o8qop"]
+
+[ext_resource type="PackedScene" uid="uid://cluba0g0iwv" path="res://meshes/gate.glb" id="1_15vrf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_15vrf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikl61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15vrf"]
+
+[node name="gate" unique_id=423378458 instance=ExtResource("1_15vrf")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=801665912]
+transform = Transform3D(0.194, 0, 0, 0, 1.373, 0, 0, 0, 1, 0, 0.68688464, -1.2581912)
+mesh = SubResource("BoxMesh_15vrf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" index="0" unique_id=175746431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.50028014, 1.2581912)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" index="0" unique_id=909704547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5002376, -1.258)
+shape = SubResource("BoxShape3D_ikl61")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=388067733]
+transform = Transform3D(0.194, 0, 0, 0, 1.373, 0, 0, 0, 1, 0, 0.68688464, 1.2577438)
+mesh = SubResource("BoxMesh_15vrf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" index="0" unique_id=1040750679]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" index="0" unique_id=1867570005]
+shape = SubResource("BoxShape3D_15vrf")
