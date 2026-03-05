@@ -48,45 +48,6 @@ size = Vector3(6.5964355, 1, 4.4262695)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rpvj6"]
 size = Vector3(9.52002, 1, 4.0913086)
 
-[sub_resource type="Animation" id="Animation_aemyc"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -1.0749235, 0.2608422, -1.1267306)
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_llqyr"]
-resource_name = "float"
-length = 1.7
-loop_mode = 1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.058333334, 1, -1.0749235, 0.2608422, -1.1267306, 0.09166667, 1, -1.0749239, 0.26102066, -1.1267318, 0.125, 1, -1.074925, 0.2615528, -1.1267354, 0.15833333, 1, -1.0749266, 0.2624289, -1.1267415, 0.19166666, 1, -1.074929, 0.26363304, -1.1267498, 0.225, 1, -1.074932, 0.26514322, -1.1267601, 0.25833333, 1, -1.0749354, 0.2669319, -1.1267724, 0.29166666, 1, -1.0749394, 0.2689665, -1.1267865, 0.325, 1, -1.0749438, 0.2712099, -1.1268018, 0.35833332, 1, -1.0749485, 0.27362126, -1.1268185, 0.39166668, 1, -1.0749534, 0.27615654, -1.126836, 0.425, 1, -1.0749586, 0.2787696, -1.126854, 0.45833334, 1, -1.0749637, 0.28141278, -1.1268721, 0.49166667, 1, -1.0749688, 0.28403783, -1.1268902, 0.525, 1, -1.0749738, 0.28659698, -1.1269077, 0.55833334, 1, -1.0749786, 0.28904355, -1.1269246, 0.59166664, 1, -1.0749831, 0.2913329, -1.1269404, 0.625, 1, -1.0749872, 0.29342335, -1.1269547, 0.65833336, 1, -1.0749909, 0.29527676, -1.1269674, 0.69166666, 1, -1.074994, 0.29685935, -1.1269784, 0.725, 1, -1.0749965, 0.29814225, -1.1269872, 0.7583333, 1, -1.0749983, 0.2991021, -1.1269938, 0.7916667, 1, -1.0749995, 0.2997214, -1.1269981, 0.825, 1, -1.075, 0.29998884, -1.1269999, 0.8333333, 1, -1.075, 0.3, -1.127, 0.8666667, 1, -1.0749997, 0.29983252, -1.1269988, 0.9, 1, -1.0749987, 0.2993329, -1.1269953, 0.93333334, 1, -1.0749972, 0.29850966, -1.1269897, 0.96666664, 1, -1.0749949, 0.29737693, -1.126982, 1, 1, -1.0749922, 0.2959541, -1.1269721, 1.0333333, 1, -1.0749888, 0.29426548, -1.1269605, 1.0666666, 1, -1.074985, 0.29233998, -1.1269473, 1.1, 1, -1.074981, 0.29021057, -1.1269326, 1.1333333, 1, -1.0749764, 0.28791362, -1.1269168, 1.1666666, 1, -1.0749717, 0.28548852, -1.1269001, 1.1999999, 1, -1.0749668, 0.2829767, -1.1268828, 1.2333333, 1, -1.0749618, 0.2804211, -1.1268653, 1.2666667, 1, -1.0749568, 0.27786556, -1.1268477, 1.3, 1, -1.0749519, 0.27535373, -1.1268305, 1.3333333, 1, -1.0749471, 0.2729286, -1.1268138, 1.3666667, 1, -1.0749427, 0.27063167, -1.1267979, 1.4, 1, -1.0749385, 0.26850224, -1.1267833, 1.4333333, 1, -1.0749347, 0.26657674, -1.12677, 1.4666667, 1, -1.0749314, 0.2648881, -1.1267585, 1.5, 1, -1.0749286, 0.2634653, -1.1267486, 1.5333333, 1, -1.0749264, 0.26233256, -1.1267408, 1.5666666, 1, -1.0749248, 0.26150933, -1.1267352, 1.6, 1, -1.0749239, 0.2610097, -1.1267318, 1.6333334, 1, -1.0749235, 0.2608422, -1.1267306)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpvj6"]
-_data = {
-&"RESET": SubResource("Animation_aemyc"),
-&"float": SubResource("Animation_llqyr")
-}
-
 [node name="Node3D" type="Node3D" unique_id=565278368]
 script = ExtResource("1_0dcuh")
 
@@ -226,16 +187,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04933442)
 shape = SubResource("BoxShape3D_tpdbc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform/Floor1" unique_id=1615762656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5114476, 0, 0, -0.055129647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5114476, -0.00057017803, 0, -0.057484865)
 mesh = SubResource("BoxMesh_0dcuh")
 
-[node name="Node3D" parent="." unique_id=1200212190 instance=ExtResource("6_v6na3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2608422, -1.1267306)
+[node name="skull" parent="." unique_id=1200212190 instance=ExtResource("6_v6na3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749235, 0.2608422, -1.1267306)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=520460931]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_rpvj6")
-autoplay = &"float"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="skull" unique_id=1202388766]
 
 [connection signal="body_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_entered"]
 [connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]
