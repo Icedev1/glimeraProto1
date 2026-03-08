@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 3.0
+const SPEED = 2.0
 const JUMP_VELOCITY = 2.5
 @onready var edge_ray: RayCast3D = $EdgeRay
 @export var camera : Camera3D
@@ -31,8 +31,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	if input_dir == Vector2(0,0):
 		camera = CamMan.instance.getPlayerCam()
 	

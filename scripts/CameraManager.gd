@@ -6,7 +6,6 @@ static var instance: CamMan
 func _ready():
 	for camSwitch in get_tree().get_nodes_in_group("camera_switches"):
 		camSwitch.switch.connect(_on_camera_switch)
-	
 	instance = self
 
 func getPlayerCam() -> Camera3D:

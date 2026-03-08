@@ -72,6 +72,8 @@ ui_down={
 
 3d_physics/layer_1="Platforms"
 3d_physics/layer_2="Player"
+3d_physics/layer_3="CameraAreas"
+3d_physics/layer_4="Interaction"
 
 [physics]
 

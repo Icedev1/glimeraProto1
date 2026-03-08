@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://btbbvoxdixc6u"]
+
+[node name="Control" type="Control" unique_id=566110442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2097682155]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "[i]Press[/i]  [img=20x20]res://SimpleFlatKeys/Dark/E-Key.png[/img]"

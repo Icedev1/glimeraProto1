@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cc7rdfj4o8qop" path="res://gate.tscn" id="3_tpdbc"]
 [ext_resource type="PackedScene" uid="uid://dyyex5sxricmd" path="res://camera_switch.tscn" id="5_5ofox"]
 [ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://npc.tscn" id="6_v6na3"]
-[ext_resource type="PackedScene" uid="uid://btbbvoxdixc6u" path="res://interactprompt.tscn" id="7_aemyc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6aibh"]
 size = Vector3(5, 0.05, 5.0010996)
@@ -72,7 +71,7 @@ length = 2.0
 loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -94,7 +93,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -258,12 +257,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749235, 0, -1.1267306)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="skull" unique_id=1202388766]
 libraries/ = SubResource("AnimationLibrary_llqyr")
 autoplay = &"new_animation"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=307038516]
-
-[node name="Control" parent="CanvasLayer" unique_id=566110442 instance=ExtResource("7_aemyc")]
-
-[node name="DialogueManager" type="Node" parent="." unique_id=1088167361]
 
 [connection signal="body_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_entered"]
 [connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]
