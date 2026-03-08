@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://caa206tiuvujl"]
+
+[ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="1_h510c"]
+[ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="2_tpdbc"]
+[ext_resource type="PackedScene" uid="uid://cc7rdfj4o8qop" path="res://gate.tscn" id="3_tpdbc"]
+[ext_resource type="PackedScene" uid="uid://dyyex5sxricmd" path="res://camera_switch.tscn" id="5_5ofox"]
+[ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://npc.tscn" id="6_v6na3"]
+
+[sub_resource type="GDScript" id="GDScript_5ofox"]
+script/source = "class_name CamMan extends Node3D
+
+static var instance: CamMan
+
+func _ready():
+	for camSwitch in get_tree().get_nodes_in_group(\"camera_switches\"):
+		camSwitch.switch.connect(_on_camera_switch)
+	
+	instance = self
+
+func getPlayerCam() -> Camera3D:
+	return get_viewport().get_camera_3d()
+	
+	
+
+
+func _on_camera_switch(area: CameraSwitch) -> void:
+	if !area.cam.is_current():
+		area.cam.make_current()
+		print(\"switched camera\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpdbc"]
+size = Vector3(5, 0.05, 2.5141659)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0dcuh"]
+size = Vector3(5, 0.05, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ldbg2"]
+size = Vector3(5, 0.05, 5.003685)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4gng"]
+size = Vector3(5, 0.05, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ofox"]
+size = Vector3(4.8234863, 0.8737793, 0.025390625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6na3"]
+size = Vector3(1.9360962, 0.8737793, 0.025390625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aemyc"]
+size = Vector3(1.9038696, 0.8737793, 0.025390625)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5ofox"]
+
+[sub_resource type="Sky" id="Sky_v6na3"]
+sky_material = SubResource("ProceduralSkyMaterial_5ofox")
+
+[sub_resource type="Environment" id="Environment_5ofox"]
+background_mode = 2
+sky = SubResource("Sky_v6na3")
+sky_rotation = Vector3(-0.4660029, -0.30194196, 0)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_v6na3"]
+
+[sub_resource type="Compositor" id="Compositor_aemyc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llqyr"]
+size = Vector3(6.5964355, 1, 4.4262695)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rpvj6"]
+size = Vector3(9.52002, 1, 4.0913086)
+
+[sub_resource type="Animation" id="Animation_v6na3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_aemyc"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.444, 0, 0, 0, 0.2, -0.08333333, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llqyr"]
+_data = {
+&"RESET": SubResource("Animation_v6na3"),
+&"new_animation": SubResource("Animation_aemyc")
+}
+
+[node name="Node3D" type="Node3D" unique_id=565278368]
+script = SubResource("GDScript_5ofox")
+
+[node name="Floor2" type="StaticBody3D" parent="." unique_id=2037800570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.872565, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2" unique_id=85310285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.003894806)
+shape = SubResource("BoxShape3D_tpdbc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2" unique_id=323122552]
+mesh = SubResource("BoxMesh_0dcuh")
+
+[node name="Floor3" type="StaticBody3D" parent="." unique_id=1964660199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.823659, -0.05, 6.1366615)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3" unique_id=229672055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014404297)
+shape = SubResource("BoxShape3D_ldbg2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor3" unique_id=1736472278]
+mesh = SubResource("BoxMesh_0dcuh")
+
+[node name="Walkway" type="StaticBody3D" parent="." unique_id=428128473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1906266, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walkway" unique_id=1190560851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8027163, 0, 0)
+shape = SubResource("BoxShape3D_m4gng")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walkway" unique_id=2132755890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.185, 1.8027163, 0, 0)
+mesh = SubResource("BoxMesh_0dcuh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walkway" unique_id=1225147937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7586312, 0.42390138, -0.4748591)
+shape = SubResource("BoxShape3D_5ofox")
+debug_color = Color(0.1246284, 0.6472696, 0, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walkway" unique_id=2054075389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2023263, 0.42390138, 0.4644741)
+shape = SubResource("BoxShape3D_v6na3")
+debug_color = Color(0, 0.6498868, 0.13756791, 0.41960785)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walkway" unique_id=235538682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2698884, 0.42390138, 0.4644741)
+shape = SubResource("BoxShape3D_aemyc")
+debug_color = Color(0.25897262, 0.63460684, 0, 0.41960785)
+
+[node name="Walkway2" type="StaticBody3D" parent="." unique_id=800805475]
+transform = Transform3D(-2.8556453e-08, 0, -1, 0, 1, 0, 0.6532955, 0, -4.371139e-08, 4.9208574, -0.05446367, 0.90541553)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walkway2" unique_id=520799292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8027163, 0, 0)
+shape = SubResource("BoxShape3D_m4gng")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walkway2" unique_id=1006270441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.185, 1.8027163, 0, 0)
+mesh = SubResource("BoxMesh_0dcuh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walkway2" unique_id=751726410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7586312, 0.42390138, -0.4748591)
+shape = SubResource("BoxShape3D_5ofox")
+debug_color = Color(0.1246284, 0.6472696, 0, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walkway2" unique_id=1076336259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7586312, 0.42390138, 0.4644741)
+shape = SubResource("BoxShape3D_5ofox")
+debug_color = Color(0.1246284, 0.6472696, 0, 0.41960785)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1645830469]
+transform = Transform3D(0.9998541, 0.005651566, -0.016124683, 0.007813332, 0.6880338, 0.72563666, 0.01519531, -0.7256567, 0.6878892, -1.8585224, 3.0093923, 3.5889575)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." unique_id=1051319031 node_paths=PackedStringArray("camera") instance=ExtResource("1_h510c")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.1481967, 0)
+script = ExtResource("2_tpdbc")
+camera = NodePath("../Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=313060992]
+transform = Transform3D(0.74505943, 0.31480327, -0.58803517, -0.016023098, 0.8898076, 0.4560546, 0.6668056, -0.33036566, 0.6680036, -2.5279276, 1.4820173, 2.9538696)
+fov = 43.153732
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=910820100]
+transform = Transform3D(0.7051698, -0.31330425, 0.636063, -0.016023098, 0.8898076, 0.45605466, -0.7088575, -0.33178768, 0.6224453, 12.928274, 2.4859211, 2.9538696)
+fov = 43.153732
+
+[node name="Camera3D3" type="Camera3D" parent="." unique_id=430577032]
+transform = Transform3D(0.98828286, 0.10430383, -0.111434914, -0.021348843, 0.8173658, 0.5757234, 0.15113324, -0.56659853, 0.8100154, 4.124914, 2.4859211, 9.663893)
+fov = 43.153732
+
+[node name="gate" parent="." unique_id=423378458 instance=ExtResource("3_tpdbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.409582, -0.024999857, -0.0058226604)
+
+[node name="MeshInstance3D" parent="gate" index="1" unique_id=801665912]
+transform = Transform3D(0.194, 0, 0, 0, 1.373, 0, 0, 0, 1.7254267, 0, 0.68688464, -1.6219236)
+
+[node name="MeshInstance3D2" parent="gate" index="2" unique_id=388067733]
+transform = Transform3D(0.194, 0, 0, 0, 1.373, 0, 0, 0, 1.7909274, 0, 0.68688464, 1.646635)
+
+[node name="CameraSwitch" parent="." unique_id=117350085 node_paths=PackedStringArray("cam") instance=ExtResource("5_5ofox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019635677, 0, 0)
+cam = NodePath("../Camera3D")
+
+[node name="CollisionShape3D" parent="CameraSwitch" index="0" unique_id=1021442571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2747414, 0.52893776, -0.04777527)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1553710352]
+environment = SubResource("Environment_5ofox")
+camera_attributes = SubResource("CameraAttributesPractical_v6na3")
+compositor = SubResource("Compositor_aemyc")
+
+[node name="CameraSwitch2" parent="." unique_id=391580028 node_paths=PackedStringArray("cam") instance=ExtResource("5_5ofox")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.944436, -0.052152157, 5.403447)
+cam = NodePath("../Camera3D3")
+
+[node name="CollisionShape3D" parent="CameraSwitch2" index="0" unique_id=1021442571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25384712, 0.52893776, 0.05737114)
+shape = SubResource("BoxShape3D_llqyr")
+
+[node name="CameraSwitch3" parent="." unique_id=1694792008 node_paths=PackedStringArray("cam") instance=ExtResource("5_5ofox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.217077, 0, -0.2617967)
+cam = NodePath("../Camera3D2")
+
+[node name="CollisionShape3D" parent="CameraSwitch3" index="0" unique_id=1021442571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6502666, 0.52893776, -0.09790039)
+shape = SubResource("BoxShape3D_rpvj6")
+
+[node name="Platform" type="Node3D" parent="." unique_id=1543618645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.07, 0, 0, 0)
+
+[node name="Floor1" type="StaticBody3D" parent="Platform" unique_id=1676871611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Floor1" unique_id=1564003142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04933442)
+shape = SubResource("BoxShape3D_tpdbc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform/Floor1" unique_id=1615762656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5114476, -0.00057017803, 0, -0.057484865)
+mesh = SubResource("BoxMesh_0dcuh")
+
+[node name="skull" parent="." unique_id=1200212190 instance=ExtResource("6_v6na3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0749235, 0, -1.1267306)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="skull" unique_id=1202388766]
+libraries/ = SubResource("AnimationLibrary_llqyr")
+autoplay = &"new_animation"
+
+[connection signal="body_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_entered"]
+[connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]
+[connection signal="switch" from="CameraSwitch" to="." method="_on_camera_switch_switch"]
+
+[editable path="gate"]
+[editable path="CameraSwitch"]
+[editable path="CameraSwitch2"]
+[editable path="CameraSwitch3"]
