@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6cogfpad2l2y"]
 
 [ext_resource type="PackedScene" uid="uid://plpn606sxi2u" path="res://meshes/skull npc.fbx" id="1_ideak"]
-[ext_resource type="Script" uid="uid://cqrxwoqsx5jvf" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Script" uid="uid://cqrxwoqsx5jvf" path="res://scripts/npc.gd" id="1_xxcha"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ideak"]
 radius = 0.1388367

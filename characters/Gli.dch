@@ -1,0 +1,32 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "New_File",
+"suffix": ""
+},
+&"default_portrait": "Default",
+&"description": "The main character.",
+&"display_name": "Gli",
+&"mirror": false,
+&"nicknames": ["Glimera", "Gli"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Default": {
+"export_overrides": {
+"image": "\"res://images/Gli 1colored.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "<null>"
+}
+},
+&"scale": 0.5
+}

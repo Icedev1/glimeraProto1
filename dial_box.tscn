@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://bcv71xsvoofkr"]
 
-[ext_resource type="Texture2D" uid="uid://b5uhoc5sy7vbh" path="res://SimpleFlatKeys/Light/Blank-Key_2.png" id="1_qbspa"]
-
 [node name="DialBox" type="Control" unique_id=1810109422]
 layout_mode = 3
 anchors_preset = 15
@@ -11,13 +9,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1910830230]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -512.0
+layout_mode = 0
+offset_top = 791.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_qbspa")
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=510069486]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0020001
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 0.15979004
+bbcode_enabled = true
+text = "[font_size=100][rainbow][b]Hello![/b][/rainbow][/font_size]"

@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://npc.tscn" id="6_v6na3"]
 [ext_resource type="PackedScene" uid="uid://btbbvoxdixc6u" path="res://interactprompt.tscn" id="7_aemyc"]
 [ext_resource type="Script" uid="uid://c7wgluufenq2k" path="res://prompt_manager.gd" id="8_llqyr"]
-[ext_resource type="Script" uid="uid://bsvbxxmkshgvi" path="res://dialogue_manager.gd" id="8_rpvj6"]
+[ext_resource type="Script" uid="uid://bsvbxxmkshgvi" path="res://scripts/dialogue_manager.gd" id="8_rpvj6"]
+[ext_resource type="PackedScene" uid="uid://bcv71xsvoofkr" path="res://dial_box.tscn" id="9_ldbg2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6aibh"]
 size = Vector3(5, 0.05, 5.0010996)
@@ -262,23 +263,27 @@ libraries/ = SubResource("AnimationLibrary_llqyr")
 autoplay = &"new_animation"
 
 [node name="skull2" parent="." unique_id=266748198 instance=ExtResource("6_v6na3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9432514, 0, 0.59228957)
+transform = Transform3D(-0.97697115, 0, 0.21337143, 0, 1, 0, -0.21337143, 0, -0.97697115, 4.9109554, 0, 7.117433)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="skull2" unique_id=274283023]
 libraries/ = SubResource("AnimationLibrary_llqyr")
 autoplay = &"new_animation"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=307038516]
+[node name="UI Elements" type="CanvasLayer" parent="." unique_id=307038516]
 
-[node name="Prompt" parent="CanvasLayer" unique_id=566110442 instance=ExtResource("7_aemyc")]
+[node name="Prompt" parent="UI Elements" unique_id=566110442 instance=ExtResource("7_aemyc")]
 visible = false
 
-[node name="DialogueManager" type="Node" parent="." unique_id=1088167361]
+[node name="DialBox" parent="UI Elements" unique_id=1810109422 instance=ExtResource("9_ldbg2")]
+visible = false
+
+[node name="DialogueManager" type="Node" parent="." unique_id=1088167361 node_paths=PackedStringArray("dialBox")]
 script = ExtResource("8_rpvj6")
+dialBox = NodePath("../UI Elements/DialBox")
 
 [node name="PromptManager" type="Node" parent="." unique_id=359779591 node_paths=PackedStringArray("interactPrompt")]
 script = ExtResource("8_llqyr")
-interactPrompt = NodePath("../CanvasLayer/Prompt")
+interactPrompt = NodePath("../UI Elements/Prompt")
 
 [connection signal="body_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_entered"]
 [connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]
@@ -288,4 +293,4 @@ interactPrompt = NodePath("../CanvasLayer/Prompt")
 [editable path="CameraSwitch"]
 [editable path="CameraSwitch2"]
 [editable path="CameraSwitch3"]
-[editable path="CanvasLayer/Prompt"]
+[editable path="UI Elements/Prompt"]

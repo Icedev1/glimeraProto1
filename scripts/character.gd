@@ -18,14 +18,18 @@ func _rotate_toward_movement(delta, direction):
 
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	if Dialogic.current_timeline != null:
+		return
 	var input_dir = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
 		
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7l00gh2d2xvw"
+path="res://.godot/imported/6.14 Those Who Deny the Dawn.mp3-2a45cf794e64c644d0192939e1574597.mp3str"
+
+[deps]
+
+source_file="res://Sounds/6.14 Those Who Deny the Dawn.mp3"
+dest_files=["res://.godot/imported/6.14 Those Who Deny the Dawn.mp3-2a45cf794e64c644d0192939e1574597.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
