@@ -10,6 +10,7 @@ skull: [shake rate=20 level=15]AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHH[/shake]
 - Are you okay?
 	audio music - [fade="0.0"]
 	skull: Yes. I'm fine. thanks for asking.
+	[signal arg="battle_start"]
 	audio music "res://Sounds/6.14 Those Who Deny the Dawn.mp3"
 - Leave him be
 	Gli: (It is probably best to leave him alone...)
