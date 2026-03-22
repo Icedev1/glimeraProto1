@@ -24,6 +24,7 @@ func physics_update(delta):
 
 	if input_dir == Vector2.ZERO:
 		state_machine.change_state(idle_state)
+		player.camera = CamMan.instance.getPlayerCam()
 		return
 
 	# Camera-relative movement
