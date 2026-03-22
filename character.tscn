@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://cy4o15k7ows4u"]
 
+[ext_resource type="Script" uid="uid://b6eyd3wj6fu6d" path="res://states/statemachine.gd" id="1_glpr6"]
+[ext_resource type="Script" uid="uid://bwlepq4swweko" path="res://states/idle_state.gd" id="2_px5sl"]
+[ext_resource type="Script" uid="uid://bxuwdx87nuwsm" path="res://states/move_state.gd" id="3_0qfo5"]
+[ext_resource type="Script" uid="uid://blw1v4enclq7g" path="res://states/jump_state.gd" id="4_yxww1"]
+[ext_resource type="Script" uid="uid://brs8yqwgni5t4" path="res://states/fall_state.gd" id="5_wdpcj"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vu45j"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_glpr6"]
@@ -30,3 +36,27 @@ mesh = SubResource("CylinderMesh_glpr6")
 
 [node name="EdgeRay" type="RayCast3D" parent="." unique_id=675649447]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0.54195505, 0.22203821, 0)
+
+[node name="StateMachine" type="Node" parent="." unique_id=1290980809 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_glpr6")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=390128478 node_paths=PackedStringArray("move_state", "jump_state", "fall_state")]
+script = ExtResource("2_px5sl")
+move_state = NodePath("../MoveState")
+jump_state = NodePath("../JumpState")
+fall_state = NodePath("../FallState")
+
+[node name="MoveState" type="Node" parent="StateMachine" unique_id=289652108 node_paths=PackedStringArray("idle_state", "jump_state", "fall_state")]
+script = ExtResource("3_0qfo5")
+idle_state = NodePath("../IdleState")
+jump_state = NodePath("../JumpState")
+fall_state = NodePath("../FallState")
+
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1174723942 node_paths=PackedStringArray("fall_state")]
+script = ExtResource("4_yxww1")
+fall_state = NodePath("../FallState")
+
+[node name="FallState" type="Node" parent="StateMachine" unique_id=1648258251 node_paths=PackedStringArray("idle_state")]
+script = ExtResource("5_wdpcj")
+idle_state = NodePath("../IdleState")
