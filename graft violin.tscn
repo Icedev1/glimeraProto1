@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://54yw26hs1o8x"]
+
+[ext_resource type="PackedScene" uid="uid://d2wkrf0ks8c1v" path="res://meshes/violin.gltf" id="1_n4go6"]
+
+[node name="Sketchfab_Scene" unique_id=1032558076 instance=ExtResource("1_n4go6")]
+
+[node name="Sketchfab_model" parent="." index="0" unique_id=1431892062]
+transform = Transform3D(1, 0, 0, 0, -0.699102, 0.71502197, 0, -0.71502197, -0.699102, 0, 0, 0)

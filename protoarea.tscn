@@ -188,9 +188,40 @@ transform = Transform3D(0.9998541, 0.005651566, -0.016124683, 0.007813332, 0.688
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="." unique_id=1051319031 node_paths=PackedStringArray("camera") instance=ExtResource("1_h510c")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.1481967, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.08300817, 0)
 script = ExtResource("2_tpdbc")
 camera = NodePath("../Camera3D")
+
+[node name="CollisionShape3D" parent="CharacterBody3D" index="0" unique_id=112217560]
+transform = Transform3D(0.99999976, 0, 7.0698997e-13, 0, 0.99999976, 0, -7.0698997e-13, 0, 0.99999976, 0, 1.3581387, 0)
+
+[node name="Idle" parent="CharacterBody3D" index="6" unique_id=6180209]
+transform = Transform3D(-2.1855692e-08, 0, 0.49999997, 0, 0.49999997, 0, -0.49999997, 0, -2.1855692e-08, 0, -1.0990076, 0)
+
+[node name="Skeleton" parent="CharacterBody3D/Idle/Armature" parent_id_path=PackedInt32Array(1051319031, 6180209, 452425991) index="0" unique_id=397968657]
+bones/0/position = Vector3(0.037347905, 5.2923646, -0.029634774)
+bones/0/rotation = Quaternion(-0.040552046, -0.3656004, -0.014329855, 0.92977774)
+bones/1/rotation = Quaternion(0.046498463, 0.039900426, -0.0082721235, 0.998087)
+bones/2/rotation = Quaternion(0.0928024, 0.080340974, -0.01643854, 0.9923018)
+bones/3/rotation = Quaternion(0.09280241, 0.08034097, -0.016438534, 0.9923018)
+bones/4/rotation = Quaternion(-0.014932776, -0.01067743, 0.0015597505, 0.99983037)
+bones/5/rotation = Quaternion(-0.05220016, 0.17689832, -0.0031444891, 0.98283887)
+bones/8/rotation = Quaternion(0.4661787, 0.5160716, 0.46799973, -0.5452741)
+bones/9/rotation = Quaternion(-0.013074237, 0.9682029, -0.22132725, 0.115872495)
+bones/10/rotation = Quaternion(0.14356112, -0.86004454, 0.26578286, 0.4111849)
+bones/11/rotation = Quaternion(0.016825104, 0.7359373, 0.16135012, 0.6573275)
+bones/13/rotation = Quaternion(0.43744743, -0.5463986, -0.5102929, -0.49968952)
+bones/14/rotation = Quaternion(0.1940227, 0.9590566, -0.20380975, 0.032051228)
+bones/15/rotation = Quaternion(0.13255338, 0.8745698, -0.16004825, 0.4381118)
+bones/16/rotation = Quaternion(0.13856752, -0.6571536, 0.02155157, 0.7405969)
+bones/18/rotation = Quaternion(0.069306925, 0.21026592, 0.97329915, -0.0606116)
+bones/19/rotation = Quaternion(0.03903906, 0.946813, -0.30540314, -0.09354263)
+bones/20/rotation = Quaternion(-0.013631583, 0.66338784, -0.74801177, 0.014466531)
+bones/21/rotation = Quaternion(0.028209776, 0.9993656, 0.020166794, -0.008119932)
+bones/24/rotation = Quaternion(-0.12628102, -0.0054686097, 0.9881995, 0.08651622)
+bones/25/rotation = Quaternion(0.023989871, 0.9606695, -0.25882533, -0.097714655)
+bones/26/rotation = Quaternion(0.08108813, 0.5525218, -0.8256187, -0.0806114)
+bones/27/rotation = Quaternion(0.0034083696, 0.9998628, 0.015884029, -0.0032376447)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=313060992]
 transform = Transform3D(0.74505943, 0.31480327, -0.58803517, -0.016023098, 0.8898076, 0.4560546, 0.6668056, -0.33036566, 0.6680036, -2.5279276, 1.4820173, 2.9538696)
@@ -218,7 +249,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019635677, 0, 0)
 cam = NodePath("../Camera3D")
 
 [node name="CollisionShape3D" parent="CameraSwitch" index="0" unique_id=1021442571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2747414, 0.52893776, -0.04777527)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2747414, 0.52602834, -0.047343016)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1553710352]
 environment = SubResource("Environment_5ofox")
@@ -252,7 +283,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04933442)
 shape = SubResource("BoxShape3D_tpdbc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform/Floor1" unique_id=1615762656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5114476, -0.00057017803, 0, -0.057484865)
+transform = Transform3D(0.9999987, -0.0010809125, 0.0006210003, 0.0010791414, 0.99999833, 0.0007444854, -0.0012157756, -0.001454329, 0.5114467, -0.00057017803, 0, -0.057484865)
 mesh = SubResource("BoxMesh_0dcuh")
 
 [node name="skull" parent="." unique_id=1200212190 instance=ExtResource("6_v6na3")]
@@ -289,6 +320,8 @@ interactPrompt = NodePath("../UI Elements/Prompt")
 [connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]
 [connection signal="switch" from="CameraSwitch" to="." method="_on_camera_switch_switch"]
 
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/Idle"]
 [editable path="gate"]
 [editable path="CameraSwitch"]
 [editable path="CameraSwitch2"]
