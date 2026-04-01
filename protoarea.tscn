@@ -195,33 +195,36 @@ camera = NodePath("../Camera3D")
 [node name="CollisionShape3D" parent="CharacterBody3D" index="0" unique_id=112217560]
 transform = Transform3D(0.99999976, 0, 7.0698997e-13, 0, 0.99999976, 0, -7.0698997e-13, 0, 0.99999976, 0, 1.3581387, 0)
 
-[node name="Idle" parent="CharacterBody3D" index="6" unique_id=6180209]
+[node name="Idle" parent="CharacterBody3D" index="3" unique_id=6180209]
 transform = Transform3D(-2.1855692e-08, 0, 0.49999997, 0, 0.49999997, 0, -0.49999997, 0, -2.1855692e-08, 0, -1.0990076, 0)
 
-[node name="Skeleton" parent="CharacterBody3D/Idle/Armature" parent_id_path=PackedInt32Array(1051319031, 6180209, 452425991) index="0" unique_id=397968657]
-bones/0/position = Vector3(0.037347905, 5.2923646, -0.029634774)
-bones/0/rotation = Quaternion(-0.040552046, -0.3656004, -0.014329855, 0.92977774)
-bones/1/rotation = Quaternion(0.046498463, 0.039900426, -0.0082721235, 0.998087)
-bones/2/rotation = Quaternion(0.0928024, 0.080340974, -0.01643854, 0.9923018)
-bones/3/rotation = Quaternion(0.09280241, 0.08034097, -0.016438534, 0.9923018)
-bones/4/rotation = Quaternion(-0.014932776, -0.01067743, 0.0015597505, 0.99983037)
-bones/5/rotation = Quaternion(-0.05220016, 0.17689832, -0.0031444891, 0.98283887)
-bones/8/rotation = Quaternion(0.4661787, 0.5160716, 0.46799973, -0.5452741)
-bones/9/rotation = Quaternion(-0.013074237, 0.9682029, -0.22132725, 0.115872495)
-bones/10/rotation = Quaternion(0.14356112, -0.86004454, 0.26578286, 0.4111849)
-bones/11/rotation = Quaternion(0.016825104, 0.7359373, 0.16135012, 0.6573275)
-bones/13/rotation = Quaternion(0.43744743, -0.5463986, -0.5102929, -0.49968952)
-bones/14/rotation = Quaternion(0.1940227, 0.9590566, -0.20380975, 0.032051228)
-bones/15/rotation = Quaternion(0.13255338, 0.8745698, -0.16004825, 0.4381118)
-bones/16/rotation = Quaternion(0.13856752, -0.6571536, 0.02155157, 0.7405969)
-bones/18/rotation = Quaternion(0.069306925, 0.21026592, 0.97329915, -0.0606116)
-bones/19/rotation = Quaternion(0.03903906, 0.946813, -0.30540314, -0.09354263)
-bones/20/rotation = Quaternion(-0.013631583, 0.66338784, -0.74801177, 0.014466531)
-bones/21/rotation = Quaternion(0.028209776, 0.9993656, 0.020166794, -0.008119932)
-bones/24/rotation = Quaternion(-0.12628102, -0.0054686097, 0.9881995, 0.08651622)
-bones/25/rotation = Quaternion(0.023989871, 0.9606695, -0.25882533, -0.097714655)
-bones/26/rotation = Quaternion(0.08108813, 0.5525218, -0.8256187, -0.0806114)
-bones/27/rotation = Quaternion(0.0034083696, 0.9998628, 0.015884029, -0.0032376447)
+[node name="Skeleton" parent="CharacterBody3D/Idle/Armature" parent_id_path=PackedInt32Array(1051319031, 6180209, 477086799) index="0" unique_id=723692245]
+bones/0/position = Vector3(0.03054859, 5.2758923, -0.058236644)
+bones/0/rotation = Quaternion(-0.03826623, -0.36655727, -0.013237558, 0.929514)
+bones/1/rotation = Quaternion(0.04940957, 0.04023644, -0.009108478, 0.99792624)
+bones/2/rotation = Quaternion(0.09862496, 0.080916926, -0.018031746, 0.9916655)
+bones/3/rotation = Quaternion(0.09862498, 0.080916785, -0.018031755, 0.9916656)
+bones/4/rotation = Quaternion(-0.03088833, -0.010767304, 0.0017951868, 0.99946326)
+bones/5/rotation = Quaternion(-0.062245205, 0.17705984, -0.008788556, 0.98219055)
+bones/8/rotation = Quaternion(0.47330105, 0.513075, 0.48827338, -0.5237646)
+bones/9/rotation = Quaternion(-0.017447855, 0.9705652, -0.20703238, 0.1218047)
+bones/10/rotation = Quaternion(0.13361163, -0.8596453, 0.26287693, 0.41719744)
+bones/11/rotation = Quaternion(-0.0027254901, 0.7324882, 0.18573298, 0.65494806)
+bones/13/rotation = Quaternion(0.44298685, -0.5419916, -0.5323435, -0.4760443)
+bones/14/rotation = Quaternion(0.2047614, 0.9613687, -0.18279941, 0.020677023)
+bones/15/rotation = Quaternion(0.10961445, 0.8809759, -0.15722561, 0.43260407)
+bones/16/rotation = Quaternion(0.15116392, -0.652605, 0.00904096, 0.7424113)
+bones/18/rotation = Quaternion(0.06835841, 0.21691363, 0.97174525, -0.06314071)
+bones/19/rotation = Quaternion(0.039421503, 0.9453967, -0.30998486, -0.092631064)
+bones/20/rotation = Quaternion(-0.0154519575, 0.6627474, -0.74850523, 0.01634203)
+bones/21/rotation = Quaternion(0.028020907, 0.99936974, 0.020390555, -0.0076950165)
+bones/24/rotation = Quaternion(-0.12491251, 0.006565267, 0.9884869, 0.08513233)
+bones/25/rotation = Quaternion(0.025193928, 0.95599234, -0.27554208, -0.09757287)
+bones/26/rotation = Quaternion(0.08041079, 0.54547143, -0.8304849, -0.07930949)
+bones/27/rotation = Quaternion(0.003704303, 0.999856, 0.0161732, -0.0035682726)
+
+[node name="BoneAttachment3D" parent="CharacterBody3D/Idle/Armature/Skeleton" index="16" unique_id=1627825553]
+transform = Transform3D(0.9977192, -0.06749286, -0.001143699, 0.06551219, 0.9722459, -0.22460213, 0.016271025, 0.22401495, 0.97445, -0.25938842, 9.668091, 1.295147)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=313060992]
 transform = Transform3D(0.74505943, 0.31480327, -0.58803517, -0.016023098, 0.8898076, 0.4560546, 0.6668056, -0.33036566, 0.6680036, -2.5279276, 1.4820173, 2.9538696)
@@ -322,6 +325,7 @@ interactPrompt = NodePath("../UI Elements/Prompt")
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/Idle"]
+[editable path="CharacterBody3D/Idle/Armature/Skeleton/BoneAttachment3D/gli hair"]
 [editable path="gate"]
 [editable path="CameraSwitch"]
 [editable path="CameraSwitch2"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cy4o15k7ows4u"]
+[gd_scene format=4 uid="uid://cy4o15k7ows4u"]
 
 [ext_resource type="Script" uid="uid://b6eyd3wj6fu6d" path="res://states/statemachine.gd" id="1_glpr6"]
 [ext_resource type="Script" uid="uid://bwlepq4swweko" path="res://states/idle_state.gd" id="2_px5sl"]
@@ -6,20 +6,42 @@
 [ext_resource type="Script" uid="uid://blw1v4enclq7g" path="res://states/jump_state.gd" id="4_yxww1"]
 [ext_resource type="Script" uid="uid://brs8yqwgni5t4" path="res://states/fall_state.gd" id="5_wdpcj"]
 [ext_resource type="PackedScene" uid="uid://c4opfuvhucgvw" path="res://Animations/Idle.fbx" id="6_wdpcj"]
+[ext_resource type="ArrayMesh" uid="uid://dh0fxtvmfyidc" path="res://meshes/Gli Mesh 1/new_array_mesh.tres" id="7_c1b4b"]
+[ext_resource type="PackedScene" uid="uid://dhpnrfg0pbs3i" path="res://meshes/gli hair.fbx" id="7_jb3kq"]
 [ext_resource type="Animation" uid="uid://b5odahiaixn7t" path="res://Animations/Walk2.anim" id="7_qi5as"]
-[ext_resource type="Animation" uid="uid://oa8t1v6dkxs0" path="res://Animations/Idle.anim" id="8_jb3kq"]
+[ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="8_c1b4b"]
+[ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="8_jb3kq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vu45j"]
 radius = 1.0517578
-height = 5.231477
+height = 5.2978673
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_glpr6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb8b2"]
+resource_name = "Material.002"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.22916824, 0.35108355, 0.2766776, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vu45j"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_glpr6"]
-material = SubResource("StandardMaterial3D_vu45j")
+[sub_resource type="ArrayMesh" id="ArrayMesh_qi5as"]
+resource_name = "Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.17451346, -0.073960654, 0.0076291836, 0.048961148, 0.02714688, 0.01208251),
+"attribute_data": PackedByteArray("bCqKPsBFAD9sKoo+/Oh+Pvuj+z340X0++6P7PYCLAD/aa9U+AAAAP9pr1T4AAIA+6I0MPwAAAD7ojQw/AAAAANpr1T4AAAAA2mvVPgAAAD7ojQw/AABAP9tr1T4AAEA/2mvVPgAAgD/ojQw/AACAP+iNDD8AACA/2mvVPgAAID/ba9U+AABAP+iNDD8AAEA/6I0MPwAAAD/aa9U+AAAAP9pr1T4AACA/6I0MPwAAID8AACA/AAAAP+iNDD8AAAA/6I0MPwAAID8AACA/AAAgPwAAID8AACA/6I0MPwAAID/ojQw/AABAPwAAID8AAEA/AABAPwAAgD4AACA/AACAPgAAID8AAAA/AABAPwAAAD8AAGA/AACAPgAAQD8AAIA+AABAPwAAAD8AAGA/AAAAPwAAID8AAEA/6I0MPwAAQD/ojQw/AACAPwAAID8AAIA/AAAgPwAAAD4AACA/AAAAAOiNDD8AAAAA6I0MPwAAAD4AACA/AACAPgAAID8AAAA+6I0MPwAAAD7ojQw/AACAPgAAID8AAIA+6I0MPwAAgD7ojQw/AAAAPwAAID8AAAA/6I0MPwAAAD/ojQw/AACAPtpr1T4AAIA+2mvVPgAAAD/ojQw/AACAPuiNDD8AAAA+2mvVPgAAAD7aa9U+AACAPg=="),
+"bone_aabbs": [AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(0, 0, 0, -1, -1, -1), AABB(-0.14994736, -0.0702133, 0.013197484, 0.024395049, 0.023399528, 0.0065142093), AABB(-0.17451346, -0.073960654, 0.0076291836, 0.048961148, 0.02714688, 0.01208251), AABB(-0.17451346, -0.073960654, 0.0076291836, 0.048961148, 0.02714688, 0.01208251)],
+"format": 34359745559,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAFAAEABgAHAAgACAAJAAYACgALAAwADAANAAoADgAPABAAEAARAA4AEgATABQAFAAVABIAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgAjACQAJAAlACIAJgAnACgAKAApACYAKgArACwALAAtACoALgAvADAAMAAxAC4AMgAzADQANAA1ADIANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoA"),
+"material": SubResource("StandardMaterial3D_vb8b2"),
+"name": "Material.002",
+"primitive": 3,
+"skin_data": PackedByteArray("DgANAAAAAAAjwts9AAAAAA4ADQAAAAAAbr6QQQAAAAAOAA0AAAAAADqrxFQAAAAADgANAAAAAADqshRNAAAAAA4ADQAAAAAAj7dvSAAAAAAOAA0AAAAAAJLCbD0AAAAADQAMAA4AAAD29ggJAAAAAA0ADAAOAAAAivF0DgAAAAAOAA0AAAAAADqrxFQAAAAADgANAAAAAABuvpBBAAAAAA0ADAAOAAAAHungFgAAAAAOAA0AAAAAAOqyFE0AAAAADgANAAAAAAA6q8RUAAAAAA0ADAAOAAAAivF0DgAAAAANAAwADgAAAPXrCRQAAAAADgANAAAAAAAjwts9AAAAAA4ADQAAAAAA6rIUTQAAAAANAAwADgAAAB7p4BYAAAAADQAMAA4AAABA974IAAAAAA4ADQAAAAAAj7dvSAAAAAAOAA0AAAAAACPC2z0AAAAADQAMAA4AAAD16wkUAAAAAAwADQAOAAAAUZetaAAAAAANAAwADgAAAED3vggAAAAADQAMAA4AAAD16wkUAAAAAAwADQAOAAAAvptAZAAAAAAMAA0ADgAAAL6bQGQAAAAADQAMAA4AAAD16wkUAAAAAA0ADAAOAAAAHungFgAAAAAMAA0ADgAAABOe62EAAAAADAANAA4AAACrlVNqAAAAAAwADQAOAAAA4YsddAAAAAAMAA0ADgAAAFGXrWgAAAAADAANAA4AAAC+m0BkAAAAAAwADQAOAAAAxpQ4awAAAAAMAA0ADgAAAKuVU2oAAAAADAANAA4AAAC+m0BkAAAAAAwADQAOAAAAE57rYQAAAAAMAA0ADgAAABOe62EAAAAADQAMAA4AAAAe6eAWAAAAAA0ADAAOAAAAivF0DgAAAAAMAA0ADgAAAMaUOGsAAAAADAANAA4AAACrlVNqAAAAAAwADQAOAAAAxpQ4awAAAAANAAwADgAAAIrxdA4AAAAADQAMAA4AAAD29ggJAAAAAAwADQAOAAAA4YsddAAAAAAMAA0ADgAAAKuVU2oAAAAADQAMAA4AAAD29ggJAAAAAA0ADAAOAAAAdviIBwAAAAAMAA0ADgAAAOGLHXQAAAAADQAMAA4AAAB2+IgHAAAAAA0ADAAOAAAAQPe+CAAAAAAMAA0ADgAAAFGXrWgAAAAADQAMAA4AAABA974IAAAAAA0ADAAOAAAAdviIBwAAAAAOAA0AAAAAAJLCbD0AAAAADgANAAAAAACPt29IAAAAAA0ADAAOAAAAdviIBwAAAAANAAwADgAAAPb2CAkAAAAADgANAAAAAABuvpBBAAAAAA4ADQAAAAAAksJsPQAAAAA="),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 62,
+"vertex_data": PackedByteArray("rJ4yvhPlh71bzhE89mwtvuZNlr3vawc8Wz8tvkYCjb07/vk7tnkvvsOEh70XGwI8qLMyvt40kr2qHB08o2Ewvq94l70K+hU8NmwMvnI/i72XfnM8KrkKvkBFcL1DOlg8Wz8tvkYCjb07/vk79mwtvuZNlr3vawc8184SvmGMQr0fC2k8tnkvvsOEh70XGwI8Wz8tvkYCjb07/vk7KrkKvkBFcL1DOlg8zYsZvnpoUL2qYog8rJ4yvhPlh71bzhE8tnkvvsOEh70XGwI8184SvmGMQr0fC2k8MxoYvkqPhr3865M8qLMyvt40kr2qHB08rJ4yvhPlh71bzhE8zYsZvnpoUL2qYog8fCsJvpaoWb1reqE8MxoYvkqPhr3865M8zYsZvnpoUL2qYog8nocIvsQTRr2GIJk8nocIvsQTRr2GIJk8zYsZvnpoUL2qYog8184SvmGMQr0fC2k8dYYFvs2/P70knI08yZAAvu39bb1wJo88wX0Evkric72mNps8fCsJvpaoWb1reqE8nocIvsQTRr2GIJk8utgAvoD5Wb1gWIc8yZAAvu39bb1wJo88nocIvsQTRr2GIJk8dYYFvs2/P70knI08dYYFvs2/P70knI08184SvmGMQr0fC2k8KrkKvkBFcL1DOlg8utgAvoD5Wb1gWIc8yZAAvu39bb1wJo88utgAvoD5Wb1gWIc8KrkKvkBFcL1DOlg8NmwMvnI/i72XfnM8wX0Evkric72mNps8yZAAvu39bb1wJo88NmwMvnI/i72XfnM8yekTvv7Lj70NQ448wX0Evkric72mNps8yekTvv7Lj70NQ448MxoYvkqPhr3865M8fCsJvpaoWb1reqE8MxoYvkqPhr3865M8yekTvv7Lj70NQ448o2Ewvq94l70K+hU8qLMyvt40kr2qHB08yekTvv7Lj70NQ448NmwMvnI/i72XfnM89mwtvuZNlr3vawc8o2Ewvq94l70K+hU86wpIG9VfXWZ1CyMbGGHfZogLHht6aa5riAseG1oioELaCkwbtGkhbNoKTBtHLGdIYu60FETXMTNi7rQUxdbQMmLutBTA3GU3Yu60FNDdNThw7hf179UfMnDuF/WVw3cpcO4X9T/HMitw7hf1VtfIMoVA3N1vxD4qhUDc3bfAViqFQNzd68BVKoVA3N2MxD0qU2BJh9bDYSxTYEmHJNLwNlNgSYfkzc0zU2BJhzjCLyunbpKLYtVWMKdukotqwrcjp26Si3bHEienbpKLduFfOMRw28HO4ms8xHDbwSPlmDjEcNvB4uQEOcRw28Fo4hI9Ip6RjITSAhwinpGMFuXiIyKekYy2rtUMIp6RjOifjgYFoX2P9Z+tBAWhfY+qaIICBaF9j9nP5BgFoX2PAN9JH9/pWu2c0XQ03+la7dPjRT3f6VrtVNVBNt/pWu2vwjotlu7/If7B1iqW7v8hZMQTLZbu/yExvkgnlu7/IZO8xiWToMVM0r4uJpOgxUzPvR4mk6DFTJzFmCaToMVMXcakJq1/v3DQwbQkrX+/cMfG5Satf79wLMUvJq1/v3ChwC4kwGwqYhvZxTnAbCpihNn1OcBsKmJv0zY3wGwqYtTS8DZtpXkSq911OG2leRLL3W04baV5EjfZnzltpXkS8tixOQ==")
+}]
+blend_shape_mode = 0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c1b4b"]
 _data = {
@@ -58,22 +80,8 @@ transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.556708
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=112217560]
-transform = Transform3D(0.99999976, 0, 7.0699e-13, 0, 0.99999976, 0, -7.0699e-13, 0, 0.99999976, 0, 2.520496, 0)
+transform = Transform3D(0.99999976, 0, 7.6738615e-13, 0, 0.99999976, 0, -7.6738615e-13, 0, 0.99999976, 0, 2.553691, 0)
 shape = SubResource("CapsuleShape3D_vu45j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=792397661]
-visible = false
-mesh = SubResource("CapsuleMesh_glpr6")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2077633517]
-transform = Transform3D(-0.0023023323, 0.12016186, 0, -0.21984841, -0.0012583787, 0, 0, 0, 0.09139668, 0.39899996, 0.471, -0.10706626)
-visible = false
-mesh = SubResource("CylinderMesh_glpr6")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=461577442]
-transform = Transform3D(-0.0023023323, 0.12016186, 0, -0.21984841, -0.0012583787, 0, 0, 0, 0.09139668, 0.399, 0.471, 0.1)
-visible = false
-mesh = SubResource("CylinderMesh_glpr6")
 
 [node name="EdgeRay" type="RayCast3D" parent="." unique_id=675649447]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0.54195505, 0.22203821, 0)
@@ -106,7 +114,54 @@ idle_state = NodePath("../Idle")
 [node name="Idle" parent="." unique_id=6180209 instance=ExtResource("6_wdpcj")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="Idle" index="1" unique_id=182368589]
+[node name="Skeleton" parent="Idle/Armature" parent_id_path=PackedInt32Array(6180209, 477086799) index="0" unique_id=723692245]
+bones/0/position = Vector3(0.0045582294, 5.6114006, -0.036929518)
+bones/0/rotation = Quaternion(0.008619729, 0.023243777, -0.010874842, 0.99963355)
+bones/1/rotation = Quaternion(0.0017031501, 0.003404579, -1.7922686e-05, 0.9999928)
+bones/2/rotation = Quaternion(0.0033856882, 0.0060277604, 0.004356646, 0.9999666)
+bones/3/rotation = Quaternion(0.0033857021, 0.006027776, 0.0043566404, 0.9999666)
+bones/4/rotation = Quaternion(4.1555613e-06, -0.0039794506, -0.010542134, 0.9999365)
+bones/5/rotation = Quaternion(0.023500554, -0.0268053, 0.01600735, 0.9992363)
+bones/8/rotation = Quaternion(0.44928032, 0.53055197, 0.588273, -0.41303343)
+bones/9/rotation = Quaternion(-0.061147824, 0.9924281, -0.09530247, 0.047589738)
+bones/10/rotation = Quaternion(0.20245422, -0.76635396, 0.20082189, 0.57566)
+bones/11/rotation = Quaternion(0.05723057, 0.68343794, 0.20544574, 0.69816136)
+bones/13/rotation = Quaternion(0.4864245, -0.4938719, -0.5662552, -0.44591132)
+bones/14/rotation = Quaternion(0.16592754, 0.977684, -0.12784487, 0.016056957)
+bones/15/rotation = Quaternion(0.17090656, 0.76346934, -0.13310508, 0.60843116)
+bones/16/rotation = Quaternion(0.09575173, -0.7308845, -0.1715675, 0.6536085)
+bones/18/rotation = Quaternion(0.056282654, 0.203151, 0.97752535, 0.0024967017)
+bones/19/rotation = Quaternion(-0.0017132089, 0.83701223, -0.5458029, 0.038818263)
+bones/20/rotation = Quaternion(0.024507532, 0.668103, -0.74328053, -0.023915844)
+bones/21/rotation = Quaternion(0.015669454, 0.9994225, 0.029122058, -0.007816463)
+bones/22/position = Vector3(-0.09396719, 0.3593269, 0.007652172)
+bones/24/rotation = Quaternion(-0.069111615, 0.09318983, 0.9905452, -0.07320854)
+bones/25/rotation = Quaternion(-0.011020988, 0.98445237, -0.1669582, 0.05345171)
+bones/26/rotation = Quaternion(-0.055623844, 0.64759123, -0.75729173, 0.06356667)
+bones/27/rotation = Quaternion(0.0056009036, 0.99905694, 0.042725086, -0.0053382185)
+bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
+
+[node name="Head" parent="Idle/Armature/Skeleton" index="2" unique_id=36197388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28064883, 0)
+mesh = ExtResource("7_c1b4b")
+surface_material_override/0 = ExtResource("8_c1b4b")
+
+[node name="LowerArm_l" parent="Idle/Armature/Skeleton" index="3" unique_id=831029581]
+surface_material_override/0 = ExtResource("8_c1b4b")
+
+[node name="LowerArm_r" parent="Idle/Armature/Skeleton" index="4" unique_id=286312102]
+mesh = SubResource("ArrayMesh_qi5as")
+surface_material_override/0 = ExtResource("8_c1b4b")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Idle/Armature/Skeleton" index="16" unique_id=1627825553]
+transform = Transform3D(0.9998856, -0.0031591326, 0.014803823, 0.0043543545, 0.9966708, -0.081414714, -0.014497355, 0.08146986, 0.99657047, 0.06762766, 10.24956, 0.57336)
+bone_name = "mixamorig_HeadTop_End"
+bone_idx = 6
+
+[node name="gli hair" parent="Idle/Armature/Skeleton/BoneAttachment3D" unique_id=1154677554 instance=ExtResource("7_jb3kq")]
+transform = Transform3D(0.9902975, 0, 0.28321514, 0, 1.03, 0, -0.28321514, 0, 0.9902975, 0.03451044, -4.745824, -0.14423928)
+
+[node name="AnimationPlayer" parent="Idle" index="1" unique_id=1780571579]
 libraries/ = SubResource("AnimationLibrary_c1b4b")
 
 [node name="AnimationTree" type="AnimationTree" parent="Idle" unique_id=1934912908]
@@ -114,3 +169,4 @@ tree_root = SubResource("AnimationNodeStateMachine_bwfjh")
 anim_player = NodePath("../AnimationPlayer")
 
 [editable path="Idle"]
+[editable path="Idle/Armature/Skeleton/BoneAttachment3D/gli hair"]
