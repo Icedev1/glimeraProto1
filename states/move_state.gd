@@ -11,10 +11,6 @@ func physics_update(delta):
 	var input_dir = player._get_input()
 	var direction = player._get_camera_direction(input_dir)
 
-	# Edge detection leftover from your script (optional for ledge later)
-	if not player.edge_ray.is_colliding():
-		var forward = player.global_transform.basis.z
-		forward.y = 0
 
 	# Check transitions
 	if not player.is_on_floor():

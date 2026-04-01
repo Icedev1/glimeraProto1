@@ -1,12 +1,16 @@
 extends CharacterBody3D
 
 
-const SPEED = 1.0
+const SPEED = 1
 const JUMP_VELOCITY = 2.5
 @onready var edge_ray: RayCast3D = $EdgeRay
 @export var camera : Camera3D
 
-
+func _ready() -> void:
+	#set the torso's material screen resoluti
+	
+	pass
+	
 func _rotate_toward_movement(delta, direction):
 	const TURN_SPEED = 9.0
 	var move_dir := Vector3(velocity.x, 0, velocity.z)

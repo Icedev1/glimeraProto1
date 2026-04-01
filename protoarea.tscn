@@ -2,19 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="1_h510c"]
 [ext_resource type="Script" uid="uid://chd4v2dchvucb" path="res://scripts/CameraManager.gd" id="1_v6na3"]
+[ext_resource type="Material" uid="uid://cg4gs15tqn333" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG.tres" id="2_p2ddc"]
 [ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="2_tpdbc"]
 [ext_resource type="PackedScene" uid="uid://cc7rdfj4o8qop" path="res://gate.tscn" id="3_tpdbc"]
+[ext_resource type="Texture2D" uid="uid://i8gbbanx051j" path="res://Textures/Metal Texture/Metal061B_1K-JPG_Color.jpg" id="4_pkn1g"]
+[ext_resource type="ArrayMesh" uid="uid://bdhnp1u6wvsac" path="res://meshes/Gli Mesh 1/Shin Guard R.tres" id="4_rdw12"]
 [ext_resource type="PackedScene" uid="uid://dyyex5sxricmd" path="res://camera_switch.tscn" id="5_5ofox"]
+[ext_resource type="Texture2D" uid="uid://x1v5ta3rhyiv" path="res://Textures/Metal Texture/Metal061B_1K-JPG_Metalness.jpg" id="5_p2ddc"]
+[ext_resource type="Texture2D" uid="uid://beuamqsbnu405" path="res://Textures/Metal Texture/Metal061B_1K-JPG_NormalGL.jpg" id="6_3qlte"]
+[ext_resource type="Texture2D" uid="uid://bixdkk52hjtpk" path="res://images/NightEnvironmentHDRI009_8K_TONEMAPPED.jpg" id="6_6aibh"]
 [ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://npc.tscn" id="6_v6na3"]
+[ext_resource type="Texture2D" uid="uid://w6pbcn4rerfq" path="res://Textures/Metal Texture/Metal061B_1K-JPG_Roughness.jpg" id="7_3w14h"]
 [ext_resource type="PackedScene" uid="uid://btbbvoxdixc6u" path="res://interactprompt.tscn" id="7_aemyc"]
 [ext_resource type="Script" uid="uid://c7wgluufenq2k" path="res://prompt_manager.gd" id="8_llqyr"]
 [ext_resource type="Script" uid="uid://bsvbxxmkshgvi" path="res://scripts/dialogue_manager.gd" id="8_rpvj6"]
 [ext_resource type="PackedScene" uid="uid://bcv71xsvoofkr" path="res://dial_box.tscn" id="9_ldbg2"]
+[ext_resource type="Script" uid="uid://dr88cobc5dqk4" path="res://scene_switcher.gd" id="18_3qlte"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6aibh"]
 size = Vector3(5, 0.05, 5.0010996)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0dcuh"]
+material = ExtResource("2_p2ddc")
 size = Vector3(5, 0.05, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldbg2"]
@@ -32,15 +41,57 @@ size = Vector3(1.9360962, 0.8737793, 0.025390625)
 [sub_resource type="BoxShape3D" id="BoxShape3D_aemyc"]
 size = Vector3(1.9038696, 0.8737793, 0.025390625)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5ofox"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixbh1"]
+resource_name = "Metal061B"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("4_pkn1g")
+metallic = 1.0
+metallic_texture = ExtResource("5_p2ddc")
+roughness_texture = ExtResource("7_3w14h")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("6_3qlte")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdpcj"]
+animation = &"Idle"
+advance_on_start = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qi5as"]
+animation = &"Walk2"
+advance_on_start = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jb3kq"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c1b4b"]
+xfade_time = 0.2
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7tnxx"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_p2ddc"]
+states/Idle/node = SubResource("AnimationNodeAnimation_wdpcj")
+states/Idle/position = Vector2(348.6667, 112)
+states/Walk/node = SubResource("AnimationNodeAnimation_qi5as")
+states/Walk/position = Vector2(686.6667, 122.666664)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jb3kq"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_c1b4b"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_7tnxx")]
+graph_offset = Vector2(68, 52)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rdw12"]
+panorama = ExtResource("6_6aibh")
 
 [sub_resource type="Sky" id="Sky_v6na3"]
-sky_material = SubResource("ProceduralSkyMaterial_5ofox")
+sky_material = SubResource("PanoramaSkyMaterial_rdw12")
 
 [sub_resource type="Environment" id="Environment_5ofox"]
 background_mode = 2
 sky = SubResource("Sky_v6na3")
-sky_rotation = Vector3(-0.4660029, -0.30194196, 0)
+volumetric_fog_density = 0.01
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_v6na3"]
 
@@ -193,38 +244,122 @@ script = ExtResource("2_tpdbc")
 camera = NodePath("../Camera3D")
 
 [node name="CollisionShape3D" parent="CharacterBody3D" index="0" unique_id=112217560]
-transform = Transform3D(0.99999976, 0, 7.0698997e-13, 0, 0.99999976, 0, -7.0698997e-13, 0, 0.99999976, 0, 1.3581387, 0)
+transform = Transform3D(0.99999976, 0, 7.0699e-13, 0, 0.99999976, 0, -7.0699e-13, 0, 0.99999976, 0, 2.3008585, 0)
 
-[node name="Idle" parent="CharacterBody3D" index="3" unique_id=6180209]
-transform = Transform3D(-2.1855692e-08, 0, 0.49999997, 0, 0.49999997, 0, -0.49999997, 0, -2.1855692e-08, 0, -1.0990076, 0)
+[node name="StateMachine" parent="CharacterBody3D" index="1" unique_id=1290980809 node_paths=PackedStringArray("anim_tree")]
+anim_tree = NodePath("../Proto GLi 1/AnimationTree")
 
-[node name="Skeleton" parent="CharacterBody3D/Idle/Armature" parent_id_path=PackedInt32Array(1051319031, 6180209, 477086799) index="0" unique_id=723692245]
-bones/0/position = Vector3(0.03054859, 5.2758923, -0.058236644)
-bones/0/rotation = Quaternion(-0.03826623, -0.36655727, -0.013237558, 0.929514)
-bones/1/rotation = Quaternion(0.04940957, 0.04023644, -0.009108478, 0.99792624)
-bones/2/rotation = Quaternion(0.09862496, 0.080916926, -0.018031746, 0.9916655)
-bones/3/rotation = Quaternion(0.09862498, 0.080916785, -0.018031755, 0.9916656)
-bones/4/rotation = Quaternion(-0.03088833, -0.010767304, 0.0017951868, 0.99946326)
-bones/5/rotation = Quaternion(-0.062245205, 0.17705984, -0.008788556, 0.98219055)
-bones/8/rotation = Quaternion(0.47330105, 0.513075, 0.48827338, -0.5237646)
-bones/9/rotation = Quaternion(-0.017447855, 0.9705652, -0.20703238, 0.1218047)
-bones/10/rotation = Quaternion(0.13361163, -0.8596453, 0.26287693, 0.41719744)
-bones/11/rotation = Quaternion(-0.0027254901, 0.7324882, 0.18573298, 0.65494806)
-bones/13/rotation = Quaternion(0.44298685, -0.5419916, -0.5323435, -0.4760443)
-bones/14/rotation = Quaternion(0.2047614, 0.9613687, -0.18279941, 0.020677023)
-bones/15/rotation = Quaternion(0.10961445, 0.8809759, -0.15722561, 0.43260407)
-bones/16/rotation = Quaternion(0.15116392, -0.652605, 0.00904096, 0.7424113)
-bones/18/rotation = Quaternion(0.06835841, 0.21691363, 0.97174525, -0.06314071)
-bones/19/rotation = Quaternion(0.039421503, 0.9453967, -0.30998486, -0.092631064)
-bones/20/rotation = Quaternion(-0.0154519575, 0.6627474, -0.74850523, 0.01634203)
-bones/21/rotation = Quaternion(0.028020907, 0.99936974, 0.020390555, -0.0076950165)
-bones/24/rotation = Quaternion(-0.12491251, 0.006565267, 0.9884869, 0.08513233)
-bones/25/rotation = Quaternion(0.025193928, 0.95599234, -0.27554208, -0.09757287)
-bones/26/rotation = Quaternion(0.08041079, 0.54547143, -0.8304849, -0.07930949)
-bones/27/rotation = Quaternion(0.003704303, 0.999856, 0.0161732, -0.0035682726)
+[node name="Armature" parent="CharacterBody3D/Proto GLi 1" parent_id_path=PackedInt32Array(1051319031, 1252514508) index="0" unique_id=1798335600]
+transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763567e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
 
-[node name="BoneAttachment3D" parent="CharacterBody3D/Idle/Armature/Skeleton" index="16" unique_id=1627825553]
-transform = Transform3D(0.9977192, -0.06749286, -0.001143699, 0.06551219, 0.9722459, -0.22460213, 0.016271025, 0.22401495, 0.97445, -0.25938842, 9.668091, 1.295147)
+[node name="Skeleton" parent="CharacterBody3D/Proto GLi 1/Armature" index="0" unique_id=1031360999]
+bones/0/position = Vector3(0.033014048, 5.282959, -0.042334437)
+bones/0/rotation = Quaternion(-0.03909588, -0.36624572, -0.013785327, 0.9295944)
+bones/1/rotation = Quaternion(0.04843466, 0.040022373, -0.008765186, 0.9979857)
+bones/2/rotation = Quaternion(0.09664963, 0.08049519, -0.017386548, 0.9919058)
+bones/3/rotation = Quaternion(0.0966496, 0.080495216, -0.017386546, 0.9919058)
+bones/4/rotation = Quaternion(-0.025339296, -0.010436472, 0.0019728062, 0.9996226)
+bones/5/rotation = Quaternion(-0.06910423, 0.17841801, -0.0053695547, 0.9815105)
+bones/8/rotation = Quaternion(0.47167015, 0.5133925, 0.4827983, -0.52996355)
+bones/9/rotation = Quaternion(-0.014919233, 0.96959907, -0.2129738, 0.119571075)
+bones/10/rotation = Quaternion(0.13808297, -0.8600494, 0.26400143, 0.4141878)
+bones/11/rotation = Quaternion(0.007740102, 0.7339889, 0.17243662, 0.6568609)
+bones/13/rotation = Quaternion(0.44160846, -0.54305047, -0.5260872, -0.48302227)
+bones/14/rotation = Quaternion(0.20056203, 0.9604039, -0.19159676, 0.02626873)
+bones/15/rotation = Quaternion(0.119965136, 0.87786394, -0.15866809, 0.4356464)
+bones/16/rotation = Quaternion(0.14775695, -0.6540397, 0.015656903, 0.74172425)
+bones/18/rotation = Quaternion(0.068905085, 0.21425623, 0.9723681, -0.062022887)
+bones/19/rotation = Quaternion(0.039682154, 0.94572043, -0.30870005, -0.09350154)
+bones/20/rotation = Quaternion(-0.0144044245, 0.6628831, -0.7484291, 0.015241844)
+bones/21/rotation = Quaternion(0.028100858, 0.9993678, 0.020349521, -0.0077657364)
+bones/22/position = Vector3(-0.09396719, 0.3593269, 0.007652172)
+bones/24/rotation = Quaternion(-0.12564498, 0.00050013757, 0.9883588, 0.08579097)
+bones/25/rotation = Quaternion(0.024448747, 0.9582388, -0.26756594, -0.09792501)
+bones/26/rotation = Quaternion(0.08086348, 0.5486535, -0.8282697, -0.08006147)
+bones/27/rotation = Quaternion(0.00364676, 0.9998574, 0.016116045, -0.0035013007)
+bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
+
+[node name="Hair_012" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="0" unique_id=138950094]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_013" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="1" unique_id=2109711230]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_014" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="2" unique_id=2077420212]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_015" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="3" unique_id=1008126345]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_016" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="4" unique_id=866870226]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_017" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="5" unique_id=1342462671]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_018" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="6" unique_id=1540617818]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_019" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="7" unique_id=1036600954]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_020" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="8" unique_id=1625970386]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_021" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="9" unique_id=636162324]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_022" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="10" unique_id=2088216628]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_023" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="11" unique_id=1997123166]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_024" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="12" unique_id=1674627831]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_025" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="13" unique_id=2055629164]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_026" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="14" unique_id=58758774]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_027" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="15" unique_id=364880559]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_028" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="16" unique_id=1561012884]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_029" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="17" unique_id=1989816126]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_030" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="18" unique_id=993085827]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_031" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="19" unique_id=2019527952]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_031" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton/Hair_031" index="0" unique_id=1097234076]
+surface_material_override/0 = null
+
+[node name="Hair_032" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="20" unique_id=993126605]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_033" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="21" unique_id=1002678260]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Hair_034" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="22" unique_id=1202997240]
+transform = Transform3D(0.9973889, -0.072207846, -0.0012956262, 0.0703401, 0.9753434, -0.20918304, 0.01636836, 0.20854568, 0.97787577, -0.1582579, 8.447664, 0.6558833)
+
+[node name="Shin Guard" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="31" unique_id=769869634]
+surface_material_override/0 = SubResource("StandardMaterial3D_ixbh1")
+
+[node name="Shin Guard_001" parent="CharacterBody3D/Proto GLi 1/Armature/Skeleton" index="32" unique_id=2008555193]
+mesh = ExtResource("4_rdw12")
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D/Proto GLi 1" parent_id_path=PackedInt32Array(1051319031, 1252514508) index="2" unique_id=792996161]
+tree_root = SubResource("AnimationNodeStateMachine_p2ddc")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=313060992]
 transform = Transform3D(0.74505943, 0.31480327, -0.58803517, -0.016023098, 0.8898076, 0.4560546, 0.6668056, -0.33036566, 0.6680036, -2.5279276, 1.4820173, 2.9538696)
@@ -286,7 +421,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04933442)
 shape = SubResource("BoxShape3D_tpdbc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform/Floor1" unique_id=1615762656]
-transform = Transform3D(0.9999987, -0.0010809125, 0.0006210003, 0.0010791414, 0.99999833, 0.0007444854, -0.0012157756, -0.001454329, 0.5114467, -0.00057017803, 0, -0.057484865)
+transform = Transform3D(0.9999987, -0.0010809125, 0.0006210003, 0.0010791414, 0.99999833, 0.0007444854, -0.0012157756, -0.001454329, 0.5114467, -0.0003926456, -0.0017336905, -0.056934927)
+material_override = ExtResource("2_p2ddc")
 mesh = SubResource("BoxMesh_0dcuh")
 
 [node name="skull" parent="." unique_id=1200212190 instance=ExtResource("6_v6na3")]
@@ -319,13 +455,15 @@ dialBox = NodePath("../UI Elements/DialBox")
 script = ExtResource("8_llqyr")
 interactPrompt = NodePath("../UI Elements/Prompt")
 
+[node name="SceneSwitcher" type="Node" parent="." unique_id=923774752]
+script = ExtResource("18_3qlte")
+
 [connection signal="body_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_entered"]
 [connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]
 [connection signal="switch" from="CameraSwitch" to="." method="_on_camera_switch_switch"]
 
 [editable path="CharacterBody3D"]
-[editable path="CharacterBody3D/Idle"]
-[editable path="CharacterBody3D/Idle/Armature/Skeleton/BoneAttachment3D/gli hair"]
+[editable path="CharacterBody3D/Proto GLi 1"]
 [editable path="gate"]
 [editable path="CameraSwitch"]
 [editable path="CameraSwitch2"]
