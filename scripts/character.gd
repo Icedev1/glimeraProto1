@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	#_rotate_toward_movement(delta, direction)
 	#move_and_slide()
 	#
-func _get_input() -> Vector2:
+func get_input() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")

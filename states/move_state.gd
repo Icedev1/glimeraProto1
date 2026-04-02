@@ -8,7 +8,7 @@ func enter():
 	state_machine.animMachine.travel("Walk")
 	
 func physics_update(delta):
-	var input_dir = player._get_input()
+	var input_dir = player.get_input()
 	var direction = player._get_camera_direction(input_dir)
 
 
