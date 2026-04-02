@@ -1,0 +1,466 @@
+[gd_scene format=3 uid="uid://85nw8bpyau5k"]
+
+[ext_resource type="FontFile" uid="uid://bq8bno25i4gyr" path="res://ui/Game Paused DEMO.otf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dqr418el2k8mt" path="res://UI/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dfq6hkm4cc71f" path="res://images/icon.svg" id="2_arv2f"]
+[ext_resource type="AudioStream" uid="uid://b4yvscbjikt1p" path="res://ui/elijah_k-eat-your-apple-275859.mp3" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://UI/audio_control.gd" id="4_jix8l"]
+[ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://UI/window_options.gd" id="5_glbon"]
+[ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://UI/inputremapbutton.gd" id="6_nlkkf"]
+[ext_resource type="PackedScene" path="res://UI/input_remap_button.tscn" id="6_qe12f"]
+[ext_resource type="AudioStream" uid="uid://oiod6kmnyfnc" path="res://ui/musheran-beep-313342.mp3" id="9_2mudq"]
+
+[sub_resource type="Gradient" id="Gradient_7vrkn"]
+colors = PackedColorArray(1, 1, 1, 1, 0.21710122, 0.21710122, 0.21710122, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(0.09019608, 0, 0.8666667, 1)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_detail = 2
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+content_margin_right = 35.0
+bg_color = Color(0.05195318, 0, 0.6239103, 1)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_detail = 2
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+content_margin_right = 35.0
+bg_color = Color(0.09019608, 0, 0.8666667, 0.6862745)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_detail = 2
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fu7sn"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = -7.0
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jix8l"]
+color = Color(0.09019608, 0, 0.8666667, 1)
+thickness = 6
+
+[node name="Main Menu" type="Control" unique_id=630457395]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="Background" type="Panel" parent="." unique_id=658892450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background" unique_id=1250293987]
+visible = false
+position = Vector2(563, 21)
+amount = 2
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(500, 8.58)
+scale_amount_min = 50.0
+scale_amount_max = 50.0
+color_ramp = SubResource("Gradient_7vrkn")
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1038948208]
+visible = false
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1857430545]
+position = Vector2(942.5, 531.5)
+scale = Vector2(15.7265625, 9.3046875)
+texture = ExtResource("2_arv2f")
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=672924109]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.57600003
+anchor_right = 0.5
+anchor_bottom = 0.57600003
+offset_left = -133.5
+offset_top = -122.74802
+offset_right = 133.5
+offset_bottom = 122.25198
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MenuButtons" unique_id=2028129636]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.078431375, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.078431375, 1, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078431375, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+text = "Start Game"
+
+[node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=1168352789]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.078431375, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MenuButtons" unique_id=353058018]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.078431375, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+text = "Quit Game"
+
+[node name="Title" type="Label" parent="." unique_id=1228155308]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.263
+anchor_right = 0.5
+anchor_bottom = 0.263
+offset_left = -255.0
+offset_top = -41.42401
+offset_right = 256.0
+offset_bottom = 41.57599
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 60
+text = "Glimera"
+horizontal_alignment = 1
+
+[node name="Settings" type="Panel" parent="." unique_id=1973624480]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.483
+anchor_right = 0.50200003
+anchor_bottom = 0.483
+offset_left = -258.30402
+offset_top = -231.98401
+offset_right = 258.69598
+offset_bottom = 232.01599
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Settings" unique_id=158178059]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="TabContainer" type="TabContainer" parent="Settings" unique_id=1320493474]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.287
+anchor_right = 0.5
+anchor_bottom = 0.287
+offset_left = -180.50003
+offset_top = -84.168
+offset_right = 192.49997
+offset_bottom = -44.168
+theme_override_constants/side_margin = 0
+current_tab = 2
+
+[node name="Audio" type="VBoxContainer" parent="Settings/TabContainer" unique_id=929983320]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Audio" unique_id=1539078245]
+layout_mode = 2
+text = "Master Volume:"
+
+[node name="AudioControl" type="HSlider" parent="Settings/TabContainer/Audio" unique_id=1665090206]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_fu7sn")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_jix8l")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_jix8l")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_jix8l")
+audio_bus_name = "Master"
+
+[node name="Label2" type="Label" parent="Settings/TabContainer/Audio" unique_id=1193057808]
+layout_mode = 2
+text = "Background Music:"
+
+[node name="MusicControl" type="HSlider" parent="Settings/TabContainer/Audio" unique_id=1025533597]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_fu7sn")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_jix8l")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_jix8l")
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("4_jix8l")
+audio_bus_name = "Music"
+
+[node name="Label3" type="Label" parent="Settings/TabContainer/Audio" unique_id=1312736170]
+layout_mode = 2
+text = "SFX Volume:"
+
+[node name="SfxControl" type="HSlider" parent="Settings/TabContainer/Audio" unique_id=330411134]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_fu7sn")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_jix8l")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_jix8l")
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("4_jix8l")
+audio_bus_name = "SFX"
+
+[node name="Video" type="VBoxContainer" parent="Settings/TabContainer" unique_id=110452151]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label2" type="Label" parent="Settings/TabContainer/Video" unique_id=1036194306]
+layout_mode = 2
+text = "Screen Resolution:"
+
+[node name="ResolutionOptions" type="OptionButton" parent="Settings/TabContainer/Video" unique_id=1049051574]
+layout_mode = 2
+selected = 3
+item_count = 5
+popup/item_0/text = "1280x800"
+popup/item_0/id = 0
+popup/item_1/text = "1920x1200"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1920x1080"
+popup/item_3/id = 3
+popup/item_4/text = "2560x1440"
+popup/item_4/id = 4
+
+[node name="Label3" type="Label" parent="Settings/TabContainer/Video" unique_id=459558821]
+layout_mode = 2
+text = "V-Sync:"
+
+[node name="CheckButton" type="CheckButton" parent="Settings/TabContainer/Video" unique_id=1358985724]
+layout_mode = 2
+button_pressed = true
+text = " "
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Video" unique_id=120350662]
+layout_mode = 2
+text = "Window Options:"
+
+[node name="WindowOptions" type="OptionButton" parent="Settings/TabContainer/Video" unique_id=1346065995]
+layout_mode = 2
+selected = 2
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Window"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+script = ExtResource("5_glbon")
+
+[node name="Controls" type="VBoxContainer" parent="Settings/TabContainer" unique_id=1024124700]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MoveLeft" type="HBoxContainer" parent="Settings/TabContainer/Controls" unique_id=1181999470]
+layout_mode = 2
+theme_override_constants/separation = 144
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Controls/MoveLeft" unique_id=325112837]
+layout_mode = 2
+text = "Move Left"
+
+[node name="Keybinds" type="HBoxContainer" parent="Settings/TabContainer/Controls/MoveLeft" unique_id=1521121617]
+layout_mode = 2
+
+[node name="InputRemapButton" parent="Settings/TabContainer/Controls/MoveLeft/Keybinds" unique_id=162217419 instance=ExtResource("6_qe12f")]
+layout_mode = 2
+text = " "
+action = "move_left"
+
+[node name="InputReMapButton" type="Button" parent="Settings/TabContainer/Controls/MoveLeft/Keybinds" unique_id=243278876]
+layout_mode = 2
+text = " "
+script = ExtResource("6_nlkkf")
+action = "move_left"
+action_event_index = 1
+
+[node name="MoveRight" type="HBoxContainer" parent="Settings/TabContainer/Controls" unique_id=1112452225]
+layout_mode = 2
+theme_override_constants/separation = 134
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Controls/MoveRight" unique_id=246717198]
+layout_mode = 2
+text = "Move Right"
+
+[node name="Keybinds" type="HBoxContainer" parent="Settings/TabContainer/Controls/MoveRight" unique_id=1827608695]
+layout_mode = 2
+
+[node name="InputRemapButton" parent="Settings/TabContainer/Controls/MoveRight/Keybinds" unique_id=1502838356 instance=ExtResource("6_qe12f")]
+layout_mode = 2
+text = ""
+action = "move_right"
+
+[node name="InputReMapButton" type="Button" parent="Settings/TabContainer/Controls/MoveRight/Keybinds" unique_id=717685062]
+layout_mode = 2
+text = " "
+script = ExtResource("6_nlkkf")
+action = "move_right"
+action_event_index = 1
+
+[node name="MoveUp" type="HBoxContainer" parent="Settings/TabContainer/Controls" unique_id=803784805]
+layout_mode = 2
+theme_override_constants/separation = 153
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Controls/MoveUp" unique_id=1546284640]
+layout_mode = 2
+text = "Move Up"
+
+[node name="Keybinds" type="HBoxContainer" parent="Settings/TabContainer/Controls/MoveUp" unique_id=1222688232]
+layout_mode = 2
+
+[node name="InputRemapButton" parent="Settings/TabContainer/Controls/MoveUp/Keybinds" unique_id=1996265996 instance=ExtResource("6_qe12f")]
+layout_mode = 2
+text = ""
+action = "move_up"
+
+[node name="InputReMapButton" type="Button" parent="Settings/TabContainer/Controls/MoveUp/Keybinds" unique_id=1557078393]
+layout_mode = 2
+text = " "
+script = ExtResource("6_nlkkf")
+action = "move_up"
+action_event_index = 1
+
+[node name="MoveDown" type="HBoxContainer" parent="Settings/TabContainer/Controls" unique_id=883402133]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Controls/MoveDown" unique_id=222756545]
+layout_mode = 2
+text = "Move Down"
+
+[node name="Keybinds" type="HBoxContainer" parent="Settings/TabContainer/Controls/MoveDown" unique_id=1078205364]
+layout_mode = 2
+
+[node name="InputRemapButton" parent="Settings/TabContainer/Controls/MoveDown/Keybinds" unique_id=1711456624 instance=ExtResource("6_qe12f")]
+layout_mode = 2
+text = ""
+action = "move_down"
+
+[node name="InputReMapButton" type="Button" parent="Settings/TabContainer/Controls/MoveDown/Keybinds" unique_id=898082652]
+layout_mode = 2
+text = " "
+script = ExtResource("6_nlkkf")
+action = "move_down"
+action_event_index = 1
+
+[node name="Jump" type="HBoxContainer" parent="Settings/TabContainer/Controls" unique_id=1793935004]
+layout_mode = 2
+theme_override_constants/separation = 182
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Controls/Jump" unique_id=839677637]
+layout_mode = 2
+text = "Jump"
+
+[node name="Keybinds" type="HBoxContainer" parent="Settings/TabContainer/Controls/Jump" unique_id=1532521755]
+layout_mode = 2
+
+[node name="InputRemapButton" parent="Settings/TabContainer/Controls/Jump/Keybinds" unique_id=1665002968 instance=ExtResource("6_qe12f")]
+layout_mode = 2
+text = " "
+action = "jump"
+
+[node name="InputReMapButton" type="Button" parent="Settings/TabContainer/Controls/Jump/Keybinds" unique_id=1996677801]
+layout_mode = 2
+text = " "
+script = ExtResource("6_nlkkf")
+action = "jump"
+action_event_index = 1
+
+[node name="BackButton" type="Button" parent="Settings" unique_id=138050554]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48700002
+anchor_top = 0.90800005
+anchor_right = 0.48700002
+anchor_bottom = 0.90800005
+offset_left = -103.77901
+offset_top = -27.312012
+offset_right = 104.22099
+offset_bottom = 27.687988
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.078431375, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+text = "Back"
+
+[node name="Background Music" type="AudioStreamPlayer" parent="." unique_id=984557550]
+stream = ExtResource("3_fu7sn")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=643888093]
+stream = ExtResource("9_2mudq")
+bus = &"SFX"
+
+[connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="Settings/TabContainer/Audio/AudioControl" to="Settings/TabContainer/Audio/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/TabContainer/Audio/MusicControl" to="Settings/TabContainer/Audio/MusicControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/TabContainer/Audio/SfxControl" to="Settings/TabContainer/Audio/SfxControl" method="_on_value_changed"]
+[connection signal="item_selected" from="Settings/TabContainer/Video/ResolutionOptions" to="Settings/TabContainer/Video/WindowOptions" method="_on_resolution_options_item_selected"]
+[connection signal="toggled" from="Settings/TabContainer/Video/CheckButton" to="Settings/TabContainer/Video/WindowOptions" method="_on_check_button_toggled"]
+[connection signal="item_selected" from="Settings/TabContainer/Video/WindowOptions" to="Settings/TabContainer/Video/WindowOptions" method="_on_item_selected"]
+[connection signal="pressed" from="Settings/BackButton" to="." method="_on_back_button_pressed"]

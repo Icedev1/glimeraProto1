@@ -63,8 +63,8 @@ func _physics_process(delta: float) -> void:
 	#
 func _get_input() -> Vector2:
 	return Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
+		Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
 	)
 
 func _get_camera_direction(input_dir: Vector2) -> Vector3:
