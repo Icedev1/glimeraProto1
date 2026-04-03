@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 			get_tree().paused = true
 			pauseInstance = pauseScene.instantiate()
 			canvas.add_child(pauseInstance)
+			
 
 		
