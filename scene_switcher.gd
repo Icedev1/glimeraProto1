@@ -1,5 +1,5 @@
 extends Node
-var pauseScene = preload("res://Equip UI.tscn")
+var pauseScene = preload("uid://cljfxgcfyk4fv") # EquipUI scene
 var pauseInstance
 @export var canvas : CanvasLayer
 
