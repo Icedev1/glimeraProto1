@@ -4,14 +4,13 @@ extends State
 @export var jump_state : State
 @export var fall_state : State
 
+func enter():
+	state_machine.animMachine.travel("Walk")
+	
 func physics_update(delta):
-	var input_dir = player._get_input()
+	var input_dir = player.get_input()
 	var direction = player._get_camera_direction(input_dir)
 
-	# Edge detection leftover from your script (optional for ledge later)
-	if not player.edge_ray.is_colliding():
-		var forward = player.global_transform.basis.z
-		forward.y = 0
 
 	# Check transitions
 	if not player.is_on_floor():
@@ -21,9 +20,11 @@ func physics_update(delta):
 	if Input.is_action_just_pressed("jump"):
 		state_machine.change_state(jump_state)
 		return
+		
 
 	if input_dir == Vector2.ZERO:
 		state_machine.change_state(idle_state)
+		#Has a bug where the input direction does not change when the player inputs a new direction before letting go of the previous one.
 		player.camera = CamMan.instance.getPlayerCam()
 		return
 

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://t07ec0vtnteb"]
+
+[ext_resource type="Shader" uid="uid://c3tdahba6hfl8" path="res://Shaders/Blur.gdshader" id="1_d7beh"]
+
+[resource]
+shader = ExtResource("1_d7beh")
+shader_parameter/blur_radius = 0.0
+shader_parameter/blur_amount = 0.6650000315875
+shader_parameter/blur_inner = 0.830000039425
+shader_parameter/blur_outer = 0.194000009215

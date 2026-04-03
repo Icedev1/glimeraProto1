@@ -91,7 +91,7 @@ audio/type_sound_bus="SFX"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="canvas_items"
+window/size/mode=2
 
 [dotnet]
 
@@ -104,7 +104,7 @@ movie_writer/movie_file="C:/Users/MSI/Documents/Godot Engine/Godot Projects/glim
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/github_copilot/plugin.cfg")
 
 [gui]
 

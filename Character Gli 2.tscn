@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://brcsavn8cxn30"]
+
+[ext_resource type="PackedScene" uid="uid://cu7s7vy6qy8k" path="res://Animations/Proto GLi 1.fbx" id="1_t7u8j"]
+
+[node name="Proto GLi 1" unique_id=1252514508 instance=ExtResource("1_t7u8j")]
+
+[node name="Armature" parent="." index="0" unique_id=1175193383]
+transform = Transform3D(0.70710677, -5.3385072e-08, 0.70710677, -1.7763568e-15, 1, 7.5497894e-08, -0.70710677, -5.3385072e-08, 0.70710677, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=794993677]
+bones/8/rotation = Quaternion(-0.5539478, -0.4384981, 0.55801266, -0.43529677)
+bones/18/rotation = Quaternion(-7.991553e-05, -0.0020900338, 0.9992592, -0.038429122)
+
+[node name="Hair_012" parent="Armature/Skeleton3D" index="0" unique_id=1465994026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_013" parent="Armature/Skeleton3D" index="1" unique_id=1031904094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_014" parent="Armature/Skeleton3D" index="2" unique_id=1518070510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_015" parent="Armature/Skeleton3D" index="3" unique_id=1747416922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_016" parent="Armature/Skeleton3D" index="4" unique_id=887497278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_017" parent="Armature/Skeleton3D" index="5" unique_id=13030459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_018" parent="Armature/Skeleton3D" index="6" unique_id=1417807847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_019" parent="Armature/Skeleton3D" index="7" unique_id=752407054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_020" parent="Armature/Skeleton3D" index="8" unique_id=1424568434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_021" parent="Armature/Skeleton3D" index="9" unique_id=2079367599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_022" parent="Armature/Skeleton3D" index="10" unique_id=875249153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_023" parent="Armature/Skeleton3D" index="11" unique_id=1132970022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_024" parent="Armature/Skeleton3D" index="12" unique_id=985546508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_025" parent="Armature/Skeleton3D" index="13" unique_id=891010341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_026" parent="Armature/Skeleton3D" index="14" unique_id=1697675571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_027" parent="Armature/Skeleton3D" index="15" unique_id=1564753039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_028" parent="Armature/Skeleton3D" index="16" unique_id=290251437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_029" parent="Armature/Skeleton3D" index="17" unique_id=725559422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_030" parent="Armature/Skeleton3D" index="18" unique_id=1969145810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_031" parent="Armature/Skeleton3D" index="19" unique_id=1989468291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_032" parent="Armature/Skeleton3D" index="20" unique_id=1130957676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_033" parent="Armature/Skeleton3D" index="21" unique_id=836081543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5
+
+[node name="Hair_034" parent="Armature/Skeleton3D" index="22" unique_id=1394310157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-07, 3.2162998, -0.19673738)
+bone_idx = 5

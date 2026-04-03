@@ -4,6 +4,8 @@ class_name StateMachine
 signal state_changed(new_state: State)
 
 var player : CharacterBody3D
+@export var anim_tree : AnimationTree
+@onready var animMachine = anim_tree.get("parameters/playback") as AnimationNodeStateMachinePlayback
 var current_state : State
 
 @export var initial_state : State

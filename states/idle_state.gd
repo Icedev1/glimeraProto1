@@ -8,9 +8,10 @@ func enter():
 	# Stop horizontal movement
 	player.velocity.x = 0
 	player.velocity.z = 0
+	state_machine.animMachine.travel("Idle")
 
 func physics_update(delta):
-	var input_dir = player._get_input()
+	var input_dir = player.get_input()
 
 	# If player moves, switch to MoveState
 	if input_dir != Vector2.ZERO:
