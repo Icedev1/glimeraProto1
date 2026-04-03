@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://byst06jwi71i5"]
+
+[ext_resource type="Script" uid="uid://dvt4u3aua18u8" path="res://scripts/battle/graft_menu.gd" id="1_1f5ry"]
+[ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://scenes/weapon_card.tscn" id="2_dsoa3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsoa3"]
+bg_color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[node name="GraftMenu" type="PanelContainer" unique_id=1743679526]
+anchors_preset = -1
+anchor_right = 0.731
+anchor_bottom = 0.77800006
+offset_right = -0.52001953
+offset_bottom = -0.24005127
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsoa3")
+script = ExtResource("1_1f5ry")
+weapon_card_scene = ExtResource("2_dsoa3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=520847368]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=238152390]
+layout_mode = 2
+alignment = 1
+
+[node name="graft_menu_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=987125402]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Graft Menu"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1846681042]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1423861426]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="equipped_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1069932805]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Equipped"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=542545739]
+layout_mode = 2
+alignment = 1
+
+[node name="equipped_card_1" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=794853170 instance=ExtResource("2_dsoa3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="equipped_card_2" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2061090139 instance=ExtResource("2_dsoa3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="equipped_card_3" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1066546761 instance=ExtResource("2_dsoa3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="equipped_card_4" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=899785656 instance=ExtResource("2_dsoa3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="inventory_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1622778973]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=305977930]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="inventory_list" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=922846400]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 6
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1928773696]
+layout_mode = 2
+alignment = 1
+
+[node name="hp_cost_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=438685544]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Hp cost : "
+
+[node name="graft_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=437586272]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Graft"
+
+[node name="cancel_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1765357415]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Cancel"

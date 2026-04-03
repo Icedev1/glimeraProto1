@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://x1iad8kdgpag"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_0q4cd"]
+
+[resource]
+script = ExtResource("1_0q4cd")
+effect_name = "Self Harm"
+applies_to = 0
+value = 3.0
+metadata/_custom_type_script = "uid://c1nu6bnlqi3dc"

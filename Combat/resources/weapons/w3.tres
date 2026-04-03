@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://6qt5mfg0b4wo"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_vd3ux"]
+[ext_resource type="Resource" uid="uid://c2ydm0l3jds3i" path="res://resources/status_effects/weaken.tres" id="2_vd3ux"]
+[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="3_uwjyf"]
+
+[resource]
+script = ExtResource("3_uwjyf")
+weapon_name = "w_weaken"
+attack_damage = 2
+cooldown = 3.0
+hp_cost = 2
+effects = Array[ExtResource("1_vd3ux")]([ExtResource("2_vd3ux")])
+metadata/_custom_type_script = "uid://cbcgrkqaylv7i"

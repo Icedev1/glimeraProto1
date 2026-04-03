@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://clwxteop31kjo"]
+
+[ext_resource type="Script" uid="uid://co3w8y5wyqxh6" path="res://scripts/ui/weapon_card.gd" id="1_bhqxw"]
+
+[node name="weaponCard" type="PanelContainer" unique_id=794853170]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = -1
+anchor_right = 0.135
+anchor_bottom = 0.148
+offset_right = 0.7999878
+offset_bottom = 0.16000366
+script = ExtResource("1_bhqxw")
+
+[node name="cooldown_bar" type="ProgressBar" parent="." unique_id=495540385]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+value = 0.11
+fill_mode = 3
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=209787161]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=834334132]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="weapon_name_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=682763075]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 28
+text = "Weapon Name"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1831267233]
+layout_mode = 2
+
+[node name="attack_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=627873815]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Attack value :"
+
+[node name="cooldown_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1840661536]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Cooldown :"
+
+[node name="description_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1743247317]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Description :"
+autowrap_mode = 3
+
+[node name="hp_cost_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1100082400]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="click_area" type="Button" parent="." unique_id=511273516]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+flat = true

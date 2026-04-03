@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://c2ydm0l3jds3i"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_k07xj"]
+
+[resource]
+script = ExtResource("1_k07xj")
+effect_name = "Weaken"
+type = 5
+value = -0.5
+duration = 5.0
+metadata/_custom_type_script = "uid://c1nu6bnlqi3dc"
