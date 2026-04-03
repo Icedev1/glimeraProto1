@@ -17,7 +17,7 @@ func physics_update(delta):
 		state_machine.change_state(fall_state)
 		return
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		state_machine.change_state(jump_state)
 		return
 		
