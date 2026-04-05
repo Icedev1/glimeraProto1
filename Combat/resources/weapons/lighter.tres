@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://dhctuph5xn3k2"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_gwvdb"]
+[ext_resource type="Resource" uid="uid://ck4bwjm08hgqw" path="res://resources/status_effects/burn_+1x6.tres" id="2_gwvdb"]
+[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="3_spnb1"]
+
+[resource]
+script = ExtResource("3_spnb1")
+weapon_name = "lighter"
+attack_damage = 1
+cooldown = 3.0
+hp_cost = 1
+effects = Array[ExtResource("1_gwvdb")]([ExtResource("2_gwvdb")])
+metadata/_custom_type_script = "uid://cbcgrkqaylv7i"

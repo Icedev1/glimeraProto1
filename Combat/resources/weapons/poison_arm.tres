@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bwat6x5bxiu6x"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_7csh8"]
+[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="2_lclkp"]
+[ext_resource type="Resource" uid="uid://bma5vwk3yanml" path="res://resources/status_effects/poison+2.tres" id="2_mnxnf"]
+
+[resource]
+script = ExtResource("2_lclkp")
+weapon_name = "Poisioned Arm"
+attack_damage = 2
+cooldown = 3.0
+hp_cost = 2
+effects = Array[ExtResource("1_7csh8")]([ExtResource("2_mnxnf")])
+metadata/_custom_type_script = "uid://cbcgrkqaylv7i"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ypx12txeeeqe"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_7a62n"]
+[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="3_sjhca"]
+
+[resource]
+script = ExtResource("3_sjhca")
+weapon_name = "w_lifesteal"
+attack_damage = 3
+cooldown = 5.0
+hp_cost = 2
+life_steal = 1.0
+metadata/_custom_type_script = "uid://cbcgrkqaylv7i"
