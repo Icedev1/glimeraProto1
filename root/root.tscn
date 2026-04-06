@@ -3,6 +3,61 @@
 [ext_resource type="Script" uid="uid://bqk5x8iden4rm" path="res://root/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://85nw8bpyau5k" path="res://ui/main_menu.tscn" id="2_js5vo"]
 [ext_resource type="PackedScene" uid="uid://caa206tiuvujl" path="res://protoarea.tscn" id="3_ovlcs"]
+[ext_resource type="Script" path="res://root/screen_transition.gd" id="4_ovlcs"]
+
+[sub_resource type="Animation" id="Animation_ovlcs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_b33ej"]
+resource_name = "fade_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y5gj7"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2nrw"]
+_data = {
+&"RESET": SubResource("Animation_ovlcs"),
+&"fade_in": SubResource("Animation_b33ej"),
+&"fade_out": SubResource("Animation_y5gj7")
+}
 
 [node name="Root" type="Node" unique_id=514390605]
 script = ExtResource("1_pq8q7")
@@ -12,3 +67,18 @@ script = ExtResource("1_pq8q7")
 [node name="Overworld3D" parent="." unique_id=565278368 instance=ExtResource("3_ovlcs")]
 
 [node name="BattleScene3D" type="Node3D" parent="." unique_id=1267662630]
+
+[node name="SceneTransition" type="CanvasLayer" parent="." unique_id=171870292]
+script = ExtResource("4_ovlcs")
+
+[node name="ColorRect" type="ColorRect" parent="SceneTransition" unique_id=2093816001]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneTransition" unique_id=588910038]
+libraries/ = SubResource("AnimationLibrary_e2nrw")

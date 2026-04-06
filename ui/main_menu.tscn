@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://85nw8bpyau5k"]
 
 [ext_resource type="FontFile" uid="uid://bq8bno25i4gyr" path="res://ui/Game Paused DEMO.otf" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://dqr418el2k8mt" path="res://UI/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://dqr418el2k8mt" path="res://ui/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://dfq6hkm4cc71f" path="res://images/icon.svg" id="2_arv2f"]
-[ext_resource type="AudioStream" uid="uid://b4yvscbjikt1p" path="res://ui/elijah_k-eat-your-apple-275859.mp3" id="3_fu7sn"]
-[ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://UI/audio_control.gd" id="4_jix8l"]
-[ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://UI/window_options.gd" id="5_glbon"]
-[ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://UI/inputremapbutton.gd" id="6_nlkkf"]
+[ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="4_jix8l"]
+[ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="5_glbon"]
+[ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://ui/inputremapbutton.gd" id="6_nlkkf"]
 [ext_resource type="PackedScene" path="res://UI/input_remap_button.tscn" id="6_qe12f"]
+[ext_resource type="AudioStream" uid="uid://cral320sc5djp" path="res://ui/Glimera theme 1.mp3" id="8_arv2f"]
 [ext_resource type="AudioStream" uid="uid://oiod6kmnyfnc" path="res://ui/musheran-beep-313342.mp3" id="9_2mudq"]
 
 [sub_resource type="Gradient" id="Gradient_7vrkn"]
@@ -445,7 +445,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 text = "Back"
 
 [node name="Background Music" type="AudioStreamPlayer" parent="." unique_id=984557550]
-stream = ExtResource("3_fu7sn")
+stream = ExtResource("8_arv2f")
 autoplay = true
 bus = &"Music"
 parameters/looping = true

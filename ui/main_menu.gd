@@ -19,7 +19,7 @@ func _on_start_button_pressed() -> void:
 	button_sfx.play()
 	await button_sfx.finished
 	background_music.stop()
-	get_tree().root.get_node("Root").show_overworld()
+	get_tree().root.get_node("Root").from_main_menu_to_overworld()
 	pass
 
 func _on_settings_button_pressed() -> void:
@@ -37,9 +37,3 @@ func _on_quit_button_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	button_sfx.play()	
 	_ready()
-
-
-func _on_reset_button_pressed() -> void:
-	button_sfx.play()
-	
-	DirAccess.remove_absolute("user://save.cfg")

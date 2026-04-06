@@ -3,11 +3,13 @@ extends Node
 @onready var ui_scene = $UIScene
 @onready var overworld = $Overworld3D
 @onready var battle_container = $BattleScene3D
+@onready var transition = $SceneTransition
 
 var current_battle = null
 var current_state = ""
 
 func _ready():
+	$SceneTransition/ColorRect.modulate.a = 0
 	show_main_menu()
 
 # -----------------
@@ -61,6 +63,10 @@ func _cleanup_battle():
 # -----------------
 
 #This is where you add the transitions.
+func from_main_menu_to_overworld():
+	transition.play("fade", func():
+		show_overworld()
+	)
 
 func from_overworld_to_battle():
 	#remember to add a battle_scene here
