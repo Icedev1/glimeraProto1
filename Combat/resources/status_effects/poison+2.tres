@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://bma5vwk3yanml"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_evr1a"]
+
+[resource]
+script = ExtResource("1_evr1a")
+effect_name = "Poison"
+type = 3
+value = 2.0
+metadata/_custom_type_script = "uid://c1nu6bnlqi3dc"

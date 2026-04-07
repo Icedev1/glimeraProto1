@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjxw353gytrvj"]
+
+[ext_resource type="Texture2D" uid="uid://cum2gtr8p7odn" path="res://Grafting/Violin/Violin 1_Wood023_1K-PNG_Color.png" id="1_vviwl"]
+[ext_resource type="Texture2D" uid="uid://dy6axjvheq3d7" path="res://Grafting/Violin/Violin 1_Wood023_1K-PNG_NormalGL.png" id="2_qs1fm"]
+[ext_resource type="Texture2D" uid="uid://dk2c3jb6b4vxd" path="res://Grafting/Violin/Violin 1_Wood023_1K-PNG_Roughness.png" id="3_lsuu1"]
+
+[resource]
+albedo_texture = ExtResource("1_vviwl")
+roughness_texture = ExtResource("3_lsuu1")
+normal_enabled = true
+normal_texture = ExtResource("2_qs1fm")

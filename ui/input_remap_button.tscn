@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dsc3ihpwxa6w6"]
+
+[ext_resource type="Script" uid="uid://bfp8h3ncb12a2" path="res://UI/inputremapbutton.gd" id="1_8ru0n"]
+
+[node name="InputRemapButton" type="Button" unique_id=162217419]
+text = "KeyInput1"
+script = ExtResource("1_8ru0n")

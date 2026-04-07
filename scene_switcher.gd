@@ -1,5 +1,5 @@
 extends Node
-var pauseScene = preload("res://Equip UI.tscn")
+var pauseScene = preload("uid://cljfxgcfyk4fv") # EquipUI scene
 var pauseInstance
 @export var canvas : CanvasLayer
 
@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 			get_tree().paused = true
 			pauseInstance = pauseScene.instantiate()
 			canvas.add_child(pauseInstance)
+			
 
 		
