@@ -7,7 +7,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func DialogicSignal(arg:String):
@@ -18,11 +18,11 @@ func DialogicSignal(arg:String):
 	if arg == "battle_start": 
 		print("battle started") 
 		
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
 	is_player_in_range = true
 	Dialogue.interactRange.emit(self, true)
 
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	is_player_in_range = false
 	Dialogue.interactRange.emit(self, false)
