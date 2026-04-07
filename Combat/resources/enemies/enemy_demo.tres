@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://kc77x8sqfqls"]
 
-[ext_resource type="Script" uid="uid://k1pse7umexwa" path="res://scripts/data/enemy_data.gd" id="1_ihha7"]
-[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="2_nt0bt"]
-[ext_resource type="Resource" uid="uid://d16evo8w5imeb" path="res://resources/weapons/table_leg.tres" id="3_gybd6"]
-[ext_resource type="Resource" uid="uid://7exwce5lhtws" path="res://resources/weapons/flash_light.tres" id="4_gybd6"]
+[ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="1_ihha7"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_nt0bt"]
+[ext_resource type="Resource" uid="uid://d16evo8w5imeb" path="res://Combat/resources/weapons/table_leg.tres" id="3_gybd6"]
+[ext_resource type="Resource" uid="uid://7exwce5lhtws" path="res://Combat/resources/weapons/flash_light.tres" id="4_gybd6"]
 
 [resource]
 script = ExtResource("1_ihha7")

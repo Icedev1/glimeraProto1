@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://csl1v4wtvdm2c"]
 
-[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_bg381"]
-[ext_resource type="Resource" uid="uid://cyv14qy4nv1uh" path="res://resources/status_effects/damage_buff_+2x3.tres" id="2_bg381"]
-[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="3_hkx7w"]
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_bg381"]
+[ext_resource type="Resource" uid="uid://cyv14qy4nv1uh" path="res://Combat/resources/status_effects/damage_buff_+2x3.tres" id="2_bg381"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_g40sq"]
 
 [resource]
-script = ExtResource("3_hkx7w")
+script = ExtResource("3_g40sq")
 weapon_name = "W_dmgBuff"
 attack_damage = 1
 cooldown = 2.5
 hp_cost = 2
 effects = Array[ExtResource("1_bg381")]([ExtResource("2_bg381")])
-metadata/_custom_type_script = "uid://cbcgrkqaylv7i"
