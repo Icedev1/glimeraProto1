@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuaxdh21q1jls"]
 
-[ext_resource type="Script" uid="uid://ciib062if57lh" path="res://scripts/ui/action_card.gd" id="1_xkd22"]
+[ext_resource type="Script" uid="uid://680e4utteuks" path="res://Combat/scripts/ui/action_card.gd" id="1_xkd22"]
 
 [node name="ActionCard" type="PanelContainer" unique_id=1847938993]
 custom_minimum_size = Vector2(120, 160)

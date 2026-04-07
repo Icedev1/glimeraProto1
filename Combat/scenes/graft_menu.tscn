@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byst06jwi71i5"]
 
-[ext_resource type="Script" uid="uid://dvt4u3aua18u8" path="res://scripts/battle/graft_menu.gd" id="1_1f5ry"]
-[ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://scenes/weapon_card.tscn" id="2_dsoa3"]
+[ext_resource type="Script" uid="uid://dt2k0fdeka5k6" path="res://Combat/scripts/battle/graft_menu.gd" id="1_1f5ry"]
+[ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="2_dsoa3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsoa3"]
 bg_color = Color(0.20871013, 0.20871016, 0.20871013, 1)

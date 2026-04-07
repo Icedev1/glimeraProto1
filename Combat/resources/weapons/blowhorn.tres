@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cxrkjxb6p6s30"]
 
-[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_nso66"]
-[ext_resource type="Resource" uid="uid://cbbauurg4p3he" path="res://resources/status_effects/slow.tres" id="2_hpnp0"]
-[ext_resource type="Script" uid="uid://cbcgrkqaylv7i" path="res://scripts/data/weapon.gd" id="3_4gp6m"]
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_nso66"]
+[ext_resource type="Resource" uid="uid://cbbauurg4p3he" path="res://Combat/resources/status_effects/slow.tres" id="2_hpnp0"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_y7rhi"]
 
 [resource]
-script = ExtResource("3_4gp6m")
+script = ExtResource("3_y7rhi")
 weapon_name = "blowhorn"
 attack_damage = 2
 cooldown = 2.5
 hp_cost = 1
 effects = Array[ExtResource("1_nso66")]([ExtResource("2_hpnp0")])
-metadata/_custom_type_script = "uid://cbcgrkqaylv7i"
