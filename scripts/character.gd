@@ -3,61 +3,33 @@ extends CharacterBody3D
 const SPEED = 1
 const JUMP_VELOCITY = 2.5
 
-@onready var edge_ray: RayCast3D = $EdgeRay
 @export var camera : Camera3D
 
-
-#grafting system
-enum ArmItem {
-	VIOLIN,
-	WOODSTOMP
-}
-
-var current_item = ArmItem.VIOLIN
-
-@onready var violin = $ArmSlot/Violin
-@onready var woodstomp = $ArmSlot/WoodStomp
+var equipped_item
 
 func _ready() -> void:
-	update_visual()
-
-
-func _rotate_toward_movement(delta, direction):
-	const TURN_SPEED = 9.0
-	var move_dir := Vector3(velocity.x, 0, velocity.z)
-
-	if move_dir.length() < 0.05:
-		return
-
-	rotation.y = lerp_angle(rotation.y, (atan2(direction.x, direction.z) - PI / 2), delta * TURN_SPEED)
-
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
+	if get_tree().paused:
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
 	if Dialogic.current_timeline != null:
 		return
 
-
-	#input for the grafting
-	if Input.is_action_just_pressed("switch_item"):
-		if current_item == ArmItem.VIOLIN:
-			switch_item(ArmItem.WOODSTOMP)
-		else:
-			switch_item(ArmItem.VIOLIN)
-
 	if Input.is_action_just_pressed("use_item"):
 		use_item()
-	# =========================
 
+	move_and_slide()
 
 func get_input() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
-
 
 func _get_camera_direction(input_dir: Vector2) -> Vector3:
 	if input_dir == Vector2.ZERO:
@@ -72,7 +44,6 @@ func _get_camera_direction(input_dir: Vector2) -> Vector3:
 
 	return (cam_right * input_dir.x + cam_forward * input_dir.y).normalized()
 
-
 func rotate_toward(direction: Vector3, delta: float):
 	const TURN_SPEED = 9.0
 	var move_dir = Vector3(velocity.x, 0, velocity.z)
@@ -80,31 +51,25 @@ func rotate_toward(direction: Vector3, delta: float):
 		return
 	rotation.y = lerp_angle(rotation.y, atan2(direction.x, direction.z) - PI / 2, delta * TURN_SPEED)
 
-
-
-# grafting system
-
-func switch_item(new_item: ArmItem):
-	current_item = new_item
-	update_visual()
-
-
-func update_visual():
-	violin.visible = current_item == ArmItem.VIOLIN
-	woodstomp.visible = current_item == ArmItem.WOODSTOMP
-
+func set_item(item):
+	equipped_item = item
+	print("Equipped:", item.name)
 
 func use_item():
-	match current_item:
-		ArmItem.VIOLIN:
-			play_violin()
-		ArmItem.WOODSTOMP:
-			do_woodstomp()
+	if equipped_item == null:
+		return
 
+	if equipped_item.name == "Violin":
+		play_violin()
+	elif equipped_item.name == "Woodstomp":
+		do_woodstomp()
 
 func play_violin():
 	print("violin used")
 
-
 func do_woodstomp():
-	print("woodstomp used")
+	velocity.y = 6
+
+
+func _on_inventory_ui_item_selected(item: Variant) -> void:
+	pass # Replace with function body.
