@@ -14,12 +14,11 @@ func init_player() -> void:
 	data = PlayerData.new()
 	data.max_hp = 25
 	data.inventory = _default_inventory()
-	data.equipped[0] = preload("uid://dhctuph5xn3k2") # lighter
-	data.equipped[1] = preload("uid://cxrkjxb6p6s30") # blowhorn
-	data.equipped[2] = preload("uid://7exwce5lhtws")  #flashlight
-	data.equipped[3] = preload("uid://cq6h2qdc81ayw") # violin (heal + empower)
+	data.equipped[0] = preload("res://Combat/resources/weapons/lighter.tres") # lighter
+	data.equipped[1] = preload("res://Combat/resources/weapons/blowhorn.tres") # blowhorn
+	data.equipped[2] = preload("res://Combat/resources/weapons/flash_light.tres")  #flashlight
+	data.equipped[3] = preload("res://Combat/resources/weapons/violin.tres") # violin (heal + empower)
 	#save()
-
 
 
 #func save() -> void:
@@ -27,16 +26,16 @@ func init_player() -> void:
 
 func _default_inventory() -> Array[Weapon]:
 	return [
-		preload("uid://bwat6x5bxiu6x"), #poision arm
-		preload("uid://cxrkjxb6p6s30"), # blowhorn (slow)
-		preload("uid://d16evo8w5imeb"), # tabel_leg (multi hit)
-		preload("uid://dhctuph5xn3k2"), # lighter (burn)
-		preload("uid://cly1nbgmusfg1"), # run shoe (haste)
-		preload("uid://7exwce5lhtws"), # flashlight(stun)
-		preload("uid://cq6h2qdc81ayw"), # violin (quick_Heal + empower)
-		preload("uid://csl1v4wtvdm2c"), # w1 (dmg_buff)
-		preload("uid://pw833xw0y2in"), # w2 (self_Harm)
-		preload("uid://6qt5mfg0b4wo"), # w3 (weaken)
-		preload("uid://ypx12txeeeqe"),# w4 (lifesteal)
+		preload("res://Combat/resources/weapons/poison_arm.tres"), #poision arm
+		preload("res://Combat/resources/weapons/blowhorn.tres"), # blowhorn (slow)
+		preload("res://Combat/resources/weapons/table_leg.tres"), # tabel_leg (multi hit)
+		preload("res://Combat/resources/weapons/lighter.tres"), # lighter (burn)
+		preload("res://Combat/resources/weapons/run_kit.tres"), # run kit (haste)
+		preload("res://Combat/resources/weapons/flash_light.tres"), # flashlight(stun)
+		preload("res://Combat/resources/weapons/violin.tres"), # violin (quick_Heal + empower)
+		preload("res://Combat/resources/weapons/w1.tres"), # w1 (dmg_buff)
+		preload("res://Combat/resources/weapons/w2.tres"), # w2 (self_Harm)
+		preload("res://Combat/resources/weapons/w3.tres"), # w3 (weaken)
+		preload("res://Combat/resources/weapons/w4.tres"),# w4 (lifesteal)
 		
 	]

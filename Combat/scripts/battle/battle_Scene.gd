@@ -16,6 +16,7 @@ extends Node3D
 @onready var block_card: ActionCard = %BlockCard
 @onready var graft_card: ActionCard = %GraftCard
 
+
 @onready var battle_log: RichTextLabel = %battle_log
 
 @onready var result_screen: CanvasLayer = %ResultScreen
@@ -29,7 +30,7 @@ extends Node3D
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
 func _ready() -> void:
-	assert(enemy_resource != null, "BattleScene.enemy_resource must be set in the inspector")
+	#assert(enemy_resource != null, "BattleScene.enemy_resource must be set in the inspector")
 	BattleManager.enemy = enemy_resource
 	result_screen.hide()
 	graft_menu.hide()
