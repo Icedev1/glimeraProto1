@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://bqk5x8iden4rm" path="res://root/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://85nw8bpyau5k" path="res://ui/main_menu.tscn" id="2_js5vo"]
 [ext_resource type="PackedScene" uid="uid://caa206tiuvujl" path="res://protoarea.tscn" id="3_ovlcs"]
-[ext_resource type="Script" path="res://root/screen_transition.gd" id="4_ovlcs"]
+[ext_resource type="Script" uid="uid://b2eqqaj8wy4yd" path="res://root/screen_transition.gd" id="4_ovlcs"]
+[ext_resource type="Shader" uid="uid://d3agx2y3hiqpj" path="res://Shaders/screenshatter_transition.gdshader" id="5_b33ej"]
+[ext_resource type="Shader" uid="uid://bwj3n5uinfpvt" path="res://Shaders/clockwipe_transition.gdshader" id="5_e2nrw"]
+[ext_resource type="Shader" uid="uid://y3npo0eylr6e" path="res://Shaders/screenshake.gdshader" id="7_e2nrw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gj8ci"]
+shader = ExtResource("5_e2nrw")
+shader_parameter/fade = 1.0
+shader_parameter/center_x = 0.5
+shader_parameter/center_y = 0.5
 
 [sub_resource type="Animation" id="Animation_ovlcs"]
 length = 0.001
@@ -18,6 +27,57 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate.a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_e2nrw"]
+resource_name = "clock_wipe"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_b33ej"]
@@ -52,12 +112,55 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_y3dhr"]
+resource_name = "screenshatter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/time")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.65]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e2nrw"]
 _data = {
 &"RESET": SubResource("Animation_ovlcs"),
+&"clock_wipe": SubResource("Animation_e2nrw"),
 &"fade_in": SubResource("Animation_b33ej"),
-&"fade_out": SubResource("Animation_y5gj7")
+&"fade_out": SubResource("Animation_y5gj7"),
+&"screenshatter": SubResource("Animation_y3dhr")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5gj7"]
+shader = ExtResource("5_b33ej")
+shader_parameter/time = 0.0
+shader_parameter/piece_scale = 100.0
+shader_parameter/explosion = 2.5
+shader_parameter/fade_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jge4"]
+shader = ExtResource("7_e2nrw")
+shader_parameter/ShakeStrength = 0.0
+shader_parameter/FactorA = Vector2(100, 100)
+shader_parameter/FactorB = Vector2(1, 1)
+shader_parameter/magnitude = Vector2(0.01, 0.01)
 
 [node name="Root" type="Node" unique_id=514390605]
 script = ExtResource("1_pq8q7")
@@ -69,12 +172,16 @@ script = ExtResource("1_pq8q7")
 [node name="BattleScene3D" type="Node3D" parent="." unique_id=1267662630]
 
 [node name="SceneTransition" type="CanvasLayer" parent="." unique_id=171870292]
+visible = false
 script = ExtResource("4_ovlcs")
 
 [node name="ColorRect" type="ColorRect" parent="SceneTransition" unique_id=2093816001]
+material = SubResource("ShaderMaterial_gj8ci")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -82,3 +189,34 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SceneTransition" unique_id=588910038]
 libraries/ = SubResource("AnimationLibrary_e2nrw")
+
+[node name="SceneTransition2" type="CanvasLayer" parent="." unique_id=16229294]
+script = ExtResource("4_ovlcs")
+
+[node name="ColorRect" type="ColorRect" parent="SceneTransition2" unique_id=472699082]
+material = SubResource("ShaderMaterial_y5gj7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneTransition2" unique_id=1719618172]
+libraries/ = SubResource("AnimationLibrary_e2nrw")
+
+[node name="SceneShake" type="CanvasLayer" parent="." unique_id=1644582783]
+script = ExtResource("4_ovlcs")
+
+[node name="ColorRect" type="ColorRect" parent="SceneShake" unique_id=810537908]
+material = SubResource("ShaderMaterial_5jge4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

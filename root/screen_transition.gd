@@ -4,7 +4,7 @@ extends CanvasLayer
 
 var is_transitioning = false
 
-func play(anim_name: String, mid_callback: Callable):
+func playfade(mid_callback: Callable):
 	if is_transitioning:
 		return
 	
@@ -12,7 +12,7 @@ func play(anim_name: String, mid_callback: Callable):
 	
 	print("TRANSITION START")
 	
-	anim.play(anim_name + "_out")
+	anim.play("fade_out")
 	await anim.animation_finished
 	
 	print("MIDPOINT")
@@ -20,9 +20,42 @@ func play(anim_name: String, mid_callback: Callable):
 	if mid_callback:
 		mid_callback.call()
 	
-	anim.play(anim_name + "_in")
+	anim.play("fade_in")
 	await anim.animation_finished
 	
 	print("TRANSITION END")
 	
+	is_transitioning = false
+
+func playclockwipe(mid_callback: Callable):
+	if is_transitioning:
+		return
+	
+	is_transitioning = true
+	
+	anim.play("fade_out",-1,0.5)
+	await anim.animation_finished	
+	
+	if mid_callback:
+		mid_callback.call()
+	
+	anim.play("clock_wipe")
+	await anim.animation_finished
+	
+	is_transitioning = false
+
+func playscreenshatter(mid_callback: Callable):
+	if is_transitioning:
+		return
+	
+	is_transitioning = true
+	
+	anim.play("screenshatter")
+	await get_tree().create_timer(0.1).timeout
+	
+	if mid_callback:
+		mid_callback.call()
+	
+	await anim.animation_finished	
+
 	is_transitioning = false

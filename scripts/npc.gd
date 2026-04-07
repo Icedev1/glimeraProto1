@@ -16,7 +16,8 @@ func DialogicSignal(arg:String):
 		return
 	#starts battle(WIP)
 	if arg == "battle_start": 
-		print("battle started") 
+		print("battle started")
+		get_tree().root.get_node("Root").from_main_menu_to_overworld()
 		
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	is_player_in_range = true
