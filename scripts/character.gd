@@ -3,7 +3,6 @@ extends CharacterBody3D
 
 const SPEED = 1
 const JUMP_VELOCITY = 2.5
-@onready var edge_ray: RayCast3D = $EdgeRay
 @export var camera : Camera3D
 
 func _ready() -> void:
