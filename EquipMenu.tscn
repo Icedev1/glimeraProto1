@@ -50,10 +50,7 @@ environment = SubResource("Environment_6wvo2")
 [node name="CharacterBody3D" parent="." unique_id=201702736 instance=ExtResource("30_adlbx")]
 transform = Transform3D(0.019119412, 0, -0.1487765, 0, 0.14999999, 0, 0.1487765, 0, 0.019119412, 0, 0, 0)
 
-[node name="Armature" parent="CharacterBody3D/Proto Gli 1" parent_id_path=PackedInt32Array(201702736, 1252514508) index="0" unique_id=1798335600]
-transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763566e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
-
-[node name="Skeleton" parent="CharacterBody3D/Proto Gli 1/Armature" index="0" unique_id=1031360999]
+[node name="Skeleton" parent="CharacterBody3D/Proto Gli 1/Armature" parent_id_path=PackedInt32Array(201702736, 1252514508, 1798335600) index="0" unique_id=1031360999]
 bones/0/position = Vector3(-0.013579376, 5.568935, 0.009823829)
 bones/0/rotation = Quaternion(-0.026588378, -0.0013599106, -0.010585135, 0.9995895)
 bones/1/rotation = Quaternion(0.013826033, -0.0023302173, 0.0009421809, 0.9999013)
@@ -150,8 +147,30 @@ transform = Transform3D(0.9946318, -0.04112623, -0.0949543, 0.031880386, 0.99478
 [node name="Shin Guard" parent="CharacterBody3D/Proto Gli 1/Armature/Skeleton" index="31" unique_id=769869634]
 mesh = SubResource("ArrayMesh_erra4")
 
+[node name="BoneAttachment3D" parent="CharacterBody3D/Proto Gli 1/Armature/Skeleton" index="37" unique_id=1349461712]
+transform = Transform3D(0.9966322, 0.007973359, -0.08161284, -0.010239314, 0.9995725, -0.027383892, 0.081359625, 0.028127326, 0.9962878, 0.02226448, 7.4976974, -0.09008293)
+
+[node name="Icosphere" parent="CharacterBody3D/Proto Gli 1/Armature/Skeleton" index="42" unique_id=1155345935]
+transform = Transform3D(0.9946318, -0.04112623, -0.0949543, 0.031880386, 0.99478203, -0.096913815, 0.09844455, 0.093366385, 0.9907529, 0.0400483, 8.891133, 0.06900609)
+
 [node name="AnimationPlayer" parent="CharacterBody3D/Proto Gli 1" parent_id_path=PackedInt32Array(201702736, 1252514508) index="1" unique_id=552966391]
 autoplay = &"Idle Straight"
+
+[node name="SoftBody3D" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/BoneAttachment3D" parent_id_path=PackedInt32Array(201702736, 347271371) index="0" unique_id=673280676]
+attachments/0/spatial_attachment_path = NodePath("..")
+attachments/0/offset = Vector3(1.0108254, 0.06704974, -0.3995533)
+attachments/1/spatial_attachment_path = NodePath("..")
+attachments/1/offset = Vector3(0.6774657, 0.067044616, -0.39950544)
+attachments/2/spatial_attachment_path = NodePath("..")
+attachments/2/offset = Vector3(0.34410596, 0.06703949, -0.3994575)
+attachments/3/spatial_attachment_path = NodePath("..")
+attachments/3/offset = Vector3(-0.32261345, 0.06702924, -0.3993618)
+attachments/4/spatial_attachment_path = NodePath("..")
+attachments/4/offset = Vector3(-0.6559731, 0.06702411, -0.39931387)
+attachments/5/spatial_attachment_path = NodePath("..")
+attachments/5/offset = Vector3(-0.9893328, 0.067018986, -0.399266)
+attachments/6/spatial_attachment_path = NodePath("..")
+attachments/6/offset = Vector3(0.01074626, 0.067034364, -0.39940965)
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/Proto Gli 1"]
