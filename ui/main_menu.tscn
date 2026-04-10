@@ -14,28 +14,34 @@
 colors = PackedColorArray(1, 1, 1, 1, 0.21710122, 0.21710122, 0.21710122, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
-bg_color = Color(0.09019608, 0, 0.8666667, 1)
+bg_color = Color(0, 0.56078434, 0.09019608, 1)
 corner_radius_top_left = 100
+corner_radius_top_right = 100
 corner_radius_bottom_right = 100
-corner_detail = 2
+corner_radius_bottom_left = 100
+corner_detail = 1
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 content_margin_right = 35.0
-bg_color = Color(0.05195318, 0, 0.6239103, 1)
+bg_color = Color(0, 0.56078434, 0.09019608, 1)
 corner_radius_top_left = 100
+corner_radius_top_right = 100
 corner_radius_bottom_right = 100
-corner_detail = 2
+corner_radius_bottom_left = 100
+corner_detail = 1
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
 content_margin_right = 35.0
-bg_color = Color(0.09019608, 0, 0.8666667, 0.6862745)
+bg_color = Color(0, 0.56078434, 0.09019608, 0.6862745)
 corner_radius_top_left = 100
+corner_radius_top_right = 100
 corner_radius_bottom_right = 100
-corner_detail = 2
+corner_radius_bottom_left = 100
+corner_detail = 1
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 2
 
@@ -46,7 +52,7 @@ grow_end = -7.0
 thickness = 6
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_jix8l"]
-color = Color(0.09019608, 0, 0.8666667, 1)
+color = Color(0, 0.56078434, 0.09019608, 1)
 thickness = 6
 
 [node name="Main Menu" type="Control" unique_id=630457395]
@@ -202,7 +208,7 @@ offset_top = -84.168
 offset_right = 192.49997
 offset_bottom = -44.168
 theme_override_constants/side_margin = 0
-current_tab = 2
+current_tab = 1
 
 [node name="Audio" type="VBoxContainer" parent="Settings/TabContainer" unique_id=929983320]
 visible = false
@@ -255,7 +261,6 @@ script = ExtResource("4_jix8l")
 audio_bus_name = "SFX"
 
 [node name="Video" type="VBoxContainer" parent="Settings/TabContainer" unique_id=110452151]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -304,6 +309,7 @@ popup/item_2/id = 2
 script = ExtResource("5_glbon")
 
 [node name="Controls" type="VBoxContainer" parent="Settings/TabContainer" unique_id=1024124700]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

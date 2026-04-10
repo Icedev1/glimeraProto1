@@ -23,8 +23,8 @@ buses/default_bus_layout="uid://cbi7bxtx143bl"
 
 Dialogue="*uid://f40fbwgpnkvu"
 Dialogic="*uid://ds2q0uclmolvu"
-PlayerManager="*uid://dujbeol33fjtr"
 BattleManager="*uid://bks8pyajw4qln"
+PlayerManager="*uid://dujbeol33fjtr"
 Debug="*uid://br2ibcwc8lhs4"
 
 [dialogic]
@@ -95,6 +95,7 @@ audio/type_sound_bus="SFX"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+window/stretch/mode="viewport"
 
 [dotnet]
 

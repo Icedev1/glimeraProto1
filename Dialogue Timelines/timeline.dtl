@@ -8,7 +8,10 @@ join skull right [animation="Fade In"]
 skull: [shake rate=20 level=15]AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHH[/shake]
 - Are you okay?
 	skull: Yes. I'm fine. thanks for asking.
+	leave --All-- [animation="Instant Out" length="0.0" wait="true"]
+	[wait time="0.5"]
 	[signal arg="battle_start"]
+	[end_timeline]
 - Leave him be
 	Gli: (It is probably best to leave him alone...)
 skull: [shake rate=20 level=15]AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHH[/shake]

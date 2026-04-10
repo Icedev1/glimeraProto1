@@ -138,7 +138,8 @@ func _on_battle_ended(player_won: bool) -> void:
 	result_screen.show()
 
 func _on_continue_pressed() -> void:
-	get_tree().reload_current_scene()
+	get_tree().root.get_node("Root").from_battle_to_overworld()
+	#get_tree().reload_current_scene()
 
 # ── Graft ─────────────────────────────────────────────────────────────────────
 func _on_graft_requested() -> void:

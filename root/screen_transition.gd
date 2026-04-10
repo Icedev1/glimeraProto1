@@ -51,7 +51,7 @@ func playscreenshatter(mid_callback: Callable):
 	is_transitioning = true
 	
 	anim.play("screenshatter")
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.2).timeout
 	
 	if mid_callback:
 		mid_callback.call()
