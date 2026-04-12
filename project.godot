@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GLIMERA proto1"
-run/main_scene="uid://caa206tiuvujl"
+run/main_scene="uid://c2ughbctkehou"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://images/icon.svg"
 
@@ -102,12 +102,18 @@ project/assembly_name="GLIMERA proto1"
 
 [editor]
 
+movie_writer/video_quality=0.5
 movie_writer/ogv/audio_quality=0.04999999999999999
 movie_writer/movie_file="C:/Users/MSI/Documents/Godot Engine/Godot Projects/glimeraProto1/video1.avi"
+movie_writer/fps=30
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/github_copilot/plugin.cfg")
+
+[global_group]
+
+camera_switches=""
 
 [gui]
 

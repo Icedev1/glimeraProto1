@@ -5,6 +5,6 @@ extends State
 func enter():
 	player.velocity.y = player.JUMP_VELOCITY
 
-func physics_update(delta):
+func physics_update(_delta):
 	# Transition to fall immediately after jump is applied
 	state_machine.change_state(fall_state)

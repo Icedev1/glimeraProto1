@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dy6s1h86csg5m"
+path="res://.godot/imported/building_6.obj-f88172b39ac2ce1d0df5fdd2f6f495b7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_6.obj-f88172b39ac2ce1d0df5fdd2f6f495b7.mesh"]
+
+source_file="res://meshes/SamGrady buildings/building_6.obj"
+dest_files=["res://.godot/imported/building_6.obj-f88172b39ac2ce1d0df5fdd2f6f495b7.mesh", "res://.godot/imported/building_6.obj-f88172b39ac2ce1d0df5fdd2f6f495b7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

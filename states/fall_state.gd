@@ -2,7 +2,7 @@ extends State
 
 @export var idle_state : State
 
-func physics_update(delta):
+func physics_update(_delta):
 	var input_dir = player.get_input()
 	var direction = player._get_camera_direction(input_dir)
 

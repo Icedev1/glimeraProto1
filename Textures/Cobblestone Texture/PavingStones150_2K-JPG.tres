@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4d1iferf66n5" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_Roughness.jpg" id="Roughness"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("Color")
 roughness_texture = ExtResource("Roughness")
 roughness_texture_channel = 4
@@ -17,5 +18,6 @@ ao_texture = ExtResource("AmbientOcclusion")
 ao_texture_channel = 4
 heightmap_enabled = true
 heightmap_texture = ExtResource("Displacement")
-uv1_scale = Vector3(3.19, 1.945, 1.945)
+uv1_scale = Vector3(0.353, 0.574, 0.699)
+uv1_triplanar = true
 uv1_world_triplanar = true
