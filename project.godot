@@ -104,7 +104,7 @@ project/assembly_name="GLIMERA proto1"
 [editor]
 
 movie_writer/ogv/audio_quality=0.04999999999999999
-movie_writer/movie_file="C:/Users/MSI/Documents/Godot Engine/Godot Projects/glimeraProto1/video1.avi"
+movie_writer/movie_file="C:/Users/Sayfeddine/Documents/GitHub/glimeraProto1/video1.avi"
 
 [editor_plugins]
 
