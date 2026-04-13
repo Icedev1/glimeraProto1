@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b6cogfpad2l2y"]
+
+[ext_resource type="PackedScene" uid="uid://plpn606sxi2u" path="res://meshes/skull npc.fbx" id="1_ideak"]
+[ext_resource type="Script" uid="uid://cqrxwoqsx5jvf" path="res://scripts/npc.gd" id="1_xxcha"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ideak"]
+radius = 0.1388367
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ideak"]
+height = 0.42041016
+
+[node name="skull" type="Node3D" unique_id=1200212190]
+script = ExtResource("1_xxcha")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1659989361]
+collision_mask = 3
+
+[node name="skull npc" parent="CharacterBody3D" unique_id=1502618100 instance=ExtResource("1_ideak")]
+transform = Transform3D(0.095909685, 0, 0.028307809, 0, 0.1, 0, -0.028307809, 0, 0.095909685, -0.004955888, 0, -0.020051196)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1299306445]
+shape = SubResource("SphereShape3D_ideak")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=257414457]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=678695941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.091552734, 0)
+shape = SubResource("CylinderShape3D_ideak")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

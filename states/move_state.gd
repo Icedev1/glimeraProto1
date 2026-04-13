@@ -3,12 +3,16 @@ extends State
 @export var idle_state : State
 @export var jump_state : State
 @export var fall_state : State
+@onready var input_dir
 
 func enter():
 	state_machine.animMachine.travel("Walk")
 	
 func physics_update(delta):
-	var input_dir = player.get_input()
+	if input_dir != player.get_input():
+		player.camera = CamMan.instance.getPlayerCam()
+		input_dir = player.get_input()
+		
 	var direction = player._get_camera_direction(input_dir)
 
 

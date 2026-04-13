@@ -16,7 +16,10 @@ func DialogicSignal(arg:String):
 		return
 	#starts battle(WIP)
 	if arg == "battle_start": 
-		print("battle started") 
+		print("battle started")
+		
+		#$"../WorldEnvironment".environment = null
+		get_tree().root.get_node("Root").from_overworld_to_battle()
 		
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	is_player_in_range = true

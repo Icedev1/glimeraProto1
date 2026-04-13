@@ -1,0 +1,29 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cu3jy63f6acrj"]
+
+[ext_resource type="AudioStream" uid="uid://cg1lvmy7w4cwv" path="res://Sounds/SFX/stone1.wav" id="1_577i4"]
+[ext_resource type="AudioStream" uid="uid://t5uuwuy24exq" path="res://Sounds/SFX/stone2.wav" id="2_y1csg"]
+[ext_resource type="AudioStream" uid="uid://didy5mnhqvtrq" path="res://Sounds/SFX/stone3.wav" id="3_gtnqr"]
+[ext_resource type="AudioStream" uid="uid://cuxjbvsgwfxua" path="res://Sounds/SFX/stone4.wav" id="4_u48u1"]
+[ext_resource type="AudioStream" uid="uid://do1vjwj8x6i1k" path="res://Sounds/SFX/step_stone1.wav" id="5_5ptfm"]
+[ext_resource type="AudioStream" uid="uid://cgtxglttia73s" path="res://Sounds/SFX/step_stone2.wav" id="6_li4re"]
+[ext_resource type="AudioStream" uid="uid://ficobjmwvtmd" path="res://Sounds/SFX/step_stone3.wav" id="7_fcerw"]
+[ext_resource type="AudioStream" uid="uid://cowcqaj47lo66" path="res://Sounds/SFX/step_stone4.wav" id="8_tethd"]
+[ext_resource type="AudioStream" uid="uid://dv1ocvxhf8set" path="res://Sounds/SFX/step_stone5.wav" id="9_d7xld"]
+
+[resource]
+random_pitch = 1.1512225
+streams_count = 9
+stream_0/stream = ExtResource("1_577i4")
+stream_1/stream = ExtResource("2_y1csg")
+stream_2/stream = ExtResource("3_gtnqr")
+stream_3/stream = ExtResource("4_u48u1")
+stream_4/stream = ExtResource("5_5ptfm")
+stream_4/weight = 0.3
+stream_5/stream = ExtResource("6_li4re")
+stream_5/weight = 0.3
+stream_6/stream = ExtResource("7_fcerw")
+stream_6/weight = 0.3
+stream_7/stream = ExtResource("8_tethd")
+stream_7/weight = 0.3
+stream_8/stream = ExtResource("9_d7xld")
+stream_8/weight = 0.3
