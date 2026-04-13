@@ -178,7 +178,7 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 
 		defender.take_damage(dmg)
 		total_damage_dealt += dmg
-
+		
 		# Life steal per hit
 		if w.life_steal > 0.0:
 			var heal_amount := int(dmg * w.life_steal)
