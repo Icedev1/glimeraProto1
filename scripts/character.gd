@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 1
+const SPEED = 3
 const JUMP_VELOCITY = 2.5
 @export var camera : Camera3D
 
