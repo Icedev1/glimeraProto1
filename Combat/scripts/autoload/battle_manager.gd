@@ -34,6 +34,10 @@ var _enemy_weapon_index: int = 0
 
 var _battle_active: bool = false
 
+var player_mesh: MeshInstance3D
+var enemy_mesh: MeshInstance3D
+
+
 # ── Start ─────────────────────────────────────────────────────────────────────
 func start_battle() -> void:
 	assert(enemy != null, "BattleManager.enemy must be set before start_battle()")
@@ -60,8 +64,18 @@ func start_battle() -> void:
 
 	_schedule_enemy_attack()
 	log_message("⚔️ %s appears!" % enemy.unit_name)
+	
+	#Seperate Meshes
+	player_mesh.set_surface_override_material(
+		0,
+		player_mesh.get_active_material(0).duplicate()
+	)
+	enemy_mesh.set_surface_override_material(
+		0,
+		enemy_mesh.get_active_material(0).duplicate()
+	)
 
-# ── Process ───────────────────────────────────────────────────────────────────
+# ── Process ───────────────────────────────────────────────────────────────────	
 func _process(delta: float) -> void:
 	if not _battle_active:
 		return
@@ -177,6 +191,24 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 			was_blocked = true
 
 		defender.take_damage(dmg)
+		#flash on hit
+		var visual: MeshInstance3D = player_mesh if defender == _player else enemy_mesh
+
+		if visual:
+			var mat := visual.get_surface_override_material(0)
+
+			if mat is ShaderMaterial and dmg!=0:
+				get_tree().root.get_node("Root").screenshake()
+				mat.set_shader_parameter("flash_intensity", 1.0)
+
+				var tween := get_tree().create_tween()
+
+				tween.tween_property(mat, "shader_parameter/flash_intensity", 1.2, 0.03)
+				tween.tween_property(mat, "shader_parameter/flash_intensity", 1.0, 0.05)
+				tween.tween_property(mat, "shader_parameter/flash_intensity", 0.0, 0.25)\
+					.set_trans(Tween.TRANS_QUAD)\
+					.set_ease(Tween.EASE_OUT)
+		
 		total_damage_dealt += dmg
 		
 		# Life steal per hit
