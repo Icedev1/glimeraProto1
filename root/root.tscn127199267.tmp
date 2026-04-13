@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwb5na1g760dl"]
+
+[ext_resource type="Script" uid="uid://bqk5x8iden4rm" path="res://root/root.gd" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://85nw8bpyau5k" path="res://ui/main_menu.tscn" id="2_js5vo"]
+[ext_resource type="PackedScene" uid="uid://caa206tiuvujl" path="res://protoarea.tscn" id="3_ovlcs"]
+
+[node name="Root" type="Node" unique_id=514390605]
+script = ExtResource("1_pq8q7")
+
+[node name="UIScene" parent="." unique_id=630457395 instance=ExtResource("2_js5vo")]
+
+[node name="Overworld3D" parent="." unique_id=565278368 instance=ExtResource("3_ovlcs")]
+
+[node name="BattleScene3D" type="Node3D" parent="." unique_id=1267662630]
