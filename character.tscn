@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cy4o15k7ows4u"]
 
 [ext_resource type="ArrayMesh" uid="uid://mmc40pmtsqk3" path="res://meshes/Gli Mesh 1/hair12.tres" id="7_88tkl"]
-[ext_resource type="Animation" uid="uid://djnp8u8dsdw4c" path="res://Animations/Walk2.anim" id="7_qi5as"]
+[ext_resource type="Animation" uid="uid://b5odahiaixn7t" path="res://Animations/Walk2.anim" id="7_qi5as"]
 [ext_resource type="Material" uid="uid://cx1laxp3f55rt" path="res://Textures/Paper Texture/Paper.tres" id="7_x1sy7"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="8_c1b4b"]
 [ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="8_jb3kq"]
@@ -188,10 +188,10 @@ shape = SubResource("CapsuleShape3D_vu45j")
 [node name="Proto Gli 1" parent="." unique_id=1252514508 instance=ExtResource("12_7tnxx")]
 transform = Transform3D(-1.9451567e-08, 0, 0.445, 0, 0.445, 0, -0.445, 0, -1.9451567e-08, 0, 0, 0)
 
-[node name="Armature" parent="Proto Gli 1" index="0" unique_id=70975824]
+[node name="Armature" parent="Proto Gli 1" index="0" unique_id=1798335600]
 transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763567e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
 
-[node name="Skeleton" parent="Proto Gli 1/Armature" index="0" unique_id=1731208769]
+[node name="Skeleton" parent="Proto Gli 1/Armature" index="0" unique_id=1031360999]
 bones/0/position = Vector3(0.033677, 5.28914, -0.034249604)
 bones/0/rotation = Quaternion(-0.039446197, -0.36596376, -0.014100388, 0.9296859)
 bones/1/rotation = Quaternion(0.047794994, 0.039980408, -0.0086146295, 0.9980196)
@@ -218,206 +218,206 @@ bones/26/rotation = Quaternion(0.08087231, 0.55103594, -0.8266617, -0.08030878)
 bones/27/rotation = Quaternion(0.0035991624, 0.9998585, 0.01606972, -0.003448659)
 bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
 
-[node name="Hair_012" parent="Proto Gli 1/Armature/Skeleton" index="0" unique_id=1942399605]
+[node name="Hair_012" parent="Proto Gli 1/Armature/Skeleton" index="0" unique_id=138950094]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_012" parent="Proto Gli 1/Armature/Skeleton/Hair_012" index="0" unique_id=356454420]
+[node name="Hair_012" parent="Proto Gli 1/Armature/Skeleton/Hair_012" index="0" unique_id=925821761]
 mesh = ExtResource("7_88tkl")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_013" parent="Proto Gli 1/Armature/Skeleton" index="1" unique_id=265455169]
+[node name="Hair_013" parent="Proto Gli 1/Armature/Skeleton" index="1" unique_id=2109711230]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_013" parent="Proto Gli 1/Armature/Skeleton/Hair_013" index="0" unique_id=2070130462]
+[node name="Hair_013" parent="Proto Gli 1/Armature/Skeleton/Hair_013" index="0" unique_id=1155249596]
 mesh = ExtResource("9_uswop")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_014" parent="Proto Gli 1/Armature/Skeleton" index="2" unique_id=397934945]
+[node name="Hair_014" parent="Proto Gli 1/Armature/Skeleton" index="2" unique_id=2077420212]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_014" parent="Proto Gli 1/Armature/Skeleton/Hair_014" index="0" unique_id=887369270]
+[node name="Hair_014" parent="Proto Gli 1/Armature/Skeleton/Hair_014" index="0" unique_id=945964843]
 mesh = ExtResource("9_88tkl")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_015" parent="Proto Gli 1/Armature/Skeleton" index="3" unique_id=500935169]
+[node name="Hair_015" parent="Proto Gli 1/Armature/Skeleton" index="3" unique_id=1008126345]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_015" parent="Proto Gli 1/Armature/Skeleton/Hair_015" index="0" unique_id=1566523463]
+[node name="Hair_015" parent="Proto Gli 1/Armature/Skeleton/Hair_015" index="0" unique_id=2104562108]
 mesh = ExtResource("11_y0ipg")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_016" parent="Proto Gli 1/Armature/Skeleton" index="4" unique_id=2090025325]
+[node name="Hair_016" parent="Proto Gli 1/Armature/Skeleton" index="4" unique_id=866870226]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_016" parent="Proto Gli 1/Armature/Skeleton/Hair_016" index="0" unique_id=782402026]
+[node name="Hair_016" parent="Proto Gli 1/Armature/Skeleton/Hair_016" index="0" unique_id=1338812439]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_017" parent="Proto Gli 1/Armature/Skeleton" index="5" unique_id=2002283322]
+[node name="Hair_017" parent="Proto Gli 1/Armature/Skeleton" index="5" unique_id=1342462671]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_017" parent="Proto Gli 1/Armature/Skeleton/Hair_017" index="0" unique_id=324080359]
+[node name="Hair_017" parent="Proto Gli 1/Armature/Skeleton/Hair_017" index="0" unique_id=1414994991]
 mesh = ExtResource("12_shm3m")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_018" parent="Proto Gli 1/Armature/Skeleton" index="6" unique_id=1240336483]
+[node name="Hair_018" parent="Proto Gli 1/Armature/Skeleton" index="6" unique_id=1540617818]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_018" parent="Proto Gli 1/Armature/Skeleton/Hair_018" index="0" unique_id=1183450718]
+[node name="Hair_018" parent="Proto Gli 1/Armature/Skeleton/Hair_018" index="0" unique_id=762681913]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_019" parent="Proto Gli 1/Armature/Skeleton" index="7" unique_id=170612938]
+[node name="Hair_019" parent="Proto Gli 1/Armature/Skeleton" index="7" unique_id=1036600954]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_019" parent="Proto Gli 1/Armature/Skeleton/Hair_019" index="0" unique_id=507424373]
+[node name="Hair_019" parent="Proto Gli 1/Armature/Skeleton/Hair_019" index="0" unique_id=1333039594]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_020" parent="Proto Gli 1/Armature/Skeleton" index="8" unique_id=273444779]
+[node name="Hair_020" parent="Proto Gli 1/Armature/Skeleton" index="8" unique_id=1625970386]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_020" parent="Proto Gli 1/Armature/Skeleton/Hair_020" index="0" unique_id=2006470869]
+[node name="Hair_020" parent="Proto Gli 1/Armature/Skeleton/Hair_020" index="0" unique_id=649987939]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_021" parent="Proto Gli 1/Armature/Skeleton" index="9" unique_id=393591068]
+[node name="Hair_021" parent="Proto Gli 1/Armature/Skeleton" index="9" unique_id=636162324]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_021" parent="Proto Gli 1/Armature/Skeleton/Hair_021" index="0" unique_id=1177315492]
+[node name="Hair_021" parent="Proto Gli 1/Armature/Skeleton/Hair_021" index="0" unique_id=1117823052]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_022" parent="Proto Gli 1/Armature/Skeleton" index="10" unique_id=45749000]
+[node name="Hair_022" parent="Proto Gli 1/Armature/Skeleton" index="10" unique_id=2088216628]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_022" parent="Proto Gli 1/Armature/Skeleton/Hair_022" index="0" unique_id=2063435511]
+[node name="Hair_022" parent="Proto Gli 1/Armature/Skeleton/Hair_022" index="0" unique_id=2039958774]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_023" parent="Proto Gli 1/Armature/Skeleton" index="11" unique_id=1677347100]
+[node name="Hair_023" parent="Proto Gli 1/Armature/Skeleton" index="11" unique_id=1997123166]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_023" parent="Proto Gli 1/Armature/Skeleton/Hair_023" index="0" unique_id=643807612]
+[node name="Hair_023" parent="Proto Gli 1/Armature/Skeleton/Hair_023" index="0" unique_id=1690544825]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_024" parent="Proto Gli 1/Armature/Skeleton" index="12" unique_id=491239484]
+[node name="Hair_024" parent="Proto Gli 1/Armature/Skeleton" index="12" unique_id=1674627831]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_024" parent="Proto Gli 1/Armature/Skeleton/Hair_024" index="0" unique_id=228560207]
+[node name="Hair_024" parent="Proto Gli 1/Armature/Skeleton/Hair_024" index="0" unique_id=1654262380]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_025" parent="Proto Gli 1/Armature/Skeleton" index="13" unique_id=2075081458]
+[node name="Hair_025" parent="Proto Gli 1/Armature/Skeleton" index="13" unique_id=2055629164]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_025" parent="Proto Gli 1/Armature/Skeleton/Hair_025" index="0" unique_id=904346631]
+[node name="Hair_025" parent="Proto Gli 1/Armature/Skeleton/Hair_025" index="0" unique_id=735902881]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_026" parent="Proto Gli 1/Armature/Skeleton" index="14" unique_id=303820619]
+[node name="Hair_026" parent="Proto Gli 1/Armature/Skeleton" index="14" unique_id=58758774]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_026" parent="Proto Gli 1/Armature/Skeleton/Hair_026" index="0" unique_id=142566876]
+[node name="Hair_026" parent="Proto Gli 1/Armature/Skeleton/Hair_026" index="0" unique_id=386416882]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_027" parent="Proto Gli 1/Armature/Skeleton" index="15" unique_id=1264200443]
+[node name="Hair_027" parent="Proto Gli 1/Armature/Skeleton" index="15" unique_id=364880559]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_027" parent="Proto Gli 1/Armature/Skeleton/Hair_027" index="0" unique_id=2145803385]
+[node name="Hair_027" parent="Proto Gli 1/Armature/Skeleton/Hair_027" index="0" unique_id=1247539290]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_028" parent="Proto Gli 1/Armature/Skeleton" index="16" unique_id=268932652]
+[node name="Hair_028" parent="Proto Gli 1/Armature/Skeleton" index="16" unique_id=1561012884]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_028" parent="Proto Gli 1/Armature/Skeleton/Hair_028" index="0" unique_id=1096244720]
+[node name="Hair_028" parent="Proto Gli 1/Armature/Skeleton/Hair_028" index="0" unique_id=208186305]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_029" parent="Proto Gli 1/Armature/Skeleton" index="17" unique_id=649872376]
+[node name="Hair_029" parent="Proto Gli 1/Armature/Skeleton" index="17" unique_id=1989816126]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_029" parent="Proto Gli 1/Armature/Skeleton/Hair_029" index="0" unique_id=1150590603]
+[node name="Hair_029" parent="Proto Gli 1/Armature/Skeleton/Hair_029" index="0" unique_id=671034881]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_030" parent="Proto Gli 1/Armature/Skeleton" index="18" unique_id=444169011]
+[node name="Hair_030" parent="Proto Gli 1/Armature/Skeleton" index="18" unique_id=993085827]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_030" parent="Proto Gli 1/Armature/Skeleton/Hair_030" index="0" unique_id=1909703222]
+[node name="Hair_030" parent="Proto Gli 1/Armature/Skeleton/Hair_030" index="0" unique_id=43910860]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_031" parent="Proto Gli 1/Armature/Skeleton" index="19" unique_id=1340123649]
+[node name="Hair_031" parent="Proto Gli 1/Armature/Skeleton" index="19" unique_id=2019527952]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_031" parent="Proto Gli 1/Armature/Skeleton/Hair_031" index="0" unique_id=1217954616]
+[node name="Hair_031" parent="Proto Gli 1/Armature/Skeleton/Hair_031" index="0" unique_id=1097234076]
 mesh = SubResource("ArrayMesh_5said")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_032" parent="Proto Gli 1/Armature/Skeleton" index="20" unique_id=2033243940]
+[node name="Hair_032" parent="Proto Gli 1/Armature/Skeleton" index="20" unique_id=993126605]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_032" parent="Proto Gli 1/Armature/Skeleton/Hair_032" index="0" unique_id=468499871]
+[node name="Hair_032" parent="Proto Gli 1/Armature/Skeleton/Hair_032" index="0" unique_id=1686711741]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_033" parent="Proto Gli 1/Armature/Skeleton" index="21" unique_id=1595384509]
+[node name="Hair_033" parent="Proto Gli 1/Armature/Skeleton" index="21" unique_id=1002678260]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_033" parent="Proto Gli 1/Armature/Skeleton/Hair_033" index="0" unique_id=208613743]
+[node name="Hair_033" parent="Proto Gli 1/Armature/Skeleton/Hair_033" index="0" unique_id=1565870598]
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Hair_034" parent="Proto Gli 1/Armature/Skeleton" index="22" unique_id=48339373]
+[node name="Hair_034" parent="Proto Gli 1/Armature/Skeleton" index="22" unique_id=1202997240]
 transform = Transform3D(0.99716455, -0.075205564, -0.0026354194, 0.073060095, 0.9759195, -0.20553161, 0.018029183, 0.20475626, 0.9786469, -0.15093598, 8.456495, 0.65515965)
 
-[node name="Hair_034" parent="Proto Gli 1/Armature/Skeleton/Hair_034" index="0" unique_id=1023394971]
+[node name="Hair_034" parent="Proto Gli 1/Armature/Skeleton/Hair_034" index="0" unique_id=1143622528]
 mesh = ExtResource("8_jx0ln")
 surface_material_override/0 = ExtResource("7_x1sy7")
 
-[node name="Boot" parent="Proto Gli 1/Armature/Skeleton" index="23" unique_id=357951679]
+[node name="Boot" parent="Proto Gli 1/Armature/Skeleton" index="23" unique_id=1251469000]
 mesh = ExtResource("13_uswop")
 
-[node name="Boot_001" parent="Proto Gli 1/Armature/Skeleton" index="24" unique_id=232479058]
+[node name="Boot_001" parent="Proto Gli 1/Armature/Skeleton" index="24" unique_id=761841963]
 mesh = ExtResource("14_shm3m")
 
-[node name="Hand_l" parent="Proto Gli 1/Armature/Skeleton" index="25" unique_id=1923757976]
+[node name="Hand_l" parent="Proto Gli 1/Armature/Skeleton" index="25" unique_id=703640025]
 mesh = ExtResource("17_xvb2f")
 
-[node name="Hand_r" parent="Proto Gli 1/Armature/Skeleton" index="26" unique_id=1495380095]
+[node name="Hand_r" parent="Proto Gli 1/Armature/Skeleton" index="26" unique_id=1157043983]
 mesh = ExtResource("18_uswop")
 
-[node name="Head" parent="Proto Gli 1/Armature/Skeleton" index="27" unique_id=862766453]
+[node name="Head" parent="Proto Gli 1/Armature/Skeleton" index="27" unique_id=1538739221]
 mesh = ExtResource("17_go3uk")
 
-[node name="LowerArm_l" parent="Proto Gli 1/Armature/Skeleton" index="28" unique_id=807625258]
+[node name="LowerArm_l" parent="Proto Gli 1/Armature/Skeleton" index="28" unique_id=1162664315]
 mesh = ExtResource("18_lyohd")
 
-[node name="LowerArm_r" parent="Proto Gli 1/Armature/Skeleton" index="29" unique_id=1153829153]
+[node name="LowerArm_r" parent="Proto Gli 1/Armature/Skeleton" index="29" unique_id=1453073379]
 mesh = ExtResource("19_2ia7u")
 
-[node name="Neck" parent="Proto Gli 1/Armature/Skeleton" index="30" unique_id=210805127]
+[node name="Neck" parent="Proto Gli 1/Armature/Skeleton" index="30" unique_id=319675069]
 mesh = SubResource("ArrayMesh_jx0ln")
 
-[node name="Shin Guard" parent="Proto Gli 1/Armature/Skeleton" index="31" unique_id=842599841]
+[node name="Shin Guard" parent="Proto Gli 1/Armature/Skeleton" index="31" unique_id=769869634]
 mesh = SubResource("ArrayMesh_pm3tn")
 
-[node name="Shin Guard_001" parent="Proto Gli 1/Armature/Skeleton" index="32" unique_id=589873870]
+[node name="Shin Guard_001" parent="Proto Gli 1/Armature/Skeleton" index="32" unique_id=2008555193]
 mesh = ExtResource("18_3d8aq")
 
-[node name="Shin_l" parent="Proto Gli 1/Armature/Skeleton" index="33" unique_id=1989012764]
+[node name="Shin_l" parent="Proto Gli 1/Armature/Skeleton" index="33" unique_id=885905000]
 mesh = ExtResource("21_shm3m")
 
-[node name="Shin_r" parent="Proto Gli 1/Armature/Skeleton" index="34" unique_id=1179884480]
+[node name="Shin_r" parent="Proto Gli 1/Armature/Skeleton" index="34" unique_id=724009110]
 mesh = ExtResource("22_go3uk")
 
-[node name="Thigh_l" parent="Proto Gli 1/Armature/Skeleton" index="35" unique_id=1470141808]
+[node name="Thigh_l" parent="Proto Gli 1/Armature/Skeleton" index="35" unique_id=1768045401]
 mesh = ExtResource("23_lyohd")
 
-[node name="Thigh_r" parent="Proto Gli 1/Armature/Skeleton" index="36" unique_id=841135581]
+[node name="Thigh_r" parent="Proto Gli 1/Armature/Skeleton" index="36" unique_id=311805049]
 mesh = ExtResource("24_2ia7u")
 
-[node name="Torso" parent="Proto Gli 1/Armature/Skeleton" index="37" unique_id=582856043]
+[node name="Torso" parent="Proto Gli 1/Armature/Skeleton" index="37" unique_id=557998112]
 mesh = ExtResource("25_0fer6")
 
-[node name="UpperArm_R" parent="Proto Gli 1/Armature/Skeleton" index="38" unique_id=584108819]
+[node name="UpperArm_R" parent="Proto Gli 1/Armature/Skeleton" index="38" unique_id=1047876167]
 mesh = ExtResource("19_8i6g0")
 
-[node name="UpperArm_l" parent="Proto Gli 1/Armature/Skeleton" index="39" unique_id=1843091058]
+[node name="UpperArm_l" parent="Proto Gli 1/Armature/Skeleton" index="39" unique_id=1367293054]
 mesh = ExtResource("27_aeagw")
 
-[node name="Waist" parent="Proto Gli 1/Armature/Skeleton" index="40" unique_id=1124997557]
+[node name="Waist" parent="Proto Gli 1/Armature/Skeleton" index="40" unique_id=485018274]
 mesh = ExtResource("28_lphiu")
 
-[node name="AnimationPlayer" parent="Proto Gli 1" index="1" unique_id=939161603]
+[node name="AnimationPlayer" parent="Proto Gli 1" index="1" unique_id=552966391]
 libraries/ = SubResource("AnimationLibrary_x1sy7")
 
 [editable path="Proto Gli 1"]
