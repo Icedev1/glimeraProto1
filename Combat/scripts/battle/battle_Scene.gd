@@ -38,6 +38,10 @@ func _ready() -> void:
 	weapon_cards = [%weaponCard1, %weaponCard2, %weaponCard3, %weaponCard4]
 
 	_connect_signals()
+	
+	BattleManager.player_mesh = $player/MeshInstance3D
+	BattleManager.enemy_mesh = $Enemy/MeshInstance3D
+	
 	BattleManager.start_battle()
 	_setup_buttons()
 	enemy_name_label.text = BattleManager.enemy.unit_name

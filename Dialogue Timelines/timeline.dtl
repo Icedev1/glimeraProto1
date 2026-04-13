@@ -11,6 +11,7 @@ skull: [shake rate=20 level=15]AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHH[/shake]
 	leave --All-- [animation="Instant Out" length="0.0" wait="true"]
 	[wait time="0.5"]
 	[signal arg="battle_start"]
+	set {talkedTo} = true
 	[end_timeline]
 - Leave him be
 	Gli: (It is probably best to leave him alone...)

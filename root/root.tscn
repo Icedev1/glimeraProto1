@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqk5x8iden4rm" path="res://root/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://85nw8bpyau5k" path="res://ui/main_menu.tscn" id="2_js5vo"]
-[ext_resource type="PackedScene" uid="uid://caa206tiuvujl" path="res://protoarea.tscn" id="3_ovlcs"]
+[ext_resource type="PackedScene" uid="uid://c2ughbctkehou" path="res://Level1.tscn" id="3_e2nrw"]
 [ext_resource type="Script" uid="uid://b2eqqaj8wy4yd" path="res://root/screen_transition.gd" id="4_ovlcs"]
 [ext_resource type="Shader" uid="uid://d3agx2y3hiqpj" path="res://Shaders/screenshatter_transition.gdshader" id="5_b33ej"]
 [ext_resource type="Shader" uid="uid://bwj3n5uinfpvt" path="res://Shaders/clockwipe_transition.gdshader" id="5_e2nrw"]
@@ -168,7 +168,7 @@ script = ExtResource("1_pq8q7")
 
 [node name="UIScene" parent="." unique_id=630457395 instance=ExtResource("2_js5vo")]
 
-[node name="Overworld3D" parent="." unique_id=565278368 instance=ExtResource("3_ovlcs")]
+[node name="Overworld3D" parent="." unique_id=8267905 instance=ExtResource("3_e2nrw")]
 
 [node name="BattleScene3D" type="Node3D" parent="." unique_id=1267662630]
 

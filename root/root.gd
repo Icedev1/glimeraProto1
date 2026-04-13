@@ -79,7 +79,10 @@ func from_overworld_to_battle():
 
 func from_battle_to_overworld():
 	overworld.process_mode = Node.PROCESS_MODE_ALWAYS
-	show_overworld()
+	transition1.playclockwipe(func():
+		show_overworld()
+	)
+	
 
 func screenshake():
 	screenshakerect.material.set_shader_parameter("ShakeStrength", 0.1)
