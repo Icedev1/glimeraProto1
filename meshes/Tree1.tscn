@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://sdnpn2k7qsmd"]
+
+[ext_resource type="PackedScene" uid="uid://bvwbc8idrh3qv" path="res://meshes/Tree.fbx" id="1_ovv1y"]
+[ext_resource type="Material" uid="uid://c6jaxi7h8htax" path="res://Textures/leaf.tres" id="2_nic33"]
+
+[node name="Tree" unique_id=906458973 instance=ExtResource("1_ovv1y")]
+
+[node name="FoliageInstance_015|Foliage|Dupli|" parent="FoliageInstance_015" parent_id_path=PackedInt32Array(313367045) index="0" unique_id=644377975]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_014|Foliage|Dupli|" parent="FoliageInstance_014" parent_id_path=PackedInt32Array(2012836126) index="0" unique_id=1198429312]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_013|Foliage|Dupli|" parent="FoliageInstance_013" parent_id_path=PackedInt32Array(1471276171) index="0" unique_id=1530310980]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_012|Foliage|Dupli|" parent="FoliageInstance_012" parent_id_path=PackedInt32Array(358759743) index="0" unique_id=486322189]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_011|Foliage|Dupli|" parent="FoliageInstance_011" parent_id_path=PackedInt32Array(2130872459) index="0" unique_id=1881537799]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_010|Foliage|Dupli|" parent="FoliageInstance_010" parent_id_path=PackedInt32Array(1902506478) index="0" unique_id=1294300959]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_009|Foliage|Dupli|" parent="FoliageInstance_009" parent_id_path=PackedInt32Array(1802832493) index="0" unique_id=677078605]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_008|Foliage|Dupli|" parent="FoliageInstance_008" parent_id_path=PackedInt32Array(158330573) index="0" unique_id=2023014308]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_007|Foliage|Dupli|" parent="FoliageInstance_007" parent_id_path=PackedInt32Array(464466419) index="0" unique_id=2004805767]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_006|Foliage|Dupli|" parent="FoliageInstance_006" parent_id_path=PackedInt32Array(1171521838) index="0" unique_id=926450429]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_005|Foliage|Dupli|" parent="FoliageInstance_005" parent_id_path=PackedInt32Array(279620420) index="0" unique_id=489242750]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_004|Foliage|Dupli|" parent="FoliageInstance_004" parent_id_path=PackedInt32Array(174123418) index="0" unique_id=200092709]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_003|Foliage|Dupli|" parent="FoliageInstance_003" parent_id_path=PackedInt32Array(1270182543) index="0" unique_id=1249749583]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_002|Foliage|Dupli|" parent="FoliageInstance_002" parent_id_path=PackedInt32Array(374510114) index="0" unique_id=1902759872]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance_001|Foliage|Dupli|" parent="FoliageInstance_001" parent_id_path=PackedInt32Array(2001315241) index="0" unique_id=1318384392]
+surface_material_override/0 = ExtResource("2_nic33")
+
+[node name="FoliageInstance|Foliage|Dupli|" parent="FoliageInstance" parent_id_path=PackedInt32Array(748061307) index="0" unique_id=1873330677]
+surface_material_override/0 = ExtResource("2_nic33")
