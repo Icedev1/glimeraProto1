@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://bqk5x8iden4rm" path="res://root/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://85nw8bpyau5k" path="res://ui/main_menu.tscn" id="2_js5vo"]
 [ext_resource type="PackedScene" uid="uid://c2ughbctkehou" path="res://Level1.tscn" id="3_e2nrw"]
-[ext_resource type="Script" path="res://root/screen_transition.gd" id="4_ovlcs"]
-[ext_resource type="Shader" path="res://Shaders/screenshatter_transition.gdshader" id="5_b33ej"]
-[ext_resource type="Shader" path="res://Shaders/clockwipe_transition.gdshader" id="5_e2nrw"]
-[ext_resource type="Shader" path="res://Shaders/screenshake.gdshader" id="7_e2nrw"]
+[ext_resource type="Script" uid="uid://b2eqqaj8wy4yd" path="res://root/screen_transition.gd" id="4_ovlcs"]
+[ext_resource type="Shader" uid="uid://d3agx2y3hiqpj" path="res://Shaders/screenshatter_transition.gdshader" id="5_b33ej"]
+[ext_resource type="Shader" uid="uid://bwj3n5uinfpvt" path="res://Shaders/clockwipe_transition.gdshader" id="5_e2nrw"]
+[ext_resource type="Shader" uid="uid://y3npo0eylr6e" path="res://Shaders/screenshake.gdshader" id="7_e2nrw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gj8ci"]
 shader = ExtResource("5_e2nrw")
