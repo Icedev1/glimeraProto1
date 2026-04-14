@@ -3,7 +3,108 @@
 [ext_resource type="PackedScene" uid="uid://dumgnjj1m80d0" path="res://EquipMenu.tscn" id="1_cammf"]
 [ext_resource type="Material" uid="uid://t07ec0vtnteb" path="res://Shaders/Blur.tres" id="2_nsmwh"]
 [ext_resource type="Texture2D" uid="uid://dfq6hkm4cc71f" path="res://images/icon.svg" id="3_lvtd6"]
-[ext_resource type="Texture2D" uid="uid://dganjay82mm7b" path="res://SimpleFlatKeys/Dark/0-Key.png" id="4_g7rxt"]
+
+[sub_resource type="GDScript" id="GDScript_cammf"]
+script/source = "extends Control
+
+@onready var hand_l = $\"../CharacterBody3D/Proto Gli 1/Armature/Skeleton/Hand_l\"
+@onready var lowerarm_l = $\"../CharacterBody3D/Proto Gli 1/Armature/Skeleton/LowerArm_l\"
+
+var is_open: bool = false
+
+var original_hand_l_mesh: Mesh
+var original_lowerarm_l_mesh: Mesh
+
+var left_arm_equipped: String = \"default\"
+
+var violin_scene = preload(\"res://Grafting/Violin/Violin 1.fbx\")
+var violin_mesh: Mesh = null
+var violin_icon = load(\"res://Grafting/violin icon.png\")
+
+func _ready() -> void:
+	set_process_input(true)
+	visible = false
+	
+	var temp = violin_scene.instantiate()
+	print(\"temp children: \", temp.get_children())
+	for child in temp.get_children():
+		print(\"child: \", child.name, \" type: \", child.get_class())
+		if child is MeshInstance3D:
+			violin_mesh = child.mesh
+			break           
+	temp.queue_free()
+	print(\"violin_mesh after extraction: \", violin_mesh)
+	
+	print(\"hand_l: \", hand_l)
+	print(\"lowerarm_l: \", lowerarm_l)
+	
+	original_hand_l_mesh = hand_l.mesh
+	original_lowerarm_l_mesh = lowerarm_l.mesh
+	
+	$ColorRect2/VBoxContainer/HBoxContainer/TextureButton.texture_normal = violin_icon
+	
+	var button = $ColorRect2/VBoxContainer/HBoxContainer/TextureButton
+	print(\"button found: \", button)
+	button.pressed.connect(_on_left_arm_pressed)
+
+func _input(event) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_G:
+			print(\"G pressed, opening menu\")
+			is_open = !is_open
+			visible = is_open
+
+func _on_left_arm_pressed() -> void:
+	print(\"button pressed, equipped: \", left_arm_equipped)
+	if left_arm_equipped == \"default\":
+		equip_violin()
+	else:
+		unequip_left_arm()
+
+func equip_violin() -> void:
+	# Hide the original arm parts
+	hand_l.visible = false
+	lowerarm_l.visible = false
+	
+	var skeleton = hand_l.get_parent() as Skeleton3D
+	print(\"bone count: \", skeleton.get_bone_count())
+	for i in skeleton.get_bone_count():
+		print(\"bone \", i, \": \", skeleton.get_bone_name(i))
+	
+	var attachment = BoneAttachment3D.new()
+	attachment.name = \"ViolinGraft\"
+	attachment.bone_name = \"LeftUpperArm\"
+	attachment.bone_idx = 11
+	skeleton.add_child(attachment)
+	attachment.owner = skeleton 
+	
+	var violin_instance = violin_scene.instantiate()
+	attachment.add_child(violin_instance)
+	
+	for child in violin_instance.get_children():
+		if child is OmniLight3D:
+			child.queue_free()
+	
+	violin_instance.position = Vector3(0, 0, 0)
+	violin_instance.rotation_degrees = Vector3(180, 90, 90)
+	violin_instance.scale = Vector3(1, 1, 1)
+	
+	print(\"violin global position: \", violin_instance.global_position)
+	left_arm_equipped = \"violin\"
+	print(\"Violin equipped!\")
+
+func unequip_left_arm() -> void:
+	hand_l.visible = true
+	lowerarm_l.visible = true
+	
+	var skeleton = hand_l.get_parent()
+	var attachment = skeleton.get_node_or_null(\"ViolinGraft\")
+	if attachment:
+		attachment.queue_free()
+	
+	left_arm_equipped = \"default\"
+	print(\"Left arm unequipped!\")
+"
 
 [sub_resource type="Theme" id="Theme_3faqq"]
 
@@ -19,6 +120,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+script = SubResource("GDScript_cammf")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=577141664]
 layout_mode = 1
@@ -222,7 +324,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_lvtd6")
-texture_pressed = ExtResource("4_g7rxt")
 ignore_texture_size = true
 stretch_mode = 4
 

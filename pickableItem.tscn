@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dgico8yvo3hfh"]
+
+[ext_resource type="Script" uid="uid://bm5ywrsxrdk3t" path="res://scripts/pickable_item.gd" id="1_7oxxk"]
+[ext_resource type="PackedScene" uid="uid://bwp60dlqvr2li" path="res://images/Sting-Sword.blend" id="2_eji7e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_str42"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pkn1g"]
+radius = 0.8
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i4xce"]
+emission_shape_scale = Vector3(0, 1, 0.3)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.19999999
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+color = Color(0.49350953, 0.98492855, 0.8596209, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4xce"]
+albedo_color = Color(0.37254903, 1, 0.8235294, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_str42"]
+material = SubResource("StandardMaterial3D_i4xce")
+radius = 0.03
+height = 0.07
+
+[node name="object" type="StaticBody3D" unique_id=330113752]
+script = ExtResource("1_7oxxk")
+
+[node name="Sting-Sword" parent="." unique_id=1096609748 instance=ExtResource("2_eji7e")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.06945717, -0.1407547, 0.09284973)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1821714669]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_str42")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1947442206]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=907445529]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_pkn1g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=84456748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074926734, 0.113275975, 0)
+visible = false
+light_color = Color(0.37254903, 1, 0.8235294, 1)
+light_energy = 0.8
+omni_range = 0.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1089010012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064, 0, 0)
+emitting = false
+amount = 20
+lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_i4xce")
+draw_pass_1 = SubResource("SphereMesh_str42")
