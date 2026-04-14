@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://ck4bwjm08hgqw"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_2qgi7"]
+
+[resource]
+script = ExtResource("1_2qgi7")
+effect_name = "Burn"
+type = 6
+value = 1.0
+duration = 6.0
+metadata/_custom_type_script = "uid://c1nu6bnlqi3dc"
