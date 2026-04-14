@@ -5,13 +5,6 @@
 [ext_resource type="Material" uid="uid://cg4gs15tqn333" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG.tres" id="2_p2ddc"]
 [ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="2_tpdbc"]
 [ext_resource type="PackedScene" uid="uid://cc7rdfj4o8qop" path="res://gate.tscn" id="3_tpdbc"]
-
-[ext_resource type="PackedScene" uid="uid://dyyex5sxricmd" path="res://camera_switch.tscn" id="5_5ofox"]
-[ext_resource type="Script" uid="uid://b6eyd3wj6fu6d" path="res://states/statemachine.gd" id="5_u8cg8"]
-[ext_resource type="Texture2D" uid="uid://bixdkk52hjtpk" path="res://images/NightEnvironmentHDRI009_8K_TONEMAPPED.jpg" id="6_6aibh"]
-[ext_resource type="Script" uid="uid://bwlepq4swweko" path="res://states/idle_state.gd" id="6_ecyt6"]
-[ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://npc.tscn" id="6_v6na3"]
-
 [ext_resource type="ArrayMesh" uid="uid://dkajpf7n6toy1" path="res://meshes/Gli Mesh 1/Upper Arm L.tres" id="5_3w14h"]
 [ext_resource type="PackedScene" uid="uid://dyyex5sxricmd" path="res://camera_switch.tscn" id="5_5ofox"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="5_ixbh1"]
@@ -19,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bixdkk52hjtpk" path="res://images/NightEnvironmentHDRI009_8K_TONEMAPPED.jpg" id="6_6aibh"]
 [ext_resource type="Script" uid="uid://bwlepq4swweko" path="res://states/idle_state.gd" id="6_ecyt6"]
 [ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://skull_npc.tscn" id="6_v6na3"]
-
 [ext_resource type="PackedScene" uid="uid://btbbvoxdixc6u" path="res://interactprompt.tscn" id="7_aemyc"]
 [ext_resource type="Script" uid="uid://bxuwdx87nuwsm" path="res://states/move_state.gd" id="7_q5bly"]
 [ext_resource type="Script" uid="uid://c7wgluufenq2k" path="res://prompt_manager.gd" id="8_llqyr"]
@@ -28,10 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://bcv71xsvoofkr" path="res://dial_box.tscn" id="9_ldbg2"]
 [ext_resource type="Script" uid="uid://brs8yqwgni5t4" path="res://states/fall_state.gd" id="9_rvbf0"]
 [ext_resource type="Script" uid="uid://dr88cobc5dqk4" path="res://scene_switcher.gd" id="18_3qlte"]
-[ext_resource type="PackedScene" uid="uid://cljfxgcfyk4fv" path="res://Grafting/Equip UI.tscn" id="21_4t7i5"]
-[ext_resource type="Script" uid="uid://brpki64s4nkx7" path="res://object_interact.gd" id="21_7woxg"]
-[ext_resource type="Script" uid="uid://dbf5dpbivckf1" path="res://grafting_system.gd" id="22_u8cg8"]
-[ext_resource type="PackedScene" uid="uid://dgico8yvo3hfh" path="res://pickableItem.tscn" id="24_ecyt6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6aibh"]
 size = Vector3(5, 0.05, 5.0010996)
@@ -54,7 +42,6 @@ size = Vector3(1.9360962, 0.8737793, 0.025390625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aemyc"]
 size = Vector3(1.9038696, 0.8737793, 0.025390625)
-
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w5lg"]
 resource_name = "Material.010"
@@ -118,7 +105,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("WlHgvRQKNb1FXbo8CA3XvYD7WL2M0sI89j7avQ3cQb0uK7o8D1vavW/8V733adE8w3XivdrpOb090dg883PkvV9AJ72/EM88WlHgvRQKNb1FXbo8qlnivXfJI71yksE8IDmLvcqsmrydB+Q8TPKEvR/qyLxflfY8w3XivdrpOb090dg883PkvV9AJ72/EM88dj1OvUAWfLxNuco8nOZIvQBJj7y4htY8+DiOvaQBjbwWk808IDmLvcqsmrydB+Q883PkvV9AJ72/EM88qlnivXfJI71yksE8V5RTvYqaWbzg6748dj1OvUAWfLxNuco8IDmLvcqsmrydB+Q8+DiOvaQBjbwWk808V5RTvYqaWbzg6748+DiOvaQBjbwWk8089j7avQ3cQb0uK7o8eFZCvc56wrybqLQ8qlnivXfJI71yksE8WlHgvRQKNb1FXbo8eFZCvc56wrybqLQ8mv88vam407wGdsA8dj1OvUAWfLxNuco8V5RTvYqaWbzg6748nOZIvQBJj7y4htY8v6g3vYn25LxzQ8w8v6g3vYn25LxzQ8w802p0ve/QGb3szOk8TPKEvR/qyLxflfY8nOZIvQBJj7y4htY8w3XivdrpOb090dg8D1vavW/8V733adE8v6g3vYn25LxzQ8w8mv88vam407wGdsA8A354vRPDF708M9I802p0ve/QGb3szOk8D1vavW/8V733adE802p0ve/QGb3szOk8A354vRPDF708M9I8CA3XvYD7WL2M0sI8mv88vam407wGdsA8eFZCvc56wrybqLQ89j7avQ3cQb0uK7o8A354vRPDF708M9I8CA3XvYD7WL2M0sI8fcDdve4dQL2m8cg8FnyDvWG597ygysA8ht2uvV/cHr3oer08BaapvUlfOL3jgso8mMKLvYNrx7xd7cM8+Am2vexfDL1SJb88ht2uvV/cHr3oer08FnyDvWG597ygysA8WlHgvRQKNb1FXbo8fcDdve4dQL2m8cg8mMKLvYNrx7xd7cM8Ukm4vUpK6rzFksc8+Am2vexfDL1SJb88LKPdvbcaSL3/c9Y8CA3XvYD7WL2M0sI8fcDdve4dQL2m8cg8LKPdvbcaSL3/c9Y8fcDdve4dQL2m8cg883PkvV9AJ72/EM88CLSzvXQvD71Os+c8ita3vcOW9LwujNk8ita3vcOW9LwujNk8Ukm4vUpK6rzFksc8TPKEvR/qyLxflfY8IDmLvcqsmrydB+Q8+DiOvaQBjbwWk808mMKLvYNrx7xd7cM8afVKvQqkl7w/yrk8afVKvQqkl7w/yrk8ip5FvebhqLypl8U8rEdAvcMfurwWZdE8afVKvQqkl7w/yrk8mMKLvYNrx7xd7cM8FnyDvWG597ygysA8BfB8vVxY/Lwab/E8rEdAvcMfurwWZdE8rEdAvcMfurwWZdE8BfB8vVxY/Lwab/E802p0ve/QGb3szOk8PUiqvbHmOL1ym908mA2uvXMjI72O8eM8BfB8vVxY/Lwab/E8LKPdvbcaSL3/c9Y8TPKEvR/qyLxflfY8BfB8vVxY/Lwab/E8mA2uvXMjI72O8eM8CLSzvXQvD71Os+c8LKPdvbcaSL3/c9Y8BaapvUlfOL3jgso8PUiqvbHmOL1ym908FnyDvWG597ygysA8A354vRPDF708M9I8VyD9NH6SrGVXIP00Fp54Zlcg/TQdmjNm9RhRPgtPqjoXHLw3F49TaN4bS0yEd0pV3htLTMqJeGLeG0tM8G78TINu6JdL07wsg27ol5DT9SxNb9qVm9P0LE1v2pVY078sGYSkqebhXicZhKSpc9+cJTRhbrYL0RYrNGFutgXRKSuHXJzAttD6KodcnMDD0O8qEXv6vmTruy4Re/q+NuuILhF7+r7P7FAwEXv6vvfsfTAGDCT0reScLikRevpn0LopjvsP/5jV2iuWBLn1H97GK5MSrflN1EwrkxKt+e/UjCtY3+W0jjc0EVjf5bSONzQRWN/ltI43NBFY3+a0jjc0EVjf5bSONzQRWN/ltI43NBHPmqN8HtgeI8+ao3xJ1KohoZmjgFPa+yOhmaOAiN6rJal83XNV0/UstH7ybkfYQy8kyz4cddDMISTLPhx60NghJMs+HEzQXyEkyz4cSNBTIf2bbSs/22QwmKuBHSDbkjCYq4EdM9uMMP2bbStM22MwduB5B9LY6Ch24HkH4dzoK2PtKAp020YvL+o+C9TblS9j7SgK5NuRL1cg/TTylvtlL+o+C2nbRy/E67UKcdnhLbXrugrk2TIuvAbh/xrZiS2N+oT/ZNe6LDH6rv9r170svAbh/9bZ4i2O+w///NSOK94bS0ywjvRkKRF6+gXR+im7ESf6oNKiKv0RAvqJ0pgq9RhRPmFy/lz1GFE+0ljySPUYUT5Eei5jFxy8N+56nWMXHLw3F4NdZxccvDc8ldFo6W7flunRmyvjbvCWoNFgK8Nev7uR0Q8qHl/5upjR+CkZhKSp+urhLRmEpKl17PEuBgwk9Ijq7zAGDCT0BOlVMAYMJPQi4/8tWN/ltI43NBFY3+W0jjc0EVjf5bSONzQRlgS59T3fRCyWBLn1NeMCLpYEufVT4p8tz5qjfDbVBCLPmqN8R9mPI6GZo4BH3SoloZmjgELZjSNVfuBvTdhEL4R+aW9d3A8xg35sb6vbwDBVfuBvqNf7LrR+8m6k1/wu4XxkcxDXry7hfGRzrtf4Lsd8m3Os1Qsuw3ykc1vV5S2pfN1z3tM0LcegdSCQ3DowDKCsIXfcQTB24HkHbc/2IXbgeQcXzvkg")
 }]
 blend_shape_mode = 0
-
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_go3uk"]
 animation = &"Idle Straight"
@@ -325,7 +311,6 @@ camera = NodePath("../Camera3D")
 [node name="CollisionShape3D" parent="CharacterBody3D" index="0" unique_id=112217560]
 transform = Transform3D(0.99999976, 0, 7.0699e-13, 0, 0.99999976, 0, -7.0699e-13, 0, 0.99999976, 0, 2.3008585, 0)
 
-
 [node name="Armature" parent="CharacterBody3D/MAsked Gli" parent_id_path=PackedInt32Array(1051319031, 1915688629) index="0" unique_id=1424227123]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
@@ -374,7 +359,6 @@ surface_material_override/0 = null
 
 [node name="Hair_015" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="3" unique_id=1497028541]
 transform = Transform3D(0.9979588, -0.06385, -0.0011740029, 0.06168716, 0.9685842, -0.24091396, 0.016519487, 0.24034981, 0.97054565, -0.17797849, 8.423712, 0.6598784)
-
 
 [node name="Hair_015" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_015" index="0" unique_id=2084059942]
 surface_material_override/0 = null
@@ -680,15 +664,6 @@ interactPrompt = NodePath("../UI Elements/Prompt")
 process_mode = 3
 script = ExtResource("18_3qlte")
 canvas = NodePath("../UI Elements")
-
-[node name="object" parent="." unique_id=330113752 instance=ExtResource("24_ecyt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6616924, 0.23288694, -0.7114003)
-
-[node name="Control" parent="." unique_id=992539865 instance=ExtResource("21_4t7i5")]
-script = ExtResource("22_u8cg8")
-
-[node name="ObjectInteract" type="Node" parent="." unique_id=1829473900]
-script = ExtResource("21_7woxg")
 
 [connection signal="body_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_entered"]
 [connection signal="body_shape_entered" from="CameraSwitch" to="." method="_on_camera_switch_body_shape_entered"]

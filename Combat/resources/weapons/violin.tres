@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cq6h2qdc81ayw"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_5ndiq"]
+[ext_resource type="Resource" uid="uid://dlst66j0pbavs" path="res://Combat/resources/status_effects/quick_heal.tres" id="2_tik5y"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_e552h"]
+
+[resource]
+script = ExtResource("3_e552h")
+weapon_name = "Violin"
+cooldown = 4.0
+hp_cost = 2
+effects = Array[ExtResource("1_5ndiq")]([ExtResource("2_tik5y")])

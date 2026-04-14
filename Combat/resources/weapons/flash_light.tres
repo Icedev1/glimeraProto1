@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://7exwce5lhtws"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_7a62n"]
+[ext_resource type="Resource" uid="uid://cgiyrxovm334s" path="res://Combat/resources/status_effects/stun_2s.tres" id="2_7a62n"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_nv5dw"]
+
+[resource]
+script = ExtResource("3_nv5dw")
+weapon_name = "flashlight"
+attack_damage = 1
+cooldown = 2.5
+hp_cost = 2
+effects = Array[ExtResource("1_7a62n")]([ExtResource("2_7a62n")])
