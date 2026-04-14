@@ -2765,7 +2765,6 @@ _data = {
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1051319031]
 transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, 0, 0, 0)
 collision_layer = 2
-collision_mask = 9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=112217560]
 transform = Transform3D(0.99999976, 0, 8.7396756e-13, 0, 0.99999976, 0, -8.7396756e-13, 0, 0.99999976, 0, 2.3781495, 0)

@@ -6,31 +6,12 @@
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="4_jix8l"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="5_glbon"]
 [ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://ui/inputremapbutton.gd" id="6_nlkkf"]
-[ext_resource type="PackedScene" uid="uid://dsc3ihpwxa6w6" path="res://ui/input_remap_button.tscn" id="6_qe12f"]
+[ext_resource type="PackedScene" path="res://UI/input_remap_button.tscn" id="6_qe12f"]
 [ext_resource type="AudioStream" uid="uid://cral320sc5djp" path="res://ui/Glimera theme 1.mp3" id="8_arv2f"]
 [ext_resource type="AudioStream" uid="uid://oiod6kmnyfnc" path="res://ui/musheran-beep-313342.mp3" id="9_2mudq"]
 
-[sub_resource type="Gradient" id="Gradient_arv2f"]
-offsets = PackedFloat32Array(0.66933334, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_5klac"]
-gradient = SubResource("Gradient_arv2f")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_arv2f"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(6.865, 0, 0)
-emission_shape = 3
-emission_box_extents = Vector3(950, 20, 1)
-angular_velocity_min = -1.6093254e-05
-angular_velocity_max = -1.6093254e-05
-gravity = Vector3(0, 1000, 0)
-damping_max = 0.1
-scale_min = 4.0
-scale_max = 10.0
-color_ramp = SubResource("GradientTexture1D_5klac")
-turbulence_enabled = true
-turbulence_noise_strength = 0.1
+[sub_resource type="Gradient" id="Gradient_7vrkn"]
+colors = PackedColorArray(1, 1, 1, 1, 0.21710122, 0.21710122, 0.21710122, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(0, 0.56078434, 0.09019608, 1)
@@ -91,11 +72,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Background" unique_id=43877691]
-position = Vector2(946, -24)
-amount = 200
-lifetime = 3.5
-process_material = SubResource("ParticleProcessMaterial_arv2f")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background" unique_id=1250293987]
+visible = false
+position = Vector2(563, 21)
+amount = 2
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(500, 8.58)
+scale_amount_min = 50.0
+scale_amount_max = 50.0
+color_ramp = SubResource("Gradient_7vrkn")
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1038948208]
 visible = false
@@ -140,7 +126,6 @@ text = "Start Game"
 
 [node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=1168352789]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.078431375, 1, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

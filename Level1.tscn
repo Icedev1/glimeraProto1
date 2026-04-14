@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://c2ughbctkehou"]
 
 [ext_resource type="Material" uid="uid://cg4gs15tqn333" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG.tres" id="1_kyxg0"]
-[ext_resource type="Script" uid="uid://ufftdldvoqci" path="res://level_1.gd" id="1_n2naj"]
 [ext_resource type="PackedScene" uid="uid://dcowgxvbiylrh" path="res://meshes/House1/House 1.blend" id="2_mc20k"]
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="3_5g1s2"]
 [ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="4_aiv1b"]
@@ -27,7 +26,6 @@
 [ext_resource type="ArrayMesh" uid="uid://c7hs8xubxoxus" path="res://meshes/SamGrady buildings/building_1.obj" id="24_nqrg8"]
 [ext_resource type="ArrayMesh" uid="uid://i3g16rqeqvpo" path="res://meshes/SamGrady buildings/building_5.obj" id="25_p1166"]
 [ext_resource type="PackedScene" uid="uid://sdnpn2k7qsmd" path="res://meshes/Tree1.tscn" id="26_kp6ii"]
-[ext_resource type="AudioStream" uid="uid://b41f4e5p8kbkc" path="res://Sounds/Land of Morytha.mp3" id="27_exy8o"]
 [ext_resource type="AudioStream" uid="uid://cg0yqq3bwpbtm" path="res://Sounds/SFX/ARC_BG_Amb_Wind_LP.ogg" id="27_nqrg8"]
 [ext_resource type="PackedScene" uid="uid://du3q4pxsok34d" path="res://Street 1 Gate.tscn" id="28_exy8o"]
 [ext_resource type="PackedScene" uid="uid://b6cogfpad2l2y" path="res://skull_npc.tscn" id="29_exy8o"]
@@ -45,14 +43,8 @@ size = Vector3(5.525, 8.565, 2.39)
 material = ExtResource("1_kyxg0")
 size = Vector2(7, 3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kuj8k"]
-size = Vector3(14.642967, 0.07373047, 10.101028)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vkugn"]
-size = Vector3(14.642357, 0.07373047, 14.387489)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_cove1"]
-size = Vector3(14.642967, 0.07373047, 5.8036194)
+size = Vector3(7.0259247, 0.07373047, 5.8036194)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w5lg"]
 resource_name = "Material.010"
@@ -300,17 +292,9 @@ height = 4.3149414
 radius = 0.5673828
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chykk"]
-size = Vector3(3.4697342, 3.1131592, 0.12207031)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3brhk"]
-size = Vector3(1.5389404, 1, 2.7113647)
+size = Vector3(3.4980774, 3.1131592, 0.12207031)
 
 [node name="Node3D" type="Node3D" unique_id=8267905]
-script = ExtResource("1_n2naj")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=745662188]
-transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.7789326, 6.4915075, -2.3406992, -10.773995)
-mesh = SubResource("BoxMesh_3brtn")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=273785869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.147219, 0, 0)
@@ -320,19 +304,8 @@ transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.7789326, 3.7722385, 0,
 mesh = SubResource("PlaneMesh_mc20k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" unique_id=505052233]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8102984, -0.032079697, -0.54190826)
-shape = SubResource("BoxShape3D_kuj8k")
-
-[node name="StaticBody3D9" type="StaticBody3D" parent="." unique_id=1855500735]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.93377084, 21.802273, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D9" unique_id=1990481157]
-transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.7789326, 3.7722385, 0, 1.6125505)
-mesh = SubResource("PlaneMesh_mc20k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D9" unique_id=2097529676]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8099937, -0.032079697, 1.6036029)
-shape = SubResource("BoxShape3D_vkugn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017776489, -0.032079697, 1.6067963)
+shape = SubResource("BoxShape3D_cove1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1992203310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1467371, 0, 0)
@@ -643,9 +616,6 @@ metadata/_custom_type_script = "uid://chd4v2dchvucb"
 [node name="House 1" parent="." unique_id=1538674489 instance=ExtResource("2_mc20k")]
 transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, -2.4134228, 1.1677396, -1.4634721)
 
-[node name="House 4" parent="." unique_id=1868243745 instance=ExtResource("2_mc20k")]
-transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 13.09117, 1.1677396, -2.2768989)
-
 [node name="House 2" parent="." unique_id=1542537478 instance=ExtResource("2_mc20k")]
 transform = Transform3D(-0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 2.5576777, 1.1677396, -1.4634721)
 visible = false
@@ -885,12 +855,6 @@ transform = Transform3D(0.33, 0, 0, 0, 0.43, 0, 0, 0, 0.33, 8.228877, -0.1296174
 transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0.83762264, 1.1574705, 0)
 shape = SubResource("CylinderShape3D_kp6ii")
 
-[node name="PLACEHOLDER MUSIC" type="AudioStreamPlayer" parent="." unique_id=388136900]
-stream = ExtResource("27_exy8o")
-autoplay = true
-bus = &"Music"
-parameters/looping = true
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2045384742]
 stream = ExtResource("27_nqrg8")
 autoplay = true
@@ -898,16 +862,16 @@ bus = &"SFX"
 parameters/looping = true
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="." unique_id=677499546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29481792, 1.9082947, -4.1261272)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15976858, 1.9082947, -4.1261272)
 
 [node name="Gate3" parent="StaticBody3D8" unique_id=173483563 instance=ExtResource("28_exy8o")]
-transform = Transform3D(0.11, 0, 0, 0, -4.808253e-09, -0.11, 0, 0.11, -4.808253e-09, 4.1507354, 1.732337, -0.9523949)
+transform = Transform3D(0.11, 0, 0, 0, -4.808253e-09, -0.11, 0, 0.11, -4.808253e-09, 4.305992, 1.732337, -0.9523949)
 
 [node name="Gate4" parent="StaticBody3D8" unique_id=1370333628 instance=ExtResource("28_exy8o")]
-transform = Transform3D(-0.11, 9.616505e-09, 0, 0, 4.808253e-09, -0.11, -9.616505e-09, -0.11, -4.808253e-09, 6.0935335, 1.732337, -0.9523949)
+transform = Transform3D(-0.11, 9.616505e-09, 0, 0, 4.808253e-09, -0.11, -9.616505e-09, -0.11, -4.808253e-09, 5.973345, 1.732337, -0.9523949)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8" unique_id=1349800778]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1285744, 1.0565796, -0.9555664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.282379, 1.0565796, -0.9555664)
 shape = SubResource("BoxShape3D_chykk")
 
 [node name="skull" parent="." unique_id=1200212190 instance=ExtResource("29_exy8o")]
@@ -934,16 +898,18 @@ process_mode = 3
 script = ExtResource("34_6ased")
 canvas = NodePath("../UI Elements")
 
-[node name="level2transition" type="Area3D" parent="." unique_id=2032805929]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.957518, -0.032079697, -0.54190826)
-collision_layer = 16
-collision_mask = 2
+[node name="DialogueManager" type="Node" parent="." unique_id=1096501780 node_paths=PackedStringArray("dialBox")]
+script = ExtResource("32_3brhk")
+dialBox = NodePath("../UI Elements/DialBox")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level2transition" unique_id=90766557]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.711279, 0.52842104, 0.66275024)
-shape = SubResource("BoxShape3D_3brhk")
+[node name="PromptManager" type="Node" parent="." unique_id=1975046378 node_paths=PackedStringArray("interactPrompt")]
+script = ExtResource("33_7qte5")
+interactPrompt = NodePath("../UI Elements/Prompt")
 
-[connection signal="body_entered" from="level2transition" to="." method="_on_level_2_transition_body_entered"]
+[node name="PauseHandler" type="Node" parent="." unique_id=1597268717 node_paths=PackedStringArray("canvas")]
+process_mode = 3
+script = ExtResource("34_6ased")
+canvas = NodePath("../UI Elements")
 
 [editable path="CharacterBody3D"]
 [editable path="House 2"]
