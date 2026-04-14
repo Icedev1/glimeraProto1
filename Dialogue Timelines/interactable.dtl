@@ -1,0 +1,103 @@
+join Gli left
+# I'm using target in order to check which interaction should be run. Skull is a placeholder
+# Bedroom
+if {target} == "bed":
+	Gli: My bed. I should make it… but I’d rather check out what caused that noise.
+elif {target} == "window":
+	Gli: Everything looks normal from what I can see…
+elif {target} == "clock":
+	Gli: Oh, I really overslept! I guess it’s a good thing all that noise dragged me out of my nest.
+elif {target} == "violin":
+	Gli: My oldest and most prized possession… Nothing puts me at ease quite like playing for the birds does. I should take this with me when I head out.
+elif {target} == "door_lr":
+	if "graft" == true:
+		[signal arg="open_door_lr"]
+	else:
+		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
+# Living Room
+elif {target} == "junk":
+	Gli: Some bits I've found around the city. I really should organize these properly soon and see what can be salvaged for useful graftables.
+	[signal arg="get_graft"]
+	# Destroy the pile of junk so that it can't be interacted with again
+	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked
+elif {target} == "door_fd":
+	[signal arg="open_door_fd"]
+	Gli: Yes yes I heard y- Oh my…
+	# Door can't be interacted with again
+# Street 1
+elif {target} == "frz_chr_outside_house":
+	join skull right
+	if {talkedTo} == false:
+		Gli: H-hello? Are you alright…?
+		This figure is completely motionless. It seems they fell over in the middle of knocking on your door.
+		Gli: …
+		set {talkedTo} = true
+	else:
+		Gli: I’m going to get some help, okay?
+		The figure remains frozen in place.
+		Gli: ...
+	leave --All--
+elif {target} == "door_nbr":
+	audio -
+	There’s no response.
+elif {target} == "window_nbr1":
+	There’s no one here.
+elif {target} == "window_nbr2":
+	The curtains are shut tightly.
+elif {target} == "frz_chr_tending_plants":
+	Gli: Um, good morning. Did you see what happened to that figure by my doorstep? He’s completely frozen…!
+	This figure is completely motionless. It seems she was in the middle of tending to her crops.
+	Gli: …What the hell is going on here?! Hello?!
+# Street 3
+elif {target} == "defeated_enemy":
+	The figure has been knocked out, rendering it immobile. Though, its eyes still seem to be following your movements.
+	Gli: ...
+elif {target} == "Smiling_figure_door":
+	if {talkedTo} == false:
+		# Knock on door
+		audio -
+		[signal arg="open_door_sf"]
+		join skull right
+		skull: Oh my! It’s Gli! What a pleasure to receive a visit from you, my dear! Is there anything I can do for you?
+		Gli: (She’s usually never this chipper…)
+		Gli: O-oh yes hello! Thank you… Sorry but, have you not noticed other figures acting strangely suddenly?
+		skull: (starts to jitter a bit? Speech animating wobbly?) Strangely…?! Whatever do you mean, sweetheart?
+		Gli: Umm well I woke up to a loud noise this morning and then the first two figures I saw were completely frozen stiff!
+		Gli: It's like they suddenly turned to stone in the middle of what they were doing!!
+		Gli: And then, just up ahead, past this street, I was attacked by the only figure I'd seen moving all day! He didn't even say a word!
+		Gli: Just started swinging at me, and even damaged my violin!
+		Gli: I just don’t know what’s going on anymore, no one is behaving normally and I'm starting to get scared.
+		skull: I can’t say I find any of that strange.
+		skull: Maybe you need to calm down.
+		skull: Maybe YOU’RE the one acting strange.
+		skull: Have you considered that? Hm?
+		skull: Maybe you’re the scary one.
+		skull: The Guardian watches over all of us. Remember that.
+		skull: Good-bye, Gli.
+		leave skull
+		[signal arg="close_door_sf"]
+		Gli: ...
+	else:
+		There’s no response, even though you hear noises coming from inside.
+# Market 1
+elif {target} == "staircase":
+	# if you have the graftable rope or whatever check it here
+	if {} == true:
+		[signal arg="swing_across"]
+	else:
+		It’s too dangerous to climb in its current state. If only you had a something you could use to get across…
+elif {target} == "quest_npc_1_friend":
+	# This is the block puzzle quest apparently. fill it in and make the if variable read quest flag
+	if {} == true:
+		# here you make the target interactable
+# Market 2
+elif {target} == "quest_npc_1":
+	join skull right
+	if :
+		skull: asks Gli to bring her friend over if they see her
+		skull: (gives a description of appearance)
+		[signal arg="start_quest_1"]
+	else:
+		skull: Thank you take this.
+		[signal arg="get_graft_3"]
+[end_timeline]
