@@ -10,4 +10,6 @@ weapon_name = "w_self_harm"
 attack_damage = 2
 cooldown = 3.0
 hp_cost = 2
+is_arm = false
+element = 2
 effects = Array[ExtResource("1_8hxkb")]([ExtResource("2_kuxsl")])

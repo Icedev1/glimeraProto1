@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dt2k0fdeka5k6" path="res://Combat/scripts/battle/graft_menu.gd" id="1_1f5ry"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="2_dsoa3"]
+[ext_resource type="Script" uid="uid://d1n6m4bvwsjum" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="3_nql8w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsoa3"]
 bg_color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[sub_resource type="Texture2D" id="Texture2D_kivy5"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("3_nql8w")
+path = "graft_confirm"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
+
+[sub_resource type="Texture2D" id="Texture2D_nql8w"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("3_nql8w")
+path = "graft_cancel"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
 
 [node name="GraftMenu" type="PanelContainer" unique_id=1743679526]
 anchors_preset = -1
@@ -63,10 +78,12 @@ layout_mode = 2
 
 [node name="equipped_card_3" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1066546761 instance=ExtResource("2_dsoa3")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="equipped_card_4" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=899785656 instance=ExtResource("2_dsoa3")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="inventory_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1622778973]
@@ -87,24 +104,40 @@ columns = 6
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1928773696]
 layout_mode = 2
+theme_override_constants/separation = 22
 alignment = 1
+
+[node name="spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=469356964]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
 
 [node name="hp_cost_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=438685544]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "Hp cost : "
 
 [node name="graft_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=437586272]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 40)
+custom_minimum_size = Vector2(90, 60)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 32
 text = "Graft"
+icon = SubResource("Texture2D_kivy5")
 
 [node name="cancel_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1765357415]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(90, 60)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 32
 text = "Cancel"
+icon = SubResource("Texture2D_nql8w")
+
+[node name="spacer2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1976849828]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2

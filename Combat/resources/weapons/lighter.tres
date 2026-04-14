@@ -11,3 +11,4 @@ attack_damage = 1
 cooldown = 3.0
 hp_cost = 1
 effects = Array[ExtResource("1_gwvdb")]([ExtResource("2_gwvdb")])
+metadata/_custom_type_script = "uid://cbcgrkqaylv7i"

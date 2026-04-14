@@ -10,4 +10,5 @@ weapon_name = "W_dmgBuff"
 attack_damage = 1
 cooldown = 2.5
 hp_cost = 2
+element = 2
 effects = Array[ExtResource("1_bg381")]([ExtResource("2_bg381")])

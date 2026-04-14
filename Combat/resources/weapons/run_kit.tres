@@ -9,4 +9,5 @@ script = ExtResource("3_iqu6u")
 weapon_name = "Run Kit"
 cooldown = 4.0
 hp_cost = 1
+is_arm = false
 effects = Array[ExtResource("1_haf45")]([ExtResource("2_qefm1")])

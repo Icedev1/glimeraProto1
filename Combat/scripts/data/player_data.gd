@@ -1,8 +1,9 @@
 class_name PlayerData
 extends UnitData
 
-@export var equipped: Array[Weapon] = [null, null, null, null]
+@export var equipped: Array[Weapon] = [null, null]  # [0] = arm, [1] = leg
 @export var inventory: Array[Weapon] = []
+@export var consumables: Array[Consumable] = []
 
 func _init() -> void:
 	unit_name = "Gli"

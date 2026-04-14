@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bwc56wh0krfe3"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_naapv"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_guvd4"]
+
+[resource]
+script = ExtResource("3_guvd4")
+weapon_name = "Gli Arm"
+attack_damage = 3
+cooldown = 2.0

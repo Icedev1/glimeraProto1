@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://1f00y68uo837" path="res://Combat/scenes/player.tscn" id="2_lpir7"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
+[ext_resource type="Script" uid="uid://d1n6m4bvwsjum" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="4_f4pi3"]
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
+[ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
 
 [sub_resource type="GDScript" id="GDScript_p1qf1"]
 script/source = "extends Control
@@ -24,6 +26,54 @@ script/source = "extends Control
 func trigger_Visability():
 	visible = !visible
 "
+
+[sub_resource type="Texture2D" id="Texture2D_yahae"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "attack1"
+
+[sub_resource type="Texture2D" id="Texture2D_v7i3o"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "attack2"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
+
+[sub_resource type="Texture2D" id="Texture2D_f4pi3"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "block"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
+
+[sub_resource type="Texture2D" id="Texture2D_66ngm"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "graft"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
+
+[sub_resource type="Texture2D" id="Texture2D_03edq"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "previous_consumable"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
+
+[sub_resource type="Texture2D" id="Texture2D_22uqi"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "use_consumable"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
+
+[sub_resource type="Texture2D" id="Texture2D_6ni85"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "next_consumable"
+metadata/_custom_type_script = "uid://8cf6i4vioxco"
 
 [sub_resource type="Environment" id="Environment_7sfm4"]
 background_mode = 1
@@ -120,9 +170,9 @@ anchor_left = 0.028
 anchor_top = 0.163
 anchor_right = 0.44900003
 anchor_bottom = 0.20300001
-offset_left = 0.23999786
+offset_left = 2.2399979
 offset_top = -0.040008545
-offset_right = -0.080078125
+offset_right = 43.91992
 offset_bottom = -0.2400055
 grow_horizontal = 2
 grow_vertical = 2
@@ -136,7 +186,7 @@ text = "Attack name :"
 
 [node name="TimerBar" type="ProgressBar" parent="Battle_UI/EnemyArea/HBoxContainer" unique_id=792808009]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(450, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_vertical = 1
 
@@ -188,91 +238,182 @@ theme_override_font_sizes/font_size = 28
 text = "Enemy Name "
 horizontal_alignment = 1
 
+[node name="EnemyElement" type="Label" parent="Battle_UI/EnemyArea" unique_id=477983400]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245
+anchor_top = 0.13700001
+anchor_right = 0.326
+anchor_bottom = 0.15200001
+offset_left = -0.4000244
+offset_top = -14.960007
+offset_right = 0.08001709
+offset_bottom = -0.16000366
+theme_override_font_sizes/font_size = 22
+text = "Element : Rock"
+
 [node name="options_menu" type="Control" parent="Battle_UI" unique_id=40959146]
 layout_mode = 3
 anchor_left = 0.56600004
 anchor_top = 0.633
 anchor_right = 0.818
 anchor_bottom = 0.84900004
-offset_left = -0.7200928
+offset_left = -186.7201
 offset_top = 0.35998535
-offset_right = -0.5600586
+offset_right = -194.64001
 offset_bottom = 0.079956055
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_p1qf1")
 
-[node name="weaponCard1" parent="Battle_UI/options_menu" unique_id=794853170 instance=ExtResource("4_4k1nj")]
-unique_name_in_owner = true
+[node name="Attack1" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=941572531]
 layout_mode = 1
-anchor_left = -1.8410001
-anchor_top = 0.215
-anchor_right = -1.366
-anchor_bottom = 1.4260001
-offset_left = 0.044067383
-offset_top = -0.09500122
-offset_right = 0.14416504
-offset_bottom = 17.741974
+anchors_preset = -1
+anchor_left = -0.492
+anchor_top = 0.25800002
+anchor_right = -0.029000001
+anchor_bottom = 1.399
+offset_left = 0.15266418
+offset_top = -20.114002
+offset_right = -0.19831848
+offset_bottom = 18.03299
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="weaponCard2" parent="Battle_UI/options_menu" unique_id=1281697458 instance=ExtResource("4_4k1nj")]
-unique_name_in_owner = true
-layout_mode = 1
-anchor_left = -1.225
-anchor_top = 0.215
-anchor_right = -0.75000006
-anchor_bottom = 1.5020001
-offset_left = -0.099975586
-offset_top = -0.09500122
-offset_right = 3.0517578e-05
-offset_bottom = 0.033966064
+[node name="attackIcon1" type="TextureRect" parent="Battle_UI/options_menu/Attack1" unique_id=1548064445]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("Texture2D_yahae")
+expand_mode = 3
+stretch_mode = 5
 
-[node name="weaponCard3" parent="Battle_UI/options_menu" unique_id=616292769 instance=ExtResource("4_4k1nj")]
+[node name="weaponCard1" parent="Battle_UI/options_menu/Attack1" unique_id=794853170 instance=ExtResource("4_4k1nj")]
 unique_name_in_owner = true
-layout_mode = 1
-anchor_left = -0.64000005
-anchor_top = 0.215
-anchor_right = -0.165
-anchor_bottom = 1.5020001
-offset_left = -0.23999023
-offset_top = -0.09500122
-offset_right = -0.13999939
-offset_bottom = 0.033966064
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="weaponCard4" parent="Battle_UI/options_menu" unique_id=318498176 instance=ExtResource("4_4k1nj")]
-unique_name_in_owner = true
+[node name="Attack2" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=640688364]
 layout_mode = 1
-anchor_left = -0.037
-anchor_top = 0.215
-anchor_right = 0.43800002
-anchor_bottom = 1.5020001
-offset_left = -0.091999054
-offset_top = -0.09500122
-offset_right = 0.0079956055
-offset_bottom = 0.033966064
+anchors_preset = -1
+anchor_left = 0.076000005
+anchor_top = 0.25800002
+anchor_right = 0.53800005
+anchor_bottom = 1.4760001
+offset_left = -0.16992569
+offset_top = -20.114002
+offset_right = -0.045013428
+offset_bottom = 0.09197998
 
-[node name="BlockCard" parent="Battle_UI/options_menu" unique_id=1987844722 instance=ExtResource("4_a12nh")]
-unique_name_in_owner = true
-layout_mode = 1
-anchor_left = 0.558
-anchor_top = 0.18900001
-anchor_right = 0.975
-anchor_bottom = 1.506
-offset_left = -0.072021484
-offset_top = -0.037002563
-offset_right = 0.099975586
-offset_bottom = 0.101989746
+[node name="attackIcon2" type="TextureRect" parent="Battle_UI/options_menu/Attack2" unique_id=1796992559]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("Texture2D_v7i3o")
+expand_mode = 3
+stretch_mode = 5
 
-[node name="GraftCard" parent="Battle_UI/options_menu" unique_id=1370118634 instance=ExtResource("4_a12nh")]
+[node name="weaponCard2" parent="Battle_UI/options_menu/Attack2" unique_id=1281697458 instance=ExtResource("4_4k1nj")]
 unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Block" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=1767227566]
 layout_mode = 1
-anchor_left = 0.558
-anchor_top = 0.18900001
-anchor_right = 0.975
-anchor_bottom = 1.506
-offset_left = 250.92798
-offset_top = -0.037002563
-offset_right = 251.09998
-offset_bottom = 0.101989746
+anchors_preset = -1
+anchor_left = 0.643
+anchor_top = 0.25800002
+anchor_right = 1.105
+anchor_bottom = 1.4760001
+offset_left = -0.016601563
+offset_top = -20.114002
+offset_right = 0.1083374
+offset_bottom = 0.09197998
+
+[node name="blockIcon" type="TextureRect" parent="Battle_UI/options_menu/Block" unique_id=839716374]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("Texture2D_f4pi3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BlockCard" parent="Battle_UI/options_menu/Block" unique_id=1847938993 instance=ExtResource("4_a12nh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+action_name = "Block"
+cooldown_duration = 1.5
+description = "Reduce incoming damage by 60% for 0.4s"
+
+[node name="Graft" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=951292319]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.21
+anchor_top = 0.25800002
+anchor_right = 1.6730001
+anchor_bottom = 1.4760001
+offset_left = 0.13671875
+offset_top = -20.114002
+offset_right = -0.21429443
+offset_bottom = 0.09197998
+
+[node name="graftIcon" type="TextureRect" parent="Battle_UI/options_menu/Graft" unique_id=1780739233]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("Texture2D_66ngm")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="GraftCard" parent="Battle_UI/options_menu/Graft" unique_id=1934382429 instance=ExtResource("4_a12nh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+action_name = "Graft"
+cooldown_duration = 5.0
+description = "Swap weapons"
+
+[node name="Consumables" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=373898980]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.3030001
+anchor_top = 0.25800002
+anchor_right = -0.597
+anchor_bottom = 1.4760001
+offset_left = 0.12384033
+offset_top = -20.114002
+offset_right = 0.12426758
+offset_bottom = 0.09197998
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Battle_UI/options_menu/Consumables" unique_id=216471747]
+layout_mode = 2
+
+[node name="consumablesPrevIcon" type="TextureRect" parent="Battle_UI/options_menu/Consumables/HBoxContainer" unique_id=1783905337]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("Texture2D_03edq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="consumablesUseIcon" type="TextureRect" parent="Battle_UI/options_menu/Consumables/HBoxContainer" unique_id=887369568]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = SubResource("Texture2D_22uqi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="consumablesNextIcon" type="TextureRect" parent="Battle_UI/options_menu/Consumables/HBoxContainer" unique_id=831756344]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = SubResource("Texture2D_6ni85")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ConsumableCard" parent="Battle_UI/options_menu/Consumables" unique_id=454336537 instance=ExtResource("6_4k1nj")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="battle_log" type="RichTextLabel" parent="Battle_UI" unique_id=356984789]
 unique_name_in_owner = true
@@ -386,9 +527,9 @@ text = "Continue"
 environment = SubResource("Environment_7sfm4")
 
 [node name="SubViewportContainer1" type="SubViewportContainer" parent="." unique_id=1847338007]
-anchors_preset = 9
+anchors_preset = -1
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_right = 960.0
 grow_vertical = 2
 stretch = true
 
@@ -401,11 +542,10 @@ render_target_update_mode = 4
 transform = Transform3D(0.87547666, -0.12831463, 0.4659142, 0, 0.9641057, 0.2655186, -0.48326045, -0.23245531, 0.8440521, -5.5243955, 2.030249, 1.104398)
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=1849388782]
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -960.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8

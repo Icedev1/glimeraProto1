@@ -1,26 +1,41 @@
 class_name Weapon
 extends Resource
 
+enum Element { ROCK, PAPER, SCISSOR }
+
 @export var weapon_name: String = ""
 @export var attack_damage: int = 0
 @export var cooldown: float = 1.0
 @export var hp_cost: int = 0
+@export var is_arm: bool = true  ## true = arm weapon, false = leg weapon
+@export var element: Element = Element.ROCK
 
-# ── Weapon modifiers (read directly during attack) ───────────────────────────
+# ── Weapon modifiers  ───────────────────────────
 @export var hit_count: int = 1
 @export var life_steal: float = 0.0
 
 # ── Status effects applied on hit ─────────────────────────────────────────────
 @export var effects: Array[StatusEffect] = []
 
-func _init(p_name: String = "", p_damage: int = 0, p_cooldown: float = 1.0, p_hp_cost: int = 0):
-	weapon_name = p_name
-	attack_damage = p_damage
-	cooldown = p_cooldown
-	hp_cost = p_hp_cost
+# ── Element helpers ───────────────────────────────────────────────────────────
+## Returns the element that this element beats
+static func element_beats(e: Element) -> Element:
+	match e:
+		Element.ROCK:    return Element.SCISSOR
+		Element.PAPER:   return Element.ROCK
+		Element.SCISSOR: return Element.PAPER
+	return e
+
+static func element_name(e: Element) -> String:
+	match e:
+		Element.ROCK:    return "Rock"
+		Element.PAPER:   return "Paper"
+		Element.SCISSOR: return "Scissor"
+	return "Unknown"
 
 func get_description() -> String:
 	var parts: PackedStringArray = []
+	parts.append("[%s | %s]" % ["element", Weapon.element_name(element)])
 	if hit_count > 1:
 		parts.append("%d hits" % hit_count)
 	if life_steal > 0.0:
