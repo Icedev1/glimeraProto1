@@ -18,7 +18,10 @@ extends Node
 	$"../MAsked Gli/Armature/Skeleton/Shin Guard_001",
 	$"../MAsked Gli/Armature/Skeleton/Boot_001"
 ]
-@onready var arm_part = $"../MAsked Gli/Armature/Skeleton/LowerArm_r"
+@onready var arm_parts : Array[Node3D] = [
+	$"../MAsked Gli/Armature/Skeleton/LowerArm_r",
+	$"../MAsked Gli/Armature/Skeleton/Hand_r"
+]
 
 func _ready() -> void:
 	GraftGlobals.left_leg_graft_changed.connect(graft_left_leg)
@@ -32,14 +35,15 @@ func graft_right_arm(index : int) -> void:
 	if index < 0 or index >= arm_graftables.size():
 		return
 	elif GraftGlobals.right_arm_graft_index == 0 and index != 0:
-		arm_part.visible = false
-	
+		for part in arm_parts:
+			part.visible = false
 		# Remove any existing graft
 	for child in right_arm.get_children():
 		child.queue_free()
 	
 	if index == 0:
-		arm_part.visible = true
+		for part in arm_parts:
+			part.visible = true
 		return
 	
 	var graft_scene = arm_graftables[index]

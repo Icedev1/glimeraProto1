@@ -14,7 +14,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_o00t5"]
 font_size = 62
 
-[node name="Control" type="Control" unique_id=992539865]
+[node name="Control" type="Control" unique_id=992539865 node_paths=PackedStringArray("leftLegButton", "rightArmButton")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -24,7 +24,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 script = ExtResource("1_nsmwh")
-graftIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("3_n4bap"), ExtResource("4_gjxvf")])
+armIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("3_n4bap")])
+legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf")])
+leftLegButton = NodePath("ColorRect/VBoxContainer/HBoxContainer2/TextureButton")
+rightArmButton = NodePath("ColorRect2/VBoxContainer/HBoxContainer/TextureButton")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=577141664]
 layout_mode = 1
@@ -271,9 +274,6 @@ transform = Transform3D(-0.9997722, -0.021233775, -0.0021558215, 0.021089144, -0
 [node name="AnimationPlayer" parent="SubViewportContainer/SubViewport/Node3D/CharacterBody3D/MAsked Gli" parent_id_path=PackedInt32Array(1653024157, 201702736, 1915688629) index="1" unique_id=1926690920]
 autoplay = &"Idle Straight"
 
-[node name="GraftingSystem" parent="SubViewportContainer/SubViewport/Node3D/CharacterBody3D" parent_id_path=PackedInt32Array(1653024157, 201702736) index="3" unique_id=1353283170]
-arm_graftables = Array[PackedScene]([])
-
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=914894941]
 transform = Transform3D(0.99998873, 0, -0.0047298893, 0, 1, 0, 0.0047298595, 0, 0.99998873, -0.007721761, 0.33589268, 1.0756568)
 fov = 45.821358
@@ -367,6 +367,41 @@ text = "Left Leg"
 label_settings = SubResource("LabelSettings_o00t5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ArmList" type="ItemList" parent="." unique_id=1139947939]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 2
+max_columns = 4
+icon_mode = 0
+item_0/text = "Basic"
+item_0/icon = ExtResource("2_l3mp2")
+item_1/text = "Saw"
+item_1/icon = ExtResource("3_n4bap")
+
+[node name="LegList" type="ItemList" parent="." unique_id=1976916116]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 2
+max_columns = 4
+icon_mode = 0
+item_0/text = "Basic"
+item_0/icon = ExtResource("2_l3mp2")
+item_1/text = "Hammer"
+item_1/icon = ExtResource("4_gjxvf")
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="ColorRect2/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_leg_button_pressed"]
+[connection signal="item_selected" from="ArmList" to="." method="_on_arm_list_item_selected"]
 
 [editable path="SubViewportContainer/SubViewport/Node3D"]
 [editable path="SubViewportContainer/SubViewport/Node3D/CharacterBody3D"]
