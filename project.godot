@@ -26,6 +26,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 BattleManager="*uid://bks8pyajw4qln"
 PlayerManager="*uid://dujbeol33fjtr"
 Debug="*uid://br2ibcwc8lhs4"
+GraftGlobals="*uid://ddwa1wyywsuth"
 
 [dialogic]
 

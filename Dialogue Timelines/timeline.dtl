@@ -7,7 +7,7 @@ Gli: Hi. Can you help me find the way to Archeo?
 join skull right [animation="Fade In"]
 skull: [shake rate=20 level=15]AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHH[/shake]
 - Are you okay?
-	skull: Yes. I'm fine. thanks for asking.
+	skull: How dare you ask me that? You shall suffer!
 	leave --All-- [animation="Instant Out" length="0.0" wait="true"]
 	[wait time="0.5"]
 	[signal arg="battle_start"]

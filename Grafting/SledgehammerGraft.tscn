@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jhypc1xq6cvw"]
+
+[ext_resource type="PackedScene" uid="uid://0fe3k2esca4c" path="res://Grafting/Sledgehammer.fbx" id="1_6y83m"]
+[ext_resource type="Texture2D" uid="uid://lk17a0nohra3" path="res://Grafting/sledgehammer icon.png" id="1_7ljuc"]
+
+[node name="Node3D" type="Node3D" unique_id=922979305]
+metadata/Icon = ExtResource("1_7ljuc")
+
+[node name="Sledgehammer" parent="." unique_id=929675651 instance=ExtResource("1_6y83m")]
+
+[editable path="Sledgehammer"]
