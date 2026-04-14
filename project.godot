@@ -34,6 +34,9 @@ directories/dch_directory={
 "skull": "res://characters/skull.dch"
 }
 directories/dtl_directory={
+"bedroom": "res://Dialogue Timelines/interactable.dtl",
+"events": "res://Dialogue Timelines/events.dtl",
+"mid_combat": "res://Dialogue Timelines/mid_combat.dtl",
 "timeline": "res://Dialogue Timelines/timeline.dtl"
 }
 layout/style_directory={
@@ -45,7 +48,9 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Timelines/myStyle.tres"]
 layout/default_style="res://Dialogue Timelines/New_File.tres"
 variables={
-"talkedTo": false
+"event": "",
+"talkedTo": false,
+"target": "default"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.03

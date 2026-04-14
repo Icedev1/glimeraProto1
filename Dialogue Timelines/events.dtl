@@ -1,0 +1,11 @@
+join Gli left
+# This is for events that the player doesn't trigger.
+if {event} == "living_room_event":
+	Gli: Guardian above! What could they possibly need from me that badly?!
+# Street  2
+elif {event} == "encounter_enemy_1":
+	Gli: Oh thank the Guardian, a normal figure! I hope they know more about what’s happened than I do.
+	[signal arg="start_battle_1"]
+elif {event} == "encounter_enemy_2":
+	[signal arg="start_battle_2"]
+[end_timeline]
