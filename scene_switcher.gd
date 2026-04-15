@@ -9,9 +9,11 @@ func _process(delta: float) -> void:
 			get_tree().paused = false
 			pauseInstance.queue_free()
 		else:
-			get_tree().paused = true
 			pauseInstance = pauseScene.instantiate()
 			canvas.add_child(pauseInstance)
+			get_tree().paused = true
+			
+			GraftGlobals.menu_opened.emit()
 			
 
 		

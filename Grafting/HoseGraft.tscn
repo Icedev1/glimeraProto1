@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d3n4eacignqhs"]
+
+[ext_resource type="PackedScene" uid="uid://lq4vfmltirwg" path="res://meshes/Garden Hose.blend" id="1_0bus4"]
+
+[node name="Node3D" type="Node3D" unique_id=245186737]
+
+[node name="Garden Hose" parent="." unique_id=209134708 instance=ExtResource("1_0bus4")]
+transform = Transform3D(-2.1820955, -0.91188073, 1.4989783, 1.3935386, -2.3542068, 0.59645814, 1.0660737, 1.2108612, 2.2885156, -2.132279, 1.3939378, 1.0496051)

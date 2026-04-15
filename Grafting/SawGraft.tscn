@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0u8g3yptsd7x" path="res://Grafting/saw.fbx" id="1_yarni"]
 
 [node name="Node3D" type="Node3D" unique_id=1562764636]
-transform = Transform3D(0.850946, -0.38761473, -0.3544655, -0.16549075, 0.44262514, -0.8813035, 0.49850154, 0.8086024, 0.31250343, -0.43353993, -0.0751825, -0.20821173)
 metadata/Icon = ExtResource("1_r3jet")
 
 [node name="saw" parent="." unique_id=1710916204 instance=ExtResource("1_yarni")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(0.34748253, 0.1913518, 0.91795444, 0.6277418, 0.67974645, -0.3793217, -0.69656014, 0.7080461, 0.11608047, -0.3729477, 0.15049846, -0.043692842)

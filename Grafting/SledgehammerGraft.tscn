@@ -7,5 +7,6 @@
 metadata/Icon = ExtResource("1_7ljuc")
 
 [node name="Sledgehammer" parent="." unique_id=929675651 instance=ExtResource("1_6y83m")]
+transform = Transform3D(2.495, 0, 0, 0, 2.495, 0, 0, 0, 2.495, 6.398186e-09, 2.5407205, 5.8172738e-09)
 
 [editable path="Sledgehammer"]
