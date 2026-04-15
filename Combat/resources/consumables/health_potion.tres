@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Consumable" format=3 uid="uid://cxqlrf3r0weyn"]
+
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://scripts/data/consumable.gd" id="1_0gl0j"]
+
+[resource]
+script = ExtResource("1_0gl0j")
+consumable_name = "Health Potion"
+heal_amount = 10
+battle_description = "Heal Player 10 hp"
+description = "Description !!"
+metadata/_custom_type_script = "uid://dnsrxvj5qtw4x"

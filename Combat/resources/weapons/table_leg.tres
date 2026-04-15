@@ -10,3 +10,4 @@ attack_damage = 2
 cooldown = 2.5
 hp_cost = 2
 hit_count = 2
+metadata/_custom_type_script = "uid://cbcgrkqaylv7i"

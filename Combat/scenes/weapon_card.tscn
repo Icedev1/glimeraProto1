@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1l4bl4ffk766" path="res://Combat/scripts/ui/weapon_card.gd" id="1_bhqxw"]
 
 [node name="weaponCard" type="PanelContainer" unique_id=794853170]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(220, 200)
 anchors_preset = -1
 anchor_right = 0.135
 anchor_bottom = 0.148

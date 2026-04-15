@@ -14,12 +14,10 @@ func init_player() -> void:
 	data = PlayerData.new()
 	data.max_hp = 25
 	data.inventory = _default_inventory()
-	data.equipped[0] = preload("res://Combat/resources/weapons/lighter.tres") # lighter
-	data.equipped[1] = preload("res://Combat/resources/weapons/blowhorn.tres") # blowhorn
-	data.equipped[2] = preload("res://Combat/resources/weapons/flash_light.tres")  #flashlight
-	data.equipped[3] = preload("res://Combat/resources/weapons/violin.tres") # violin (heal + empower)
+	data.consumables = _default_consumables()
+	data.equipped[0] = preload("res://Combat/resources/weapons/gli_arm.tres") # gli_arm
+	data.equipped[1] = preload("res://Combat/resources/weapons/gli_leg.tres") # gli_leg
 	#save()
-
 
 #func save() -> void:
 	#data.save(SAVE_PATH)
@@ -38,4 +36,10 @@ func _default_inventory() -> Array[Weapon]:
 		preload("res://Combat/resources/weapons/w3.tres"), # w3 (weaken)
 		preload("res://Combat/resources/weapons/w4.tres"),# w4 (lifesteal)
 		
+	]
+
+func _default_consumables() -> Array[Consumable]:
+	return [
+		preload("uid://bosfy5u65tjoy"), # bandage
+		preload("uid://cxqlrf3r0weyn"), # health_potion
 	]

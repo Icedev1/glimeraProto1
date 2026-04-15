@@ -10,4 +10,6 @@ weapon_name = "blowhorn"
 attack_damage = 2
 cooldown = 2.5
 hp_cost = 1
+is_arm = false
+element = 1
 effects = Array[ExtResource("1_nso66")]([ExtResource("2_hpnp0")])

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://d2863a3kp5or6"]
+
+[ext_resource type="Script" uid="uid://c22xpcx2d84a0" path="res://scripts/ui/consumable_card.gd" id="1_8fdhi"]
+
+[node name="ConsumableCard" type="PanelContainer" unique_id=1847938993]
+custom_minimum_size = Vector2(120, 160)
+anchors_preset = -1
+anchor_right = 0.172
+anchor_bottom = 0.148
+offset_right = -70.24002
+offset_bottom = 0.16000366
+script = ExtResource("1_8fdhi")
+
+[node name="cooldown_bar" type="ProgressBar" parent="." unique_id=874721104]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+value = 0.17
+fill_mode = 3
+show_percentage = false
+
+[node name="use_btn" type="Button" parent="." unique_id=1023731707]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1542987212]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=448222108]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1607947009]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="prev_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1108122934]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "◀"
+
+[node name="consumable_name_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1747019464]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = " Name"
+horizontal_alignment = 1
+
+[node name="next_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1233743412]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "▶"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=78082463]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="cooldown_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=907110296]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "CoolDown:"
+
+[node name="description_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2029926720]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Description:"
+autowrap_mode = 3
