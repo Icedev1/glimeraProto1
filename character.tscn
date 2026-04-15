@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://cy4o15k7ows4u"]
 
 [ext_resource type="Shader" uid="uid://8oupr2xsmh42" path="res://Chest Shader 2.tres" id="4_yxww1"]
-[ext_resource type="Animation" uid="uid://ctfunpif1vku" path="res://Animations/Cast Spell.anim" id="5_qi5as"]
+[ext_resource type="Animation" uid="uid://detr8h7vtume" path="res://Animations/Cast Spell.anim" id="5_qi5as"]
 [ext_resource type="Animation" uid="uid://b5odahiaixn7t" path="res://Animations/Walk2.anim" id="7_qi5as"]
 [ext_resource type="Material" uid="uid://cx1laxp3f55rt" path="res://Textures/Paper Texture/Paper.tres" id="7_x1sy7"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="8_c1b4b"]
 [ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="8_jb3kq"]
-[ext_resource type="Animation" uid="uid://ca0hwq8ihe3a5" path="res://Animations/get Hit.anim" id="9_jb3kq"]
 [ext_resource type="Script" uid="uid://bvuuj1hvtosya" path="res://all_new_grafting_system.gd" id="8_wdpcj"]
+[ext_resource type="Animation" uid="uid://d0qj4aimqfui8" path="res://Animations/get Hit.anim" id="9_jb3kq"]
 [ext_resource type="Material" path="res://Textures/Metal Texture/Metal061B_1K-JPG.tres" id="17_pm3tn"]
 [ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="32_go3uk"]
 
@@ -3368,12 +3368,12 @@ skeleton = NodePath("..")
 surface_material_override/0 = ExtResource("8_c1b4b")
 
 [node name="RightArmGraft" type="BoneAttachment3D" parent="MAsked Gli/Armature/Skeleton" unique_id=1562468153]
-transform = Transform3D(-0.31476313, -0.8225261, 0.47368234, 0.88460255, -0.0732934, 0.46055007, -0.3440966, 0.5639849, 0.7506786, -1.7776465, 6.868482, -0.11721796)
+transform = Transform3D(-0.3641956, -0.6157006, 0.6987662, -0.20734377, 0.7850676, 0.5836759, -0.9079485, 0.0676873, -0.41357976, -1.521171, 6.8571405, -0.40692425)
 bone_name = "RightLowerArm"
 bone_idx = 15
 
 [node name="LeftLegGraft" type="BoneAttachment3D" parent="MAsked Gli/Armature/Skeleton" unique_id=1148643271]
-transform = Transform3D(-0.9997722, -0.021233775, -0.0021558215, 0.021089144, -0.998362, 0.053183716, -0.0032815814, 0.053126138, 0.9985824, 0.6642251, 5.2489595, 0.036587037)
+transform = Transform3D(-0.7649549, -0.1226459, -0.63229895, -0.19781159, -0.8895219, 0.4118513, -0.6129557, 0.44012374, 0.6561833, 0.699149, 4.8927245, 0.8237202)
 bone_name = "LeftUpperLeg"
 bone_idx = 18
 
