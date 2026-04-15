@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://bqk5x8iden4rm" path="res://root/root.gd" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://85nw8bpyau5k" path="res://ui/main_menu.tscn" id="2_js5vo"]
 [ext_resource type="PackedScene" uid="uid://c2ughbctkehou" path="res://Street1.tscn" id="3_e2nrw"]
+[ext_resource type="PackedScene" uid="uid://bqw8xsgx5go56" path="res://street2.tscn" id="4_5jge4"]
 [ext_resource type="Script" uid="uid://b2eqqaj8wy4yd" path="res://root/screen_transition.gd" id="4_ovlcs"]
 [ext_resource type="Shader" uid="uid://d3agx2y3hiqpj" path="res://Shaders/screenshatter_transition.gdshader" id="5_b33ej"]
 [ext_resource type="Shader" uid="uid://bwj3n5uinfpvt" path="res://Shaders/clockwipe_transition.gdshader" id="5_e2nrw"]
+[ext_resource type="PackedScene" uid="uid://bvklw8t7w0lav" path="res://street 3.tscn" id="5_y3dhr"]
 [ext_resource type="Shader" uid="uid://y3npo0eylr6e" path="res://Shaders/screenshake.gdshader" id="7_e2nrw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gj8ci"]
@@ -168,7 +170,15 @@ script = ExtResource("1_pq8q7")
 
 [node name="UIScene" parent="." unique_id=630457395 instance=ExtResource("2_js5vo")]
 
-[node name="Overworld3D" parent="." unique_id=8267905 instance=ExtResource("3_e2nrw")]
+[node name="Overworld3D" type="Node3D" parent="." unique_id=1438765653]
+
+[node name="Street1" parent="Overworld3D" unique_id=8267905 instance=ExtResource("3_e2nrw")]
+
+[node name="Street2" parent="Overworld3D" unique_id=2146142844 instance=ExtResource("4_5jge4")]
+process_mode = 4
+
+[node name="Street3" parent="Overworld3D" unique_id=2025353727 instance=ExtResource("5_y3dhr")]
+process_mode = 4
 
 [node name="BattleScene3D" type="Node3D" parent="." unique_id=1267662630]
 
