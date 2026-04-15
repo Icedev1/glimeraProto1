@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dwgv1272wfcq7"]
+
+[ext_resource type="Texture2D" uid="uid://fodpwarglyty" path="res://Grafting/saw icon.png" id="1_r3jet"]
+[ext_resource type="PackedScene" uid="uid://d0u8g3yptsd7x" path="res://Grafting/saw.fbx" id="1_yarni"]
+
+[node name="Node3D" type="Node3D" unique_id=1562764636]
+metadata/Icon = ExtResource("1_r3jet")
+
+[node name="saw" parent="." unique_id=1710916204 instance=ExtResource("1_yarni")]
+transform = Transform3D(0.34748253, 0.1913518, 0.91795444, 0.6277418, 0.67974645, -0.3793217, -0.69656014, 0.7080461, 0.11608047, -0.3729477, 0.15049846, -0.043692842)
