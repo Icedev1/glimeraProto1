@@ -1,9 +1,4 @@
 # GraftMenu.gd
-# Supports both mouse clicks and controller navigation.
-# Controller flow:
-#   Equipped slots: D-pad/analog left/right to move between slots, A to select
-#   Inventory: D-pad/analog to browse, A to pick, B to go back to equipped
-#   Y to confirm graft, X to cancel graft
 extends Control
 
 signal graft_finished(swaps: Array[Dictionary])
@@ -271,7 +266,6 @@ func _refresh_inventory() -> void:
 func _on_inventory_weapon_pressed(w: Weapon) -> void:
 	if _selected_slot == -1:
 		return
-	# Double-check limb type matches
 	var slot_is_arm: bool = _selected_slot == BattleManager.SLOT_ARM
 	if w.is_arm != slot_is_arm:
 		return
@@ -282,7 +276,7 @@ func _on_inventory_weapon_pressed(w: Weapon) -> void:
 	if old_weapon:
 		_working_inventory.append(old_weapon)
 	_selected_slot = -1
-	_refresh()
+	_refresh.call_deferred()  
 
 # ── HP cost ───────────────────────────────────────────────────────────────────
 func _refresh_hp_cost() -> void:

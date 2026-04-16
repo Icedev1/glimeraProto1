@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bift21akoxrxf"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_3p6d0"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_45h70"]
+[ext_resource type="Resource" uid="uid://ck4bwjm08hgqw" path="res://Combat/resources/status_effects/burn_+1x6.tres" id="2_gr3v0"]
+
+[resource]
+script = ExtResource("2_45h70")
+weapon_name = "Saw"
+attack_damage = 4
+cooldown = 3.5
+hp_cost = 2
+element = 1
+effects = Array[ExtResource("1_3p6d0")]([ExtResource("2_gr3v0")])
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

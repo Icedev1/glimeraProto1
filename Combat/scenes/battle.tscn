@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dy8maci0u0st7"]
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
-[ext_resource type="Resource" uid="uid://kc77x8sqfqls" path="res://Combat/resources/enemies/enemy_demo.tres" id="2_6vh42"]
 [ext_resource type="PackedScene" uid="uid://1f00y68uo837" path="res://Combat/scenes/player.tscn" id="2_lpir7"]
+[ext_resource type="Resource" uid="uid://dg0eek81q6v5e" path="res://Combat/resources/enemies/enemy2/enemy2.tres" id="2_r8c2t"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
+[ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
 [ext_resource type="Script" uid="uid://d1n6m4bvwsjum" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="4_f4pi3"]
+[ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="4_q77w5"]
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
 
@@ -52,7 +54,6 @@ resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("4_f4pi3")
 path = "graft"
-metadata/_custom_type_script = "uid://8cf6i4vioxco"
 
 [sub_resource type="Texture2D" id="Texture2D_03edq"]
 resource_local_to_scene = false
@@ -81,7 +82,7 @@ background_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
 
 [node name="Battle" type="Node3D" unique_id=789942194]
 script = ExtResource("1_a12nh")
-enemy_resource = ExtResource("2_6vh42")
+enemy_resource = ExtResource("2_r8c2t")
 
 [node name="Env" type="Node3D" parent="." unique_id=1176667746]
 
@@ -93,8 +94,16 @@ size = Vector3(31, 3, 32)
 [node name="player" parent="." unique_id=1086824131 instance=ExtResource("2_lpir7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9843721, 0, 1.6952505)
 
+[node name="CharacterBody3D" parent="." unique_id=1051319031 instance=ExtResource("4_q77w5")]
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, 1.3581171, 5.0432353, 2.9808831)
+visible = false
+
 [node name="Enemy" parent="." unique_id=1901937109 instance=ExtResource("2_lpir7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4690304, 0, -2.1863098)
+
+[node name="NPC1" parent="." unique_id=1449211599 instance=ExtResource("4_egpmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.621397, 6.828104, 0)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=771652485]
 transform = Transform3D(0.70710677, -0.5000001, 0.5000001, -5.1593812e-08, 0.7071067, 0.7071069, -0.7071069, -0.49999997, 0.49999997, 0, 6, 0)
@@ -341,7 +350,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 action_name = "Block"
-cooldown_duration = 1.5
+cooldown_duration = 2.5
 description = "Reduce incoming damage by 60% for 0.4s"
 
 [node name="Graft" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=951292319]
@@ -368,7 +377,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 action_name = "Graft"
-cooldown_duration = 5.0
+cooldown_duration = 4.0
 description = "Swap weapons"
 
 [node name="Consumables" type="VBoxContainer" parent="Battle_UI/options_menu" unique_id=373898980]

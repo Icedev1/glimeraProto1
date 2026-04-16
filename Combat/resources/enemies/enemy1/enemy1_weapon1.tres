@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bkbf150e834iv"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_yaqpp"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_ejvq4"]
+
+[resource]
+script = ExtResource("2_ejvq4")
+weapon_name = "enemy weapon1"
+attack_damage = 50
+cooldown = 8.0
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

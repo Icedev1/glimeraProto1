@@ -1,13 +1,14 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://d16evo8w5imeb"]
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_gi4ow"]
+[ext_resource type="Resource" uid="uid://cbbauurg4p3he" path="res://Combat/resources/status_effects/slow.tres" id="2_o1ku3"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_oh17j"]
 
 [resource]
 script = ExtResource("2_oh17j")
-weapon_name = "Table leg"
-attack_damage = 2
-cooldown = 2.5
+weapon_name = "scissor 1"
+attack_damage = 19
+cooldown = 3.0
 hp_cost = 2
-hit_count = 2
-metadata/_custom_type_script = "uid://cbcgrkqaylv7i"
+element = 2
+effects = Array[ExtResource("1_gi4ow")]([ExtResource("2_o1ku3")])

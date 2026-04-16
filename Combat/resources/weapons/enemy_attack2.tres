@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://kof0ljggifw6"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_uwnvx"]
+[ext_resource type="Resource" uid="uid://cbbauurg4p3he" path="res://Combat/resources/status_effects/slow.tres" id="2_tr6np"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_uywcc"]
+
+[resource]
+script = ExtResource("3_uywcc")
+weapon_name = "scissor 2"
+attack_damage = 16
+cooldown = 3.0
+hp_cost = 2
+element = 2
+effects = Array[ExtResource("1_uwnvx")]([ExtResource("2_tr6np")])

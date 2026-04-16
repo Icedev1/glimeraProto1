@@ -57,5 +57,6 @@ autowrap_mode = 3
 [node name="click_area" type="Button" parent="." unique_id=1023731707]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 mouse_filter = 1
 flat = true

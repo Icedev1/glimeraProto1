@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="1_ihha7"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_nt0bt"]
 [ext_resource type="Resource" uid="uid://d16evo8w5imeb" path="res://Combat/resources/weapons/table_leg.tres" id="3_fxh3y"]
+[ext_resource type="Resource" uid="uid://kof0ljggifw6" path="res://Combat/resources/weapons/enemy_attack2.tres" id="4_qydoc"]
 
 [resource]
 script = ExtResource("1_ihha7")
-weapons = Array[ExtResource("2_nt0bt")]([ExtResource("3_fxh3y")])
+weapons = Array[ExtResource("2_nt0bt")]([ExtResource("3_fxh3y"), ExtResource("4_qydoc")])
+element = 1
 unit_name = "Enemy1"
-max_hp = 30
+max_hp = 150

@@ -12,12 +12,19 @@ func _ready() -> void:
 
 func init_player() -> void:
 	data = PlayerData.new()
-	data.max_hp = 25
+	data.max_hp = 100
 	data.inventory = _default_inventory()
 	data.consumables = _default_consumables()
-	data.equipped[0] = preload("res://Combat/resources/weapons/gli_arm.tres") # gli_arm
-	data.equipped[1] = preload("res://Combat/resources/weapons/gli_leg.tres") # gli_leg
+	#data.equipped[0] = preload("res://Combat/resources/weapons/hose.tres") # hose
+	data.equipped[0] = preload("res://Combat/resources/weapons/saw.tres") # saw
+	data.equipped[1] = preload("res://Combat/resources/weapons/sledge.tres") # sledge_hammer
+	#data.equipped[0] = preload("res://Combat/resources/weapons/gli_arm.tres") # gli_arm
+	#data.equipped[1] = preload("res://Combat/resources/weapons/gli_leg.tres") # gli_leg
 	#save()
+	
+	#"res://Combat/resources/weapons/hose.tres" # hose
+	#"res://Combat/resources/weapons/sledge.tres" # slege_hammer
+	
 
 #func save() -> void:
 	#data.save(SAVE_PATH)
@@ -35,6 +42,7 @@ func _default_inventory() -> Array[Weapon]:
 		preload("res://Combat/resources/weapons/w2.tres"), # w2 (self_Harm)
 		preload("res://Combat/resources/weapons/w3.tres"), # w3 (weaken)
 		preload("res://Combat/resources/weapons/w4.tres"),# w4 (lifesteal)
+		preload("res://Combat/resources/weapons/saw.tres"), # saw
 		
 	]
 

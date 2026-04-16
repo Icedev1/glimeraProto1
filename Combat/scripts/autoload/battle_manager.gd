@@ -58,8 +58,8 @@ const ELEMENT_PLAYER_INEFFECTIVE: float = 0.5
 const ELEMENT_ENEMY_SUPER_EFFECTIVE: float = 1.75
 const ELEMENT_ENEMY_EFFECTIVE: float = 1.3
 const ELEMENT_ENEMY_NEUTRAL: float = 1.0
-const ELEMENT_ENEMY_INEFFECTIVE: float = 0.7
-const ELEMENT_ENEMY_SUPER_INEFFECTIVE: float = 0.4
+const ELEMENT_ENEMY_INEFFECTIVE: float = 0.8
+const ELEMENT_ENEMY_SUPER_INEFFECTIVE: float = 0.7
 
 # ── Start ─────────────────────────────────────────────────────────────────────
 func start_battle() -> void:

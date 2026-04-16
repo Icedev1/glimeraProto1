@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://db4t1iyhhrxfi"]
+
+[ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="1_m2ypy"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_1dvof"]
+[ext_resource type="Resource" uid="uid://bkbf150e834iv" path="res://Combat/resources/enemies/enemy1/enemy1_weapon1.tres" id="3_yct42"]
+[ext_resource type="Resource" uid="uid://0vby3o2hv0kt" path="res://Combat/resources/enemies/enemy1/enemy1_weapon2.tres" id="4_7qyls"]
+
+[resource]
+script = ExtResource("1_m2ypy")
+weapons = Array[ExtResource("2_1dvof")]([ExtResource("3_yct42"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls"), ExtResource("4_7qyls")])
+unit_name = "Enemy1"
+max_hp = 80
+metadata/_custom_type_script = "uid://b3ri4vlr52i3f"
