@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cekosn4r64uqc"]
+
+[ext_resource type="Shader" uid="uid://bynd3nccvqyrf" path="res://Shaders/water moving.gdshader" id="1_ybmi7"]
+[ext_resource type="Texture2D" uid="uid://ci4cr2rckphoo" path="res://Textures/Water/Water_1/water_1_diffuseOriginal.bmp" id="2_3kwpc"]
+[ext_resource type="Texture2D" uid="uid://dhqh2l6n6fbhc" path="res://Textures/Water/Water_1/water_1_ao.bmp" id="3_j62gc"]
+[ext_resource type="Texture2D" uid="uid://b0ccq3pn8wh4" path="res://Textures/Water/Water_1/water_1_height.bmp" id="4_d7d5u"]
+[ext_resource type="Texture2D" uid="uid://d3ub67e1qrmv3" path="res://Textures/Water/Water_1/water_1_metallic.bmp" id="5_xcuce"]
+[ext_resource type="Texture2D" uid="uid://lk5ptnpe3ed4" path="res://Textures/Water/Water_1/water_1_normal.bmp" id="6_w2gr3"]
+[ext_resource type="Texture2D" uid="uid://nbcltab8ykfc" path="res://Textures/Water/Water_1/water_1_edge.bmp" id="7_4o6gt"]
+[ext_resource type="Texture2D" uid="uid://c7wt0ce62chys" path="res://Textures/Water/Water_1/water_1_smoothness.bmp" id="8_c0d5v"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ybmi7")
+shader_parameter/scroll_speed = Vector2(0, 0.2)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_3kwpc")
+shader_parameter/albedo_texture_size = Vector2i(1024, 1024)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("5_xcuce")
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("8_c0d5v")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("6_w2gr3")
+shader_parameter/normal_scale = 1.0
+shader_parameter/rim = 1.0
+shader_parameter/rim_tint = 0.5
+shader_parameter/texture_rim = ExtResource("7_4o6gt")
+shader_parameter/texture_ambient_occlusion = ExtResource("3_j62gc")
+shader_parameter/ao_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/ao_light_affect = 0.0
+shader_parameter/texture_heightmap = ExtResource("4_d7d5u")
+shader_parameter/heightmap_scale = 5.0
+shader_parameter/heightmap_min_layers = 8
+shader_parameter/heightmap_max_layers = 32
+shader_parameter/heightmap_flip = Vector2(1, 1)
+shader_parameter/uv1_scale = Vector3(4.227, 3.665, -0.028)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

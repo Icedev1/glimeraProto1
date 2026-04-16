@@ -1,5 +1,5 @@
 extends Node
-var pauseScene = preload("uid://cljfxgcfyk4fv") # EquipUI scene
+var pauseScene = preload("res://Grafting/Equip UI.tscn") # EquipUI scene
 var pauseInstance
 @export var canvas : CanvasLayer
 
@@ -11,9 +11,8 @@ func _process(delta: float) -> void:
 		else:
 			pauseInstance = pauseScene.instantiate()
 			canvas.add_child(pauseInstance)
-			get_tree().paused = true
-			
 			GraftGlobals.menu_opened.emit()
+			get_tree().paused = true
 			
 
 		

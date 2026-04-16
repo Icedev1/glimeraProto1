@@ -134,13 +134,16 @@ func from_battle_to_overworld():
 func transition_to_street(target_street: String, spawn_name: String):
 	transition1.playclockwipe(func():
 
-		# switch street immediately during fade
-		show_street(target_street)
-
-		var street = overworld_container.get_node(target_street)
-
-		var spawn = street.get_node(spawn_name)
-		var player = street.get_node("CharacterBody3D")
+	# switch street immediately during fade
+		for street in overworld_container.get_children():
+			street.queue_free()
+		
+		var street = load(target_street) as PackedScene
+		var streetInstance = street.instantiate()
+		overworld_container.add_child(streetInstance)
+		streetInstance.show()
+		var spawn = streetInstance.get_node(spawn_name)
+		var player = streetInstance.get_node("CharacterBody3D")
 
 		player.global_position = spawn.global_position
 	)
