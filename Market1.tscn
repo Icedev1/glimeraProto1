@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dbs2sbl1r5q54"]
+
+[ext_resource type="Material" uid="uid://dh3t6o8pi6yk1" path="res://Textures/Paving Stones 138/PavingStones138_2K-JPG.tres" id="1_mxu6h"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ddy1"]
+material = ExtResource("1_mxu6h")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyxb4"]
+size = Vector3(1.9956055, 0.5073242, 1.9936523)
+
+[node name="Market1" type="Node3D" unique_id=1437225535]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=8288260]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=697359416]
+mesh = SubResource("PlaneMesh_7ddy1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=252069429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012207031, -0.24633789, 0.00024414063)
+shape = SubResource("BoxShape3D_nyxb4")

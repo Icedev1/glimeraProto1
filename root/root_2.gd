@@ -51,7 +51,7 @@ func show_overworld():
 	overworld_container.show()
 	_cleanup_battle()
 
-	show_street("Street1")
+	show_street("gli's_house")
 	
 
 func start_battle(battle_scene_path: String):
@@ -124,7 +124,7 @@ func _cleanup_battle():
 #This is where you add the transitions.
 func from_main_menu_to_overworld():
 	transition1.playfade(func():
-		switch_world_scene("res://Street1.tscn")
+		switch_world_scene("res://gli's_house.tscn")
 	)
 
 func from_overworld_to_battle():
