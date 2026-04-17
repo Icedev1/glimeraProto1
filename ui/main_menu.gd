@@ -18,7 +18,6 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	button_sfx.play()
-	await button_sfx.finished
 	background_music.stop()
 	get_tree().root.get_node("Root").from_main_menu_to_overworld()
 	pass
