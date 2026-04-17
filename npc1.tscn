@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://71w6wpdtgb7a"]
+
+[ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="1_ag30x"]
+[ext_resource type="Animation" uid="uid://detr8h7vtume" path="res://Animations/Cast Spell.anim" id="2_7v8hj"]
+[ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="3_ruqyr"]
+[ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="4_mjx01"]
+[ext_resource type="Animation" uid="uid://cqm544epvmo1q" path="res://Animations/Walk.anim" id="5_0ne2x"]
+[ext_resource type="Animation" uid="uid://b5odahiaixn7t" path="res://Animations/Walk2.anim" id="6_e2j6j"]
+[ext_resource type="Animation" uid="uid://d0qj4aimqfui8" path="res://Animations/get Hit.anim" id="7_rwylx"]
+[ext_resource type="PackedScene" uid="uid://bq27qsdnur87k" path="res://InteractionVolume.tscn" id="8_7v8hj"]
+
+[sub_resource type="Animation" id="Animation_lsbeh"]
+resource_name = "Armature|Cube_015Action"
+length = 4.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.487548e-08, 0.38268343, 1.4445897e-08, 0.9238795, 0.76666665, 1, 1.3322761e-08, 0.9356495, 3.5319783e-08, -0.35293064, 1.3666667, 1, 3.7748308e-08, 0.005817909, 2.1961993e-10, -0.9999831, 2.1333334, 1, 1.4271673e-09, -0.99928504, -3.772196e-08, -0.03780681, 2.9, 1, -3.7656992e-08, -0.06975647, -2.6332334e-09, 0.9975641, 2.9333334, 1, -3.7748787e-08, -0.0029087004, -1.0980038e-10, 0.99999577, 3.7, 1, -1.3174193e-09, 0.99939084, 3.772595e-08, 0.034899496, 4.4666667, 1, 3.7664496e-08, 0.06685403, 2.5236693e-09, -0.99776274, 4.5, 1, 3.7748947e-08, 3.673819e-16, 1.386828e-23, -1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Skeleton:LeftUpperLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.548587e-11, 7.288712e-10, -0.99999994, 5.960507e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Skeleton:LeftShoulder")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.49999905, -0.5000009, -0.49999917, 0.5000009)
+
+[sub_resource type="Animation" id="Animation_kcfii"]
+resource_name = "Armature|mixamo_com"
+length = 4.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.7748947e-08, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Skeleton:LeftUpperLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.548587e-11, 7.288712e-10, -0.99999994, 5.960507e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Skeleton:LeftShoulder")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.49999905, -0.5000009, -0.49999917, 0.5000009)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ujeyq"]
+_data = {
+&"Armature|Cube_015Action": SubResource("Animation_lsbeh"),
+&"Armature|mixamo_com": SubResource("Animation_kcfii"),
+&"Cast Spell": ExtResource("2_7v8hj"),
+&"Idle": ExtResource("3_ruqyr"),
+&"Idle Straight": ExtResource("4_mjx01"),
+&"Walk": ExtResource("5_0ne2x"),
+&"Walk2": ExtResource("6_e2j6j"),
+&"get Hit": ExtResource("7_rwylx")
+}
+
+[node name="NPC" type="Node3D" unique_id=458151642]
+
+[node name="NPC1" parent="." unique_id=34665434 instance=ExtResource("1_ag30x")]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+
+[node name="Armature" parent="NPC1" index="0" unique_id=550347664]
+transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763567e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
+
+[node name="Skeleton" parent="NPC1/Armature" index="0" unique_id=243704760]
+bones/0/position = Vector3(-0.013579376, 5.568935, 0.009823829)
+bones/0/rotation = Quaternion(-0.026588378, -0.0013599106, -0.010585135, 0.9995895)
+bones/1/rotation = Quaternion(0.013826033, -0.0023302173, 0.0009421809, 0.9999013)
+bones/2/rotation = Quaternion(0.013565359, -0.01841496, 0.0020241078, 0.99973637)
+bones/3/rotation = Quaternion(0.013489633, -0.018367512, 0.0023989556, 0.99973744)
+bones/4/rotation = Quaternion(-0.002688679, 0.00803271, -0.012363933, 0.9998877)
+bones/5/rotation = Quaternion(0.0373536, -0.014926055, 0.034164976, 0.9986064)
+bones/8/rotation = Quaternion(0.4999991, 0.5000009, 0.49999917, -0.500001)
+bones/9/rotation = Quaternion(0.18288286, 0.9513588, -0.24074739, -0.059254512)
+bones/10/rotation = Quaternion(0.054307647, -0.8464297, 0.17600697, 0.49962902)
+bones/11/rotation = Quaternion(0.046228614, 0.7718109, -0.08546929, 0.6283836)
+bones/13/rotation = Quaternion(0.43671358, -0.5524055, -0.46482718, -0.53671706)
+bones/14/rotation = Quaternion(-0.1807679, 0.95458996, -0.23439395, 0.03377217)
+bones/15/rotation = Quaternion(0.057518568, 0.8492967, -0.17895561, 0.49331704)
+bones/16/rotation = Quaternion(-0.029321572, -0.7629688, 0.04798857, 0.64398456)
+bones/18/rotation = Quaternion(6.5485874e-11, -7.288713e-10, 1, -5.960508e-08)
+bones/19/rotation = Quaternion(-0.029092435, 0.97165275, -0.21423213, 0.095651604)
+bones/20/rotation = Quaternion(0.03409384, 0.6130407, -0.7880482, 0.04471003)
+bones/21/rotation = Quaternion(7.191306e-07, 0.9999994, 0.0011231601, -5.3473815e-07)
+bones/22/position = Vector3(-0.09396719, 0.3593269, 0.007652172)
+bones/24/rotation = Quaternion(-0.102056146, 0.06427208, 0.9926921, -0.00402823)
+bones/25/rotation = Quaternion(0.02236867, 0.98185384, -0.1790689, -0.05828411)
+bones/26/rotation = Quaternion(-0.0039489125, 0.6422633, -0.76586515, -0.030544747)
+bones/27/rotation = Quaternion(-7.006913e-07, 1, -3.2782555e-07, 3.9512668e-07)
+bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
+
+[node name="AnimationPlayer" parent="NPC1" index="1" unique_id=1817234033]
+libraries/ = SubResource("AnimationLibrary_ujeyq")
+autoplay = &"Idle Straight"
+
+[node name="Area3D" parent="NPC1" unique_id=1365771471 instance=ExtResource("8_7v8hj")]
+transform = Transform3D(13.33333, 0, 0, 0, 13.33333, 0, 0, 0, 13.33333, 0.44719782, 0, -0.09298869)
+collision_layer = 8
+
+[editable path="NPC1"]

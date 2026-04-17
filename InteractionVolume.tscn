@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bq27qsdnur87k"]
+
+[ext_resource type="Script" uid="uid://cqjqx7ww60mo7" path="res://Interaction Volume.gd" id="1_c2h4s"]
+[ext_resource type="PackedScene" uid="uid://btbbvoxdixc6u" path="res://interactprompt.tscn" id="2_sdc2t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t1ekm"]
+height = 1.7734375
+
+[node name="Area3D" type="Area3D" unique_id=1365771471]
+collision_layer = 9
+collision_mask = 2
+script = ExtResource("1_c2h4s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=731027491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11328125, 0)
+shape = SubResource("CylinderShape3D_t1ekm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=396925687]
+follow_viewport_enabled = true
+
+[node name="Prompt" parent="CanvasLayer" unique_id=566110442 instance=ExtResource("2_sdc2t")]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

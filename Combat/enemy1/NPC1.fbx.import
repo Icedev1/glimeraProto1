@@ -38,6 +38,18 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"Metal061B": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Textures/Violin Wood.tres",
+"use_external/path": "uid://bjxw353gytrvj"
+},
+"Wood095": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://meshes/Gli Mesh 1/skin.tres",
+"use_external/path": "uid://bt7o37gnl4j2j"
+}
+},
 "nodes": {
 "PATH:Armature/Skeleton3D": {
 "retarget/bone_map": Resource("uid://f4nlmwbenpnb", "res://new_bone_map.tres"),
