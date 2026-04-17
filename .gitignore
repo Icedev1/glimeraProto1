@@ -16,3 +16,5 @@ data_*/
 mono_crash.*.json
 GLIMERA proto1.csproj
 GLIMERA proto1.csproj.old
+addons/godot-git-plugin/windows/~libgit_plugin.windows.editor.x86_64.dll
+addons/godot-git-plugin-v3.2.1/addons/godot-git-plugin/windows/~libgit_plugin.windows.editor.x86_64.dll

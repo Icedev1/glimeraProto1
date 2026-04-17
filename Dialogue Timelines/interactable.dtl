@@ -1,29 +1,34 @@
-join Gli left
 # I'm using target in order to check which interaction should be run. Skull is a placeholder
 # Bedroom
 if {target} == "bed":
+	join Gli left
 	Gli: My bed. I should make it… but I’d rather check out what caused that noise.
 elif {target} == "window":
+	join Gli left
 	Gli: Everything looks normal from what I can see…
 elif {target} == "clock":
+	join Gli left
 	Gli: Oh, I really overslept! I guess it’s a good thing all that noise dragged me out of my nest.
 elif {target} == "violin":
+	join Gli left
 	Gli: My oldest and most prized possession… Nothing puts me at ease quite like playing for the birds does. I should take this with me when I head out.
-elif {target} == "door_lr":
-	if "graft" == true:
-		[signal arg="open_door_lr"]
-	else:
-		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
+	set {have_violin} = true
+	[signal arg="remove_object"]
 # Living Room
 elif {target} == "junk":
+	join Gli left
 	Gli: Some bits I've found around the city. I really should organize these properly soon and see what can be salvaged for useful graftables.
-	[signal arg="get_graft"]
+	[signal arg="remove_object"]
 	# Destroy the pile of junk so that it can't be interacted with again
 	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked
 elif {target} == "door_fd":
-	[signal arg="open_door_fd"]
-	Gli: Yes yes I heard y- Oh my…
-	# Door can't be interacted with again
+	if {have_violin} == false:
+		join Gli left
+		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
+	else:
+		join Gli left
+		Gli: Yes yes I heard y- Oh my…
+		[signal arg="open_door"]
 # Street 1
 elif {target} == "frz_chr_outside_house":
 	join skull right
