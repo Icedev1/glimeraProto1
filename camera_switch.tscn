@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dwtes78v3i3f3" path="res://scripts/camera_switch.gd" id="1_c4nw4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0dcuh"]
-size = Vector3(4.2082615, 1, 2.794281)
+size = Vector3(2.664248, 1, 1.5999985)
 
-[node name="CameraSwitch" type="Area3D" unique_id=117350085]
+[node name="CameraSwitch" type="Area3D" unique_id=117350085 groups=["camera_switches"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_c4nw4")
