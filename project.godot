@@ -52,7 +52,9 @@ layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Tim
 layout/default_style="res://Dialogue Timelines/New_File.tres"
 variables={
 "event": "",
+"have_rope": false,
 "have_violin": false,
+"quest_1": "default",
 "talkedTo": false,
 "target": "default"
 }
@@ -124,6 +126,7 @@ enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg", "res://add
 [global_group]
 
 camera_switches=""
+prompt=""
 
 [gui]
 
