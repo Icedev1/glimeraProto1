@@ -52,6 +52,7 @@ layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Tim
 layout/default_style="res://Dialogue Timelines/New_File.tres"
 variables={
 "event": "",
+"have_violin": false,
 "talkedTo": false,
 "target": "default"
 }
