@@ -57,11 +57,12 @@ elif {target} == "frz_chr_tending_plants":
 elif {target} == "defeated_enemy":
 	The figure has been knocked out, rendering it immobile. Though, its eyes still seem to be following your movements.
 	Gli: ...
-elif {target} == "Smiling_figure_door":
+elif {target} == "passive_bob":
 	if {talkedTo} == false:
 		# Knock on door
 		audio -
 		[signal arg="open_door_sf"]
+		join Gli left
 		join skull right
 		skull: Oh my! It’s Gli! What a pleasure to receive a visit from you, my dear! Is there anything I can do for you?
 		Gli: (She’s usually never this chipper…)
@@ -80,29 +81,33 @@ elif {target} == "Smiling_figure_door":
 		skull: The Guardian watches over all of us. Remember that.
 		skull: Good-bye, Gli.
 		leave skull
+		set {talkedTo} = true
 		[signal arg="close_door_sf"]
 		Gli: ...
 	else:
-		There’s no response, even though you hear noises coming from inside.
+		There’s no response.
 # Market 1
 elif {target} == "staircase":
 	# if you have the graftable rope or whatever check it here
-	if {} == true:
+	if {have_rope} == true:
 		[signal arg="swing_across"]
 	else:
 		It’s too dangerous to climb in its current state. If only you had a something you could use to get across…
 elif {target} == "quest_npc_1_friend":
 	# This is the block puzzle quest apparently. fill it in and make the if variable read quest flag
-	if {} == true:
+	if {quest_1} == "started":
 		# here you make the target interactable
 # Market 2
 elif {target} == "quest_npc_1":
+	join Gli left
 	join skull right
-	if :
+	if {have_rope} == true:
+		skull: Thanks again.
+	elif {quest_1} == "complete":
+		skull: Thank you take this.
+		[signal arg="get_graft_3"]
+	else:
 		skull: asks Gli to bring her friend over if they see her
 		skull: (gives a description of appearance)
 		[signal arg="start_quest_1"]
-	else:
-		skull: Thank you take this.
-		[signal arg="get_graft_3"]
 [end_timeline]
