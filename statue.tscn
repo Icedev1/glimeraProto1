@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://doulptnqgwt2w"]
+
+[ext_resource type="PackedScene" uid="uid://c6clinpobvgt" path="res://Combat/enemy1/NPC2.fbx" id="1_01fnw"]
+[ext_resource type="Script" uid="uid://c864w8vw56exn" path="res://statue.gd" id="1_221rt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_221rt"]
+size = Vector3(1.2387085, 3.4703064, 0.5709839)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_omdcb"]
+size = Vector3(1.4797974, 3.4703064, 0.5709839)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01fnw"]
+size = Vector3(0.74108887, 3.4703064, 0.5709839)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_221rt"]
+radius = 0.66845703
+height = 5.6240234
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vme05"]
+size = Vector3(0.36376953, 1.8508911, 1)
+
+[node name="Statue" type="Node3D" unique_id=998164087]
+script = ExtResource("1_221rt")
+
+[node name="NPC2" parent="." unique_id=1315279248 instance=ExtResource("1_01fnw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.9389606, 0)
+
+[node name="left" type="Area3D" parent="." unique_id=1384379146]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="left" unique_id=136795239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3545219, 1.7328243, -0.08457708)
+shape = SubResource("BoxShape3D_221rt")
+
+[node name="right" type="Area3D" parent="." unique_id=738710806]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="right" unique_id=2027291747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4830387, 0.87389195, 0.0005364418)
+shape = SubResource("BoxShape3D_omdcb")
+
+[node name="back" type="Area3D" parent="." unique_id=1063417569]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="back" unique_id=343008589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034270763, 0.87389195, -0.5258761)
+shape = SubResource("BoxShape3D_01fnw")
+
+[node name="front" type="Area3D" parent="." unique_id=1227567685]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="front" unique_id=1804226105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034270763, 0.87389195, 0.5646935)
+shape = SubResource("BoxShape3D_01fnw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=735371429]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=829606476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.616565, 0)
+shape = SubResource("CapsuleShape3D_221rt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1019272024]
+transform = Transform3D(0.87041587, 0.4923172, 0, -0.4923172, 0.87041587, 0, 0, 0, 1, -1.1613213, 3.2977204, 0)
+shape = SubResource("BoxShape3D_vme05")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=370505275]
+transform = Transform3D(-0.87041587, -0.4923172, -8.742278e-08, -0.4923172, 0.87041587, 0, 7.6094175e-08, 4.3039737e-08, -1, 1.1097924, 3.3557951, 0)
+shape = SubResource("BoxShape3D_vme05")
+
+[connection signal="body_entered" from="left" to="." method="_on_left_body_entered"]
+[connection signal="body_exited" from="left" to="." method="_on_left_body_exited"]
+[connection signal="body_entered" from="right" to="." method="_on_right_body_entered"]
+[connection signal="body_exited" from="right" to="." method="_on_right_body_exited"]
+[connection signal="body_entered" from="back" to="." method="_on_back_body_entered"]
+[connection signal="body_exited" from="back" to="." method="_on_back_body_exited"]
+[connection signal="body_entered" from="front" to="." method="_on_front_body_entered"]
+[connection signal="body_exited" from="front" to="." method="_on_front_body_exited"]
