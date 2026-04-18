@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 			match targetname:
 				"trash":
 					Dialogic.VAR.set_variable("target","junk")
+					GraftGlobals.sawObtained = true
 				"violin":
 					Dialogic.VAR.set_variable("target","violin")
 				"bed":

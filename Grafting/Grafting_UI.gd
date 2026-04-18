@@ -9,7 +9,8 @@ extends Control
 func _ready() -> void:
 	rightArmButton.texture_normal = armIcons[GraftGlobals.right_arm_graft_index]
 	leftLegButton.texture_normal = legIcons[GraftGlobals.left_leg_graft_index]
-	
+	if !GraftGlobals.sawObtained:
+		$ArmList.set_item_disabled(1, true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
