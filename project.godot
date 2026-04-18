@@ -53,7 +53,6 @@ layout/default_style="res://Dialogue Timelines/New_File.tres"
 variables={
 "event": "",
 "have_rope": false,
-"have_sledgehammer": false,
 "have_violin": false,
 "quest_1": "default",
 "talkedTo": false,
