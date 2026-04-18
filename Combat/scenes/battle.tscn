@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dy8maci0u0st7"]
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
-[ext_resource type="Resource" uid="uid://dg0eek81q6v5e" path="res://Combat/resources/enemies/enemy2/enemy2.tres" id="2_r8c2t"]
+[ext_resource type="Resource" uid="uid://db4t1iyhhrxfi" path="res://Combat/resources/enemies/enemy1/enemy1.tres" id="2_1fagd"]
 [ext_resource type="Texture2D" uid="uid://dfbqux15ppcwx" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_Color.jpg" id="3_r8c2t"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
 [ext_resource type="Script" uid="uid://d1n6m4bvwsjum" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="4_f4pi3"]
-[ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://Combat/scenes/battle_player.tscn" id="4_q77w5"]
+[ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="4_q77w5"]
 [ext_resource type="Script" uid="uid://bh558h22wt4y0" path="res://Combat/scripts/battle/battle_player.gd" id="5_1fagd"]
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
@@ -95,7 +95,7 @@ background_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
 
 [node name="Battle" type="Node3D" unique_id=789942194]
 script = ExtResource("1_a12nh")
-enemy_resource = ExtResource("2_r8c2t")
+enemy_resource = ExtResource("2_1fagd")
 
 [node name="Env" type="Node3D" parent="." unique_id=1176667746]
 
@@ -489,7 +489,6 @@ offset_bottom = 108.75995
 [node name="ResultScreen" type="CanvasLayer" parent="." unique_id=82600526]
 unique_name_in_owner = true
 layer = 2
-visible = false
 
 [node name="Control" type="Control" parent="ResultScreen" unique_id=1863610074]
 layout_mode = 3
@@ -515,15 +514,30 @@ anchors_preset = -1
 anchor_left = 0.29000002
 anchor_top = 0.20700002
 anchor_right = 0.69600004
-anchor_bottom = 0.51100004
-offset_left = -0.8000488
+anchor_bottom = 0.27400002
+offset_left = -13.800049
 offset_top = 0.43998718
-offset_right = 0.67993164
-offset_bottom = -0.38006592
+offset_right = -12.320068
+offset_bottom = 0.07998657
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Result :"
+
+[node name="rewards_container" type="VBoxContainer" parent="ResultScreen/Control" unique_id=712228762]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28100002
+anchor_top = 0.27400002
+anchor_right = 0.74300003
+anchor_bottom = 0.559
+offset_left = 0.47998047
+offset_top = 0.07998657
+offset_right = -50.56006
+offset_bottom = 0.27996826
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="continue_btn" type="Button" parent="ResultScreen/Control" unique_id=181993487]
 unique_name_in_owner = true

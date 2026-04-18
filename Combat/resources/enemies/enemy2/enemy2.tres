@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dg0eek81q6v5e"]
 
 [ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="1_dhfqu"]
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_ob8d7"]
+[ext_resource type="Resource" uid="uid://cxqlrf3r0weyn" path="res://Combat/resources/consumables/health_potion.tres" id="2_jsao7"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_ral7u"]
+[ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="3_jqed2"]
 [ext_resource type="Resource" uid="uid://d2l0b21iwhumt" path="res://Combat/resources/enemies/enemy2/enemy2_weapon1.tres" id="3_labn4"]
 [ext_resource type="Resource" uid="uid://cnuqwcno1v7ut" path="res://Combat/resources/enemies/enemy2/enemy2_weapon2.tres" id="4_a7eij"]
 [ext_resource type="Resource" uid="uid://c8pigtbvkkpat" path="res://Combat/resources/enemies/enemy2/enemy2_weapon3.tres" id="5_6w7re"]
@@ -10,6 +13,7 @@
 script = ExtResource("1_dhfqu")
 weapons = Array[ExtResource("2_ral7u")]([ExtResource("3_labn4"), ExtResource("4_a7eij"), ExtResource("5_6w7re")])
 attack_pattern = "random"
+reward_consumables = Array[ExtResource("1_ob8d7")]([ExtResource("2_jsao7"), ExtResource("3_jqed2")])
 unit_name = "enemy2"
 max_hp = 150
 metadata/_custom_type_script = "uid://b3ri4vlr52i3f"

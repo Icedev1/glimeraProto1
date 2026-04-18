@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Consumable" format=3 uid="uid://vel3gluw4ovk"]
+
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_kadjn"]
+
+[resource]
+script = ExtResource("1_kadjn")
+consumable_name = "Bandage"
+heal_amount = 15
+quantity = 2
+battle_description = "Heal Player 15 HP"
+description = "Description !!"
+metadata/_custom_type_script = "uid://dnsrxvj5qtw4x"

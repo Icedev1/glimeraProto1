@@ -2,6 +2,7 @@ extends Node3D
 
 @export var enemy_resource: EnemyData = null
 
+
 @onready var timer_label: Label = %TimerLabel
 @onready var timer_bar: ProgressBar = %TimerBar
 @onready var enemy_name_label: Label = %EnemyNameLabel
@@ -23,6 +24,8 @@ extends Node3D
 @onready var result_screen: CanvasLayer = %ResultScreen
 @onready var result_label: Label = %result_label
 @onready var continue_btn: Button = %continue_btn
+@onready var rewards_container: VBoxContainer = %rewards_container
+
 
 @onready var graft_menu: Control = %GraftMenu
 
@@ -148,15 +151,37 @@ func _on_enemy_timer(remaining: float, total: float, weapon_name: String, elemen
 	timer_bar.max_value = total
 	timer_bar.value = remaining
 
-func _on_battle_ended(player_won: bool) -> void:
+func _on_battle_ended(player_won: bool, weapons_dropped: Array[Weapon], consumables_dropped: Array[Consumable]) -> void:
 	result_label.text = "🏆 VICTORY!" if player_won else "💀 DEFEATED"
 	result_label.modulate = Color.YELLOW if player_won else Color.RED
+	_populate_rewards(weapons_dropped, consumables_dropped)
 	result_screen.show()
+
+func _populate_rewards(weapons: Array[Weapon], consumables: Array[Consumable]) -> void:
+	for child in rewards_container.get_children():
+		child.queue_free()
+	if weapons.is_empty() and consumables.is_empty():
+		rewards_container.hide()
+		return
+	rewards_container.show()
+	var header := Label.new()
+	header.text = "Rewards:"
+	header.add_theme_font_size_override("font_size", 36)
+	rewards_container.add_child(header)
+	for w in weapons:
+		_add_reward_label("⚔ %s" % w.weapon_name)
+	for c in consumables:
+		_add_reward_label("🧪 %s x%d" % [c.consumable_name, c.quantity])
+
+func _add_reward_label(text: String) -> void:
+	var lbl := Label.new()
+	lbl.text = text
+	lbl.add_theme_font_size_override("font_size", 28)
+	rewards_container.add_child(lbl)
 
 func _on_continue_pressed() -> void:
 	var root_node = get_tree().root.get_node_or_null("Root")
 	if BattleManager.enemy.is_dead():
-		BattleManager.apply_consumable_results()
 		if root_node and root_node.has_method("from_battle_to_overworld"):
 			root_node.from_battle_to_overworld()
 		else:
