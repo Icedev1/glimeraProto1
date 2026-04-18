@@ -128,7 +128,9 @@ func from_main_menu_to_overworld():
 	)
 
 func from_overworld_to_battle():
+	MusicPlayer.play_music(load("res://Sounds/hipstop1_2.ogg"))
 	transition2.playscreenshatter(func():
+		
 		start_battle("res://Combat/scenes/battle.tscn")
 	)
 

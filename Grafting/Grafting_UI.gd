@@ -20,10 +20,12 @@ func _process(delta: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	$ArmList.visible = true
+	SFXPlayer.play_sfx(load("res://Sounds/SFX/SE_STATIC_00000.wav"))
 
 
 func _on_leg_button_pressed() -> void:
 	$LegList.visible = true
+	SFXPlayer.play_sfx(load("res://Sounds/SFX/SE_STATIC_00000.wav"))
 
 
 func _on_arm_list_item_selected(index: int) -> void:
@@ -32,6 +34,7 @@ func _on_arm_list_item_selected(index: int) -> void:
 	GraftGlobals.right_arm_graft_index = index
 	rightArmButton.texture_normal = armIcons[index]
 	$ArmList.visible = false
+	SFXPlayer.play_sfx(GraftGlobals.graftSFX)
 
 
 func _on_leg_list_item_selected(index: int) -> void:
@@ -40,3 +43,4 @@ func _on_leg_list_item_selected(index: int) -> void:
 	GraftGlobals.left_leg_graft_index = index
 	leftLegButton.texture_normal = legIcons[index]
 	$LegList.visible = false
+	SFXPlayer.play_sfx(GraftGlobals.graftSFX)

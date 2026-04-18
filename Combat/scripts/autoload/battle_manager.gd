@@ -433,7 +433,7 @@ func _end_battle(player_won: bool) -> void:
 	_battle_active = false
 	var weapons_dropped: Array[Weapon] = []
 	var consumables_dropped: Array[Consumable] = []
-
+	MusicPlayer.stop_music()
 	if player_won:
 		log_message("🏆 Victory! %s is defeated!" % enemy.unit_name)
 		_commit_consumables()
