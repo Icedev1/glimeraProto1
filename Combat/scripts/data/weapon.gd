@@ -51,6 +51,6 @@ func _describe_effect(eff: StatusEffect) -> String:
 		StatusEffect.Type.DAMAGE_BONUS:
 			return "%s (%d)" % [eff.effect_name, int(eff.duration)]
 		StatusEffect.Type.SPEED, StatusEffect.Type.DAMAGE_AMP, \
-		StatusEffect.Type.BURN, StatusEffect.Type.STUN:
+		StatusEffect.Type.BLEED, StatusEffect.Type.STUN:
 			return "%s (%.1fs)" % [eff.effect_name, eff.duration]
 	return eff.effect_name

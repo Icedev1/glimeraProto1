@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_spgtv")
-weapon_name = "weapon3"
+weapon_name = "Powerfull Kick"
 attack_damage = 15
 cooldown = 3.5
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

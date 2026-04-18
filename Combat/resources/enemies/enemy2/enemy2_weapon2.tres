@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_ftvis")
-weapon_name = "weapon2"
+weapon_name = "Uppercut"
 attack_damage = 13
 cooldown = 2.5
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

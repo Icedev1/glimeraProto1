@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_oh17j")
-weapon_name = "scissor 1"
+weapon_name = "Baton "
 attack_damage = 19
 cooldown = 3.0
 hp_cost = 2
