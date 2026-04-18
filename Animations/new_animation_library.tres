@@ -1,3 +1,8 @@
 [gd_resource type="AnimationLibrary" format=3 uid="uid://ct4dmya68xy2p"]
 
+[ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="1_xm8qo"]
+
 [resource]
+_data = {
+&"Idle Straight": ExtResource("1_xm8qo")
+}

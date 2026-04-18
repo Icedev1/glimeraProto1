@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://71w6wpdtgb7a"]
+
+[ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="1_ag30x"]
+[ext_resource type="Animation" uid="uid://detr8h7vtume" path="res://Animations/Cast Spell.anim" id="2_7v8hj"]
+[ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="3_ruqyr"]
+[ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="4_mjx01"]
+[ext_resource type="Animation" uid="uid://cqm544epvmo1q" path="res://Animations/Walk.anim" id="5_0ne2x"]
+[ext_resource type="Animation" uid="uid://b5odahiaixn7t" path="res://Animations/Walk2.anim" id="6_e2j6j"]
+[ext_resource type="Animation" uid="uid://d0qj4aimqfui8" path="res://Animations/get Hit.anim" id="7_rwylx"]
+
+[sub_resource type="Animation" id="Animation_lsbeh"]
+resource_name = "Armature|Cube_015Action"
+length = 4.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.487548e-08, 0.38268343, 1.4445897e-08, 0.9238795, 0.76666665, 1, 1.3322761e-08, 0.9356495, 3.5319783e-08, -0.35293064, 1.3666667, 1, 3.7748308e-08, 0.005817909, 2.1961993e-10, -0.9999831, 2.1333334, 1, 1.4271673e-09, -0.99928504, -3.772196e-08, -0.03780681, 2.9, 1, -3.7656992e-08, -0.06975647, -2.6332334e-09, 0.9975641, 2.9333334, 1, -3.7748787e-08, -0.0029087004, -1.0980038e-10, 0.99999577, 3.7, 1, -1.3174193e-09, 0.99939084, 3.772595e-08, 0.034899496, 4.4666667, 1, 3.7664496e-08, 0.06685403, 2.5236693e-09, -0.99776274, 4.5, 1, 3.7748947e-08, 3.673819e-16, 1.386828e-23, -1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Skeleton:LeftUpperLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.548587e-11, 7.288712e-10, -0.99999994, 5.960507e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Skeleton:LeftShoulder")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.49999905, -0.5000009, -0.49999917, 0.5000009)
+
+[sub_resource type="Animation" id="Animation_kcfii"]
+resource_name = "Armature|mixamo_com"
+length = 4.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.7748947e-08, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Skeleton:LeftUpperLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.548587e-11, 7.288712e-10, -0.99999994, 5.960507e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Skeleton:LeftShoulder")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.49999905, -0.5000009, -0.49999917, 0.5000009)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ujeyq"]
+_data = {
+&"Armature|Cube_015Action": SubResource("Animation_lsbeh"),
+&"Armature|mixamo_com": SubResource("Animation_kcfii"),
+&"Cast Spell": ExtResource("2_7v8hj"),
+&"Idle": ExtResource("3_ruqyr"),
+&"Idle Straight": ExtResource("4_mjx01"),
+&"Walk": ExtResource("5_0ne2x"),
+&"Walk2": ExtResource("6_e2j6j"),
+&"get Hit": ExtResource("7_rwylx")
+}
+
+[node name="NPC" type="Node3D" unique_id=458151642]
+
+[node name="NPC1" parent="." unique_id=34665434 instance=ExtResource("1_ag30x")]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+
+[node name="Armature" parent="NPC1" index="0" unique_id=1180869010]
+transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763566e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
+
+[node name="Skeleton" parent="NPC1/Armature" index="0" unique_id=1884424824]
+bones/0/position = Vector3(0.0045582294, 5.6114006, -0.036929518)
+bones/0/rotation = Quaternion(0.008619729, 0.023243777, -0.010874842, 0.99963355)
+bones/1/rotation = Quaternion(0.0017031501, 0.003404579, -1.7922686e-05, 0.9999928)
+bones/2/rotation = Quaternion(0.0033856882, 0.0060277604, 0.004356646, 0.9999666)
+bones/3/rotation = Quaternion(0.0033857021, 0.006027776, 0.0043566404, 0.9999666)
+bones/4/rotation = Quaternion(4.1555613e-06, -0.0039794506, -0.010542134, 0.9999365)
+bones/5/rotation = Quaternion(0.023500554, -0.0268053, 0.01600735, 0.9992363)
+bones/8/rotation = Quaternion(0.4999991, 0.5000009, 0.49999917, -0.500001)
+bones/9/rotation = Quaternion(-0.061147824, 0.9924281, -0.09530247, 0.047589738)
+bones/10/rotation = Quaternion(0.20245422, -0.76635396, 0.20082189, 0.57566)
+bones/11/rotation = Quaternion(0.05723057, 0.68343794, 0.20544574, 0.69816136)
+bones/13/rotation = Quaternion(0.4864245, -0.4938719, -0.5662552, -0.44591132)
+bones/14/rotation = Quaternion(0.16592754, 0.977684, -0.12784487, 0.016056957)
+bones/15/rotation = Quaternion(0.17090656, 0.76346934, -0.13310508, 0.60843116)
+bones/16/rotation = Quaternion(0.09575173, -0.7308845, -0.1715675, 0.6536085)
+bones/18/rotation = Quaternion(6.5485874e-11, -7.288713e-10, 1, -5.960508e-08)
+bones/19/rotation = Quaternion(-0.0017132089, 0.83701223, -0.5458029, 0.038818263)
+bones/20/rotation = Quaternion(0.024507532, 0.668103, -0.74328053, -0.023915844)
+bones/21/rotation = Quaternion(0.015669454, 0.9994225, 0.029122058, -0.007816463)
+bones/22/position = Vector3(-0.09396719, 0.3593269, 0.007652172)
+bones/24/rotation = Quaternion(-0.069111615, 0.09318983, 0.9905452, -0.07320854)
+bones/25/rotation = Quaternion(-0.011020988, 0.98445237, -0.1669582, 0.05345171)
+bones/26/rotation = Quaternion(-0.055623844, 0.64759123, -0.75729173, 0.06356667)
+bones/27/rotation = Quaternion(0.0056009036, 0.99905694, 0.042725086, -0.0053382185)
+bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
+
+[node name="AnimationPlayer" parent="NPC1" index="1" unique_id=855007893]
+libraries/ = SubResource("AnimationLibrary_ujeyq")
+autoplay = &"Idle Straight"
+
+[editable path="NPC1"]

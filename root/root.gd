@@ -1,7 +1,9 @@
 extends Node
 
 @onready var ui_scene = $UIScene
-@onready var overworld = $Overworld3D
+@onready var overworld_container = $Overworld3D
+var current_overworld = null
+
 @onready var battle_container = $BattleScene3D
 
 @onready var transition1 = $SceneTransition
@@ -14,6 +16,10 @@ var current_state = ""
 func _ready():
 	$SceneTransition/ColorRect.modulate.a = 0
 	$SceneTransition2/ColorRect.modulate.a = 0
+	
+	for child in overworld_container.get_children():
+		child.hide()
+	
 	show_main_menu()
 
 # -----------------
@@ -24,7 +30,7 @@ func show_main_menu():
 	current_state = "main_menu"
 	
 	ui_scene.show()
-	overworld.hide()
+	overworld_container.hide()
 	_cleanup_battle()
 	
 
@@ -32,19 +38,61 @@ func show_overworld():
 	current_state = "overworld"
 	
 	ui_scene.hide()
-	overworld.show()
+	overworld_container.show()
 	_cleanup_battle()
+
+	show_street("Street1")
 	
 
 func start_battle(battle_scene_path: String):
 	current_state = "battle"
 	
 	ui_scene.hide()
-	overworld.hide()
-	overworld.process_mode = Node.PROCESS_MODE_DISABLED
+	overworld_container.hide()
+	overworld_container.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	_load_battle(battle_scene_path)
 	
+# -----------------
+# Handle Overworld
+# -----------------
+
+func load_overworld(path: String):
+	_cleanup_overworld()
+
+	var scene = load(path).instantiate()
+	overworld_container.add_child(scene)
+
+	current_overworld = scene
+
+	# Connect exits automatically
+	if scene.has_signal("request_scene_change"):
+		scene.request_scene_change.connect(_on_overworld_request_change)
+
+func _cleanup_overworld():
+	if current_overworld:
+		current_overworld.queue_free()
+		current_overworld = null
+
+func _on_overworld_request_change(next_scene_path: String, spawn_name: String):
+	load_overworld(next_scene_path)
+
+	# Tell new scene where to place player
+	if current_overworld.has_method("spawn_player"):
+		current_overworld.spawn_player(spawn_name)
+
+func show_street(street_name: String):
+	for street in overworld_container.get_children():
+		street.hide()
+		street.process_mode = Node.PROCESS_MODE_DISABLED
+
+	var street = overworld_container.get_node(street_name)
+
+	if street:
+		street.show()
+		street.process_mode = Node.PROCESS_MODE_INHERIT
+
+
 
 # -----------------
 # BATTLE HANDLING
@@ -78,11 +126,27 @@ func from_overworld_to_battle():
 	)
 
 func from_battle_to_overworld():
-	overworld.process_mode = Node.PROCESS_MODE_ALWAYS
+	overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
 	transition1.playclockwipe(func():
 		show_overworld()
 	)
 	
+func transition_to_street(target_street: String, spawn_name: String):
+	transition1.playclockwipe(func():
+
+	# switch street immediately during fade
+		for street in overworld_container.get_children():
+			street.queue_free()
+		
+		var street = load(target_street) as PackedScene
+		var streetInstance = street.instantiate()
+		overworld_container.add_child(streetInstance)
+		streetInstance.show()
+		var spawn = streetInstance.get_node(spawn_name)
+		var player = streetInstance.get_node("CharacterBody3D")
+
+		player.global_position = spawn.global_position
+	)
 
 func screenshake():
 	screenshakerect.material.set_shader_parameter("ShakeStrength", 0.1)

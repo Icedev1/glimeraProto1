@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="4_jix8l"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="5_glbon"]
 [ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://ui/inputremapbutton.gd" id="6_nlkkf"]
-[ext_resource type="PackedScene" path="res://UI/input_remap_button.tscn" id="6_qe12f"]
+[ext_resource type="PackedScene" uid="uid://dsc3ihpwxa6w6" path="res://ui/input_remap_button.tscn" id="6_qe12f"]
 [ext_resource type="AudioStream" uid="uid://cral320sc5djp" path="res://ui/Glimera theme 1.mp3" id="8_arv2f"]
-[ext_resource type="AudioStream" uid="uid://oiod6kmnyfnc" path="res://ui/musheran-beep-313342.mp3" id="9_2mudq"]
+[ext_resource type="AudioStream" uid="uid://qar5rufr34os" path="res://Sounds/UI Start.wav" id="9_arv2f"]
 
 [sub_resource type="Gradient" id="Gradient_7vrkn"]
 colors = PackedColorArray(1, 1, 1, 1, 0.21710122, 0.21710122, 0.21710122, 0)
@@ -95,7 +95,6 @@ scale = Vector2(15.7265625, 9.3046875)
 texture = ExtResource("2_arv2f")
 
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=672924109]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -126,6 +125,7 @@ text = "Start Game"
 
 [node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=1168352789]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.078431375, 1, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -457,7 +457,7 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=643888093]
-stream = ExtResource("9_2mudq")
+stream = ExtResource("9_arv2f")
 bus = &"SFX"
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]

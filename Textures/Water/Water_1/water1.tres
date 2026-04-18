@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://kyt7wrqm5qbm"]
+
+[ext_resource type="Texture2D" uid="uid://ci4cr2rckphoo" path="res://Textures/Water/Water_1/water_1_diffuseOriginal.bmp" id="1_i5ei8"]
+[ext_resource type="Texture2D" uid="uid://dhqh2l6n6fbhc" path="res://Textures/Water/Water_1/water_1_ao.bmp" id="2_lcqpr"]
+[ext_resource type="Texture2D" uid="uid://b0ccq3pn8wh4" path="res://Textures/Water/Water_1/water_1_height.bmp" id="3_f1tth"]
+[ext_resource type="Texture2D" uid="uid://d3ub67e1qrmv3" path="res://Textures/Water/Water_1/water_1_metallic.bmp" id="4_8see4"]
+[ext_resource type="Texture2D" uid="uid://c7wt0ce62chys" path="res://Textures/Water/Water_1/water_1_smoothness.bmp" id="5_1wnuf"]
+[ext_resource type="Texture2D" uid="uid://lk5ptnpe3ed4" path="res://Textures/Water/Water_1/water_1_normal.bmp" id="5_lcqpr"]
+[ext_resource type="Texture2D" uid="uid://nbcltab8ykfc" path="res://Textures/Water/Water_1/water_1_edge.bmp" id="6_f1tth"]
+
+[resource]
+albedo_texture = ExtResource("1_i5ei8")
+metallic = 1.0
+metallic_texture = ExtResource("4_8see4")
+roughness_texture = ExtResource("5_1wnuf")
+normal_enabled = true
+normal_texture = ExtResource("5_lcqpr")
+rim_enabled = true
+rim_texture = ExtResource("6_f1tth")
+ao_enabled = true
+ao_texture = ExtResource("2_lcqpr")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_f1tth")
+uv1_scale = Vector3(2.197, 2.665, 1.192)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qar5rufr34os"
+path="res://.godot/imported/UI Start.wav-6e59f842d798a51f11bb0db53af90217.sample"
+
+[deps]
+
+source_file="res://Sounds/UI Start.wav"
+dest_files=["res://.godot/imported/UI Start.wav-6e59f842d798a51f11bb0db53af90217.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

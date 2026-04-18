@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="GLIMERA proto1"
-run/main_scene="uid://dwb5na1g760dl"
+run/main_scene="uid://ynp6rt5ks1hu"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+run/max_fps=60
 config/icon="res://images/icon.svg"
 
 [audio]
@@ -27,6 +28,7 @@ BattleManager="*uid://bks8pyajw4qln"
 PlayerManager="*uid://dujbeol33fjtr"
 Debug="*uid://br2ibcwc8lhs4"
 ControllerIcons="*uid://d2cyg24h3ss8r"
+GraftGlobals="*uid://ddwa1wyywsuth"
 
 [dialogic]
 
@@ -50,6 +52,9 @@ layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Tim
 layout/default_style="res://Dialogue Timelines/New_File.tres"
 variables={
 "event": "",
+"have_rope": false,
+"have_violin": false,
+"quest_1": "default",
 "talkedTo": false,
 "target": "default"
 }
@@ -121,6 +126,7 @@ enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg", "res://add
 [global_group]
 
 camera_switches=""
+prompt=""
 
 [gui]
 

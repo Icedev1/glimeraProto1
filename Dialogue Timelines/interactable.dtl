@@ -1,29 +1,34 @@
-join Gli left
 # I'm using target in order to check which interaction should be run. Skull is a placeholder
 # Bedroom
 if {target} == "bed":
+	join Gli left
 	Gli: My bed. I should make it… but I’d rather check out what caused that noise.
 elif {target} == "window":
+	join Gli left
 	Gli: Everything looks normal from what I can see…
 elif {target} == "clock":
+	join Gli left
 	Gli: Oh, I really overslept! I guess it’s a good thing all that noise dragged me out of my nest.
 elif {target} == "violin":
+	join Gli left
 	Gli: My oldest and most prized possession… Nothing puts me at ease quite like playing for the birds does. I should take this with me when I head out.
-elif {target} == "door_lr":
-	if "graft" == true:
-		[signal arg="open_door_lr"]
-	else:
-		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
+	set {have_violin} = true
+	[signal arg="remove_object"]
 # Living Room
 elif {target} == "junk":
+	join Gli left
 	Gli: Some bits I've found around the city. I really should organize these properly soon and see what can be salvaged for useful graftables.
-	[signal arg="get_graft"]
+	[signal arg="remove_object"]
 	# Destroy the pile of junk so that it can't be interacted with again
 	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked
 elif {target} == "door_fd":
-	[signal arg="open_door_fd"]
-	Gli: Yes yes I heard y- Oh my…
-	# Door can't be interacted with again
+	if {have_violin} == false:
+		join Gli left
+		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
+	else:
+		join Gli left
+		Gli: Yes yes I heard y- Oh my…
+		[signal arg="open_door"]
 # Street 1
 elif {target} == "frz_chr_outside_house":
 	join skull right
@@ -52,11 +57,12 @@ elif {target} == "frz_chr_tending_plants":
 elif {target} == "defeated_enemy":
 	The figure has been knocked out, rendering it immobile. Though, its eyes still seem to be following your movements.
 	Gli: ...
-elif {target} == "Smiling_figure_door":
+elif {target} == "passive_bob":
 	if {talkedTo} == false:
 		# Knock on door
 		audio -
 		[signal arg="open_door_sf"]
+		join Gli left
 		join skull right
 		skull: Oh my! It’s Gli! What a pleasure to receive a visit from you, my dear! Is there anything I can do for you?
 		Gli: (She’s usually never this chipper…)
@@ -75,29 +81,33 @@ elif {target} == "Smiling_figure_door":
 		skull: The Guardian watches over all of us. Remember that.
 		skull: Good-bye, Gli.
 		leave skull
+		set {talkedTo} = true
 		[signal arg="close_door_sf"]
 		Gli: ...
 	else:
-		There’s no response, even though you hear noises coming from inside.
+		There’s no response.
 # Market 1
 elif {target} == "staircase":
 	# if you have the graftable rope or whatever check it here
-	if {} == true:
+	if {have_rope} == true:
 		[signal arg="swing_across"]
 	else:
 		It’s too dangerous to climb in its current state. If only you had a something you could use to get across…
 elif {target} == "quest_npc_1_friend":
 	# This is the block puzzle quest apparently. fill it in and make the if variable read quest flag
-	if {} == true:
+	if {quest_1} == "started":
 		# here you make the target interactable
 # Market 2
 elif {target} == "quest_npc_1":
+	join Gli left
 	join skull right
-	if :
+	if {have_rope} == true:
+		skull: Thanks again.
+	elif {quest_1} == "complete":
+		skull: Thank you take this.
+		[signal arg="get_graft_3"]
+	else:
 		skull: asks Gli to bring her friend over if they see her
 		skull: (gives a description of appearance)
 		[signal arg="start_quest_1"]
-	else:
-		skull: Thank you take this.
-		[signal arg="get_graft_3"]
 [end_timeline]
