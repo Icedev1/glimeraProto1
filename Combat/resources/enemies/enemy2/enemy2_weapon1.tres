@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_1eg8e")
-weapon_name = "weapon1"
+weapon_name = "Punch"
 attack_damage = 10
 cooldown = 2.0
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

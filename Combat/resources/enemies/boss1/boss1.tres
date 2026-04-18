@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://kc77x8sqfqls"]
+
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_oavd2"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_lxmyn"]
+[ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="3_easjw"]
+[ext_resource type="Resource" uid="uid://kof0ljggifw6" path="res://Combat/resources/enemies/boss1/boss1_attack1.tres" id="4_0y4n6"]
+[ext_resource type="Resource" uid="uid://kof0ljggifw6" path="res://Combat/resources/enemies/boss1/boss1_attack2.tres" id="5_p1hh2"]
+
+[resource]
+script = ExtResource("3_easjw")
+weapons = Array[ExtResource("2_lxmyn")]([ExtResource("4_0y4n6"), ExtResource("5_p1hh2")])
+element = 1
+unit_name = "Enemy1"
+max_hp = 150

@@ -13,6 +13,9 @@ signal player_hit(damage: int, was_blocked: bool)
 signal enemy_attacked
 signal enemy_hit(damage: int)
 
+signal equipped_weapon_changed(slot: int, new_weapon: Weapon)
+
+
 # ── Set this before the battle scene loads ────────────────────────────────────
 @export var enemy: EnemyData = null
 
@@ -67,6 +70,8 @@ func start_battle() -> void:
 	assert(enemy != null, "BattleManager.enemy must be set before start_battle()")
 	assert(enemy.weapons.size() > 0, "Enemy must have at least one weapon")
 	assert(PlayerManager.data != null, "PlayerManager has no data")
+	
+	PlayerManager.sync_from_grafts()
 
 	_player = PlayerManager.data
 	_equipped = _player.equipped.duplicate()
@@ -521,6 +526,7 @@ func apply_graft(swaps: Array[Dictionary]) -> void:
 		log_message("🔧 %s: %s → %s" % [slot_label,
 			old_weapon.weapon_name if old_weapon else "(empty)",
 			new_weapon.weapon_name if new_weapon else "(empty)"])
+		emit_signal("equipped_weapon_changed", slot, new_weapon)
 
 	_graft_cooldown.start()
 	_battle_active = true

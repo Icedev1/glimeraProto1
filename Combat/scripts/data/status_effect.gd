@@ -11,7 +11,7 @@ enum Type {
 	# Time-based (tracked, deplete over seconds)
 	SPEED,
 	DAMAGE_AMP,
-	BURN,
+	BLEED,
 	STUN,
 }
 
@@ -54,7 +54,7 @@ func apply(target: UnitData) -> void:
 					target.unit_name, effect_name, existing.remaining])
 			else:
 				target.add_effect(self)
-		Type.BURN:
+		Type.BLEED:
 			var existing: ActiveEffect = target.find_effect_of_type(type)
 			if existing:
 				existing.remaining += duration
@@ -70,13 +70,13 @@ func tick(delta: float, active: ActiveEffect, target: UnitData) -> void:
 	match type:
 		Type.SPEED, Type.DAMAGE_AMP, Type.STUN:
 			active.remaining -= delta
-		Type.BURN:
+		Type.BLEED:
 			var old_remaining := active.remaining
 			active.remaining -= delta
 			const TICK_INTERVAL: float = 1
 			if int(old_remaining / TICK_INTERVAL) > int(max(0.0, active.remaining) / TICK_INTERVAL):
 				target.take_damage(int(active.effect.value))
-				BattleManager.log_message("🔥 Burn dealt %d damage to %s!" % [int(active.effect.value), target.unit_name])
+				BattleManager.log_message("🩸 Bleed dealt %d damage to %s!" % [int(active.effect.value), target.unit_name])
 				BattleManager.check_deaths()
 
 # ── On attack — called when the unit that has this effect attacks ─────────────
