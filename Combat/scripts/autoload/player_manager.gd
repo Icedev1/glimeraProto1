@@ -17,7 +17,7 @@ func init_player() -> void:
 	data.consumables = _default_consumables()
 	#data.equipped[0] = preload("res://Combat/resources/weapons/hose.tres") # hose
 	data.equipped[0] = preload("res://Combat/resources/weapons/saw.tres") # saw
-	data.equipped[1] = preload("res://Combat/resources/weapons/sledge.tres") # sledge_hammer
+	data.equipped[1] = preload("res://Combat/resources/weapons/sledge_hammer.tres") # sledge_hammer
 	#data.equipped[0] = preload("res://Combat/resources/weapons/gli_arm.tres") # gli_arm
 	#data.equipped[1] = preload("res://Combat/resources/weapons/gli_leg.tres") # gli_leg
 	#save()
@@ -48,6 +48,6 @@ func _default_inventory() -> Array[Weapon]:
 
 func _default_consumables() -> Array[Consumable]:
 	return [
-		preload("uid://bosfy5u65tjoy"), # bandage
-		preload("uid://cxqlrf3r0weyn"), # health_potion
+		preload("res://Combat/resources/consumables/bandage.tres"), # bandage
+		preload("res://Combat/resources/consumables/health_potion.tres"), # health_potion
 	]

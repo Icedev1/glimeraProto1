@@ -6,6 +6,6 @@
 script = ExtResource("1_0gl0j")
 consumable_name = "Health Potion"
 heal_amount = 20
-battle_description = "Heal Player 10 hp"
+battle_description = "Heal Player 20 hp"
 description = "Description !!"
 metadata/_custom_type_script = "uid://dnsrxvj5qtw4x"

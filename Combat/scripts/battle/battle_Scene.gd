@@ -39,16 +39,12 @@ func _ready() -> void:
 	weapon_cards = [%weaponCard1, %weaponCard2]
 
 	_connect_signals()
-	
-	BattleManager.player_mesh = $player/MeshInstance3D
-	BattleManager.enemy_mesh = $Enemy/MeshInstance3D
-	
+
 	_setup_cooldowns()
 	BattleManager.start_battle()
 	_setup_cards()
 	enemy_name_label.text = BattleManager.enemy.unit_name
 	enemy_element.text = "Element: %s" % Weapon.element_name(BattleManager.enemy.element)
-	# Set initial HP bars
 	_on_player_hp(PlayerManager.data.current_hp, PlayerManager.data.max_hp)
 	_on_enemy_hp(BattleManager.enemy.current_hp, BattleManager.enemy.max_hp)
 
@@ -59,10 +55,14 @@ func _process(_delta: float) -> void:
 		enemy_effects_label.text = BattleManager.enemy.get_effects_text()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if result_screen.visible:
+		if event.is_action_pressed("graft_select"):
+			_on_continue_pressed()
+		return
 	if graft_menu.visible:
 		return
-	if event.is_action_pressed("attack1"): BattleManager.player_attack(0)  # arm
-	if event.is_action_pressed("attack2"): BattleManager.player_attack(1)  # leg
+	if event.is_action_pressed("attack1"): BattleManager.player_attack(0)
+	if event.is_action_pressed("attack2"): BattleManager.player_attack(1)
 	if event.is_action_pressed("block"):   BattleManager.player_block()
 	if event.is_action_pressed("graft"):   BattleManager.player_graft()
 	if event.is_action_pressed("use_consumable"):      BattleManager.player_use_consumable()
@@ -154,7 +154,18 @@ func _on_battle_ended(player_won: bool) -> void:
 	result_screen.show()
 
 func _on_continue_pressed() -> void:
-	get_tree().reload_current_scene()
+	var root_node = get_tree().root.get_node_or_null("Root")
+	if BattleManager.enemy.is_dead():
+		BattleManager.apply_consumable_results()
+		if root_node and root_node.has_method("from_battle_to_overworld"):
+			root_node.from_battle_to_overworld()
+		else:
+			get_tree().reload_current_scene()
+	else:
+		if root_node and root_node.has_method("start_battle"):
+			root_node.start_battle(scene_file_path)
+		else:
+			get_tree().reload_current_scene()
 
 # ── Graft ─────────────────────────────────────────────────────────────────────
 func _on_graft_requested() -> void:
@@ -177,7 +188,6 @@ func _refresh_consumable_card() -> void:
 	var c := BattleManager.get_current_consumable()
 	if c == null or (c.quantity <= 0 and not BattleManager._has_available_consumables()):
 		if c != null and c.quantity <= 0:
-			# Last consumable depleted — show greyed out
 			consumable_card.display(c)
 			consumable_card.set_empty()
 		else:

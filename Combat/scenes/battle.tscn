@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://dy8maci0u0st7"]
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
-[ext_resource type="PackedScene" uid="uid://1f00y68uo837" path="res://Combat/scenes/player.tscn" id="2_lpir7"]
 [ext_resource type="Resource" uid="uid://dg0eek81q6v5e" path="res://Combat/resources/enemies/enemy2/enemy2.tres" id="2_r8c2t"]
+[ext_resource type="Texture2D" uid="uid://dfbqux15ppcwx" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_Color.jpg" id="3_r8c2t"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
 [ext_resource type="Script" uid="uid://d1n6m4bvwsjum" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="4_f4pi3"]
-[ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="4_q77w5"]
+[ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://Combat/scenes/battle_player.tscn" id="4_q77w5"]
+[ext_resource type="Script" uid="uid://bh558h22wt4y0" path="res://Combat/scripts/battle/battle_player.gd" id="5_1fagd"]
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
+[ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="6_r8c2t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fagd"]
+albedo_texture = ExtResource("3_r8c2t")
+uv1_scale = Vector3(3, 3, 3)
 
 [sub_resource type="GDScript" id="GDScript_p1qf1"]
 script/source = "extends Control
@@ -76,6 +82,13 @@ script = ExtResource("4_f4pi3")
 path = "next_consumable"
 metadata/_custom_type_script = "uid://8cf6i4vioxco"
 
+[sub_resource type="Texture2D" id="Texture2D_1fagd"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_f4pi3")
+path = "graft_select"
+metadata/_custom_type_script = "uid://d1n6m4bvwsjum"
+
 [sub_resource type="Environment" id="Environment_7sfm4"]
 background_mode = 1
 background_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
@@ -88,22 +101,19 @@ enemy_resource = ExtResource("2_r8c2t")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Env" unique_id=1726363872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -1.6, -5.5)
+material_override = SubResource("StandardMaterial3D_1fagd")
 use_collision = true
-size = Vector3(31, 3, 32)
+size = Vector3(99, 3, 226)
 
-[node name="player" parent="." unique_id=1086824131 instance=ExtResource("2_lpir7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9843721, 0, 1.6952505)
+[node name="Player" parent="." unique_id=1051319031 instance=ExtResource("4_q77w5")]
+unique_name_in_owner = true
+transform = Transform3D(-0.9598052, 0, -0.2806667, 0, 1, 0, 0.2806667, 0, -0.9598052, 5, 0, 0)
+script = ExtResource("5_1fagd")
 
-[node name="CharacterBody3D" parent="." unique_id=1051319031 instance=ExtResource("4_q77w5")]
-transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, 1.3581171, 5.0432353, 2.9808831)
-visible = false
-
-[node name="Enemy" parent="." unique_id=1901937109 instance=ExtResource("2_lpir7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4690304, 0, -2.1863098)
-
-[node name="NPC1" parent="." unique_id=1449211599 instance=ExtResource("4_egpmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.621397, 6.828104, 0)
-visible = false
+[node name="Enemy" parent="." unique_id=1449211599 instance=ExtResource("4_egpmh")]
+unique_name_in_owner = true
+transform = Transform3D(0.4007678, 0, 0.29897347, 0, 0.5, 0, -0.29897347, 0, 0.4007678, -10, 3, 0)
+script = ExtResource("6_r8c2t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=771652485]
 transform = Transform3D(0.70710677, -0.5000001, 0.5000001, -5.1593812e-08, 0.7071067, 0.7071069, -0.7071069, -0.49999997, 0.49999997, 0, 6, 0)
@@ -531,6 +541,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Continue"
+icon = SubResource("Texture2D_1fagd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=769613240]
 environment = SubResource("Environment_7sfm4")
@@ -548,7 +559,7 @@ size = Vector2i(960, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D1" type="Camera3D" parent="SubViewportContainer1/SubViewport1" unique_id=951482207]
-transform = Transform3D(0.87547666, -0.12831463, 0.4659142, 0, 0.9641057, 0.2655186, -0.48326045, -0.23245531, 0.8440521, -5.5243955, 2.030249, 1.104398)
+transform = Transform3D(0.89100647, -0.01584404, 0.45371395, 0, 0.99939084, 0.034899496, -0.4539905, -0.031095678, 0.89046377, -7.859, 3.3, 4.529)
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=1849388782]
 anchors_preset = -1
@@ -566,4 +577,4 @@ size = Vector2i(960, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer2/SubViewport2" unique_id=1976917586]
-transform = Transform3D(0.8758719, 0.09948406, -0.47217727, 0, 0.97851706, 0.20616591, 0.4825437, -0.18057492, 0.8570556, 2.5005674, 1.6023312, 4.1213007)
+transform = Transform3D(0.8910065, 0.01584404, -0.45371395, 0, 0.99939084, 0.034899496, 0.45399052, -0.031095678, 0.89046377, 2.841, 2.8, 4.201)

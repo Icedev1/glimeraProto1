@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://cy4o15k7ows4u"]
 
 [ext_resource type="Shader" uid="uid://8oupr2xsmh42" path="res://Chest Shader 2.tres" id="4_yxww1"]
-[ext_resource type="Animation" uid="uid://ctfunpif1vku" path="res://Animations/Cast Spell.anim" id="5_qi5as"]
+[ext_resource type="Animation" uid="uid://detr8h7vtume" path="res://Animations/Cast Spell.anim" id="5_qi5as"]
 [ext_resource type="Animation" uid="uid://b5odahiaixn7t" path="res://Animations/Walk2.anim" id="7_qi5as"]
 [ext_resource type="Material" uid="uid://cx1laxp3f55rt" path="res://Textures/Paper Texture/Paper.tres" id="7_x1sy7"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="8_c1b4b"]
 [ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="8_jb3kq"]
-[ext_resource type="Animation" uid="uid://ca0hwq8ihe3a5" path="res://Animations/get Hit.anim" id="9_jb3kq"]
+[ext_resource type="Animation" uid="uid://d0qj4aimqfui8" path="res://Animations/get Hit.anim" id="9_jb3kq"]
 [ext_resource type="Material" path="res://Textures/Metal Texture/Metal061B_1K-JPG.tres" id="17_pm3tn"]
 [ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="32_go3uk"]
 
@@ -2778,6 +2778,7 @@ shape = SubResource("CapsuleShape3D_vu45j")
 transform = Transform3D(-1.9451567e-08, 0, 0.445, 0, 0.445, 0, -0.445, 0, -1.9451567e-08, 0, 0, 0)
 
 [node name="Armature" type="Node3D" parent="MAsked Gli" unique_id=1424227123]
+unique_name_in_owner = true
 transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763566e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
 
 [node name="Skeleton" type="Skeleton3D" parent="MAsked Gli/Armature" unique_id=311386290]
@@ -2844,7 +2845,7 @@ bones/8/parent = 3
 bones/8/rest = Transform3D(0, 1, 0, 0, 0, 1, 1, 0, 0, 0.4241892, 0.72463864, -0.023858625)
 bones/8/enabled = true
 bones/8/position = Vector3(0.4241892, 0.72463864, -0.023858625)
-bones/8/rotation = Quaternion(0.46353358, 0.5291073, 0.4482522, -0.5515907)
+bones/8/rotation = Quaternion(0.4999991, 0.5000009, 0.49999917, -0.500001)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LeftUpperArm"
 bones/9/parent = 8
@@ -2914,7 +2915,7 @@ bones/18/parent = 0
 bones/18/rest = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, 0.6844859, -0.30648077, 0.008246556)
 bones/18/enabled = true
 bones/18/position = Vector3(0.6844859, -0.30648077, 0.008246556)
-bones/18/rotation = Quaternion(0.1191176, 0.16605961, 0.9723437, -0.11306196)
+bones/18/rotation = Quaternion(6.5485874e-11, -7.288713e-10, 1, -5.960508e-08)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "LeftLowerLeg"
 bones/19/parent = 18
@@ -3365,6 +3366,7 @@ skin = SubResource("Skin_fln0p")
 skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MAsked Gli" unique_id=1926690920]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_jh4fu")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=600140843]
