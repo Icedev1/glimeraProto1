@@ -52,6 +52,6 @@ func _default_inventory() -> Array[Weapon]:
 
 func _default_consumables() -> Array[Consumable]:
 	return [
-		(preload("res://Combat/resources/consumables/bandage.tres") as Consumable).duplicate(), # bandage
+		(preload("res://Combat/resources/consumables/bandage_2.tres") as Consumable).duplicate(), # bandage
 		(preload("res://Combat/resources/consumables/health_potion.tres") as Consumable).duplicate(), # health_potion
 	]
