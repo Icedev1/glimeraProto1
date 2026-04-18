@@ -5,6 +5,9 @@ const SPEED = 1
 const JUMP_VELOCITY = 2.5
 @export var camera : Camera3D
 
+var knockback_velocity: Vector3 = Vector3.ZERO
+var knockback_time := 0.0
+
 func _ready() -> void:
 	pass
 	
@@ -19,6 +22,12 @@ func _rotate_toward_movement(delta, direction):
 
 
 func _physics_process(delta: float) -> void:
+	if knockback_time > 0.0:
+		velocity = knockback_velocity
+		knockback_time -= delta
+		move_and_slide()
+		return
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -50,3 +59,8 @@ func rotate_toward(direction: Vector3, delta: float):
 	if move_dir.length() < 0.05:
 		return
 	rotation.y = lerp_angle(rotation.y, atan2(direction.x, direction.z) - PI / 2, delta * TURN_SPEED)
+
+
+func apply_knockback(dir: Vector3, strength: float = 3.0, duration: float = 0.2):
+	knockback_velocity = dir * strength
+	knockback_time = duration
