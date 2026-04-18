@@ -29,6 +29,8 @@ PlayerManager="*uid://dujbeol33fjtr"
 Debug="*uid://br2ibcwc8lhs4"
 ControllerIcons="*uid://d2cyg24h3ss8r"
 GraftGlobals="*uid://ddwa1wyywsuth"
+SFXPlayer="*uid://bhojwcno7gi1b"
+MusicPlayer="*uid://blpcv03sdkav6"
 
 [dialogic]
 
