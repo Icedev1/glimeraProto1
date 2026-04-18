@@ -18,13 +18,19 @@ elif {target} == "violin":
 elif {target} == "junk":
 	join Gli left
 	Gli: Some bits I've found around the city. I really should organize these properly soon and see what can be salvaged for useful graftables.
+	set {have_sledgehammer} = true
 	[signal arg="remove_object"]
-	# Destroy the pile of junk so that it can't be interacted with again
 	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked
-elif {target} == "door_fd":
+elif {target} == "door_lr":
 	if {have_violin} == false:
 		join Gli left
 		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
+	else:
+		[signal arg="remove_object"]
+elif {target} == "door_fd":
+	if {have_sledgehammer} == false:
+		join Gli left
+		Gli: I should check that pile of trash.
 	else:
 		join Gli left
 		Gli: Yes yes I heard y- Oh my…
