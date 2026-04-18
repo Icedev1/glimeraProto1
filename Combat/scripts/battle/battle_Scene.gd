@@ -2,6 +2,7 @@ extends Node3D
 
 @export var enemy_resource: EnemyData = null
 
+
 @onready var timer_label: Label = %TimerLabel
 @onready var timer_bar: ProgressBar = %TimerBar
 @onready var enemy_name_label: Label = %EnemyNameLabel
@@ -23,6 +24,8 @@ extends Node3D
 @onready var result_screen: CanvasLayer = %ResultScreen
 @onready var result_label: Label = %result_label
 @onready var continue_btn: Button = %continue_btn
+@onready var rewards_container: VBoxContainer = %rewards_container
+
 
 @onready var graft_menu: Control = %GraftMenu
 
@@ -39,16 +42,12 @@ func _ready() -> void:
 	weapon_cards = [%weaponCard1, %weaponCard2]
 
 	_connect_signals()
-	
-	BattleManager.player_mesh = $player/MeshInstance3D
-	BattleManager.enemy_mesh = $Enemy/MeshInstance3D
-	
+
 	_setup_cooldowns()
 	BattleManager.start_battle()
 	_setup_cards()
 	enemy_name_label.text = BattleManager.enemy.unit_name
 	enemy_element.text = "Element: %s" % Weapon.element_name(BattleManager.enemy.element)
-	# Set initial HP bars
 	_on_player_hp(PlayerManager.data.current_hp, PlayerManager.data.max_hp)
 	_on_enemy_hp(BattleManager.enemy.current_hp, BattleManager.enemy.max_hp)
 
@@ -59,10 +58,14 @@ func _process(_delta: float) -> void:
 		enemy_effects_label.text = BattleManager.enemy.get_effects_text()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if result_screen.visible:
+		if event.is_action_pressed("graft_select"):
+			_on_continue_pressed()
+		return
 	if graft_menu.visible:
 		return
-	if event.is_action_pressed("attack1"): BattleManager.player_attack(0)  # arm
-	if event.is_action_pressed("attack2"): BattleManager.player_attack(1)  # leg
+	if event.is_action_pressed("attack1"): BattleManager.player_attack(0)
+	if event.is_action_pressed("attack2"): BattleManager.player_attack(1)
 	if event.is_action_pressed("block"):   BattleManager.player_block()
 	if event.is_action_pressed("graft"):   BattleManager.player_graft()
 	if event.is_action_pressed("use_consumable"):      BattleManager.player_use_consumable()
@@ -148,13 +151,46 @@ func _on_enemy_timer(remaining: float, total: float, weapon_name: String, elemen
 	timer_bar.max_value = total
 	timer_bar.value = remaining
 
-func _on_battle_ended(player_won: bool) -> void:
+func _on_battle_ended(player_won: bool, weapons_dropped: Array[Weapon], consumables_dropped: Array[Consumable]) -> void:
 	result_label.text = "🏆 VICTORY!" if player_won else "💀 DEFEATED"
 	result_label.modulate = Color.YELLOW if player_won else Color.RED
+	_populate_rewards(weapons_dropped, consumables_dropped)
 	result_screen.show()
 
+func _populate_rewards(weapons: Array[Weapon], consumables: Array[Consumable]) -> void:
+	for child in rewards_container.get_children():
+		child.queue_free()
+	if weapons.is_empty() and consumables.is_empty():
+		rewards_container.hide()
+		return
+	rewards_container.show()
+	var header := Label.new()
+	header.text = "Rewards:"
+	header.add_theme_font_size_override("font_size", 36)
+	rewards_container.add_child(header)
+	for w in weapons:
+		_add_reward_label("⚔ %s" % w.weapon_name)
+	for c in consumables:
+		_add_reward_label("🧪 %s x%d" % [c.consumable_name, c.quantity])
+
+func _add_reward_label(text: String) -> void:
+	var lbl := Label.new()
+	lbl.text = text
+	lbl.add_theme_font_size_override("font_size", 28)
+	rewards_container.add_child(lbl)
+
 func _on_continue_pressed() -> void:
-	get_tree().reload_current_scene()
+	var root_node = get_tree().root.get_node_or_null("Root")
+	if BattleManager.enemy.is_dead():
+		if root_node and root_node.has_method("from_battle_to_overworld"):
+			root_node.from_battle_to_overworld()
+		else:
+			get_tree().reload_current_scene()
+	else:
+		if root_node and root_node.has_method("start_battle"):
+			root_node.start_battle(scene_file_path)
+		else:
+			get_tree().reload_current_scene()
 
 # ── Graft ─────────────────────────────────────────────────────────────────────
 func _on_graft_requested() -> void:
@@ -177,7 +213,6 @@ func _refresh_consumable_card() -> void:
 	var c := BattleManager.get_current_consumable()
 	if c == null or (c.quantity <= 0 and not BattleManager._has_available_consumables()):
 		if c != null and c.quantity <= 0:
-			# Last consumable depleted — show greyed out
 			consumable_card.display(c)
 			consumable_card.set_empty()
 		else:

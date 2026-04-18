@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://8uog0qgddqdj"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_yaot3"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_h5gt1"]
+
+[resource]
+script = ExtResource("2_h5gt1")
+weapon_name = "hose"
+attack_damage = 10
+cooldown = 2.0
+hp_cost = 1
+element = 2
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dmaqf1gl3efpp"]
+
+[ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="1_v5qtb"]
+[ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="2_0fvjc"]
+
+[node name="NPC1" unique_id=1449211599 instance=ExtResource("1_v5qtb")]
+script = ExtResource("2_0fvjc")

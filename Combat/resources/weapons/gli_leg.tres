@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("3_eoads")
 weapon_name = "Gli Leg"
-attack_damage = 2
+attack_damage = 5
 cooldown = 2.0
 hp_cost = 1
 is_arm = false

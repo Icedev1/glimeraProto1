@@ -2780,7 +2780,8 @@ shape = SubResource("CapsuleShape3D_vu45j")
 transform = Transform3D(-1.9451567e-08, 0, 0.445, 0, 0.445, 0, -0.445, 0, -1.9451567e-08, 0, 0, 0)
 
 [node name="Armature" type="Node3D" parent="MAsked Gli" unique_id=1424227123]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 7.549789e-08, 0, -7.5497894e-08, 0.9999999, 0, 0, 0)
+unique_name_in_owner = true
+transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763566e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
 
 [node name="Skeleton" type="Skeleton3D" parent="MAsked Gli/Armature" unique_id=311386290]
 unique_name_in_owner = true
@@ -2846,7 +2847,7 @@ bones/8/parent = 3
 bones/8/rest = Transform3D(0, 1, 0, 0, 0, 1, 1, 0, 0, 0.4241892, 0.72463864, -0.023858625)
 bones/8/enabled = true
 bones/8/position = Vector3(0.4241892, 0.72463864, -0.023858625)
-bones/8/rotation = Quaternion(0.47789654, 0.5157088, 0.52099663, -0.48396474)
+bones/8/rotation = Quaternion(0.4999991, 0.5000009, 0.49999917, -0.500001)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LeftUpperArm"
 bones/9/parent = 8
@@ -2916,7 +2917,7 @@ bones/18/parent = 0
 bones/18/rest = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, 0.6844859, -0.30648077, 0.008246556)
 bones/18/enabled = true
 bones/18/position = Vector3(0.6844859, -0.30648077, 0.008246556)
-bones/18/rotation = Quaternion(0.16943944, 0.26068643, 0.9318251, -0.18717615)
+bones/18/rotation = Quaternion(6.5485874e-11, -7.288713e-10, 1, -5.960508e-08)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "LeftLowerLeg"
 bones/19/parent = 18
@@ -3374,7 +3375,7 @@ bone_name = "RightLowerArm"
 bone_idx = 15
 
 [node name="LeftLegGraft" type="BoneAttachment3D" parent="MAsked Gli/Armature/Skeleton" unique_id=1148643271]
-transform = Transform3D(-0.83325905, -0.1649732, -0.52769625, -0.2296198, -0.7649768, 0.60173523, -0.50294554, 0.6225708, 0.5995427, 0.3283745, 4.556373, 0.60846484)
+transform = Transform3D(-0.5397692, -0.05820505, -0.83979845, 0.0027896038, -0.997725, 0.0673577, -0.84180844, 0.0340149, 0.53870356, 0.3283745, 4.556373, 0.60846484)
 bone_name = "LeftUpperLeg"
 bone_idx = 18
 
@@ -3387,10 +3388,11 @@ bone_idx = 3
 transform = Transform3D(-1.1640927, 0.7746126, 0.0697381, 0.76763606, 1.1645077, -0.12106503, -0.12499218, -0.06242675, -1.3930111, 0.38285306, 0.81784594, -0.70476484)
 visible = false
 
-[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=1736229204]
+[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=1751167209]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MAsked Gli" unique_id=1926690920]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_jh4fu")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=600140843]

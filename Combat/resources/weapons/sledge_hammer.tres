@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://s7jdid2n6buu"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_ety8u"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_cxvek"]
+
+[resource]
+script = ExtResource("2_cxvek")
+weapon_name = "sledge hammer"
+attack_damage = 15
+cooldown = 4.0
+hp_cost = 2
+is_arm = false
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2863a3kp5or6"]
 
-[ext_resource type="Script" uid="uid://c22xpcx2d84a0" path="res://scripts/ui/consumable_card.gd" id="1_8fdhi"]
+[ext_resource type="Script" uid="uid://c22xpcx2d84a0" path="res://Combat/scripts/ui/consumable_card.gd" id="1_8fdhi"]
 
 [node name="ConsumableCard" type="PanelContainer" unique_id=1847938993]
 custom_minimum_size = Vector2(120, 160)
@@ -23,6 +23,7 @@ show_percentage = false
 [node name="use_btn" type="Button" parent="." unique_id=1023731707]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 mouse_filter = 1
 flat = true
 

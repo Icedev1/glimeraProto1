@@ -5,15 +5,19 @@ signal weapon_cooldown_updated(slot: int, remaining: float, total: float)
 signal block_state_changed(is_blocking: bool, remaining: float)
 signal action_cooldown_updated(action: String, remaining: float, total: float)
 signal enemy_attack_timer_updated(remaining: float, total: float, weapon_name: String, element_name: String)
-signal battle_ended(player_won: bool)
+signal battle_ended(player_won: bool, weapons_dropped: Array[Weapon], consumables_dropped: Array[Consumable])
 signal graft_requested
-signal consumable_updated(consumable: Consumable)  ## Emitted when selected consumable changes or is used
+signal consumable_updated(consumable: Consumable)
+signal player_attacked
+signal player_hit(damage: int, was_blocked: bool)
+signal enemy_attacked
+signal enemy_hit(damage: int)
 
 # ── Set this before the battle scene loads ────────────────────────────────────
 @export var enemy: EnemyData = null
 
 # ── Runtime state ─────────────────────────────────────────────────────────────
-var _player: PlayerData  # shorthand reference
+var _player: PlayerData
 var _equipped: Array[Weapon] = []
 var _inventory: Array[Weapon] = []
 var _weapon_cooldowns: Array[CooldownTracker] = []
@@ -31,7 +35,7 @@ var _graft_cooldown: CooldownTracker
 # ── Consumable state ──────────────────────────────────────────────────────────
 var _consumable_cooldown_duration: float
 var _consumable_cooldown: CooldownTracker
-var _consumables: Array[Consumable] = []
+var _consumables: Array[Consumable] = []   # battle copy — applied to player only on win
 var _consumable_index: int = 0
 
 var _enemy_attack_timer: float = 0.0
@@ -40,9 +44,6 @@ var _enemy_current_weapon: Weapon = null
 var _enemy_weapon_index: int = 0
 
 var _battle_active: bool = false
-
-var player_mesh: MeshInstance3D
-var enemy_mesh: MeshInstance3D
 
 const SLOT_ARM: int = 0
 const SLOT_LEG: int = 1
@@ -58,8 +59,8 @@ const ELEMENT_PLAYER_INEFFECTIVE: float = 0.5
 const ELEMENT_ENEMY_SUPER_EFFECTIVE: float = 1.75
 const ELEMENT_ENEMY_EFFECTIVE: float = 1.3
 const ELEMENT_ENEMY_NEUTRAL: float = 1.0
-const ELEMENT_ENEMY_INEFFECTIVE: float = 0.7
-const ELEMENT_ENEMY_SUPER_INEFFECTIVE: float = 0.4
+const ELEMENT_ENEMY_INEFFECTIVE: float = 0.8
+const ELEMENT_ENEMY_SUPER_INEFFECTIVE: float = 0.7
 
 # ── Start ─────────────────────────────────────────────────────────────────────
 func start_battle() -> void:
@@ -70,6 +71,14 @@ func start_battle() -> void:
 	_player = PlayerManager.data
 	_equipped = _player.equipped.duplicate()
 	_inventory = _player.inventory.duplicate()
+
+	# Snapshot consumables — deep copy so combat usage doesn't touch the canonical list.
+	# On win, _commit_consumables() writes these back. On loss, they're discarded.
+	_consumables.clear()
+	for c in _player.consumables:
+		_consumables.append(c.duplicate())
+	_consumable_index = 0
+
 	_weapon_cooldowns.clear()
 	for w in _equipped:
 		_weapon_cooldowns.append(CooldownTracker.new(w.cooldown if w else 1.0))
@@ -77,8 +86,6 @@ func start_battle() -> void:
 	_block_cooldown = CooldownTracker.new(_block_cooldown_duration)
 	_graft_cooldown = CooldownTracker.new(_graft_cooldown_duration)
 	_consumable_cooldown = CooldownTracker.new(_consumable_cooldown_duration)
-	_consumables = _player.consumables.duplicate()
-	_consumable_index = 0
 
 	_player.init_combat()
 	enemy.init_combat()
@@ -90,16 +97,6 @@ func start_battle() -> void:
 
 	_schedule_enemy_attack()
 	log_message("⚔️ %s appears!" % enemy.unit_name)
-
-	# Separate meshes so flash shader doesn't affect both
-	player_mesh.set_surface_override_material(
-		0,
-		player_mesh.get_active_material(0).duplicate()
-	)
-	enemy_mesh.set_surface_override_material(
-		0,
-		enemy_mesh.get_active_material(0).duplicate()
-	)
 
 # ── Process ───────────────────────────────────────────────────────────────────
 func _process(delta: float) -> void:
@@ -167,6 +164,7 @@ func player_attack(slot: int) -> void:
 		return
 	_resolve_attack(w, _player, enemy)
 	_weapon_cooldowns[slot].start()
+	emit_signal("player_attacked")
 
 func player_block() -> void:
 	if not _battle_active or _block_active or not _block_cooldown.is_ready():
@@ -201,6 +199,7 @@ func _execute_enemy_attack() -> void:
 	if not _battle_active:
 		return
 	_resolve_attack(_enemy_current_weapon, enemy, _player)
+	emit_signal("enemy_attacked")
 	if _battle_active:
 		_schedule_enemy_attack()
 
@@ -242,19 +241,16 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 
 		defender.take_damage(dmg)
 
-		# Flash on hit
-		var visual: MeshInstance3D = player_mesh if defender == _player else enemy_mesh
-		if visual:
-			var mat := visual.get_surface_override_material(0)
-			if mat is ShaderMaterial and dmg != 0:
-				get_tree().root.get_node("Root").screenshake()
-				mat.set_shader_parameter("flash_intensity", 1.0)
-				var tween := get_tree().create_tween()
-				tween.tween_property(mat, "shader_parameter/flash_intensity", 1.2, 0.03)
-				tween.tween_property(mat, "shader_parameter/flash_intensity", 1.0, 0.05)
-				tween.tween_property(mat, "shader_parameter/flash_intensity", 0.0, 0.25)\
-					.set_trans(Tween.TRANS_QUAD)\
-					.set_ease(Tween.EASE_OUT)
+		# Hit visuals
+		if dmg != 0:
+			var root_node = get_tree().root.get_node_or_null("Root")
+			if root_node and root_node.has_method("screenshake"):
+				root_node.screenshake()
+
+			if defender == _player:
+				emit_signal("player_hit", dmg, was_blocked)
+			else:
+				emit_signal("enemy_hit", dmg)
 
 		total_damage_dealt += dmg
 
@@ -289,7 +285,6 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 		var target: UnitData = attacker if eff.applies_to == StatusEffect.Target.SELF else defender
 		eff.apply(target)
 
-	# Attacker on_attack — triggers charge-based effects
 	if _battle_active:
 		attacker.process_on_attack()
 
@@ -332,7 +327,6 @@ func player_use_consumable() -> void:
 	if consumable.quantity <= 0:
 		if _has_available_consumables():
 			_cycle_to_next_available(1)
-		# else: stay on last one (greyed out)
 
 	emit_signal("consumable_updated", get_current_consumable())
 
@@ -354,11 +348,9 @@ func _cycle_to_next_available(direction: int) -> void:
 			_consumable_index += _consumables.size()
 		if _consumables[_consumable_index].quantity > 0:
 			return
-	# No available consumables found — stay where we are
 	_consumable_index = start
 
 # ── Element helpers ───────────────────────────────────────────────────────────
-
 ## Player attacks enemy: weapon element vs enemy unit element
 func _get_player_attack_element_mult(w: Weapon) -> float:
 	var atk_el := w.element
@@ -414,7 +406,6 @@ func _get_enemy_attack_element_label(w: Weapon) -> String:
 	return ""
 
 # ── Public helpers ────────────────────────────────────────────────────────────
-
 func log_message(msg: String) -> void:
 	emit_signal("battle_log_updated", msg)
 
@@ -435,11 +426,54 @@ func on_stun_expired(unit: UnitData) -> void:
 # ── End ───────────────────────────────────────────────────────────────────────
 func _end_battle(player_won: bool) -> void:
 	_battle_active = false
+	var weapons_dropped: Array[Weapon] = []
+	var consumables_dropped: Array[Consumable] = []
+
 	if player_won:
 		log_message("🏆 Victory! %s is defeated!" % enemy.unit_name)
+		_commit_consumables()
+		_grant_rewards(weapons_dropped, consumables_dropped)
+		_cleanup_depleted_consumables()
 	else:
 		log_message("💀 Defeated by %s..." % enemy.unit_name)
-	emit_signal("battle_ended", player_won)
+		# Snapshot discarded — _player.consumables stays at its pre-battle state
+
+	emit_signal("battle_ended", player_won, weapons_dropped, consumables_dropped)
+
+func _commit_consumables() -> void:
+	# Write working-copy quantities back to the canonical player list.
+	# The snapshot was a 1:1 duplicate at battle start, so names still match.
+	for working in _consumables:
+		for canonical in _player.consumables:
+			if canonical.consumable_name == working.consumable_name:
+				canonical.quantity = working.quantity
+				break
+
+func _grant_rewards(weapons_out: Array[Weapon], consumables_out: Array[Consumable]) -> void:
+	for w in enemy.reward_weapons:
+		_player.inventory.append(w)
+		weapons_out.append(w)
+	for c in enemy.reward_consumables:
+		_grant_consumable(c)
+		consumables_out.append(c)
+
+func _grant_consumable(source: Consumable) -> void:
+	# Snapshot before any mutation — guards against source == existing (shared .tres)
+	var source_quantity := source.quantity
+	var source_name := source.consumable_name
+	for existing in _player.consumables:
+		if existing.consumable_name == source_name:
+			existing.quantity += source_quantity
+			return
+	# New entry — duplicate so we don't mutate the shared .tres asset
+	_player.consumables.append(source.duplicate())
+
+func _cleanup_depleted_consumables() -> void:
+	var i := _player.consumables.size() - 1
+	while i >= 0:
+		if _player.consumables[i].quantity <= 0:
+			_player.consumables.remove_at(i)
+		i -= 1
 
 # ── Graft (weapon swap) ──────────────────────────────────────────────────────
 func player_graft() -> void:
