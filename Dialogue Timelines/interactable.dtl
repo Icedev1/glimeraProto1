@@ -12,17 +12,19 @@ elif {target} == "clock":
 elif {target} == "violin":
 	join Gli left
 	Gli: My oldest and most prized possession… Nothing puts me at ease quite like playing for the birds does. I should take this with me when I head out.
-	set {have_violin} = true
+	set {GraftGlobals.violinObtained} = true
 	[signal arg="remove_object"]
 # Living Room
 elif {target} == "junk":
 	join Gli left
 	Gli: Some bits I've found around the city. I really should organize these properly soon and see what can be salvaged for useful graftables.
 	[signal arg="remove_object"]
+	set {GraftGlobals.sawObtained} = true
 	# Destroy the pile of junk so that it can't be interacted with again
-	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked
+	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked.
+	You got the Saw!
 elif {target} == "door_fd":
-	if {have_violin} == false:
+	if {GraftGlobals.violinObtained} == false:
 		join Gli left
 		Gli: I should graft on my violin before I go out in case the birds are in need of entertainment.
 	else:

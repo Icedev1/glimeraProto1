@@ -302,3 +302,4 @@ item_1/icon = ExtResource("4_gjxvf")
 
 [editable path="SubViewportContainer/SubViewport/Node3D"]
 [editable path="SubViewportContainer/SubViewport/Node3D/CharacterBody3D"]
+[editable path="SubViewportContainer/SubViewport/Node3D/CharacterBody3D/MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1"]
