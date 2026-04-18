@@ -81,6 +81,17 @@ func _on_body_entered(body: Node3D) -> void:
 	#triggers battle on touch
 	var targetname = get_parent().name
 	match targetname:
+		"door_lr":			
+			var player = $"../../../CharacterBody3D"
+			if player:
+				player.rotate_y(PI)
+				var push_dir = Vector3(0, 0, -0.1)	
+				player.apply_knockback(push_dir, 3.0, 0.25)
+				Dialogic.VAR.set_variable("target","door_lr")
+				Dialogic.start("bedroom")
+				get_viewport().set_input_as_handled()
+				
+			prompt.visible = false
 		"Aggressive Cornelius":
 			var game = get_tree().current_scene
 			game.from_overworld_to_battle()
