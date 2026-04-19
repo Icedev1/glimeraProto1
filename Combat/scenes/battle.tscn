@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
 [ext_resource type="Resource" uid="uid://db4t1iyhhrxfi" path="res://Combat/resources/enemies/enemy1/enemy1.tres" id="2_1fagd"]
 [ext_resource type="Texture2D" uid="uid://dfbqux15ppcwx" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_Color.jpg" id="3_r8c2t"]
+[ext_resource type="Texture2D" uid="uid://qpus3sohhdxt" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_AmbientOcclusion.jpg" id="4_01irj"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
@@ -10,12 +11,35 @@
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="4_q77w5"]
 [ext_resource type="Script" uid="uid://bh558h22wt4y0" path="res://Combat/scripts/battle/battle_player.gd" id="5_1fagd"]
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
+[ext_resource type="Texture2D" uid="uid://da8rayfiko1ak" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_Displacement.jpg" id="5_n1uve"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
+[ext_resource type="Texture2D" uid="uid://j2nbiowerbeb" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_NormalGL.jpg" id="6_q6ghl"]
 [ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="6_r8c2t"]
+[ext_resource type="Texture2D" uid="uid://c4d1iferf66n5" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG_Roughness.jpg" id="7_x13a4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fagd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrm6"]
+cull_mode = 2
 albedo_texture = ExtResource("3_r8c2t")
-uv1_scale = Vector3(3, 3, 3)
+roughness_texture = ExtResource("7_x13a4")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("6_q6ghl")
+ao_enabled = true
+ao_texture = ExtResource("4_01irj")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_texture = ExtResource("5_n1uve")
+uv1_scale = Vector3(0.023, 0.038, 0.046)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fr5r2"]
+lightmap_size_hint = Vector2i(531, 1193)
+material = SubResource("StandardMaterial3D_onrm6")
+size = Vector2(105.945, 238.21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3inix"]
+size = Vector3(106.26196, 1, 211.75021)
 
 [sub_resource type="GDScript" id="GDScript_p1qf1"]
 script/source = "extends Control
@@ -99,11 +123,15 @@ enemy_resource = ExtResource("2_1fagd")
 
 [node name="Env" type="Node3D" parent="." unique_id=1176667746]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Env" unique_id=1726363872]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -1.6, -5.5)
-material_override = SubResource("StandardMaterial3D_1fagd")
-use_collision = true
-size = Vector3(99, 3, 226)
+[node name="StaticBody3D" type="StaticBody3D" parent="Env" unique_id=1042017876]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/StaticBody3D" unique_id=1556537393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009730339, 0, 0.021704674)
+mesh = SubResource("PlaneMesh_fr5r2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/StaticBody3D" unique_id=1288593480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20300293, 0, 13.680008)
+shape = SubResource("BoxShape3D_3inix")
 
 [node name="Player" parent="." unique_id=1051319031 instance=ExtResource("4_q77w5")]
 unique_name_in_owner = true

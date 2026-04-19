@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://btbbvoxdixc6u"]
 
+[ext_resource type="Shader" uid="uid://dolipjk2ghj4g" path="res://fadeblock.gdshader" id="1_2go4k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhjco"]
+shader = ExtResource("1_2go4k")
+shader_parameter/fade_size = 0.154000007315
+
 [node name="Prompt" type="Control" unique_id=566110442]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +13,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=907205083]
+material = SubResource("ShaderMaterial_rhjco")
+layout_mode = 0
+offset_left = -13.0
+offset_top = -3.0
+offset_right = 88.0
+offset_bottom = 28.0
+color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2097682155]
 layout_mode = 1

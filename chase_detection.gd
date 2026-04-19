@@ -16,4 +16,4 @@ func _on_body_entered(body: Node3D) -> void:
 
 		var enemy = get_parent()
 		enemy.player = body
-		enemy.chasing = true
+		enemy.chasing = enemy.active

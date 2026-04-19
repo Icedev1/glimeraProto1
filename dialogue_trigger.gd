@@ -95,6 +95,7 @@ func _on_body_entered(body: Node3D) -> void:
 		"Aggressive Cornelius":
 			var game = get_tree().current_scene
 			game.from_overworld_to_battle()
+			$"..".chasing = false
 	
 
 func _on_body_exited(body: Node3D) -> void:

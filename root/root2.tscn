@@ -151,7 +151,7 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y5gj7"]
 shader = ExtResource("8_pxagh")
 shader_parameter/time = 0.65
-shader_parameter/piece_scale = 50.0
+shader_parameter/piece_scale = 100.0
 shader_parameter/explosion = 2.5
 shader_parameter/fade_speed = 1.0
 
