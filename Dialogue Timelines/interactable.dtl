@@ -69,7 +69,7 @@ elif {target} == "passive_bob":
 		skull: Oh my! It’s Gli! What a pleasure to receive a visit from you, my dear! Is there anything I can do for you?
 		Gli: (She’s usually never this chipper…)
 		Gli: O-oh yes hello! Thank you… Sorry but, have you not noticed other figures acting strangely suddenly?
-		skull: (starts to jitter a bit? Speech animating wobbly?) Strangely…?! Whatever do you mean, sweetheart?
+		skull: [shake]Strangely…?! Whatever do you mean, sweetheart?[/shake]
 		Gli: Umm well I woke up to a loud noise this morning and then the first two figures I saw were completely frozen stiff!
 		Gli: It's like they suddenly turned to stone in the middle of what they were doing!!
 		Gli: And then, just up ahead, past this street, I was attacked by the only figure I'd seen moving all day! He didn't even say a word!
@@ -79,7 +79,7 @@ elif {target} == "passive_bob":
 		skull: Maybe you need to calm down.
 		skull: Maybe YOU’RE the one acting strange.
 		skull: Have you considered that? Hm?
-		skull: Maybe you’re the scary one.
+		skull: [shake]Maybe you’re the scary one.[/shake]
 		skull: The Guardian watches over all of us. Remember that.
 		skull: Good-bye, Gli.
 		leave skull

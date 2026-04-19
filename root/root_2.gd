@@ -136,7 +136,7 @@ func from_overworld_to_battle():
 
 func from_battle_to_overworld():
 	overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
-	transition1.playclockwipe(func():
+	transition1.playfade(func():
 		show_overworld()
 	)
 
