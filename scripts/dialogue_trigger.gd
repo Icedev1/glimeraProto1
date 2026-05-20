@@ -3,6 +3,7 @@ extends Area3D
 var inRange : bool = false
 @onready var node: Node3D = $".."
 @onready var canvasprompt: Control = null
+var auto_skip := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,15 @@ func _process(delta: float) -> void:
 			#var world_pos = global_transform.origin + Vector3(0, 0.5, 0)
 			#var screen_pos = get_viewport().get_camera_3d().unproject_position(world_pos)
 			#prompt.position = screen_pos
+
+	if Input.is_action_just_pressed("mouse_right") and Input.is_action_just_pressed("ui_interact"):
+
+		if Dialogic.current_timeline != null:
+
+			auto_skip = !auto_skip
+
+			Dialogic.Inputs.auto_skip.enabled = auto_skip
+			print("Auto Skip:", auto_skip)
 
 	
 	if Input.is_action_just_pressed("ui_interact") and inRange:
