@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cvvj0tqpd238a"]
+
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_qiitc"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_varue"]
+[ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="3_r0uam"]
+[ext_resource type="Resource" uid="uid://clkmvp1xdg4s8" path="res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2_weapon.tres" id="4_q4o81"]
+[ext_resource type="Resource" uid="uid://curdomnwk0nse" path="res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2_weapon2.tres" id="5_qiitc"]
+
+[resource]
+script = ExtResource("3_r0uam")
+weapons = Array[ExtResource("2_varue")]([ExtResource("4_q4o81"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc")])
+element = 1
+unit_name = "Practice enemy 2"
+max_hp = 80
+metadata/_custom_type_script = "uid://b3ri4vlr52i3f"

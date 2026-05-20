@@ -24,6 +24,8 @@ var _player: PlayerData
 var _equipped: Array[Weapon] = []
 var _inventory: Array[Weapon] = []
 var _weapon_cooldowns: Array[CooldownTracker] = []
+var _paused: bool = false
+
 
 var _block_active: bool = false
 const BLOCK_DURATION: float = 0.4
@@ -105,7 +107,7 @@ func start_battle() -> void:
 
 # ── Process ───────────────────────────────────────────────────────────────────
 func _process(delta: float) -> void:
-	if not _battle_active:
+	if not _battle_active or _paused:
 		return
 
 	_player.tick_effects(delta)
@@ -148,6 +150,8 @@ func _process(delta: float) -> void:
 		_enemy_current_weapon.weapon_name,
 		Weapon.element_name(_enemy_current_weapon.element)
 	)
+	if _paused:
+		return
 	if _enemy_attack_timer <= 0.0 and not enemy.is_stunned:
 		_execute_enemy_attack()
 
@@ -427,6 +431,9 @@ func on_stun_expired(unit: UnitData) -> void:
 		return
 	if unit == enemy:
 		_schedule_enemy_attack()
+
+func set_paused(p_paused: bool) -> void:
+	_paused = p_paused
 
 # ── End ───────────────────────────────────────────────────────────────────────
 func _end_battle(player_won: bool) -> void:
