@@ -86,3 +86,7 @@ func face_menu_camera() -> void:
 		dir = dir.normalized()
 		var target_angle = atan2(dir.x, dir.z) - PI / 2
 		$"MAsked Gli".rotation.y = target_angle
+
+
+func _on_respawn_area_3d_body_entered(body: Node3D) -> void:
+	$".".global_transform.origin = Vector3.ZERO # Replace with function body.
