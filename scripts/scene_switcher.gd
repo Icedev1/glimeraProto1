@@ -5,6 +5,16 @@ var pauseInstance
 @export var equip_ui: Control
 
 
+func _ready() -> void:
+	await get_tree().process_frame
+	await get_tree().process_frame
+	var players = get_tree().get_nodes_in_group("player")
+	for p in players:
+		var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
+		if char_cam:
+			char_cam.make_current()
+			return
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		if get_tree().paused:
