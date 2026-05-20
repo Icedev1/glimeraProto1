@@ -1300,7 +1300,7 @@ height = 0.91711426
 size = Vector3(1, 2.2576904, 15.6657715)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n77t6"]
-size = Vector3(2.63562, 2.2576904, 15.6657715)
+size = Vector3(4.3168335, 2.2576904, 15.6657715)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_oj22m"]
 
@@ -2129,7 +2129,7 @@ transform = Transform3D(1, 7.059425e-07, 0, -5.2154064e-08, 0.9999757, 3.7252903
 shape = SubResource("BoxShape3D_ohrgx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7/CollisionShape3D" unique_id=1399384038]
-transform = Transform3D(-1.3909061e-08, 5.465001e-06, -1, -1.0803478e-07, 0.9999757, -4.4704656e-08, 1, 7.618228e-07, -4.3711395e-08, -14.359932, 0.62882924, 2.5181327)
+transform = Transform3D(-1.3909061e-08, 5.465001e-06, -1, -1.0803478e-07, 0.9999757, -4.4704656e-08, 1, 7.618228e-07, -4.3711395e-08, -14.359934, 0.62882936, 3.3587394)
 shape = SubResource("BoxShape3D_n77t6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7/CollisionShape3D/CollisionShape3D" unique_id=1467973954]

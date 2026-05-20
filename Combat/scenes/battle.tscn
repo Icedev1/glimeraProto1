@@ -23,16 +23,11 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrm6"]
 cull_mode = 2
-albedo_texture = ExtResource("3_r8c2t")
-roughness_texture = ExtResource("7_x13a4")
 roughness_texture_channel = 4
 normal_enabled = true
-normal_texture = ExtResource("6_q6ghl")
 ao_enabled = true
-ao_texture = ExtResource("4_01irj")
 ao_texture_channel = 4
 heightmap_enabled = true
-heightmap_texture = ExtResource("5_n1uve")
 uv1_scale = Vector3(0.023, 0.038, 0.046)
 uv1_triplanar = true
 uv1_world_triplanar = true
