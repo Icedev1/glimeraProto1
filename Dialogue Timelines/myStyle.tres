@@ -26,6 +26,19 @@ scene = ExtResource("3_igmtw")
 script = ExtResource("1_x0pjn")
 scene = ExtResource("4_vnvds")
 
+[sub_resource type="Resource" id="Resource_pg056"]
+script = ExtResource("1_x0pjn")
+scene = ExtResource("9_p4cbv")
+overrides = {
+"box_color_use_global": "false",
+"box_size": "Vector2(1000, 150)",
+"name_label_box_use_global_color": "false",
+"name_label_use_character_color": "false",
+"name_label_use_global_color": "false",
+"text_size": "25.0",
+"text_use_global_color": "false"
+}
+
 [sub_resource type="Resource" id="Resource_yrvbp"]
 script = ExtResource("1_x0pjn")
 scene = ExtResource("6_wap1v")
@@ -43,14 +56,6 @@ script = ExtResource("1_x0pjn")
 scene = ExtResource("9_48aic")
 overrides = {
 "show_join_and_leave": "false"
-}
-
-[sub_resource type="Resource" id="Resource_pg056"]
-script = ExtResource("1_x0pjn")
-scene = ExtResource("9_p4cbv")
-overrides = {
-"box_size": "Vector2(1000, 150)",
-"text_size": "25.0"
 }
 
 [resource]
