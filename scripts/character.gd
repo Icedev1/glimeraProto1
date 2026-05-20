@@ -1,7 +1,7 @@
 # Player.gd
 extends CharacterBody3D
 
-const SPEED := 2.0
+@export var SPEED :float = 2.0
 const JUMP_VELOCITY := 5.0
 const TURN_SPEED := 9.0
 
@@ -41,7 +41,6 @@ func get_move_direction() -> Vector3:
 
 	var cam_basis = camera.global_transform.basis
 
-	# THIS matches your original logic
 	var forward = cam_basis.z
 	var right = cam_basis.x
 
