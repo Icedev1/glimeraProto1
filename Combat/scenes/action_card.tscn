@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://cuaxdh21q1jls"]
 
+[ext_resource type="Texture2D" uid="uid://bi0sdbu2kkesm" path="res://images/StoneTablet.png" id="1_4bmbb"]
 [ext_resource type="Script" uid="uid://680e4utteuks" path="res://Combat/scripts/ui/action_card.gd" id="1_xkd22"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vt3ji"]
+texture = ExtResource("1_4bmbb")
+expand_margin_left = 60.0
+expand_margin_top = 8.0
+expand_margin_right = 72.0
+expand_margin_bottom = 8.0
 
 [node name="ActionCard" type="PanelContainer" unique_id=1847938993]
 custom_minimum_size = Vector2(120, 160)
@@ -9,6 +17,7 @@ anchor_right = 0.062000003
 anchor_bottom = 0.148
 offset_right = 140.95999
 offset_bottom = 0.16000366
+theme_override_styles/panel = SubResource("StyleBoxTexture_vt3ji")
 script = ExtResource("1_xkd22")
 
 [node name="cooldown_bar" type="ProgressBar" parent="." unique_id=874721104]
@@ -33,26 +42,39 @@ layout_mode = 2
 [node name="action_name_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1747019464]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "Action Name"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=78082463]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="cooldown_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=907110296]
+[node name="action_icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=515609491]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "CoolDown:"
+size_flags_vertical = 3
+stretch_mode = 5
 
 [node name="description_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2029926720]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 14
 text = "Description:"
 autowrap_mode = 3
+
+[node name="StatsRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=971488308]
+layout_mode = 2
+
+[node name="cooldown_label" type="Label" parent="MarginContainer/VBoxContainer/StatsRow" unique_id=907110296]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "CoolDown:"
+horizontal_alignment = 2
 
 [node name="click_area" type="Button" parent="." unique_id=1023731707]
 unique_name_in_owner = true

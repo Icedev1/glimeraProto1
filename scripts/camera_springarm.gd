@@ -5,11 +5,17 @@ extends Node3D
 @export var min_length: float = 0.5
 @onready var spring_arm := $SpringArm3D
 @onready var spring_position := $"SpringArm3D/SpringPosition"
+var menu_open := false
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if menu_open:
+		return
+	if event is InputEventMouseMotion:
+		rotation.y -= event.relative.x * mouse_sensibility
 	if event is InputEventMouseMotion: #&& Input.is_action_pressed("mouse_right") add this to get control over camera
 		rotation.y -= event.relative.x * mouse_sensibility
 		rotation.y = wrapf(rotation.y, 0.0, TAU)

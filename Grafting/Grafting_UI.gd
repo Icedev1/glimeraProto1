@@ -8,7 +8,7 @@ extends Control
 @export var legGraftDescs : Array[String]
 
 var selected_slot : String = ""
-var is_open : bool = false
+#var is_open : bool = false
 
 @onready var graft_grid = $GraftsPage/GraftGrid
 @onready var info_card = $GraftsPage/InfoCard
@@ -21,6 +21,8 @@ var is_open : bool = false
 @onready var grafts_page = $GraftsPage
 @onready var inventory_page = $InventoryPage
 @onready var settings_page = $SettingsPage
+@onready var quit_confirm_dialog = $SettingsPage/QuitConfirmDialog
+
 
 func _ready() -> void:
 	set_process_input(true)
@@ -37,11 +39,6 @@ func _ready() -> void:
 		leg_slot.icon = legIcons[GraftGlobals.left_leg_graft_index]
 		leg_slot.add_theme_constant_override("icon_max_width", 150)
 
-func _input(event) -> void:
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_ESCAPE:
-			is_open = !is_open
-			visible = is_open
 
 func _show_page(page: String) -> void:
 	grafts_page.visible = page == "grafts"
@@ -121,18 +118,9 @@ func _on_graft_hovered(index: int) -> void:
 		info_desc.text = legGraftDescs[index] if index < legGraftDescs.size() else ""
 		info_icon.texture = legIcons[index]
 
+func _on_main_menu_button_pressed() -> void:
+	quit_confirm_dialog.dialog_text = "This will close the game completely. Are you sure?"
+	quit_confirm_dialog.popup_centered()
 
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_2_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_3_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_grafts_pressed() -> void:
-	pass # Replace with function body.
+func _on_quit_confirm_dialog_confirmed() -> void:
+	get_tree().quit()

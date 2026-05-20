@@ -156,7 +156,14 @@ func from_battle_to_overworld():
 	overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
 	transition1.playfade(func():
 		show_overworld()
-	)
+		var players = get_tree().get_nodes_in_group("player")
+		for p in players:
+			if not p.is_inside_tree():
+				continue
+			var menu_cam = p.get_node_or_null("MenuCamera")
+			var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
+			if menu_cam and char_cam:
+				)
 
 func transition_to_street(target_street: String, spawn_name: String):
 	transition1.playfade(func():

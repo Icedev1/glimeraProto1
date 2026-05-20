@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cnuqwcno1v7ut"]
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_symyl"]
+[ext_resource type="Texture2D" uid="uid://dq6kp4twx3mie" path="res://images/6224567.png" id="2_18wwy"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_ftvis"]
 
 [resource]
@@ -8,4 +9,5 @@ script = ExtResource("2_ftvis")
 weapon_name = "Uppercut"
 attack_damage = 13
 cooldown = 2.5
+icon = ExtResource("2_18wwy")
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

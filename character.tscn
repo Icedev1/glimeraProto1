@@ -9,7 +9,7 @@
 [ext_resource type="Animation" uid="uid://bni5san3flrp2" path="res://Animations/Idle.anim" id="8_jb3kq"]
 [ext_resource type="Script" uid="uid://bvuuj1hvtosya" path="res://scripts/all_new_grafting_system.gd" id="8_wdpcj"]
 [ext_resource type="Animation" uid="uid://d0qj4aimqfui8" path="res://Animations/get Hit.anim" id="9_jb3kq"]
-[ext_resource type="Material" path="res://Textures/Metal Texture/Metal061B_1K-JPG.tres" id="17_pm3tn"]
+[ext_resource type="Material" uid="uid://dv0rxq342jkxl" path="res://Textures/Metal Texture/Metal061B_1K-JPG.tres" id="17_pm3tn"]
 [ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="32_go3uk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vu45j"]
@@ -2768,7 +2768,7 @@ _data = {
 &"get Hit": ExtResource("9_jb3kq")
 }
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1051319031]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1051319031 groups=["player"]]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 collision_layer = 2
 
@@ -3387,7 +3387,7 @@ bone_idx = 3
 transform = Transform3D(-1.1640927, 0.7746126, 0.0697381, 0.76763606, 1.1645077, -0.12106503, -0.12499218, -0.06242675, -1.3930111, 0.38285306, 0.81784594, -0.70476484)
 visible = false
 
-[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=1736229204]
+[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=382164975]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MAsked Gli" unique_id=1926690920]
@@ -3402,5 +3402,9 @@ doppler_tracking = 2
 
 [node name="GraftingSystem" type="Node" parent="." unique_id=1353283170]
 script = ExtResource("8_wdpcj")
+
+[node name="MenuCamera" type="Camera3D" parent="." unique_id=2115126511]
+transform = Transform3D(6.6643815, 0, 0.17451298, 0, 6.666666, 0, -0.17451298, 0, 6.6643815, 0.09041975, 2.9362822, 8.719277)
+fov = 45.0
 
 [editable path="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1"]

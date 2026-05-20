@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 				"door_building6":
 					Dialogic.VAR.set_variable("target","door_building1")
 				"door_building7":
-					Dialogic.VAR.set_variable("target","door_building1")
+					Dialogic.VAR.set_variable("target","door_building7")
 				"door_building8":
 					Dialogic.VAR.set_variable("target","door_building1")
 				"door_building9":
@@ -90,9 +90,20 @@ func DialogicSignal(arg:String):
 		"open_door":
 			var game = get_tree().current_scene
 			game.transition_to_street("res://Streets/Street1-1.tscn", "Spawn_FromHouse")
+		"open_door7":
+			%AnimationPlayerDoor.play("door_opening")
+		"close_door7":
+			%AnimationPlayerDoor.play_backwards("door_opening")
 		"start_quest_1":
 			print("quest 1 started")
+			$"../../Statue".process_mode = Node.PROCESS_MODE_INHERIT
+			$"../../Statue2".process_mode = Node.PROCESS_MODE_INHERIT
+			$"../../Statue3".process_mode = Node.PROCESS_MODE_INHERIT
 			Dialogic.VAR.set_variable("quest_1","started")
+		"reset_quest_1":
+			$"../../Statue".global_transform.origin = Vector3(-2.194,0.002,2.128)
+			$"../../Statue2".global_transform.origin = Vector3(-0.755,0.002,2.128)
+			$"../../Statue3".global_transform.origin = Vector3(0.562,0.002,1.386)
 		"angry_steve":
 			pass
 
@@ -118,6 +129,27 @@ func _on_body_entered(body: Node3D) -> void:
 				get_viewport().set_input_as_handled()
 				
 			prompt.visible = false
+		"Chill Derek":
+			#Statue is correct.
+			if body.collision_layer & (1 << 4):
+				prompt.visible = false
+				StoryFlags.statueQuestComplete = true
+				Dialogic.VAR.set_variable("target","quest_npc_1")
+				Dialogic.start("bedroom")
+				get_viewport().set_input_as_handled()
+				print("Quest Completion Status: " + str(StoryFlags.statueQuestComplete))
+				$"../../Statue/StaticBody3D".queue_free()
+				$"../../Statue/left".queue_free()
+				$"../../Statue/right".queue_free()
+				$"../../Statue/back".queue_free()
+				$"../../Statue/front".queue_free()
+			elif body.collision_layer & (1 << 5):
+				prompt.visible = false
+				Dialogic.VAR.set_variable("wrong_statue",true)
+				Dialogic.VAR.set_variable("target","quest_npc_1")
+				Dialogic.start("bedroom")
+				get_viewport().set_input_as_handled()
+				pass
 		"Aggressive Cornelius":
 			var game = get_tree().current_scene
 			game.from_overworld_to_battle("res://Combat/resources/enemies/enemy1/enemy1.tres")

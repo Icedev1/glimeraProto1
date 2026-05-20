@@ -4,7 +4,7 @@ signal battle_log_updated(message: String)
 signal weapon_cooldown_updated(slot: int, remaining: float, total: float)
 signal block_state_changed(is_blocking: bool, remaining: float)
 signal action_cooldown_updated(action: String, remaining: float, total: float)
-signal enemy_attack_timer_updated(remaining: float, total: float, weapon_name: String, element_name: String)
+signal enemy_attack_timer_updated(remaining: float, total: float, weapon_name: String, element_name: String, weapon: Weapon)
 signal battle_ended(player_won: bool, weapons_dropped: Array[Weapon], consumables_dropped: Array[Consumable])
 signal graft_requested
 signal consumable_updated(consumable: Consumable)
@@ -146,8 +146,9 @@ func _process(delta: float) -> void:
 		_enemy_attack_timer,
 		_enemy_attack_total,
 		_enemy_current_weapon.weapon_name,
-		Weapon.element_name(_enemy_current_weapon.element)
-	)
+		Weapon.element_name(_enemy_current_weapon.element),
+		_enemy_current_weapon)
+	
 	if _enemy_attack_timer <= 0.0 and not enemy.is_stunned:
 		_execute_enemy_attack()
 

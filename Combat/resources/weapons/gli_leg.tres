@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cfkto64vu6noq"]
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_nec5e"]
+[ext_resource type="Texture2D" uid="uid://cnrnvcin8rpus" path="res://Grafting/arm icon.png" id="2_nec5e"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_eoads"]
 
 [resource]
@@ -10,3 +11,4 @@ attack_damage = 5
 cooldown = 2.0
 hp_cost = 1
 is_arm = false
+icon = ExtResource("2_nec5e")

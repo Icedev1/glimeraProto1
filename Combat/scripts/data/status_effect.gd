@@ -20,6 +20,8 @@ enum Target {
 	TARGET,
 }
 
+@export var icon: Texture2D
+@export var icon2: Texture2D
 @export var effect_name: String = ""
 @export var type: Type = Type.DAMAGE
 @export var applies_to: Target = Target.TARGET

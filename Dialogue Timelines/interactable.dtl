@@ -43,13 +43,27 @@ elif {target} == "door_neighbour2":
 	No ones responding.
 elif {target} == "door_building1":
 	No ones here.
+elif {target} == "door_building7":
+	if {talkedTo} == false:
+		[signal arg="open_door7"]
+		join Gli left
+		join skull right
+		Gli: Hell-
+		skull: Begone with you
+		[signal arg="close_door7"]
+		leave skull
+		Gli: Rude.
+		leave Gli
+		set {talkedTo} = true
+	else:
+		There is no response
 elif {target} == "frz_chr_outside_house":
 	join skull right
-	if {talkedTo} == false:
+	if {TalkedToFolder.talkedTo2} == false:
 		Gli: H-hello? Are you alright…?
 		This figure is completely motionless. It seems they fell over in the middle of knocking on your door.
 		Gli: …
-		set {talkedTo} = true
+		set {TalkedToFolder.talkedTo2} = true
 	else:
 		Gli: I’m going to get some help, okay?
 		The figure remains frozen in place.
@@ -106,21 +120,68 @@ elif {target} == "staircase":
 		[signal arg="swing_across"]
 	else:
 		It’s too dangerous to climb in its current state. If only you had a something you could use to get across…
-elif {target} == "quest_npc_1_friend":
-	# This is the block puzzle quest apparently. fill it in and make the if variable read quest flag
-	if {quest_1} == "started":
-		# here you make the target interactable
 # Market 2
 elif {target} == "quest_npc_1":
-	join Gli left
-	join skull right
 	if {have_rope} == true:
-		skull: Thanks again.
-	elif {quest_1} == "complete":
-		skull: Thank you take this.
-		[signal arg="get_graft_3"]
-	else:
-		skull: asks Gli to bring her friend over if they see her
-		skull: (gives a description of appearance)
+		join "overjoyed looking Figure" right
+		if {TalkedToFolder.talkedTo3_2} == true:
+			"overjoyed looking Figure": We’re gonna have so much fun today!
+			She doesn’t seem to notice your presence.
+		else:
+			"overjoyed looking Figure": I have so many fun things planned for us! I can’t wait to show you what I found at the market today
+			She trails off into what seems like dozens of different thoughts that she’s been wanting to share with her friend.
+			set {TalkedToFolder.talkedTo3_2} = true
+	elif {wrong_statue} == true:
+		skull: Hello again!
+		skull: ...
+		skull: Who is this?
+		Gli: Not your friend?
+		skull: Not my friend.
+		skull: They usually wear a red scarf.
+		set {wrong_statue} = false
+		[signal arg="reset_quest_1"]
+	elif {StoryFlags.statueQuestComplete} == true:
+		join Gli left
+		join skull right
+		skull: You actually found them!
+		Gli: Well, everybody is kind of frozen in place around here so-
+		skull: Thank you so much!
+		skull: Here, as promised.
+		set {GraftGlobals.hoseObtained} = true
+		set {have_rope} = true
+		The Figure hands you the garden hose.
+		She doesn’t seem to care that her friend is completely frozen.
+		In fact, she starts excitedly talking to them about her day.
+	elif {TalkedToFolder.talkedTo3} == false:
+		join Gli left
+		Gli: Hello, Miss
+		The Figure is fidgeting and seems to be looking for something.
+		Gli: Do you think you could help me-
+		join skull right
+		skull: Help..?
+		The Figure snaps out of it and turns to you
+		skull: Oh! Yes, please if you could help me with something!
+		skull: I was supposed to meet my friend here around an hour ago, but they still haven’t shown up.
+		skull: I am starting to think that they might have forgotten about today…
+		Again, the figure’s eyes scan the market, looking for her friend
+		skull: What if something happened?
+		skull: Would you be so kind as to look around for a bit and see if you can find them anywhere?
+		Gli: I don’t know Miss…
+		skull: If you can find them I can give you…
+		skull: Let’s see… Ah!
+		skull: A garden hose?
+		Gli: ..!
+		Gli: Maybe I could use that to get across the staircase.
+		skull: Sorry, that’s silly of me.
+		skull: You don’t seem the gardening type-
+		Gli: No! I would absolutely love to have your garden hose!
+		skull: O-oh! Okay!
+		skull: If you could bring me my friend it’s yours!
+		skull: They usually wear a red scarf.
+		set {TalkedToFolder.talkedTo3} = true
 		[signal arg="start_quest_1"]
+	else:
+		join skull right
+		skull: Look for a Figure wearing a red scarf.
+		skull: I would really appreciate it if you could find them.
 [end_timeline]

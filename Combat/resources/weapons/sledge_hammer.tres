@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_ety8u"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_cxvek"]
+[ext_resource type="Texture2D" uid="uid://lk17a0nohra3" path="res://Grafting/sledgehammer icon.png" id="2_h4grr"]
 
 [resource]
 script = ExtResource("2_cxvek")
@@ -10,4 +11,5 @@ attack_damage = 15
 cooldown = 4.0
 hp_cost = 2
 is_arm = false
+icon = ExtResource("2_h4grr")
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

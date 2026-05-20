@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Consumable" format=3 uid="uid://cxqlrf3r0weyn"]
 
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_0gl0j"]
+[ext_resource type="Texture2D" uid="uid://d4nhd6jhoh4ra" path="res://images/9812572.png" id="1_6hwjf"]
 
 [resource]
 script = ExtResource("1_0gl0j")
@@ -8,4 +9,5 @@ consumable_name = "Health Potion"
 heal_amount = 20
 battle_description = "Heal Player 20 hp"
 description = "Description !!"
+icon = ExtResource("1_6hwjf")
 metadata/_custom_type_script = "uid://dnsrxvj5qtw4x"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_yaot3"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_h5gt1"]
+[ext_resource type="Texture2D" uid="uid://st4dv0rl87sd" path="res://Grafting/Hose Icon.png" id="2_strpi"]
 
 [resource]
 script = ExtResource("2_h5gt1")
@@ -10,4 +11,5 @@ attack_damage = 10
 cooldown = 2.0
 hp_cost = 1
 element = 2
+icon = ExtResource("2_strpi")
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

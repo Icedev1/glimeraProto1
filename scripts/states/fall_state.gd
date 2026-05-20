@@ -1,4 +1,3 @@
-# FallState.gd
 extends State
 
 @export var idle_state : State
@@ -6,8 +5,8 @@ extends State
 @export var jump_state : State
 
 func enter():
-	state_machine.animMachine.travel("Fall")
-	
+	#state_machine.animMachine.travel("Fall")
+	pass
 
 func physics_update(delta):
 	var direction = player.get_move_direction()

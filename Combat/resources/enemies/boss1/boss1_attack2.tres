@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_uhsqn"]
 [ext_resource type="Resource" uid="uid://cbbauurg4p3he" path="res://Combat/resources/status_effects/slow.tres" id="2_bcdhc"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_5gnfu"]
+[ext_resource type="Texture2D" uid="uid://qw8oq4tk2gja" path="res://images/18937218.png" id="3_bcdhc"]
 
 [resource]
 script = ExtResource("3_5gnfu")
@@ -11,4 +12,5 @@ attack_damage = 16
 cooldown = 3.0
 hp_cost = 2
 element = 2
+icon = ExtResource("3_bcdhc")
 effects = Array[ExtResource("1_uhsqn")]([ExtResource("2_bcdhc")])

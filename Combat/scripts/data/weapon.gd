@@ -9,6 +9,7 @@ enum Element { ROCK, PAPER, SCISSOR }
 @export var hp_cost: int = 0
 @export var is_arm: bool = true  ## true = arm weapon, false = leg weapon
 @export var element: Element = Element.ROCK
+@export var icon: Texture2D
 
 # ── Weapon modifiers  ───────────────────────────
 @export var hit_count: int = 1

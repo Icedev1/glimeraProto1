@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://clwxteop31kjo"]
 
+[ext_resource type="Texture2D" uid="uid://bi0sdbu2kkesm" path="res://images/StoneTablet.png" id="1_0d44o"]
 [ext_resource type="Script" uid="uid://c1l4bl4ffk766" path="res://Combat/scripts/ui/weapon_card.gd" id="1_bhqxw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtigt"]
+texture = ExtResource("1_0d44o")
+expand_margin_left = 60.0
+expand_margin_top = 8.0
+expand_margin_right = 72.0
+expand_margin_bottom = 8.0
 
 [node name="weaponCard" type="PanelContainer" unique_id=794853170]
 custom_minimum_size = Vector2(220, 200)
@@ -9,6 +17,7 @@ anchor_right = 0.135
 anchor_bottom = 0.148
 offset_right = 0.7999878
 offset_bottom = 0.16000366
+theme_override_styles/panel = SubResource("StyleBoxTexture_rtigt")
 script = ExtResource("1_bhqxw")
 
 [node name="cooldown_bar" type="ProgressBar" parent="." unique_id=495540385]
@@ -35,31 +44,32 @@ theme_override_constants/separation = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "Weapon Name"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1831267233]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=321315637]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1683616448]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="attack_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=627873815]
+[node name="weapon_icon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=538995099]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Attack value :"
-
-[node name="cooldown_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1840661536]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Cooldown :"
+size_flags_vertical = 4
+stretch_mode = 5
 
 [node name="description_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1743247317]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 14
 text = "Description :"
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="hp_cost_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1100082400]
@@ -67,6 +77,23 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
+
+[node name="StatsRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=650187908]
+layout_mode = 2
+
+[node name="attack_label" type="Label" parent="MarginContainer/VBoxContainer/StatsRow" unique_id=627873815]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Attack value :"
+
+[node name="cooldown_label" type="Label" parent="MarginContainer/VBoxContainer/StatsRow" unique_id=1840661536]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "Cooldown :"
+horizontal_alignment = 2
 
 [node name="click_area" type="Button" parent="." unique_id=511273516]
 unique_name_in_owner = true

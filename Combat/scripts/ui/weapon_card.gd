@@ -11,6 +11,7 @@ signal pressed
 @onready var description_label: Label = %description_label
 @onready var click_area: Button = %click_area
 @onready var cooldown_bar: ProgressBar = %cooldown_bar
+@onready var weapon_icon: TextureRect = %weapon_icon
 
 @export var weapon: Weapon:
 	set(w):
@@ -25,6 +26,9 @@ signal pressed
 func _ready() -> void:
 	cooldown_bar.value = 0.0
 	click_area.pressed.connect(func(): pressed.emit())
+	if weapon_icon:
+		weapon_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		weapon_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	_refresh()
 
 func _refresh() -> void:
@@ -36,8 +40,14 @@ func _refresh() -> void:
 		hp_cost_label.visible = false
 		description_label.text = ""
 		description_label.visible = false
+		if weapon_icon:
+			weapon_icon.texture = null
 		return
 	weapon_name_label.text = weapon.weapon_name
+	if weapon_icon:
+		weapon_icon.texture = weapon.icon
+		weapon_icon.custom_minimum_size = Vector2(120, 120)
+
 	attack_label.text = "⚔  ATK:  %d" % weapon.attack_damage
 	cooldown_label.text = "⏱  CD:    %.1fs" % weapon.cooldown
 	hp_cost_label.text = "❤  Cost:  %d HP" % weapon.hp_cost

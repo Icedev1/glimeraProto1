@@ -13,11 +13,17 @@ signal prev_pressed
 @onready var next_btn: Button = %next_btn
 @onready var prev_btn: Button = %prev_btn
 @onready var cooldown_bar: ProgressBar = %cooldown_bar
+@onready var consumable_icon: TextureRect = %consumable_icon
 
 @export var cooldown_duration: float = 7.0
 
+
 func _ready() -> void:
 	cooldown_bar.value = 0.0
+	if consumable_icon:
+		consumable_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		consumable_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		consumable_icon.custom_minimum_size = Vector2(80, 80)
 	use_btn.pressed.connect(func(): use_pressed.emit())
 	next_btn.pressed.connect(func(): next_pressed.emit())
 	prev_btn.pressed.connect(func(): prev_pressed.emit())
@@ -29,6 +35,8 @@ func display(consumable: Consumable) -> void:
 		description_label.text = ""
 		description_label.visible = false
 		return
+	if consumable_icon and consumable.icon:
+		consumable_icon.texture = consumable.icon
 	consumable_name_label.text = "%s (%d)" % [consumable.consumable_name, consumable.quantity]
 	cooldown_label.text = "⏱  CD:  %.1fs" % cooldown_duration
 	description_label.text = consumable.battle_description

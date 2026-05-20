@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "New Portrait",
+&"description": "The image is a placeholder. Remember to replace it with the real one.",
+&"display_name": "Overjoyed Looking Figure",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"New Portrait": {
+"export_overrides": {
+"image": "\"res://images/icon.svg\""
+},
+"mirror": false,
+"offset": Vector2(50, -200),
+"scale": 0.2,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

@@ -42,12 +42,14 @@ func die():
 	queue_free()
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	#Temporary Commenting away
 	if active:
-		print("active")
-		var game = get_tree().current_scene
-		game.from_overworld_to_battle(enemy_data)
-		chasing = false
-		active = false
+		pass
+		#print("active")
+		#var game = get_tree().current_scene
+		#game.from_overworld_to_battle(enemy_data)
+		#chasing = false
+		#active = false
 		die()
 	else: 
 		print("passive")

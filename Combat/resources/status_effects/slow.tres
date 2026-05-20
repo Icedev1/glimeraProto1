@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://cbbauurg4p3he"]
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_nry7c"]
+[ext_resource type="Texture2D" uid="uid://dqnspxb0as00r" path="res://images/12924992.png" id="1_u528u"]
+[ext_resource type="Texture2D" uid="uid://bv4q7j8llb3jd" path="res://images/7538618.png" id="2_av5eg"]
 
 [resource]
 script = ExtResource("1_nry7c")
+icon = ExtResource("1_u528u")
+icon2 = ExtResource("2_av5eg")
 effect_name = "Slow"
 type = 4
 value = -0.5

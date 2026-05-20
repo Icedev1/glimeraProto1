@@ -37,6 +37,7 @@ TimeManager="*uid://ddg0be1awl7mb"
 
 directories/dch_directory={
 "Gli": "res://characters/Gli.dch",
+"overjoyed looking Figure": "res://characters/overjoyed looking Figure.dch",
 "skull": "res://characters/skull.dch"
 }
 directories/dtl_directory={
@@ -55,12 +56,18 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Timelines/myStyle.tres"]
 layout/default_style="res://Dialogue Timelines/New_File.tres"
 variables={
+"TalkedToFolder": {
+"talkedTo2": false,
+"talkedTo3": false,
+"talkedTo3_2": false
+},
 "event": "",
 "have_rope": false,
 "have_violin": false,
 "quest_1": "default",
 "talkedTo": false,
-"target": "default"
+"target": "default",
+"wrong_statue": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.03

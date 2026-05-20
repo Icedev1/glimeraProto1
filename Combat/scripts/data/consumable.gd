@@ -6,3 +6,4 @@ extends Resource
 @export var quantity: int = 1
 @export var battle_description: String = ""  ## Shown on the card (e.g. "Heal 10 HP")
 @export var description: String = ""         ## Lore description (not shown in combat)
+@export var icon: Texture2D
