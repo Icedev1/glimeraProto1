@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://sn5jgxc4blu"]
+
+[ext_resource type="Shader" uid="uid://byia5lsgq1ilo" path="res://Shaders/Books.gdshader" id="1_4nwgj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4nwgj")
+shader_parameter/saturation = 0.5
+shader_parameter/brightness = 0.5
