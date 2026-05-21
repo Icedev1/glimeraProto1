@@ -1,0 +1,69 @@
+# This is for stage 2. Improves readability and seperates dialogue
+# Library
+if {target} == "book_pink":
+	How to read for dummies.
+	Gli: What a book.
+elif {target} == "book_blue":
+	…is when The Guardian blessed us Figures with the ability to graft. This grafting gave us the potential to express ourselves in ways we could have never imagined.
+elif {target} == "book_green":
+	(The book is extremely worn-out with most of the pages being torn or completely removed. You can make out a couple of sentences on one of the pages.)
+	Curiously, some select groups of avians survived the Beige Blizzard, though none have been spotted for over 400 years in and around Archeo. At first the standard procedure when a Figure spotted an organic was to capture and deliver it to the Cathedral of Archeo.
+	In the last 50 years however this has changed. Given that the only organics left are the small groups of avians who cause no problems. there is no real need to capture them. The oth…
+elif {target} == "book_purple":
+	CHAPTER 1 - The first thing a Figure should know when learning how to graft is the element system. It was discovered very quickly that upon grafting, graftables received one of three elements based on the original use of the item.
+	These three elements are\: [color=blue]Paper[/color], [color=red]Rock[/color], and [color=green]Scissors[/color]. Even when items don’t seem like they should have a certain element, they will inherit that element's powers anyways, leading to…
+	Gli: [color=blue]Paper[/color], [color=red]Rock[/color], and [color=green]Scissors[/color]. There's something about the order of the elements.
+elif {target} == "statue_3":
+	join statue_1 left
+	statue_1: CHAPTER 2 - After having used graftables for an extended amount of time, it should be known how to properly take care of them. When cleaning or repairing graftables, the element – be it [color=green]Scissors[/color], [color=blue]Paper[/color], or [color=red]Rock[/color] – should be taken into account. Using the wrong tools can cause damage to the graftable or injuries to a Figure themselves
+	leave statue_1
+	join Gli left
+	Gli: [color=green]Scissors[/color], [color=blue]Paper[/color] or [color=red]Rock[/color]. Why did he mention it in this order?
+elif {target} == "statue_4":
+	join statue_1 left
+	statue_1: The role of Communicator is one of the most important positions a Figure can ever receive. It is the Communicator's role to converse with The Guardian and pass on any important information citizens of Archeo should know. It is also the Communicator’s task to help the church with managing the city.
+	leave statue_1
+	join Gli left
+	Gli: Communicator... I hardly know her.
+elif {target} == "rock":
+	if {sequence_step} == 1.0:
+		set {sequence_step} = 2.0
+		2
+		[signal arg="rock_red"]
+	elif {sequence_step} == 5.0:
+		set {sequence_step} = 6.0
+		winner
+		[signal arg="rock_red"]
+		audio sfx "res://Sounds/SFX/the-sound-of-the-note-do.mp3"
+		[signal arg="puzzle2_complete"]
+	else:
+		set {sequence_step} = 0
+		tset
+		[signal arg="reset_puzzle"]
+elif {target} == "paper":
+	if {sequence_step} == 0.0:
+		set {sequence_step} = 1.0
+		1
+		[signal arg="paper_blue"]
+	elif {sequence_step} == 4.0:
+		set {sequence_step} = 5.0
+		5
+		[signal arg="paper_blue"]
+	else:
+		set {sequence_step} = 0
+		tsep
+		[signal arg="reset_puzzle"]
+elif {target} == "scissor":
+	if {sequence_step} == 2.0:
+		set {sequence_step} = 3.0
+		3
+		[signal arg="scissor_green"]
+	elif {sequence_step} == 3.0:
+		set {sequence_step} = 4.0
+		4
+		[signal arg="scissor_green"]
+	else:
+		set {sequence_step} = 0.0
+		tstscs
+		[signal arg="reset_puzzle"]
+[end_timeline]

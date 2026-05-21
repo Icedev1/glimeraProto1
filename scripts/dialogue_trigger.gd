@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 			#var screen_pos = get_viewport().get_camera_3d().unproject_position(world_pos)
 			#prompt.position = screen_pos
 
-	if Input.is_action_just_pressed("mouse_right") and Input.is_action_just_pressed("ui_interact"):
+	if Input.is_action_just_pressed("mouse_right"):
 
 		if Dialogic.current_timeline != null:
 
