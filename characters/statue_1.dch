@@ -10,23 +10,22 @@
 "style": "myStyle",
 "suffix": ""
 },
-&"default_portrait": "Default",
-&"description": "The main character.",
-&"display_name": "Gli",
+&"default_portrait": "New portrait",
+&"description": "",
+&"display_name": "Statue",
 &"mirror": false,
-&"nicknames": ["Glimera", "Gli"],
+&"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"Default": {
+"New portrait": {
 "export_overrides": {
-"image": "\"res://images/Gli 1colored.png\""
+"image": "\"res://images/statue1_portrait.png\""
 },
 "mirror": false,
-"offset": Vector2(-250, 160),
-"scale": 1,
-"scene": "",
-"sound_mood": "Mood 1"
+"offset": Vector2(-250, -30),
+"scale": 0.43,
+"scene": ""
 }
 },
-&"scale": 0.5
+&"scale": 1.0
 }
