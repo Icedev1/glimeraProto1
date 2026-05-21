@@ -176,7 +176,7 @@ func _run_graft_menu_tutorial() -> void:
 	_tutorial_overlay.show_step(
 		"The Graft menu",
 		"This is where you swap your equipped limbs.",
-		true, [arm_slot, leg_slot])
+		true)
 	await _tutorial_overlay.next_pressed
 
 	_tutorial_overlay.show_step(

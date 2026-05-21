@@ -6,12 +6,14 @@ const BLOCK_TUTORIAL_LEAD: float = 0.3  ## Pause before the enemy attacks
 var _tutorial_overlay
 var _block_tutorial_done: bool = false
 
+
 # control which inputs are allowed in which phase
 var _attacks_enabled: bool = false  
 var _block_enabled: bool = false     
 var _waiting_for_attack: bool = false  ## True only on the final intro step; the first attack ends the intro
 
 @onready var _block_section: VBoxContainer = %Block
+@onready var attack_timer_card: PanelContainer = %AttackTimerCard
 
 func _ready() -> void:
 	super._ready()
@@ -73,7 +75,7 @@ func _run_intro_tutorial() -> void:
 	_tutorial_overlay.show_step(
 		"Enemy Attack Timer",
 		"This bar drains down to show when the enemy will strike.",
-		true, timer_bar)
+		true, attack_timer_card)
 	await _tutorial_overlay.next_pressed
 
 # Final intro step, highlight both attack cards and enable attacks
