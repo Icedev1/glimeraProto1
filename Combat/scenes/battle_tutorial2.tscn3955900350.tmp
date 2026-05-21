@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b4y315ofoqmjk"]
+
+[ext_resource type="PackedScene" uid="uid://dy8maci0u0st7" path="res://Combat/scenes/battle.tscn" id="1_okyhf"]
+[ext_resource type="Resource" uid="uid://cvvj0tqpd238a" path="res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2.tres" id="2_7kv2x"]
+[ext_resource type="Script" uid="uid://b4ia4x1ej1id5" path="res://Combat/scripts/battle/battle_tutorial2_scene.gd" id="2_awjpm"]
+
+[node name="Battle" unique_id=789942194 instance=ExtResource("1_okyhf")]
+script = ExtResource("2_awjpm")
+enemy_resource = ExtResource("2_7kv2x")

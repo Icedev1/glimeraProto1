@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b0s0kp2hvw286"]
+
+[ext_resource type="PackedScene" uid="uid://dy8maci0u0st7" path="res://Combat/scenes/battle.tscn" id="1_0w1ic"]
+[ext_resource type="Script" uid="uid://cd88fvi3jfidd" path="res://Combat/scripts/battle/battle_tutorial_scene.gd" id="2_n1rax"]
+[ext_resource type="Resource" uid="uid://dinijal5d7x0b" path="res://Combat/resources/enemies/tutorial enemies/tutorial_enemy1.tres" id="3_n1rax"]
+
+[node name="Battle" unique_id=789942194 instance=ExtResource("1_0w1ic")]
+script = ExtResource("2_n1rax")
+enemy_resource = ExtResource("3_n1rax")
+
+[node name="Block" parent="Battle_UI/options_menu" parent_id_path=PackedInt32Array(40959146) index="2" unique_id=1767227566]
+unique_name_in_owner = true
+anchor_top = 0.172
+offset_top = -0.07600021
+
+[node name="Graft" parent="Battle_UI/options_menu" parent_id_path=PackedInt32Array(40959146) index="3" unique_id=951292319]
+visible = false
+
+[node name="Consumables" parent="Battle_UI/options_menu" parent_id_path=PackedInt32Array(40959146) index="4" unique_id=373898980]
+visible = false
+
+[node name="ResultScreen" parent="." index="5" unique_id=82600526]
+visible = false
