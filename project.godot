@@ -41,8 +41,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Talk with Bob": "res://Dialogue Timelines/Talk with Bob.dtl",
-"bedroom": "res://Dialogue Timelines/interactable.dtl",
 "events": "res://Dialogue Timelines/events.dtl",
+"interactable": "res://Dialogue Timelines/interactable.dtl",
 "mid_combat": "res://Dialogue Timelines/mid_combat.dtl",
 "timeline": "res://Dialogue Timelines/timeline.dtl"
 }
