@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://lk17a0nohra3" path="res://Grafting/sledgehammer icon.png" id="4_gjxvf"]
 [ext_resource type="Texture2D" uid="uid://st4dv0rl87sd" path="res://Grafting/Hose Icon.png" id="4_n4bap"]
 [ext_resource type="Texture2D" uid="uid://b46tfu5idgkyk" path="res://images/641693.png" id="7_g7rxt"]
-[ext_resource type="FontFile" uid="uid://bq8bno25i4gyr" path="res://ui/Game Paused DEMO.otf" id="8_smwc3"]
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="9_l2vi8"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="10_l5bjg"]
 [ext_resource type="PackedScene" uid="uid://dsc3ihpwxa6w6" path="res://ui/input_remap_button.tscn" id="11_maqgg"]
 [ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://ui/inputremapbutton.gd" id="12_xl5b8"]
+[ext_resource type="Script" uid="uid://53e7bc7l2feo" path="res://Grafting/InventoryTab.gd" id="13_l2vi8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvtd6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -148,6 +148,29 @@ thickness = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd6uk"]
 bg_color = Color(0.8117647, 0, 0.20392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3fmm"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.8117647)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xft1h"]
+bg_color = Color(0.07881496, 0.07881499, 0.07881493, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu6j1"]
 bg_color = Color(0, 0, 0, 0)
@@ -361,6 +384,7 @@ autoplay = &"Idle Straight"
 transform = Transform3D(1, 0, 0, 0, 0.9226593, 0.38561618, 0, -0.38561618, 0.9226593, 0, 0.67658234, 1.2380623)
 
 [node name="GraftsPage" type="Control" parent="." unique_id=77643113]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -369,9 +393,9 @@ mouse_filter = 2
 [node name="RightArmSlot" type="Button" parent="GraftsPage" unique_id=729243373]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 612.0
+offset_left = 539.0
 offset_top = 320.0
-offset_right = 762.0
+offset_right = 689.0
 offset_bottom = 470.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_lvtd6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vbv8")
@@ -393,10 +417,10 @@ icon_alignment = 1
 [node name="RightLegSlot" type="Button" parent="GraftsPage" unique_id=1510301006]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 612.0
-offset_top = 633.0
-offset_right = 762.0
-offset_bottom = 783.0
+offset_left = 539.0
+offset_top = 632.0
+offset_right = 689.0
+offset_bottom = 782.0
 theme_override_constants/icon_max_width = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_l3mp2")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_l5bjg")
@@ -462,22 +486,22 @@ theme_override_constants/separation = 10
 
 [node name="Label2" type="Label" parent="GraftsPage" unique_id=2032925349]
 layout_mode = 0
-offset_left = 1791.0
-offset_top = 36.0
-offset_right = 1902.0
-offset_bottom = 72.0
+offset_left = 1740.0
+offset_top = 43.0
+offset_right = 1851.0
+offset_bottom = 79.0
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 26
 text = "ESC back"
 
 [node name="Line2D" type="Line2D" parent="GraftsPage" unique_id=3348599]
-points = PackedVector2Array(857, 507, 757, 492, 726, 469)
+points = PackedVector2Array(857, 507, 757, 492, 684, 457)
 width = 2.0
 default_color = Color(0.8, 0.8, 0.8, 1)
 end_cap_mode = 2
 
 [node name="Line2D2" type="Line2D" parent="GraftsPage" unique_id=446654342]
-points = PackedVector2Array(893, 685, 817, 673, 779, 702)
+points = PackedVector2Array(893, 685, 817, 673, 705, 708)
 width = 2.0
 default_color = Color(0.8, 0.8, 0.8, 1)
 
@@ -487,21 +511,22 @@ width = 2.0
 default_color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Line2D4" type="Line2D" parent="GraftsPage" unique_id=2048527851]
-points = PackedVector2Array(1081, 686, 1160, 677, 1192, 708)
+points = PackedVector2Array(1081, 686, 1160, 677, 1209, 705)
 width = 2.0
 default_color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Label" type="Label" parent="GraftsPage" unique_id=1880185111]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 12.0
-offset_right = 400.0
-offset_bottom = 108.0
+offset_left = 55.0
+offset_top = 38.0
+offset_right = 528.0
+offset_bottom = 134.0
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "G R A F T I N G"
 
 [node name="SettingsPage" type="Control" parent="." unique_id=390541024]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -523,19 +548,6 @@ offset_right = 258.69598
 offset_bottom = 232.01599
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="SettingsPage/Settings" unique_id=4840252]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("8_smwc3")
-theme_override_font_sizes/font_size = 40
-text = "Settings"
 
 [node name="TabContainer" type="TabContainer" parent="SettingsPage/Settings" unique_id=147266384]
 layout_mode = 1
@@ -798,6 +810,16 @@ offset_bottom = 676.0
 theme_override_font_sizes/font_size = 20
 text = "ESC to go back"
 
+[node name="Label2" type="Label" parent="SettingsPage" unique_id=633902705]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 38.0
+offset_right = 528.0
+offset_bottom = 134.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "S E T T I N G S"
+
 [node name="InventoryPage" type="Control" parent="." unique_id=615978731]
 layout_mode = 1
 anchors_preset = 15
@@ -806,6 +828,77 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("13_l2vi8")
+
+[node name="PopupBox" type="PanelContainer" parent="InventoryPage" unique_id=1024205282]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 309.0
+offset_right = 1926.0
+offset_bottom = 815.0
+pivot_offset = Vector2(898, 325)
+theme_override_styles/panel = SubResource("StyleBoxFlat_r3fmm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryPage/PopupBox" unique_id=274724757]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryPage/PopupBox/HBoxContainer" unique_id=1502707182]
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+
+[node name="ItemGrid" type="GridContainer" parent="InventoryPage/PopupBox/HBoxContainer/ScrollContainer" unique_id=1507809809]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="DetailPanel" type="PanelContainer" parent="InventoryPage/PopupBox/HBoxContainer" unique_id=1977006216]
+custom_minimum_size = Vector2(760, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xft1h")
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel" unique_id=1842168396]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DetailContent" type="VBoxContainer" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel/MarginContainer" unique_id=2032372548]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="DetailIcon" type="TextureRect" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel/MarginContainer/DetailContent" unique_id=1956116903]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DetailOwned" type="Label" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel/MarginContainer/DetailContent" unique_id=113788044]
+layout_mode = 2
+
+[node name="DetailCategory" type="Label" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel/MarginContainer/DetailContent" unique_id=362278983]
+layout_mode = 2
+
+[node name="DetailName" type="Label" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel/MarginContainer/DetailContent" unique_id=1400624169]
+layout_mode = 2
+
+[node name="DetailDescription" type="Label" parent="InventoryPage/PopupBox/HBoxContainer/DetailPanel/MarginContainer/DetailContent" unique_id=1982481513]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="InventoryPage" unique_id=536680051]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 38.0
+offset_right = 528.0
+offset_bottom = 134.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "I N V E N T O R Y"
 
 [node name="TabBar" type="HBoxContainer" parent="." unique_id=582616486]
 layout_mode = 1

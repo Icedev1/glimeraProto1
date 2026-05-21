@@ -3,9 +3,10 @@ var pauseScene = preload("res://Grafting/Equip UI.tscn") # EquipUI scene
 var pauseInstance
 @export var canvas : CanvasLayer
 @export var equip_ui: Control
-
+@onready var hud_label: Label = get_tree().root.get_node("Root/CanvasLayer/Label")
 
 func _ready() -> void:
+	print(get_tree().root.get_children())
 	await get_tree().process_frame
 	await get_tree().process_frame
 	var players = get_tree().get_nodes_in_group("player")
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 			_toggle_menu_camera(false)
 			get_tree().paused = false
 			pauseInstance.queue_free()
+			hud_label.visible = true
 			SFXPlayer.play_sfx(load("res://Sounds/SFX/WIN_CLO_001.wav"))
 		else:
 			pauseInstance = pauseScene.instantiate()
@@ -28,7 +30,7 @@ func _process(delta: float) -> void:
 			GraftGlobals.menu_opened.emit()
 			get_tree().paused = true
 			_toggle_menu_camera(true)
-			#get_tree().paused = true
+			hud_label.visible = false
 			SFXPlayer.play_sfx(load("res://Sounds/SFX/STA_OPE_001.wav"))
 			
 

@@ -82,6 +82,7 @@ mouse_filter = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 stretch_mode = 5
 
 [node name="description_label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2029926720]

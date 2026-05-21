@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://ck4bwjm08hgqw"]
 
+[ext_resource type="Texture2D" uid="uid://xuyitpj81e5b" path="res://images/12688869.png" id="1_lxnue"]
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_xphfe"]
 
 [resource]
 script = ExtResource("1_xphfe")
+icon = ExtResource("1_lxnue")
 effect_name = "Bleed"
 type = 6
 value = 2.0
