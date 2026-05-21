@@ -16,8 +16,16 @@ spring_length = 6.0
 [node name="SpringPosition" type="Node3D" parent="SpringArm3D" unique_id=1418701145]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 3, 0)
 
+[node name="TransitionCam" type="Camera3D" parent="." unique_id=828348153 node_paths=PackedStringArray("spring_arm")]
+far = 866.1
+script = ExtResource("2_78g7m")
+spring_arm = NodePath("../SpringArm3D/SpringPosition")
+lerp_power = 6.0
+
 [node name="CharacterCam" type="Camera3D" parent="." unique_id=385701434 node_paths=PackedStringArray("spring_arm")]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, 0, 0, 0)
+current = true
+far = 866.1
 script = ExtResource("2_78g7m")
 spring_arm = NodePath("../SpringArm3D/SpringPosition")
 lerp_power = 6.0
