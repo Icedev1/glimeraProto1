@@ -83,7 +83,7 @@ func _process(delta: float) -> void:
 					var game = get_tree().current_scene
 					game.from_overworld_to_battle()
 			
-			Dialogic.start("bedroom")
+			Dialogic.start("interactable")
 			get_viewport().set_input_as_handled()
 		else:
 			pass
@@ -135,7 +135,7 @@ func _on_body_entered(body: Node3D) -> void:
 				var push_dir = Vector3(0, 0, -0.1)	
 				player.apply_knockback(push_dir, 3.0, 0.25)
 				Dialogic.VAR.set_variable("target","door_lr")
-				Dialogic.start("bedroom")
+				Dialogic.start("interactable")
 				get_viewport().set_input_as_handled()
 				
 			prompt.visible = false
@@ -145,7 +145,7 @@ func _on_body_entered(body: Node3D) -> void:
 				prompt.visible = false
 				StoryFlags.statueQuestComplete = true
 				Dialogic.VAR.set_variable("target","quest_npc_1")
-				Dialogic.start("bedroom")
+				Dialogic.start("interactable")
 				get_viewport().set_input_as_handled()
 				print("Quest Completion Status: " + str(StoryFlags.statueQuestComplete))
 				$"../../Statue/StaticBody3D".queue_free()
@@ -157,7 +157,7 @@ func _on_body_entered(body: Node3D) -> void:
 				prompt.visible = false
 				Dialogic.VAR.set_variable("wrong_statue",true)
 				Dialogic.VAR.set_variable("target","quest_npc_1")
-				Dialogic.start("bedroom")
+				Dialogic.start("interactable")
 				get_viewport().set_input_as_handled()
 				pass
 		"Aggressive Cornelius":
