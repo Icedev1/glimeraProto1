@@ -460,7 +460,7 @@ transform = Transform3D(1, 0, 0, 0, 0.03960856, -0.99921525, 0, 0.99921525, 0.03
 texture = SubResource("GradientTexture2D_0rieg")
 
 [node name="Statue2" parent="." unique_id=1703331836 instance=ExtResource("19_lr2bl")]
-process_mode = 1
+process_mode = 4
 transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, -0.7546611, 0.0023515224, 2.127763)
 distance = 0.5
 
