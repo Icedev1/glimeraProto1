@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6clinpobvgt" path="res://Combat/enemy1/NPC2.fbx" id="1_01fnw"]
 [ext_resource type="Script" uid="uid://c864w8vw56exn" path="res://statue.gd" id="1_221rt"]
+[ext_resource type="AudioStream" uid="uid://0lyu1hdnaosv" path="res://Sounds/SFX/Rock Slide.ogg" id="3_xbhtn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_221rt"]
 size = Vector3(1.2387085, 3.4703064, 0.5709839)
@@ -70,6 +71,9 @@ shape = SubResource("BoxShape3D_vme05")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=370505275]
 transform = Transform3D(-0.87041587, -0.4923172, -8.742278e-08, -0.4923172, 0.87041587, 0, 7.6094175e-08, 4.3039737e-08, -1, 1.1097924, 3.3557951, 0)
 shape = SubResource("BoxShape3D_vme05")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=731066106]
+stream = ExtResource("3_xbhtn")
 
 [connection signal="body_entered" from="left" to="." method="_on_left_body_entered"]
 [connection signal="body_exited" from="left" to="." method="_on_left_body_exited"]
