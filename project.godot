@@ -99,7 +99,7 @@ text/autopauses={
 }
 audio/channel_defaults={
 "": {
-"audio_bus": "",
+"audio_bus": "SFX",
 "fade_length": 0.0,
 "loop": false,
 "volume": 0.0
@@ -134,10 +134,7 @@ project/assembly_name="GLIMERA proto1"
 
 [editor]
 
-movie_writer/video_quality=0.5
-movie_writer/ogv/audio_quality=0.04999999999999999
-movie_writer/movie_file="C:/Users/MSI/Documents/Godot Engine/Godot Projects/glimeraProto1/video1.avi"
-movie_writer/fps=30
+movie_writer/movie_file="C:/Users/MSI/Downloads/SFXItem.avi"
 
 [editor_plugins]
 

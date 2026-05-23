@@ -61,14 +61,14 @@ func _on_right_arm_slot_pressed() -> void:
 	_populate_grid(armIcons, armGraftNames)
 	graft_grid.visible = true
 	info_card.visible = false
-	SFXPlayer.play_sfx(load("res://Sounds/SFX/SE_STATIC_00000.wav"))
+	SFXPlayer.play_sfx(load("res://Sounds/SFX/Menu Sound 2.ogg"))
 
 func _on_left_leg_slot_pressed() -> void:
 	selected_slot = "leg"
 	_populate_grid(legIcons, legGraftNames)
 	graft_grid.visible = true
 	info_card.visible = false
-	SFXPlayer.play_sfx(load("res://Sounds/SFX/SE_STATIC_00000.wav"))
+	SFXPlayer.play_sfx(load("res://Sounds/SFX/Menu Sound 2.ogg"))
 
 func _populate_grid(icons: Array[Texture2D], names: Array[String]) -> void:
 	for child in graft_grid.get_children():

@@ -26,11 +26,12 @@ func _process(delta: float) -> void:
 		elif back:
 			dir = Vector3(0, 0, 1)
 
-		# ✅ NEW: collision check BEFORE tween
+
 		if can_move(dir, distance):
 
 			var tween = create_tween()
-
+			$AudioStreamPlayer3D.volume_db = SFXPlayer.sfx_player.volume_db
+			$AudioStreamPlayer3D.play()
 			if left:
 				tween.tween_property(self, "global_position", global_position + Vector3(distance, 0, 0), 1.0)\
 				.set_trans(Tween.TRANS_SINE)\
