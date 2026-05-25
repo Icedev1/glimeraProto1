@@ -39,23 +39,25 @@ ObjectiveManager="*uid://d2526ex77cp5f"
 directories/dch_directory={
 "Gli": "res://characters/Gli.dch",
 "overjoyed looking Figure": "res://characters/overjoyed looking Figure.dch",
-"skull": "res://characters/skull.dch"
+"skull": "res://characters/skull.dch",
+"statue_1": "res://characters/statue_1.dch"
 }
 directories/dtl_directory={
 "Talk with Bob": "res://Dialogue Timelines/Talk with Bob.dtl",
-"bedroom": "res://Dialogue Timelines/interactable.dtl",
 "events": "res://Dialogue Timelines/events.dtl",
+"interactable": "res://Dialogue Timelines/interactable.dtl",
 "mid_combat": "res://Dialogue Timelines/mid_combat.dtl",
-"timeline": "res://Dialogue Timelines/timeline.dtl"
+"timeline": "res://Dialogue Timelines/timeline.dtl",
+"timelinelayer2": "res://Dialogue Timelines/timelinelayer2.dtl"
 }
 layout/style_directory={
-"": "res://Dialogue Timelines/New_File.tres",
+"": "res://Dialogue Timelines/myStyle.tres",
 "New_File": "res://Dialogue Timelines/New_File.tres",
 "myStyle": "res://Dialogue Timelines/myStyle.tres"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Timelines/myStyle.tres"]
-layout/default_style="res://Dialogue Timelines/New_File.tres"
+layout/default_style="res://Dialogue Timelines/myStyle.tres"
 variables={
 "TalkedToFolder": {
 "talkedTo2": false,
@@ -66,6 +68,7 @@ variables={
 "have_rope": false,
 "have_violin": false,
 "quest_1": "default",
+"sequence_step": 0,
 "talkedTo": false,
 "target": "default",
 "wrong_statue": false
@@ -97,7 +100,7 @@ text/autopauses={
 }
 audio/channel_defaults={
 "": {
-"audio_bus": "",
+"audio_bus": "SFX",
 "fade_length": 0.0,
 "loop": false,
 "volume": 0.0
@@ -132,10 +135,7 @@ project/assembly_name="GLIMERA proto1"
 
 [editor]
 
-movie_writer/video_quality=0.5
-movie_writer/ogv/audio_quality=0.04999999999999999
-movie_writer/movie_file="C:/Users/MSI/Documents/Godot Engine/Godot Projects/glimeraProto1/video1.avi"
-movie_writer/fps=30
+movie_writer/movie_file="C:/Users/MSI/Downloads/SFXItem.avi"
 
 [editor_plugins]
 

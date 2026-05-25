@@ -22,6 +22,7 @@ elif {target} == "junk":
 	# Destroy the pile of junk so that it can't be interacted with again
 	Gli: Oh, this might come in handy! Plus, having some graftables on me helps me feel less naked.
 	set {GraftGlobals.sledgehammerObtained} = true
+	audio "res://Sounds/SFX/Item Jingle.ogg"
 	You got the Sledgehammer!
 elif {target} == "door_fd":
 	if {GraftGlobals.violinObtained} == false:

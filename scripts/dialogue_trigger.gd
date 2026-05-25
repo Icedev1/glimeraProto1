@@ -3,6 +3,7 @@ extends Area3D
 var inRange : bool = false
 @onready var node: Node3D = $".."
 @onready var canvasprompt: Control = null
+var auto_skip := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,15 @@ func _process(delta: float) -> void:
 			#var world_pos = global_transform.origin + Vector3(0, 0.5, 0)
 			#var screen_pos = get_viewport().get_camera_3d().unproject_position(world_pos)
 			#prompt.position = screen_pos
+
+	if Input.is_action_just_pressed("mouse_right"):
+
+		if Dialogic.current_timeline != null:
+
+			auto_skip = !auto_skip
+
+			Dialogic.Inputs.auto_skip.enabled = auto_skip
+			print("Auto Skip:", auto_skip)
 
 	
 	if Input.is_action_just_pressed("ui_interact") and inRange:
@@ -73,7 +83,7 @@ func _process(delta: float) -> void:
 					var game = get_tree().current_scene
 					game.from_overworld_to_battle()
 			
-			Dialogic.start("bedroom")
+			Dialogic.start("interactable")
 			get_viewport().set_input_as_handled()
 		else:
 			pass
@@ -125,7 +135,7 @@ func _on_body_entered(body: Node3D) -> void:
 				var push_dir = Vector3(0, 0, -0.1)	
 				player.apply_knockback(push_dir, 3.0, 0.25)
 				Dialogic.VAR.set_variable("target","door_lr")
-				Dialogic.start("bedroom")
+				Dialogic.start("interactable")
 				get_viewport().set_input_as_handled()
 				
 			prompt.visible = false
@@ -135,7 +145,7 @@ func _on_body_entered(body: Node3D) -> void:
 				prompt.visible = false
 				StoryFlags.statueQuestComplete = true
 				Dialogic.VAR.set_variable("target","quest_npc_1")
-				Dialogic.start("bedroom")
+				Dialogic.start("interactable")
 				get_viewport().set_input_as_handled()
 				print("Quest Completion Status: " + str(StoryFlags.statueQuestComplete))
 				$"../../Statue/StaticBody3D".queue_free()
@@ -147,7 +157,7 @@ func _on_body_entered(body: Node3D) -> void:
 				prompt.visible = false
 				Dialogic.VAR.set_variable("wrong_statue",true)
 				Dialogic.VAR.set_variable("target","quest_npc_1")
-				Dialogic.start("bedroom")
+				Dialogic.start("interactable")
 				get_viewport().set_input_as_handled()
 				pass
 		"Aggressive Cornelius":

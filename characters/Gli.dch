@@ -7,7 +7,7 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "New_File",
+"style": "myStyle",
 "suffix": ""
 },
 &"default_portrait": "Default",
@@ -22,7 +22,7 @@
 "image": "\"res://images/Gli 1colored.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
+"offset": Vector2(-250, 160),
 "scale": 1,
 "scene": "",
 "sound_mood": "Mood 1"
