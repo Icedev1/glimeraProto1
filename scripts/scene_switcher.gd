@@ -4,6 +4,7 @@ var pauseInstance
 @export var canvas : CanvasLayer
 @export var equip_ui: Control
 @onready var hud_label: Label = get_tree().root.get_node("Root/CanvasLayer/Label")
+@onready var objective_display = get_tree().root.get_node("Root/CanvasLayer/ObjectiveDisplay")
 
 func _ready() -> void:
 	print(get_tree().root.get_children())
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 			get_tree().paused = false
 			pauseInstance.queue_free()
 			hud_label.visible = true
+			objective_display.visible = true
 			SFXPlayer.play_sfx(load("res://Sounds/SFX/WIN_CLO_001.wav"))
 		else:
 			pauseInstance = pauseScene.instantiate()
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 			get_tree().paused = true
 			_toggle_menu_camera(true)
 			hud_label.visible = false
+			objective_display.visible = false
 			SFXPlayer.play_sfx(load("res://Sounds/SFX/STA_OPE_001.wav"))
 			
 
