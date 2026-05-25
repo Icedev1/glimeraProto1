@@ -32,6 +32,7 @@ SFXPlayer="*uid://bhojwcno7gi1b"
 MusicPlayer="*uid://blpcv03sdkav6"
 StoryFlags="*uid://285ib4l7abgw"
 TimeManager="*uid://ddg0be1awl7mb"
+ObjectiveManager="*uid://d2526ex77cp5f"
 
 [dialogic]
 

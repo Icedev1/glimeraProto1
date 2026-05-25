@@ -11,6 +11,24 @@ const TURN_SPEED := 9.0
 var knockback_velocity := Vector3.ZERO
 var knockback_time := 0.0
 
+var _test_index: int = 0
+var _test_ids: Array = [
+	"pickup_violin",
+	"pickup_sledgehammer", 
+	"interact_door",
+	"inspect_stairs",
+	"find_climb",
+	"help_figure",
+    "climb_stairs"
+]
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_focus_next"):
+		if _test_index < _test_ids.size():
+			ObjectiveManager.complete_objective(_test_ids[_test_index])
+			if _test_index + 1 < _test_ids.size():
+				ObjectiveManager.reveal_objective(_test_ids[_test_index + 1])
+			_test_index += 1
 func _physics_process(delta):
 	# Gravity
 	if not is_on_floor():
