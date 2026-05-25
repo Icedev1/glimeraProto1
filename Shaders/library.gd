@@ -1,7 +1,7 @@
 extends Node3D
-@onready var handmesh: MeshInstance3D = $metarig/Skeleton3D/Plane005
-@onready var handmesh2: MeshInstance3D = $metarig_001/Skeleton3D/Plane005_001
-@onready var handmesh3: MeshInstance3D = $metarig_002/Skeleton3D/Plane005_002
+@onready var handmesh: MeshInstance3D = $metarig/Plane005
+@onready var handmesh2: MeshInstance3D = $metarig_001/Plane005_001
+@onready var handmesh3: MeshInstance3D = $metarig_002/Plane005_002
 var material : StandardMaterial3D
 var material2 : StandardMaterial3D
 var material3 : StandardMaterial3D
