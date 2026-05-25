@@ -1,5 +1,7 @@
 extends PanelContainer
 
+
+#objective_display.gd
 @onready var vbox := $VBoxContainer
 
 var label_pool: Array = []
