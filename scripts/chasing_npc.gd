@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var speed: float = 2.5
+@export var speed: float = 4
 @export var enemy_data: EnemyData 
 
 var player: Node3D = null
@@ -25,6 +25,8 @@ func _process(delta):
 
 		# Face player
 		look_at(player.global_position)
+		
+		
 
 		# Play walk animation
 		if anim.current_animation != "Walk2":
