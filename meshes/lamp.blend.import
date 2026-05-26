@@ -3,18 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cksprbracl6rp"
-path="res://.godot/imported/npc2.blend-40a9f06dbaf841b891c7228b3d0a63d1.scn"
+uid="uid://f0wcdub54351"
+path="res://.godot/imported/lamp.blend-278a883480eb263e1bd7bf6346058470.scn"
 
 [deps]
 
-source_file="res://meshes/npc2.blend"
-dest_files=["res://.godot/imported/npc2.blend-40a9f06dbaf841b891c7228b3d0a63d1.scn"]
+source_file="res://meshes/lamp.blend"
+dest_files=["res://.godot/imported/lamp.blend-278a883480eb263e1bd7bf6346058470.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
