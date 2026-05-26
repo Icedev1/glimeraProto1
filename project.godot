@@ -62,7 +62,8 @@ variables={
 "TalkedToFolder": {
 "talkedTo2": false,
 "talkedTo3": false,
-"talkedTo3_2": false
+"talkedTo3_2": false,
+"talkedTo4": false
 },
 "event": "",
 "have_rope": false,
