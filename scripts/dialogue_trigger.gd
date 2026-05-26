@@ -5,6 +5,7 @@ var inRange : bool = false
 @onready var canvasprompt: Control = null
 var auto_skip := false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
@@ -47,8 +48,12 @@ func _process(delta: float) -> void:
 					Dialogic.VAR.set_variable("target","window")
 				"door_fd":
 					Dialogic.VAR.set_variable("target","door_fd")
+				"Roland":
+					Dialogic.VAR.set_variable("target","roland")
 				"door_glihouse":
-					Dialogic.VAR.set_variable("target","door_glihouse")
+					Dialogic.VAR.set_variable("target","glihouse")
+				"npc2":
+					Dialogic.VAR.set_variable("target","npc2")
 				"door_neighbour1":
 					Dialogic.VAR.set_variable("target","door_neighbour1")
 				"door_neighbour2":
@@ -100,6 +105,8 @@ func DialogicSignal(arg:String):
 		"open_door":
 			var game = get_tree().current_scene
 			game.transition_to_street("res://Streets/Street1-1.tscn", "Spawn_FromHouse")
+		"enable_glihouse":
+			pass
 		"open_door7":
 			%AnimationPlayerDoor.play("door_opening")
 		"close_door7":
