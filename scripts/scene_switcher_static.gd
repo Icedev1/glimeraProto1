@@ -1,21 +1,19 @@
 extends Node
 var pauseScene = preload("res://Grafting/Equip UI.tscn") # EquipUI scene
 var pauseInstance
+var char_cam
+var camera_tween : Tween
+var current_target_camera : Camera3D
+var gameplay_camera : Camera3D
 @export var canvas : CanvasLayer
 @export var equip_ui: Control
 @onready var hud_label: Label = get_tree().root.get_node("Root/CanvasLayer/Label")
-@onready var objective_display = get_tree().root.get_node("Root/CanvasLayer/ObjectiveDisplay")
 
 func _ready() -> void:
 	print(get_tree().root.get_children())
 	await get_tree().process_frame
 	await get_tree().process_frame
 	var players = get_tree().get_nodes_in_group("player")
-	for p in players:
-		var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
-		if char_cam:
-			char_cam.make_current()
-			return
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel") and !BattleManager._battle_active:
@@ -24,7 +22,6 @@ func _process(delta: float) -> void:
 			get_tree().paused = false
 			pauseInstance.queue_free()
 			hud_label.visible = true
-			objective_display.visible = true
 			SFXPlayer.play_sfx(load("res://Sounds/SFX/WIN_CLO_001.wav"))
 		else:
 			pauseInstance = pauseScene.instantiate()
@@ -33,7 +30,6 @@ func _process(delta: float) -> void:
 			get_tree().paused = true
 			_toggle_menu_camera(true)
 			hud_label.visible = false
-			objective_display.visible = false
 			SFXPlayer.play_sfx(load("res://Sounds/SFX/STA_OPE_001.wav"))
 			
 
@@ -66,51 +62,55 @@ func _toggle_menu_camera(active: bool) -> void:
 		pivot.menu_open = active
 
 	var menu_cam = player.get_node_or_null("MenuCamera")
-	var char_cam = player.get_node_or_null("CameraPivot/CharacterCam")
-	var transition_cam = player.get_node_or_null("CameraPivot/TransitionCam")
+	if active:
+		var char_cam = CamMan.instance.getPlayerCam()
+	var transition_cam = $"../Camera3D3/TransitionCamera"
 
 	if not menu_cam or not char_cam or not transition_cam:
 		return
 
-	var from_cam : Camera3D
 	var to_cam : Camera3D
 
 	if active:
-		from_cam = char_cam
 		to_cam = menu_cam
 	else:
-		from_cam = menu_cam
-		to_cam = char_cam
+		to_cam = char_cam.get_parent() as Camera3D
 
+	current_target_camera = to_cam
 
-	transition_cam.global_transform = from_cam.global_transform
+	# Stop previous transition safely
+	if camera_tween and camera_tween.is_valid():
+		camera_tween.kill()
 
+	# IMPORTANT:
+	# Only snap to current camera if transition cam is NOT already active
+	if not transition_cam.current:
+		transition_cam.global_transform = get_viewport().get_camera_3d().global_transform
 
 	transition_cam.make_current()
-
 
 	if active and player.has_method("face_menu_camera"):
 		player.face_menu_camera()
 
+	camera_tween = create_tween()
+	camera_tween.set_parallel(true)
 
-	var tween = create_tween()
-	tween.set_parallel(true)
-
-	tween.tween_property(
+	camera_tween.tween_property(
 		transition_cam,
 		"global_position",
 		to_cam.global_position,
 		0.35
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-	tween.tween_property(
+	camera_tween.tween_property(
 		transition_cam,
 		"global_rotation",
 		to_cam.global_rotation,
 		0.35
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-	await tween.finished
+	await camera_tween.finished
 
-
-	to_cam.make_current()
+	# Prevent old awaits from overriding newer transitions
+	if current_target_camera == to_cam:
+		to_cam.make_current()
