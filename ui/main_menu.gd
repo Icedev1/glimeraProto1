@@ -7,6 +7,7 @@ extends Control
 @onready var background_music: AudioStreamPlayer = $"Background Music"
 
 func _ready() -> void:
+	print(get_tree().root.get_children())
 	menu_buttons.visible = true
 	settings.visible = false
 	
@@ -26,7 +27,9 @@ func _on_continue_button_pressed() -> void:
 	button_sfx.play()
 	background_music.stop()
 	if SaveManager.load_slot(0):
-		get_tree().change_scene_to_file(StoryFlags.current_scene)
+		get_tree().root.get_node("Root").transition_to_street(
+			StoryFlags.current_scene, ""
+		)
 
 func _on_load_save_button_pressed() -> void:
 	button_sfx.play()
