@@ -104,6 +104,10 @@ func start_battle() -> void:
 
 	_schedule_enemy_attack()
 	log_message("⚔️ %s appears!" % enemy.unit_name)
+	
+	var objective_display = get_tree().root.get_node_or_null("Root/CanvasLayer/ObjectiveDisplay")
+	if objective_display:
+		objective_display.visible = false
 
 # ── Process ───────────────────────────────────────────────────────────────────
 func _process(delta: float) -> void:
@@ -438,6 +442,10 @@ func set_paused(p_paused: bool) -> void:
 # ── End ───────────────────────────────────────────────────────────────────────
 func _end_battle(player_won: bool) -> void:
 	_battle_active = false
+	#make quest box visible again
+	var objective_display = get_tree().root.get_node_or_null("Root/CanvasLayer/ObjectiveDisplay")
+	if objective_display:
+		objective_display.visible = true
 	var weapons_dropped: Array[Weapon] = []
 	var consumables_dropped: Array[Consumable] = []
 	MusicPlayer.stop_music()

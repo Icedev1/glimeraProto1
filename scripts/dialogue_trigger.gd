@@ -9,7 +9,6 @@ var auto_skip := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,8 +39,12 @@ func _process(delta: float) -> void:
 			match targetname:
 				"trash":
 					Dialogic.VAR.set_variable("target","junk")
+					ObjectiveManager.complete_objective("pickup_sledgehammer")
+					ObjectiveManager.reveal_objective("interact_door")
 				"violin":
 					Dialogic.VAR.set_variable("target","violin")
+					ObjectiveManager.complete_objective("pickup_violin")
+					ObjectiveManager.reveal_objective("pickup_sledgehammer")
 				"bed":
 					Dialogic.VAR.set_variable("target","bed")
 				"window":
@@ -56,6 +59,8 @@ func _process(delta: float) -> void:
 					Dialogic.VAR.set_variable("target","npc2")
 				"door_neighbour1":
 					Dialogic.VAR.set_variable("target","door_neighbour1")
+					ObjectiveManager.complete_objective("see_figure")
+					ObjectiveManager.reveal_objective("find_noise")
 				"door_neighbour2":
 					Dialogic.VAR.set_variable("target","door_neighbour2")
 				"door_building1":
