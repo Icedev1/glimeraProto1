@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://caotx6bj05tfl"]
+
+[ext_resource type="Texture2D" uid="uid://cpytfkk8rha52" path="res://Particles/Glowing Blue Light Circle Ring PNG.png" id="1_t1057"]
+
+[sub_resource type="Gradient" id="Gradient_kyuoa"]
+offsets = PackedFloat32Array(0, 0.25, 0.47282606, 0.6630435, 0.8369565, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0.6784314, 0.1764706, 1, 0.98732525, 0, 0.13000345, 1, 0.66278106, 0, 0.032094836, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v6p0l"]
+gradient = SubResource("Gradient_kyuoa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xx1s2"]
+lifetime_randomness = 1.0
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 1.5
+emission_ring_inner_radius = 1.2
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0.5, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_v6p0l")
+turbulence_enabled = true
+turbulence_noise_strength = 0.4
+turbulence_noise_scale = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlbbv"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0, 0.36848226, 0.93932194, 1)
+emission_enabled = true
+emission_energy_multiplier = 3.0
+billboard_mode = 1
+grow_amount = -3.908
+
+[sub_resource type="QuadMesh" id="QuadMesh_2430n"]
+material = SubResource("StandardMaterial3D_dlbbv")
+size = Vector2(0.01, 0.05)
+
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=996667377]
+amount = 200
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_xx1s2")
+draw_pass_1 = SubResource("QuadMesh_2430n")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1926707012]
+transform = Transform3D(0.245, 0, 0, 0, -1.070929e-08, -0.245, 0, 0.245, -1.070929e-08, 0, 0, 0)
+texture = ExtResource("1_t1057")
