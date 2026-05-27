@@ -15,7 +15,6 @@ var current_state = ""
 
 var current_battle_enemy: EnemyData = null   
 
-
 func _ready():
 	$SceneTransition/ColorRect.modulate.a = 0
 	$SceneTransition2/ColorRect.modulate.a = 0
@@ -153,6 +152,20 @@ func from_overworld_to_battle(enemy_data: EnemyData = null):
 	)
 
 func from_battle_to_overworld():
+	print("from_battle_to_overworld called")
+	print("current_battle_enemy: ", current_battle_enemy)
+	if current_battle_enemy != null:
+		print("unit name: ", current_battle_enemy.unit_name)
+	if current_battle_enemy != null and current_battle_enemy.unit_name == "Practice enemy 1":
+		print("MATCH - completing see_figure")
+		ObjectiveManager.complete_objective("see_figure")
+		ObjectiveManager.reveal_objective("find_noise")
+	current_battle_enemy = null
+
+	if current_battle_enemy != null and current_battle_enemy.unit_name == "Practice enemy 1":
+		ObjectiveManager.complete_objective("see_figure")
+		ObjectiveManager.reveal_objective("find_noise")
+	current_battle_enemy = null
 	overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
 	transition1.playfade(func():
 		show_overworld()
