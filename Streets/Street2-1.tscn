@@ -967,7 +967,7 @@ mesh = SubResource("BoxMesh_6s8jw")
 [node name="bridge" parent="." unique_id=1071278940 instance=ExtResource("28_eqe6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.472364, 0.34102333, -1.7129455)
 
-[node name="Cube" parent="bridge" index="0" unique_id=2113295009]
+[node name="Cube" parent="bridge" index="0" unique_id=651116001]
 transform = Transform3D(0.31611383, 0, 0, 0, 0.3123244, 0, 0, 0, 0.3123244, 1.6964378, 0, 0)
 material_override = ExtResource("29_xjqto")
 mesh = SubResource("ArrayMesh_m3c0b")

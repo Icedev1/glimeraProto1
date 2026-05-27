@@ -2,8 +2,11 @@ extends Node
 
 signal objectives_updated
 signal layer_advanced(new_layer: int)
+signal main_quest_updated(new_quest: String)
 
 var current_layer: int = 0
+
+var main_quest: String = "Find out who's knocking"
 
 # Each layer has a pool of objectives that get revealed progressively.
 # "visible" controls whether the objective shows on screen yet.
@@ -13,8 +16,10 @@ func _ready() -> void:
 	layers = [
 		[
 			{ "id": "pickup_violin", "text": "Pick up your violin", "done": false, "visible": true },
-			{ "id": "pickup_sledgehammer", "text": "Grab something from the chest", "done": false, "visible": false },
-			{ "id": "interact_door", "text": "Find out who's knocking", "done": false, "visible": false },
+			{ "id": "pickup_sledgehammer", "text": "Grab something from the trash pile", "done": false, "visible": false },
+			#{ "id": "interact_door", "text": "Find out who's knocking", "done": false, "visible": false },
+			{ "id": "see_figure", "text": "See what the figure is up to", "done": false, "visible": false },
+			{ "id": "find_noise", "text": "Find out where the noise came from", "done": false, "visible": false },
 			{ "id": "inspect_stairs", "text": "Inspect the stairs", "done": false, "visible": false },
 			{ "id": "find_climb", "text": "Find something to climb the stairs", "done": false, "visible": false },
 			{ "id": "help_figure", "text": "Help the Figure find her friend", "done": false, "visible": false },
@@ -53,3 +58,7 @@ func get_current_objectives() -> Array:
 		if obj["visible"]:
 			visible_objectives.append(obj)
 	return visible_objectives
+	
+func set_main_quest(text: String) -> void:
+	main_quest = text
+	main_quest_updated.emit(text)

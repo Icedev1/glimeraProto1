@@ -157,7 +157,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(68, 52)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qb070"]
-size = Vector3(2.5494385, 3.7086487, 1.8961792)
+size = Vector3(0.8878937, 0.9335098, 0.3531952)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwr3b"]
 albedo_texture = ExtResource("15_4kvcr")
@@ -181,7 +181,7 @@ size = Vector3(1.8944092, 1.8188171, 0.67575073)
 size = Vector3(1.6531982, 1, 1.3996582)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_20jgf"]
-size = Vector3(0.11475781, 0.6948242, 0.649292)
+size = Vector3(0.05054297, 0.07165527, 0.4031067)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fbedt"]
 _surfaces = [{
@@ -652,7 +652,7 @@ collision_mask = 2
 script = ExtResource("18_kwr3b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="House 3/door_neighbour2/Area3D" unique_id=2026390787]
-transform = Transform3D(1.0000199, 0, 0, 0, 1.0000001, 0, 9.2370556e-14, 0, 1.0000001, -0.81351995, -0.18219316, 1.4290354)
+transform = Transform3D(1.0000199, 0, 0, 0, 1.0000001, 0, 9.2370556e-14, 0, 1.0000001, -0.7250395, -0.20614731, 1.4733088)
 shape = SubResource("BoxShape3D_qb070")
 
 [node name="Environment" parent="." unique_id=484110873 instance=ExtResource("15_kwr3b")]
@@ -707,7 +707,7 @@ collision_mask = 2
 script = ExtResource("18_kwr3b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Book House 3/door_building3/Area3D" unique_id=771834003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4436505, 0.3875986, 0.32318214)
+transform = Transform3D(0.99999934, 0, 1.4210855e-14, 0, 0.99999934, 0, -1.4210855e-14, 0, 0.99999934, 1.4115418, 0.18740831, 0.3231821)
 shape = SubResource("BoxShape3D_20jgf")
 
 [node name="Book House 2" parent="." unique_id=653186089 instance=ExtResource("17_yhmys")]
@@ -730,7 +730,7 @@ collision_mask = 2
 script = ExtResource("18_kwr3b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Book House 2/door_building3/Area3D" unique_id=1155068154]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4436505, 0.3875986, 0.32318214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4436507, 0.17775972, 0.32585222)
 shape = SubResource("BoxShape3D_20jgf")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=1023417106]

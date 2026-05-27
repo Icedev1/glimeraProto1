@@ -33,6 +33,9 @@ layout_mode = 2
 
 [node name="Header" type="Label" parent="VBoxContainer" unique_id=2009122476]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.72156864, 0.6509804, 0.49803922, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8188122, 0.782484, 0.7102229, 1)
+theme_override_font_sizes/font_size = 26
 text = "OBJECTIVES"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=842837253]
+layout_mode = 2

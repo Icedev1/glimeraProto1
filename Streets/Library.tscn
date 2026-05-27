@@ -209,7 +209,7 @@ collision_mask = 2
 script = ExtResource("3_wea6j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Library/metarig/rock/Area3D" unique_id=1921940408]
-transform = Transform3D(1, 1.4901161e-08, 5.9604645e-08, 0, 1, 8.940697e-08, 2.9802322e-08, 0, 0.99999976, 0.14005405, 0.18404116, 0.0059187226)
+transform = Transform3D(-0.70710677, 0.70710677, -8.742274e-08, 0.70710677, 0.70710677, 0, 6.181724e-08, -6.181724e-08, -0.9999996, 0.14005403, 0.18404116, 0.0059187226)
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
@@ -219,8 +219,8 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 collision_mask = 2
 script = ExtResource("3_wea6j")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Library/metarig_001/paper/Area3D" unique_id=2001529261]
-transform = Transform3D(1, 1.4901161e-08, 5.9604645e-08, 0, 1, 8.940697e-08, 2.9802322e-08, 0, 0.99999976, 0.14005405, 0.18404116, 0.0059187226)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/metarig_001/paper/Area3D" unique_id=2001529261]
+transform = Transform3D(-0.70710665, 0.70710653, -8.7422734e-08, 0.70710665, 0.70710653, 0, 6.1817225e-08, -6.181722e-08, -0.9999995, 0.14005403, 0.18404117, 0.0059186965)
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
@@ -230,8 +230,8 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 collision_mask = 2
 script = ExtResource("3_wea6j")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Library/metarig_002/scissors/Area3D" unique_id=197182648]
-transform = Transform3D(1, 1.4901161e-08, 5.9604645e-08, 0, 1, 8.940697e-08, 2.9802322e-08, 0, 0.99999976, 0.14005405, 0.18404116, 0.0059187226)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/metarig_002/scissors/Area3D" unique_id=197182648]
+transform = Transform3D(-0.70710677, 0.7071068, -8.742275e-08, 0.70710677, 0.7071068, 0, 6.181724e-08, -6.1817246e-08, -0.99999964, 0.14005402, 0.1840412, 0.005918741)
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
