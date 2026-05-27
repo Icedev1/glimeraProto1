@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bqw8xsgx5go56"]
+[gd_scene format=4 uid="uid://cqjdm2pj5x4t0"]
 
 [ext_resource type="Material" uid="uid://dlqh37n150i1e" path="res://Textures/Paving Stones 081/PavingStones081_2K-JPG.tres" id="1_smidy"]
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="2_8f7sc"]
