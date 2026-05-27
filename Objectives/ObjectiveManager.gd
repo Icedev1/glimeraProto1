@@ -13,6 +13,8 @@ var main_quest: String = "Find out who's knocking"
 var layers: Array = []
 
 func _ready() -> void:
+	if layers.size() > 0:
+		return
 	layers = [
 		[
 			{ "id": "pickup_violin", "text": "Pick up your violin", "done": false, "visible": true },
@@ -40,6 +42,9 @@ func reveal_objective(id: String) -> void:
 			return
 
 func complete_objective(id: String) -> void:
+	print("trying to complete: ", id)
+	for obj in layers[current_layer]:
+		print("checking: ", obj["id"], " done: ", obj["done"])
 	for obj in layers[current_layer]:
 		if obj["id"] == id and not obj["done"]:
 			obj["done"] = true
@@ -60,5 +65,10 @@ func get_current_objectives() -> Array:
 	return visible_objectives
 	
 func set_main_quest(text: String) -> void:
+	# hide all completed objectives when main quest changes
+	for obj in layers[current_layer]:
+		if obj["done"]:
+			obj["visible"] = false
 	main_quest = text
 	main_quest_updated.emit(text)
+	objectives_updated.emit()

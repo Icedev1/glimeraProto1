@@ -46,7 +46,7 @@ elif {target} == "roland":
 		The Figure is unresponsive and completely motionless.
 		leave statue_1
 		join Gli left
-		Gli:  What do I do?
+		Gli: What do I do?
 		- Touch it
 			You give him a shove.
 			You expected resistance, however, the figure crumbles and a gust of wind carries the particles away
@@ -55,6 +55,7 @@ elif {target} == "roland":
 		- Leave it
 			Gli: I will get some help, okay?
 			The Figure remains frozen in place
+		[signal arg="roland_talked"]
 	else:
 		join Gli left
 		Gli: I’m going to find help.
