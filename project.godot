@@ -13,6 +13,7 @@ config_version=5
 config/name="GLIMERA proto1"
 run/main_scene="uid://ynp6rt5ks1hu"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+run/max_fps=90
 config/icon="res://images/icon.svg"
 
 [audio]
@@ -62,7 +63,8 @@ variables={
 "TalkedToFolder": {
 "talkedTo2": false,
 "talkedTo3": false,
-"talkedTo3_2": false
+"talkedTo3_2": false,
+"talkedTo4": false
 },
 "event": "",
 "have_rope": false,

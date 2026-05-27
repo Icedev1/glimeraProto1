@@ -52,22 +52,25 @@ func get_input() -> Vector3:
 
 func get_move_direction() -> Vector3:
 	var input_dir := get_input()
-
+	
 	if input_dir == Vector3.ZERO:
 		return Vector3.ZERO
+	if camera != null:
+		var cam_basis = camera.global_transform.basis
 
-	var cam_basis = camera.global_transform.basis
+		var forward = cam_basis.z
+		var right = cam_basis.x
 
-	var forward = cam_basis.z
-	var right = cam_basis.x
+		forward.y = 0
+		right.y = 0
 
-	forward.y = 0
-	right.y = 0
+		forward = forward.normalized()
+		right = right.normalized()
 
-	forward = forward.normalized()
-	right = right.normalized()
-
-	return (right * input_dir.x + forward * input_dir.z).normalized()
+		return (right * input_dir.x + forward * input_dir.z).normalized()
+	else:
+		camera = CamMan.instance.getPlayerCam()
+		return Vector3.ZERO
 
 func move_horizontal(direction: Vector3):
 	velocity.x = direction.x * SPEED
@@ -105,6 +108,23 @@ func face_menu_camera() -> void:
 		var target_angle = atan2(dir.x, dir.z) - PI / 2
 		$"MAsked Gli".rotation.y = target_angle
 
+# Static Camera Functions
+
+func _get_input() -> Vector2:
+	return Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	)
+	
+func _get_camera_direction(input_dir: Vector2) -> Vector3:
+	if input_dir == Vector2.ZERO:
+		camera = CamMan.instance.getPlayerCam()
+	if camera == null:
+		camera = CamMan.instance.getPlayerCam()
+	var cam_basis = camera.global_transform.basis
+	var cam_forward = cam_basis.z
+	var cam_right = cam_basis.x
+	return (cam_right * input_dir.x + cam_forward * input_dir.y).normalized()
 
 func _on_respawn_area_3d_body_entered(body: Node3D) -> void:
 	$".".global_transform.origin = Vector3.ZERO # Replace with function body.
