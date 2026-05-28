@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bso2da8eo2c40"]
+
+[ext_resource type="Environment" uid="uid://iddx60r1gtlb" path="res://EnvironmentSettings.tres" id="1_w2dwl"]
+[ext_resource type="PackedScene" uid="uid://dedahd62ktjvl" path="res://meshes/Tower Exterior.blend" id="2_2uoq5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qf8ew"]
+size = Vector2(30, 10.995)
+
+[node name="Node3D" type="Node3D" unique_id=361110200]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1868014012]
+environment = ExtResource("1_w2dwl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2072408522]
+mesh = SubResource("PlaneMesh_qf8ew")
+
+[node name="Tower Exterior" parent="." unique_id=636309079 instance=ExtResource("2_2uoq5")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 3, 0, 2, 0, -8.742278e-08, 12.260048, 0, 0)
