@@ -47,12 +47,12 @@ _subresources={
 "Metal061B": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://Textures/Stone/Asphalt031_1K-JPG.tres",
-"use_external/path": "res://Textures/Stone/Asphalt031_1K-JPG.tres"
+"use_external/path": "uid://bpmbxtlg8iguj"
 },
 "Wood095": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://Textures/Stone/Asphalt031_1K-JPG.tres",
-"use_external/path": "res://Textures/Stone/Asphalt031_1K-JPG.tres"
+"use_external/path": "uid://bpmbxtlg8iguj"
 }
 },
 "nodes": {
