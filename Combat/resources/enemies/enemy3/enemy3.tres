@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://den1li4wxyghx"]
+
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_wbjna"]
+[ext_resource type="Resource" uid="uid://cxqlrf3r0weyn" path="res://Combat/resources/consumables/health_potion.tres" id="2_b13s2"]
+[ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="3_em1d6"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="4_jwptf"]
+[ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="6_jyiwu"]
+[ext_resource type="Resource" uid="uid://bwscb3mgsdwdn" path="res://Combat/resources/enemies/enemy3/enemy3_weapon1.tres" id="7_rc42e"]
+[ext_resource type="Resource" uid="uid://ujfbxjx257rm" path="res://Combat/resources/enemies/enemy3/enemy3_weapon2.tres" id="8_3qr2h"]
+[ext_resource type="Resource" uid="uid://bnp077toe8fey" path="res://Combat/resources/enemies/enemy3/enemy3_weapon3.tres" id="9_6s6e8"]
+
+[resource]
+script = ExtResource("6_jyiwu")
+weapons = Array[ExtResource("4_jwptf")]([ExtResource("7_rc42e"), ExtResource("8_3qr2h"), ExtResource("7_rc42e"), ExtResource("9_6s6e8"), ExtResource("9_6s6e8"), ExtResource("9_6s6e8")])
+element = 1
+reward_consumables = Array[ExtResource("1_wbjna")]([ExtResource("2_b13s2"), ExtResource("3_em1d6")])
+unit_name = "Angry Dude"
+max_hp = 230
+metadata/_custom_type_script = "uid://b3ri4vlr52i3f"
