@@ -38,6 +38,11 @@
 [ext_resource type="ArrayMesh" uid="uid://i3g16rqeqvpo" path="res://meshes/SamGrady buildings/building_5.obj" id="39_urpp5"]
 [ext_resource type="ArrayMesh" uid="uid://cpxycnstawh38" path="res://meshes/SamGrady buildings/building_0.obj" id="40_ef0ru"]
 
+[ext_resource type="ArrayMesh" uid="uid://cpxycnstawh38" path="res://meshes/SamGrady buildings/building_0.obj" id="40_ef0ru"]
+
+[ext_resource type="Script" uid="uid://bjctkeuaafa8e" path="res://scripts/chasing_npc.gd" id="20_yy0f5"]
+[ext_resource type="Resource" uid="uid://cvvj0tqpd238a" path="res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2.tres" id="21_yy0f5"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x7b0n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sxdap"]
