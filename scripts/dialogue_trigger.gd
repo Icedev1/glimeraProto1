@@ -16,17 +16,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Keep prompt positioned correctly
-	#if inRange:
-		#var prompt = get_prompt()
-#
-		#if prompt:
-			#var world_pos = global_transform.origin + Vector3(0, 0.5, 0)
-			#var screen_pos = get_viewport().get_camera_3d().unproject_position(world_pos)
-			#prompt.position = screen_pos
-
+	if get_parent().name == "Angry Steve" and GraftGlobals.angrySteveDead:
+		get_parent().hide()
+		return
+		
 	if Input.is_action_just_pressed("mouse_right"):
-
 		if Dialogic.current_timeline != null:
 
 			auto_skip = !auto_skip
@@ -38,6 +32,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_interact") and inRange:
 		var targetname = get_parent().name
 		if Dialogic.current_timeline == null:
+			var skip = false
 			#create a node with an area 3d and collision shape. set collisions to mask 2 add to the list below and voila!
 			match targetname:
 				#GLI HOUSE
@@ -103,11 +98,15 @@ func _process(delta: float) -> void:
 
 							# STREET 2
 				"Porcelain Figure":
-					Dialogic.VAR.set_variable("target", "porcelain_figure")
-				"Porcelain Figure Defeated":
-					Dialogic.VAR.set_variable("target", "porcelain_figure_defeated")
+					if GraftGlobals.porcelainDefeated:
+						Dialogic.VAR.set_variable("target", "porcelain_figure_defeated")
+					else:
+						skip = true
+				#"Porcelain Figure Defeated":
+					#Dialogic.VAR.set_variable("target", "porcelain_figure_defeated")
 				"Evene":
 					Dialogic.VAR.set_variable("target", "evene")
+					ObjectiveManager.complete_objective("find_noise")
 				
 				# STAIRS (first visit)
 				"Stairs":
@@ -133,11 +132,12 @@ func _process(delta: float) -> void:
 				# STAIRS AGAIN
 				"Intimidating Figure":
 					Dialogic.VAR.set_variable("target", "intimidating_figure")
-			
+				
+			if skip:
+				return
 			Dialogic.start("interactable")
 			get_viewport().set_input_as_handled()
-		else:
-			pass
+
 	
 func DialogicSignal(arg:String):
 	#use this to catch signals
@@ -157,6 +157,9 @@ func DialogicSignal(arg:String):
 			ObjectiveManager.set_main_quest("Try to figure out what happened")
 		"enable_glihouse":
 			pass
+		"saw_picked_up":
+			GraftGlobals.sawObtained = true
+			PlayerManager.sync_from_grafts()
 		"open_door7":
 			%AnimationPlayerDoor.play("door_opening")
 		"close_door7":
@@ -174,7 +177,9 @@ func DialogicSignal(arg:String):
 		#"angry_steve":
 			#pass
 		"garden_hose_received":
+			print("garden_hose_received fired")
 			ObjectiveManager.complete_objective("help_figure")
+			ObjectiveManager.complete_objective("find_climb")
 			ObjectiveManager.reveal_objective("climb_stairs")
 		"inspect_stairs_done":
 			ObjectiveManager.complete_objective("inspect_stairs")
@@ -188,25 +193,23 @@ func DialogicSignal(arg:String):
 			pass
 
 func _on_body_entered(body: Node3D) -> void:
+	if get_parent().name == "Angry Steve" and GraftGlobals.angrySteveDead:
+		get_parent().hide()
+		return
+	
+	print("dialogue_trigger body entered: ", get_parent().name, " body: ", body.name)
 	inRange = true
 	
 	var prompt = get_prompt()
-
 	if prompt:
 		prompt.visible = true
 	
 	if active_particles == null:
-
 		active_particles = particle_scene.instantiate()
 		active_particles.global_transform = $CollisionShape3D.global_transform
-		
 		active_particles.set_as_top_level(true)
 		active_particles.scale = Vector3(0.2,0.2,0.2)
-
 		get_tree().current_scene.add_child(active_particles)
-		
-		
-		
 	#triggers battle on touch
 	var targetname = get_parent().name
 	match targetname:
@@ -245,8 +248,8 @@ func _on_body_entered(body: Node3D) -> void:
 			game.from_overworld_to_battle("res://Combat/resources/enemies/enemy1/enemy1.tres")
 			$"..".chasing = false
 		"Angry Steve":
-			var game = get_tree().current_scene
-			game.from_overworld_to_battle("res://Combat/resources/enemies/enemy2/enemy2.tres")
+			get_tree().root.get_node("Root").from_overworld_to_battle(
+				preload("res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2.tres"),"res://Combat/scenes/battle_tutorial.tscn")
 			$"..".chasing = false
 	
 	
@@ -271,3 +274,11 @@ func get_prompt():
 			canvasprompt = prompts[0]
 
 	return canvasprompt
+
+
+func _on_interaction_volume_body_entered(body: Node3D) -> void:
+	_on_body_entered(body)
+
+
+func _on_interaction_volume_body_exited(body: Node3D) -> void:
+	_on_body_exited(body)

@@ -9,6 +9,6 @@
 [resource]
 script = ExtResource("5_lfdkn")
 weapons = Array[ExtResource("3_7axu5")]([ExtResource("6_660lo"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf")])
-unit_name = "Practice enemy 1"
+unit_name = "Porcelain Figure"
 max_hp = 80
 metadata/_custom_type_script = "uid://b3ri4vlr52i3f"

@@ -67,6 +67,10 @@ func start_battle(battle_scene_path: String, enemy_data: EnemyData = null):
 	overworld_container.hide()
 	overworld_container.process_mode = Node.PROCESS_MODE_DISABLED
 	
+	print($CanvasLayer/ObjectiveDisplay)
+	$CanvasLayer/ObjectiveDisplay.hide()
+	#$Node3D/UI_Elements/Prompt.hide()
+	
 	_load_battle(battle_scene_path, current_battle_enemy)
 	
 # -----------------
@@ -112,6 +116,9 @@ func show_street(street_name: String):
 # -----------------
 
 func _load_battle(path: String, enemy_data: EnemyData = null):
+	print("_load_battle path: ", path)
+	print("_load_battle enemy_data: ", enemy_data)
+	print("_load_battle path: ", path)
 	_cleanup_battle()
 	
 	var scene = load(path).instantiate()
@@ -146,29 +153,32 @@ func from_main_menu_to_overworld():
 		switch_world_scene("res://gli's_house.tscn")
 	)
 
-func from_overworld_to_battle(enemy_data: EnemyData = null):
+func from_overworld_to_battle(enemy_data: EnemyData = null, battle_scene: String = "res://Combat/scenes/battle.tscn"):
 	transition2.playscreenshatter(func():
-		start_battle("res://Combat/scenes/battle.tscn", enemy_data)
+		start_battle(battle_scene, enemy_data)
 	)
 
 func from_battle_to_overworld():
-	print("from_battle_to_overworld called")
-	print("current_battle_enemy: ", current_battle_enemy)
-	if current_battle_enemy != null:
-		print("unit name: ", current_battle_enemy.unit_name)
-	if current_battle_enemy != null and current_battle_enemy.unit_name == "Practice enemy 1":
-		print("MATCH - completing see_figure")
+	print("unit name: ", current_battle_enemy.unit_name if current_battle_enemy else "null")
+	if current_battle_enemy != null and current_battle_enemy.unit_name == "Porcelain Figure":
 		ObjectiveManager.complete_objective("see_figure")
 		ObjectiveManager.reveal_objective("find_noise")
-	current_battle_enemy = null
+		GraftGlobals.porcelainDefeated = true
+	if current_battle_enemy != null and current_battle_enemy.unit_name == "Market Vendor":
+		GraftGlobals.angrySteveDead = true
+	if current_battle_enemy != null and current_battle_enemy.unit_name == "Intimidating Figure":
+		ObjectiveManager.complete_objective("climb_stairs")
+		ObjectiveManager.advance_layer()
 
-	if current_battle_enemy != null and current_battle_enemy.unit_name == "Practice enemy 1":
-		ObjectiveManager.complete_objective("see_figure")
-		ObjectiveManager.reveal_objective("find_noise")
 	current_battle_enemy = null
+	$CanvasLayer/ObjectiveDisplay.show()
 	overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
 	transition1.playfade(func():
 		show_overworld()
+		var dialman = get_tree().get_nodes_in_group("dialman")
+		if dialman.size() > 0:
+			dialman[0].character = null
+			dialman[0].inRange = false
 		var players = get_tree().get_nodes_in_group("player")
 		for p in players:
 			if not p.is_inside_tree():
@@ -176,7 +186,8 @@ func from_battle_to_overworld():
 			var menu_cam = p.get_node_or_null("MenuCamera")
 			var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
 			if menu_cam and char_cam:
-				)
+				pass
+	)
 
 func transition_to_street(target_street: String, spawn_name: String):
 	transition1.playfade(func():

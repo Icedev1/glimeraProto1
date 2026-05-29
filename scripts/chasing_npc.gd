@@ -2,6 +2,7 @@ extends Node3D
 
 @export var speed: float = 4
 @export var enemy_data: EnemyData 
+@export var battle_scene: String = "res://Combat/scenes/battle.tscn"
 
 var player: Node3D = null
 var chasing: bool = false
@@ -25,9 +26,6 @@ func _process(delta):
 
 		# Face player
 		look_at(player.global_position)
-		
-		
-
 		# Play walk animation
 		if anim.current_animation != "Walk2":
 			anim.play("Walk2")
@@ -44,12 +42,14 @@ func die():
 	queue_free()
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	#Temporary Commenting away
+	if GraftGlobals.angrySteveDead:
+		queue_free()
+		return
 	if active:
 		pass
 		print("active")
 		var game = get_tree().current_scene
-		game.from_overworld_to_battle(enemy_data)
+		game.from_overworld_to_battle(enemy_data, battle_scene)
 		chasing = false
 		active = false
 		die()

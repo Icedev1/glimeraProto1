@@ -31,8 +31,9 @@ extends Node3D
 
 @onready var graft_menu: Control = %GraftMenu
 
-@onready var player_effects_label: RichTextLabel = %player_effects_label
-@onready var enemy_effects_label: RichTextLabel = %enemy_effects_label
+#@onready var player_effects_label: RichTextLabel = %player_effects_label
+#@onready var enemy_effects_label: RichTextLabel = %enemy_effects_label
+@onready var enemy_effects_container: HBoxContainer = %EnemyEffectsContainer
 @onready var enemy_weapon_icon: TextureRect = %EnemyWeaponIcon
 @onready var player_effects_container: HBoxContainer = %PlayerEffectsContainer
 @onready var enemy_portrait: TextureRect = %EnemyPortrait
@@ -62,16 +63,15 @@ func _ready() -> void:
 	
 	for flash in [player_hit_flash, enemy_hit_flash]:
 		var style = StyleBoxFlat.new()
-		style.corner_radius_top_left = 50
-		style.corner_radius_top_right = 50
-		style.corner_radius_bottom_left = 50
-		style.corner_radius_bottom_right = 50
+		style.corner_radius_top_left = 4
+		style.corner_radius_top_right = 4
+		style.corner_radius_bottom_left = 4
+		style.corner_radius_bottom_right = 4
 		flash.add_theme_stylebox_override("panel", style)
 
 func _process(_delta: float) -> void:
 	_refresh_effects(player_effects_container, PlayerManager.data)
-	if enemy_effects_label:
-		enemy_effects_label.text = BattleManager.enemy.get_effects_text()
+	_refresh_effects(enemy_effects_container, BattleManager.enemy)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if result_screen.visible:
@@ -272,7 +272,7 @@ func _refresh_effects(container: HBoxContainer, unit: UnitData) -> void:
 		if effect.icon:
 			var icon1 = TextureRect.new()
 			icon1.texture = effect.icon
-			icon1.custom_minimum_size = Vector2(40, 40)
+			icon1.custom_minimum_size = Vector2(50, 50)
 			icon1.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			icon1.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			icon1.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -281,7 +281,7 @@ func _refresh_effects(container: HBoxContainer, unit: UnitData) -> void:
 		if effect.icon2:
 			var icon2 = TextureRect.new()
 			icon2.texture = effect.icon2
-			icon2.custom_minimum_size = Vector2(40, 40)
+			icon2.custom_minimum_size = Vector2(50, 50)
 			icon2.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			icon2.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			icon2.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED

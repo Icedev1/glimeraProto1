@@ -38,16 +38,21 @@ ObjectiveManager="*uid://d2526ex77cp5f"
 [dialogic]
 
 directories/dch_directory={
+"Evene": "res://Evene.dch",
 "Gli": "res://characters/Gli.dch",
+"Intimidating Figure": "res://Intimidating Figure.dch",
+"Porcelain Figure": "res://Porcelain Figure.dch",
 "overjoyed looking Figure": "res://characters/overjoyed looking Figure.dch",
 "skull": "res://characters/skull.dch",
 "statue_1": "res://characters/statue_1.dch"
 }
 directories/dtl_directory={
+"Intimidating Figure": "res://Intimidating Figure.dtl",
 "Talk with Bob": "res://Dialogue Timelines/Talk with Bob.dtl",
 "events": "res://Dialogue Timelines/events.dtl",
 "interactable": "res://Dialogue Timelines/interactable.dtl",
 "mid_combat": "res://Dialogue Timelines/mid_combat.dtl",
+"porcelain_figure": "res://porcelain_figure.dtl",
 "timeline": "res://Dialogue Timelines/timeline.dtl",
 "timelinelayer2": "res://Dialogue Timelines/timelinelayer2.dtl"
 }
@@ -69,6 +74,9 @@ variables={
 "event": "",
 "have_rope": false,
 "have_violin": false,
+"picked_a": false,
+"picked_b": false,
+"picked_c": false,
 "quest_1": "default",
 "sequence_step": 0,
 "talkedTo": false,

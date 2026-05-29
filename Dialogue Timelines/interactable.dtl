@@ -113,30 +113,36 @@ elif {target} == "frz_chr_tending_plants":
 elif {target} == "defeated_enemy":
 	The figure has been knocked out, rendering it immobile. Though, its eyes still seem to be following your movements.
 	Gli: ...
-elif {target} == "passive_bob":
+elif {target} == "evene":
 	if {talkedTo} == false:
 		# Knock on door
-		audio sfx "res://Sounds/SFX/vine-boom-sound-effect(chosic.com).mp3"
+		audio sfx "res://Sounds/SFX/door knock fast.wav"
 		[signal arg="open_door_sf"]
 		join Gli left
-		join skull right
-		skull: Oh my! It’s Gli! What a pleasure to receive a visit from you, my dear! Is there anything I can do for you?
+		join Evene right
+		Evene: My, my. It’s Gli! What a pleasure to receive a visit from you, my dear.
+		Evene: Is there anything I can do for you?
 		Gli: (She’s usually never this chipper…)
-		Gli: O-oh yes hello! Thank you… Sorry but, have you not noticed other figures acting strangely suddenly?
-		skull: [shake]Strangely…?! Whatever do you mean, sweetheart?[/shake]
-		Gli: Umm well I woke up to a loud noise this morning and then the first two figures I saw were completely frozen stiff!
-		Gli: It's like they suddenly turned to stone in the middle of what they were doing!!
-		Gli: And then, just up ahead, past this street, I was attacked by the only figure I'd seen moving all day! He didn't even say a word!
-		Gli: Just started swinging at me, and even damaged my violin!
-		Gli: I just don’t know what’s going on anymore, no one is behaving normally and I'm starting to get scared.
-		skull: I can’t say I find any of that strange.
-		skull: Maybe you need to calm down.
-		skull: Maybe YOU’RE the one acting strange.
-		skull: Have you considered that? Hm?
-		skull: [shake]Maybe you’re the scary one.[/shake]
-		skull: The Guardian watches over all of us. Remember that.
-		skull: Good-bye, Gli.
-		leave skull
+		Gli: I really need your help. Everyone has been acting so strange-
+		Evene: [shake]Strange? What do you mean, sweetheart?[/shake]
+		Gli: She was never this nice before. And her face…
+		- You seem different | [if {picked_a} == false]
+			join Evene right
+			join Gli left
+			Evene: I’m feeling better than ever, actually! Maybe you’re the one that’s different, dear, have you considered that?
+			Gli: ...
+			Evene: You know, I have been praying for the Guardian’s blessing to reach you.
+			Evene: It saddens me, that there is nothing else I could do for you.
+			Evene: Now, do you mind?
+		- Explain what happened | [if {picked_b} == false]
+			join Evene right
+			join Gli left
+			Evene: ...Guardian above, you’re scaring me, Gli.
+			Gli: ...I’m sorry, Miss. Please, could you help?
+			Evene: I don’t see how I could, nor why I should, dear.
+			Evene: Everything here happens for a reason, but I will be praying for you.
+			Evene: Now, do you mind?
+		leave Evene
 		set {talkedTo} = true
 		[signal arg="close_door_sf"]
 		Gli: ...
@@ -178,6 +184,7 @@ elif {target} == "quest_npc_1":
 		skull: Here, as promised.
 		set {GraftGlobals.hoseObtained} = true
 		set {have_rope} = true
+		[signal arg="garden_hose_received"]
 		The Figure hands you the garden hose.
 		She doesn’t seem to care that her friend is completely frozen.
 		In fact, she starts excitedly talking to them about her day.
@@ -213,4 +220,14 @@ elif {target} == "quest_npc_1":
 		join skull right
 		skull: Look for a Figure wearing a red scarf.
 		skull: I would really appreciate it if you could find them.
+if {target} == "":
+	join Gli center
+	Gli: I'm sorry... but what you did wasn't nice.
+	join Gli center
+	Gli: What's this?
+	- Pick up saw
+		[signal arg="saw_picked_up"]
+		join Gli center
+		Gli: I'll return this to you.\
+		When you're feeling better.
 [end_timeline]
