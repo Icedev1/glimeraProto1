@@ -4,7 +4,7 @@ extends AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	StoryFlags.OpenGate.connect(gateOpen)
+	ObjectiveManager.OpenGate.connect(gateOpen)
 	if StoryFlags.Layer1GateUnlock and currentScene == "1-2":
 		gateOpen()
 	elif StoryFlags.Layer2GateUnlock and currentScene == "2-1":

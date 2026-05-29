@@ -12,5 +12,3 @@ var violinObtained : bool = false
 
 #Quest Flags
 var statueQuestComplete : bool = false
-
-signal OpenGate
