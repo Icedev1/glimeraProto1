@@ -38,6 +38,11 @@
 [ext_resource type="ArrayMesh" uid="uid://i3g16rqeqvpo" path="res://meshes/SamGrady buildings/building_5.obj" id="39_urpp5"]
 [ext_resource type="ArrayMesh" uid="uid://cpxycnstawh38" path="res://meshes/SamGrady buildings/building_0.obj" id="40_ef0ru"]
 
+[ext_resource type="ArrayMesh" uid="uid://cpxycnstawh38" path="res://meshes/SamGrady buildings/building_0.obj" id="40_ef0ru"]
+
+[ext_resource type="Script" uid="uid://bjctkeuaafa8e" path="res://scripts/chasing_npc.gd" id="20_yy0f5"]
+[ext_resource type="Resource" uid="uid://cvvj0tqpd238a" path="res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2.tres" id="21_yy0f5"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x7b0n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sxdap"]
@@ -251,6 +256,13 @@ albedo_texture = ExtResource("2_j382a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dad2d"]
 albedo_texture = ExtResource("2_j382a")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7qpp"]
+radius = 0.3466797
+height = 0.83935547
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36i0r"]
+size = Vector3(2.0, 2.0, 2.0)
+
 [node name="Market1" type="Node3D" unique_id=1437225535]
 
 [node name="Spawn_FromMarket1" type="Marker3D" parent="." unique_id=1676370970]
@@ -388,7 +400,6 @@ shape = SubResource("CapsuleShape3D_e7qpp")
 [node name="ChaseDetection" type="Area3D" parent="Angry Steve" unique_id=1578529593]
 collision_layer = 8
 collision_mask = 2
-script = ExtResource("23_8el4g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Angry Steve/ChaseDetection" unique_id=94626944]
 transform = Transform3D(0.12832814, 0, 0.99173135, 0, 1.0000539, 0, -0.99173135, 0, 0.12832814, 0.016412914, 0.43618903, -2.4663124)
