@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dr2f0orsbujnh"]
+
+[ext_resource type="Texture2D" uid="uid://df8d283l3p65f" path="res://meshes/Library_Wood025_1K-PNG_Color.png" id="1_4f3b2"]
+[ext_resource type="Texture2D" uid="uid://cylho8bq76wka" path="res://meshes/Building 3_Wood025_1K-PNG_NormalGL.png" id="2_otnns"]
+[ext_resource type="Texture2D" uid="uid://bp0ild47fbpc0" path="res://meshes/Library_Wood025_1K-PNG_Roughness.png" id="3_g1e1p"]
+
+[resource]
+albedo_texture = ExtResource("1_4f3b2")
+roughness_texture = ExtResource("3_g1e1p")
+normal_enabled = true
+normal_texture = ExtResource("2_otnns")

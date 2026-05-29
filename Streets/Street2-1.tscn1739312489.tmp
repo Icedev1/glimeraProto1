@@ -30,7 +30,7 @@
 [ext_resource type="Script" uid="uid://c7rrmgfhlcpwe" path="res://scripts/street_exit.gd" id="27_vmswa"]
 [ext_resource type="PackedScene" uid="uid://dipqan8dujiw1" path="res://meshes/bridge.blend" id="28_eqe6e"]
 [ext_resource type="Material" uid="uid://dswhdrehkimn1" path="res://Textures/Paving Stones 138/PavingStones138_1K-JPG.tres" id="29_xjqto"]
-[ext_resource type="PackedScene" uid="uid://duolplg5v1f5o" path="res://Door Area.tscn" id="31_scw65"]
+[ext_resource type="Script" uid="uid://c66jpr0d64vfh" path="res://scripts/Door Area.gd" id="31_scw65"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_exsct"]
 size = Vector3(19.925, 0.885, 4.885)
@@ -260,6 +260,9 @@ shadow_mesh = SubResource("ArrayMesh_5b7g0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_8pb74"]
 size = Vector3(1, 2.0124512, 10.620422)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhrm4"]
+size = Vector3(1.8178115, 0.07165527, 0.9817047)
+
 [node name="Street22" type="Node3D" unique_id=1308785338]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1782459004]
@@ -284,170 +287,170 @@ transform = Transform3D(0.42174208, 0, -0.14198107, 0, 0.445, 0, 0.14198107, 0, 
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 
 [node name="Skeleton" parent="CharacterBody3D/MAsked Gli/Armature" index="0" unique_id=311386290]
-bones/0/position = Vector3(0.031484775, 5.2687793, -0.07086918)
-bones/0/rotation = Quaternion(-0.03703773, -0.36724156, -0.012626831, 0.9293021)
-bones/1/rotation = Quaternion(0.050388645, 0.040303733, -0.009320848, 0.9978726)
-bones/2/rotation = Quaternion(0.10051214, 0.0810308, -0.018412566, 0.9914597)
-bones/3/rotation = Quaternion(0.10051212, 0.081030704, -0.018412542, 0.9914597)
-bones/4/rotation = Quaternion(-0.037000418, -0.011002408, 0.0020646572, 0.99925256)
-bones/5/rotation = Quaternion(-0.05529014, 0.17682499, -0.012647913, 0.98260677)
-bones/8/rotation = Quaternion(0.4753192, 0.5121131, 0.49335232, -0.51808816)
-bones/9/rotation = Quaternion(-0.019815223, 0.9709747, -0.20318802, 0.1246202)
-bones/10/rotation = Quaternion(0.12819244, -0.8592351, 0.26112515, 0.42082715)
-bones/11/rotation = Quaternion(-0.018215934, 0.7292158, 0.20487553, 0.6526397)
-bones/13/rotation = Quaternion(0.44477355, -0.5404587, -0.53831387, -0.46936047)
-bones/14/rotation = Quaternion(0.20956174, 0.9624413, -0.17200069, 0.014367876)
-bones/15/rotation = Quaternion(0.098683104, 0.8838663, -0.1539543, 0.43051144)
-bones/16/rotation = Quaternion(0.15031518, -0.6548683, 0.0028137567, 0.7406382)
-bones/18/rotation = Quaternion(0.06787379, 0.22038811, 0.97094285, -0.06397152)
-bones/19/rotation = Quaternion(0.039788138, 0.94485366, -0.31176478, -0.092040144)
-bones/20/rotation = Quaternion(-0.016067367, 0.6628821, -0.74835896, 0.016971733)
-bones/21/rotation = Quaternion(0.027907321, 0.99937254, 0.020448858, -0.00759454)
-bones/24/rotation = Quaternion(-0.124564394, 0.0123483, 0.9885046, 0.08479426)
-bones/25/rotation = Quaternion(0.025625078, 0.9539832, -0.28245988, -0.09734476)
-bones/26/rotation = Quaternion(0.08011421, 0.5427854, -0.83231574, -0.078843914)
-bones/27/rotation = Quaternion(0.0031767208, 0.99986726, 0.01568614, -0.0030610515)
+bones/0/position = Vector3(0.030879544, 5.278133, -0.053526938)
+bones/0/rotation = Quaternion(-0.03851176, -0.36652976, -0.013362754, 0.9295129)
+bones/1/rotation = Quaternion(0.04918689, 0.04019297, -0.009035216, 0.9979397)
+bones/2/rotation = Quaternion(0.09812815, 0.08082581, -0.017890153, 0.99172485)
+bones/3/rotation = Quaternion(0.09812817, 0.08082571, -0.017890152, 0.99172485)
+bones/4/rotation = Quaternion(-0.029653436, -0.010771332, 0.001864341, 0.9995005)
+bones/5/rotation = Quaternion(-0.06374682, 0.1773581, -0.008041423, 0.98204684)
+bones/8/rotation = Quaternion(0.47282818, 0.513219, 0.486662, -0.5255474)
+bones/9/rotation = Quaternion(-0.017275294, 0.97024816, -0.2091336, 0.12076164)
+bones/10/rotation = Quaternion(0.13493253, -0.8596533, 0.26341492, 0.4164158)
+bones/11/rotation = Quaternion(0.00025706008, 0.7329483, 0.18244492, 0.65536296)
+bones/13/rotation = Quaternion(0.44262776, -0.5422888, -0.5309758, -0.477565)
+bones/14/rotation = Quaternion(0.2039738, 0.9611086, -0.18485822, 0.022191525)
+bones/15/rotation = Quaternion(0.112143144, 0.88023674, -0.15761411, 0.4333187)
+bones/16/rotation = Quaternion(0.15040703, -0.6528709, 0.0105336765, 0.7423116)
+bones/18/rotation = Quaternion(0.06851043, 0.2160533, 0.97194576, -0.06283852)
+bones/19/rotation = Quaternion(0.039412994, 0.94553643, -0.30955338, -0.09265214)
+bones/20/rotation = Quaternion(-0.015291557, 0.66273636, -0.748522, 0.016175352)
+bones/21/rotation = Quaternion(0.028040137, 0.99936926, 0.020380685, -0.007712028)
+bones/24/rotation = Quaternion(-0.12496205, 0.004979677, 0.98848236, 0.08522015)
+bones/25/rotation = Quaternion(0.025302274, 0.95666105, -0.27320552, -0.09756143)
+bones/26/rotation = Quaternion(0.0806107, 0.5463345, -0.8298697, -0.07960484)
+bones/27/rotation = Quaternion(0.003711999, 0.9998559, 0.016179537, -0.0035734542)
 
 [node name="Hair_012" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="0" unique_id=1287714080]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_012" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_012" index="0" unique_id=1951361331]
 surface_material_override/0 = null
 
 [node name="Hair_013" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="1" unique_id=873901604]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_013" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_013" index="0" unique_id=1333574479]
 surface_material_override/0 = null
 
 [node name="Hair_014" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="2" unique_id=476379738]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_014" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_014" index="0" unique_id=290898784]
 surface_material_override/0 = null
 
 [node name="Hair_015" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="3" unique_id=1497028541]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_015" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_015" index="0" unique_id=2084059942]
 surface_material_override/0 = null
 
 [node name="Hair_016" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="4" unique_id=2050593926]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_016" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_016" index="0" unique_id=1877561009]
 surface_material_override/0 = null
 
 [node name="Hair_017" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="5" unique_id=524858109]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_017" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_017" index="0" unique_id=225561398]
 surface_material_override/0 = null
 
 [node name="Hair_018" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="6" unique_id=1687165182]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_018" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_018" index="0" unique_id=1092096268]
 surface_material_override/0 = null
 
 [node name="Hair_019" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="7" unique_id=1727726647]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_019" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_019" index="0" unique_id=1971207923]
 surface_material_override/0 = null
 
 [node name="Hair_020" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="8" unique_id=25484365]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_020" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_020" index="0" unique_id=880474033]
 surface_material_override/0 = null
 
 [node name="Hair_021" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="9" unique_id=1073871996]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_021" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_021" index="0" unique_id=698937131]
 surface_material_override/0 = null
 
 [node name="Hair_022" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="10" unique_id=1561061912]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_022" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_022" index="0" unique_id=6161038]
 surface_material_override/0 = null
 
 [node name="Hair_023" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="11" unique_id=1993777387]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_023" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_023" index="0" unique_id=1994695443]
 surface_material_override/0 = null
 
 [node name="Hair_024" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="12" unique_id=232467729]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_024" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_024" index="0" unique_id=1189578407]
 surface_material_override/0 = null
 
 [node name="Hair_025" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="13" unique_id=1273808181]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_025" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_025" index="0" unique_id=104699520]
 surface_material_override/0 = null
 
 [node name="Hair_026" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="14" unique_id=724191067]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_026" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_026" index="0" unique_id=1360980819]
 surface_material_override/0 = null
 
 [node name="Hair_027" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="15" unique_id=1791855920]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_027" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_027" index="0" unique_id=185309685]
 surface_material_override/0 = null
 
 [node name="Hair_028" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="16" unique_id=752217555]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_028" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_028" index="0" unique_id=140129784]
 surface_material_override/0 = null
 
 [node name="Hair_029" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="17" unique_id=1986281236]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_029" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_029" index="0" unique_id=146510434]
 surface_material_override/0 = null
 
 [node name="Hair_030" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="18" unique_id=532791653]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_030" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_030" index="0" unique_id=1646815624]
 surface_material_override/0 = null
 
 [node name="Hair_031" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="19" unique_id=274816526]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_031" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_031" index="0" unique_id=2059392675]
 surface_material_override/0 = null
 
 [node name="Hair_032" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="20" unique_id=138949315]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_032" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_032" index="0" unique_id=2005110713]
 surface_material_override/0 = null
 
 [node name="Hair_033" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="21" unique_id=765586267]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_033" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_033" index="0" unique_id=352850340]
 surface_material_override/0 = null
 
 [node name="Hair_034" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="22" unique_id=1974956672]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Hair_034" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_034" index="0" unique_id=1307167061]
 surface_material_override/0 = null
 
 [node name="Icosphere" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="23" unique_id=257716365]
-transform = Transform3D(0.99793714, -0.06419356, -0.00088506937, 0.062129833, 0.9691436, -0.23853782, 0.016170263, 0.2379907, 0.97113264, -0.17914918, 8.423663, 0.660543)
+transform = Transform3D(0.9976572, -0.068398684, -0.0014423132, 0.06639081, 0.97302914, -0.2209219, 0.016514271, 0.22030848, 0.9752905, -0.16581436, 8.439243, 0.65719897)
 
 [node name="Boot" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="24" unique_id=1004540596]
 surface_material_override/0 = null
@@ -500,13 +503,13 @@ surface_material_override/0 = null
 surface_material_override/0 = null
 
 [node name="RightArmGraft" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="46" unique_id=1562468153]
-transform = Transform3D(-0.05381632, -0.9316526, -0.35934317, 0.9762188, -0.12476961, 0.17728281, -0.21000113, -0.34125686, 0.91621137, -1.4469683, 6.5760493, -0.99912584)
+transform = Transform3D(-0.07940373, -0.9352042, -0.34509194, 0.97275704, -0.14833333, 0.1781599, -0.21780446, -0.3215441, 0.9215045, -1.4335501, 6.607861, -0.99713486)
 
 [node name="LeftLegGraft" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="47" unique_id=1148643271]
-transform = Transform3D(-0.8310869, -0.21861197, -0.5113741, -0.085191675, -0.85860634, 0.5055072, -0.54957896, 0.46368515, 0.6949525, 0.50997317, 4.966438, 0.42122632)
+transform = Transform3D(-0.83231413, -0.21665515, -0.51020974, -0.08252175, -0.8617616, 0.500557, -0.5481274, 0.45872402, 0.69937736, 0.5093313, 4.975662, 0.4385247)
 
 [node name="ViolinPlace" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="48" unique_id=329092666]
-transform = Transform3D(0.9421923, -0.12832437, -0.3095264, -0.015131816, 0.906521, -0.4218892, 0.3347307, 0.40218443, 0.8521753, 0.030723356, 7.182487, 0.028965846)
+transform = Transform3D(0.94216985, -0.12214483, -0.31208467, -0.01685873, 0.912765, -0.40813702, 0.33471185, 0.3897957, 0.85792035, 0.03784239, 7.1930976, 0.035844438)
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D/MAsked Gli" index="1" unique_id=390158200]
 tree_root = SubResource("AnimationNodeStateMachine_xx7fr")
@@ -1027,10 +1030,18 @@ transform = Transform3D(0.9999995, 0, 7.1054274e-14, 0, 1, 0, -7.1054274e-15, 0,
 [node name="Spawn_FromStreet1" type="Marker3D" parent="." unique_id=1653535217]
 transform = Transform3D(0.9999995, 0, 7.1054274e-14, 0, 1, 0, -7.1054274e-15, 0, 0.9999995, -26.62223, 0.15350127, -1.4745903)
 
-[node name="Area3D" parent="." unique_id=2086226871 instance=ExtResource("31_scw65")]
+[node name="Area3D" type="Area3D" parent="." unique_id=817217376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2125406, 2.116483, -8.164523)
+collision_mask = 2
+script = ExtResource("31_scw65")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=764965790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1953299, 0.17775965, 0.6151514)
+shape = SubResource("BoxShape3D_hhrm4")
 
 [connection signal="body_entered" from="Go To Street 2" to="Go To Street 2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1"]
