@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d4abv0lhql31l"]
+
+[ext_resource type="Texture2D" uid="uid://dte4d5th4g8nv" path="res://meshes/Houses/House1/textures/RoofingTiles012B_2K-PNG_Color.png" id="1_02l3v"]
+[ext_resource type="Texture2D" uid="uid://dcpj0qiwfj5fr" path="res://meshes/Houses/BookHouse/Book House 1_RoofingTiles012B_1K-PNG_NormalGL.png" id="2_d8ul6"]
+[ext_resource type="Texture2D" uid="uid://clpbn3rfav8l" path="res://meshes/Houses/BookHouse/Book House 1_RoofingTiles012B_1K-PNG_Roughness.png" id="3_wowf5"]
+
+[resource]
+albedo_texture = ExtResource("1_02l3v")
+roughness_texture = ExtResource("3_wowf5")
+normal_enabled = true
+normal_texture = ExtResource("2_d8ul6")
+heightmap_enabled = true
