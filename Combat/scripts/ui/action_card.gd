@@ -4,12 +4,16 @@ extends PanelContainer
 
 signal pressed
 
+const OUTLINE_SHADER := preload("res://Shaders/card_outline.gdshader")
+
 @onready var action_name_label: Label = %action_name_label
 @onready var cooldown_label: Label = %cooldown_label
 @onready var description_label: Label = %description_label
 @onready var click_area: Button = %click_area
 @onready var cooldown_bar: ProgressBar = %cooldown_bar
 @onready var action_icon: TextureRect = %action_icon
+
+var _outline_material: ShaderMaterial
 
 @export var icon: Texture2D:
 	set(v):
@@ -52,3 +56,11 @@ func set_on_cooldown(is_cooling: bool, remaining: float, total: float) -> void:
 	modulate = Color(0.5, 0.5, 0.5) if is_cooling else Color.WHITE
 	cooldown_bar.max_value = total
 	cooldown_bar.value = remaining
+
+# ── Element outline ───────────────────────────────────────────────────────────
+func set_outline_color(color: Color) -> void:
+	if _outline_material == null:
+		_outline_material = ShaderMaterial.new()
+		_outline_material.shader = OUTLINE_SHADER
+		material = _outline_material
+	_outline_material.set_shader_parameter("outline_color", color)

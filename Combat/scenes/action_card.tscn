@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://cuaxdh21q1jls"]
 
-[ext_resource type="Texture2D" uid="uid://bi0sdbu2kkesm" path="res://images/StoneTablet.png" id="1_4bmbb"]
+[ext_resource type="Texture2D" uid="uid://g8fb1ya684wy" path="res://images/StoneTablet2.png" id="1_4bmbb"]
 [ext_resource type="Script" uid="uid://680e4utteuks" path="res://Combat/scripts/ui/action_card.gd" id="1_xkd22"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vt3ji"]
 texture = ExtResource("1_4bmbb")
-expand_margin_left = 60.0
-expand_margin_top = 8.0
-expand_margin_right = 72.0
-expand_margin_bottom = 8.0
 
 [node name="ActionCard" type="PanelContainer" unique_id=1847938993]
 custom_minimum_size = Vector2(120, 160)

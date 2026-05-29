@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://curdomnwk0nse"]
 
 [ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_0kq43"]
+[ext_resource type="Texture2D" uid="uid://dq8ligxisbn0u" path="res://images/paper.png" id="2_cnnsq"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_uj1jv"]
 
 [resource]
@@ -9,4 +10,5 @@ weapon_name = "Punch"
 attack_damage = 10
 cooldown = 4.0
 element = 1
+icon = ExtResource("2_cnnsq")
 metadata/_custom_type_script = "uid://b1exkd2nbk06k"

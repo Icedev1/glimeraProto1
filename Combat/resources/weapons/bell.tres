@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://e1g6ioxpspfp"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_8haly"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_imrc4"]
+[ext_resource type="Resource" uid="uid://c2ydm0l3jds3i" path="res://Combat/resources/status_effects/weaken.tres" id="2_r4jmi"]
+[ext_resource type="Resource" uid="uid://cbbauurg4p3he" path="res://Combat/resources/status_effects/slow.tres" id="3_pgf82"]
+[ext_resource type="Texture2D" uid="uid://dq6kp4twx3mie" path="res://images/6224567.png" id="4_pgf82"]
+
+[resource]
+script = ExtResource("2_imrc4")
+weapon_name = "Bell"
+attack_damage = 10
+cooldown = 7.0
+hp_cost = 3
+icon = ExtResource("4_pgf82")
+effects = Array[ExtResource("1_8haly")]([ExtResource("2_r4jmi"), ExtResource("3_pgf82")])
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

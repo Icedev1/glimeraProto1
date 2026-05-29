@@ -1,8 +1,9 @@
 # WeaponCard.gd
 class_name WeaponCard
 extends PanelContainer
-
 signal pressed
+
+const OUTLINE_SHADER := preload("res://Shaders/card_outline.gdshader")
 
 @onready var weapon_name_label: Label = %weapon_name_label
 @onready var attack_label: Label = %attack_label
@@ -13,16 +14,16 @@ signal pressed
 @onready var cooldown_bar: ProgressBar = %cooldown_bar
 @onready var weapon_icon: TextureRect = %weapon_icon
 
+var _outline_material: ShaderMaterial
+
 @export var weapon: Weapon:
 	set(w):
 		weapon = w
 		if is_node_ready(): _refresh()
-
 @export var show_hp_cost: bool = false:
 	set(v):
 		show_hp_cost = v
 		if is_node_ready(): _refresh()
-
 func _ready() -> void:
 	cooldown_bar.value = 0.0
 	click_area.pressed.connect(func(): pressed.emit())
@@ -30,7 +31,6 @@ func _ready() -> void:
 		weapon_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		weapon_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	_refresh()
-
 func _refresh() -> void:
 	if weapon == null:
 		weapon_name_label.text = "(empty)"
@@ -47,7 +47,6 @@ func _refresh() -> void:
 	if weapon_icon:
 		weapon_icon.texture = weapon.icon
 		weapon_icon.custom_minimum_size = Vector2(120, 120)
-
 	attack_label.text = "⚔  ATK:  %d" % weapon.attack_damage
 	cooldown_label.text = "⏱  CD:    %.1fs" % weapon.cooldown
 	hp_cost_label.text = "❤  Cost:  %d HP" % weapon.hp_cost
@@ -55,8 +54,15 @@ func _refresh() -> void:
 	var desc := weapon.get_description()
 	description_label.text = desc
 	description_label.visible = desc != ""
-
 func set_on_cooldown(is_cooling: bool, remaining: float, total: float) -> void:
 	modulate = Color(0.5, 0.5, 0.5) if is_cooling else Color.WHITE
 	cooldown_bar.max_value = total
 	cooldown_bar.value = remaining
+
+# ── Element outline ───────────────────────────────────────────────────────────
+func set_outline_color(color: Color) -> void:
+	if _outline_material == null:
+		_outline_material = ShaderMaterial.new()
+		_outline_material.shader = OUTLINE_SHADER
+		material = _outline_material
+	_outline_material.set_shader_parameter("outline_color", color)

@@ -9,6 +9,6 @@ icon = ExtResource("1_3ctxk")
 effect_name = "Haste"
 type = 4
 applies_to = 0
-value = 1.0
+value = 0.5
 duration = 3.0
 metadata/_custom_type_script = "uid://c1nu6bnlqi3dc"
