@@ -400,7 +400,6 @@ shape = SubResource("CapsuleShape3D_e7qpp")
 [node name="ChaseDetection" type="Area3D" parent="Angry Steve" unique_id=1578529593]
 collision_layer = 8
 collision_mask = 2
-script = ExtResource("23_8el4g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Angry Steve/ChaseDetection" unique_id=94626944]
 transform = Transform3D(0.12832814, 0, 0.99173135, 0, 1.0000539, 0, -0.99173135, 0, 0.12832814, 0.016412914, 0.43618903, -2.4663124)
