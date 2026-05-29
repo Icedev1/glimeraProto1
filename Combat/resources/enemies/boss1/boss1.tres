@@ -11,5 +11,5 @@ script = ExtResource("3_easjw")
 weapons = Array[ExtResource("2_lxmyn")]([ExtResource("5_p1hh2"), ExtResource("5_p1hh2")])
 element = 1
 portrait = ExtResource("1_lxmyn")
-unit_name = "Guard"
+unit_name = "Intimidating Figure"
 max_hp = 150

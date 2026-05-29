@@ -8,7 +8,6 @@ func _on_body_entered(body: Node3D) -> void:
 			"res://Streets/Street1-2.tscn": # entering street 2
 				ObjectiveManager.reveal_objective("see_figure")
 			"res://Streets/Market1.tscn": # entering market pt.1
-				ObjectiveManager.complete_objective("find_noise")
 				ObjectiveManager.reveal_objective("find_climb")
 		
 		var game = get_tree().current_scene

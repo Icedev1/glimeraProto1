@@ -21,6 +21,3 @@ visible = false
 
 [node name="Consumables" parent="Battle_UI/options_menu" parent_id_path=PackedInt32Array(40959146) index="4" unique_id=373898980]
 visible = false
-
-[node name="ResultScreen" parent="." index="5" unique_id=82600526]
-visible = false

@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
 [ext_resource type="Resource" uid="uid://kc77x8sqfqls" path="res://Combat/resources/enemies/boss1/boss1.tres" id="2_01irj"]
-[ext_resource type="Texture2D" uid="uid://cir7rbn5cqw5m" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG_Color.png" id="3_r8c2t"]
-[ext_resource type="Texture2D" uid="uid://cv0tqyipnunmf" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG_AmbientOcclusion.png" id="4_01irj"]
+[ext_resource type="Texture2D" uid="uid://ovvm1ii6heoi" path="res://meshes/textures/Wood035_1K-PNG_Displacement.png" id="3_01irj"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
@@ -11,15 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="4_q77w5"]
 [ext_resource type="Script" uid="uid://bh558h22wt4y0" path="res://Combat/scripts/battle/battle_player.gd" id="5_1fagd"]
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
-[ext_resource type="Texture2D" uid="uid://db32afdtu2g6w" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG_Displacement.png" id="5_n1uve"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
-[ext_resource type="Texture2D" uid="uid://dryui8u6hrjg4" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG_NormalGL.png" id="6_q6ghl"]
 [ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="6_r8c2t"]
-[ext_resource type="Texture2D" uid="uid://bggc21slrjlru" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG_Roughness.png" id="7_x13a4"]
 [ext_resource type="Texture2D" uid="uid://calpspnwlo7n0" path="res://images/Gli Portrait.png" id="12_n1uve"]
 [ext_resource type="Texture2D" uid="uid://b4en42keqdivj" path="res://images/aptaltaş.png" id="13_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://d25buoesqrnq7" path="res://images/8037114.png" id="17_onrm6"]
 [ext_resource type="Texture2D" uid="uid://b1pldpe4chka1" path="res://images/11279725.png" id="18_fr5r2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1uve"]
+albedo_texture = ExtResource("3_01irj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrm6"]
 cull_mode = 2
@@ -42,10 +41,10 @@ size = Vector3(106.26196, 1, 211.75021)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01irj"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1uve"]
 bg_color = Color(0.1764706, 0.3529412, 0.105882354, 1)
@@ -54,17 +53,17 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6ghl"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x13a4"]
 bg_color = Color(0.3529412, 0.101960786, 0.101960786, 1)
@@ -73,10 +72,10 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x13a4"]
 texture = ExtResource("13_q6ghl")
@@ -182,6 +181,7 @@ enemy_resource = ExtResource("2_01irj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Env/StaticBody3D" unique_id=1556537393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009730339, 0, 0.021704674)
+material_override = SubResource("StandardMaterial3D_n1uve")
 mesh = SubResource("PlaneMesh_fr5r2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Env/StaticBody3D" unique_id=1288593480]
@@ -265,10 +265,10 @@ anchor_left = 0.59400004
 anchor_top = 0.12200001
 anchor_right = 0.83300006
 anchor_bottom = 0.16800001
-offset_left = -368.66403
-offset_top = 50.9
-offset_right = -368.54404
-offset_bottom = 100.6
+offset_left = 140.33597
+offset_top = 52.9
+offset_right = 140.456
+offset_bottom = 102.6
 grow_vertical = 2
 size_flags_horizontal = 8
 
@@ -288,7 +288,7 @@ layout_mode = 2
 
 [node name="EnemyHPBar" type="ProgressBar" parent="Battle_UI/EnemyArea/HBoxContainer" unique_id=1891558976]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(600, 50)
+custom_minimum_size = Vector2(650, 50)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_q6ghl")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x13a4")
@@ -554,17 +554,17 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 32
 scroll_following = true
 
-[node name="enemy_effects_label" type="RichTextLabel" parent="Battle_UI" unique_id=1208824417]
+[node name="EnemyEffectsContainer" type="HBoxContainer" parent="Battle_UI" unique_id=450878887]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.12200001
 anchor_top = 0.124000005
 anchor_right = 0.455
 anchor_bottom = 0.162
-offset_left = 880.76
-offset_top = -35.920013
-offset_right = 880.39996
-offset_bottom = -35.960007
+offset_left = 862.76
+offset_top = -40.920013
+offset_right = 862.39996
+offset_bottom = -40.960007
 
 [node name="GraftMenu" parent="Battle_UI" unique_id=1743679526 instance=ExtResource("5_lpir7")]
 unique_name_in_owner = true
@@ -577,6 +577,7 @@ offset_bottom = 108.75995
 [node name="ResultScreen" type="CanvasLayer" parent="." unique_id=82600526]
 unique_name_in_owner = true
 layer = 2
+visible = false
 
 [node name="Control" type="Control" parent="ResultScreen" unique_id=1863610074]
 layout_mode = 3

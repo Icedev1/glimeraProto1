@@ -136,41 +136,71 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w341s"]
+bg_color = Color(0.18039216, 0.16862746, 0.16078432, 0.92941177)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.34901962, 0.32156864, 0.28235295, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.43529412)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwxdn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuhpl"]
+bg_color = Color(0.1391766, 0.12941194, 0.12290198, 0.92941177)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4xyy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0.5119299, 0.47687167, 0.42685235, 1)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_mu6j1"]
-color = Color(1, 1, 1, 1)
+color = Color(0.34901962, 0.32156864, 0.28235295, 1)
 grow_begin = 0.0
 grow_end = -7.0
 thickness = 6
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_dx7kf"]
-color = Color(0, 0.56078434, 0.09019608, 1)
+color = Color(0.6745098, 0, 0, 1)
 thickness = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd6uk"]
-bg_color = Color(0.8117647, 0, 0.20392157, 1)
+bg_color = Color(0.66895264, 5.9441477e-06, 3.946722e-06, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3fmm"]
-bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.8117647)
+bg_color = Color(0.18039216, 0.16862746, 0.16078432, 0.92941177)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+border_color = Color(0.34901962, 0.32156864, 0.28235295, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.43529412)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xft1h"]
-bg_color = Color(0.07881496, 0.07881499, 0.07881493, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+bg_color = Color(0.18039216, 0.16862746, 0.16078432, 0.92941177)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.34901962, 0.32156864, 0.28235295, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.43529412)
+shadow_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu6j1"]
 bg_color = Color(0, 0, 0, 0)
@@ -384,7 +414,6 @@ autoplay = &"Idle Straight"
 transform = Transform3D(1, 0, 0, 0, 0.9226593, 0.38561618, 0, -0.38561618, 0.9226593, 0, 0.67658234, 1.2380623)
 
 [node name="GraftsPage" type="Control" parent="." unique_id=77643113]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -521,6 +550,7 @@ offset_left = 55.0
 offset_top = 38.0
 offset_right = 528.0
 offset_bottom = 134.0
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9411765, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 60
 text = "G R A F T I N G"
@@ -548,6 +578,7 @@ offset_right = 258.69598
 offset_bottom = 232.01599
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w341s")
 
 [node name="TabContainer" type="TabContainer" parent="SettingsPage/Settings" unique_id=147266384]
 layout_mode = 1
@@ -561,6 +592,10 @@ offset_top = -84.168
 offset_right = 192.49997
 offset_bottom = -44.168
 theme_override_constants/side_margin = 0
+theme_override_constants/tab_separation = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_bwxdn")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_tuhpl")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_t4xyy")
 current_tab = 0
 
 [node name="Audio" type="VBoxContainer" parent="SettingsPage/Settings/TabContainer" unique_id=1447972656]
@@ -807,6 +842,7 @@ offset_left = 891.0
 offset_top = 648.0
 offset_right = 1031.0
 offset_bottom = 676.0
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9411765, 1)
 theme_override_font_sizes/font_size = 20
 text = "ESC to go back"
 
@@ -816,11 +852,16 @@ offset_left = 55.0
 offset_top = 38.0
 offset_right = 528.0
 offset_bottom = 134.0
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9411765, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.43529412)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 60
 text = "S E T T I N G S"
 
 [node name="InventoryPage" type="Control" parent="." unique_id=615978731]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -896,6 +937,7 @@ offset_left = 55.0
 offset_top = 38.0
 offset_right = 528.0
 offset_bottom = 134.0
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9411765, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 60
 text = "I N V E N T O R Y"

@@ -11,6 +11,10 @@ func _ready() -> void:
 	ObjectiveManager.main_quest_updated.connect(_on_main_quest_updated)
 	_refresh()
 	$VBoxContainer/Header.text = "◆ " + ObjectiveManager.main_quest
+	GraftGlobals.menu_opened.connect(func(): visible = false)
+
+func _process(_delta: float) -> void:
+	visible = not get_tree().paused and get_tree().root.get_node("Root").current_state != "battle"
 
 func _refresh() -> void:
 	for child in vbox.get_children():

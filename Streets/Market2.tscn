@@ -25,10 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://71w6wpdtgb7a" path="res://Prop Scenes/npc1.tscn" id="19_vnwsp"]
 [ext_resource type="Script" uid="uid://bs282g5m08tfj" path="res://scripts/dialogue_trigger.gd" id="20_e7qpp"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="20_j8vb1"]
-[ext_resource type="Script" uid="uid://bjctkeuaafa8e" path="res://scripts/chasing_npc.gd" id="20_yy0f5"]
 [ext_resource type="ArrayMesh" uid="uid://dkajpf7n6toy1" path="res://meshes/Gli Mesh 1/Upper Arm L.tres" id="21_pp0yl"]
-[ext_resource type="Resource" uid="uid://kc77x8sqfqls" path="res://Combat/resources/enemies/boss1/boss1.tres" id="21_yy0f5"]
-[ext_resource type="Script" uid="uid://cjwvql8cbffq2" path="res://scripts/chase_detection.gd" id="23_8el4g"]
 [ext_resource type="PackedScene" uid="uid://dtcotjhfc4ego" path="res://3rdPersonCam.tscn" id="27_4go0v"]
 [ext_resource type="PackedScene" uid="uid://bn0wk7vxnpq5f" path="res://meshes/Market Stands/Market Stand.blend" id="28_pp0yl"]
 [ext_resource type="PackedScene" uid="uid://b1hg4arjipfl4" path="res://meshes/Market Stands/Market Stand 2.blend" id="29_sp04o"]
@@ -86,13 +83,6 @@ size = Vector3(19.714804, 13.973022, 44.465294)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ji77o"]
 size = Vector3(1, 2.0124512, 13.710327)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7qpp"]
-radius = 0.14697266
-height = 0.6586914
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_36i0r"]
-size = Vector3(4.018654, 1, 0.21398926)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vnwsp"]
 radius = 0.3466797
@@ -907,16 +897,12 @@ material_override = SubResource("StandardMaterial3D_dad2d")
 mesh = ExtResource("40_ef0ru")
 
 [connection signal="body_entered" from="Go To Market 1" to="Go To Market 1" method="_on_body_entered"]
-[connection signal="body_entered" from="Angry Steve/Area3D" to="Angry Steve" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Angry Steve/ChaseDetection" to="Angry Steve/ChaseDetection" method="_on_body_entered"]
 [connection signal="body_entered" from="Chill Derek/Area3D" to="Chill Derek/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Chill Derek/Area3D" to="Chill Derek/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="RespawnArea3D" to="CharacterBody3D" method="_on_respawn_area_3d_body_entered"]
 
 [editable path="UI Elements/Prompt"]
 [editable path="House 2"]
-[editable path="Angry Steve"]
-[editable path="Angry Steve/NPC1"]
 [editable path="Statue"]
 [editable path="Statue/NPC2"]
 [editable path="Statue2"]

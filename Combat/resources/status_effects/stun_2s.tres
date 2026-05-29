@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://cgiyrxovm334s"]
 
-[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_o57em"]
+[ext_resource type="Texture2D" uid="uid://cyp052rn342nf" path="res://images/11431373.png" id="1_nuw0d"]
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_o57em"]
 
 [resource]
 script = ExtResource("1_o57em")
+icon = ExtResource("1_nuw0d")
 effect_name = "Stun"
 type = 7
 duration = 2.0
