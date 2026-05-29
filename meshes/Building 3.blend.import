@@ -37,7 +37,25 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"PavingStones006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://meshes/textures/church.tres",
+"use_external/path": "uid://dg16cqh6ed8lg"
+},
+"PavingStones006.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://meshes/textures/church.tres",
+"use_external/path": "uid://dg16cqh6ed8lg"
+},
+"Wood025": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Textures/Wood025/wood025.tres",
+"use_external/path": "uid://dr2f0orsbujnh"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dg16cqh6ed8lg"]
+
+[ext_resource type="Texture2D" uid="uid://db3ngcxbxap0k" path="res://meshes/Building 3_PavingStones006_2K-PNG_Color.png" id="1_27gie"]
+[ext_resource type="Texture2D" uid="uid://c2oj7vrn8876r" path="res://meshes/Building 3_PavingStones006_2K-PNG_NormalGL.png" id="2_oixul"]
+[ext_resource type="Texture2D" uid="uid://jdajabxswy61" path="res://meshes/Building 3_PavingStones006_2K-PNG_Roughness.png" id="3_oixul"]
+
+[resource]
+albedo_texture = ExtResource("1_27gie")
+roughness_texture = ExtResource("3_oixul")
+normal_enabled = true
+normal_texture = ExtResource("2_oixul")

@@ -349,3 +349,4 @@ common/physics_interpolation=true
 
 rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
+global_illumination/gi/use_half_resolution=true
