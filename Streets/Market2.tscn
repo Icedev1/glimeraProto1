@@ -251,6 +251,13 @@ albedo_texture = ExtResource("2_j382a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dad2d"]
 albedo_texture = ExtResource("2_j382a")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7qpp"]
+radius = 0.3466797
+height = 0.83935547
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36i0r"]
+size = Vector3(2.0, 2.0, 2.0)
+
 [node name="Market1" type="Node3D" unique_id=1437225535]
 
 [node name="Spawn_FromMarket1" type="Marker3D" parent="." unique_id=1676370970]
