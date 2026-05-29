@@ -7,13 +7,12 @@ extends Control
 @onready var background_music: AudioStreamPlayer = $"Background Music"
 
 func _ready() -> void:
-	print(get_tree().root.get_children())
 	menu_buttons.visible = true
 	settings.visible = false
 	
 	var info = SaveManager.get_slot_info(0)
 	var continue_btn = $MenuButtons/ContinueButton
-	if info["empty"]:
+	if info["empty"] or not info.get("scene", "").contains("Streets"):
 		continue_btn.modulate.a = 0.4
 		continue_btn.disabled = true
 
@@ -21,15 +20,20 @@ func _on_new_game_button_pressed() -> void:
 	button_sfx.play()
 	background_music.stop()
 	SaveManager.delete_slot(0)
+	StoryFlags.current_scene = ""
+	StoryFlags.checkpoint_position = Vector3.ZERO
 	get_tree().root.get_node("Root").from_main_menu_to_overworld()
 
 func _on_continue_button_pressed() -> void:
 	button_sfx.play()
 	background_music.stop()
 	if SaveManager.load_slot(0):
-		get_tree().root.get_node("Root").transition_to_street(
-			StoryFlags.current_scene, ""
-		)
+		if StoryFlags.current_scene == "" or not StoryFlags.current_scene.contains("Streets"):
+			get_tree().root.get_node("Root").from_main_menu_to_overworld()
+		else:
+			get_tree().root.get_node("Root").transition_to_street(
+				StoryFlags.current_scene, ""
+			)
 
 func _on_load_save_button_pressed() -> void:
 	button_sfx.play()
