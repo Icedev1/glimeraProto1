@@ -7,5 +7,11 @@ func _on_body_entered(body: Node3D) -> void:
 		StoryFlags.checkpoint_position = body.global_position
 		SaveManager.save(0)
 		print("Saved! Scene: ", StoryFlags.current_scene, " Pos: ", StoryFlags.checkpoint_position)
+		match target_street:
+			"res://Streets/Street1-2.tscn": # entering street 2
+				ObjectiveManager.reveal_objective("see_figure")
+			"res://Streets/Market1.tscn": # entering market pt.1
+				ObjectiveManager.reveal_objective("find_climb")
+		
 		var game = get_tree().current_scene
 		game.transition_to_street(target_street, spawn_name)

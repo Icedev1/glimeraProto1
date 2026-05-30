@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://1waj33latue5"]
 
 [ext_resource type="PackedScene" uid="uid://nt5alitb46d5" path="res://environment.tscn" id="1_5gsmc"]
-[ext_resource type="Material" uid="uid://cg4gs15tqn333" path="res://Textures/Cobblestone Texture/PavingStones150_2K-JPG.tres" id="2_vlelu"]
+[ext_resource type="Material" uid="uid://bqwk570rccl74" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG.tres" id="2_vlelu"]
 [ext_resource type="PackedScene" uid="uid://b5ljseslrww0k" path="res://meshes/stairs.blend" id="3_bkdbt"]
-[ext_resource type="Material" uid="uid://dh3t6o8pi6yk1" path="res://Textures/Paving Stones 138/PavingStones138_2K-JPG.tres" id="4_fgmf1"]
+[ext_resource type="Material" uid="uid://dswhdrehkimn1" path="res://Textures/Paving Stones 138/PavingStones138_1K-JPG.tres" id="4_fgmf1"]
 [ext_resource type="PackedScene" uid="uid://du3q4pxsok34d" path="res://Prop Scenes/Street 1 Gate.tscn" id="5_0ls1t"]
 [ext_resource type="Script" uid="uid://bs282g5m08tfj" path="res://scripts/dialogue_trigger.gd" id="8_xi5xy"]
 [ext_resource type="Script" uid="uid://c7rrmgfhlcpwe" path="res://scripts/street_exit.gd" id="13_ctppe"]

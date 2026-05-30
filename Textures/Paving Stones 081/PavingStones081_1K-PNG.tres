@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjw3wwr01n6cm" path="res://Textures/Paving Stones 081/PavingStones081_1K-PNG_Roughness.png" id="Roughness"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("Color")
 roughness_texture = ExtResource("Roughness")
 roughness_texture_channel = 4

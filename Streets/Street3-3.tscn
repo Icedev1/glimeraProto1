@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://jmr1vxvkyu0k"]
 
+[ext_resource type="Material" uid="uid://bqwk570rccl74" path="res://Textures/Cobblestone Texture/PavingStones150_1K-PNG.tres" id="1_72rro"]
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="2_ysvma"]
 [ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="3_mggva"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="4_l00bj"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dtcotjhfc4ego" path="res://3rdPersonCam.tscn" id="11_7vpha"]
 [ext_resource type="PackedScene" uid="uid://nt5alitb46d5" path="res://environment.tscn" id="15_3q7ut"]
 [ext_resource type="PackedScene" uid="uid://b5ljseslrww0k" path="res://meshes/stairs.blend" id="19_vh0b5"]
+[ext_resource type="Material" uid="uid://dswhdrehkimn1" path="res://Textures/Paving Stones 138/PavingStones138_1K-JPG.tres" id="20_ln1t7"]
 [ext_resource type="PackedScene" uid="uid://clqksao7s4d6a" path="res://meshes/Houses/House 4.blend" id="24_xw3pu"]
 [ext_resource type="PackedScene" uid="uid://bklb1ddyvaq8t" path="res://meshes/Houses/House 5.blend" id="25_u14id"]
 [ext_resource type="PackedScene" uid="uid://im4l6dyrqacs" path="res://meshes/Houses/House3/House 3.blend" id="26_4p124"]

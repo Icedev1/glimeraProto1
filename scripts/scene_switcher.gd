@@ -22,7 +22,7 @@ func _ready() -> void:
 			return
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and !BattleManager._battle_active:
 		if get_tree().paused:
 			_toggle_menu_camera(false)
 			get_tree().paused = false

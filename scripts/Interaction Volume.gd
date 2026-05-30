@@ -14,9 +14,12 @@ func _process(delta: float) -> void:
 			return
 		Dialogic.start(timelineName)
 		get_viewport().set_input_as_handled()
+	if Input.is_action_just_pressed("ui_interact") and inRange:
+		print("ObjectInteract fired for: ", get_parent().name)
 
 
 func _on_body_entered(body: Node3D) -> void:
+	print("InteractionVolume body entered: ", body.name)
 	inRange = true
 	$CanvasLayer/Prompt.visible = true
 	var world_pos = global_transform.origin + Vector3(0, 0.5, 0) # offset above

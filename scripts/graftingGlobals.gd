@@ -10,3 +10,5 @@ var sawObtained : bool = false
 var sledgehammerObtained : bool  = false
 var hoseObtained : bool = false
 var graftSFX : AudioStream = preload("res://Sounds/SFX/1101.wav")
+var porcelainDefeated: bool = false
+var angrySteveDead: bool = false

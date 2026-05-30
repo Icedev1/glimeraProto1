@@ -11,24 +11,24 @@ const TURN_SPEED := 9.0
 var knockback_velocity := Vector3.ZERO
 var knockback_time := 0.0
 
-var _test_index: int = 0
-var _test_ids: Array = [
-	"pickup_violin",
-	"pickup_sledgehammer", 
-	"interact_door",
-	"inspect_stairs",
-	"find_climb",
-	"help_figure",
-    "climb_stairs"
-]
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_focus_next"):
-		if _test_index < _test_ids.size():
-			ObjectiveManager.complete_objective(_test_ids[_test_index])
-			if _test_index + 1 < _test_ids.size():
-				ObjectiveManager.reveal_objective(_test_ids[_test_index + 1])
-			_test_index += 1
+#var _test_index: int = 0
+#var _test_ids: Array = [
+	#"pickup_violin",
+	#"pickup_sledgehammer", 
+	#"interact_door",
+	#"inspect_stairs",
+	#"find_climb",
+	#"help_figure",
+	#"climb_stairs"
+#]
+#
+#func _process(delta: float) -> void:
+	#if Input.is_action_just_pressed("ui_focus_next"):
+		#if _test_index < _test_ids.size():
+			#ObjectiveManager.complete_objective(_test_ids[_test_index])
+			#if _test_index + 1 < _test_ids.size():
+				#ObjectiveManager.reveal_objective(_test_ids[_test_index + 1])
+			#_test_index += 1
 func _physics_process(delta):
 	# Gravity
 	if not is_on_floor():
@@ -51,15 +51,16 @@ func get_input() -> Vector3:
 	)
 
 func get_move_direction() -> Vector3:
+
 	var input_dir := get_input()
 
 	if input_dir == Vector3.ZERO:
 		return Vector3.ZERO
 
-	var cam_basis = camera.global_transform.basis
+	var cam_basis := camera.global_transform.basis
 
-	var forward = cam_basis.z
-	var right = cam_basis.x
+	var forward := cam_basis.z
+	var right := cam_basis.x
 
 	forward.y = 0
 	right.y = 0
@@ -68,7 +69,7 @@ func get_move_direction() -> Vector3:
 	right = right.normalized()
 
 	return (right * input_dir.x + forward * input_dir.z).normalized()
-
+	
 func move_horizontal(direction: Vector3):
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
@@ -81,14 +82,14 @@ func rotate_toward(direction: Vector3, delta: float):
 	if direction.length() < 0.01:
 		return
 
-	var target_angle = atan2(direction.x, direction.z) - PI / 2
+	var target_angle = atan2(direction.x, direction.z)
 
-	model.rotation.y = lerp_angle(
-		model.rotation.y,
+	model.global_rotation.y = lerp_angle(
+		model.global_rotation.y,
 		target_angle,
 		delta * TURN_SPEED
 	)
-
+	
 func apply_knockback(dir: Vector3, strength := 4.0, duration := 0.2):
 	knockback_velocity = dir.normalized() * strength
 	knockback_time = duration
@@ -105,6 +106,23 @@ func face_menu_camera() -> void:
 		var target_angle = atan2(dir.x, dir.z) - PI / 2
 		$"MAsked Gli".rotation.y = target_angle
 
+# Static Camera Functions
+
+func _get_input() -> Vector2:
+	return Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	)
+	
+func _get_camera_direction(input_dir: Vector2) -> Vector3:
+	if input_dir == Vector2.ZERO:
+		camera = CamMan.instance.getPlayerCam()
+	if camera == null:
+		camera = CamMan.instance.getPlayerCam()
+	var cam_basis = camera.global_transform.basis
+	var cam_forward = cam_basis.z
+	var cam_right = cam_basis.x
+	return (cam_right * input_dir.x + cam_forward * input_dir.y).normalized()
 
 func _on_respawn_area_3d_body_entered(body: Node3D) -> void:
 	$".".global_transform.origin = Vector3.ZERO # Replace with function body.

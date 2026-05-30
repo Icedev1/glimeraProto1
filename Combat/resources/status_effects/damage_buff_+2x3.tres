@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://cyv14qy4nv1uh"]
 
-[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_iny1b"]
+[ext_resource type="Texture2D" uid="uid://do8yp4qeb5wrd" path="res://images/15532692.png" id="1_7fk7l"]
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_iny1b"]
 
 [resource]
 script = ExtResource("1_iny1b")
+icon = ExtResource("1_7fk7l")
 effect_name = "Damage Buff"
 type = 2
 applies_to = 0

@@ -5,6 +5,10 @@ var inRange : bool = false
 @onready var canvasprompt: Control = null
 var auto_skip := false
 @onready var library: Node3D = $"../../.."
+@onready var particle_scene = preload("res://Particles/GlowingRingParticle.tscn")
+
+var active_particles = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -95,6 +99,16 @@ func _on_body_entered(body: Node3D) -> void:
 	if prompt:
 		prompt.visible = true
 	
+	if active_particles == null:
+
+		active_particles = particle_scene.instantiate()
+		active_particles.global_transform = $CollisionShape3D.global_transform
+		
+		active_particles.set_as_top_level(true)
+		active_particles.scale = Vector3(0.2,0.2,0.2)
+
+		get_tree().current_scene.add_child(active_particles)
+	
 	#triggers battle on touch
 	var targetname = get_parent().name
 	match targetname:
@@ -125,6 +139,10 @@ func _on_body_exited(body: Node3D) -> void:
 
 	if prompt:
 		prompt.visible = false
+	
+	if active_particles:
+		active_particles.queue_free()
+		active_particles = null
 
 
 func get_prompt():

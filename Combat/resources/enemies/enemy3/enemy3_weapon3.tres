@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bnp077toe8fey"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_1ehcl"]
+[ext_resource type="Texture2D" uid="uid://dq6kp4twx3mie" path="res://images/6224567.png" id="2_hmtac"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_jgikf"]
+
+[resource]
+script = ExtResource("3_jgikf")
+weapon_name = "Powerfull Kick"
+attack_damage = 15
+cooldown = 4.5
+icon = ExtResource("2_hmtac")
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

@@ -31,11 +31,22 @@ extends Node3D
 
 @onready var graft_menu: Control = %GraftMenu
 
-@onready var player_effects_label: RichTextLabel = %player_effects_label
-@onready var enemy_effects_label: RichTextLabel = %enemy_effects_label
+
+#@onready var player_effects_label: RichTextLabel = %player_effects_label
+#@onready var enemy_effects_label: RichTextLabel = %enemy_effects_label
+@onready var enemy_effects_container: HBoxContainer = %EnemyEffectsContainer
+@onready var low_hp_effect: ColorRect = %LowHpEffect
+
 @onready var enemy_weapon_icon: TextureRect = %EnemyWeaponIcon
 @onready var player_effects_container: HBoxContainer = %PlayerEffectsContainer
 @onready var enemy_portrait: TextureRect = %EnemyPortrait
+
+# ── Card element outline colours ──────────────────────────────────────────────
+const OUTLINE_GREEN  := Color(0.3, 1.0, 0.4, 1.0)
+const OUTLINE_RED    := Color(1.0, 0.3, 0.2, 1.0)
+const OUTLINE_ORANGE := Color(1.0, 0.55, 0.1, 1.0)
+const OUTLINE_LIME   := Color(0.7, 1.0, 0.3, 1.0)
+const OUTLINE_OFF    := Color(0.0, 0.0, 0.0, 0.0)
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
 func _ready() -> void:
@@ -51,6 +62,7 @@ func _ready() -> void:
 	_setup_cooldowns()
 	BattleManager.start_battle()
 	_setup_cards()
+	_update_attack_outlines()
 	enemy_name_label.text = BattleManager.enemy.unit_name
 	if enemy_portrait and BattleManager.enemy.portrait:
 		enemy_portrait.texture = BattleManager.enemy.portrait
@@ -62,16 +74,15 @@ func _ready() -> void:
 	
 	for flash in [player_hit_flash, enemy_hit_flash]:
 		var style = StyleBoxFlat.new()
-		style.corner_radius_top_left = 50
-		style.corner_radius_top_right = 50
-		style.corner_radius_bottom_left = 50
-		style.corner_radius_bottom_right = 50
+		style.corner_radius_top_left = 4
+		style.corner_radius_top_right = 4
+		style.corner_radius_bottom_left = 4
+		style.corner_radius_bottom_right = 4
 		flash.add_theme_stylebox_override("panel", style)
 
 func _process(_delta: float) -> void:
 	_refresh_effects(player_effects_container, PlayerManager.data)
-	if enemy_effects_label:
-		enemy_effects_label.text = BattleManager.enemy.get_effects_text()
+	_refresh_effects(enemy_effects_container, BattleManager.enemy)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if result_screen.visible:
@@ -96,6 +107,7 @@ func _connect_signals() -> void:
 	BattleManager.block_state_changed.connect(_on_block)
 	BattleManager.action_cooldown_updated.connect(_on_action_cooldown)
 	BattleManager.enemy_attack_timer_updated.connect(_on_enemy_timer)
+	BattleManager.enemy_attack_scheduled.connect(_on_enemy_attack_scheduled)
 	BattleManager.battle_ended.connect(_on_battle_ended)
 	# HP directly from UnitData
 	PlayerManager.data.hp_changed.connect(_on_player_hp)
@@ -142,7 +154,11 @@ func _on_player_hp(hp: int, max_hp: int) -> void:
 	player_hp_label.text = "HP: %d / %d" % [hp, max_hp]
 	if hp < old_hp:
 		_flash_bar(player_hit_flash, player_hp_bar, Color(1, 0, 0, 1))
-
+	## set low hp_effect
+	var ratio: float = float(hp) / float(max_hp) if max_hp > 0 else 1.0
+	low_hp_effect.material.set_shader_parameter("hp_ratio", ratio)
+	
+	
 func _on_enemy_hp(hp: int, max_hp: int) -> void:
 	var old_hp = enemy_hp_bar.value
 	enemy_hp_bar.max_value = max_hp
@@ -227,9 +243,38 @@ func _on_graft_finished(swaps: Array[Dictionary]) -> void:
 	for swap in swaps:
 		var slot: int = swap["slot"]
 		weapon_cards[slot].weapon = BattleManager._equipped[slot]
+	#update outlines 
+	_update_attack_outlines()   
+	_update_block_outline()     
 
 func _on_graft_cancelled() -> void:
 	BattleManager.cancel_graft()
+
+# ── Card element outlines ─────────────────────────────────────────────────────
+func _on_enemy_attack_scheduled() -> void:
+	_update_block_outline()
+
+func _update_attack_outlines() -> void:
+	for card in weapon_cards:
+		card.set_outline_color(_attack_color(BattleManager.get_attack_matchup(card.weapon)))
+
+func _update_block_outline() -> void:
+	block_card.set_outline_color(_block_color(BattleManager.get_enemy_attack_score()))
+
+func _attack_color(m: int) -> Color:
+	if m > 0:
+		return OUTLINE_GREEN
+	elif m < 0:
+		return OUTLINE_RED
+	return OUTLINE_OFF
+
+func _block_color(s: int) -> Color:
+	match s:
+		2:  return OUTLINE_RED       # super-effective incoming
+		1:  return OUTLINE_ORANGE    # effective 
+		-1: return OUTLINE_LIME      # ineffective 
+		-2: return OUTLINE_GREEN     # super-ineffective 
+	return OUTLINE_OFF               # neutral
 
 # ── Consumables ───────────────────────────────────────────────────────────────
 func _on_consumable_updated(_consumable: Consumable) -> void:
@@ -272,7 +317,7 @@ func _refresh_effects(container: HBoxContainer, unit: UnitData) -> void:
 		if effect.icon:
 			var icon1 = TextureRect.new()
 			icon1.texture = effect.icon
-			icon1.custom_minimum_size = Vector2(40, 40)
+			icon1.custom_minimum_size = Vector2(50, 50)
 			icon1.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			icon1.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			icon1.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -281,7 +326,7 @@ func _refresh_effects(container: HBoxContainer, unit: UnitData) -> void:
 		if effect.icon2:
 			var icon2 = TextureRect.new()
 			icon2.texture = effect.icon2
-			icon2.custom_minimum_size = Vector2(40, 40)
+			icon2.custom_minimum_size = Vector2(50, 50)
 			icon2.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			icon2.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			icon2.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED

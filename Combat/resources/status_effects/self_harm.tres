@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://x1iad8kdgpag"]
 
-[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://scripts/data/status_effect.gd" id="1_0q4cd"]
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_0q4cd"]
+[ext_resource type="Texture2D" uid="uid://b6o72xnqrau5r" path="res://images/18591696.png" id="1_2xj84"]
 
 [resource]
 script = ExtResource("1_0q4cd")
+icon = ExtResource("1_2xj84")
 effect_name = "Self Harm"
 applies_to = 0
 value = 3.0

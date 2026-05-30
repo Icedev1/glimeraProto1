@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://duolplg5v1f5o"]
+
+[ext_resource type="Script" uid="uid://c66jpr0d64vfh" path="res://scripts/Door Area.gd" id="1_j7l8s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhrm4"]
+size = Vector3(1.8178115, 0.07165527, 0.9817047)
+
+[node name="Area3D" type="Area3D" unique_id=2086226871]
+collision_mask = 2
+script = ExtResource("1_j7l8s")
+streetPath = "res://Streets/Church Interior.tscn"
+spawnName = "Spawn_From_2_1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1432791721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1953299, 0.17775965, 0.6151514)
+shape = SubResource("BoxShape3D_hhrm4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

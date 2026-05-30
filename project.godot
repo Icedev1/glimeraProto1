@@ -13,6 +13,7 @@ config_version=5
 config/name="GLIMERA proto1"
 run/main_scene="uid://ynp6rt5ks1hu"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+run/max_fps=90
 config/icon="res://images/icon.svg"
 
 [audio]
@@ -38,16 +39,21 @@ SaveManager="*uid://b8bvns0atwhgq"
 [dialogic]
 
 directories/dch_directory={
+"Evene": "res://Evene.dch",
 "Gli": "res://characters/Gli.dch",
+"Intimidating Figure": "res://Intimidating Figure.dch",
+"Porcelain Figure": "res://Porcelain Figure.dch",
 "overjoyed looking Figure": "res://characters/overjoyed looking Figure.dch",
 "skull": "res://characters/skull.dch",
 "statue_1": "res://characters/statue_1.dch"
 }
 directories/dtl_directory={
+"Intimidating Figure": "res://Intimidating Figure.dtl",
 "Talk with Bob": "res://Dialogue Timelines/Talk with Bob.dtl",
 "events": "res://Dialogue Timelines/events.dtl",
 "interactable": "res://Dialogue Timelines/interactable.dtl",
 "mid_combat": "res://Dialogue Timelines/mid_combat.dtl",
+"porcelain_figure": "res://porcelain_figure.dtl",
 "timeline": "res://Dialogue Timelines/timeline.dtl",
 "timelinelayer2": "res://Dialogue Timelines/timelinelayer2.dtl"
 }
@@ -63,11 +69,15 @@ variables={
 "TalkedToFolder": {
 "talkedTo2": false,
 "talkedTo3": false,
-"talkedTo3_2": false
+"talkedTo3_2": false,
+"talkedTo4": false
 },
 "event": "",
 "have_rope": false,
 "have_violin": false,
+"picked_a": false,
+"picked_b": false,
+"picked_c": false,
 "quest_1": "default",
 "sequence_step": 0,
 "talkedTo": false,
@@ -340,3 +350,4 @@ common/physics_interpolation=true
 
 rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
+global_illumination/gi/use_half_resolution=true
