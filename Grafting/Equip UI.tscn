@@ -253,9 +253,9 @@ script = ExtResource("1_nsmwh")
 armIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("3_n4bap"), ExtResource("4_n4bap")])
 legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf")])
 armGraftNames = Array[String](["Default", "Saw", "Hose"])
-armGraftDescs = Array[String](["", "ı saw u", "hose it up"])
+armGraftDescs = Array[String](["The Ol' Reliable", "Scissors | 4 DMG, 2s Cooldown", "Paper | 15 DMG, 2s Cooldown"])
 legGraftNames = Array[String](["Default", "Sledgehammer"])
-legGraftDescs = Array[String](["", "smack that stoney"])
+legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown"])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=756244194]
 layout_mode = 1

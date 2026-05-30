@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_cxvek")
-weapon_name = "sledge hammer"
+weapon_name = "sledgehammer"
 attack_damage = 15
 cooldown = 4.0
 hp_cost = 2
