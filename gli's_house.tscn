@@ -255,59 +255,59 @@ transform = Transform3D(0.725, 0, 0, 0, 0.725, 0, 0, 0, 0.725, -0.0011026859, 0.
 transform = Transform3D(1.7774454, 0, 0, 0, 0.91095805, 0, 0, 0, 1.7774454, 0.010458988, -0.07245517, -0.7160827)
 lod_bias = 0.001
 
-[node name="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="0" unique_id=1163959329]
+[node name="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="0" unique_id=1064807973]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 1.0656933, -0.16235358, 0.02139318)
 shape = SubResource("BoxShape3D_hpmq0")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="1" unique_id=1630444938]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="1" unique_id=1630444938]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, -1.0529188, -0.16235358, 0.02139318)
 shape = SubResource("BoxShape3D_hpmq0")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="2" unique_id=1406550744]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="2" unique_id=1406550744]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, -0.062256098, -0.16235358, 1.44776)
 shape = SubResource("BoxShape3D_ckf6d")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="3" unique_id=516306221]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="3" unique_id=516306221]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, -0.062256087, -0.16235358, -1.3895105)
 shape = SubResource("BoxShape3D_ckf6d")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="4" unique_id=1613164362]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="4" unique_id=1613164362]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0.005615193, 0.45855713, -0.053711236)
 shape = SubResource("BoxShape3D_oy0wj")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="5" unique_id=1231109242]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="5" unique_id=1231109242]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0.5962687, -0.18234253, -0.06692535)
 shape = SubResource("BoxShape3D_repcq")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="6" unique_id=1498014155]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="6" unique_id=1498014155]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, -0.59697115, -0.18234253, -0.06634554)
 shape = SubResource("BoxShape3D_evm52")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="7" unique_id=537118807]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="7" unique_id=537118807]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0.005129278, -1.2559218, -0.053711236)
 shape = SubResource("BoxShape3D_8e81o")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 188658297) index="8" unique_id=337862628]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Gli\'s House/Cube/StaticBody3D" parent_id_path=PackedInt32Array(2131513319, 1464107932) index="8" unique_id=337862628]
 transform = Transform3D(1.0000014, 0, 0, 0, 1, 0, 0, 0, 1.0000014, 0.005129278, 0.98414344, -0.053711236)
 shape = SubResource("BoxShape3D_8e81o")
 
-[node name="Plane" parent="Gli\'s House" index="1" unique_id=137168362]
+[node name="Plane" parent="Gli\'s House" index="1" unique_id=1305589555]
 transform = Transform3D(0, 0.37285325, 0, 0, 0, -0.37285325, -0.17557044, 0, 0, 1.7647204, -0.41783765, 0.5103046)
 lod_bias = 0.001
 
-[node name="Cube_001" parent="Gli\'s House" index="2" unique_id=1329100268]
+[node name="Cube_001" parent="Gli\'s House" index="2" unique_id=395189427]
 lod_bias = 0.001
 
-[node name="Cube_002" parent="Gli\'s House" index="3" unique_id=1510723829]
+[node name="Cube_002" parent="Gli\'s House" index="3" unique_id=839464301]
 lod_bias = 0.036
 
-[node name="Plane_001" parent="Gli\'s House" index="4" unique_id=1042573591]
+[node name="Plane_001" parent="Gli\'s House" index="4" unique_id=2099155575]
 lod_bias = 0.001
 
-[node name="Plane_002" parent="Gli\'s House" index="5" unique_id=491032636]
+[node name="Plane_002" parent="Gli\'s House" index="5" unique_id=1253140487]
 lod_bias = 0.001
 
-[node name="Plane_003" parent="Gli\'s House" index="6" unique_id=58342001]
+[node name="Plane_003" parent="Gli\'s House" index="6" unique_id=1474832969]
 lod_bias = 0.001
 
 [node name="bed" type="Node3D" parent="Gli\'s House" unique_id=566372229]
@@ -365,46 +365,46 @@ shape = SubResource("CapsuleShape3D_xolg8")
 [node name="Violin 1" parent="Gli\'s House/violin" unique_id=795157991 instance=ExtResource("5_q74gi")]
 transform = Transform3D(3.9666677, 0, 0, 0, 3.9666677, 0, 0, 0, 3.966668, -2.0641289, 2.41291, 1.4788132)
 
-[node name="BézierCurve" parent="Gli\'s House/violin/Violin 1" index="0" unique_id=1890511053]
+[node name="BézierCurve" parent="Gli\'s House/violin/Violin 1" index="0" unique_id=1137569807]
 lod_bias = 0.05
 
-[node name="BézierCurve_005" parent="Gli\'s House/violin/Violin 1" index="1" unique_id=1561545016]
+[node name="BézierCurve_005" parent="Gli\'s House/violin/Violin 1" index="1" unique_id=1121674295]
 lod_bias = 0.1
 
-[node name="BézierCurve_006" parent="Gli\'s House/violin/Violin 1" index="2" unique_id=1378276533]
+[node name="BézierCurve_006" parent="Gli\'s House/violin/Violin 1" index="2" unique_id=173496926]
 lod_bias = 0.1
 
-[node name="BézierCurve_007" parent="Gli\'s House/violin/Violin 1" index="3" unique_id=1185647347]
+[node name="BézierCurve_007" parent="Gli\'s House/violin/Violin 1" index="3" unique_id=1257257795]
 lod_bias = 0.1
 
-[node name="BézierCurve_008" parent="Gli\'s House/violin/Violin 1" index="4" unique_id=1613279623]
+[node name="BézierCurve_008" parent="Gli\'s House/violin/Violin 1" index="4" unique_id=527107092]
 lod_bias = 0.1
 
-[node name="Cube" parent="Gli\'s House/violin/Violin 1" index="5" unique_id=1855401354]
+[node name="Cube" parent="Gli\'s House/violin/Violin 1" index="5" unique_id=1475911603]
 lod_bias = 0.05
 
-[node name="Cube_001" parent="Gli\'s House/violin/Violin 1" index="6" unique_id=122089322]
+[node name="Cube_001" parent="Gli\'s House/violin/Violin 1" index="6" unique_id=1751187307]
 lod_bias = 0.05
 
-[node name="Cube_003" parent="Gli\'s House/violin/Violin 1" index="7" unique_id=1529064056]
+[node name="Cube_003" parent="Gli\'s House/violin/Violin 1" index="7" unique_id=62306573]
 lod_bias = 0.05
 
-[node name="Cylinder" parent="Gli\'s House/violin/Violin 1" index="8" unique_id=326102313]
+[node name="Cylinder" parent="Gli\'s House/violin/Violin 1" index="8" unique_id=275486561]
 lod_bias = 0.05
 
-[node name="Cylinder_001" parent="Gli\'s House/violin/Violin 1" index="9" unique_id=427556895]
+[node name="Cylinder_001" parent="Gli\'s House/violin/Violin 1" index="9" unique_id=1989954679]
 lod_bias = 0.05
 
-[node name="Cylinder_002" parent="Gli\'s House/violin/Violin 1" index="10" unique_id=615803266]
+[node name="Cylinder_002" parent="Gli\'s House/violin/Violin 1" index="10" unique_id=884835044]
 lod_bias = 0.05
 
-[node name="Cylinder_003" parent="Gli\'s House/violin/Violin 1" index="11" unique_id=2133516260]
+[node name="Cylinder_003" parent="Gli\'s House/violin/Violin 1" index="11" unique_id=1920482903]
 lod_bias = 0.05
 
-[node name="Cylinder_004" parent="Gli\'s House/violin/Violin 1" index="12" unique_id=423589736]
+[node name="Cylinder_004" parent="Gli\'s House/violin/Violin 1" index="12" unique_id=215732449]
 lod_bias = 0.05
 
-[node name="Point" parent="Gli\'s House/violin/Violin 1" index="13" unique_id=1680677441]
+[node name="Point" parent="Gli\'s House/violin/Violin 1" index="13" unique_id=1736229204]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gli\'s House/violin/Violin 1" unique_id=1097881492]
@@ -731,9 +731,6 @@ canvas = NodePath("../UI Elements")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1503050043]
 libraries/ = SubResource("AnimationLibrary_oipal")
 autoplay = &"intro"
-
-[node name="Camera3D" type="Camera3D" parent="AnimationPlayer" unique_id=170743946]
-transform = Transform3D(0.59059155, 0.29312983, -0.75184864, 0.059538763, 0.9133251, 0.40285492, 0.8047713, -0.28268683, 0.5219495, 0.16493829, 0.43286085, -1.490219)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer" unique_id=1240111257]
 stream = ExtResource("21_q74gi")

@@ -1,5 +1,5 @@
 extends Node
-#ObjectiveManager.gd
+
 signal objectives_updated
 signal layer_advanced(new_layer: int)
 signal main_quest_updated(new_quest: String)
