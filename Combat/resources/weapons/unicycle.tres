@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://b5nj3f1kp0drc"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_mxug1"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_fgd20"]
+[ext_resource type="Resource" uid="uid://q5vrghjrj0uf" path="res://Combat/resources/status_effects/haste.tres" id="2_mh0r5"]
+[ext_resource type="Texture2D" uid="uid://qw8oq4tk2gja" path="res://images/18937218.png" id="2_ul0yk"]
+
+[resource]
+script = ExtResource("2_fgd20")
+weapon_name = "Unicycle"
+attack_damage = 15
+cooldown = 7.0
+hp_cost = 2
+is_arm = false
+element = 2
+icon = ExtResource("2_ul0yk")
+effects = Array[ExtResource("1_mxug1")]([ExtResource("2_mh0r5")])
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

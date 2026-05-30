@@ -7,8 +7,11 @@ var _damage_tutorial_done: bool = false
 var _consumable_tutorial_done: bool = false
 var _graft_tutorial_done: bool = false
 
+var _saved_arm_idx: int = 0
+var _saved_leg_idx: int = 0
+
 # Input gates
-var _attacks_enabled: bool = true  
+var _attacks_enabled: bool = true
 var _consumables_enabled: bool = false
 var _graft_enabled: bool = false
 
@@ -18,10 +21,22 @@ var _graft_menu_tutorial_active: bool = false
 
 @onready var _consumables_section: VBoxContainer = $Battle_UI/options_menu/Consumables
 @onready var _graft_section: VBoxContainer = $Battle_UI/options_menu/Graft
+@onready var attack_timer_card: PanelContainer = %AttackTimerCard
+
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
 func _ready() -> void:
+	# Force default limbs for this tutorial battle 
+	_saved_arm_idx = GraftGlobals.right_arm_graft_index
+	_saved_leg_idx = GraftGlobals.left_leg_graft_index
+	GraftGlobals.right_arm_graft_index = 0
+	GraftGlobals.left_leg_graft_index = 0
+
 	super._ready()
+
+	# change player model to have the default attacks
+	BattleManager.equipped_weapon_changed.emit(0, PlayerManager.data.equipped[0])
+	BattleManager.equipped_weapon_changed.emit(1, PlayerManager.data.equipped[1])
 
 	# Consumables + graft are hidden until the tutorial reveals them
 	_consumables_section.visible = false
@@ -39,6 +54,8 @@ func _ready() -> void:
 	if BattleManager.graft_requested.is_connected(_on_graft_requested):
 		BattleManager.graft_requested.disconnect(_on_graft_requested)
 	BattleManager.graft_requested.connect(_on_graft_requested_tutorial)
+
+	_run_intro()
 
 func _input(event: InputEvent) -> void:
 	# Block keyboard / joypad during the graft menu tutorial popups
@@ -66,6 +83,20 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _graft_enabled:
 		if event.is_action_pressed("graft"): BattleManager.player_graft()
 
+# ── Intro  ───────────────────────────────────────
+func _run_intro() -> void:
+	_set_attacks_enabled(false)
+	BattleManager.set_paused(true)
+	await get_tree().process_frame
+	_tutorial_overlay.show_step(
+		"Tutorial loadout",
+		"For this tutorial, you're starting with your default limbs equipped.",
+		true, [weapon_cards[0], weapon_cards[1]])
+	await _tutorial_overlay.next_pressed
+	_tutorial_overlay.hide() 
+	BattleManager.set_paused(false)
+	_set_attacks_enabled(true)
+
 # ── Damage tutorial, first enemy hit ────────────────────────────────────────
 func _on_player_hit_tutorial(damage: int, was_blocked: bool) -> void:
 	if _damage_tutorial_done:
@@ -79,7 +110,10 @@ func _on_player_hit_tutorial(damage: int, was_blocked: bool) -> void:
 func _run_damage_tutorial(damage: int, was_blocked: bool) -> void:
 	var enemy_name := BattleManager.enemy.unit_name
 	var enemy_element_name := Weapon.element_name(BattleManager.enemy.element)
+	var attack_highlights: Array = [weapon_cards[0], weapon_cards[1]]
+	var attack_elements: Array = [weapon_cards[0].description_label, weapon_cards[1].description_label]
 
+	
 	# 1. "You took damage" adapt text if the player blocked
 	var step1_title: String
 	var step1_body: String
@@ -97,31 +131,57 @@ func _run_damage_tutorial(damage: int, was_blocked: bool) -> void:
 	_tutorial_overlay.show_step(
 		"Know your enemy",
 		"Meet %s a %s type enemy that uses %s attacks.\n(An enemy's type and its attacks can have different elements, but here they match.)" % [enemy_name, enemy_element_name, enemy_element_name],
-		true, enemy_element)
+		true, enemy_name_label)
 	await _tutorial_overlay.next_pressed
 
 	# 2b. Enemy attack timer
 	_tutorial_overlay.show_step(
 		"Next attack",
 		"This shows the enemy's next attack, its name, its element, and how long until it lands.",
-		true, timer_label)
+		true, attack_timer_card)
 	await _tutorial_overlay.next_pressed
 
-	var attack_highlights: Array = [weapon_cards[0], weapon_cards[1]]
+	
 
 	# 3. Defensive matchup, both limbs affect it
 	_tutorial_overlay.show_step(
-		"Defensive matchup",
-		"When the enemy attacks, its element is checked against BOTH your equipped limbs together. The more limbs that are weak to the attack, the more damage you take. %s beats Rock, and both your limbs are Rock, so each hit is heavily amplified." % enemy_element_name,
-		true, attack_highlights)
+		"Defensive matchup 1",
+		"When an enemy attacks, the damage you take is decided by the combination of your equipped limbs' elements. 
+		Since both of your limbs are rock and you're getting attacked by paper, you take more damage." % enemy_element_name,
+		true)
+	await _tutorial_overlay.next_pressed
+
+	_tutorial_overlay.show_step(
+		"Defensive matchup 2",
+		"To make it easier to see how much damage you take you can look at the outline around the block button. The colour of the outline shows you if you take more, less, or neutral damage." % enemy_element_name,
+		true,block_card)
 	await _tutorial_overlay.next_pressed
 
 	# 4. Offensive matchup, your attacking limb vs enemy type
 	_tutorial_overlay.show_step(
-		"Offensive matchup",
-		"When YOU attack, the limb's element is matched against the enemy's type. Rock isn't strong against %s — so your damage is reduced too." % enemy_element_name,
+		"Offensive matchup 1",
+		"When you attack, the damage you do is decided by each individual equipped limb's element." % enemy_element_name,
+		true)
+	await _tutorial_overlay.next_pressed
+
+	_tutorial_overlay.show_step(
+		"Offensive matchup 2",
+		"Right now you have two rock limbs equipped and you're attacking a paper type enemy, this means that both limbs individually do less damage." % enemy_element_name,
+		true,attack_elements)
+	await _tutorial_overlay.next_pressed
+
+	_tutorial_overlay.show_step(
+		"Offensive matchup 3",
+		"If you had one rock limb and one scissors limb, the rock limb would still do less damage while the scissors limb would do more damage." % enemy_element_name,
+		true)
+	await _tutorial_overlay.next_pressed
+
+	_tutorial_overlay.show_step(
+		"Offensive matchup 4",
+		"Again, to make it easier to see how much damage you do you can look at the outlines around the attack buttons. The colour of the outline shows you if you do more, less, or neutral damage." % enemy_element_name,
 		true, attack_highlights)
 	await _tutorial_overlay.next_pressed
+
 
 	# 5. Heal up
 	_consumables_section.visible = true
@@ -210,6 +270,8 @@ func _run_graft_menu_tutorial() -> void:
 
 # ── End ──────────────────────────────────────────────────────────────────────
 func _on_battle_ended_tutorial(_won: bool, _w: Array, _c: Array) -> void:
+	GraftGlobals.right_arm_graft_index = _saved_arm_idx
+	GraftGlobals.left_leg_graft_index = _saved_leg_idx
 	if _tutorial_overlay:
 		_tutorial_overlay.hide()
 	if _graft_menu_tutorial_active:

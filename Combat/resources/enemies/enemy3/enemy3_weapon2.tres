@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ujfbxjx257rm"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_llp7f"]
+[ext_resource type="Texture2D" uid="uid://dq8ligxisbn0u" path="res://images/paper.png" id="2_llp7f"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_xi8nx"]
+
+[resource]
+script = ExtResource("3_xi8nx")
+weapon_name = "Uppercut"
+attack_damage = 15
+cooldown = 3.5
+element = 1
+icon = ExtResource("2_llp7f")
+metadata/_custom_type_script = "uid://b1exkd2nbk06k"

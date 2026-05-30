@@ -104,7 +104,7 @@ func face_menu_camera() -> void:
 		dir.y = 0
 		dir = dir.normalized()
 		var target_angle = atan2(dir.x, dir.z) - PI / 2
-		$"MAsked Gli".rotation.y = target_angle
+		$"MAsked Gli".rotation.y = -target_angle
 
 # Static Camera Functions
 

@@ -2,6 +2,7 @@ class_name UnitData
 extends Resource
 
 signal hp_changed(current_hp: int, max_hp: int)
+signal healed
 
 @export var unit_name: String = ""
 @export var max_hp: int = 100
@@ -30,6 +31,7 @@ func take_damage(amount: int) -> void:
 
 func heal(amount: int) -> void:
 	current_hp = min(current_hp + amount, max_hp)
+	healed.emit()
 	hp_changed.emit(current_hp, max_hp)
 
 func is_dead() -> bool:
