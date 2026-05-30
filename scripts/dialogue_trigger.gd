@@ -4,6 +4,7 @@ var inRange : bool = false
 @onready var node: Node3D = $".."
 @onready var canvasprompt: Control = null
 var auto_skip := false
+#var camera : Camera3D
 @onready var particle_scene = preload("res://Particles/GlowingRingParticle.tscn")
 
 var active_particles = null
@@ -11,6 +12,7 @@ var active_particles = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	Dialogic.signal_event.connect(DialogicSignal)
 
 
@@ -203,7 +205,9 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	var prompt = get_prompt()
 	if prompt:
+		#prompt.global_position = camera.unproject_position(body.global_position) - Vector2(0, 75) 
 		prompt.visible = true
+		
 	
 	if active_particles == null:
 		active_particles = particle_scene.instantiate()

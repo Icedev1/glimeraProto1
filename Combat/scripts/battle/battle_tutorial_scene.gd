@@ -95,7 +95,7 @@ func _on_player_attacked_tutorial() -> void:
 	BattleManager.set_paused(false)
 
 # ── Block tutorial (fires once, just before the first enemy attack) ──────────
-func _on_enemy_timer_tutorial(remaining: float, _total: float, _wn: String, _en: String) -> void:
+func _on_enemy_timer_tutorial(remaining: float, _total: float, _wn: String, _en: String,w : Weapon) -> void:
 	if _block_tutorial_done:
 		return
 	if remaining > BLOCK_TUTORIAL_LEAD:

@@ -12,6 +12,7 @@ signal player_attacked
 signal player_hit(damage: int, was_blocked: bool)
 signal enemy_attacked
 signal enemy_hit(damage: int)
+signal enemy_attack_scheduled
 
 signal equipped_weapon_changed(slot: int, new_weapon: Weapon)
 
@@ -205,8 +206,9 @@ func _schedule_enemy_attack() -> void:
 		_enemy_attack_timer,
 		_enemy_attack_total,
 		_enemy_current_weapon.weapon_name,
-		Weapon.element_name(_enemy_current_weapon.element)
-	)
+		Weapon.element_name(_enemy_current_weapon.element),
+		_enemy_current_weapon)
+	emit_signal("enemy_attack_scheduled")
 
 func _execute_enemy_attack() -> void:
 	if not _battle_active:
@@ -383,22 +385,26 @@ func _get_player_attack_element_label(w: Weapon) -> String:
 		return "⬇ Ineffective"
 	return ""
 
-## Enemy attacks player: enemy weapon element vs player's 2 equipped weapon elements
-func _get_enemy_attack_element_mult(w: Weapon) -> float:
+## element score for the enemy's attack vs the player's equipped weapons.
+## Ranges -2..+2 (for both the damage multiplier and the block card outline).
+func _enemy_element_score(w: Weapon) -> int:
 	var atk_el := w.element
-	var score := 0  # +1 per weapon weak to atk, -1 per weapon strong against atk
+	var score := 0
 	for equipped_w in _equipped:
 		if equipped_w == null:
 			continue
 		var eq_el := equipped_w.element
 		if eq_el == atk_el:
-			pass  # neutral, score += 0
+			pass  # neutral
 		elif Weapon.element_beats(atk_el) == eq_el:
 			score += 1  # this equipped weapon is weak to attacker
 		else:
 			score -= 1  # this equipped weapon is strong against attacker
+	return score
 
-	match score:
+## Enemy attacks player: enemy weapon element vs player's 2 equipped weapon elements
+func _get_enemy_attack_element_mult(w: Weapon) -> float:
+	match _enemy_element_score(w):
 		2:  return ELEMENT_ENEMY_SUPER_EFFECTIVE
 		1:  return ELEMENT_ENEMY_EFFECTIVE
 		0:  return ELEMENT_ENEMY_NEUTRAL
@@ -417,6 +423,24 @@ func _get_enemy_attack_element_label(w: Weapon) -> String:
 	elif mult <= ELEMENT_ENEMY_INEFFECTIVE:
 		return "⬇ Ineffective"
 	return ""
+
+# ── Matchup helpers for card outlines ─────────────────────────────────────────
+## Player weapon vs enemy element
+func get_attack_matchup(w: Weapon) -> int:
+	if w == null:
+		return 0
+	var mult := _get_player_attack_element_mult(w)
+	if mult > ELEMENT_PLAYER_NEUTRAL:
+		return 1
+	elif mult < ELEMENT_PLAYER_NEUTRAL:
+		return -1
+	return 0
+
+## Enemy's currently-prepared attack vs player's equipped weapons
+func get_enemy_attack_score() -> int:
+	if _enemy_current_weapon == null:
+		return 0
+	return _enemy_element_score(_enemy_current_weapon)
 
 # ── Public helpers ────────────────────────────────────────────────────────────
 func log_message(msg: String) -> void:

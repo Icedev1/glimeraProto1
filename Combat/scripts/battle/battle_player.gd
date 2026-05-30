@@ -1,12 +1,19 @@
 extends CharacterBody3D
 
+const HEAL_AURA_SHADER := preload("res://Shaders/heal_aura.gdshader")
+const BLEND_TIME: float = 0.15
+
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var armature: Node3D = $"MAsked Gli/Armature"
+
 var _meshes: Array[MeshInstance3D] = []
 var _flash_material: ShaderMaterial
 var _is_acting: bool = false
 
-const BLEND_TIME: float = 0.15
+# ── Heal aura ─────────────────────────────────────────────────────────────────
+var _heal_aura_material: ShaderMaterial
+var _heal_aura_tween: Tween
+
 
 # ── Graft visuals ─────────────────────────────────────────────────────────────
 @onready var _graft_scenes: Dictionary = {
@@ -40,11 +47,17 @@ func _ready() -> void:
 	for mesh in _meshes:
 		mesh.material_overlay = _flash_material
 
+	# Heal aura
+	_heal_aura_material = ShaderMaterial.new()
+	_heal_aura_material.shader = HEAL_AURA_SHADER
+	_heal_aura_material.set_shader_parameter("progress", 1.0)
+
 	animation_player.play("Idle Straight")
 
 	BattleManager.player_attacked.connect(_on_player_attacked)
 	BattleManager.player_hit.connect(_on_player_hit)
 	BattleManager.equipped_weapon_changed.connect(_on_equipped_changed)
+	PlayerManager.data.healed.connect(_on_player_healed)
 
 	# Make sure equipped reflects current overworld grafts, then paint the model
 	PlayerManager.sync_from_grafts()
@@ -56,6 +69,13 @@ func _collect_meshes(node: Node, result: Array[MeshInstance3D]) -> void:
 		if child is MeshInstance3D:
 			result.append(child)
 		_collect_meshes(child, result)
+
+# Set an overlay material on EVERY current body mesh
+func _set_all_overlays(mat: ShaderMaterial) -> void:
+	var meshes: Array[MeshInstance3D] = []
+	_collect_meshes(armature, meshes)
+	for mesh in meshes:
+		mesh.material_overlay = mat
 
 func _flash() -> void:
 	_flash_material.set_shader_parameter("flash_intensity", 1.0)
@@ -87,6 +107,23 @@ func _on_player_hit(_damage: int, was_blocked: bool) -> void:
 	await animation_player.animation_finished
 	animation_player.play("Idle Straight", BLEND_TIME)
 	_is_acting = false
+
+# ── Heal aura (plays on heal) ─────────────────────────────────────────────────
+func _on_player_healed() -> void:
+	# Collect meshes fresh so graft limbs are included, then swap to the heal aura overlay
+	_set_all_overlays(_heal_aura_material)
+
+	if _heal_aura_tween and _heal_aura_tween.is_valid():
+		_heal_aura_tween.kill()
+	_heal_aura_material.set_shader_parameter("progress", 0.0)
+	_heal_aura_tween = create_tween()
+	_heal_aura_tween.tween_method(
+		func(v): _heal_aura_material.set_shader_parameter("progress", v),
+		0.0, 1.0, 1.0)
+	_heal_aura_tween.tween_callback(_restore_flash_overlay)
+
+func _restore_flash_overlay() -> void:
+	_set_all_overlays(_flash_material)
 
 # ── Graft visual handling ────────────────────────────────────────────────────
 func _on_equipped_changed(slot: int, new_weapon: Weapon) -> void:

@@ -1,22 +1,18 @@
 [gd_scene format=3 uid="uid://clwxteop31kjo"]
 
-[ext_resource type="Texture2D" uid="uid://bi0sdbu2kkesm" path="res://images/StoneTablet.png" id="1_0d44o"]
+[ext_resource type="Texture2D" uid="uid://g8fb1ya684wy" path="res://images/StoneTablet2.png" id="1_0d44o"]
 [ext_resource type="Script" uid="uid://c1l4bl4ffk766" path="res://Combat/scripts/ui/weapon_card.gd" id="1_bhqxw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtigt"]
 texture = ExtResource("1_0d44o")
-expand_margin_left = 60.0
-expand_margin_top = 8.0
-expand_margin_right = 72.0
-expand_margin_bottom = 8.0
 
 [node name="weaponCard" type="PanelContainer" unique_id=794853170]
 custom_minimum_size = Vector2(220, 200)
 anchors_preset = -1
 anchor_right = 0.135
-anchor_bottom = 0.148
+anchor_bottom = 0.185
 offset_right = 0.7999878
-offset_bottom = 0.16000366
+offset_bottom = -39.800003
 theme_override_styles/panel = SubResource("StyleBoxTexture_rtigt")
 script = ExtResource("1_bhqxw")
 
