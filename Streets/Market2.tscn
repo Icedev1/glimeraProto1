@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://c7rrmgfhlcpwe" path="res://scripts/street_exit.gd" id="17_kfukp"]
 [ext_resource type="PackedScene" uid="uid://dcowgxvbiylrh" path="res://meshes/Houses/House1/House 1.blend" id="18_bni5b"]
 [ext_resource type="PackedScene" uid="uid://doulptnqgwt2w" path="res://Prop Scenes/statue.tscn" id="19_lr2bl"]
+[ext_resource type="PackedScene" uid="uid://crnh6du3e3cm7" path="res://Prop Scenes/Chill Derek.tscn" id="19_urpp5"]
 [ext_resource type="PackedScene" uid="uid://71w6wpdtgb7a" path="res://Prop Scenes/npc1.tscn" id="19_vnwsp"]
 [ext_resource type="Script" uid="uid://bs282g5m08tfj" path="res://scripts/dialogue_trigger.gd" id="20_e7qpp"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="20_j8vb1"]
@@ -268,7 +269,7 @@ transform = Transform3D(3.955, 0, 0, 0, 3.955, 0, 0, 0, 3.955, -2.406081, 0.4884
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=102186674]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1196922909]
-transform = Transform3D(3.955, 0, 0, 0, 3.955, 0, 0, 0, 6.50471, 0, 0, 0)
+transform = Transform3D(3.955, 0, 0, 0, 3.955, 0, 0, 0, 6.50471, 0.003103599, -0.003066063, 0.006759703)
 material_override = ExtResource("1_j8vb1")
 mesh = SubResource("PlaneMesh_0r8xi")
 
@@ -362,7 +363,7 @@ collision_mask = 2
 script = ExtResource("20_e7qpp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Angry Steve/Area3D" unique_id=1459963632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30775633, 0)
+transform = Transform3D(0.99999774, -0.0022101358, 1.4305115e-06, 0.0022101374, 0.9999967, -0.0012682686, 1.3709068e-06, 0.0012682675, 0.99999917, 0, 0.30775633, 0)
 shape = SubResource("CapsuleShape3D_e7qpp")
 
 [node name="ChaseDetection" type="Area3D" parent="Angry Steve" unique_id=1578529593]
@@ -370,19 +371,48 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Angry Steve/ChaseDetection" unique_id=94626944]
-transform = Transform3D(0.12832814, 0, 0.99173135, 0, 1.0000539, 0, -0.99173135, 0, 0.12832814, 0.016412914, 0.43618903, -2.4663124)
+transform = Transform3D(0.12832814, 0, 0.99173135, 0, 1.0000539, 0, -0.99173135, 0, 0.12832814, -0.07027763, 0.43618903, -1.7963612)
 shape = SubResource("BoxShape3D_36i0r")
 
-[node name="Chill Derek" parent="." unique_id=1593121083 instance=ExtResource("19_vnwsp")]
-transform = Transform3D(0.6366168, 0, -0.77118033, 0, 1, 0, 0.77118033, 0, 0.6366168, -0.2763648, -0.011540554, -0.591429)
+[node name="NPC" parent="." unique_id=1176586714 instance=ExtResource("19_urpp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38138366, 0, -0.49778223)
 
-[node name="Area3D" type="Area3D" parent="Chill Derek" unique_id=1023838124]
+[node name="Skeleton" parent="NPC/NPC3/Armature" parent_id_path=PackedInt32Array(1176586714, 232064020, 2131994025) index="0" unique_id=185075786]
+bones/0/position = Vector3(-0.013579369, 5.568935, 0.009823829)
+bones/0/rotation = Quaternion(-0.026588378, -0.0013599106, -0.010585135, 0.9995895)
+bones/1/rotation = Quaternion(0.013826033, -0.0023302173, 0.0009421809, 0.9999013)
+bones/2/rotation = Quaternion(0.013565359, -0.01841496, 0.0020241078, 0.99973637)
+bones/3/rotation = Quaternion(0.013489633, -0.018367512, 0.0023989556, 0.99973744)
+bones/4/rotation = Quaternion(-0.002688679, 0.00803271, -0.012363933, 0.9998877)
+bones/5/rotation = Quaternion(0.0373536, -0.014926055, 0.034164976, 0.9986064)
+bones/9/rotation = Quaternion(0.4754961, 0.5152723, 0.42969525, -0.56899905)
+bones/10/rotation = Quaternion(0.18288286, 0.9513588, -0.24074739, -0.059254512)
+bones/11/rotation = Quaternion(0.054307647, -0.8464297, 0.17600697, 0.49962902)
+bones/12/rotation = Quaternion(0.046228614, 0.7718109, -0.08546929, 0.6283836)
+bones/15/rotation = Quaternion(0.43671358, -0.5524055, -0.46482718, -0.53671706)
+bones/16/rotation = Quaternion(-0.1807679, 0.95458996, -0.23439395, 0.03377217)
+bones/17/rotation = Quaternion(0.057518568, 0.8492967, -0.17895561, 0.49331704)
+bones/18/rotation = Quaternion(-0.029321572, -0.7629688, 0.04798857, 0.64398456)
+bones/21/rotation = Quaternion(0.04328848, 0.07063881, 0.9964386, 0.015700556)
+bones/22/rotation = Quaternion(-0.029092435, 0.97165275, -0.21423213, 0.095651604)
+bones/23/rotation = Quaternion(0.03409384, 0.6130407, -0.7880482, 0.04471003)
+bones/24/rotation = Quaternion(7.191306e-07, 0.9999994, 0.0011231601, -5.3473815e-07)
+bones/28/rotation = Quaternion(-0.102056146, 0.06427208, 0.9926921, -0.00402823)
+bones/29/rotation = Quaternion(0.02236867, 0.98185384, -0.1790689, -0.05828411)
+bones/30/rotation = Quaternion(-0.0039489125, 0.6422633, -0.76586515, -0.030544747)
+bones/31/rotation = Quaternion(-7.006913e-07, 1, -3.2782555e-07, 3.9512668e-07)
+
+[node name="AnimationPlayer" parent="NPC/NPC3" parent_id_path=PackedInt32Array(1176586714, 232064020) index="1" unique_id=646496259]
+autoplay = &"Idle Straight"
+
+[node name="Area3D" type="Area3D" parent="NPC" unique_id=1023838124]
+transform = Transform3D(0.6366168, 0, -0.77118033, 0, 1, 0, 0.77118033, 0, 0.6366168, 0.11345482, -0.011540554, -0.038407743)
 collision_layer = 8
 collision_mask = 50
 script = ExtResource("20_e7qpp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Chill Derek/Area3D" unique_id=301796936]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0.41321662, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Area3D" unique_id=301796936]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.040197194, 0.41106412, 0.08552922)
 shape = SubResource("CapsuleShape3D_vnwsp")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=67089886]
@@ -876,12 +906,14 @@ material_override = SubResource("StandardMaterial3D_dad2d")
 mesh = ExtResource("40_ef0ru")
 
 [connection signal="body_entered" from="Go To Market 1" to="Go To Market 1" method="_on_body_entered"]
-[connection signal="body_entered" from="Chill Derek/Area3D" to="Chill Derek/Area3D" method="_on_body_entered"]
-[connection signal="body_exited" from="Chill Derek/Area3D" to="Chill Derek/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/Area3D" to="NPC/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Area3D" to="NPC/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="RespawnArea3D" to="CharacterBody3D" method="_on_respawn_area_3d_body_entered"]
 
 [editable path="UI Elements/Prompt"]
 [editable path="House 2"]
+[editable path="NPC"]
+[editable path="NPC/NPC3"]
 [editable path="Statue"]
 [editable path="Statue/NPC2"]
 [editable path="Statue2"]
