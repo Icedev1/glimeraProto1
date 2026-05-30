@@ -357,7 +357,6 @@ visible = false
 transform = Transform3D(0.86734015, 0, -0.4977159, 0, 1, 0, 0.4977159, 0, 0.86734015, -2.0527706, -0.011540554, 3.3798199)
 script = ExtResource("20_yy0f5")
 enemy_data = ExtResource("21_yy0f5")
-enemy_id = "market1_chaser_01"
 
 [node name="NPC1" parent="Angry Steve" index="0" unique_id=34665434]
 transform = Transform3D(-0.042426415, 0, 0.042426396, 0, 0.06, 0, -0.042426396, 0, -0.042426415, 0, 0, 0)

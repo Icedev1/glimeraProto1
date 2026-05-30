@@ -27,33 +27,6 @@ var _inventory: Array[Weapon] = []
 var _weapon_cooldowns: Array[CooldownTracker] = []
 var _paused: bool = false
 
-# ── Save/Load ─────────────────────────────────────────────────────────────────
-var defeated_enemies: Array = []
-
-func mark_defeated(enemy_id: String):
-	if enemy_id not in defeated_enemies:
-		defeated_enemies.append(enemy_id)
-
-func is_defeated(enemy_id: String) -> bool:
-	return enemy_id in defeated_enemies
-
-func get_defeated_enemies() -> Array:
-	return defeated_enemies.duplicate()
-
-func load_defeated_enemies(data: Array):
-	defeated_enemies = data.duplicate()
-
-func get_inventory_save_data() -> Array:
-	var result = []
-	for weapon in _inventory:
-		if weapon and weapon.resource_path != "":
-			result.append(weapon.resource_path)
-	return result
-
-func load_inventory_save_data(data: Array):
-	_inventory.clear()
-	for path in data:
-		_inventory.append(load(path))
 
 var _block_active: bool = false
 const BLOCK_DURATION: float = 0.4
