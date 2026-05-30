@@ -222,7 +222,7 @@ elif {target} == "quest_npc_1":
 		join skull right
 		skull: Look for a Figure wearing a red scarf.
 		skull: I would really appreciate it if you could find them.
-if {target} == "":
+if {target} == "porcelain_figure_defeated":
 	join Gli center
 	Gli: I'm sorry... but what you did wasn't nice.
 	join Gli center

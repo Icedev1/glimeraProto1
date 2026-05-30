@@ -7,9 +7,11 @@ func _ready() -> void:
 	Dialogue.interactRange.connect(_promptVisible)
 
 func _promptVisible(npc : NPC, inRange : bool) -> void:
+	if not inRange or npc == null:
+		interactPrompt.visible = false
+		return
 	camera = CamMan.instance.getPlayerCam()
 	var screen_pos = camera.unproject_position(npc.global_transform.origin)
 	interactPrompt.position = screen_pos + Vector2(0, -75)
 	if Dialogic.current_timeline == null:
 		interactPrompt.visible = inRange
-	

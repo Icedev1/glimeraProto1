@@ -30,6 +30,11 @@ func DialogicSignal(arg:String):
 	if arg == "battle_start": 
 		print("battle_scene: ", battle_scene)
 		get_tree().root.get_node("Root").from_overworld_to_battle(enemy_data, battle_scene)
+	if arg == "saw_picked_up":
+		GraftGlobals.sawObtained = true
+		print("saw obtained!")
+		$Area3D.monitoring = false
+		$Area3D.monitorable = false
 		
 		
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -43,8 +48,8 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func _on_battle_ended(_won: bool, _weapons: Array, _consumables: Array):
 	if enemy_data != null and enemy_data.unit_name == "Porcelain Figure":
-		is_player_in_range = false
-		Dialogue.interactRange.emit(self, false)
-		$Area3D.monitoring = false
-		$Area3D.monitorable = false
 		GraftGlobals.porcelainDefeated = true
+		#is_player_in_range = false
+		#Dialogue.interactRange.emit(self, false)
+		#$Area3D.monitoring = false
+		#$Area3D.monitorable = false
