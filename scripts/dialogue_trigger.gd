@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 					ObjectiveManager.complete_objective("pickup_sledgehammer")
 				"violin":
 					Dialogic.VAR.set_variable("target", "violin")
+					GraftGlobals.violinObtained = true
 					ObjectiveManager.complete_objective("pickup_violin")
 					ObjectiveManager.reveal_objective("pickup_sledgehammer")
 				"bed":
