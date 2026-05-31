@@ -197,7 +197,7 @@ elif {target} == "quest_npc_1":
 		Gli: Do you think you could help me-
 		join skull right
 		skull: Help..?
-		The Figure snaps out of it and turns to you
+		The Figure snaps out of it and turns to you.
 		skull: Oh! Yes, please if you could help me with something!
 		skull: I was supposed to meet my friend here around an hour ago, but they still haven’t shown up.
 		skull: I am starting to think that they might have forgotten about today…
