@@ -66,8 +66,8 @@ elif {target} == "glihouse":
 elif {target} == "npc2":
 	join Gli left
 	Gli: Are you okay?
-	The figure looks unresponsive
-	Gli: I'll leave you alone
+	The figure looks unresponsive...
+	Gli: I'll leave you alone.
 elif {target} == "door_neighbour1":
 	No ones home.
 elif {target} == "door_neighbour2":
@@ -118,7 +118,7 @@ elif {target} == "defeated_enemy":
 elif {target} == "evene":
 	if {talkedTo} == false:
 		# Knock on door
-		audio sfx "res://Sounds/SFX/door knock fast.wav"
+		audio "res://Sounds/SFX/door knock fast.wav"
 		[signal arg="open_door_sf"]
 		join Gli left
 		join Evene right
