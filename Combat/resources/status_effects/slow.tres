@@ -10,6 +10,6 @@ icon = ExtResource("1_u528u")
 icon2 = ExtResource("2_av5eg")
 effect_name = "Slow"
 type = 4
-value = -0.5
+value = -0.4
 duration = 3.0
 metadata/_custom_type_script = "uid://c1nu6bnlqi3dc"
