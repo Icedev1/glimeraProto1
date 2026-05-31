@@ -256,7 +256,11 @@ func _on_body_entered(body: Node3D) -> void:
 			get_tree().root.get_node("Root").from_overworld_to_battle(
 				preload("res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2.tres"),"res://Combat/scenes/battle_tutorial.tscn")
 			$"..".chasing = false
-	
+		"Calm Marcus":
+			Dialogic.VAR.set_variable("target", "npc2")
+			Dialogic.start("interactable")
+			get_viewport().set_input_as_handled()
+			
 	
 
 func _on_body_exited(body: Node3D) -> void:
