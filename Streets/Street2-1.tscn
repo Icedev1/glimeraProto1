@@ -1013,7 +1013,8 @@ transform = Transform3D(0.9999995, 0, 7.1054274e-14, 0, 1, 0, -7.1054274e-15, 0,
 transform = Transform3D(0.9999995, 0, 7.1054274e-14, 0, 1, 0, -7.1054274e-15, 0, 0.9999995, -26.62223, 0.15350127, -1.4745903)
 
 [node name="Area3D" parent="." unique_id=2086226871 instance=ExtResource("31_scw65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2125406, 2.116483, -8.164523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.216807, 2.1078298, -8.162296)
+streetPath = "res://Streets/Library.tscn"
 
 [node name="StaticBody3D9" parent="." unique_id=603041042 instance=ExtResource("31_hhrm4")]
 transform = Transform3D(1.1827295, 0, 0, 0, 0.91831714, 0, 0, 0, 1, -15.451568, 2.0504797, -9.3813925)
