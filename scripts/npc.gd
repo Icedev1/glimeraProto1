@@ -1,6 +1,7 @@
 class_name NPC extends Node3D
 
 var is_player_in_range: bool = false
+var _pending_battle_enemy: String = ""
 @export var enemy_data: EnemyData
 @export var timeline_name: String = "timeline"
 @export var battle_scene: String = "res://Combat/scenes/battle.tscn"
@@ -26,6 +27,7 @@ func DialogicSignal(arg:String):
 		return
 	#starts battle(WIP)
 	if arg == "battle_start": 
+		_pending_battle_enemy = enemy_data.unit_name if enemy_data else ""
 		print("battle_scene: ", battle_scene)
 		get_tree().root.get_node("Root").from_overworld_to_battle(enemy_data, battle_scene)
 	if arg == "saw_picked_up":
@@ -45,8 +47,13 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	Dialogue.interactRange.emit(self, false)
 
 func _on_battle_ended(_won: bool, _weapons: Array, _consumables: Array):
-	if enemy_data == null:
+	if enemy_data == null or _pending_battle_enemy == "":
 		return
+	if _pending_battle_enemy != enemy_data.unit_name:
+		return
+	
+	_pending_battle_enemy = ""
+
 	
 	if enemy_data.unit_name == "Porcelain Figure":
 		GraftGlobals.porcelainDefeated = true
