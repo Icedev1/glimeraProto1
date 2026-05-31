@@ -14,10 +14,8 @@ func _ready() -> void:
 		$Area3D.monitoring = false
 		$Area3D.monitorable = false
 
-
 func _process(_delta: float) -> void:
-	if name == "Intimidating Figure" and GraftGlobals.hoseObtained and not visible:
-		print("showing Intimidating Figure")
+	if name == "Intimidating Figure" and GraftGlobals.hoseObtained and not GraftGlobals.intimidatingDefeated:
 		show()
 		$Area3D.monitoring = true
 		$Area3D.monitorable = true
@@ -47,9 +45,21 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	Dialogue.interactRange.emit(self, false)
 
 func _on_battle_ended(_won: bool, _weapons: Array, _consumables: Array):
-	if enemy_data != null and enemy_data.unit_name == "Porcelain Figure":
+	if enemy_data == null:
+		return
+	
+	if enemy_data.unit_name == "Porcelain Figure":
 		GraftGlobals.porcelainDefeated = true
-		#is_player_in_range = false
-		#Dialogue.interactRange.emit(self, false)
-		#$Area3D.monitoring = false
-		#$Area3D.monitorable = false
+		is_player_in_range = false
+		Dialogue.interactRange.emit(self, false)
+		$Area3D.monitoring = false
+		$Area3D.monitorable = false
+
+	if enemy_data.unit_name == "Intimidating Figure":
+		GraftGlobals.intimidatingDefeated = true
+		set_process(false)
+		is_player_in_range = false
+		Dialogue.interactRange.emit(self, false)
+		$Area3D.monitoring = false
+		$Area3D.monitorable = false
+		hide()
