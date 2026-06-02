@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://dy8maci0u0st7"]
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
-
 [ext_resource type="Resource" uid="uid://kc77x8sqfqls" path="res://Combat/resources/enemies/boss1/boss1.tres" id="2_01irj"]
 [ext_resource type="Texture2D" uid="uid://ovvm1ii6heoi" path="res://meshes/textures/Wood035_1K-PNG_Displacement.png" id="3_01irj"]
-
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
@@ -14,13 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
 [ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="6_r8c2t"]
-
 [ext_resource type="Shader" uid="uid://bs2f48y3sxg7b" path="res://Shaders/low_hp.gdshader" id="7_01irj"]
 [ext_resource type="Texture2D" uid="uid://calpspnwlo7n0" path="res://images/Gli Portrait.png" id="12_n1uve"]
 [ext_resource type="Shader" uid="uid://camxqn22pk7bw" path="res://Shaders/card_outline.gdshader" id="12_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://b4en42keqdivj" path="res://images/aptaltaş.png" id="13_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://d25buoesqrnq7" path="res://images/8037114.png" id="17_onrm6"]
 [ext_resource type="Texture2D" uid="uid://b1pldpe4chka1" path="res://images/11279725.png" id="18_fr5r2"]
+[ext_resource type="AudioStream" uid="uid://cq6i78xknws42" path="res://Sounds/SFX/se_battle_115.ogg" id="19_x13a4"]
+[ext_resource type="AudioStream" uid="uid://cle1imm5my468" path="res://Sounds/SFX/se_battle_103.ogg" id="20_onrm6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1uve"]
 albedo_texture = ExtResource("3_01irj")
@@ -136,6 +135,8 @@ path = "attack1"
 shader = ExtResource("12_q6ghl")
 shader_parameter/outline_color = Color(0.3, 1, 0.4, 1)
 shader_parameter/thickness = 0.1
+shader_parameter/solid_thickness = 0.015
+shader_parameter/corner_radius = 0.03
 shader_parameter/pulse_speed = 3.0
 
 [sub_resource type="Texture2D" id="Texture2D_v7i3o"]
@@ -709,3 +710,17 @@ render_target_update_mode = 4
 
 [node name="Camera3D1" type="Camera3D" parent="SubViewportContainer2/SubViewport1" unique_id=951482207]
 transform = Transform3D(0.89100647, -0.01584404, 0.45371395, 0, 0.99939084, 0.034899496, -0.4539905, -0.031095678, 0.89046377, -7.859, 3.3, 4.529)
+
+[node name="HitEffective" type="AudioStreamPlayer" parent="." unique_id=377997488 groups=["battle_sfx"]]
+stream = ExtResource("19_x13a4")
+
+[node name="HitWeak" type="AudioStreamPlayer" parent="." unique_id=1961221678 groups=["battle_sfx"]]
+stream = ExtResource("20_onrm6")
+pitch_scale = 1.63
+
+[node name="HitNormal" type="AudioStreamPlayer" parent="." unique_id=292675140 groups=["battle_sfx"]]
+stream = ExtResource("20_onrm6")
+
+[node name="HitBlocked" type="AudioStreamPlayer" parent="." unique_id=1483973975 groups=["battle_sfx"]]
+stream = ExtResource("19_x13a4")
+pitch_scale = 3.77
