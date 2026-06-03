@@ -2785,7 +2785,7 @@ transform = Transform3D(0.99999976, 0, 8.7396756e-13, 0, 0.99999976, 0, -8.73967
 shape = SubResource("CapsuleShape3D_vu45j")
 
 [node name="MAsked Gli" type="Node3D" parent="." unique_id=1915688629]
-transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 0, 0, 0)
+transform = Transform3D(-0.445, 0, -3.890313e-08, 0, 0.445, 0, 3.890313e-08, 0, -0.445, 0, 0, 0)
 
 [node name="Armature" type="Node3D" parent="MAsked Gli" unique_id=1424227123]
 unique_name_in_owner = true
@@ -3395,7 +3395,7 @@ bone_idx = 3
 transform = Transform3D(-1.1640927, 0.7746126, 0.0697381, 0.76763606, 1.1645077, -0.12106503, -0.12499218, -0.06242675, -1.3930111, 0.38285306, 0.81784594, -0.70476484)
 visible = false
 
-[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=1758749413]
+[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=686690012]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MAsked Gli" unique_id=1926690920]
