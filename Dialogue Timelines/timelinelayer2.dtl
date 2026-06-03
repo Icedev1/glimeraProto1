@@ -66,4 +66,22 @@ elif {target} == "scissor":
 		set {sequence_step} = 0.0
 		tstscs
 		[signal arg="reset_puzzle"]
+elif {target} == "churchbro":
+	join statue_1 left
+	statue_1: Yo! You need to buy my new Salvation Coin, guaranteed salvation for the price of one coin.
+	leave statue_1
+	join Gli left
+	Gli: I'd rather not.
+	leave Gli
+	join statue_1 left
+	statue_1: You're missing out on the opportunity of a lifetime bro!
+elif {target} == "npc3":
+	I am npc 3
+elif {target} == "npc6":
+	I am steve
+	just kidding I am npc 6
+elif {target} == "npc4":
+	I am npc4
+elif {target} == "npc5":
+	I am NPC 5
 [end_timeline]
