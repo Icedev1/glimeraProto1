@@ -35,6 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://cve3srdgqa4ic" path="res://Streets/Preview Streets/Preview Street2-1.tscn" id="32_6s8jw"]
 
 [sub_resource type="Compositor" id="Compositor_5b7g0"]
+[ext_resource type="PackedScene" uid="uid://otx0rnod80qp" path="res://Combat/enemy1/NPC5.fbx" id="32_6s8jw"]
+[ext_resource type="Script" uid="uid://oabljn5qu4iv" path="res://scripts/dialogue_trigger2.gd" id="33_5b7g0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_20jgf"]
 
@@ -210,6 +212,9 @@ shadow_mesh = SubResource("ArrayMesh_xjqto")
 [sub_resource type="BoxMesh" id="BoxMesh_6s8jw"]
 material = ExtResource("22_lnqhn")
 size = Vector3(1, 1, 2.975)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6s8jw"]
+radius = 3.6679688
+height = 10.976807
 
 [node name="Node3D" type="Node3D" unique_id=2146142844]
 
@@ -756,9 +761,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.33342, 0, 3.3884668)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1728647306]
 transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.150222, 15.73293, -0.516042, 1.4235542)
 mesh = SubResource("BoxMesh_6s8jw")
+[node name="Churchbro" parent="." unique_id=1130687666 instance=ExtResource("32_6s8jw")]
+transform = Transform3D(-0.056197695, 0, 0.04966708, 0, 0.074999996, 0, -0.04966708, 0, -0.056197695, 6.652524, 0.4805692, 2.7034657)
+
+[node name="Area3D" type="Area3D" parent="Churchbro" unique_id=1556412678]
+collision_mask = 2
+script = ExtResource("33_5b7g0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Churchbro/Area3D" unique_id=1233000616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22589111, -0.8782873, -0.048807144)
+shape = SubResource("CapsuleShape3D_6s8jw")
 
 [connection signal="body_entered" from="Go To Street 1" to="Go To Street 1" method="_on_body_entered"]
 [connection signal="body_entered" from="RespawnArea3D" to="CharacterBody3D" method="_on_respawn_area_3d_body_entered"]
+[connection signal="body_entered" from="Churchbro/Area3D" to="Churchbro/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Churchbro/Area3D" to="Churchbro/Area3D" method="_on_body_exited"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1"]

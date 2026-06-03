@@ -36,6 +36,11 @@
 [ext_resource type="Script" uid="uid://bpk84xenjc6f0" path="res://Streets/DoorAnimator.gd" id="32_hhrm4"]
 [ext_resource type="PackedScene" uid="uid://k5a5m54lig58" path="res://Streets/Preview Streets/Preview Market1.tscn" id="33_g7od3"]
 [ext_resource type="PackedScene" uid="uid://br8xr3i2dwmd7" path="res://Streets/Preview Streets/Preview Street2-2.tscn" id="36_s45ko"]
+[ext_resource type="PackedScene" uid="uid://cg4ogxvkcwxdq" path="res://Combat/enemy1/NPC3.fbx" id="33_g7od3"]
+[ext_resource type="Script" uid="uid://oabljn5qu4iv" path="res://scripts/dialogue_trigger2.gd" id="34_kmomr"]
+[ext_resource type="PackedScene" uid="uid://bbmxei8tf7plk" path="res://Combat/enemy1/NPC6.fbx" id="34_vv6gl"]
+[ext_resource type="PackedScene" uid="uid://b5v2twebnyaxm" path="res://Combat/enemy1/NPC4.fbx" id="35_nyppx"]
+[ext_resource type="PackedScene" uid="uid://otx0rnod80qp" path="res://Combat/enemy1/NPC5.fbx" id="36_s45ko"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_exsct"]
 size = Vector3(19.925, 0.885, 4.885)
@@ -274,6 +279,9 @@ size = Vector3(1, 2.0124512, 10.620422)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ddy1"]
 material = ExtResource("29_xjqto")
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s45ko"]
+radius = 3.0200195
+height = 11.680908
 
 [node name="Street22" type="Node3D" unique_id=1308785338]
 
@@ -1077,6 +1085,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.132042, 0.09467459, -3.07
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=333901496]
 transform = Transform3D(1, 0, 0, 0, 0.6852847, 0.7282753, 0, -0.7282753, 0.6852847, 0, 4.583661, 0)
 shadow_enabled = true
+[node name="NPC3" parent="." unique_id=1296716092 instance=ExtResource("33_g7od3")]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, -17.83409, 0.45798925, 2.3641803)
+
+[node name="Area3D" type="Area3D" parent="NPC3" unique_id=2030640243]
+collision_mask = 2
+script = ExtResource("34_kmomr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC3/Area3D" unique_id=464568181]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, -1.0128164, 0)
+shape = SubResource("CapsuleShape3D_s45ko")
+
+[node name="NPC6" parent="." unique_id=1219517046 instance=ExtResource("34_vv6gl")]
+transform = Transform3D(-0.032288335, 0, -0.0676939, 0, 0.075, 0, 0.0676939, 0, -0.032288335, -18.280857, 0.44335023, -6.6410117)
+
+[node name="NPC4" parent="." unique_id=83564821 instance=ExtResource("35_nyppx")]
+transform = Transform3D(0.02441761, 0, 0.070913896, 0, 0.075, 0, -0.070913896, 0, 0.02441761, -18.879791, 0.43905735, -6.4882503)
+
+[node name="NPC5" parent="." unique_id=1130687666 instance=ExtResource("36_s45ko")]
+transform = Transform3D(0.059451584, 0, -0.053530447, 0, 0.08, 0, 0.053530447, 0, 0.059451584, -12.997981, 1.556007, -9.072702)
 
 [connection signal="body_entered" from="Go To Street 2" to="Go To Street 2" method="_on_body_entered"]
 [connection signal="body_entered" from="RespawnArea3D" to="CharacterBody3D" method="_on_respawn_area_3d_body_entered"]
