@@ -13,6 +13,10 @@
 
 [sub_resource type="Resource" id="Resource_igmtw"]
 script = ExtResource("1_x0pjn")
+overrides = {
+"global_font": "\"res://fonts/CormorantGaramond-VariableFont_wght.ttf\"",
+"global_font_size": "25.0"
+}
 
 [sub_resource type="Resource" id="Resource_vnvds"]
 script = ExtResource("1_x0pjn")
@@ -73,4 +77,4 @@ layer_info = {
 "16": SubResource("Resource_p4cbv"),
 "17": SubResource("Resource_yw1fx")
 }
-metadata/_latest_layer = "11"
+metadata/_latest_layer = ""
