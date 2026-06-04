@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://cqjdm2pj5x4t0"]
 
-[ext_resource type="Material" uid="uid://dlqh37n150i1e" path="res://Textures/Paving Stones 081/PavingStones081_2K-JPG.tres" id="1_smidy"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cbt2has5lngua" path="res://Camera Attributes.tres" id="2_5b7g0"]
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="2_8f7sc"]
 [ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="3_qtwdn"]
@@ -32,11 +31,13 @@
 [ext_resource type="AudioStream" uid="uid://bvtupefnt740t" path="res://Textures/Water/WATER_LAKE_LP.WAV" id="26_nwic2"]
 [ext_resource type="PackedScene" uid="uid://dgh4g16bquqpc" path="res://meshes/Building 3.blend" id="30_qahfg"]
 [ext_resource type="PackedScene" uid="uid://duolplg5v1f5o" path="res://Door Area.tscn" id="31_0d8re"]
-[ext_resource type="PackedScene" uid="uid://cve3srdgqa4ic" path="res://Streets/Preview Streets/Preview Street2-1.tscn" id="32_6s8jw"]
+[ext_resource type="PackedScene" uid="uid://cve3srdgqa4ic" path="res://Streets/Preview Streets/Preview Street2-1.tscn" id="34_6s8jb"]
 
-[sub_resource type="Compositor" id="Compositor_5b7g0"]
+
 [ext_resource type="PackedScene" uid="uid://otx0rnod80qp" path="res://Combat/enemy1/NPC5.fbx" id="32_6s8jw"]
 [ext_resource type="Script" uid="uid://oabljn5qu4iv" path="res://scripts/dialogue_trigger2.gd" id="33_5b7g0"]
+
+[sub_resource type="Compositor" id="Compositor_5b7g0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_20jgf"]
 
@@ -233,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1467371, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1663545982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.8756642, 1.4589584, 0, 1.6125505)
-material_override = ExtResource("1_smidy")
+material_override = ExtResource("13_gkk5f")
 mesh = SubResource("PlaneMesh_e1atp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=769854705]
@@ -755,7 +756,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RespawnArea3D" unique_id=1873740761]
 shape = SubResource("WorldBoundaryShape3D_0d8re")
 
-[node name="Street22" parent="." unique_id=1308785338 instance=ExtResource("32_6s8jw")]
+[node name="Street22" parent="." unique_id=1308785338 instance=ExtResource("34_6s8jb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.33342, 0, 3.3884668)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1728647306]

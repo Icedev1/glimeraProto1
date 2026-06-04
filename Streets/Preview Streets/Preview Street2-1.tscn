@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cve3srdgqa4ic"]
 
-[ext_resource type="Material" uid="uid://dlqh37n150i1e" path="res://Textures/Paving Stones 081/PavingStones081_2K-JPG.tres" id="1_m55p5"]
+[ext_resource type="Material" uid="uid://b03k4lsfucnep" path="res://Textures/Paving Stones 081/PavingStones081_1K-PNG.tres" id="1_eoklo"]
 [ext_resource type="PackedScene" uid="uid://b1ki2lk24fo3m" path="res://meshes/LEdge.blend" id="10_s8qt5"]
 [ext_resource type="PackedScene" uid="uid://b5ljseslrww0k" path="res://meshes/stairs.blend" id="15_qec5p"]
 [ext_resource type="Material" uid="uid://d4hd70u6jqwax" path="res://Textures/Rock51/Rock051_1K-JPG.tres" id="23_1mpvb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://clqksao7s4d6a" path="res://meshes/Houses/House 4.blend" id="27_ji5vi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_exsct"]
+material = ExtResource("1_eoklo")
 size = Vector3(19.925, 0.885, 4.885)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0ek6t"]
@@ -71,13 +72,12 @@ size = Vector3(39.75, 19.015, 0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=875245295]
 transform = Transform3D(1.6473973, 0, 0, 0, 1, 0, 0, 0, 2.334382, -11.048277, -0.44486046, -2.1879718)
-material_override = ExtResource("1_m55p5")
 mesh = SubResource("BoxMesh_exsct")
 
 [node name="LEdge" parent="." unique_id=1888746747 instance=ExtResource("10_s8qt5")]
 transform = Transform3D(-6.624889e-08, 0, 1.6358676, 0, 1, 0, -1.5155978, 0, -7.1506044e-08, -5.5628347, -0.002292484, 4.2050653)
 
-[node name="collision1 " parent="LEdge" index="1" unique_id=1917712889]
+[node name="collision1 " parent="LEdge" index="1" unique_id=751087678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041536957, 0)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=2044417132]
@@ -100,44 +100,44 @@ transform = Transform3D(2.1394835, 0, 0, 0, 1, 0, 0, 0, 1, -15.372885, 0.0026299
 [node name="stairs" parent="StaticBody3D5" unique_id=1160843469 instance=ExtResource("15_qec5p")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.90764236, 0.24720126, -0.21936429)
 
-[node name="Cube" parent="StaticBody3D5/stairs" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_xx7fr")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24157023)
 
 [node name="stairs2" parent="StaticBody3D5" unique_id=1208755564 instance=ExtResource("15_qec5p")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.90764236, 0.7809516, -0.81956863)
 
-[node name="Cube" parent="StaticBody3D5/stairs2" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs2" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_xx7fr")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs2" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs2" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24785826)
 
 [node name="stairs3" parent="StaticBody3D5" unique_id=1472238693 instance=ExtResource("15_qec5p")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.9076425, 1.3175006, -2.8896396)
 
-[node name="Cube" parent="StaticBody3D5/stairs3" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs3" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_xx7fr")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs3" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs3" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24519284)
 
-[node name="CollisionShape3D" parent="StaticBody3D5/stairs3/Cube_001" index="0" unique_id=2058847919]
+[node name="CollisionShape3D" parent="StaticBody3D5/stairs3/Cube_001" index="0" unique_id=533685425]
 transform = Transform3D(0.99999994, 0, 1.4210855e-14, 0, 1, 0, 0, 0, 0.99999994, 0, 0, -7.772446e-05)
 
 [node name="stairs4" parent="StaticBody3D5" unique_id=1814234727 instance=ExtResource("15_qec5p")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.9076425, 1.851251, -3.489844)
 
-[node name="Cube" parent="StaticBody3D5/stairs4" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs4" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_xx7fr")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs4" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs4" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24365829)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D5" unique_id=997188340]
@@ -175,19 +175,19 @@ transform = Transform3D(1.9411105, 0, 2.1789359e-07, 0, 1.9418402, 0, 2.1631893e
 [node name="House 5" parent="." unique_id=582002839 instance=ExtResource("27_ji5vi")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16.048779, 0, -9.208434)
 
-[node name="Cube_001" parent="House 5" index="1" unique_id=1566944397]
+[node name="Cube_001" parent="House 5" index="1" unique_id=1265149302]
 transform = Transform3D(1.0265608e-07, 0, -0.6777112, 0, 0.6777112, 0, 1.1742487, 0, 5.9247395e-08, -0.027095795, 3.1468549, 0.00800705)
 
-[node name="Cube_008" parent="House 5" index="10" unique_id=1587828907]
+[node name="Cube_008" parent="House 5" index="10" unique_id=706723165]
 transform = Transform3D(-2.796204, 0, -1.4491371e-07, 0, 2.262461, 0, 2.4445194e-07, 0, -1.6576197, 9.536743e-07, 3.433113, -1.1857481)
 
 [node name="House 6" parent="." unique_id=2020770096 instance=ExtResource("27_ji5vi")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16.048779, 0, -9.148233)
 
-[node name="Cube_001" parent="House 6" index="1" unique_id=1566944397]
+[node name="Cube_001" parent="House 6" index="1" unique_id=1265149302]
 transform = Transform3D(1.0265608e-07, 0, -0.6777112, 0, 0.6777112, 0, 1.1742487, 0, 5.9247395e-08, -0.027095795, 3.1468549, 0.00800705)
 
-[node name="Cube_008" parent="House 6" index="10" unique_id=1587828907]
+[node name="Cube_008" parent="House 6" index="10" unique_id=706723165]
 transform = Transform3D(-2.796204, 0, -1.4491371e-07, 0, 2.262461, 0, 2.4445194e-07, 0, -1.6576197, 9.536743e-07, 3.433113, -1.1857481)
 
 [node name="House 7" parent="." unique_id=1638275572 instance=ExtResource("27_ji5vi")]
@@ -202,19 +202,19 @@ transform = Transform3D(-1.9411105, 0, -4.8153566e-08, 0, 1.9418402, 0, -1.91329
 [node name="House 10" parent="." unique_id=1805230748 instance=ExtResource("27_ji5vi")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -26.05753, 0, 4.864733)
 
-[node name="Cube_001" parent="House 10" index="1" unique_id=1566944397]
+[node name="Cube_001" parent="House 10" index="1" unique_id=1265149302]
 transform = Transform3D(1.0265608e-07, 0, -0.6777112, 0, 0.6777112, 0, 1.1742487, 0, 5.9247395e-08, -0.027095795, 3.1468549, 0.00800705)
 
-[node name="Cube_008" parent="House 10" index="10" unique_id=1587828907]
+[node name="Cube_008" parent="House 10" index="10" unique_id=706723165]
 transform = Transform3D(-2.796204, 0, -1.4491371e-07, 0, 2.262461, 0, 2.4445194e-07, 0, -1.6576197, 9.536743e-07, 3.433113, -1.1857481)
 
 [node name="House 11" parent="." unique_id=569460943 instance=ExtResource("27_ji5vi")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -26.05753, 0, 4.8045325)
 
-[node name="Cube_001" parent="House 11" index="1" unique_id=1566944397]
+[node name="Cube_001" parent="House 11" index="1" unique_id=1265149302]
 transform = Transform3D(1.0265608e-07, 0, -0.6777112, 0, 0.6777112, 0, 1.1742487, 0, 5.9247395e-08, -0.027095795, 3.1468549, 0.00800705)
 
-[node name="Cube_008" parent="House 11" index="10" unique_id=1587828907]
+[node name="Cube_008" parent="House 11" index="10" unique_id=706723165]
 transform = Transform3D(-2.796204, 0, -1.4491371e-07, 0, 2.262461, 0, 2.4445194e-07, 0, -1.6576197, 9.536743e-07, 3.433113, -1.1857481)
 
 [node name="House 12" parent="." unique_id=276017958 instance=ExtResource("27_ji5vi")]
