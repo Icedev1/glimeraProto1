@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://br8xr3i2dwmd7"]
 
-[ext_resource type="Material" uid="uid://dlqh37n150i1e" path="res://Textures/Paving Stones 081/PavingStones081_2K-JPG.tres" id="2_xv3gp"]
 [ext_resource type="Material" uid="uid://b03k4lsfucnep" path="res://Textures/Paving Stones 081/PavingStones081_1K-PNG.tres" id="3_n4vpo"]
 [ext_resource type="Texture2D" uid="uid://2b86wae3plh8" path="res://meshes/SamGrady buildings/DIFFUSE.jpg" id="5_hxrpd"]
 [ext_resource type="ArrayMesh" uid="uid://dy6s1h86csg5m" path="res://meshes/SamGrady buildings/building_6.obj" id="6_fb081"]
@@ -10,37 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://d3bnfaokrlk21" path="res://meshes/Houses/House1/House 1 low res.blend" id="10_q0au5"]
 [ext_resource type="PackedScene" uid="uid://ktcvfyx0hbfd" path="res://meshes/Low Res Church.blend" id="32_oktql"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_20jgf"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqenm"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s8epa"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2nnp6"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3g77m"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn5l4"]
-cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_20jgf")
-roughness_texture = SubResource("CompressedTexture2D_3g77m")
-roughness_texture_channel = 4
-normal_enabled = true
-normal_texture = SubResource("CompressedTexture2D_2nnp6")
-ao_enabled = true
-ao_texture = SubResource("CompressedTexture2D_hqenm")
-ao_texture_channel = 4
-heightmap_enabled = true
-heightmap_texture = SubResource("CompressedTexture2D_s8epa")
-uv1_scale = Vector3(0.353, 0.574, 0.699)
-uv1_triplanar = true
-uv1_world_triplanar = true
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_e1atp"]
-material = SubResource("StandardMaterial3D_gn5l4")
+material = ExtResource("3_n4vpo")
 size = Vector2(7, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4r4ha"]
+material = ExtResource("3_n4vpo")
 size = Vector3(6.83, 1, 2.91)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daqx2"]
@@ -59,7 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1467371, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1663545982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.8756642, 1.4589584, 0, 1.6125505)
-material_override = ExtResource("2_xv3gp")
 mesh = SubResource("PlaneMesh_e1atp")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1801121405]
@@ -67,11 +40,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.147219, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4" unique_id=2063847002]
 transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.150222, 2.2580667, -0.5510607, 1.4235542)
-material_override = ExtResource("3_n4vpo")
 mesh = SubResource("BoxMesh_4r4ha")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1932827550]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.100833)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.9318075)
 
 [node name="Building6" type="MeshInstance3D" parent="StaticBody3D3" unique_id=920451963]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 10.458129, 0.004785776, 0.49851036)
@@ -116,3 +88,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.763466, 0, 0)
 
 [node name="Low Res Church" parent="." unique_id=263279712 instance=ExtResource("32_oktql")]
 transform = Transform3D(-0.0009128172, -0.0009705604, 0.49999824, 0.00081717037, 0.4999984, 0.0009720461, -0.49999848, 0.0008189326, -0.00091123756, 0.030157626, -9.28727, -0.5678253)
+
+[editable path="Low Res Church"]
