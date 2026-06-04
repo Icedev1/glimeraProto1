@@ -130,6 +130,7 @@ audio/channel_defaults={
 history/simple_history_enabled=true
 choices/hotkey_behaviour=1
 audio/type_sound_bus="SFX"
+animations/join_default="Fade In Up"
 
 [display]
 

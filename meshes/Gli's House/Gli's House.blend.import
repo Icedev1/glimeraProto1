@@ -42,7 +42,7 @@ _subresources={
 "Material.002": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://Textures/WoodTexture/Wood095_1K-PNG.tres",
-"use_external/path": "res://Textures/WoodTexture/Wood095_1K-PNG.tres"
+"use_external/path": "uid://bj4jvojq1vnrv"
 }
 }
 }
