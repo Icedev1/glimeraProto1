@@ -1,5 +1,8 @@
 extends Node
 
+signal save_started
+signal save_completed
+
 const SLOT_COUNT = 3
 const SAVE_DIR = "user://saves/"
 
@@ -11,6 +14,7 @@ func _get_path(slot: int) -> String:
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 func save(slot: int):
+	save_started.emit()
 	var data = {
 		"timestamp": Time.get_datetime_string_from_system(),
 
@@ -48,6 +52,7 @@ func save(slot: int):
 	var file = FileAccess.open(_get_path(slot), FileAccess.WRITE)
 	file.store_string(JSON.stringify(data))
 	file.close()
+	save_completed.emit()
 
 # ── Load ──────────────────────────────────────────────────────────────────────
 func load_slot(slot: int) -> bool:

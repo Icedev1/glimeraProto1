@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://b2eqqaj8wy4yd" path="res://root/screen_transition.gd" id="6_jjl4y"]
 [ext_resource type="PackedScene" uid="uid://ngeukue5ydnj" path="res://Objectives/objective_display.tscn" id="7_1pefc"]
 [ext_resource type="Shader" uid="uid://bwj3n5uinfpvt" path="res://Shaders/clockwipe_transition.gdshader" id="7_kneed"]
+[ext_resource type="PackedScene" uid="uid://duss2dulvnhd7" path="res://ui/save_indicator.tscn" id="8_ik4og"]
 [ext_resource type="Shader" uid="uid://d3agx2y3hiqpj" path="res://Shaders/screenshatter_transition.gdshader" id="8_pxagh"]
 [ext_resource type="Shader" uid="uid://y3npo0eylr6e" path="res://Shaders/screenshake.gdshader" id="9_3fcpw"]
+[ext_resource type="Script" uid="uid://8rsiwhgm8hfh" path="res://scripts/save_indicator.gd" id="9_vtjde"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gj8ci"]
 shader = ExtResource("7_kneed")
@@ -239,3 +241,6 @@ offset_left = 90.0
 offset_top = 797.0
 offset_right = 91.0
 offset_bottom = 901.0
+
+[node name="SaveIndicator" parent="." unique_id=252040467 instance=ExtResource("8_ik4og")]
+script = ExtResource("9_vtjde")

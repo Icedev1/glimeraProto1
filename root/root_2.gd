@@ -41,10 +41,13 @@ func switch_world_scene(scene_name: String):
 
 func show_main_menu():
 	current_state = "main_menu"
-	
 	ui_scene.show()
 	overworld_container.hide()
 	_cleanup_battle()
+	await get_tree().process_frame
+	var main_menu = ui_scene.get_node_or_null("Main Menu")
+	if main_menu:
+		main_menu.call("_refresh_continue_button")
 	
 
 func show_overworld():

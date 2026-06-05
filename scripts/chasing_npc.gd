@@ -1,9 +1,8 @@
 extends Node3D
-
 @export var speed: float = 4
 @export var enemy_data: EnemyData 
 @export var battle_scene: String = "res://Combat/scenes/battle.tscn"
-
+@export var enemy_id: String = ""
 var player: Node3D = null
 var chasing: bool = false
 var active = true

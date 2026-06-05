@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://duss2dulvnhd7"]
+
+[node name="SaveIndicator" type="CanvasLayer" unique_id=252040467]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1411035366]
+offset_right = 81.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1832528177]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1654696975]
+layout_mode = 2
+text = "✦ Saving..."
