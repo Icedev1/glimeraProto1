@@ -13,6 +13,7 @@ var active_particles = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
+	Dialogic.timeline_ended.connect(_on_cutscene_ended)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -63,6 +64,10 @@ func _process(delta: float) -> void:
 					Dialogic.VAR.set_variable("target","churchbro")
 				"NPC3":
 					Dialogic.VAR.set_variable("target","npc3")
+					Dialogic.VAR.set_variable("target","npc3")
+					#ObjectiveManager.complete_objective("inspect_library")
+					ObjectiveManager.complete_objective("talk_npc3")
+					ObjectiveManager.reveal_objective("talk_churchbro")
 				"NPC6":
 					Dialogic.VAR.set_variable("target","npc6")
 				"NPC4":
@@ -72,8 +77,12 @@ func _process(delta: float) -> void:
 				"Angry Steve":
 					var game = get_tree().current_scene
 					game.from_overworld_to_battle()
-			
+				"Churchbro":
+					Dialogic.VAR.set_variable("target","churchbro")
+					ObjectiveManager.complete_objective("talk_churchbro")
+					ObjectiveManager.reveal_objective("enter_church")
 			Dialogic.start("timelinelayer2")
+			print("timeline started, current: ", Dialogic.current_timeline)
 			get_viewport().set_input_as_handled()
 		else:
 			pass
@@ -110,37 +119,26 @@ func _on_body_entered(body: Node3D) -> void:
 		prompt.visible = true
 	
 	if active_particles == null:
-
 		active_particles = particle_scene.instantiate()
 		active_particles.global_transform = $CollisionShape3D.global_transform
-		
 		active_particles.set_as_top_level(true)
 		active_particles.scale = Vector3(0.2,0.2,0.2)
-
 		get_tree().current_scene.add_child(active_particles)
 	
-	#triggers battle on touch
 	var targetname = get_parent().name
 	match targetname:
-		#"door_lr":			
-			#var player = $"../../../CharacterBody3D"
-			#if player:
-				#player.rotate_y(PI)
-				#var push_dir = Vector3(0, 0, -0.1)	
-				#player.apply_knockback(push_dir, 3.0, 0.25)
-				#Dialogic.VAR.set_variable("target","door_lr")
-				#Dialogic.start("bedroom")
-				#get_viewport().set_input_as_handled()
-				#
-			#prompt.visible = false
 		"Chill Derek":
 			pass
 		"Aggressive Cornelius":
 			pass
 		"Angry Steve":
 			pass
-	
-	
+		"Church Man1":
+			if Dialogic.current_timeline == null:
+				Dialogic.VAR.set_variable("target", "churchman1")
+				Dialogic.start("timelinelayer2")
+			if prompt:
+				prompt.visible = false
 
 func _on_body_exited(body: Node3D) -> void:
 	inRange = false
@@ -154,7 +152,14 @@ func _on_body_exited(body: Node3D) -> void:
 		active_particles.queue_free()
 		active_particles = null
 
-
+func _on_cutscene_ended():
+	if get_parent().name != "Church Man1":
+		return
+	if not inRange:
+		return
+	var game = get_tree().current_scene
+	game.from_overworld_to_battle()
+	
 func get_prompt():
 	if canvasprompt == null or not is_instance_valid(canvasprompt):
 		var prompts = get_tree().get_nodes_in_group("prompt")

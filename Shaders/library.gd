@@ -16,6 +16,9 @@ func _ready() -> void:
 	handmesh2.set_surface_override_material(0, material2)
 	handmesh3.set_surface_override_material(0, material3)
 	
+	ObjectiveManager.complete_objective("inspect_library")
+	ObjectiveManager.reveal_objective("solve_puzzle")
+
 	reset_colors()
 
 func reset_colors():

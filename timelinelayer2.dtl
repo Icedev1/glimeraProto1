@@ -1,0 +1,24 @@
+if {target} == "npc3":
+	join Gli left
+	join skull right
+	Gli: Hey, have you seen anything strange today?
+	skull: Strange? Everything is strange now.
+	Gli: What do you mean by that?
+	skull: Just… stay out of the church.
+	[end_timeline]
+if {target} == "churchbro":
+	join Gli left
+	join skull right
+	skull: You shouldn't be here.
+	Gli: Why is everyone saying that?
+	skull: The priest is not accepting visitors... Especially not you.
+	[end_timeline]
+if {target} == "churchman1":
+	join Gli left
+	join skull right
+	skull: I wondered when you would come."
+	Gli: I recognize that voice.
+	skull: You've made quite a mess of things, haven't you.
+	skull: The Guardian asked for one thing." > "And you couldn't even give them that."
+	Gli: Who are you?
+	skull: Someone who has to clean up after you.
