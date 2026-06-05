@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://k5a5m54lig58" path="res://Streets/Preview Streets/Preview Market1.tscn" id="43_e2auj"]
 [ext_resource type="ArrayMesh" uid="uid://0cdjyj630ikt" path="res://meshes/SamGrady buildings/building_4.obj" id="44_x31tm"]
 [ext_resource type="Material" uid="uid://d4hd70u6jqwax" path="res://Textures/Rock51/Rock051_1K-JPG.tres" id="45_fc5fu"]
+[ext_resource type="PackedScene" uid="uid://be42cllum5plp" path="res://meshes/Water fountain.blend" id="46_eoms5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e7ssj"]
 material = ExtResource("40_n77t6")
@@ -1576,7 +1577,7 @@ transform = Transform3D(0.9999999, 0, 1.8626451e-09, 0, 0.99998426, 0, -1.862645
 shape = SubResource("BoxShape3D_e0uio")
 
 [node name="Book House 3" parent="." unique_id=1588721374 instance=ExtResource("10_pe7cj")]
-transform = Transform3D(-0.036487244, 0.0001436381, 1.3795182, 6.177442e-05, 1.3800004, -0.00014205428, -1.3795182, 5.7996556e-05, -0.03648725, 3.7750483, 0.07784417, 3.3590083)
+transform = Transform3D(-0.036487244, 0.0001436381, 1.3795182, 6.177442e-05, 1.3800004, -0.00014205428, -1.3795182, 5.7996556e-05, -0.03648725, 3.7750483, -0.021729678, 3.3590083)
 
 [node name="door_building10" type="Node3D" parent="Book House 3" unique_id=1651094849]
 
@@ -2304,6 +2305,9 @@ mesh = ExtResource("44_x31tm")
 transform = Transform3D(-2.2493003e-08, 0, -1.4397591, 0, 0.6305337, 0, 0.51457995, 0, -6.293387e-08, 11.60515, 6.7126746, -18.120052)
 mesh = SubResource("BoxMesh_eoms5")
 
+[node name="Water fountain" parent="." unique_id=1463627277 instance=ExtResource("46_eoms5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.573511, 0.025926681, 4.9081)
+
 [connection signal="body_entered" from="StaticBody3D6/Building6/door_building4/Area3D" to="StaticBody3D6/Building6/door_building4/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="StaticBody3D6/Building6/door_building4/Area3D" to="StaticBody3D6/Building6/door_building4/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="StaticBody3D6/Building6/Building6/door_building4/Area3D" to="StaticBody3D6/Building6/Building6/door_building4/Area3D" method="_on_body_entered"]
@@ -2371,3 +2375,4 @@ mesh = SubResource("BoxMesh_eoms5")
 [editable path="CameraSwitch7"]
 [editable path="CameraSwitch4"]
 [editable path="LEdge"]
+[editable path="Water fountain"]

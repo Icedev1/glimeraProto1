@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmhmo0ym0i7jw"]
+
+[ext_resource type="Texture2D" uid="uid://bkuvgpio605on" path="res://Textures/Water/Water_4/water_4_diffuseOriginal.png" id="1_ylkbj"]
+[ext_resource type="Texture2D" uid="uid://dtehxpokqikmv" path="res://Textures/Water/Water_4/water_4_ao.png" id="2_volcw"]
+[ext_resource type="Texture2D" uid="uid://b7ah5wnpj8ie3" path="res://Textures/Water/Water_4/water_4_height.png" id="3_cs6jg"]
+[ext_resource type="Texture2D" uid="uid://bh6conpdwwsqf" path="res://Textures/Water/Water_4/water_4_metallic.png" id="4_rurnm"]
+[ext_resource type="Texture2D" uid="uid://doxm0e4k4rxqf" path="res://Textures/Water/Water_4/water_4_normal.png" id="5_fkje0"]
+[ext_resource type="Texture2D" uid="uid://cqwaixn28sdxm" path="res://Textures/Water/Water_4/water_4_smoothness.png" id="6_fqjyd"]
+
+[resource]
+albedo_texture = ExtResource("1_ylkbj")
+metallic = 1.0
+metallic_texture = ExtResource("4_rurnm")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("6_fqjyd")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("5_fkje0")
+ao_enabled = true
+ao_texture = ExtResource("2_volcw")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_cs6jg")

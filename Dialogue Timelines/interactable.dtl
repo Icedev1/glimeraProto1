@@ -201,34 +201,33 @@ elif {target} == "quest_npc_1":
 		Gli: Hello, Miss!
 		The Figure is fidgeting and seems to be looking for something.
 		Gli: Do you think you could help me-
-		join skull right
-		skull: Help... you..?
+		"Tall Miss": Help... you..?
 		The Figure snaps out of it and turns to you.
-		skull: Oh! Yes, please if you could help me with something!
-		skull: I was supposed to meet my friend here around an hour ago, but they still haven’t shown up.
-		skull: I am starting to think that they might have forgotten about today…
+		"Tall Miss": Oh! Yes, please if you could help me with something!
+		"Tall Miss": I was supposed to meet my friend here around an hour ago, but they still haven’t shown up.
+		"Tall Miss": I am starting to think that they might have forgotten about today…
 		Again, the figure’s eyes scan the market, looking for her friend.
-		skull: What if something happened?
-		skull: Would you be so kind as to look around for a bit and see if you can find them anywhere?
+		"Tall Miss": What if something happened?
+		"Tall Miss": Would you be so kind as to look around for a bit and see if you can find them anywhere?
 		Gli: I don’t know Miss…
-		skull: If you can find them I can give you…
-		skull: Let’s see… Ah!
-		skull: A garden hose?
+		"Tall Miss": If you can find them I can give you…
+		"Tall Miss": Let’s see… Ah!
+		"Tall Miss": A [color=green]garden hose[/color]?
 		Gli: ..!
 		Gli: Maybe I could use that to get across the staircase.
-		skull: Sorry, that’s silly of me.
-		skull: You don’t seem the gardening type-
+		"Tall Miss": Sorry, that’s silly of me.
+		"Tall Miss": You don’t seem the gardening type-
 		Gli: No! I would absolutely love to have your garden hose!
-		skull: O-oh! Okay!
+		"Tall Miss": O-oh! Okay!
 		skull: If you could bring me my friend, it’s yours!
-		skull: They usually wear a red scarf.
+		"Tall Miss": They usually wear a [color=red]red scarf.[/color]
 		Gli: (Hmm.. I suppose i could just... push them?
 		set {TalkedToFolder.talkedTo3} = true
 		[signal arg="start_quest_1"]
 	else:
 		join skull right
-		skull: Look for a Figure wearing a red scarf.
-		skull: I would really appreciate it if you could find them.
+		"Tall Miss": Look for a Figure wearing a [color=red]red[/color] scarf.
+		"Tall Miss": I would really appreciate it if you could find them.
 if {target} == "porcelain_figure_defeated":
 	join Gli center
 	Gli: I'm sorry... but what you did wasn't nice.

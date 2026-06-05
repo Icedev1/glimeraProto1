@@ -4,6 +4,7 @@ join "Porcelain Figure" right
 "Porcelain Figure": Come here birdy! Feeding time!
 leave "Porcelain Figure"
 join Gli left
+Gli: (Is she trying to catch Angel?)
 Gli: Angel!
 join Gli left
 leave Gli
@@ -13,19 +14,19 @@ join "Porcelain Figure" right
 "Porcelain Figure": You! You scared it away.
 leave "Porcelain Figure"
 join Gli left
-Gli: I don't like the way that they're looking at me...
+The woman looks at you with a menacing glare.
 label choice_loop
 - I'm sorry I didn't mean to. | [if {picked_a} == false]
 	set {picked_a} = true
 	join "Porcelain Figure" right
-	"Porcelain Figure": Your excuses won't get you anywhere, Gli.\
-	Be grateful for the Guardian's forbearance.
+	"Porcelain Figure": Regardless of your intentions, you did it. Didn't you, Gli?
+	"Porcelain Figure": Be grateful for the Guardian's mercy.
 	join Gli left
-	Gli: Sorry, have we met before?
+	Gli: Sorry, do i know you?
 	join "Porcelain Figure" right
-	"Porcelain Figure": How could I not know who you are?
+	"Porcelain Figure": I know YOU. That's for sure.
 	jump choice_loop
-- She doesn't eat that. | [if {picked_b} == false]
+- Angel doesn't eat that. | [if {picked_b} == false]
 	set {picked_b} = true
 	join Gli left
 	Gli: The crows- they're different. They like to eat seeds.
@@ -44,16 +45,17 @@ elif {picked_b} == false:
 elif {picked_c} == false:
 	jump choice_loop
 join "Porcelain Figure" right
-"Porcelain Figure": Come closer, let me take a look at you.
+"Porcelain Figure": Come here, let me take a look at you.
 join "Porcelain Figure" right
 "Porcelain Figure": You bent the world out of shape.
 join "Porcelain Figure" right
 "Porcelain Figure": You taught the birds to sing, thinking that'll make it better.
 leave "Porcelain Figure"
-join Gli left
-Gli: Hey give that back!
 leave Gli
 join "Porcelain Figure" right
 "Porcelain Figure": It's like you said... They're not like us. And neither are you.
+join Gli left
+Gli: You're not making any sense, lady...
+Gli: Hey! Back off!
 [signal arg="battle_start"]
 [end_timeline]

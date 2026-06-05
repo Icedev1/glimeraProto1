@@ -47,6 +47,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Intimidating Figure": "res://Intimidating Figure.dtl",
+"Rocks": "res://Dialogue Timelines/Rocks.dtl",
 "Talk with Bob": "res://Dialogue Timelines/Talk with Bob.dtl",
 "events": "res://Dialogue Timelines/events.dtl",
 "interactable": "res://Dialogue Timelines/interactable.dtl",
