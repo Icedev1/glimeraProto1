@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dqr418el2k8mt" path="res://ui/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://cfsj32glu142d" path="res://images/Start Screen.png" id="2_5klac"]
 [ext_resource type="Texture2D" uid="uid://dfq6hkm4cc71f" path="res://images/icon.svg" id="2_arv2f"]
+[ext_resource type="Shader" uid="uid://cy7p6er38fkew" path="res://ui/logo test.gdshader" id="4_bgtsx"]
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="4_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bjqkqhibdwbkc" path="res://images/Kopie van Glimera pitch v2.png" id="4_jiymt"]
 [ext_resource type="Texture2D" uid="uid://cne7kbsq88fyh" path="res://images/yamukSaatkule.png" id="4_lsdqh"]
@@ -31,6 +32,14 @@ color = Color(0.99215686, 0.9607843, 0.95686275, 0.23529412)
 turbulence_enabled = true
 turbulence_noise_strength = 6.69
 turbulence_noise_scale = 7.85
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kaxbk"]
+shader = ExtResource("4_bgtsx")
+shader_parameter/do_abs = false
+shader_parameter/do_quantize = false
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(0, 25)
+shader_parameter/sine_speed = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsdqh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -140,6 +149,7 @@ scale = Vector2(15.7265625, 9.3046875)
 texture = ExtResource("2_arv2f")
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=321591793]
+material = SubResource("ShaderMaterial_kaxbk")
 layout_mode = 0
 offset_left = 124.0
 offset_top = 99.0

@@ -68,37 +68,47 @@ func can_move(direction: Vector3, distance: float) -> bool:
 
 	return result.is_empty()
 
+
 func _on_left_body_entered(body: Node3D) -> void:
 	left = true
 	print("left entered")
+	Dialogue.interactRange.emit(self, true)
+
 
 
 func _on_left_body_exited(body: Node3D) -> void:
 	left = false
+	Dialogue.interactRange.emit(self, false)
 
 
 func _on_right_body_entered(body: Node3D) -> void:
 	right = true
 	print("right entered")
+	Dialogue.interactRange.emit(self, true)
 
 
 func _on_right_body_exited(body: Node3D) -> void:
 	right = false
+	Dialogue.interactRange.emit(self, false)
 
 
 func _on_back_body_entered(body: Node3D) -> void:
 	back = true
 	print("back entered")
+	Dialogue.interactRange.emit(self, true)
 
 
 func _on_back_body_exited(body: Node3D) -> void:
 	back = false
+	Dialogue.interactRange.emit(self, false)
 
 
 func _on_front_body_entered(body: Node3D) -> void:
 	front = true
 	print("front entered")
+	Dialogue.interactRange.emit(self, true)
 
 
 func _on_front_body_exited(body: Node3D) -> void:
 	front = false
+	Dialogue.interactRange.emit(self, false)
