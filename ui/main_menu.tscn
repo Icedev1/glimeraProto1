@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfsj32glu142d" path="res://images/Start Screen.png" id="2_5klac"]
 [ext_resource type="Texture2D" uid="uid://dfq6hkm4cc71f" path="res://images/icon.svg" id="2_arv2f"]
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://bjqkqhibdwbkc" path="res://images/Kopie van Glimera pitch v2.png" id="4_jiymt"]
 [ext_resource type="Texture2D" uid="uid://cne7kbsq88fyh" path="res://images/yamukSaatkule.png" id="4_lsdqh"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="5_glbon"]
 [ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://ui/inputremapbutton.gd" id="6_nlkkf"]
@@ -137,6 +138,15 @@ repeat_times = 2
 position = Vector2(942.5, 531.5)
 scale = Vector2(15.7265625, 9.3046875)
 texture = ExtResource("2_arv2f")
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=321591793]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 99.0
+offset_right = 2044.0
+offset_bottom = 424.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_jiymt")
 
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=672924109]
 layout_mode = 1
