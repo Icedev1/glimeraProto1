@@ -142,3 +142,11 @@ func _get_camera_direction(input_dir: Vector2) -> Vector3:
 
 func _on_respawn_area_3d_body_entered(body: Node3D) -> void:
 	$".".global_transform.origin = Vector3.ZERO # Replace with function body.
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.

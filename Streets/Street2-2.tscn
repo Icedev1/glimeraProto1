@@ -322,7 +322,7 @@ shape = SubResource("BoxShape3D_20bg3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.147219, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4" unique_id=2063847002]
-transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.150222, 2.2580667, -4.7683716e-07, 1.4235542)
+transform = Transform3D(2.0998774, 0, 0, 0, 1, 0, 0, 0, 4.150222, 2.2600064, -4.7683716e-07, 1.4227211)
 material_override = ExtResource("22_lnqhn")
 mesh = SubResource("PlaneMesh_xkex8")
 

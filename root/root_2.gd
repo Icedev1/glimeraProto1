@@ -169,6 +169,7 @@ func from_battle_to_overworld():
 	if current_battle_enemy != null and current_battle_enemy.unit_name == "Intimidating Figure":
 		ObjectiveManager.complete_objective("climb_stairs")
 		ObjectiveManager.advance_layer()
+		ObjectiveManager.set_main_quest("Find a way to the upper city")
 
 	current_battle_enemy = null
 	$CanvasLayer/ObjectiveDisplay.show()

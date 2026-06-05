@@ -29,9 +29,12 @@ func _ready() -> void:
 			{ "id": "climb_stairs", "text": "Climb the stairs", "done": false, "visible": false },
 		],
 		[
-			{ "id": "layer2_obj1", "text": "Placeholder objective 1", "done": false, "visible": true },
-			{ "id": "layer2_obj2", "text": "Placeholder objective 2", "done": false, "visible": true },
-			{ "id": "layer2_obj3", "text": "Placeholder objective 3", "done": false, "visible": true },
+			{ "id": "inspect_library", "text": "Inspect the library", "done": false, "visible": true },
+			{ "id": "solve_puzzle", "text": "Solve the library puzzle", "done": false, "visible": false },
+			{ "id": "talk_npc3", "text": "Look for information", "done": false, "visible": false },
+			{ "id": "talk_churchbro", "text": "Ask about the church", "done": false, "visible": false },
+			{ "id": "enter_church", "text": "Enter the church", "done": false, "visible": false },
+			{ "id": "fight_churchman", "text": "Defeat the Priest", "done": false, "visible": false },
 		],
 	]
 
