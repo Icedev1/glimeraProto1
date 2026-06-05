@@ -1,12 +1,9 @@
 extends Area3D
 @export var target_street : String
 @export var spawn_name : String
+
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
-		StoryFlags.current_scene = target_street
-		StoryFlags.checkpoint_position = body.global_position
-		SaveManager.save(0)
-		print("Saved! Scene: ", StoryFlags.current_scene, " Pos: ", StoryFlags.checkpoint_position)
 		match target_street:
 			"res://Streets/Street1-2.tscn": # entering street 2
 				ObjectiveManager.reveal_objective("see_figure")

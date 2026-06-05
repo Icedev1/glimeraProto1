@@ -4,6 +4,7 @@ var inRange : bool = false
 @onready var node: Node3D = $".."
 @onready var canvasprompt: Control = null
 var auto_skip := false
+#var camera : Camera3D
 @onready var particle_scene = preload("res://Particles/GlowingRingParticle.tscn")
 
 var active_particles = null
@@ -11,6 +12,7 @@ var active_particles = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	Dialogic.signal_event.connect(DialogicSignal)
 
 
@@ -41,6 +43,7 @@ func _process(delta: float) -> void:
 					ObjectiveManager.complete_objective("pickup_sledgehammer")
 				"violin":
 					Dialogic.VAR.set_variable("target", "violin")
+					GraftGlobals.violinObtained = true
 					ObjectiveManager.complete_objective("pickup_violin")
 					ObjectiveManager.reveal_objective("pickup_sledgehammer")
 				"bed":
@@ -68,7 +71,7 @@ func _process(delta: float) -> void:
 				"door_building3":
 					Dialogic.VAR.set_variable("target", "door_building1")
 				"door_building4":
-					Dialogic.VAR.set_variable("target", "door_building1")
+					Dialogic.VAR.set_variable("target", "door_building2")
 				"door_building5":
 					Dialogic.VAR.set_variable("target", "door_building1")
 				"door_building6":
@@ -202,7 +205,9 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	var prompt = get_prompt()
 	if prompt:
+		#prompt.global_position = camera.unproject_position(body.global_position) - Vector2(0, 75) 
 		prompt.visible = true
+		
 	
 	if active_particles == null:
 		active_particles = particle_scene.instantiate()
@@ -251,7 +256,11 @@ func _on_body_entered(body: Node3D) -> void:
 			get_tree().root.get_node("Root").from_overworld_to_battle(
 				preload("res://Combat/resources/enemies/tutorial enemies/tutorial_enemy2.tres"),"res://Combat/scenes/battle_tutorial.tscn")
 			$"..".chasing = false
-	
+		"Calm Marcus":
+			Dialogic.VAR.set_variable("target", "npc2")
+			Dialogic.start("interactable")
+			get_viewport().set_input_as_handled()
+			
 	
 
 func _on_body_exited(body: Node3D) -> void:
@@ -282,3 +291,11 @@ func _on_interaction_volume_body_entered(body: Node3D) -> void:
 
 func _on_interaction_volume_body_exited(body: Node3D) -> void:
 	_on_body_exited(body)
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.

@@ -195,13 +195,11 @@ func from_battle_to_overworld():
 func transition_to_street(target_street: String, spawn_name: String):
 	transition1.playfade(func():
 		switch_world_scene(target_street)
-		var player = current_overworld.get_node("CharacterBody3D")
-		if spawn_name != "":
-			var spawn = current_overworld.get_node(spawn_name)
-			player.global_position = spawn.global_position
-		elif StoryFlags.checkpoint_position != Vector3.ZERO:
-			player.global_position = StoryFlags.checkpoint_position
-			StoryFlags.checkpoint_position = Vector3.ZERO
+		var spawn = current_overworld.get_node(spawn_name)
+		
+		var character = current_overworld.get_node("CharacterBody3D")
+		character.global_transform.origin = spawn.global_transform.origin
+		character.global_rotation.y = spawn.global_rotation.y
 	)
 
 func screenshake():

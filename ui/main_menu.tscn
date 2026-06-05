@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://dqr418el2k8mt" path="res://ui/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://cfsj32glu142d" path="res://images/Start Screen.png" id="2_5klac"]
 [ext_resource type="Texture2D" uid="uid://dfq6hkm4cc71f" path="res://images/icon.svg" id="2_arv2f"]
+[ext_resource type="Shader" uid="uid://cy7p6er38fkew" path="res://ui/logo test.gdshader" id="4_bgtsx"]
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://bjqkqhibdwbkc" path="res://images/Kopie van Glimera pitch v2.png" id="4_jiymt"]
 [ext_resource type="Texture2D" uid="uid://cne7kbsq88fyh" path="res://images/yamukSaatkule.png" id="4_lsdqh"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="5_glbon"]
 [ext_resource type="Script" uid="uid://bwd3qlffpad6o" path="res://ui/inputremapbutton.gd" id="6_nlkkf"]
@@ -30,6 +32,14 @@ color = Color(0.99215686, 0.9607843, 0.95686275, 0.23529412)
 turbulence_enabled = true
 turbulence_noise_strength = 6.69
 turbulence_noise_scale = 7.85
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kaxbk"]
+shader = ExtResource("4_bgtsx")
+shader_parameter/do_abs = false
+shader_parameter/do_quantize = false
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(0, 25)
+shader_parameter/sine_speed = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsdqh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -138,6 +148,16 @@ position = Vector2(942.5, 531.5)
 scale = Vector2(15.7265625, 9.3046875)
 texture = ExtResource("2_arv2f")
 
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=321591793]
+material = SubResource("ShaderMaterial_kaxbk")
+layout_mode = 0
+offset_left = 124.0
+offset_top = 99.0
+offset_right = 2044.0
+offset_bottom = 424.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_jiymt")
+
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=672924109]
 layout_mode = 1
 anchors_preset = -1
@@ -154,7 +174,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="ContinueButton" type="Button" parent="MenuButtons" unique_id=2023752408]
+[node name="StartButton" type="Button" parent="MenuButtons" unique_id=2028129636]
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -162,19 +182,21 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_lsdqh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q75kt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kaxbk")
-text = "Continue"
+text = "Start"
 
-[node name="ClockIcon" type="TextureRect" parent="MenuButtons/ContinueButton" unique_id=999127614]
+[node name="ClockIcon" type="TextureRect" parent="MenuButtons/StartButton" unique_id=61750780]
 visible = false
 modulate = Color(0.8593361, 0.5238907, 0.47744077, 1)
 layout_mode = 0
+offset_top = 106.99999
 offset_right = 2360.0
-offset_bottom = 1640.0
+offset_bottom = 1747.0
 rotation = -1.5707964
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_lsdqh")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="MenuButtons/ContinueButton" unique_id=514008267]
+[node name="Label" type="Label" parent="MenuButtons/StartButton" unique_id=883525371]
 visible = false
 layout_mode = 0
 offset_left = 69.0
@@ -185,7 +207,7 @@ rotation = -0.06832033
 theme_override_font_sizes/font_size = 35
 text = "S t"
 
-[node name="Label2" type="Label" parent="MenuButtons/ContinueButton" unique_id=1316938912]
+[node name="Label2" type="Label" parent="MenuButtons/StartButton" unique_id=1321346666]
 visible = false
 layout_mode = 0
 offset_left = 113.0
@@ -195,44 +217,6 @@ offset_bottom = 70.0
 rotation = -0.24725834
 theme_override_font_sizes/font_size = 35
 text = "a r t"
-
-[node name="NewGameButton" type="Button" parent="MenuButtons" unique_id=2028129636]
-clip_contents = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_lsdqh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q75kt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kaxbk")
-text = "New Game"
-
-[node name="ClockIcon" type="TextureRect" parent="MenuButtons/NewGameButton" unique_id=2071718344]
-visible = false
-modulate = Color(0.8593361, 0.5238907, 0.47744077, 1)
-layout_mode = 0
-offset_right = 2360.0
-offset_bottom = 1640.0
-rotation = -1.5707964
-texture = ExtResource("4_lsdqh")
-expand_mode = 2
-
-[node name="Label" type="Label" parent="MenuButtons/NewGameButton" unique_id=883525371]
-layout_mode = 0
-offset_left = 69.0
-offset_top = 21.000002
-offset_right = 114.0
-offset_bottom = 76.0
-rotation = -0.06832033
-theme_override_font_sizes/font_size = 35
-
-[node name="Label2" type="Label" parent="MenuButtons/NewGameButton" unique_id=1321346666]
-layout_mode = 0
-offset_left = 113.0
-offset_top = 15.000002
-offset_right = 190.0
-offset_bottom = 70.0
-rotation = -0.24725834
-theme_override_font_sizes/font_size = 35
 
 [node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=1168352789]
 clip_contents = true
@@ -248,10 +232,12 @@ text = "Settings"
 visible = false
 modulate = Color(0.85882354, 0.5254902, 0.47843137, 1)
 layout_mode = 0
-offset_left = 1.0
+offset_left = 0.9999981
+offset_top = 109.000015
 offset_right = 2361.0
-offset_bottom = 1640.0
+offset_bottom = 1749.0
 rotation = -1.5707964
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_lsdqh")
 
 [node name="Label" type="Label" parent="MenuButtons/SettingsButton" unique_id=1189150743]
@@ -290,9 +276,12 @@ text = "Quit"
 visible = false
 modulate = Color(0.85882354, 0.5254902, 0.47843137, 1)
 layout_mode = 0
-offset_right = 2360.0
-offset_bottom = 1640.0
+offset_left = 0.9999981
+offset_top = 107.000015
+offset_right = 2361.0
+offset_bottom = 1747.0
 rotation = -1.5707964
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_lsdqh")
 
 [node name="Label" type="Label" parent="MenuButtons/QuitButton" unique_id=251534386]
@@ -602,16 +591,11 @@ stream = ExtResource("9_arv2f")
 volume_db = -9.0
 bus = &"SFX"
 
-[connection signal="button_down" from="MenuButtons/ContinueButton" to="." method="_on_continue_button_button_down"]
-[connection signal="button_up" from="MenuButtons/ContinueButton" to="." method="_on_continue_button_button_up"]
-[connection signal="focus_entered" from="MenuButtons/ContinueButton" to="." method="_on_continue_button_focus_entered"]
-[connection signal="mouse_exited" from="MenuButtons/ContinueButton" to="." method="_on_continue_button_mouse_exited"]
-[connection signal="pressed" from="MenuButtons/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="button_down" from="MenuButtons/NewGameButton" to="." method="_on_new_game_button_button_down"]
-[connection signal="button_up" from="MenuButtons/NewGameButton" to="." method="_on_new_game_button_button_up"]
-[connection signal="mouse_entered" from="MenuButtons/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
-[connection signal="mouse_exited" from="MenuButtons/NewGameButton" to="." method="_on_new_game_button_mouse_exited"]
-[connection signal="pressed" from="MenuButtons/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="button_down" from="MenuButtons/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_up" from="MenuButtons/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="mouse_entered" from="MenuButtons/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="MenuButtons/StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="button_down" from="MenuButtons/SettingsButton" to="." method="_on_settings_button_button_down"]
 [connection signal="button_up" from="MenuButtons/SettingsButton" to="." method="_on_settings_button_button_up"]
 [connection signal="mouse_entered" from="MenuButtons/SettingsButton" to="." method="_on_settings_button_mouse_entered"]

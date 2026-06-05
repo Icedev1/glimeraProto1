@@ -1,5 +1,5 @@
 extends Node
-#player_manager.gd
+
 #const SAVE_PATH: String = "user://player.tres"
 
 var data: PlayerData

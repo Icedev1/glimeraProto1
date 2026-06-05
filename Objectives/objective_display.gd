@@ -1,13 +1,11 @@
 extends PanelContainer
 
-
-#objective_display.gd
 @onready var vbox := $VBoxContainer
 
 var label_pool: Array = []
 
 func _ready() -> void:
-	position = Vector2(50, 500)
+	position = Vector2(10, 10)
 	ObjectiveManager.objectives_updated.connect(_refresh)
 	ObjectiveManager.layer_advanced.connect(_on_layer_advanced)
 	ObjectiveManager.main_quest_updated.connect(_on_main_quest_updated)

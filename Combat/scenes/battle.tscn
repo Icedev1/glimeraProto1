@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://dy8maci0u0st7"]
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
-
 [ext_resource type="Resource" uid="uid://kc77x8sqfqls" path="res://Combat/resources/enemies/boss1/boss1.tres" id="2_01irj"]
 [ext_resource type="Texture2D" uid="uid://ovvm1ii6heoi" path="res://meshes/textures/Wood035_1K-PNG_Displacement.png" id="3_01irj"]
-
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="4_egpmh"]
@@ -14,13 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
 [ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="6_r8c2t"]
-
 [ext_resource type="Shader" uid="uid://bs2f48y3sxg7b" path="res://Shaders/low_hp.gdshader" id="7_01irj"]
+[ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="8_fr5r2"]
 [ext_resource type="Texture2D" uid="uid://calpspnwlo7n0" path="res://images/Gli Portrait.png" id="12_n1uve"]
 [ext_resource type="Shader" uid="uid://camxqn22pk7bw" path="res://Shaders/card_outline.gdshader" id="12_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://b4en42keqdivj" path="res://images/aptaltaş.png" id="13_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://d25buoesqrnq7" path="res://images/8037114.png" id="17_onrm6"]
 [ext_resource type="Texture2D" uid="uid://b1pldpe4chka1" path="res://images/11279725.png" id="18_fr5r2"]
+[ext_resource type="AudioStream" uid="uid://cq6i78xknws42" path="res://Sounds/SFX/se_battle_115.ogg" id="19_x13a4"]
+[ext_resource type="AudioStream" uid="uid://cle1imm5my468" path="res://Sounds/SFX/se_battle_103.ogg" id="20_onrm6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1uve"]
 albedo_texture = ExtResource("3_01irj")
@@ -43,6 +43,63 @@ size = Vector2(105.945, 238.21)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3inix"]
 size = Vector3(106.26196, 1, 211.75021)
+
+[sub_resource type="Animation" id="Animation_3inix"]
+resource_name = "Armature|Cube_015Action"
+length = 4.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.487548e-08, 0.38268343, 1.4445897e-08, 0.9238795, 0.76666665, 1, 1.3322761e-08, 0.9356495, 3.5319783e-08, -0.35293064, 1.3666667, 1, 3.7748308e-08, 0.005817909, 2.1961993e-10, -0.9999831, 2.1333334, 1, 1.4271673e-09, -0.99928504, -3.772196e-08, -0.03780681, 2.9, 1, -3.7656992e-08, -0.06975647, -2.6332334e-09, 0.9975641, 2.9333334, 1, -3.7748787e-08, -0.0029087004, -1.0980038e-10, 0.99999577, 3.7, 1, -1.3174193e-09, 0.99939084, 3.772595e-08, 0.034899496, 4.4666667, 1, 3.7664496e-08, 0.06685403, 2.5236693e-09, -0.99776274, 4.5, 1, 3.7748947e-08, 3.673819e-16, 1.386828e-23, -1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Skeleton:LeftUpperLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.548587e-11, 7.288712e-10, -0.99999994, 5.960507e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Skeleton:LeftShoulder")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.49999905, -0.5000009, -0.49999917, 0.5000009)
+
+[sub_resource type="Animation" id="Animation_lcmqg"]
+resource_name = "Armature|mixamo_com"
+length = 4.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -3.7748947e-08, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Skeleton:LeftUpperLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.548587e-11, 7.288712e-10, -0.99999994, 5.960507e-08)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Skeleton:LeftShoulder")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.49999905, -0.5000009, -0.49999917, 0.5000009)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7r0cw"]
+_data = {
+&"Armature|Cube_015Action": SubResource("Animation_3inix"),
+&"Armature|mixamo_com": SubResource("Animation_lcmqg"),
+&"Idle Straight": ExtResource("8_fr5r2")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n1uve"]
 shader = ExtResource("7_01irj")
@@ -136,6 +193,8 @@ path = "attack1"
 shader = ExtResource("12_q6ghl")
 shader_parameter/outline_color = Color(0.3, 1, 0.4, 1)
 shader_parameter/thickness = 0.1
+shader_parameter/solid_thickness = 0.015
+shader_parameter/corner_radius = 0.03
 shader_parameter/pulse_speed = 3.0
 
 [sub_resource type="Texture2D" id="Texture2D_v7i3o"]
@@ -208,13 +267,47 @@ shape = SubResource("BoxShape3D_3inix")
 
 [node name="Player" parent="." unique_id=1051319031 instance=ExtResource("4_q77w5")]
 unique_name_in_owner = true
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 5, 0, 0)
+transform = Transform3D(0.21643965, 0, -0.976296, 0, 1, 0, 0.976296, 0, 0.21643965, 1.517, 0, 7.773)
 script = ExtResource("5_1fagd")
 
 [node name="Enemy" parent="." unique_id=1449211599 instance=ExtResource("4_egpmh")]
 unique_name_in_owner = true
-transform = Transform3D(0.49130636, 0, 0.0928333, 0, 0.5, 0, -0.0928333, 0, 0.49130636, -10, 3, 0)
+transform = Transform3D(0.41304907, 0, -0.28176302, 0, 0.5, 0, 0.28176302, 0, 0.41304907, 5.214, -0.103043936, 3.405)
 script = ExtResource("6_r8c2t")
+
+[node name="Armature" parent="Enemy" index="0" unique_id=702117979]
+transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
+
+[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=1853548626]
+bones/0/position = Vector3(-0.19295849, 5.616861, 0.039618105)
+bones/0/rotation = Quaternion(-0.022635806, 0.008890023, -0.001056021, 0.99970376)
+bones/1/rotation = Quaternion(0.01116827, -0.004045971, 0.0038487185, 0.99992204)
+bones/2/rotation = Quaternion(0.0077084266, -0.020438911, 0.0040136334, 0.9997534)
+bones/3/rotation = Quaternion(0.00776506, -0.02051016, 0.0043115467, 0.99975026)
+bones/4/rotation = Quaternion(-0.019889493, 0.011395781, -0.022216769, 0.99949044)
+bones/5/rotation = Quaternion(0.051477622, -0.01428001, 0.024620717, 0.9982685)
+bones/8/rotation = Quaternion(0.47498834, 0.51423734, 0.40289238, -0.5895964)
+bones/9/rotation = Quaternion(0.15253937, 0.95690966, -0.24065089, -0.0560621)
+bones/10/rotation = Quaternion(0.06672847, -0.8573519, 0.18719843, 0.47481775)
+bones/11/rotation = Quaternion(0.057827976, 0.7814367, -0.072861426, 0.6170121)
+bones/13/rotation = Quaternion(0.44357383, -0.5455245, -0.42979988, -0.5664958)
+bones/14/rotation = Quaternion(-0.19316742, 0.95138824, -0.23870222, 0.023836523)
+bones/15/rotation = Quaternion(0.059034996, 0.85064834, -0.1803254, 0.49030104)
+bones/16/rotation = Quaternion(-0.022959827, -0.7674295, 0.047170233, 0.6389834)
+bones/18/rotation = Quaternion(0.052378047, 0.04458529, 0.99759424, 0.008639624)
+bones/19/rotation = Quaternion(-0.02524433, 0.98396254, -0.151522, 0.09067287)
+bones/20/rotation = Quaternion(0.020121882, 0.6433217, -0.7644379, 0.036973294)
+bones/21/rotation = Quaternion(3.7142948e-07, 0.9999723, 0.007446578, -1.3071147e-07)
+bones/22/position = Vector3(-0.09396719, 0.3593269, 0.007652172)
+bones/24/rotation = Quaternion(-0.10389558, 0.049908, 0.9932451, -0.01337928)
+bones/25/rotation = Quaternion(0.019874474, 0.9864074, -0.15284719, -0.056949936)
+bones/26/rotation = Quaternion(-0.023818854, 0.64443403, -0.76383644, -0.026292874)
+bones/27/rotation = Quaternion(-5.8975763e-07, 1, 0.00012577094, 3.261923e-07)
+bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
+
+[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=793344220]
+libraries/ = SubResource("AnimationLibrary_7r0cw")
+autoplay = &"Idle Straight"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=771652485]
 transform = Transform3D(0.70710677, -0.5000001, 0.5000001, -5.1593812e-08, 0.7071067, 0.7071069, -0.7071069, -0.49999997, 0.49999997, 0, 6, 0)
@@ -233,10 +326,19 @@ mouse_filter = 2
 
 [node name="PlayerArea" type="HBoxContainer" parent="Battle_UI" unique_id=539363790]
 custom_minimum_size = Vector2(800, 0)
-offset_left = 60.0
-offset_top = 40.0
-offset_right = 660.0
-offset_bottom = 97.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -860.0
+offset_top = -1040.0
+offset_right = -60.0
+offset_bottom = -940.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="GliPortrait" type="TextureRect" parent="Battle_UI/PlayerArea" unique_id=2125577812]
 custom_minimum_size = Vector2(100, 100)
@@ -681,31 +783,31 @@ environment = SubResource("Environment_7sfm4")
 anchors_preset = -1
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_right = 965.0
 grow_vertical = 2
 stretch = true
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer1" unique_id=123518556]
 handle_input_locally = false
-size = Vector2i(960, 1080)
+size = Vector2i(1925, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer1/SubViewport2" unique_id=1976917586]
-transform = Transform3D(0.8910065, 0.01584404, -0.45371395, 0, 0.99939084, 0.034899496, 0.45399052, -0.031095678, 0.89046377, 2.841, 2.8, 4.201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11, 3.33, 17.835)
+fov = 25.0
 
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=1849388782]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 8
-stretch = true
+[node name="HitEffective" type="AudioStreamPlayer" parent="." unique_id=377997488 groups=["battle_sfx"]]
+stream = ExtResource("19_x13a4")
 
-[node name="SubViewport1" type="SubViewport" parent="SubViewportContainer2" unique_id=1395845255]
-handle_input_locally = false
-size = Vector2i(960, 1080)
-render_target_update_mode = 4
+[node name="HitWeak" type="AudioStreamPlayer" parent="." unique_id=1961221678 groups=["battle_sfx"]]
+stream = ExtResource("20_onrm6")
+pitch_scale = 1.63
 
-[node name="Camera3D1" type="Camera3D" parent="SubViewportContainer2/SubViewport1" unique_id=951482207]
-transform = Transform3D(0.89100647, -0.01584404, 0.45371395, 0, 0.99939084, 0.034899496, -0.4539905, -0.031095678, 0.89046377, -7.859, 3.3, 4.529)
+[node name="HitNormal" type="AudioStreamPlayer" parent="." unique_id=292675140 groups=["battle_sfx"]]
+stream = ExtResource("20_onrm6")
+
+[node name="HitBlocked" type="AudioStreamPlayer" parent="." unique_id=1483973975 groups=["battle_sfx"]]
+stream = ExtResource("19_x13a4")
+pitch_scale = 3.77
+
+[editable path="Enemy"]
