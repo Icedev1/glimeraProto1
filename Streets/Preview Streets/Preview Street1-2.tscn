@@ -569,6 +569,18 @@ size = Vector3(1.8771362, 5.581665, 5.1817017)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmmlt"]
 albedo_texture = ExtResource("5_lh5wh")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kinfc"]
+albedo_texture = ExtResource("5_lh5wh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lh5wh"]
+albedo_texture = ExtResource("5_lh5wh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5kql"]
+size = Vector3(3.7474365, 3.8605957, 3.4256592)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ei35q"]
+albedo_texture = ExtResource("5_lh5wh")
+
 [node name="Node3D" type="Node3D" unique_id=2025353727]
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1132387877]
@@ -596,7 +608,7 @@ material_override = ExtResource("1_jjnhg")
 mesh = SubResource("PlaneMesh_114jb")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D2/MeshInstance3D" unique_id=1148250900]
-transform = Transform3D(-2.0299916e-08, 0, -1.439759, 0, 0.47555214, 0, 0.4644079, 0, -6.2933864e-08, 3.848897, 1.216526, -4.601984)
+transform = Transform3D(-7.748957e-09, 0, -1.439759, 0, 0.47555214, 0, 0.17727543, 0, -6.2933864e-08, 3.848897, 1.216526, -8.987621)
 mesh = SubResource("BoxMesh_jjnhg")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1456473389]
@@ -613,48 +625,48 @@ transform = Transform3D(1.7875423, 0, 0, 0, 1, 0, 0, 0, 1, 7.5381947, -0.191, -1
 [node name="stairs" parent="StaticBody3D5" unique_id=914142682 instance=ExtResource("3_kinfc")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.90764236, 0.24720126, -0.21936429)
 
-[node name="Cube" parent="StaticBody3D5/stairs" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 material_override = ExtResource("2_1a3c2")
 mesh = SubResource("ArrayMesh_wyffs")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24157023)
 
 [node name="stairs2" parent="StaticBody3D5" unique_id=497799515 instance=ExtResource("3_kinfc")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.90764236, 0.7809516, -0.81956863)
 
-[node name="Cube" parent="StaticBody3D5/stairs2" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs2" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 material_override = ExtResource("2_1a3c2")
 mesh = SubResource("ArrayMesh_wyffs")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs2" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs2" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24785826)
 
 [node name="stairs3" parent="StaticBody3D5" unique_id=1162974004 instance=ExtResource("3_kinfc")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.9076425, 1.3175006, -2.8896396)
 
-[node name="Cube" parent="StaticBody3D5/stairs3" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs3" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 material_override = ExtResource("2_1a3c2")
 mesh = SubResource("ArrayMesh_wyffs")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs3" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs3" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24519284)
 
-[node name="CollisionShape3D" parent="StaticBody3D5/stairs3/Cube_001" index="0" unique_id=2058847919]
+[node name="CollisionShape3D" parent="StaticBody3D5/stairs3/Cube_001" index="0" unique_id=533685425]
 transform = Transform3D(0.99999994, 0, 1.4210855e-14, 0, 1, 0, 0, 0, 0.99999994, 0, 0, -7.772446e-05)
 
 [node name="stairs4" parent="StaticBody3D5" unique_id=229287815 instance=ExtResource("3_kinfc")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.9076425, 1.851251, -3.489844)
 
-[node name="Cube" parent="StaticBody3D5/stairs4" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs4" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 material_override = ExtResource("2_1a3c2")
 mesh = SubResource("ArrayMesh_wyffs")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs4" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs4" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24365829)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D5" unique_id=355751039]
@@ -705,38 +717,38 @@ transform = Transform3D(0.03537771, 0, -1.3795466, 0, 1.3800001, 0, 1.3795466, 0
 [node name="House 1" parent="." unique_id=1463563900 instance=ExtResource("10_voorb")]
 transform = Transform3D(-0.56977326, 0, 0.016074486, 0, 0.57, 0, -0.016074486, 0, -0.56977326, -3.94626, 1.1414051, 5.9625487)
 
-[node name="Cube_002" parent="House 1" index="1" unique_id=2121393452]
+[node name="Cube_002" parent="House 1" index="1" unique_id=1251567810]
 transform = Transform3D(0.8992196, -0.006906594, 0.013268615, 0.011652331, 0.5334962, 2.8628901e-05, -0.030443445, 0.00019484942, 0.3919311, 0.47968102, -1.3955567, 1.3843431)
 
-[node name="Cube_004" parent="House 1" index="3" unique_id=1296551191]
+[node name="Cube_004" parent="House 1" index="3" unique_id=803337810]
 mesh = SubResource("ArrayMesh_n77t6")
 
-[node name="Cube_012" parent="House 1" index="4" unique_id=1563226651]
+[node name="Cube_012" parent="House 1" index="4" unique_id=1392236434]
 transform = Transform3D(-2.3283064e-10, 0, 0.42945173, 0, 0.42945173, 0, 0.070761085, 0, -9.313226e-10, -0.74193764, 0.08657932, 1.055788)
 mesh = SubResource("ArrayMesh_bdfsy")
 
-[node name="Cube_014" parent="House 1" index="5" unique_id=1899764765]
+[node name="Cube_014" parent="House 1" index="5" unique_id=1386753167]
 transform = Transform3D(0.50858754, 0, 0, 0, 0.30283904, 0, 0, 0, 0.09511116, 0.78323466, -0.073684685, 1.0641214)
 
-[node name="Cube_015" parent="House 1" index="6" unique_id=1974180123]
+[node name="Cube_015" parent="House 1" index="6" unique_id=260399052]
 transform = Transform3D(0.07131609, 0, -0.021316042, 0, 0.68500054, 0, 0.059136305, 0, 0.02570632, 0.72631884, -0.097194195, 1.3812332)
 
-[node name="Cube_017" parent="House 1" index="8" unique_id=367443614]
+[node name="Cube_017" parent="House 1" index="8" unique_id=2021446773]
 mesh = SubResource("ArrayMesh_fc5fu")
 
-[node name="Cube_023" parent="House 1" index="11" unique_id=694736225]
+[node name="Cube_023" parent="House 1" index="11" unique_id=1055507599]
 mesh = SubResource("ArrayMesh_2hty8")
 
-[node name="Cube_027" parent="House 1" index="12" unique_id=1406720831]
+[node name="Cube_027" parent="House 1" index="12" unique_id=282085343]
 mesh = SubResource("ArrayMesh_e2auj")
 
-[node name="Cube_028" parent="House 1" index="13" unique_id=1750011090]
+[node name="Cube_028" parent="House 1" index="13" unique_id=1583142053]
 mesh = SubResource("ArrayMesh_x31tm")
 
-[node name="Cube_031" parent="House 1" index="14" unique_id=63096003]
+[node name="Cube_031" parent="House 1" index="14" unique_id=532806202]
 transform = Transform3D(0.023239726, 0, -0.012436423, 0, 0.03019016, 0, 0.019270707, 0, 0.014997844, 0.90813637, -0.18475282, 1.6170053)
 
-[node name="Cube_032" parent="House 1" index="15" unique_id=332878628]
+[node name="Cube_032" parent="House 1" index="15" unique_id=1115547948]
 mesh = SubResource("ArrayMesh_eoms5")
 
 [node name="House 2" parent="." unique_id=1908754600 instance=ExtResource("10_voorb")]
@@ -766,6 +778,9 @@ shape = SubResource("BoxShape3D_kinfc")
 
 [node name="House 1 low res" parent="." unique_id=2018441107 instance=ExtResource("10_voorb")]
 transform = Transform3D(-2.4915492e-08, 0, -0.57, 0, 0.57, 0, 0.57, 0, -2.4915492e-08, 11.356031, 1.1825333, 2.1192064)
+
+[node name="House 1 low res3" parent="." unique_id=1061448256 instance=ExtResource("10_voorb")]
+transform = Transform3D(0.56999993, 0, 0, 0, 0.56999993, 0, 0, 0, 0.56999993, 12.183882, 4.2154703, -0.90857214)
 
 [node name="House 1 low res2" parent="." unique_id=666984287 instance=ExtResource("10_voorb")]
 transform = Transform3D(-0.57, 0, 4.9830984e-08, 0, 0.57, 0, -4.9830984e-08, 0, -0.57, 10.472846, 0.42744297, 12.093319)
@@ -804,12 +819,49 @@ transform = Transform3D(-6.556708e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999
 material_override = SubResource("StandardMaterial3D_gmmlt")
 mesh = ExtResource("15_kinfc")
 
+[node name="Building8" type="MeshInstance3D" parent="." unique_id=1863160361]
+transform = Transform3D(0.09999894, 1.0408553e-05, -0.00046062874, -1.0427791e-05, 0.1, -4.1546837e-06, 0.00046062827, 4.2026472e-06, 0.09999894, 13.170469, 1.220528, 1.4054885)
+material_override = SubResource("StandardMaterial3D_kinfc")
+mesh = ExtResource("8_naxf4")
+
+[node name="Building9" type="MeshInstance3D" parent="." unique_id=321655537]
+transform = Transform3D(-0.005693685, 0, 0.09983777, 0, 0.099999994, 0, -0.09983777, 0, -0.005693685, 12.507707, 0.004785776, 6.1236796)
+material_override = SubResource("StandardMaterial3D_lh5wh")
+mesh = ExtResource("6_h5kql")
+
+[node name="door_building4" type="Node3D" parent="Building9" unique_id=1029142623]
+
+[node name="Area3D" type="Area3D" parent="Building9/door_building4" unique_id=567701419]
+collision_mask = 2
+script = ExtResource("14_1a3c2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building9/door_building4/Area3D" unique_id=855278308]
+transform = Transform3D(0.9999998, 0, -9.313226e-10, 0, 0.9999834, 0, 9.313226e-10, 0, 0.9999998, 0.082473755, 5.3192463, -17.876846)
+shape = SubResource("BoxShape3D_h5kql")
+
+[node name="Building10" type="MeshInstance3D" parent="." unique_id=381530484]
+transform = Transform3D(0.14999999, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 12.885362, 1.9393544, 4.525819)
+material_override = SubResource("StandardMaterial3D_ei35q")
+mesh = ExtResource("15_kinfc")
+
+[node name="Building11" type="MeshInstance3D" parent="." unique_id=749530156]
+transform = Transform3D(-6.556708e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999999, 0, -6.556708e-09, 12.98504, 3.1084142, 1.2798102)
+material_override = SubResource("StandardMaterial3D_ei35q")
+mesh = ExtResource("15_kinfc")
+
+[node name="Building13" type="MeshInstance3D" parent="." unique_id=732279520]
+transform = Transform3D(-6.556708e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999999, 0, -6.556708e-09, 12.907528, -0.7182195, -1.7295237)
+material_override = SubResource("StandardMaterial3D_ei35q")
+mesh = ExtResource("15_kinfc")
+
 [connection signal="body_entered" from="Book House 4/door_building10/Area3D" to="Book House 4/door_building10/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Book House 4/door_building10/Area3D" to="Book House 4/door_building10/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="Building7/door_building4/Area3D" to="Building7/door_building4/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Building7/door_building4/Area3D" to="Building7/door_building4/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="Book House 5/door_building10/Area3D" to="Book House 5/door_building10/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Book House 5/door_building10/Area3D" to="Book House 5/door_building10/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="Building9/door_building4/Area3D" to="Building9/door_building4/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Building9/door_building4/Area3D" to="Building9/door_building4/Area3D" method="_on_body_exited"]
 
 [editable path="StaticBody3D5/stairs"]
 [editable path="StaticBody3D5/stairs2"]

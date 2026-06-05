@@ -6,7 +6,7 @@ var camera : Camera3D
 func _ready() -> void:
 	Dialogue.interactRange.connect(_promptVisible)
 
-func _promptVisible(npc : NPC, inRange : bool) -> void:
+func _promptVisible(npc : Node3D, inRange : bool) -> void:
 	if not inRange or npc == null:
 		interactPrompt.visible = false
 		return

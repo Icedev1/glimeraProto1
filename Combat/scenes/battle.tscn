@@ -267,12 +267,12 @@ shape = SubResource("BoxShape3D_3inix")
 
 [node name="Player" parent="." unique_id=1051319031 instance=ExtResource("4_q77w5")]
 unique_name_in_owner = true
-transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 1.577, 0, 7.7725425)
+transform = Transform3D(0.21643965, 0, -0.976296, 0, 1, 0, 0.976296, 0, 0.21643965, 1.517, 0, 7.773)
 script = ExtResource("5_1fagd")
 
 [node name="Enemy" parent="." unique_id=1449211599 instance=ExtResource("4_egpmh")]
 unique_name_in_owner = true
-transform = Transform3D(0.49013555, 0, -0.09882866, 0, 0.5, 0, 0.09882866, 0, 0.49013555, 1.659, 0, -7.779393)
+transform = Transform3D(0.41304907, 0, -0.28176302, 0, 0.5, 0, 0.28176302, 0, 0.41304907, 5.214, -0.103043936, 3.405)
 script = ExtResource("6_r8c2t")
 
 [node name="Armature" parent="Enemy" index="0" unique_id=702117979]
@@ -326,10 +326,19 @@ mouse_filter = 2
 
 [node name="PlayerArea" type="HBoxContainer" parent="Battle_UI" unique_id=539363790]
 custom_minimum_size = Vector2(800, 0)
-offset_left = 60.0
-offset_top = 40.0
-offset_right = 660.0
-offset_bottom = 97.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -860.0
+offset_top = -1040.0
+offset_right = -60.0
+offset_bottom = -940.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="GliPortrait" type="TextureRect" parent="Battle_UI/PlayerArea" unique_id=2125577812]
 custom_minimum_size = Vector2(100, 100)
@@ -784,8 +793,8 @@ size = Vector2i(1925, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer1/SubViewport2" unique_id=1976917586]
-transform = Transform3D(1, 0, 0, 0, 0.9575513, 0.2882631, 0, -0.2882631, 0.9575513, 1.7047865, 13.018233, 41.18643)
-fov = 19.5
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11, 3.33, 17.835)
+fov = 25.0
 
 [node name="HitEffective" type="AudioStreamPlayer" parent="." unique_id=377997488 groups=["battle_sfx"]]
 stream = ExtResource("19_x13a4")

@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dy6s1h86csg5m" path="res://meshes/SamGrady buildings/building_6.obj" id="6_fb081"]
 [ext_resource type="ArrayMesh" uid="uid://c7hs8xubxoxus" path="res://meshes/SamGrady buildings/building_1.obj" id="7_ebxey"]
 [ext_resource type="PackedScene" uid="uid://8b1xuokowhht" path="res://meshes/Houses/BookHouse/Book House 1.blend" id="8_0nnsm"]
+[ext_resource type="Material" path="res://Textures/Ground048_1K-JPG/Ground048_1K-JPG.tres" id="9_4r4ha"]
 [ext_resource type="ArrayMesh" uid="uid://i3g16rqeqvpo" path="res://meshes/SamGrady buildings/building_5.obj" id="9_nqp8v"]
 [ext_resource type="PackedScene" uid="uid://d3bnfaokrlk21" path="res://meshes/Houses/House1/House 1 low res.blend" id="10_q0au5"]
 [ext_resource type="PackedScene" uid="uid://ktcvfyx0hbfd" path="res://meshes/Low Res Church.blend" id="32_oktql"]
@@ -25,6 +26,10 @@ albedo_texture = ExtResource("5_hxrpd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y76e6"]
 albedo_texture = ExtResource("5_hxrpd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8tnuy"]
+material = ExtResource("9_4r4ha")
+size = Vector3(21.495, 10, 12.115)
 
 [node name="Node3D" type="Node3D" unique_id=2146142844]
 
@@ -88,5 +93,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.763466, 0, 0)
 
 [node name="Low Res Church" parent="." unique_id=263279712 instance=ExtResource("32_oktql")]
 transform = Transform3D(-0.0009128172, -0.0009705604, 0.49999824, 0.00081717037, 0.4999984, 0.0009720461, -0.49999848, 0.0008189326, -0.00091123756, 0.030157626, -9.28727, -0.5678253)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=350856295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7924786, -6.024662, 1.3897624)
+mesh = SubResource("BoxMesh_8tnuy")
 
 [editable path="Low Res Church"]
