@@ -58,6 +58,7 @@ func show_overworld():
 	
 
 func start_battle(battle_scene_path: String, enemy_data: EnemyData = null):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	MusicPlayer.play_music(load("res://Sounds/hipstop1_2.ogg"))
 	current_state = "battle"
 	if enemy_data != null:

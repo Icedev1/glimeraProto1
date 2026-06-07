@@ -136,6 +136,18 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu6j1"]
+bg_color = Color(0, 0, 0, 0)
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06m8q"]
+bg_color = Color(0.84705883, 0.84705883, 0.84705883, 0.19607843)
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx7kf"]
+bg_color = Color(0.9529412, 0.9529412, 0.9529412, 0.11764706)
+border_width_bottom = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w341s"]
 bg_color = Color(0.18039216, 0.16862746, 0.16078432, 0.92941177)
 border_width_left = 2
@@ -201,18 +213,6 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_color = Color(0, 0, 0, 0.43529412)
 shadow_size = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu6j1"]
-bg_color = Color(0, 0, 0, 0)
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06m8q"]
-bg_color = Color(0.84705883, 0.84705883, 0.84705883, 0.19607843)
-border_width_bottom = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx7kf"]
-bg_color = Color(0.9529412, 0.9529412, 0.9529412, 0.11764706)
-border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2txt6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -513,7 +513,21 @@ offset_right = 1907.0
 offset_bottom = 1070.0
 theme_override_constants/separation = 10
 
+[node name="ESCbutton" type="Button" parent="GraftsPage" unique_id=1391338368]
+layout_mode = 0
+offset_left = 1740.0
+offset_top = 43.0
+offset_right = 1863.0
+offset_bottom = 86.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mu6j1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06m8q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dx7kf")
+text = "Esc Back"
+
 [node name="Label2" type="Label" parent="GraftsPage" unique_id=2032925349]
+visible = false
 layout_mode = 0
 offset_left = 1740.0
 offset_top = 43.0
@@ -983,6 +997,7 @@ text = "Inventory"
 
 [connection signal="pressed" from="GraftsPage/RightArmSlot" to="." method="_on_right_arm_slot_pressed"]
 [connection signal="pressed" from="GraftsPage/LeftLegSlot" to="." method="_on_left_leg_slot_pressed"]
+[connection signal="pressed" from="GraftsPage/ESCbutton" to="." method="_on_es_cbutton_pressed"]
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/AudioControl" to="SettingsPage/Settings/TabContainer/Audio/AudioControl" method="_on_value_changed"]
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/MusicControl" to="SettingsPage/Settings/TabContainer/Audio/MusicControl" method="_on_value_changed"]
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/SfxControl" to="SettingsPage/Settings/TabContainer/Audio/SfxControl" method="_on_value_changed"]

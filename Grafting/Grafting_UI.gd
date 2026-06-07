@@ -10,6 +10,8 @@ extends Control
 var selected_slot : String = ""
 #var is_open : bool = false
 
+signal close_requested
+
 @onready var graft_grid = $GraftsPage/GraftGrid
 @onready var info_card = $GraftsPage/InfoCard
 @onready var info_name = $GraftsPage/InfoCard/InfoName
@@ -124,3 +126,7 @@ func _on_main_menu_button_pressed() -> void:
 
 func _on_quit_confirm_dialog_confirmed() -> void:
 	get_tree().quit()
+
+
+func _on_es_cbutton_pressed() -> void:
+	close_requested.emit()

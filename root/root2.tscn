@@ -230,8 +230,7 @@ offset_left = 1683.0
 offset_top = 10.0
 offset_right = 1911.0
 offset_bottom = 59.0
-text = "ESC to Menu
-Right Mouse controls Camera"
+text = "ESC to Menu"
 horizontal_alignment = 2
 
 [node name="ObjectiveDisplay" parent="CanvasLayer" unique_id=1278662137 instance=ExtResource("7_1pefc")]
