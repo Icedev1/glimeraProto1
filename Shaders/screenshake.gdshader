@@ -8,7 +8,7 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 void fragment() {
     vec2 uv = SCREEN_UV;
 	uv -= 0.5;
-    uv *= 1.0 - 2.0 * magnitude.x;
+    uv *= 1.0 - 2.0 * magnitude.x * ShakeStrength;
     uv += 0.5;
 	vec2 dt = vec2(0.0, 0.0);
 	dt.x = sin(TIME * FactorA.x+FactorB.x) * magnitude.x;

@@ -15,23 +15,45 @@ func _ready() -> void:
 	await get_tree().process_frame
 	var players = get_tree().get_nodes_in_group("player")
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel") and !BattleManager._battle_active:
-		if get_tree().paused:
-			_toggle_menu_camera(false)
-			get_tree().paused = false
-			pauseInstance.queue_free()
-			hud_label.visible = true
-			SFXPlayer.play_sfx(load("res://Sounds/SFX/WIN_CLO_001.wav"))
-		else:
-			pauseInstance = pauseScene.instantiate()
-			canvas.add_child(pauseInstance)
-			GraftGlobals.menu_opened.emit()
-			get_tree().paused = true
-			_toggle_menu_camera(true)
-			hud_label.visible = false
-			SFXPlayer.play_sfx(load("res://Sounds/SFX/STA_OPE_001.wav"))
-			
+func _process(_delta: float) -> void:
+	if BattleManager._battle_active:
+		return
+	if Input.is_action_just_pressed("ui_cancel"):
+		toggle_menu()
+
+
+func _is_open() -> bool:
+	return is_instance_valid(pauseInstance)
+
+func toggle_menu() -> void:
+	if _is_open():
+		close_menu()
+	else:
+		open_menu()
+
+func open_menu() -> void:
+	if _is_open():
+		return
+	pauseInstance = pauseScene.instantiate()
+	canvas.add_child(pauseInstance)
+	
+	if pauseInstance.has_signal("close_requested"):
+		pauseInstance.close_requested.connect(close_menu)
+	GraftGlobals.menu_opened.emit()
+	get_tree().paused = true
+	_toggle_menu_camera(true)
+	hud_label.visible = false
+	SFXPlayer.play_sfx(load("res://Sounds/SFX/STA_OPE_001.wav"))
+
+func close_menu() -> void:
+	if not _is_open():
+		return
+	_toggle_menu_camera(false)
+	get_tree().paused = false
+	pauseInstance.queue_free()
+	pauseInstance = null
+	hud_label.visible = true
+	SFXPlayer.play_sfx(load("res://Sounds/SFX/WIN_CLO_001.wav"))
 
 func _toggle_menu_camera(active: bool) -> void:
 	var players = get_tree().get_nodes_in_group("player")
@@ -113,4 +135,4 @@ func _toggle_menu_camera(active: bool) -> void:
 
 	# Prevent old awaits from overriding newer transitions
 	if current_target_camera == to_cam:
-		to_cam.make_current()
+		to_cam.make_current() 
