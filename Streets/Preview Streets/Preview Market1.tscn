@@ -16,9 +16,6 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ddy1"]
 material = ExtResource("1_t763a")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnh4w"]
-albedo_texture = ExtResource("25_dr3kn")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqh5t"]
 albedo_texture = ExtResource("25_dr3kn")
 
@@ -39,6 +36,12 @@ uv2_scale = Vector3(0.785, 0.785, 0.785)
 material = SubResource("StandardMaterial3D_c18rp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqbgl"]
+albedo_texture = ExtResource("25_dr3kn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vramn"]
+albedo_texture = ExtResource("25_dr3kn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk12a"]
 albedo_texture = ExtResource("25_dr3kn")
 
 [node name="Market1" type="Node3D" unique_id=1437225535]
@@ -81,11 +84,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.6547809, 0.35001528, 
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1642098542]
 
-[node name="Building5" type="MeshInstance3D" parent="StaticBody3D3" unique_id=758066355]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.9895983, 0, 4.488039)
-material_override = SubResource("StandardMaterial3D_qnh4w")
-mesh = ExtResource("26_53o66")
-
 [node name="Building4" type="MeshInstance3D" parent="StaticBody3D3" unique_id=1391908688]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.3333218, 0, -4.6586285)
 material_override = SubResource("StandardMaterial3D_mqh5t")
@@ -106,5 +104,47 @@ mesh = ExtResource("31_j7hsc")
 
 [node name="gate" parent="." unique_id=423378458 instance=ExtResource("33_c5xx3")]
 transform = Transform3D(2.605, 0, 0, 0, 2.605, 0, 0, 0, 2.605, 10.993472, 0.31660604, 0.7911043)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=791203634]
+
+[node name="Building5" type="MeshInstance3D" parent="StaticBody3D5" unique_id=1891909598]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.9895983, 0.30003053, 4.488039)
+material_override = SubResource("StandardMaterial3D_vramn")
+mesh = ExtResource("26_53o66")
+
+[node name="Building8" type="MeshInstance3D" parent="StaticBody3D5" unique_id=293120939]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 5.9588966, 0.29811072, -3.8256087)
+material_override = SubResource("StandardMaterial3D_vramn")
+mesh = ExtResource("26_53o66")
+
+[node name="Building9" type="MeshInstance3D" parent="StaticBody3D5" unique_id=421085334]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.998169, 1.7094653, -5.765969)
+material_override = SubResource("StandardMaterial3D_vramn")
+mesh = ExtResource("26_53o66")
+
+[node name="Building10" type="MeshInstance3D" parent="StaticBody3D5" unique_id=781284263]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 10.69621, -1.2591583, 7.347154)
+material_override = SubResource("StandardMaterial3D_vramn")
+mesh = ExtResource("26_53o66")
+
+[node name="Building4" type="MeshInstance3D" parent="StaticBody3D5" unique_id=601328490]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.3333218, 0, -4.6586285)
+material_override = SubResource("StandardMaterial3D_qk12a")
+mesh = ExtResource("27_k5uoa")
+
+[node name="Building11" type="MeshInstance3D" parent="StaticBody3D5" unique_id=673427282]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 11.818984, 0.7279335, 6.284064)
+material_override = SubResource("StandardMaterial3D_qk12a")
+mesh = ExtResource("27_k5uoa")
+
+[node name="Building6" type="MeshInstance3D" parent="StaticBody3D5" unique_id=2081383516]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.3212233, 0.115915895, -4.772806)
+material_override = SubResource("StandardMaterial3D_qk12a")
+mesh = ExtResource("27_k5uoa")
+
+[node name="Building7" type="MeshInstance3D" parent="StaticBody3D5" unique_id=237980111]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 6.883519, 2.105001, -4.814802)
+material_override = SubResource("StandardMaterial3D_qk12a")
+mesh = ExtResource("27_k5uoa")
 
 [editable path="gate"]
