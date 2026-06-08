@@ -74,10 +74,29 @@ elif {target} == "door_neighbour2":
 	No answer...
 elif {target} == "door_building1":
 	No one answers the door...
+	set {sequence_step} += 7.0
 elif {target} == "door_building2":
-	You see the sillouette of a figure through the window.
+	You see the sillhouette of a figure through the window.
 	But no one's there.
 	Not anymore...
+	set {sequence_step} += 7.0
+elif {target} == "door_building3":
+	You seem to really be dedicated to checking the doors
+	set {sequence_step} += 7.0
+elif {target} == "door_building4":
+	As the wind blows you realise that the doors locked.
+	set {sequence_step} += 7.0
+elif {target} == "door_building5":
+	This is a door
+	set {sequence_step} += 7.0
+elif {target} == "door_building6":
+	if {sequence_step} == 35.0:
+		To think you checked every door.
+		Congratulations you win the satisfaction of having checked every door.
+		(or maybe you checked one door 5 times. In that case I take back the satisfaction I gave you.)
+		set {sequence_step} = 0
+	else:
+		Did you check every door?
 elif {target} == "door_building7":
 	if {talkedTo} == false:
 		[signal arg="open_door7"]

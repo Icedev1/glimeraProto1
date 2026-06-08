@@ -67,15 +67,15 @@ func _process(delta: float) -> void:
 				"door_building1":
 					Dialogic.VAR.set_variable("target", "door_building1")
 				"door_building2":
-					Dialogic.VAR.set_variable("target", "door_building1")
+					Dialogic.VAR.set_variable("target", "door_building4")
 				"door_building3":
-					Dialogic.VAR.set_variable("target", "door_building1")
+					Dialogic.VAR.set_variable("target", "door_building3")
 				"door_building4":
 					Dialogic.VAR.set_variable("target", "door_building2")
 				"door_building5":
-					Dialogic.VAR.set_variable("target", "door_building1")
+					Dialogic.VAR.set_variable("target", "door_building5")
 				"door_building6":
-					Dialogic.VAR.set_variable("target", "door_building1")
+					Dialogic.VAR.set_variable("target", "door_building6")
 				"door_building7":
 					Dialogic.VAR.set_variable("target", "door_building7")
 				"door_building8":
