@@ -67,21 +67,50 @@ elif {target} == "scissor":
 		tstscs
 		[signal arg="reset_puzzle"]
 elif {target} == "churchbro":
-	join statue_1 left
-	statue_1: Yo! You need to buy my new Salvation Coin, guaranteed salvation for the price of one coin.
-	leave statue_1
+	join statue_1 rightmost
+	statue_1: You shouldn't be here.
 	join Gli left
-	Gli: I'd rather not.
-	leave Gli
-	join statue_1 left
-	statue_1: You're missing out on the opportunity of a lifetime bro!
+	Gli: Why shouldn't i be here?
+	statue_1: The priest is not accepting visitors... Especially not your kind.
 elif {target} == "npc3":
-	I am npc 3
+	join Gli left
+	join skull right
+	Gli: Hey, have you seen anything strange today?
+	skull: Strange? Everything is strange now.
+	Gli: What do you mean by that?
+	skull: Just… stay out of the church.
 elif {target} == "npc6":
-	I am steve
-	just kidding I am npc 6
+	join statue_1 left
+	statue_1: You haven't been changing, have you?
+	statue_1: Oh who am I kidding you're not that kind of figure.
+	statue_1: Excuse me. I'm talking to my friend here not you.
 elif {target} == "npc4":
-	I am npc4
+	join statue_1 left
+	statue_1: Never bro, the priest said that to change is to destroy the Guardians image.
+	statue_1: Can you not bother me when I'm talking to my friend.
 elif {target} == "npc5":
-	I am NPC 5
+	join statue_1 rightmost
+	statue_1: Your greed is sickening.
+	join Gli left
+	Gli: Excuse me.
+	statue_1: I see those grafts you have. When will it be enough for you.
+	Gli: My grafts are my own business
+	statue_1: You're lucky the priest ordered me to leave you alone.
+elif {target} == "churchman1":
+	join skull rightmost
+	skull: I wondered when you would come.
+	join Gli left
+	Gli: You knew I would come here?
+	skull: You've made quite a mess of things, haven't you.
+	skull: The Guardian asks for one thing.
+	skull: And you couldn't even give them that.
+	Gli: There are more important problem than the guardians rules.
+	skull: You don't even know the damage your changing causes.
+	Gli: Damage? How can changing my graft even cause damage.
+	skull: Because you inspire others to change aswell and when everyone wants to change. They are going to need more grafts.
+	skull: What do you think happens when there aren't enough grafts for the figures?
+	Gli: Thats... I only changed my grafts because strange things were happening. Not because I want to.
+	skull: Then you wouldn't mind giving me your grafts then right?
+	Gli: Wait a second. You just want to be in control of the grafts. You don't care about changelings. You just want to be the only one with power.
+	skull: You're more perceptive than I thought. Oh well now I have another reason to take you down. I pray that the Guardian forgives you when I send you there.
 [end_timeline]

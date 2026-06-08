@@ -19,11 +19,11 @@
 &"portraits": {
 "New portrait": {
 "export_overrides": {
-"image": "\"\""
+"image": "\"res://images/water_mage-fixed.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.5,
 "scene": ""
 }
 },

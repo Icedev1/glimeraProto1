@@ -1,3 +1,20 @@
-join Gli center
-Gli: Sup?
-Nothing.
+join Gli left
+Gli: Sup? Im Gli
+leave Gli
+join Evene leftmost
+Evene: Heya im evene
+leave Evene
+join "Intimidating Figure" center
+"Intimidating Figure": hmmm im intimidating I guess
+leave "Intimidating Figure"
+join "Porcelain Figure" leftmost
+"Porcelain Figure": How crude. Im made out of Porcelain
+leave "Porcelain Figure"
+join "overjoyed looking Figure" leftmost
+"overjoyed looking Figure": Wow Im overjoyed
+leave "overjoyed looking Figure"
+join statue_1 left
+statue_1: Im a statue
+leave statue_1
+join skull leftmost
+skull: Im a skull
