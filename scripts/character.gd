@@ -46,6 +46,9 @@ func play_footstep() -> void:
 	footstep_player.play()
 
 func _physics_process(delta):
+	if get_tree().paused:
+		return
+	
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta

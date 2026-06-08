@@ -143,5 +143,8 @@ transform = Transform3D(-0.9949195, -0.04648579, 0.08930069, 0.062813655, -0.979
 [node name="ViolinPlace" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="48" unique_id=329092666]
 transform = Transform3D(0.9966322, 0.007973359, -0.08161284, -0.010239314, 0.9995725, -0.027383892, 0.081359625, 0.028127326, 0.9962878, 0.02226448, 7.4976974, -0.09008293)
 
+[node name="MenuCamera" parent="CharacterBody3D" index="4" unique_id=2115126511]
+transform = Transform3D(-5.410834, 0, 3.8945255, 0, 6.666667, 0, -3.8945255, 0, -5.410834, 0.09041975, 2.9362822, 8.719277)
+
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1"]

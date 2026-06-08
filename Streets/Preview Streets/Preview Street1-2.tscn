@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://b5eoo60pn8x17" path="res://meshes/Houses/House1/textures/Wood027_1K-PNG_NormalGL.png" id="13_ba2f7"]
 [ext_resource type="Script" uid="uid://bs282g5m08tfj" path="res://scripts/dialogue_trigger.gd" id="14_1a3c2"]
 [ext_resource type="ArrayMesh" uid="uid://0cdjyj630ikt" path="res://meshes/SamGrady buildings/building_4.obj" id="15_kinfc"]
+[ext_resource type="PackedScene" uid="uid://be42cllum5plp" path="res://meshes/Water fountain.blend" id="16_lh5wh"]
+[ext_resource type="Material" uid="uid://cmhmo0ym0i7jw" path="res://Textures/Water/Water_4/water4.tres" id="17_h5kql"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e7ssj"]
 material = ExtResource("2_1a3c2")
@@ -581,6 +583,44 @@ size = Vector3(3.7474365, 3.8605957, 3.4256592)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ei35q"]
 albedo_texture = ExtResource("5_lh5wh")
 
+[sub_resource type="ArrayMesh" id="ArrayMesh_n40ua"]
+_surfaces = [{
+"aabb": AABB(-0.88028556, -0.38737172, -0.88028544, 1.7605715, 1e-05, 1.7605711),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAQADAAQAAAADAAEAAwAFAAYAAwAHAAUABQAHAAgAAAAHAAMABwAJAAoABwALAAkACQALAAwABwANAAsAAAANAAcACwAOAA8ACwANAA4ADgANABAADQARABIADQATABEAEQATABQADQAAABUADQAVABMAEwAWABcAEwAVABYAFgAVABgAGQAAABoAGwAAABkAFQAAABsAGwAZABwAFQAbAB0AHQAbAB4AFQAdAB8A"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("HMcAAJIVAAD4mAAAdQIAAPuwAAC+CQAABmcAAHUCAAD/fwAAAAAAAOI4AACSFQAAA08AAL4JAACSFQAA4jgAAH0lAAB9JQAAdQIAAAZnAAC+CQAAA08AAHUCAAD4mAAAAAAAAP9/AADiOAAAbOoAAJIVAAAcxwAAvgkAAPuwAAB9JQAAgdoAAAZnAACJ/QAAA08AAED2AAD4mAAAif0AAP9/AAD//wAAbOoAABzHAAAcxwAAbOoAAPuwAABA9gAAgdoAAIHaAABs6gAA4jgAAIHaAAB9JQAAif0AAAZnAABA9gAAA08AAIn9AAD4mAAA//8AAP9/AABA9gAA+7AAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ei35q"]
+resource_name = "Water fountain_Sphere_002"
+_surfaces = [{
+"aabb": AABB(-0.88028556, -0.38737172, -0.88028544, 1.7605715, 1e-05, 1.7605711),
+"attribute_data": PackedByteArray("HMeSFfiYdQL7sL4JBmd1Av9/AADiOJIVA0++CZIV4jh9JX0ldQIGZ74JA091AviYAAD/f+I4bOqSFRzHvgn7sH0lgdoGZ4n9A09A9viYif3/f///bOocxxzHbOr7sED2gdqB2mzq4jiB2n0lif0GZ0D2A0+J/fiY////f0D2+7A="),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAQADAAQAAAADAAEAAwAFAAYAAwAHAAUABQAHAAgAAAAHAAMABwAJAAoABwALAAkACQALAAwABwANAAsAAAANAAcACwAOAA8ACwANAA4ADgANABAADQARABIADQATABEAEQATABQADQAAABUADQAVABMAEwAWABcAEwAVABYAFgAVABgAGQAAABoAGwAAABkAFQAAABsAGwAZABwAFQAbAB0AHQAbAB4AFQAdAB8A"),
+"material": ExtResource("17_h5kql"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("HMcAAJIV/7/4mAAAdQL/v/uwAAC+Cf+/BmcAAHUC/7//fwAAAAD/v+I4AACSFf+/A08AAL4J/7+SFQAA4jj/v30lAAB9Jf+/dQIAAAZn/7++CQAAA0//v3UCAAD4mP+/AAAAAP9//7/iOAAAbOr/v5IVAAAcx/+/vgkAAPuw/799JQAAgdr/vwZnAACJ/f+/A08AAED2/7/4mAAAif3/v/9/AAD///+/bOoAABzH/78cxwAAbOr/v/uwAABA9v+/gdoAAIHa/79s6gAA4jj/v4HaAAB9Jf+/if0AAAZn/79A9gAAA0//v4n9AAD4mP+///8AAP9//79A9gAA+7D/v////3////9//v//f////3////9/////f/7//3////9//v//f/7//3/+//9/////f////3////9/////f////3/+//9/////f/7//3////9/////f////3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n40ua")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_naxf4"]
+albedo_texture = ExtResource("5_lh5wh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5kql"]
+albedo_texture = ExtResource("5_lh5wh")
+
 [node name="Node3D" type="Node3D" unique_id=2025353727]
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1132387877]
@@ -758,7 +798,7 @@ transform = Transform3D(-0.46981305, 0, 0.013254401, 0, 0.47, 0, -0.013254401, 0
 transform = Transform3D(-0.042841308, 0, 1.3793349, 0, 1.3800001, 0, -1.3793349, 0, -0.042841308, 3.7577143, 0.07444501, 5.696553)
 
 [node name="Building5" type="MeshInstance3D" parent="." unique_id=1129113964]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.4461827, 0, 11.2813635)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.4461827, -0.8338816, 11.349462)
 material_override = SubResource("StandardMaterial3D_s07dv")
 mesh = ExtResource("8_naxf4")
 
@@ -783,10 +823,10 @@ transform = Transform3D(-2.4915492e-08, 0, -0.57, 0, 0.57, 0, 0.57, 0, -2.491549
 transform = Transform3D(0.56999993, 0, 0, 0, 0.56999993, 0, 0, 0, 0.56999993, 12.183882, 4.2154703, -0.90857214)
 
 [node name="House 1 low res2" parent="." unique_id=666984287 instance=ExtResource("10_voorb")]
-transform = Transform3D(-0.57, 0, 4.9830984e-08, 0, 0.57, 0, -4.9830984e-08, 0, -0.57, 10.472846, 0.42744297, 12.093319)
+transform = Transform3D(-0.57, 0, 4.9830984e-08, 0, 0.57, 0, -4.9830984e-08, 0, -0.57, 10.472846, 0.42744297, 14.980454)
 
 [node name="Building7" type="MeshInstance3D" parent="." unique_id=1740950461]
-transform = Transform3D(-0.005693685, 0, 0.09983777, 0, 0.099999994, 0, -0.09983777, 0, -0.005693685, 12.507707, 0.004785776, 6.7842627)
+transform = Transform3D(-0.005693685, 0, 0.09983777, 0, 0.099999994, 0, -0.09983777, 0, -0.005693685, 12.507707, 0.004785776, 6.1046066)
 material_override = SubResource("StandardMaterial3D_1a3c2")
 mesh = ExtResource("6_h5kql")
 
@@ -801,7 +841,7 @@ transform = Transform3D(0.9999998, 0, -9.313226e-10, 0, 0.9999834, 0, 9.313226e-
 shape = SubResource("BoxShape3D_gmmlt")
 
 [node name="Book House 5" parent="." unique_id=1461743150 instance=ExtResource("9_dyl1u")]
-transform = Transform3D(-1.3794408, 5.770344e-05, -0.03930429, 6.177442e-05, 1.3800002, -0.00014205454, 0.039304286, -0.0001437563, -1.3794408, 11.678627, -0.021151394, 10.46789)
+transform = Transform3D(-1.3794408, 5.770344e-05, -0.03930429, 6.177442e-05, 1.3800002, -0.00014205454, 0.039304286, -0.0001437563, -1.3794408, 11.678627, -0.021151394, 13.355025)
 
 [node name="door_building10" type="Node3D" parent="Book House 5" unique_id=2142069480]
 
@@ -854,6 +894,34 @@ transform = Transform3D(-6.556708e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999
 material_override = SubResource("StandardMaterial3D_ei35q")
 mesh = ExtResource("15_kinfc")
 
+[node name="Water fountain" parent="." unique_id=679267944 instance=ExtResource("16_lh5wh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.573511, 0.025926681, 4.9081)
+
+[node name="Cylinder" parent="Water fountain" index="0" unique_id=498360382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026622057, 0)
+
+[node name="Sphere_002" parent="Water fountain" index="8" unique_id=395074652]
+transform = Transform3D(0.425, 0, 0, 0, 0.235, 0, 0, 0, 0.425, 0, 2.4672778, 0)
+
+[node name="Sphere_003" type="MeshInstance3D" parent="Water fountain" unique_id=192323797]
+transform = Transform3D(1, 0, 0, 0, 0.55346113, 0, 0, 0, 1, 0, 1.4490318, 0)
+mesh = SubResource("ArrayMesh_ei35q")
+
+[node name="Building12" type="MeshInstance3D" parent="." unique_id=1723422742]
+transform = Transform3D(-6.556708e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999999, 0, -6.556708e-09, 12.98504, 2.2486634, 8.7568245)
+material_override = SubResource("StandardMaterial3D_naxf4")
+mesh = ExtResource("15_kinfc")
+
+[node name="Building14" type="MeshInstance3D" parent="." unique_id=1000078080]
+transform = Transform3D(0.14999999, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 12.885362, 1.9393544, 7.020586)
+material_override = SubResource("StandardMaterial3D_h5kql")
+mesh = ExtResource("15_kinfc")
+
+[node name="Building15" type="MeshInstance3D" parent="." unique_id=25947061]
+transform = Transform3D(-6.556708e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999999, 0, -6.556708e-09, 12.98504, -1.8737111, 9.77649)
+material_override = SubResource("StandardMaterial3D_h5kql")
+mesh = ExtResource("15_kinfc")
+
 [connection signal="body_entered" from="Book House 4/door_building10/Area3D" to="Book House 4/door_building10/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Book House 4/door_building10/Area3D" to="Book House 4/door_building10/Area3D" method="_on_body_exited"]
 [connection signal="body_entered" from="Building7/door_building4/Area3D" to="Building7/door_building4/Area3D" method="_on_body_entered"]
@@ -868,3 +936,4 @@ mesh = ExtResource("15_kinfc")
 [editable path="StaticBody3D5/stairs3"]
 [editable path="StaticBody3D5/stairs4"]
 [editable path="House 1"]
+[editable path="Water fountain"]

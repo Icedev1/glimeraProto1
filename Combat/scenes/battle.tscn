@@ -248,6 +248,9 @@ metadata/_custom_type_script = "uid://d1n6m4bvwsjum"
 background_mode = 1
 background_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fr5r2"]
+auto_exposure_enabled = true
+
 [node name="Battle" type="Node3D" unique_id=789942194]
 script = ExtResource("1_a12nh")
 enemy_resource = ExtResource("2_01irj")
@@ -778,6 +781,7 @@ icon = SubResource("Texture2D_1fagd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=769613240]
 environment = SubResource("Environment_7sfm4")
+camera_attributes = SubResource("CameraAttributesPractical_fr5r2")
 
 [node name="SubViewportContainer1" type="SubViewportContainer" parent="." unique_id=1847338007]
 anchors_preset = -1

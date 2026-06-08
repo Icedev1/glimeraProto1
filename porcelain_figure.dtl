@@ -13,7 +13,6 @@ join "Porcelain Figure" right
 join "Porcelain Figure" right
 "Porcelain Figure": You! You scared it away.
 leave "Porcelain Figure"
-join Gli left
 The woman looks at you with a menacing glare.
 label choice_loop
 - I'm sorry I didn't mean to. | [if {picked_a} == false]
