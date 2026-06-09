@@ -22,9 +22,14 @@ func _ready() -> void:
 	_update_mouse_mode()
 
 func _can_look() -> bool:
-	if menu_open: return false
-	if not freelook_enabled: return false
-	if BattleManager._battle_active: return false
+	if menu_open:
+		return false
+	if not freelook_enabled:
+		return false
+	
+	var root := get_tree().current_scene
+	if root != null and ("current_state" in root) and root.current_state == "battle":
+		return false
 	return true
 
 func _update_mouse_mode() -> void:
