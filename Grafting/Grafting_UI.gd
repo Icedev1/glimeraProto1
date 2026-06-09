@@ -118,9 +118,24 @@ func _on_graft_hovered(index: int) -> void:
 		info_desc.text = legGraftDescs[index] if index < legGraftDescs.size() else ""
 		info_icon.texture = legIcons[index]
 
+var _confirm_action: String = ""
+
 func _on_main_menu_button_pressed() -> void:
+	_confirm_action = "quit"
 	quit_confirm_dialog.dialog_text = "This will close the game completely. Are you sure?"
 	quit_confirm_dialog.popup_centered()
 
+func _on_go_to_main_menu_button_pressed() -> void:
+	_confirm_action = "main_menu"
+	quit_confirm_dialog.dialog_text = "Return to main menu? Unsaved progress will be lost."
+	quit_confirm_dialog.popup_centered()
+
 func _on_quit_confirm_dialog_confirmed() -> void:
-	get_tree().quit()
+	if _confirm_action == "quit":
+		SaveManager.save(0)
+		get_tree().quit()
+	elif _confirm_action == "main_menu":
+		SaveManager.save(0)
+		get_tree().paused = false
+		get_tree().root.get_node("Root").show_main_menu()
+		queue_free()
