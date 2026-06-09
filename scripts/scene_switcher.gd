@@ -68,9 +68,22 @@ func _toggle_menu_camera(active: bool) -> void:
 	var menu_cam = player.get_node_or_null("MenuCamera")
 	var char_cam = player.get_node_or_null("CameraPivot/CharacterCam")
 	var transition_cam = player.get_node_or_null("CameraPivot/TransitionCam")
+	var model = player.get_node_or_null("MAsked Gli")
 
 	if not menu_cam or not char_cam or not transition_cam:
 		return
+		
+	if active:
+		var forward = model.global_transform.basis.z
+		forward.y = 0
+		forward = forward.normalized()
+
+		# closer + slightly higher (prevents floor clipping)
+		menu_cam.global_position = player.global_position + forward * 1.2 + Vector3.UP * 0.6
+
+		# look at chest/upper body (not feet)
+		menu_cam.look_at(player.global_position + Vector3.UP * 0.4, Vector3.UP)
+
 
 	var from_cam : Camera3D
 	var to_cam : Camera3D
@@ -84,33 +97,18 @@ func _toggle_menu_camera(active: bool) -> void:
 
 
 	transition_cam.global_transform = from_cam.global_transform
-
-
 	transition_cam.make_current()
-
-
-	if active and player.has_method("face_menu_camera"):
-		player.face_menu_camera()
-
 
 	var tween = create_tween()
 	tween.set_parallel(true)
 
 	tween.tween_property(
 		transition_cam,
-		"global_position",
-		to_cam.global_position,
-		0.35
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	tween.tween_property(
-		transition_cam,
-		"global_rotation",
-		to_cam.global_rotation,
+		"global_transform",
+		to_cam.global_transform,
 		0.35
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 	await tween.finished
-
 
 	to_cam.make_current()

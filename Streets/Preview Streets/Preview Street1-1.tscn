@@ -7,10 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://b5ljseslrww0k" path="res://meshes/stairs.blend" id="18_hv23g"]
 [ext_resource type="Material" uid="uid://dswhdrehkimn1" path="res://Textures/Paving Stones 138/PavingStones138_1K-JPG.tres" id="19_m0xo8"]
 [ext_resource type="Texture2D" uid="uid://bo1m5c54afjwi" path="res://Textures/Rocks004/Rocks004_1K-JPG_Color.jpg" id="20_0d2qg"]
+[ext_resource type="PackedScene" uid="uid://cb7jjfux32lte" path="res://meshes/Rock Asset Pack/Models/Models/Rock Type1 02.dae" id="20_r83ua"]
 [ext_resource type="Texture2D" uid="uid://cv8vo33auskqo" path="res://Textures/Rocks004/Rocks004_1K-JPG_AmbientOcclusion.jpg" id="21_dsjqj"]
+[ext_resource type="PackedScene" uid="uid://cxnpqluj2rw71" path="res://meshes/Rock Asset Pack/Models/Models/Rock Type2 01.dae" id="21_iomjx"]
 [ext_resource type="Texture2D" uid="uid://cog1dy6gtp0oc" path="res://Textures/Rocks004/Rocks004_1K-JPG_Displacement.jpg" id="22_7wosd"]
+[ext_resource type="PackedScene" uid="uid://dv46drwqetfth" path="res://meshes/Rock Asset Pack/Models/Models/Rock Type1 04.dae" id="22_yrxns"]
+[ext_resource type="PackedScene" uid="uid://xv46kv5sx0du" path="res://meshes/Rock Asset Pack/Models/Models/Rock Type2 03.dae" id="23_gw8v3"]
 [ext_resource type="PackedScene" uid="uid://d3bnfaokrlk21" path="res://meshes/Houses/House1/House 1 low res.blend" id="23_gyqq1"]
 [ext_resource type="Texture2D" uid="uid://jpwqyxta3iw2" path="res://Textures/Rocks004/Rocks004_1K-JPG_NormalGL.jpg" id="23_olknf"]
+[ext_resource type="PackedScene" uid="uid://bepnq61cusrff" path="res://meshes/Rock Asset Pack/Models/Models/Rock Type1 03.dae" id="24_74uvg"]
 [ext_resource type="Texture2D" uid="uid://cahsxil8iqqro" path="res://Textures/Rocks004/Rocks004_1K-JPG_Roughness.jpg" id="24_hnrch"]
 [ext_resource type="Texture2D" uid="uid://2b86wae3plh8" path="res://meshes/SamGrady buildings/DIFFUSE.jpg" id="25_vs6n1"]
 [ext_resource type="ArrayMesh" uid="uid://cpxycnstawh38" path="res://meshes/SamGrady buildings/building_0.obj" id="26_axgnt"]
@@ -147,7 +152,7 @@ mesh = SubResource("BoxMesh_g56ap")
 [node name="Book House 1" parent="." unique_id=347869724 instance=ExtResource("17_uaxie")]
 transform = Transform3D(-6.030262e-08, 0, -1.3795631, 0, 1.3795631, 0, 1.3795631, 0, -6.030262e-08, 0.37049317, 0, -2.3785627)
 
-[node name="Cube_003" parent="Book House 1" index="4" unique_id=1188824379]
+[node name="Cube_003" parent="Book House 1" index="4" unique_id=1660560153]
 transform = Transform3D(1, 0, 7.1054274e-15, 0, 1.0830063, 0, 0, 0, 1.2777057, -0.0014623404, 0.97189015, -0.40148333)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Book House 1" unique_id=10004118]
@@ -155,7 +160,7 @@ transform = Transform3D(1, 0, 7.1054274e-15, 0, 1.0830063, 0, 0, 0, 1.2777057, -
 [node name="Book House 3" parent="." unique_id=1491987675 instance=ExtResource("17_uaxie")]
 transform = Transform3D(-8.319127e-08, 0, 1.9031943, 0, 1.9031943, 0, -1.9031943, 0, -8.319127e-08, -6.364553, -0.006072283, 4.3914948)
 
-[node name="Cone_001" parent="Book House 3" index="5" unique_id=821740765]
+[node name="Cone_001" parent="Book House 3" index="5" unique_id=1161225945]
 visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Book House 3" unique_id=2054391532]
@@ -171,37 +176,37 @@ transform = Transform3D(1.7875423, 0, 0, 0, 1, 0, 0, 0, 1, -7.2309217, -0.190999
 [node name="stairs" parent="StaticBody3D5" unique_id=873191669 instance=ExtResource("18_hv23g")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.90764236, 0.24720126, -0.21936429)
 
-[node name="Cube" parent="StaticBody3D5/stairs" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_na6ls")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24157023)
 
 [node name="stairs2" parent="StaticBody3D5" unique_id=651821649 instance=ExtResource("18_hv23g")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.90764236, 0.7809516, -0.81956863)
 
-[node name="Cube" parent="StaticBody3D5/stairs2" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs2" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_na6ls")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs2" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs2" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24785826)
 
 [node name="stairs3" parent="StaticBody3D5" unique_id=2035639660 instance=ExtResource("18_hv23g")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.9076425, 1.3175006, -2.8896396)
 
-[node name="Cube" parent="StaticBody3D5/stairs3" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs3" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_na6ls")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs3" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs3" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24519284)
 
 [node name="stairs4" parent="StaticBody3D5" unique_id=1009255268 instance=ExtResource("18_hv23g")]
 transform = Transform3D(-1.7484556e-08, 0, -0.88, 0, 0.31, 0, 0.4, 0, -3.8466023e-08, 0.9076425, 1.851251, -3.489844)
 
-[node name="Cube" parent="StaticBody3D5/stairs4" index="0" unique_id=1183687197]
+[node name="Cube" parent="StaticBody3D5/stairs4" index="0" unique_id=730098617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03122282, -0.25388527)
 mesh = SubResource("ArrayMesh_na6ls")
 
@@ -209,7 +214,7 @@ mesh = SubResource("ArrayMesh_na6ls")
 transform = Transform3D(-3.9069636, -2.6847067e-07, 3.8181755e-14, 0, -7.771892e-08, -5.784912, 5.8993544e-07, -1.778, 2.5286627e-07, 14.3617935, -0.38719058, 1.2053549)
 mesh = SubResource("BoxMesh_hqenm")
 
-[node name="Cube_001" parent="StaticBody3D5/stairs4" index="1" unique_id=260008232]
+[node name="Cube_001" parent="StaticBody3D5/stairs4" index="1" unique_id=836768040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7763568e-15, 0, -0.24365829)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D5" unique_id=1259884898]
@@ -270,6 +275,21 @@ transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, -2.4279027, 1.173641
 
 [node name="House 1 low res2" parent="." unique_id=724706388 instance=ExtResource("23_gyqq1")]
 transform = Transform3D(-0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 2.6689434, 1.1736413, -1.4414213)
+
+[node name="Rock Type1 02" parent="." unique_id=703380179 instance=ExtResource("20_r83ua")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.9574246, 0.70338315, -3.3960106)
+
+[node name="Rock Type2 01" parent="." unique_id=1285499590 instance=ExtResource("21_iomjx")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -4.930647, 0.9871104, -2.8297892)
+
+[node name="Rock Type1 04" parent="." unique_id=1207183141 instance=ExtResource("22_yrxns")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.397495, 1.3675358, -3.6692748)
+
+[node name="Rock Type2 03" parent="." unique_id=912222709 instance=ExtResource("23_gw8v3")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -4.1108637, 0.885175, -2.5240204)
+
+[node name="Rock Type1 03" parent="." unique_id=864833801 instance=ExtResource("24_74uvg")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -4.5472846, 1.340589, -3.7905183)
 
 [editable path="Book House 1"]
 [editable path="Book House 3"]
