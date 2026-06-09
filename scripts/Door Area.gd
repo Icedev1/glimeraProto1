@@ -5,6 +5,7 @@ var inRange : bool = false
 @onready var canvasprompt: Control = null
 @export var streetPath: String
 @export var spawnName: String
+@export var is_library_door: bool = false
 
 @onready var particle_scene = preload("res://Particles/GlowingRingParticle.tscn")
 
@@ -17,25 +18,18 @@ func _ready() -> void:
 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Keep prompt positioned correctly
-	#if inRange:
-		#var prompt = get_prompt()
-#
-		#if prompt:
-			#var world_pos = global_transform.origin + Vector3(0, 0.5, 0)
-			#var screen_pos = get_viewport().get_camera_3d().unproject_position(world_pos)
-			#prompt.position = screen_pos
-
-
-
-	
 	if Input.is_action_just_pressed("ui_interact") and inRange:
+		if is_library_door:
+			if not GraftGlobals.churchman1Talked:
+				if not GraftGlobals.npc5Talked:
+					Dialogic.VAR.set_variable("target", "library_locked_1")
+				else:
+					Dialogic.VAR.set_variable("target", "library_locked_2")
+				Dialogic.start("timelinelayer2")
+				return
 		var game = get_tree().current_scene
 		game.transition_to_street(streetPath, spawnName)
-	
-
 
 func _on_body_entered(body: Node3D) -> void:
 	inRange = true

@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dcowgxvbiylrh" path="res://meshes/Houses/House1/House 1.blend" id="29_yqgve"]
 [ext_resource type="PackedScene" uid="uid://bipgmap0s8w41" path="res://Prop Scenes/Gate Anim.tscn" id="31_hhrm4"]
 [ext_resource type="PackedScene" uid="uid://duolplg5v1f5o" path="res://Door Area.tscn" id="31_scw65"]
-[ext_resource type="Script" uid="uid://bpk84xenjc6f0" path="res://Streets/DoorAnimator.gd" id="32_hhrm4"]
+[ext_resource type="Script" path="res://Streets/DoorAnimator.gd" id="32_hhrm4"]
 [ext_resource type="PackedScene" uid="uid://cg4ogxvkcwxdq" path="res://Combat/enemy1/NPC3.fbx" id="33_g7od3"]
 [ext_resource type="Script" uid="uid://oabljn5qu4iv" path="res://scripts/dialogue_trigger2.gd" id="34_kmomr"]
 [ext_resource type="PackedScene" uid="uid://bbmxei8tf7plk" path="res://Combat/enemy1/NPC6.fbx" id="34_vv6gl"]
@@ -944,6 +944,7 @@ transform = Transform3D(0.9999995, 0, 7.1054274e-14, 0, 1, 0, -7.1054274e-15, 0,
 [node name="Area3D" parent="." unique_id=2086226871 instance=ExtResource("31_scw65")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.216807, 2.1078298, -8.162296)
 streetPath = "res://Streets/Library.tscn"
+is_library_door = true
 
 [node name="StaticBody3D9" parent="." unique_id=603041042 instance=ExtResource("31_hhrm4")]
 transform = Transform3D(1.1827295, 0, 0, 0, 0.91831714, 0, 0, 0, 1, -15.451568, 2.0504797, -9.3813925)
@@ -1325,6 +1326,18 @@ script = ExtResource("18_g7od3")
 [editable path="CharacterBody3D/MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1"]
 [editable path="CharacterBody3D/CameraPivot"]
 [editable path="LEdge"]
+[editable path="Node3D"]
+[editable path="Node3D/StaticBody3D5/stairs"]
+[editable path="Node3D/StaticBody3D5/stairs2"]
+[editable path="Node3D/StaticBody3D5/stairs3"]
+[editable path="Node3D/StaticBody3D5/stairs4"]
+[editable path="Node3D/StaticBody3D5/stairs5"]
+[editable path="Node3D/StaticBody3D5/stairs6"]
+[editable path="Node3D/StaticBody3D5/stairs7"]
+[editable path="Node3D/StaticBody3D5/stairs8"]
+[editable path="Node3D/House 1"]
+[editable path="Node3D/Water fountain"]
+[editable path="Node3D/UI Elements/Prompt"]
 [editable path="StaticBody3D5/stairs"]
 [editable path="StaticBody3D5/stairs2"]
 [editable path="StaticBody3D5/stairs3"]

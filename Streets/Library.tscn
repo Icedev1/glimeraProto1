@@ -248,7 +248,7 @@ graph_offset = Vector2(68, 52)
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.33720744, 5.9604645e-08, 0.22491561)
 script = ExtResource("2_4yli5")
 
-[node name="rock" type="Node3D" parent="Library/metarig" parent_id_path=PackedInt32Array(1759585649, 467880564) index="1" unique_id=907230491]
+[node name="rock" type="Node3D" parent="Library/metarig" parent_id_path=PackedInt32Array(1759585649, 1961900332) index="1" unique_id=907230491]
 
 [node name="Area3D" type="Area3D" parent="Library/metarig/rock" unique_id=1771793825 node_paths=PackedStringArray("library")]
 collision_mask = 2
@@ -260,7 +260,7 @@ transform = Transform3D(-0.70710677, 0.70710677, -8.742274e-08, 0.70710677, 0.70
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="paper" type="Node3D" parent="Library/metarig_001" parent_id_path=PackedInt32Array(1759585649, 1409108105) index="1" unique_id=1951237080]
+[node name="paper" type="Node3D" parent="Library/metarig_001" parent_id_path=PackedInt32Array(1759585649, 415890364) index="1" unique_id=1951237080]
 
 [node name="Area3D" type="Area3D" parent="Library/metarig_001/paper" unique_id=1719976741 node_paths=PackedStringArray("library")]
 collision_mask = 2
@@ -272,7 +272,7 @@ transform = Transform3D(-0.70710665, 0.70710653, -8.7422734e-08, 0.70710665, 0.7
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="scissors" type="Node3D" parent="Library/metarig_002" parent_id_path=PackedInt32Array(1759585649, 289640232) index="1" unique_id=521683534]
+[node name="scissors" type="Node3D" parent="Library/metarig_002" parent_id_path=PackedInt32Array(1759585649, 309877833) index="1" unique_id=521683534]
 
 [node name="Area3D" type="Area3D" parent="Library/metarig_002/scissors" unique_id=689171585 node_paths=PackedStringArray("library")]
 collision_mask = 2
@@ -284,7 +284,7 @@ transform = Transform3D(-0.70710677, 0.7071068, -8.742275e-08, 0.70710677, 0.707
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="Point" parent="Library" index="13" unique_id=231701260]
+[node name="Point" parent="Library" index="13" unique_id=1231283212]
 light_energy = 1.0
 omni_range = 4095.055
 

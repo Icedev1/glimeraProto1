@@ -37,10 +37,13 @@ ObjectiveManager="*uid://d2526ex77cp5f"
 [dialogic]
 
 directories/dch_directory={
+"Armless figure": "res://characters/Armless figure.dch",
 "Evene": "res://Evene.dch",
 "Gli": "res://characters/Gli.dch",
 "Intimidating Figure": "res://Intimidating Figure.dch",
+"Leo": "res://characters/Leo.dch",
 "Porcelain Figure": "res://Porcelain Figure.dch",
+"Victor": "res://characters/Victor.dch",
 "overjoyed looking Figure": "res://characters/overjoyed looking Figure.dch",
 "skull": "res://characters/skull.dch",
 "statue_1": "res://characters/statue_1.dch"

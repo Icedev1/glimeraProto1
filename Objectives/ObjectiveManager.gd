@@ -29,12 +29,14 @@ func _ready() -> void:
 			{ "id": "climb_stairs", "text": "Climb the stairs", "done": false, "visible": false },
 		],
 		[
-			{ "id": "inspect_library", "text": "Inspect the library", "done": false, "visible": true },
-			{ "id": "solve_puzzle", "text": "Solve the library puzzle", "done": false, "visible": false },
+			{ "id": "explore_area", "text": "Explore the area", "done": false, "visible": true },
+			{ "id": "talk_npc5", "text": "Talk to the figure on the stairs", "done": false, "visible": true },
 			{ "id": "talk_npc3", "text": "Look for information", "done": false, "visible": false },
 			{ "id": "talk_churchbro", "text": "Ask about the church", "done": false, "visible": false },
 			{ "id": "enter_church", "text": "Enter the church", "done": false, "visible": false },
-			{ "id": "fight_churchman", "text": "Defeat the Priest", "done": false, "visible": false },
+			{ "id": "solve_puzzle", "text": "Solve the library puzzle", "done": false, "visible": false },
+			{ "id": "fight_churchman", "text": "Return to the priest", "done": false, "visible": false },
+			{ "id": "return_to_stairs", "text": "Climb the stairs", "done": false, "visible": false },
 		],
 	]
 
