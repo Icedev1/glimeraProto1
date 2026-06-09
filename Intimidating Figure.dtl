@@ -1,4 +1,4 @@
-join Gli center
+join Gli left
 Gli: Excuse me, just passing through-
 join  center
 You try to walk around the Figure but they sidestep to be positioned in front of you.
@@ -6,7 +6,7 @@ join "Intimidating Figure" center
 "Intimidating Figure": The priest was so kind as to refrain from banishing you from the upper city.
 "Intimidating Figure": I think they were being too kind.
 "Intimidating Figure": I hear you've been causing trouble.
-join Gli center
+join Gli left
 Gli: Trouble?
 - Explain what happened
 	join "Intimidating Figure" center

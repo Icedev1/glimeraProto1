@@ -14,6 +14,7 @@ var active_particles = null
 func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
 	Dialogic.timeline_ended.connect(_on_cutscene_ended)
+	BattleManager.battle_ended.connect(_on_battle_ended)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,6 +42,7 @@ func _process(delta: float) -> void:
 		print(targetname)
 		if Dialogic.current_timeline == null:
 			#create a node with an area 3d and collision shape. set collisions to mask 2 add to the list below and voila!
+			var start_dialogue = true
 			match targetname:
 				"book_pink":
 					Dialogic.VAR.set_variable("target","book_pink")
@@ -60,29 +62,34 @@ func _process(delta: float) -> void:
 					Dialogic.VAR.set_variable("target","paper")
 				"scissors":
 					Dialogic.VAR.set_variable("target","scissor")
-				"Churchbro":
-					Dialogic.VAR.set_variable("target","churchbro")
+				#"Churchbro":
+					#Dialogic.VAR.set_variable("target","churchbro")
 				"NPC3":
 					Dialogic.VAR.set_variable("target","npc3")
-					Dialogic.VAR.set_variable("target","npc3")
+					#Dialogic.VAR.set_variable("target","npc3")
 					#ObjectiveManager.complete_objective("inspect_library")
 					ObjectiveManager.complete_objective("talk_npc3")
-					ObjectiveManager.reveal_objective("talk_churchbro")
+					#ObjectiveManager.reveal_objective("talk_churchbro")
 				"NPC6":
 					Dialogic.VAR.set_variable("target","npc6")
 				"NPC4":
 					Dialogic.VAR.set_variable("target","npc4")
 				"NPC5":
-					Dialogic.VAR.set_variable("target","npc5")
+					if GraftGlobals.churchmanDefeated:
+						Dialogic.VAR.set_variable("target", "npc5_postchurch")
+					else:
+						Dialogic.VAR.set_variable("target", "npc5")
+						ObjectiveManager.complete_objective("talk_npc5")
+						ObjectiveManager.reveal_objective("enter_church")
+						GraftGlobals.npc5Talked = true
 				"Angry Steve":
 					var game = get_tree().current_scene
 					game.from_overworld_to_battle()
 				"Churchbro":
-					Dialogic.VAR.set_variable("target","churchbro")
-					ObjectiveManager.complete_objective("talk_churchbro")
-					ObjectiveManager.reveal_objective("enter_church")
-			Dialogic.start("timelinelayer2")
-			print("timeline started, current: ", Dialogic.current_timeline)
+					start_dialogue = false
+			if start_dialogue:
+				Dialogic.start("timelinelayer2")
+				print("timeline started, current: ", Dialogic.current_timeline)
 			get_viewport().set_input_as_handled()
 		else:
 			pass
@@ -105,16 +112,24 @@ func DialogicSignal(arg:String):
 		"reset_puzzle":
 			library.reset_colors()
 		"puzzle2_complete":
-			#put reward here.
-			pass
+			GraftGlobals.libraryDone = true
+			ObjectiveManager.complete_objective("solve_puzzle")
+			ObjectiveManager.complete_objective("explore_area")
+			ObjectiveManager.reveal_objective("fight_churchman")
 		"angry_steve":
 			pass
 
 func _on_body_entered(body: Node3D) -> void:
 	inRange = true
+	var targetname = get_parent().name
+	print("churchman1Talked: ", GraftGlobals.churchman1Talked)
+	print("libraryDone: ", GraftGlobals.libraryDone)
+	print("churchmanPostLibraryTalked: ", GraftGlobals.churchmanPostLibraryTalked)
+	
+	if targetname == "Churchbro" and GraftGlobals.churchbroDefeated:
+		return
 	
 	var prompt = get_prompt()
-
 	if prompt:
 		prompt.visible = true
 	
@@ -125,7 +140,6 @@ func _on_body_entered(body: Node3D) -> void:
 		active_particles.scale = Vector3(0.2,0.2,0.2)
 		get_tree().current_scene.add_child(active_particles)
 	
-	var targetname = get_parent().name
 	match targetname:
 		"Chill Derek":
 			pass
@@ -134,11 +148,22 @@ func _on_body_entered(body: Node3D) -> void:
 		"Angry Steve":
 			pass
 		"Church Man1":
-			if Dialogic.current_timeline == null:
-				Dialogic.VAR.set_variable("target", "churchman1")
+			if Dialogic.current_timeline == null and not GraftGlobals.churchmanDefeated:
+				if not GraftGlobals.churchman1Talked:
+					Dialogic.VAR.set_variable("target", "churchman1")
+				elif GraftGlobals.libraryDone and not GraftGlobals.churchmanPostLibraryTalked:
+					Dialogic.VAR.set_variable("target", "churchman_postlibrary")
+				else:
+					return
 				Dialogic.start("timelinelayer2")
 			if prompt:
 				prompt.visible = false
+		"Churchbro":
+			if not GraftGlobals.churchbroDefeated:
+				if prompt:
+					prompt.visible = false
+				var game = get_tree().current_scene
+				game.from_overworld_to_battle()
 
 func _on_body_exited(body: Node3D) -> void:
 	inRange = false
@@ -153,12 +178,28 @@ func _on_body_exited(body: Node3D) -> void:
 		active_particles = null
 
 func _on_cutscene_ended():
+	if get_parent().name == "Churchbro":
+		if GraftGlobals.churchbroDefeated:
+			monitoring = false
+		return
 	if get_parent().name != "Church Man1":
 		return
 	if not inRange:
 		return
-	var game = get_tree().current_scene
-	game.from_overworld_to_battle()
+	if GraftGlobals.churchmanDefeated:
+		return
+	if not GraftGlobals.churchman1Talked:
+		GraftGlobals.churchman1Talked = true
+		ObjectiveManager.complete_objective("enter_church")
+		return
+	if not GraftGlobals.libraryDone:
+		return
+	if not GraftGlobals.churchmanPostLibraryTalked:
+		GraftGlobals.churchmanPostLibraryTalked = true
+		var game = get_tree().current_scene
+		game.from_overworld_to_battle()
+		return
+
 	
 func get_prompt():
 	if canvasprompt == null or not is_instance_valid(canvasprompt):
@@ -167,3 +208,20 @@ func get_prompt():
 			canvasprompt = prompts[0]
 
 	return canvasprompt
+
+func _on_battle_ended(player_won: bool, weapons_dropped: Array[Weapon], consumables_dropped: Array[Consumable]):
+	if get_parent().name == "Churchbro":
+		if not player_won:
+			return
+		GraftGlobals.churchbroDefeated = true
+		ObjectiveManager.complete_objective("talk_churchbro")
+		ObjectiveManager.reveal_objective("enter_church")
+		monitoring = false
+		Dialogic.VAR.set_variable("target", "churchbro_defeated")
+		Dialogic.start("timelinelayer2")
+	elif get_parent().name == "Church Man1":
+		if not player_won:
+			return
+		GraftGlobals.churchmanDefeated = true
+		ObjectiveManager.complete_objective("fight_churchman")
+		ObjectiveManager.reveal_objective("return_to_stairs")

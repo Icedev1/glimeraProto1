@@ -66,11 +66,9 @@ elif {target} == "scissor":
 		set {sequence_step} = 0.0
 		tstscs
 		[signal arg="reset_puzzle"]
-elif {target} == "churchbro":
+elif {target} == "churchbro_defeated":
 	join statue_1 rightmost
-	statue_1: You shouldn't be here.
-	join Gli left
-	Gli: Why shouldn't i be here?
+	statue_1: Don't you dare set foot in that church.
 	statue_1: The priest is not accepting visitors... Especially not your kind.
 elif {target} == "npc3":
 	join Gli left
@@ -89,28 +87,49 @@ elif {target} == "npc4":
 	statue_1: Never bro, the priest said that to change is to destroy the Guardians image.
 	statue_1: Can you not bother me when I'm talking to my friend.
 elif {target} == "npc5":
-	join statue_1 rightmost
-	statue_1: Your greed is sickening.
+	join "Armless figure" rightmost
+	"Armless figure": Your greed is sickening.
 	join Gli left
 	Gli: Excuse me.
-	statue_1: I see those grafts you have. When will it be enough for you.
+	"Armless figure": I see those grafts you have. When will it be enough for you.
 	Gli: My grafts are my own business
-	statue_1: You're lucky the priest ordered me to leave you alone.
+	"Armless figure": You're lucky the priest ordered me to leave you alone.
 elif {target} == "churchman1":
-	join skull rightmost
-	skull: I wondered when you would come.
+	join Leo rightmost
+	Leo: I wondered when you would come.
+	leave Leo
 	join Gli left
 	Gli: You knew I would come here?
-	skull: You've made quite a mess of things, haven't you.
-	skull: The Guardian asks for one thing.
-	skull: And you couldn't even give them that.
-	Gli: There are more important problem than the guardians rules.
-	skull: You don't even know the damage your changing causes.
-	Gli: Damage? How can changing my graft even cause damage.
-	skull: Because you inspire others to change aswell and when everyone wants to change. They are going to need more grafts.
-	skull: What do you think happens when there aren't enough grafts for the figures?
+	leave Gli
+	join Leo rightmost
+	Leo: You've made quite a mess of things, haven't you.
+	Leo: Someone who knows what you are. And what you're becoming. The grafts you carry they're not random. They're part of something older.
+	leave Leo
+	join Gli left
+	Gli: What do you mean?
+	leave Gli
+	join Leo rightmost
+	Leo: There's a library in this district. The figures inside hold the answer. Go. See what's there. Then come back to me.
+	leave Leo
+	join Gli left
+	Gli: Why would I do anything you say?
+	leave Gli
+	The priest stays silent...
+if {target} == "library_locked_1":
+	join Gli left
+	Gli: I don't have time for this. I should go to the stairs first.
+if {target} == "library_locked_2":
+	join Gli left
+	Gli: I should go to the church first.
+if {target} == "churchman_postlibrary":
+	join Leo rightmost
+	join Gli left
+	Leo: What do you think happens when there aren't enough grafts for the figures?
 	Gli: Thats... I only changed my grafts because strange things were happening. Not because I want to.
-	skull: Then you wouldn't mind giving me your grafts then right?
+	Leo: Then you wouldn't mind giving me your grafts then right?
 	Gli: Wait a second. You just want to be in control of the grafts. You don't care about changelings. You just want to be the only one with power.
-	skull: You're more perceptive than I thought. Oh well now I have another reason to take you down. I pray that the Guardian forgives you when I send you there.
+	Leo: You're more perceptive than I thought. Oh well now I have another reason to take you down. I pray that the Guardian forgives you when I send you there.
+if {target} == "npc5_postchurch":
+	join "Armless figure" center
+	"Armless figure": fuck you
 [end_timeline]
