@@ -5,6 +5,9 @@ extends Node3D
 var material : StandardMaterial3D
 var material2 : StandardMaterial3D
 var material3 : StandardMaterial3D
+@onready var cylinder_006: MeshInstance3D = $Cylinder_006
+@onready var collision_shape_3d: CollisionShape3D = $Cylinder_006/StaticBody3D/CollisionShape3D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +18,9 @@ func _ready() -> void:
 	handmesh.set_surface_override_material(0, material)
 	handmesh2.set_surface_override_material(0, material2)
 	handmesh3.set_surface_override_material(0, material3)
+	
+	cylinder_006.visible = false
+	collision_shape_3d.disabled = true
 	
 	ObjectiveManager.complete_objective("inspect_library")
 	ObjectiveManager.reveal_objective("solve_puzzle")
@@ -34,6 +40,7 @@ func _process(delta: float) -> void:
 func turn_red():
 	if material.albedo_color == Color.WHITE:
 		material.albedo_color = Color.RED
+		appear_pillar()
 	else:
 		material.albedo_color = Color.WHITE
 
@@ -48,3 +55,7 @@ func turn_green():
 		material3.albedo_color = Color.GREEN
 	else:
 		material3.albedo_color = Color.WHITE
+		
+func appear_pillar():
+	cylinder_006.visible = true
+	collision_shape_3d.disabled = false
