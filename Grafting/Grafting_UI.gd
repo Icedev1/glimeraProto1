@@ -8,7 +8,7 @@ extends Control
 @export var legGraftDescs : Array[String]
 
 var selected_slot : String = ""
-#var is_open : bool = false
+var _confirm_action: String = ""
 
 @onready var graft_grid = $GraftsPage/GraftGrid
 @onready var info_card = $GraftsPage/InfoCard
@@ -23,10 +23,8 @@ var selected_slot : String = ""
 @onready var settings_page = $SettingsPage
 @onready var quit_confirm_dialog = $SettingsPage/QuitConfirmDialog
 
-
 func _ready() -> void:
 	set_process_input(true)
-	#visible = false
 	info_card.visible = false
 	graft_grid.visible = false
 	$GraftsPage/LeftArmSlot.disabled = true
@@ -39,7 +37,6 @@ func _ready() -> void:
 		leg_slot.icon = legIcons[GraftGlobals.left_leg_graft_index]
 		leg_slot.add_theme_constant_override("icon_max_width", 150)
 
-
 func _show_page(page: String) -> void:
 	grafts_page.visible = page == "grafts"
 	inventory_page.visible = page == "inventory"
@@ -49,11 +46,9 @@ func _on_grafts_tab_pressed() -> void:
 	_show_page("grafts")
 
 func _on_inventory_tab_pressed() -> void:
-	#print("inventory tab pressed")
 	_show_page("inventory")
 
 func _on_settings_tab_pressed() -> void:
-	#print("settings tab pressed")
 	_show_page("settings")
 
 func _on_right_arm_slot_pressed() -> void:

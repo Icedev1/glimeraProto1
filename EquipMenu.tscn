@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dumgnjj1m80d0"]
 
-[ext_resource type="Material" uid="uid://b03k4lsfucnep" path="res://Textures/Paving Stones 081/PavingStones081_1K-PNG.tres" id="1_erra4"]
+[ext_resource type="Material" uid="uid://dlqh37n150i1e" path="res://Textures/Paving Stones 081/PavingStones081_2K-JPG.tres" id="1_6wvo2"]
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="30_adlbx"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bn0p3"]
-material = ExtResource("1_erra4")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erra4"]
 
@@ -21,6 +20,7 @@ transform = Transform3D(0.59919125, 0, -0.8006059, 0, 1, 0, 0.8006059, 0, 0.5991
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1731364170]
 transform = Transform3D(0.57035196, 0, 1.6505932, 0, 1, 0, -0.79554373, 0, 1.1833655, 0.02682387, -0.00847289, 0.0424269)
+material_override = ExtResource("1_6wvo2")
 mesh = SubResource("PlaneMesh_bn0p3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1208943157]

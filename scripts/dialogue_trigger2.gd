@@ -4,7 +4,7 @@ var inRange : bool = false
 @onready var node: Node3D = $".."
 @onready var canvasprompt: Control = null
 var auto_skip := false
-@export var library: Node3D
+@onready var library: Node3D = $"../../.."
 @onready var particle_scene = preload("res://Particles/GlowingRingParticle.tscn")
 
 var active_particles = null
@@ -59,16 +59,6 @@ func _process(delta: float) -> void:
 					Dialogic.VAR.set_variable("target","paper")
 				"scissors":
 					Dialogic.VAR.set_variable("target","scissor")
-				"Churchbro":
-					Dialogic.VAR.set_variable("target","churchbro")
-				"NPC3":
-					Dialogic.VAR.set_variable("target","npc3")
-				"NPC6":
-					Dialogic.VAR.set_variable("target","npc6")
-				"NPC4":
-					Dialogic.VAR.set_variable("target","npc4")
-				"NPC5":
-					Dialogic.VAR.set_variable("target","npc5")
 				"Angry Steve":
 					var game = get_tree().current_scene
 					game.from_overworld_to_battle()

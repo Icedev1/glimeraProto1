@@ -37,15 +37,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"Material.002": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://Textures/WoodTexture/Wood095_1K-PNG.tres",
-"use_external/path": "uid://bj4jvojq1vnrv"
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

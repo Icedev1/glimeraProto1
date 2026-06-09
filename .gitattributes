@@ -1,2 +1,2 @@
-*.tscn merge=binary
-*.tres merge=binary
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf

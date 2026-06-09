@@ -38,13 +38,6 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"materials": {
-"RoofingTiles012B.001": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://meshes/Houses/House1/textures/roof.tres",
-"use_external/path": "uid://d4abv0lhql31l"
-}
-},
 "nodes": {
 "PATH:BézierCircle": {
 "import/skip_import": true

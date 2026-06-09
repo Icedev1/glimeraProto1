@@ -108,7 +108,7 @@ func _on_player_hit_tutorial(damage: int, was_blocked: bool) -> void:
 	_run_damage_tutorial(damage, was_blocked)
 
 func _run_damage_tutorial(damage: int, was_blocked: bool) -> void:
-	var enemy_name : String = BattleManager.enemy.unit_name
+	var enemy_name := BattleManager.enemy.unit_name
 	var enemy_element_name := Weapon.element_name(BattleManager.enemy.element)
 	var attack_highlights: Array = [weapon_cards[0], weapon_cards[1]]
 	var attack_elements: Array = [weapon_cards[0].description_label, weapon_cards[1].description_label]
