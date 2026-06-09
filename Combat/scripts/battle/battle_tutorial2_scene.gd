@@ -147,38 +147,38 @@ func _run_damage_tutorial(damage: int, was_blocked: bool) -> void:
 	_tutorial_overlay.show_step(
 		"Defensive matchup 1",
 		"When an enemy attacks, the damage you take is decided by the combination of your equipped limbs' elements. 
-		Since both of your limbs are rock and you're getting attacked by paper, you take more damage." % enemy_element_name,
+		Since both of your limbs are rock and you're getting attacked by paper, you take more damage.",
 		true)
 	await _tutorial_overlay.next_pressed
 
 	_tutorial_overlay.show_step(
 		"Defensive matchup 2",
-		"To make it easier to see how much damage you take you can look at the outline around the block button. The colour of the outline shows you if you take more, less, or neutral damage." % enemy_element_name,
+		"To make it easier to see how much damage you take you can look at the outline around the block button. The colour of the outline shows you if you take more, less, or neutral damage.",
 		true,block_card)
 	await _tutorial_overlay.next_pressed
 
 	# 4. Offensive matchup, your attacking limb vs enemy type
 	_tutorial_overlay.show_step(
 		"Offensive matchup 1",
-		"When you attack, the damage you do is decided by each individual equipped limb's element." % enemy_element_name,
+		"When you attack, the damage you do is decided by each individual equipped limb's element.",
 		true)
 	await _tutorial_overlay.next_pressed
 
 	_tutorial_overlay.show_step(
 		"Offensive matchup 2",
-		"Right now you have two rock limbs equipped and you're attacking a paper type enemy, this means that both limbs individually do less damage." % enemy_element_name,
+		"Right now you have two rock limbs equipped and you're attacking a paper type enemy, this means that both limbs individually do less damage.",
 		true,attack_elements)
 	await _tutorial_overlay.next_pressed
 
 	_tutorial_overlay.show_step(
 		"Offensive matchup 3",
-		"If you had one rock limb and one scissors limb, the rock limb would still do less damage while the scissors limb would do more damage." % enemy_element_name,
+		"If you had one rock limb and one scissors limb, the rock limb would still do less damage while the scissors limb would do more damage.",
 		true)
 	await _tutorial_overlay.next_pressed
 
 	_tutorial_overlay.show_step(
 		"Offensive matchup 4",
-		"Again, to make it easier to see how much damage you do you can look at the outlines around the attack buttons. The colour of the outline shows you if you do more, less, or neutral damage." % enemy_element_name,
+		"Again, to make it easier to see how much damage you do you can look at the outlines around the attack buttons. The colour of the outline shows you if you do more, less, or neutral damage.",
 		true, attack_highlights)
 	await _tutorial_overlay.next_pressed
 
