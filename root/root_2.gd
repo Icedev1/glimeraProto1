@@ -14,6 +14,8 @@ var current_battle = null
 var current_state = ""
 
 var current_battle_enemy: EnemyData = null   
+var saved_player_position: Vector3 = Vector3.ZERO
+var saved_player_rotation: float = 0.0
 
 func _ready():
 	$SceneTransition/ColorRect.modulate.a = 0
@@ -155,6 +157,10 @@ func from_main_menu_to_overworld():
 	)
 
 func from_overworld_to_battle(enemy_data: EnemyData = null, battle_scene: String = "res://Combat/scenes/battle.tscn"):
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		saved_player_position = players[0].global_position
+		saved_player_rotation = players[0].global_rotation.y
 	transition2.playscreenshatter(func():
 		start_battle(battle_scene, enemy_data)
 	)
@@ -174,21 +180,23 @@ func from_battle_to_overworld():
 
 	current_battle_enemy = null
 	$CanvasLayer/ObjectiveDisplay.show()
-	overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
+	#overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
 	transition1.playfade(func():
 		show_overworld()
-		var dialman = get_tree().get_nodes_in_group("dialman")
-		if dialman.size() > 0:
-			dialman[0].character = null
-			dialman[0].inRange = false
+		overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
 		var players = get_tree().get_nodes_in_group("player")
 		for p in players:
 			if not p.is_inside_tree():
 				continue
-			var menu_cam = p.get_node_or_null("MenuCamera")
+			p.global_position = saved_player_position
+			p.global_rotation.y = saved_player_rotation
 			var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
-			if menu_cam and char_cam:
-				pass
+			if char_cam:
+				char_cam.make_current()
+		var dialman = get_tree().get_nodes_in_group("dialman")
+		if dialman.size() > 0:
+			dialman[0].character = null
+			dialman[0].inRange = false
 	)
 
 func transition_to_street(target_street: String, spawn_name: String):
