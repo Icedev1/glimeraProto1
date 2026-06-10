@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://bxoxeapry16di"]
+
+[ext_resource type="Material" uid="uid://dswhdrehkimn1" path="res://Textures/Paving Stones 138/PavingStones138_1K-JPG.tres" id="1_mjvmt"]
+[ext_resource type="Texture2D" uid="uid://2b86wae3plh8" path="res://meshes/SamGrady buildings/DIFFUSE.jpg" id="2_454hj"]
+[ext_resource type="ArrayMesh" uid="uid://c7hs8xubxoxus" path="res://meshes/SamGrady buildings/building_1.obj" id="3_ihy43"]
+[ext_resource type="ArrayMesh" uid="uid://ba2d6366tw7yr" path="res://meshes/SamGrady buildings/building_3.obj" id="4_37k2o"]
+[ext_resource type="PackedScene" uid="uid://8b1xuokowhht" path="res://meshes/Houses/BookHouse/Book House 1.blend" id="13_iqpvx"]
+[ext_resource type="PackedScene" uid="uid://d3bnfaokrlk21" path="res://meshes/Houses/House1/House 1 low res.blend" id="15_0qs8e"]
+[ext_resource type="PackedScene" uid="uid://blblg7hd3jj8d" path="res://meshes/Market Stands/Market Stand preview.blend" id="30_wwbgs"]
+[ext_resource type="Material" uid="uid://djtoke2ix0grb" path="res://Textures/Rocks004/Rocks004_1K-JPG.tres" id="34_5a1as"]
+[ext_resource type="ArrayMesh" uid="uid://cpxycnstawh38" path="res://meshes/SamGrady buildings/building_0.obj" id="36_iems2"]
+[ext_resource type="ArrayMesh" uid="uid://i3g16rqeqvpo" path="res://meshes/SamGrady buildings/building_5.obj" id="38_4a1rh"]
+[ext_resource type="ArrayMesh" uid="uid://dy6s1h86csg5m" path="res://meshes/SamGrady buildings/building_6.obj" id="39_o83tl"]
+[ext_resource type="ArrayMesh" uid="uid://0cdjyj630ikt" path="res://meshes/SamGrady buildings/building_4.obj" id="40_26qur"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0r8xi"]
+material = ExtResource("1_mjvmt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emel5"]
+albedo_texture = ExtResource("2_454hj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qc8tb"]
+albedo_texture = ExtResource("2_454hj")
+
+[sub_resource type="BoxMesh" id="BoxMesh_u7kel"]
+lightmap_size_hint = Vector2i(56, 48)
+material = ExtResource("34_5a1as")
+add_uv2 = true
+size = Vector3(8.085, 0.22, 2.445)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s07dv"]
+albedo_texture = ExtResource("2_454hj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a3c2"]
+albedo_texture = ExtResource("2_454hj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmmlt"]
+albedo_texture = ExtResource("2_454hj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqbgl"]
+albedo_texture = ExtResource("2_454hj")
+
+[node name="Market1" type="Node3D" unique_id=1437225535]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=102186674]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1196922909]
+transform = Transform3D(3.955, 0, 0, 0, 3.955, 0, 0, 0, 6.50471, 0.003103599, -0.003066063, 0.006759703)
+mesh = SubResource("PlaneMesh_0r8xi")
+
+[node name="Building2" type="MeshInstance3D" parent="StaticBody3D" unique_id=13700663]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.15854979, -0.043863267, -7.2124496)
+material_override = SubResource("StandardMaterial3D_emel5")
+mesh = ExtResource("3_ihy43")
+
+[node name="Building6" type="MeshInstance3D" parent="StaticBody3D" unique_id=1158890895]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -4.0001516, 1.9369414, -7.0791764)
+material_override = SubResource("StandardMaterial3D_qc8tb")
+mesh = ExtResource("4_37k2o")
+
+[node name="Building7" type="MeshInstance3D" parent="StaticBody3D" unique_id=713887323]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.1800272, 1.5255911, -7.0791764)
+material_override = SubResource("StandardMaterial3D_qc8tb")
+mesh = ExtResource("4_37k2o")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=294542588]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, -0.09519181, -3.4779549)
+
+[node name="Book House 1" parent="StaticBody3D2" unique_id=1295291594 instance=ExtResource("13_iqpvx")]
+transform = Transform3D(0.13355392, 0, -5.207918, 0, 5.20963, 0, 5.207918, 0, 0.13355392, 2.1453648, 0.34588218, 0.6631446)
+
+[node name="Book House 2" parent="StaticBody3D2" unique_id=799010038 instance=ExtResource("13_iqpvx")]
+transform = Transform3D(-5.2096305, 0, 4.5544016e-07, 0, 5.20963, 0, -4.5544016e-07, 0, -5.2096305, 26.476112, 10.182722, 33.410976)
+
+[node name="Book House 4" parent="StaticBody3D2" unique_id=121073565 instance=ExtResource("13_iqpvx")]
+transform = Transform3D(-5.2096305, 0, 4.5544016e-07, 0, 5.20963, 0, -4.5544016e-07, 0, -5.2096305, 9.147576, 10.182725, 47.142742)
+
+[node name="Book House 5" parent="StaticBody3D2" unique_id=840418269 instance=ExtResource("13_iqpvx")]
+transform = Transform3D(-2.2772011e-07, 0, 5.2096305, 0, 5.20963, 0, -5.2096305, 0, -2.2772011e-07, -14.789585, 10.182725, -24.323788)
+
+[node name="Book House 6" parent="StaticBody3D2" unique_id=865289662 instance=ExtResource("13_iqpvx")]
+transform = Transform3D(-2.2772014e-07, 0, -5.2096305, 0, 5.20963, 0, 5.2096305, 0, -2.2772014e-07, -19.023775, 10.350993, -24.256687)
+
+[node name="Book House 3" parent="StaticBody3D2" unique_id=2143119235 instance=ExtResource("13_iqpvx")]
+transform = Transform3D(-5.2096305, 0, 4.5544016e-07, 0, 5.20963, 0, -4.5544016e-07, 0, -5.2096305, 34.39595, 14.040492, 19.969557)
+
+[node name="House 2" parent="." unique_id=244873569 instance=ExtResource("15_0qs8e")]
+transform = Transform3D(-0.75370014, 0, 0.021263443, 0, 0.754, 0, -0.021263443, 0, -0.75370014, 1.3710346, 0.57106256, 4.749648)
+
+[node name="Cube_012" parent="House 2" index="4" unique_id=404889215]
+visible = false
+
+[node name="House 4" parent="." unique_id=1146125731 instance=ExtResource("15_0qs8e")]
+transform = Transform3D(-0.75400007, 0, -6.591678e-08, 0, 0.754, 0, 6.591678e-08, 0, -0.75400007, -1.1978643, 2.191134, 9.907251)
+
+[node name="Cube_012" parent="House 4" index="4" unique_id=404889215]
+visible = false
+
+[node name="House 6" parent="." unique_id=1850260011 instance=ExtResource("15_0qs8e")]
+transform = Transform3D(-3.295839e-08, 0, -0.75400007, 0, 0.754, 0, 0.75400007, 0, -3.295839e-08, -3.3368642, 2.6553366, 9.312186)
+
+[node name="Cube_012" parent="House 6" index="4" unique_id=404889215]
+visible = false
+
+[node name="Cube_089" parent="House 6" index="90" unique_id=1709317607]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.0069084167, 1.2868211, -1.3021128)
+
+[node name="House 7" parent="." unique_id=625659953 instance=ExtResource("15_0qs8e")]
+transform = Transform3D(-3.295839e-08, 0, -0.75400007, 0, 0.754, 0, 0.75400007, 0, -3.295839e-08, -1.8854201, 2.456589, -8.29528)
+
+[node name="Cube_012" parent="House 7" index="4" unique_id=404889215]
+visible = false
+
+[node name="House 3" parent="." unique_id=1265404576 instance=ExtResource("15_0qs8e")]
+transform = Transform3D(-3.295839e-08, 0, 0.75400007, 0, 0.754, 0, -0.75400007, 0, -3.295839e-08, 4.552804, 2.7172656, -5.5815725)
+
+[node name="Cube_012" parent="House 3" index="4" unique_id=404889215]
+visible = false
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=67089886]
+collision_mask = 9
+
+[node name="Market Stand" parent="." unique_id=120453946 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.3178592, -0.0014858246, -3.7150335)
+
+[node name="Market Stand" parent="Market Stand" unique_id=2142573711 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.3178592, -0.0014858246, -3.7150335)
+
+[node name="Market Stand12" parent="." unique_id=1681488603 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.9155409, -0.0014858246, 3.9794688)
+
+[node name="Market Stand5" parent="." unique_id=565285090 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-0.1, 0, 8.742278e-09, 0, 0.1, 0, -8.742278e-09, 0, -0.1, 1.9147661, -0.0014858246, 3.5436761)
+
+[node name="Market Stand10" parent="." unique_id=191849340 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.070024945, 0, 0.097450025, 0, 0.12, 0, -0.097450025, 0, 0.070024945, 2.9968526, -0.058265924, 2.660549)
+
+[node name="Market Stand8" parent="." unique_id=154243434 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-4.371139e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.371139e-09, 3.7810013, -0.0014858246, 0.14439058)
+
+[node name="Market Stand11" parent="." unique_id=1077711900 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-0.083961986, 0, -0.054317452, 0, 0.1, 0, 0.054317452, 0, -0.083961986, 2.544362, -0.023635745, 0.9297688)
+
+[node name="Market Stand9" parent="." unique_id=257597032 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-0.0194396, 0, 0.12853833, 0, 0.13, 0, -0.12853833, 0, -0.0194396, 3.5006707, -0.0014858246, 1.4653653)
+
+[node name="Market Stand 2" parent="." unique_id=1373528483 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.223239, -0.0014858246, -3.7150335)
+
+[node name="Market Stand 3" parent="." unique_id=1425893494 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.09211854, 0, -0.038912397, 0, 0.1, 0, 0.038912397, 0, 0.09211854, -1.1896906, -0.0014858246, -2.9201417)
+
+[node name="Market Stand 4" parent="." unique_id=312111619 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-0.082609825, 0, -0.05635261, 0, 0.1, 0, 0.05635261, 0, -0.082609825, -0.5601029, -0.0014858246, 4.874764)
+
+[node name="Market Stand 5" parent="." unique_id=95704224 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-4.371139e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.371139e-09, 3.7810013, -0.0014858246, -2.2634277)
+
+[node name="Market Stand 6" parent="." unique_id=1684467447 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.019765733, 0, -0.09802712, 0, 0.1, 0, 0.09802712, 0, 0.019765733, 3.6470916, 0, -1.071)
+
+[node name="Market Stand 7" parent="." unique_id=978931847 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(0.017364822, 0, -0.098480776, 0, 0.1, 0, 0.098480776, 0, 0.017364822, 3.2295496, -0.0014858246, 1.5439314)
+
+[node name="Market Stand 8" parent="." unique_id=177963838 instance=ExtResource("30_wwbgs")]
+transform = Transform3D(-0.07156927, 0, -0.06984153, 0, 0.1, 0, 0.06984153, 0, -0.07156927, 2.2831447, -0.076761186, 2.613566)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=401127344]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 4.0771527, 0.9984374, 0.001962185)
+mesh = SubResource("BoxMesh_u7kel")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1855805362]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 5.726847, 0.9984374, 3.8557415)
+mesh = SubResource("BoxMesh_u7kel")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1191627331]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.1481614, 0.9984374, -4.1739163)
+mesh = SubResource("BoxMesh_u7kel")
+
+[node name="Building16" type="MeshInstance3D" parent="." unique_id=330338331]
+transform = Transform3D(-4.371139e-09, -2.8439369e-09, 0.1, 0, 0.1, 3.5527137e-16, -0.1, 2.8439369e-09, -4.3711395e-09, 6.1940594, 0.93863463, -1.1344504)
+material_override = SubResource("StandardMaterial3D_s07dv")
+mesh = ExtResource("38_4a1rh")
+
+[node name="Building17" type="MeshInstance3D" parent="." unique_id=1495250854]
+transform = Transform3D(1.3113416e-08, -2.8439366e-09, -0.099999994, 3.105881e-23, 0.099999994, -3.5527135e-16, 0.099999994, 2.8439366e-09, 1.3113416e-08, 6.930624, 2.2761636, 0.050712585)
+material_override = SubResource("StandardMaterial3D_1a3c2")
+mesh = ExtResource("39_o83tl")
+
+[node name="Building18" type="MeshInstance3D" parent="." unique_id=1176477988]
+transform = Transform3D(-0.099999994, -2.8439366e-09, -8.742277e-09, -3.5527135e-16, 0.099999994, -1.5529404e-23, 8.742278e-09, 2.8439366e-09, -0.099999994, 3.5162296, 2.602746, -8.240875)
+material_override = SubResource("StandardMaterial3D_1a3c2")
+mesh = ExtResource("39_o83tl")
+
+[node name="Building19" type="MeshInstance3D" parent="." unique_id=1978075518]
+transform = Transform3D(0.099999994, -2.8439366e-09, 0, 3.5527135e-16, 0.099999994, -1.5529404e-23, -4.440892e-16, 2.8439366e-09, 0.099999994, -3.4157429, 0.1436863, 7.9587526)
+material_override = SubResource("StandardMaterial3D_1a3c2")
+mesh = ExtResource("39_o83tl")
+
+[node name="Building6" type="MeshInstance3D" parent="." unique_id=1590417855]
+transform = Transform3D(1.9670125e-08, -4.2659045e-09, -0.14999999, 4.6588213e-23, 0.14999999, -5.32907e-16, 0.14999999, 4.2659054e-09, 1.9670125e-08, 0.2652378, -0.023565352, -5.6415873)
+material_override = SubResource("StandardMaterial3D_gmmlt")
+mesh = ExtResource("40_26qur")
+
+[node name="Building20" type="MeshInstance3D" parent="." unique_id=2002024752]
+transform = Transform3D(1.9670125e-08, -4.265902e-09, -0.14999999, 4.6588213e-23, 0.14999999, -5.32907e-16, 0.14999999, 4.265908e-09, 1.9670125e-08, 5.382551, 1.9036887, -3.8020782)
+material_override = SubResource("StandardMaterial3D_gmmlt")
+mesh = ExtResource("40_26qur")
+
+[node name="Building21" type="MeshInstance3D" parent="." unique_id=309004574]
+transform = Transform3D(0.14999999, -4.2659023e-09, 0, 5.32907e-16, 0.14999999, -2.3294106e-23, -4.440892e-16, 4.2659076e-09, 0.14999999, 3.1709805, -1.251575, 5.6296535)
+material_override = SubResource("StandardMaterial3D_gmmlt")
+mesh = ExtResource("40_26qur")
+
+[node name="Building1" type="MeshInstance3D" parent="." unique_id=771479934]
+transform = Transform3D(-0.1, 0, 8.742278e-09, 0, 0.1, 0, -8.742278e-09, 0, -0.1, 6.1272955, 1.275064, 2.693234)
+material_override = SubResource("StandardMaterial3D_iqbgl")
+mesh = ExtResource("36_iems2")
+
+[node name="Building2" type="MeshInstance3D" parent="." unique_id=1842206931]
+transform = Transform3D(-4.371139e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.371139e-09, 1.9267035, 0.7916888, 7.703032)
+material_override = SubResource("StandardMaterial3D_iqbgl")
+mesh = ExtResource("36_iems2")
+
+[editable path="House 2"]
+[editable path="House 4"]
+[editable path="House 6"]
+[editable path="House 7"]
+[editable path="House 3"]

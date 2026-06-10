@@ -52,9 +52,10 @@ func _process(delta: float) -> void:
 				.set_trans(Tween.TRANS_SINE)\
 				.set_ease(Tween.EASE_IN_OUT)
 		else:
-			$".".global_transform.origin = Vector3(-2.194,0.002,2.128)
-			$"../Statue2".global_transform.origin = Vector3(-0.755,0.002,2.128)
-			$"../Statue3".global_transform.origin = Vector3(0.562,0.002,1.386)
+			pass
+			#$".".global_transform.origin = Vector3(-2.194,0.002,2.128)
+			#$"../Statue2".global_transform.origin = Vector3(-0.755,0.002,2.128)
+			#$"../Statue3".global_transform.origin = Vector3(0.562,0.002,1.386)
 func can_move(direction: Vector3, distance: float) -> bool:
 	var space_state = get_world_3d().direct_space_state
 
