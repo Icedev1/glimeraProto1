@@ -2,26 +2,26 @@ join Gli left
 Gli: Excuse me, just passing through-
 join  center
 You try to walk around the Figure but they sidestep to be positioned in front of you.
-join "Intimidating Figure" center
+join "Intimidating Figure" rightmost
 "Intimidating Figure": The priest was so kind as to refrain from banishing you from the upper city.
 "Intimidating Figure": I think they were being too kind.
 "Intimidating Figure": I hear you've been causing trouble.
 join Gli left
 Gli: Trouble?
 - Explain what happened
-	join "Intimidating Figure" center
+	join "Intimidating Figure" rightmost
 	"Intimidating Figure": Evene told me you would say that.
 	"Intimidating Figure": Told me she saw you knock out another Figure.
 	"Intimidating Figure": And I see you've been reclaiming your abilities as a Chimera again.
 	- I had to.
-		join "Intimidating Figure" center
+		join "Intimidating Figure" rightmost
 		"Intimidating Figure": I always knew you were corrupt.
 		"Intimidating Figure": It was obvious since you brought those feathered pests with you.
 	- I'm sorry.
-		join "Intimidating Figure" center
+		join "Intimidating Figure" rightmost
 		"Intimidating Figure": Clearly that has no meaning anymore.
 		"Intimidating Figure": If you were, you wouldn't have tried to show your face up there ever again.
-join "Intimidating Figure" center
+join "Intimidating Figure" rightmost
 "Intimidating Figure": You're not getting away with it this time.
 [signal arg="battle_start"]
 [end_timeline]

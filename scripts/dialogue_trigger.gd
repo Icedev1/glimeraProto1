@@ -158,6 +158,7 @@ func DialogicSignal(arg:String):
 			ObjectiveManager.complete_objective("pickup_violin")
 			ObjectiveManager.complete_objective("pickup_sledgehammer")
 			ObjectiveManager.set_main_quest("Try to figure out what happened")
+			#ObjectiveManager.reveal_objective("explore_layer1")
 		"enable_glihouse":
 			pass
 		"saw_picked_up":

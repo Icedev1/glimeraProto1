@@ -21,6 +21,7 @@ func _ready() -> void:
 			{ "id": "pickup_violin", "text": "Pick up your violin", "done": false, "visible": true },
 			{ "id": "pickup_sledgehammer", "text": "Grab something from the trash pile", "done": false, "visible": false },
 			#{ "id": "interact_door", "text": "Find out who's knocking", "done": false, "visible": false },
+			{ "id": "explore_layer1", "text": "Explore the area", "done": false, "visible": false },
 			{ "id": "see_figure", "text": "See what the figure is up to", "done": false, "visible": false },
 			{ "id": "find_noise", "text": "Find out where the noise came from", "done": false, "visible": false },
 			{ "id": "inspect_stairs", "text": "Inspect the stairs", "done": false, "visible": false },
