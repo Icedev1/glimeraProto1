@@ -1,6 +1,6 @@
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": It will be the most marvelous offering… yes. If only the damned thing would come out.
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": Come here birdy! Feeding time!
 leave "Porcelain Figure"
 join Gli left
@@ -8,33 +8,33 @@ Gli: (Is she trying to catch Angel?)
 Gli: Angel!
 join Gli left
 leave Gli
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": Bah! I almost had it!
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": You! You scared it away.
 leave "Porcelain Figure"
 The woman looks at you with a menacing glare.
 label choice_loop
 - I'm sorry I didn't mean to. | [if {picked_a} == false]
 	set {picked_a} = true
-	join "Porcelain Figure" right
+	join "Porcelain Figure" rightmost
 	"Porcelain Figure": Regardless of your intentions, you did it. Didn't you, Gli?
 	"Porcelain Figure": Be grateful for the Guardian's mercy.
 	join Gli left
 	Gli: Sorry, do i know you?
-	join "Porcelain Figure" right
+	join "Porcelain Figure" rightmost
 	"Porcelain Figure": I know YOU. That's for sure.
 	jump choice_loop
 - Angel doesn't eat that. | [if {picked_b} == false]
 	set {picked_b} = true
 	join Gli left
 	Gli: The crows- they're different. They like to eat seeds.
-	join "Porcelain Figure" right
+	join "Porcelain Figure" rightmost
 	"Porcelain Figure": Do they, now?
 	jump choice_loop
 - Offering? | [if {picked_c} == false]
 	set {picked_c} = true
-	join "Porcelain Figure" right
+	join "Porcelain Figure" rightmost
 	"Porcelain Figure": Yes, Gli. Finally, we are ridding ourselves of this plague you brought upon us.
 	jump choice_loop
 if {picked_a} == false:
@@ -43,15 +43,15 @@ elif {picked_b} == false:
 	jump choice_loop
 elif {picked_c} == false:
 	jump choice_loop
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": Come here, let me take a look at you.
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": You bent the world out of shape.
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": You taught the birds to sing, thinking that'll make it better.
 leave "Porcelain Figure"
 leave Gli
-join "Porcelain Figure" right
+join "Porcelain Figure" rightmost
 "Porcelain Figure": It's like you said... They're not like us. And neither are you.
 join Gli left
 Gli: You're not making any sense, lady...

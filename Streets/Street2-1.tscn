@@ -43,6 +43,8 @@
 [ext_resource type="PackedScene" uid="uid://otx0rnod80qp" path="res://Combat/enemy1/NPC5.fbx" id="36_s45ko"]
 [ext_resource type="PackedScene" uid="uid://k5a5m54lig58" path="res://Streets/Preview Streets/Preview Market1.tscn" id="40_l6fhx"]
 [ext_resource type="PackedScene" uid="uid://cw0qaf2qqynaj" path="res://Streets/Preview Streets/Preview v2 Street1-2.tscn" id="41_yqgve"]
+[ext_resource type="Script" uid="uid://dr88cobc5dqk4" path="res://scripts/scene_switcher.gd" id="44_kpmy0"]
+[ext_resource type="PackedScene" uid="uid://bcv71xsvoofkr" path="res://dial_box.tscn" id="45_t4qa1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_exsct"]
 material = ExtResource("3_i0xsr")
@@ -1303,6 +1305,19 @@ visible = false
 [node name="PromptManager" type="Node" parent="." unique_id=1163940003]
 script = ExtResource("18_g7od3")
 
+[node name="PauseHandler" type="Node" parent="." unique_id=2100295793 node_paths=PackedStringArray("canvas")]
+process_mode = 3
+script = ExtResource("44_kpmy0")
+canvas = NodePath("../UI Elements")
+
+[node name="UI Elements" type="CanvasLayer" parent="." unique_id=1864729040]
+
+[node name="Prompt" parent="UI Elements" unique_id=474584305 groups=["prompt"] instance=ExtResource("15_k8pga")]
+visible = false
+
+[node name="DialBox" parent="UI Elements" unique_id=1810109422 instance=ExtResource("45_t4qa1")]
+visible = false
+
 [connection signal="body_entered" from="Go To Street 2" to="Go To Street 2" method="_on_body_entered"]
 [connection signal="body_entered" from="RespawnArea3D" to="CharacterBody3D" method="_on_respawn_area_3d_body_entered"]
 [connection signal="body_entered" from="NPC3/Area3D" to="NPC3/Area3D" method="_on_body_entered"]
@@ -1353,3 +1368,4 @@ script = ExtResource("18_g7od3")
 [editable path="Node3D2/LEdge"]
 [editable path="Node3D2/Water fountain"]
 [editable path="Prompt"]
+[editable path="UI Elements/Prompt"]

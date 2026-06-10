@@ -414,6 +414,7 @@ autoplay = &"Idle Straight"
 transform = Transform3D(1, 0, 0, 0, 0.9226593, 0.38561618, 0, -0.38561618, 0.9226593, 0, 0.67658234, 1.2380623)
 
 [node name="GraftsPage" type="Control" parent="." unique_id=77643113]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -665,25 +666,6 @@ audio_bus_name = "SFX"
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
-
-[node name="Label2" type="Label" parent="SettingsPage/Settings/TabContainer/Video" unique_id=804388651]
-layout_mode = 2
-text = "Screen Resolution:"
-
-[node name="ResolutionOptions" type="OptionButton" parent="SettingsPage/Settings/TabContainer/Video" unique_id=2095623344]
-layout_mode = 2
-selected = 3
-item_count = 5
-popup/item_0/text = "1280x800"
-popup/item_0/id = 0
-popup/item_1/text = "1920x1200"
-popup/item_1/id = 1
-popup/item_2/text = "1280x720"
-popup/item_2/id = 2
-popup/item_3/text = "1920x1080"
-popup/item_3/id = 3
-popup/item_4/text = "2560x1440"
-popup/item_4/id = 4
 
 [node name="Label3" type="Label" parent="SettingsPage/Settings/TabContainer/Video" unique_id=1694199220]
 layout_mode = 2
@@ -1001,7 +983,6 @@ text = "Inventory"
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/AudioControl" to="SettingsPage/Settings/TabContainer/Audio/AudioControl" method="_on_value_changed"]
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/MusicControl" to="SettingsPage/Settings/TabContainer/Audio/MusicControl" method="_on_value_changed"]
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/SfxControl" to="SettingsPage/Settings/TabContainer/Audio/SfxControl" method="_on_value_changed"]
-[connection signal="item_selected" from="SettingsPage/Settings/TabContainer/Video/ResolutionOptions" to="SettingsPage/Settings/TabContainer/Video/WindowOptions" method="_on_resolution_options_item_selected"]
 [connection signal="toggled" from="SettingsPage/Settings/TabContainer/Video/CheckButton" to="SettingsPage/Settings/TabContainer/Video/WindowOptions" method="_on_check_button_toggled"]
 [connection signal="item_selected" from="SettingsPage/Settings/TabContainer/Video/WindowOptions" to="SettingsPage/Settings/TabContainer/Video/WindowOptions" method="_on_item_selected"]
 [connection signal="pressed" from="SettingsPage/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
