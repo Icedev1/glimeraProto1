@@ -12,6 +12,10 @@ func _ready() -> void:
 	await get_tree().process_frame
 	var players = get_tree().get_nodes_in_group("player")
 	for p in players:
+		# Reposition player if loading from save
+		if StoryFlags.checkpoint_position != Vector3.ZERO:
+			p.global_position = StoryFlags.checkpoint_position
+			StoryFlags.checkpoint_position = Vector3.ZERO
 		var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
 		if char_cam:
 			char_cam.make_current()
@@ -102,12 +106,20 @@ func _toggle_menu_camera(active: bool) -> void:
 		to_cam = char_cam
 	transition_cam.global_transform = from_cam.global_transform
 	transition_cam.make_current()
+	if active and player.has_method("face_menu_camera"):
+		player.face_menu_camera()
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(
 		transition_cam,
 		"global_transform",
 		to_cam.global_transform,
+		0.35
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(
+		transition_cam,
+		"global_rotation",
+		to_cam.global_rotation,
 		0.35
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished

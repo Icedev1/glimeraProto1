@@ -43,10 +43,13 @@ func switch_world_scene(scene_name: String):
 
 func show_main_menu():
 	current_state = "main_menu"
-	
 	ui_scene.show()
 	overworld_container.hide()
 	_cleanup_battle()
+	await get_tree().process_frame
+	var main_menu = ui_scene.get_node_or_null("Main Menu")
+	if main_menu:
+		main_menu.call("_refresh_continue_button")
 	
 
 func show_overworld():
@@ -202,11 +205,13 @@ func from_battle_to_overworld():
 func transition_to_street(target_street: String, spawn_name: String):
 	transition1.playfade(func():
 		switch_world_scene(target_street)
-		var spawn = current_overworld.get_node(spawn_name)
-		
-		var character = current_overworld.get_node("CharacterBody3D")
-		character.global_transform.origin = spawn.global_transform.origin
-		character.global_rotation.y = spawn.global_rotation.y
+		var player = current_overworld.get_node("CharacterBody3D")
+		if spawn_name != "":
+			var spawn = current_overworld.get_node(spawn_name)
+			player.global_position = spawn.global_position
+		elif StoryFlags.checkpoint_position != Vector3.ZERO:
+			player.global_position = StoryFlags.checkpoint_position
+			StoryFlags.checkpoint_position = Vector3.ZERO
 	)
 
 func screenshake():

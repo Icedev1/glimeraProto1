@@ -181,7 +181,7 @@ func _on_action_cooldown(action: String, remaining: float, total: float) -> void
 	elif action == "graft":
 		graft_card.set_on_cooldown(remaining > 0.0, remaining, total)
 	elif action == "consumable":
-		var c: Consumable = BattleManager.get_current_consumable()
+		var c := BattleManager.get_current_consumable()
 		if c != null and c.quantity > 0:
 			consumable_card.set_on_cooldown(remaining > 0.0, remaining, total)
 
@@ -281,7 +281,7 @@ func _on_consumable_updated(_consumable: Consumable) -> void:
 	_refresh_consumable_card()
 
 func _refresh_consumable_card() -> void:
-	var c : Consumable = BattleManager.get_current_consumable()
+	var c := BattleManager.get_current_consumable()
 	if c == null or (c.quantity <= 0 and not BattleManager._has_available_consumables()):
 		if c != null and c.quantity <= 0:
 			consumable_card.display(c)
