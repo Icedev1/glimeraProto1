@@ -193,6 +193,7 @@ func _on_cutscene_ended():
 		get_node("Church Man1")
 		Dialogic.VAR.set_variable("target", "churchman_defeated")
 		Dialogic.start_timeline("timelinelayer2")
+		queue_free()
 		return
 	if not GraftGlobals.churchman1Talked:
 		GraftGlobals.churchman1Talked = true
