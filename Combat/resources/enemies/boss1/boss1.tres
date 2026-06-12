@@ -15,4 +15,4 @@ element = 1
 portrait = ExtResource("1_lxmyn")
 reward_consumables = Array[ExtResource("1_oavd2")]([ExtResource("3_0y4n6"), ExtResource("4_p1hh2")])
 unit_name = "Intimidating Figure"
-max_hp = 1
+max_hp = 150

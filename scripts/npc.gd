@@ -13,6 +13,17 @@ func _ready() -> void:
 		hide()
 		$Area3D.monitoring = false
 		$Area3D.monitorable = false
+	# If already defeated, hide and open gate
+	if name == "Intimidating Figure" and GraftGlobals.intimidatingDefeated:
+		hide()
+		set_process(false)
+		$Area3D.monitoring = false
+		$Area3D.monitorable = false
+		await get_tree().process_frame
+		var anim = get_tree().current_scene.find_child("AnimationPlayerDoor", true, false)
+		if anim:
+			anim.play("gate_opening")
+			anim.seek(9999, true) # jump to end of animation so gate is fully open
 
 
 func _process(_delta: float) -> void:

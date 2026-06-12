@@ -12,6 +12,13 @@ var active_particles = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
+	# Open gate if intimidating figure already defeated
+	if get_parent().name == "Street1 Gate" or get_parent().name == "AnimationPlayerDoor":
+		if GraftGlobals.intimidatingDefeated:
+			var anim = get_tree().current_scene.find_child("AnimationPlayerDoor", true, false)
+			if anim:
+				anim.play("gate_opening")
+				anim.seek(9999, true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
