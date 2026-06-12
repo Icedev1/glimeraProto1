@@ -9,7 +9,6 @@ var Layer2GateUnlock = false
 
 
 #Item Flags
-var violinObtained : bool = false
 
 #Quest Flags
 var statueQuestComplete : bool = false

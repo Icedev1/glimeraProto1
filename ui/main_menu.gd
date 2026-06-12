@@ -9,9 +9,15 @@ extends Control
 func _ready() -> void:
 	menu_buttons.visible = true
 	settings.visible = false
-	
-	var info = SaveManager.get_slot_info(0)
+	_refresh_continue_button()
+
+func _refresh_continue_button() -> void:
 	var continue_btn = $MenuButtons/ContinueButton
+	if continue_btn == null:
+		return
+	var info = SaveManager.get_slot_info(0)
+	continue_btn.modulate.a = 1.0
+	continue_btn.disabled = false
 	if info["empty"] or not info.get("scene", "").contains("Streets"):
 		continue_btn.modulate.a = 0.4
 		continue_btn.disabled = true
@@ -34,11 +40,6 @@ func _on_continue_button_pressed() -> void:
 			get_tree().root.get_node("Root").transition_to_street(
 				StoryFlags.current_scene, ""
 			)
-
-func _on_load_save_button_pressed() -> void:
-	button_sfx.play()
-	# We'll build this screen later
-	pass
 
 func _on_settings_button_pressed() -> void:
 	button_sfx.play()
@@ -63,11 +64,6 @@ func _on_continue_button_mouse_entered() -> void:
 	_hover_on($MenuButtons/ContinueButton)
 func _on_continue_button_mouse_exited() -> void:
 	_hover_off($MenuButtons/ContinueButton)
-
-func _on_load_save_button_mouse_entered() -> void:
-	_hover_on($MenuButtons/LoadSaveButton)
-func _on_load_save_button_mouse_exited() -> void:
-	_hover_off($MenuButtons/LoadSaveButton)
 
 func _on_settings_button_mouse_entered() -> void:
 	_hover_on($MenuButtons/SettingsButton)
@@ -105,11 +101,6 @@ func _on_continue_button_button_down() -> void:
 	_press_on($MenuButtons/ContinueButton)
 func _on_continue_button_button_up() -> void:
 	_press_off($MenuButtons/ContinueButton)
-
-func _on_load_save_button_button_down() -> void:
-	_press_on($MenuButtons/LoadSaveButton)
-func _on_load_save_button_button_up() -> void:
-	_press_off($MenuButtons/LoadSaveButton)
 
 func _on_settings_button_button_down() -> void:
 	_press_on($MenuButtons/SettingsButton)
