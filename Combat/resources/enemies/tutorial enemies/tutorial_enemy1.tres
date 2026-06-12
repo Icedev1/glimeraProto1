@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dinijal5d7x0b"]
 
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_pi8e7"]
+[ext_resource type="PackedScene" uid="uid://bvgw1gk3tqxo7" path="res://Animations/Final Porcelain Lady NPC.fbx" id="1_qw86n"]
 [ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="2_b35jh"]
+[ext_resource type="Texture2D" uid="uid://pp0keh3js6c0" path="res://images/porcelainfigure head.png" id="2_t7k3v"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_7axu5"]
 [ext_resource type="Resource" uid="uid://bift21akoxrxf" path="res://Combat/resources/weapons/saw.tres" id="4_aqt7o"]
 [ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="5_lfdkn"]
@@ -11,8 +13,10 @@
 [resource]
 script = ExtResource("5_lfdkn")
 weapons = Array[ExtResource("3_7axu5")]([ExtResource("6_660lo"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf"), ExtResource("7_6uyuf")])
+portrait = ExtResource("2_t7k3v")
 reward_weapons = Array[ExtResource("3_7axu5")]([ExtResource("4_aqt7o")])
 reward_consumables = Array[ExtResource("1_pi8e7")]([ExtResource("2_b35jh")])
+model_scene = ExtResource("1_qw86n")
 unit_name = "Porcelain Figure"
 max_hp = 80
 metadata/_custom_type_script = "uid://b3ri4vlr52i3f"

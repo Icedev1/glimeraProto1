@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cvvj0tqpd238a"]
 
+[ext_resource type="PackedScene" uid="uid://bbmxei8tf7plk" path="res://Combat/enemy1/NPC6.fbx" id="1_05nr0"]
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_qiitc"]
+[ext_resource type="Texture2D" uid="uid://d0qg4ox4xx56n" path="res://images/marketvendor.png" id="2_cv1ck"]
 [ext_resource type="Resource" uid="uid://bosfy5u65tjoy" path="res://Combat/resources/consumables/bandage_2.tres" id="2_r0uam"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_varue"]
 [ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="3_r0uam"]
@@ -12,7 +14,9 @@
 script = ExtResource("3_r0uam")
 weapons = Array[ExtResource("2_varue")]([ExtResource("4_q4o81"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc"), ExtResource("5_qiitc")])
 element = 1
+portrait = ExtResource("2_cv1ck")
 reward_consumables = Array[ExtResource("1_qiitc")]([ExtResource("2_r0uam"), ExtResource("3_xf6w8")])
+model_scene = ExtResource("1_05nr0")
 unit_name = "Market Vendor"
 max_hp = 80
 metadata/_custom_type_script = "uid://b3ri4vlr52i3f"
