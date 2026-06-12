@@ -10,13 +10,15 @@ func _ready() -> void:
 	print(get_tree().root.get_children())
 	await get_tree().process_frame
 	await get_tree().process_frame
-	await get_tree().process_frame
 	var players = get_tree().get_nodes_in_group("player")
 	for p in players:
 		if SaveManager.loading_from_save and StoryFlags.checkpoint_position != Vector3.ZERO:
+			await get_tree().create_timer(0.6).timeout
 			p.global_position = StoryFlags.checkpoint_position
 			StoryFlags.checkpoint_position = Vector3.ZERO
 			SaveManager.loading_from_save = false
+		p.set_process_input(true)
+		p.set_physics_process(true)
 		var char_cam = p.get_node_or_null("CameraPivot/CharacterCam")
 		if char_cam:
 			char_cam.make_current()

@@ -48,3 +48,21 @@ func _on_battle_ended(_won: bool, _weapons: Array, _consumables: Array):
 		$Area3D.monitoring = false
 		$Area3D.monitorable = false
 		GraftGlobals.porcelainDefeated = true
+	
+	if enemy_data != null and enemy_data.unit_name == "Intimidating Figure":
+		if not _won:
+			return
+		GraftGlobals.intimidatingDefeated = true
+		is_player_in_range = false
+		Dialogue.interactRange.emit(self, false)
+		$Area3D.monitoring = false
+		$Area3D.monitorable = false
+		hide()
+		set_process(false)
+		# Open gate after 2 seconds
+		await get_tree().create_timer(2.0).timeout
+		var anim = get_tree().current_scene.find_child("AnimationPlayerDoor", true, false)
+		if anim:
+			anim.play("gate_opening")
+		else:
+			print("AnimationPlayerDoor not found!")

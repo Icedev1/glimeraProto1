@@ -30,13 +30,14 @@ func _ready():
 # STATE SWITCHING
 # -----------------
 
-func switch_world_scene(scene_name: String):
+func switch_world_scene(scene_name: String, auto_show: bool = true):
 	if overworld_container.get_child_count() > 0:
 		overworld_container.get_child(0).queue_free()
 	var newMap = load(scene_name).instantiate()
 	overworld_container.add_child(newMap)
 	current_overworld = newMap
-	overworld_container.show()
+	if auto_show:
+		overworld_container.show()
 	get_viewport().use_occlusion_culling = false
 	ui_scene.hide()
 
@@ -203,16 +204,22 @@ func from_battle_to_overworld():
 	)
 
 func transition_to_street(target_street: String, spawn_name: String):
-	transition1.playfade(func():
-		switch_world_scene(target_street)
-		var player = current_overworld.get_node("CharacterBody3D")
+	var is_save_load = SaveManager.loading_from_save
+	var callback = func():
+		switch_world_scene(target_street, true)
+		var character = current_overworld.get_node("CharacterBody3D")
 		if spawn_name != "":
 			var spawn = current_overworld.get_node(spawn_name)
-			player.global_position = spawn.global_position
-		elif StoryFlags.checkpoint_position != Vector3.ZERO:
-			player.global_position = StoryFlags.checkpoint_position
+			character.global_transform.origin = spawn.global_transform.origin
+			character.global_rotation.y = spawn.global_rotation.y
+		elif SaveManager.loading_from_save and StoryFlags.checkpoint_position != Vector3.ZERO:
+			character.global_position = StoryFlags.checkpoint_position
 			StoryFlags.checkpoint_position = Vector3.ZERO
-	)
+			SaveManager.loading_from_save = false
+	if is_save_load:
+		transition1.playfade_long(callback, 1.0)
+	else:
+		transition1.playfade(callback)
 
 func screenshake():
 	screenshakerect.material.set_shader_parameter("ShakeStrength", 0.1)
