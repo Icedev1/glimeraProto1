@@ -1,13 +1,9 @@
 extends PanelContainer
-
-
-#objective_display.gd
 @onready var vbox := $VBoxContainer
-
 var label_pool: Array = []
 
 func _ready() -> void:
-	position = Vector2(50, 500)
+	position = Vector2(10, 10)
 	ObjectiveManager.objectives_updated.connect(_refresh)
 	ObjectiveManager.layer_advanced.connect(_on_layer_advanced)
 	ObjectiveManager.main_quest_updated.connect(_on_main_quest_updated)
@@ -24,7 +20,6 @@ func _refresh() -> void:
 		if child.name != "Header":
 			child.free()
 	label_pool.clear()
-
 	var objectives = ObjectiveManager.get_current_objectives()
 	for obj in objectives:
 		var label = Label.new()
@@ -41,8 +36,6 @@ func _refresh() -> void:
 		label.modulate.a = 0.0
 		vbox.add_child(label)
 		label_pool.append(label)
-
-	# Fade each label in with a small stagger
 	for i in range(label_pool.size()):
 		var tween = create_tween()
 		tween.tween_interval(i * 0.1)
@@ -58,5 +51,5 @@ func _on_main_quest_updated(new_quest: String) -> void:
 	var header = $VBoxContainer/Header
 	var tween = create_tween()
 	tween.tween_property(header, "modulate:a", 0.0, 0.3)
-	tween.tween_callback(func(): header.text =  "◆ " + new_quest)
+	tween.tween_callback(func(): header.text = "◆ " + new_quest)
 	tween.tween_property(header, "modulate:a", 1.0, 0.3)
