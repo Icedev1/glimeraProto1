@@ -47,6 +47,10 @@ func show_main_menu():
 	ui_scene.show()
 	overworld_container.hide()
 	_cleanup_battle()
+	# Hide objective display on main menu
+	var obj_display = get_node_or_null("CanvasLayer/ObjectiveDisplay")
+	if obj_display:
+		obj_display.visible = false
 	await get_tree().process_frame
 	var main_menu = ui_scene.get_node_or_null("Main Menu")
 	if main_menu:

@@ -12,8 +12,7 @@ func _ready() -> void:
 	GraftGlobals.menu_opened.connect(func(): visible = false)
 
 func _process(_delta: float) -> void:
-	var root = get_tree().root.get_node("Root")
-	visible = not get_tree().paused and root.current_state != "battle" and root.current_state != "main_menu"
+	visible = not get_tree().paused and get_tree().root.get_node("Root").current_state != "battle"
 
 func _refresh() -> void:
 	for child in vbox.get_children():
