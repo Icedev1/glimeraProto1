@@ -163,9 +163,7 @@ func _on_body_entered(body: Node3D) -> void:
 				if prompt:
 					prompt.visible = false
 				var game = get_tree().current_scene
-				game.from_overworld_to_battle(preload("res://Combat/resources/enemies/churchGuardian/churchGuardian.tres"),
-            "res://Combat/scenes/battle.tscn"
-		)
+				game.from_overworld_to_battle()
 
 func _on_body_exited(body: Node3D) -> void:
 	inRange = false
@@ -199,9 +197,7 @@ func _on_cutscene_ended():
 	if not GraftGlobals.churchmanPostLibraryTalked:
 		GraftGlobals.churchmanPostLibraryTalked = true
 		var game = get_tree().current_scene
-		game.from_overworld_to_battle(preload("res://Combat/resources/enemies/boss2/boss2.tres"),
-	"res://Combat/scenes/battle.tscn"
-	)
+		game.from_overworld_to_battle()
 		return
 
 	

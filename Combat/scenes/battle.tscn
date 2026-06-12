@@ -12,10 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://byst06jwi71i5" path="res://Combat/scenes/graft_menu.tscn" id="5_lpir7"]
 [ext_resource type="PackedScene" uid="uid://d2863a3kp5or6" path="res://Combat/scenes/consumable_card.tscn" id="6_4k1nj"]
 [ext_resource type="Script" uid="uid://dvo8xcy56uc4g" path="res://Combat/scripts/battle/battle_enemy.gd" id="6_r8c2t"]
-[ext_resource type="Shader" path="res://Shaders/low_hp.gdshader" id="7_01irj"]
+[ext_resource type="Shader" uid="uid://bs2f48y3sxg7b" path="res://Shaders/low_hp.gdshader" id="7_01irj"]
 [ext_resource type="Animation" uid="uid://dnnponmgph6w7" path="res://Animations/Idle Straight.anim" id="8_fr5r2"]
 [ext_resource type="Texture2D" uid="uid://calpspnwlo7n0" path="res://images/Gli Portrait.png" id="12_n1uve"]
-[ext_resource type="Shader" path="res://Shaders/card_outline.gdshader" id="12_q6ghl"]
+[ext_resource type="Shader" uid="uid://camxqn22pk7bw" path="res://Shaders/card_outline.gdshader" id="12_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://b4en42keqdivj" path="res://images/aptaltaş.png" id="13_q6ghl"]
 [ext_resource type="Texture2D" uid="uid://d25buoesqrnq7" path="res://images/8037114.png" id="17_onrm6"]
 [ext_resource type="Texture2D" uid="uid://b1pldpe4chka1" path="res://images/11279725.png" id="18_fr5r2"]
@@ -278,10 +278,10 @@ unique_name_in_owner = true
 transform = Transform3D(0.41304907, 0, -0.28176302, 0, 0.5, 0, 0.28176302, 0, 0.41304907, 5.214, -0.103043936, 3.405)
 script = ExtResource("6_r8c2t")
 
-[node name="Armature" parent="Enemy" index="0" unique_id=1540765935]
+[node name="Armature" parent="Enemy" index="0" unique_id=702117979]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
 
-[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=1746749313]
+[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=1853548626]
 bones/0/position = Vector3(-0.19295849, 5.616861, 0.039618105)
 bones/0/rotation = Quaternion(-0.022635806, 0.008890023, -0.001056021, 0.99970376)
 bones/1/rotation = Quaternion(0.01116827, -0.004045971, 0.0038487185, 0.99992204)
@@ -308,7 +308,7 @@ bones/26/rotation = Quaternion(-0.023818854, 0.64443403, -0.76383644, -0.0262928
 bones/27/rotation = Quaternion(-5.8975763e-07, 1, 0.00012577094, 3.261923e-07)
 bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
 
-[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=1747105599]
+[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=793344220]
 libraries/ = SubResource("AnimationLibrary_7r0cw")
 autoplay = &"Idle Straight"
 
