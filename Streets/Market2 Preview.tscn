@@ -87,7 +87,7 @@ transform = Transform3D(0.13355392, 0, -5.207918, 0, 5.20963, 0, 5.207918, 0, 0.
 [node name="House 2" parent="." unique_id=244873569 instance=ExtResource("14_xfta6")]
 transform = Transform3D(-0.75370014, 0, 0.021263443, 0, 0.754, 0, -0.021263443, 0, -0.75370014, 1.3710346, 0.57106256, 4.749648)
 
-[node name="Cube_012" parent="House 2" index="4" unique_id=156972289]
+[node name="Cube_012" parent="House 2" index="4" unique_id=750727895]
 visible = false
 
 [node name="Market Stand" parent="." unique_id=120453946 instance=ExtResource("31_nixjb")]
