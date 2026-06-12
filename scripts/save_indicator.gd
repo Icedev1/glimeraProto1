@@ -4,10 +4,11 @@ extends CanvasLayer
 @onready var label = $PanelContainer/HBoxContainer/Label
 
 func _ready():
+	print("SaveIndicator ready")
 	panel.visible = false
-	await get_tree().process_frame
 	SaveManager.save_started.connect(_on_save_started)
 	SaveManager.save_completed.connect(_on_save_completed)
+	print("SaveIndicator connected to signals")
 
 func _on_save_started():
 	panel.visible = true
