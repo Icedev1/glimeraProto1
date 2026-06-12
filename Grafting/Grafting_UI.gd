@@ -87,6 +87,8 @@ func _populate_grid(icons: Array[Texture2D], names: Array[String]) -> void:
 			if i == 2 and !GraftGlobals.hoseObtained: is_locked = true
 		elif selected_slot == "leg":
 			if i == 1 and !GraftGlobals.sledgehammerObtained: is_locked = true
+			if i == 2 and !GraftGlobals.broomObtained: is_locked = true
+			if i == 3 and !GraftGlobals.unicycleObtained: is_locked = true
 		btn.disabled = is_locked
 		btn.modulate = Color(0.4, 0.4, 0.4) if is_locked else Color.WHITE
 		var idx = i
