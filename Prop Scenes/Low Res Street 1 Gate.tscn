@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b016cyads3loe"]
+
+[ext_resource type="PackedScene" uid="uid://ctho778rh0263" path="res://meshes/Low Res Gate.blend" id="1_id2ns"]
+[ext_resource type="Material" path="res://Textures/Dark Metal/Metal029_1K-JPG.tres" id="2_0s2cy"]
+
+[node name="Low Res Gate" unique_id=373876044 instance=ExtResource("1_id2ns")]
+
+[node name="Cube" parent="." index="0" unique_id=1783893496]
+material_override = ExtResource("2_0s2cy")
