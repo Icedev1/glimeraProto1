@@ -80,23 +80,25 @@ elif {target} == "npc3":
 elif {target} == "npc6":
 	join statue_1 left
 	statue_1: You haven't been changing, have you?
-	statue_1: Oh who am I kidding you're not that kind of figure.
-	statue_1: Excuse me. I'm talking to my friend here not you.
+	statue_1: Oh, who am I kidding? You're not that kind of figure.
+	statue_1: Excuse me. I'm talking to my friend here, not you.
+	Gli: (Do they not notice how stiff they are?)
 elif {target} == "npc4":
 	join statue_1 left
-	statue_1: Never bro, the priest said that to change is to destroy the Guardians image.
+	statue_1: Never bro, the priest said that to change is to destroy the Guardian's image.
 	statue_1: Can you not bother me when I'm talking to my friend.
 elif {target} == "npc5":
 	join "Armless figure" rightmost
 	"Armless figure": Your greed is sickening.
 	join Gli left
-	Gli: Excuse me.
-	"Armless figure": I see those grafts you have. When will it be enough for you.
-	Gli: My grafts are my own business
-	"Armless figure": You're lucky the priest ordered me to leave you alone.
+	Gli: Excuse me?
+	"Armless figure": I see those grafts you have. Changing yourself however you please...
+	"Armless figure": Who do you think you are?
+	Gli: What i do with my body is my choice.
+	"Armless figure": We will see what Priest Leo thinks of that sentiment...
 elif {target} == "churchman1":
 	join Leo rightmost
-	Leo: I wondered when you would come.
+	Leo: I wondered when you would show up.
 	leave Leo
 	join Gli left
 	Gli: You knew I would come here?
@@ -127,9 +129,43 @@ if {target} == "churchman_postlibrary":
 	Leo: What do you think happens when there aren't enough grafts for the figures?
 	Gli: Thats... I only changed my grafts because strange things were happening. Not because I want to.
 	Leo: Then you wouldn't mind giving me your grafts then right?
-	Gli: Wait a second. You just want to be in control of the grafts. You don't care about changelings. You just want to be the only one with power.
-	Leo: You're more perceptive than I thought. Oh well now I have another reason to take you down. I pray that the Guardian forgives you when I send you there.
+	Gli: Wait a second... You just want to be in control of the grafts. You don't care about changelings. You just want to be the only one with power.
+	Leo: The power to change oneself is a divine gift! It should have never be allowed into the hands of anyone but the holy!
+	Gli: What did you do to these people?
+	Leo: I severed their connection to the Guardian's lifeforce. Without it they are nothing more than empty vessels.
+	Gli: Why would you do this? How does this help anyone?
+	Leo: I had to convince you somehow.
+	Leo: Your Chimera abilities don't belong with someone like you. It's too dangerous.
+	Leo: Surrender your power to me, and i promise to restore their connection to the Guardian's lifeforce.
+	Gli: Are you insane!? You are willing to sacrifice the entire city to force me to give up my power?
+	Leo: The city will perish if we let these changelings run wild among us!
+	Gli: What does the Guardian think of this?
+	Leo: The Guardian is currently slumbering. I am handling affairs in His stead.
+	Gli: You are sick! I will never give up my power. Especially to someone as twisted as you!
+	Leo: Very well. If you refuse to surrender your power quietly, I will have to TAKE IT BY FORCE!
+	Gli: BRING IT! I will defeat you and face the Guardian to tell Him what you have done.
+	Leo: Outrageous! The privelege to speak with the Guardian is mine and mine alone!
+	Leo: Farewell, Gli.
+if {target} == "churchman_defeated":
+	join Gli left
+	Gli: I'm sorry priest, you lost your way.
+	Gli: I need to go to the Guardian. I hope He can fix all of this...
 if {target} == "npc5_postchurch":
+	join Gli left
 	join "Armless figure" center
-	"Armless figure": fuck you
+	Gli: I need to get past here.
+	"Armless figure": I don't know what to tell you. Priest Leo never lets anyone past this gate. Especially someone like you.
+	Gli: Priest Leo is dead.
+	"Armless figure": ...
+	"Armless figure": Really? The priest is gone?
+	Gli: I had no choice.
+	"Armless figure": At last! Priest Leo is no more!
+	Gli: What...?
+	"Armless figure": As the Guard of the Upper Layer, i worked closely with the priest, and i experienced his descent into madness first hand.
+	"Armless figure": I wanted to stop him, but you and I both know how scary the priest is when he's angry.
+	Gli: I need to tell the Guardian what happened...
+	"Armless figure": I understand. Go ahead.
+	Gli: Thank you, sir.
+	"Armless figure": It's the least I can do. You did the right thing Gli. Even if it doesn't feel that way.
+	[signal arg="open_gate"]
 [end_timeline]

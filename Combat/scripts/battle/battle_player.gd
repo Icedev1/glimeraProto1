@@ -112,6 +112,7 @@ func _on_player_hit(_damage: int, was_blocked: bool) -> void:
 func _on_player_healed() -> void:
 	# Collect meshes fresh so graft limbs are included, then swap to the heal aura overlay
 	_set_all_overlays(_heal_aura_material)
+	
 
 	if _heal_aura_tween and _heal_aura_tween.is_valid():
 		_heal_aura_tween.kill()

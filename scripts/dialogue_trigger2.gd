@@ -77,6 +77,7 @@ func _process(delta: float) -> void:
 				"NPC5":
 					if GraftGlobals.churchmanDefeated:
 						Dialogic.VAR.set_variable("target", "npc5_postchurch")
+						
 					else:
 						Dialogic.VAR.set_variable("target", "npc5")
 						ObjectiveManager.complete_objective("talk_npc5")
@@ -118,6 +119,8 @@ func DialogicSignal(arg:String):
 			ObjectiveManager.reveal_objective("fight_churchman")
 		"angry_steve":
 			pass
+		"open_gate":
+			ObjectiveManager.OpenGate.emit()
 
 func _on_body_entered(body: Node3D) -> void:
 	inRange = true
@@ -187,6 +190,9 @@ func _on_cutscene_ended():
 	if not inRange:
 		return
 	if GraftGlobals.churchmanDefeated:
+		get_node("Church Man1")
+		Dialogic.VAR.set_variable("target", "churchman_defeated")
+		Dialogic.start_timeline("timelinelayer2")
 		return
 	if not GraftGlobals.churchman1Talked:
 		GraftGlobals.churchman1Talked = true

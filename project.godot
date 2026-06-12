@@ -43,6 +43,7 @@ directories/dch_directory={
 "Intimidating Figure": "res://Intimidating Figure.dch",
 "Leo": "res://characters/Leo.dch",
 "Porcelain Figure": "res://Porcelain Figure.dch",
+"The Guardian": "res://characters/The Guardian.dch",
 "Victor": "res://characters/Victor.dch",
 "overjoyed looking Figure": "res://characters/overjoyed looking Figure.dch",
 "skull": "res://characters/skull.dch",
@@ -62,10 +63,12 @@ directories/dtl_directory={
 layout/style_directory={
 "": "res://Dialogue Timelines/myStyle.tres",
 "New_File": "res://Dialogue Timelines/New_File.tres",
+"leo style 2": "res://ui/VisualNovelTextbox/leo style 2.tres",
+"leo's style": "res://ui/VisualNovelTextbox/leo's style.tres",
 "myStyle": "res://Dialogue Timelines/myStyle.tres"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Timelines/myStyle.tres"]
+layout/style_list=["res://Dialogue Timelines/New_File.tres", "res://Dialogue Timelines/myStyle.tres", "res://ui/VisualNovelTextbox/leo's style.tres", "res://ui/VisualNovelTextbox/leo style 2.tres"]
 layout/default_style="res://Dialogue Timelines/myStyle.tres"
 variables={
 "TalkedToFolder": {
