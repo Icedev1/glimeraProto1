@@ -57,6 +57,7 @@ func _on_battle_ended(_won: bool, _weapons: Array, _consumables: Array):
 	
 	if enemy_data.unit_name == "Porcelain Figure":
 		GraftGlobals.porcelainDefeated = true
+		self.queue_free()
 		is_player_in_range = false
 		Dialogue.interactRange.emit(self, false)
 		$Area3D.monitoring = false
