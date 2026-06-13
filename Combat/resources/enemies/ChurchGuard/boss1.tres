@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://q7yo1xb4ewrr"]
 
 [ext_resource type="PackedScene" uid="uid://otx0rnod80qp" path="res://Combat/enemy1/NPC5.fbx" id="1_ss53h"]
-[ext_resource type="Texture2D" uid="uid://v1xqlpvmtpm8" path="res://images/armless.png" id="2_e667v"]
+[ext_resource type="Texture2D" uid="uid://b6k1i3eltnyae" path="res://images/armless.png" id="2_e667v"]
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="3_wulpp"]
 [ext_resource type="Resource" uid="uid://cxqlrf3r0weyn" path="res://Combat/resources/consumables/health_potion.tres" id="4_01eid"]
 [ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="5_5nh60"]
@@ -15,6 +15,7 @@ script = ExtResource("8_mwsf8")
 weapons = Array[ExtResource("6_vtq81")]([ExtResource("9_qq7r3"), ExtResource("9_qq7r3")])
 element = 1
 portrait = ExtResource("2_e667v")
+area = 3
 reward_weapons = Array[ExtResource("6_vtq81")]([ExtResource("7_wulpp")])
 reward_consumables = Array[ExtResource("3_wulpp")]([ExtResource("4_01eid"), ExtResource("5_5nh60")])
 model_scene = ExtResource("1_ss53h")

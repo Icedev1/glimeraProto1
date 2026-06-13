@@ -5,6 +5,8 @@ extends UnitData
 @export_enum("ordered", "random") var attack_pattern: String = "ordered"
 @export var element: Weapon.Element = Weapon.Element.ROCK
 @export var portrait: Texture2D
+@export var area: int = 1
+
 # ── Rewards on defeat ────────────────────────────────────────────────────────
 @export var reward_weapons: Array[Weapon] = []
 @export var reward_consumables: Array[Consumable] = []

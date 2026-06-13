@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dy8maci0u0st7"]
 
 [ext_resource type="Script" uid="uid://bkpf8bvp283gn" path="res://Combat/scripts/battle/battle_Scene.gd" id="1_a12nh"]
-[ext_resource type="Resource" uid="uid://kc77x8sqfqls" path="res://Combat/resources/enemies/boss1/boss1.tres" id="2_01irj"]
+[ext_resource type="Resource" uid="uid://xjvdy76nqndp" path="res://Combat/resources/enemies/LeoPriest/boss1.tres" id="2_l4cj7"]
 [ext_resource type="Texture2D" uid="uid://ovvm1ii6heoi" path="res://meshes/textures/Wood035_1K-PNG_Displacement.png" id="3_01irj"]
 [ext_resource type="PackedScene" uid="uid://clwxteop31kjo" path="res://Combat/scenes/weapon_card.tscn" id="4_4k1nj"]
 [ext_resource type="PackedScene" uid="uid://cuaxdh21q1jls" path="res://Combat/scenes/action_card.tscn" id="4_a12nh"]
@@ -21,8 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://b1pldpe4chka1" path="res://images/11279725.png" id="18_fr5r2"]
 [ext_resource type="AudioStream" uid="uid://cq6i78xknws42" path="res://Sounds/SFX/se_battle_115.ogg" id="19_x13a4"]
 [ext_resource type="AudioStream" uid="uid://cle1imm5my468" path="res://Sounds/SFX/se_battle_103.ogg" id="20_onrm6"]
-[ext_resource type="AudioStream" uid="uid://b5uycffe1ypgx" path="res://Sounds/SFX/sectionsound-shield-block-shortsword-143940.mp3" id="22_3inix"]
-[ext_resource type="AudioStream" uid="uid://drtl21vxn1si1" path="res://Sounds/SFX/yodguard-healing-magic-2-378663.mp3" id="23_lcmqg"]
+[ext_resource type="AudioStream" uid="uid://cef4j0wajnqyb" path="res://Sounds/SFX/sectionsound-shield-block-shortsword-143940.mp3" id="22_3inix"]
+[ext_resource type="AudioStream" uid="uid://fg2lnnwpet4m" path="res://Sounds/SFX/yodguard-healing-magic-2-378663.mp3" id="23_lcmqg"]
+[ext_resource type="Environment" uid="uid://iddx60r1gtlb" path="res://EnvironmentSettings.tres" id="24_7r0cw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1uve"]
 albedo_texture = ExtResource("3_01irj")
@@ -246,16 +247,9 @@ script = ExtResource("4_f4pi3")
 path = "graft_select"
 metadata/_custom_type_script = "uid://d1n6m4bvwsjum"
 
-[sub_resource type="Environment" id="Environment_7sfm4"]
-background_mode = 1
-background_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fr5r2"]
-auto_exposure_enabled = true
-
 [node name="Battle" type="Node3D" unique_id=789942194]
 script = ExtResource("1_a12nh")
-enemy_resource = ExtResource("2_01irj")
+enemy_resource = ExtResource("2_l4cj7")
 
 [node name="Env" type="Node3D" parent="." unique_id=1176667746]
 
@@ -280,10 +274,10 @@ unique_name_in_owner = true
 transform = Transform3D(0.41304907, 0, -0.28176302, 0, 0.5, 0, 0.28176302, 0, 0.41304907, 5.214, -0.103043936, 3.405)
 script = ExtResource("6_r8c2t")
 
-[node name="Armature" parent="Enemy" index="0" unique_id=552203477]
+[node name="Armature" parent="Enemy" index="0" unique_id=1000175401]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
 
-[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=100595146]
+[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=964141446]
 bones/0/position = Vector3(-0.19295849, 5.616861, 0.039618105)
 bones/0/rotation = Quaternion(-0.022635806, 0.008890023, -0.001056021, 0.99970376)
 bones/1/rotation = Quaternion(0.01116827, -0.004045971, 0.0038487185, 0.99992204)
@@ -310,12 +304,13 @@ bones/26/rotation = Quaternion(-0.023818854, 0.64443403, -0.76383644, -0.0262928
 bones/27/rotation = Quaternion(-5.8975763e-07, 1, 0.00012577094, 3.261923e-07)
 bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
 
-[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=184410815]
+[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=1452804772]
 libraries/ = SubResource("AnimationLibrary_7r0cw")
 autoplay = &"Idle Straight"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=771652485]
-transform = Transform3D(0.70710677, -0.5000001, 0.5000001, -5.1593812e-08, 0.7071067, 0.7071069, -0.7071069, -0.49999997, 0.49999997, 0, 6, 0)
+transform = Transform3D(-0.11261898, 0.91889733, 0.37808043, 0.66062194, -0.21498202, 0.71927845, 0.7422234, 0.3307728, -0.58283246, 0, 6, 0)
+visible = false
 
 [node name="Battle_UI" type="CanvasLayer" parent="." unique_id=1912534267]
 
@@ -329,60 +324,76 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PlayerArea" type="HBoxContainer" parent="Battle_UI" unique_id=539363790]
-custom_minimum_size = Vector2(800, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -860.0
-offset_top = -1040.0
-offset_right = -60.0
-offset_bottom = -940.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="PlayerArea1" type="Control" parent="Battle_UI" unique_id=25524478]
+layout_mode = 3
+anchor_right = 0.021000002
+anchor_bottom = 0.037
+offset_right = -0.3200035
+offset_bottom = 0.040000916
 
-[node name="GliPortrait" type="TextureRect" parent="Battle_UI/PlayerArea" unique_id=2125577812]
+[node name="GliPortrait" type="TextureRect" parent="Battle_UI/PlayerArea1" unique_id=2125577812]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.325
+anchor_top = 0.5
+anchor_right = 4.8250003
+anchor_bottom = 2.9250002
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 0.99998474
+offset_bottom = -3.0000076
 texture = ExtResource("12_n1uve")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PlayerNameLabel" type="Label" parent="Battle_UI/PlayerArea" unique_id=107032992]
-layout_mode = 2
+[node name="PlayerNameLabel" type="Label" parent="Battle_UI/PlayerArea1" unique_id=107032992]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.925
+anchor_top = 1.2750001
+anchor_right = 5.8250003
+anchor_bottom = 2.25
+offset_left = -1.0
+offset_top = -5.000004
+offset_right = -1.0000153
+offset_bottom = -5.0
 theme_override_font_sizes/font_size = 28
 text = "Gli"
 
-[node name="PlayerHPBar" type="ProgressBar" parent="Battle_UI/PlayerArea" unique_id=1887458318]
+[node name="PlayerHPBar" type="ProgressBar" parent="Battle_UI/PlayerArea1" unique_id=1887458318]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.1000004
+anchor_top = 1.0
+anchor_right = 22.500002
+anchor_bottom = 2.25
+offset_left = -1.5258789e-05
+offset_right = -6.1035156e-05
 size_flags_horizontal = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_01irj")
 theme_override_styles/fill = SubResource("StyleBoxFlat_n1uve")
 show_percentage = false
 
-[node name="player_hp_label" type="Label" parent="Battle_UI/PlayerArea/PlayerHPBar" unique_id=956847423]
+[node name="player_hp_label" type="Label" parent="Battle_UI/PlayerArea1/PlayerHPBar" unique_id=956847423]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchors_preset = -1
+anchor_left = 0.47000003
+anchor_top = 0.11000001
+anchor_right = 0.53000003
+anchor_bottom = 0.89000005
+offset_left = -0.32000732
+offset_top = 7.9999995
+offset_right = 0.3199768
+offset_bottom = -8.000004
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 
-[node name="PlayerHitFlash" type="Panel" parent="Battle_UI/PlayerArea/PlayerHPBar" unique_id=1619998601]
+[node name="PlayerHitFlash" type="Panel" parent="Battle_UI/PlayerArea1/PlayerHPBar" unique_id=1619998601]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -392,39 +403,41 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PlayerEffectsContainer" type="HBoxContainer" parent="Battle_UI/PlayerArea/PlayerHPBar" unique_id=1282854923]
+[node name="PlayerEffectsContainer" type="HBoxContainer" parent="Battle_UI/PlayerArea1/PlayerHPBar" unique_id=1282854923]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.59400004
-anchor_top = 0.12200001
-anchor_right = 0.83300006
-anchor_bottom = 0.16800001
-offset_left = 140.33597
-offset_top = 52.9
-offset_right = 140.456
-offset_bottom = 102.6
+anchor_left = 0.808
+anchor_top = 1.1800001
+anchor_right = 1.047
+anchor_bottom = 2.22
+offset_left = -0.048034668
+offset_right = 0.072021484
 grow_vertical = 2
 size_flags_horizontal = 8
 
-[node name="EnemyArea" type="VBoxContainer" parent="Battle_UI" unique_id=865877994]
+[node name="EnemyArea" type="Control" parent="Battle_UI" unique_id=750066100]
+layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -814.0
 offset_top = 40.0
-offset_right = -150.0
+offset_right = -100.0
 offset_bottom = 292.0
 grow_horizontal = 0
-theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Battle_UI/EnemyArea" unique_id=2079283795]
-layout_mode = 2
+[node name="HBoxContainer" type="Control" parent="Battle_UI/EnemyArea" unique_id=1598611449]
+anchors_preset = 0
+offset_right = 714.0
+offset_bottom = 60.0
 
 [node name="EnemyHPBar" type="ProgressBar" parent="Battle_UI/EnemyArea/HBoxContainer" unique_id=1891558976]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(650, 50)
-layout_mode = 2
+layout_mode = 0
+offset_right = 650.0
+offset_bottom = 50.0
 theme_override_styles/background = SubResource("StyleBoxFlat_q6ghl")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x13a4")
 show_percentage = false
@@ -457,27 +470,42 @@ grow_vertical = 2
 [node name="EnemyPortrait" type="TextureRect" parent="Battle_UI/EnemyArea/HBoxContainer" unique_id=1741847653]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
+offset_left = 665.0
+offset_top = -10.0
+offset_right = 725.0
+offset_bottom = 50.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="EnemyNameLabel" type="Label" parent="Battle_UI/EnemyArea" unique_id=2099605215]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
+offset_left = 199.0
+offset_top = 53.0
+offset_right = 385.0
+offset_bottom = 92.0
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 28
 text = "Enemy Name "
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="EnemyElement" type="Label" parent="Battle_UI/EnemyArea" unique_id=477983400]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
+layout_mode = 0
+offset_top = 99.0
+offset_right = 714.0
+offset_bottom = 130.0
 theme_override_font_sizes/font_size = 22
 text = "Element : Rock"
 
 [node name="AttackTimerCard" type="PanelContainer" parent="Battle_UI/EnemyArea" unique_id=1939145781]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+layout_mode = 0
+offset_top = 99.0
+offset_right = 714.0
+offset_bottom = 199.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_x13a4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Battle_UI/EnemyArea/AttackTimerCard" unique_id=1621062580]
@@ -781,10 +809,6 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 icon = SubResource("Texture2D_1fagd")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=769613240]
-environment = SubResource("Environment_7sfm4")
-camera_attributes = SubResource("CameraAttributesPractical_fr5r2")
-
 [node name="SubViewportContainer1" type="SubViewportContainer" parent="." unique_id=1847338007]
 anchors_preset = -1
 anchor_right = 0.5
@@ -822,5 +846,8 @@ bus = &"SFX"
 [node name="Heal" type="AudioStreamPlayer" parent="." unique_id=1746129152 groups=["battle_sfx"]]
 stream = ExtResource("23_lcmqg")
 bus = &"SFX"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1321093164]
+environment = ExtResource("24_7r0cw")
 
 [editable path="Enemy"]
