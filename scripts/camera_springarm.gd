@@ -19,6 +19,7 @@ var freelook_enabled := true:
 func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_dialogue_started)
 	Dialogic.timeline_ended.connect(_on_dialogue_ended)
+	ObjectiveManager.cutsceneStart.connect(_on_dialogue_started)
 	_update_mouse_mode()
 
 func _can_look() -> bool:
@@ -26,6 +27,7 @@ func _can_look() -> bool:
 		return false
 	if not freelook_enabled:
 		return false
+	
 	
 	var root := get_tree().current_scene
 	if root != null and ("current_state" in root) and root.current_state == "battle":

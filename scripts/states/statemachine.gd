@@ -23,6 +23,7 @@ func _ready():
 	current_state.enter()
 	
 	Dialogic.timeline_started.connect(_on_dialogue_start)
+	ObjectiveManager.cutsceneStart.connect(_on_dialogue_start)
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
 
 func _on_dialogue_start():

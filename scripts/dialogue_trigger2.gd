@@ -77,6 +77,7 @@ func _process(delta: float) -> void:
 				"NPC5":
 					if GraftGlobals.churchmanDefeated:
 						Dialogic.VAR.set_variable("target", "npc5_postchurch")
+						
 					else:
 						Dialogic.VAR.set_variable("target", "npc5")
 						ObjectiveManager.complete_objective("talk_npc5")
@@ -118,6 +119,8 @@ func DialogicSignal(arg:String):
 			ObjectiveManager.reveal_objective("fight_churchman")
 		"angry_steve":
 			pass
+		"open_gate":
+			ObjectiveManager.OpenGate.emit()
 
 func _on_body_entered(body: Node3D) -> void:
 	inRange = true
@@ -163,9 +166,7 @@ func _on_body_entered(body: Node3D) -> void:
 				if prompt:
 					prompt.visible = false
 				var game = get_tree().current_scene
-				game.from_overworld_to_battle(preload("res://Combat/resources/enemies/churchGuardian/churchGuardian.tres"),
-            "res://Combat/scenes/battle.tscn"
-		)
+				game.from_overworld_to_battle()
 
 func _on_body_exited(body: Node3D) -> void:
 	inRange = false
@@ -189,6 +190,10 @@ func _on_cutscene_ended():
 	if not inRange:
 		return
 	if GraftGlobals.churchmanDefeated:
+		get_node("Church Man1")
+		Dialogic.VAR.set_variable("target", "churchman_defeated")
+		Dialogic.start_timeline("timelinelayer2")
+		queue_free()
 		return
 	if not GraftGlobals.churchman1Talked:
 		GraftGlobals.churchman1Talked = true
@@ -199,9 +204,7 @@ func _on_cutscene_ended():
 	if not GraftGlobals.churchmanPostLibraryTalked:
 		GraftGlobals.churchmanPostLibraryTalked = true
 		var game = get_tree().current_scene
-		game.from_overworld_to_battle(preload("res://Combat/resources/enemies/boss2/boss2.tres"),
-	"res://Combat/scenes/battle.tscn"
-	)
+		game.from_overworld_to_battle()
 		return
 
 	
