@@ -192,21 +192,21 @@ elif {target} == "quest_npc_1":
 			She trails off into what seems like dozens of different thoughts that she’s been wanting to share with her friend.
 			set {TalkedToFolder.talkedTo3_2} = true
 	elif {wrong_statue} == true:
-		skull: Hello again!
-		skull: ...
-		skull: Who is this?
+		"Tall Miss": Hello again!
+		"Tall Miss": ...
+		"Tall Miss": Who is this?
 		Gli: Not your friend?
-		skull: Not my friend.
-		skull: They usually wear a red scarf.
+		"Tall Miss": Not my friend.
+		"Tall Miss": They usually wear a red scarf.
 		set {wrong_statue} = false
 		[signal arg="reset_quest_1"]
 	elif {StoryFlags.statueQuestComplete} == true:
 		join Gli left
 		join skull right
-		skull: You actually found them!
+		"Tall Miss": You actually found them!
 		Gli: Well, everybody is kind of frozen in place around here so-
 		skull: Thank you so much!
-		skull: Here, as promised.
+		"Tall Miss": Here, as promised.
 		set {GraftGlobals.hoseObtained} = true
 		set {have_rope} = true
 		[signal arg="garden_hose_received"]
@@ -238,13 +238,12 @@ elif {target} == "quest_npc_1":
 		"Tall Miss": You don’t seem the gardening type-
 		Gli: No! I would absolutely love to have your garden hose!
 		"Tall Miss": O-oh! Okay!
-		skull: If you could bring me my friend, it’s yours!
+		"Tall Miss": If you could bring me my friend, it’s yours!
 		"Tall Miss": They usually wear a [color=red]red scarf.[/color]
 		Gli: (Hmm.. I suppose i could just... push them?
 		set {TalkedToFolder.talkedTo3} = true
 		[signal arg="start_quest_1"]
 	else:
-		join skull right
 		"Tall Miss": Look for a Figure wearing a [color=red]red[/color] scarf.
 		"Tall Miss": I would really appreciate it if you could find them.
 if {target} == "porcelain_figure_defeated":

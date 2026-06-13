@@ -29,8 +29,11 @@ func _is_open() -> bool:
 func toggle_menu() -> void:
 	if _is_open():
 		close_menu()
+		MusicPlayer.set_music_paused(false)
 	else:
-		open_menu()
+		if Dialogic.current_timeline == null:
+			open_menu()
+			MusicPlayer.set_music_paused(true)
 
 func open_menu() -> void:
 	if _is_open():

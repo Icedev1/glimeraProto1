@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("4_nyb3p")
-weapon_name = "Powerfull Kick"
+weapon_name = "Powerful Kick"
 attack_damage = 16
 cooldown = 3.0
 hp_cost = 2

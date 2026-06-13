@@ -242,3 +242,4 @@ offset_bottom = 901.0
 
 [node name="OverworldMusic" type="AudioStreamPlayer" parent="." unique_id=2139933775]
 stream = ExtResource("8_ik4og")
+bus = &"Music"
