@@ -12,8 +12,8 @@
 [resource]
 script = ExtResource("8_3gkp3")
 weapons = Array[ExtResource("6_ihvp1")]([ExtResource("9_g7raj"), ExtResource("9_g7raj")])
-element = 1
 portrait = ExtResource("2_0xl4v")
+area = 4
 reward_consumables = Array[ExtResource("3_pvcq4")]([ExtResource("4_tr1p6"), ExtResource("5_ihwr7")])
 model_scene = ExtResource("1_77qye")
 unit_name = "Intimidating Figure"

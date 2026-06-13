@@ -15,6 +15,7 @@ script = ExtResource("8_mwsf8")
 weapons = Array[ExtResource("6_vtq81")]([ExtResource("9_qq7r3"), ExtResource("9_qq7r3")])
 element = 1
 portrait = ExtResource("2_e667v")
+area = 3
 reward_weapons = Array[ExtResource("6_vtq81")]([ExtResource("7_wulpp")])
 reward_consumables = Array[ExtResource("3_wulpp")]([ExtResource("4_01eid"), ExtResource("5_5nh60")])
 model_scene = ExtResource("1_ss53h")

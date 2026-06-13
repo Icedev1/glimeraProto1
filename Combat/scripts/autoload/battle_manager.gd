@@ -580,9 +580,11 @@ func apply_graft(swaps: Array[Dictionary]) -> void:
 			old_weapon.weapon_name if old_weapon else "(empty)",
 			new_weapon.weapon_name if new_weapon else "(empty)"])
 		emit_signal("equipped_weapon_changed", slot, new_weapon)
-
+	
+	PlayerManager.commit_equipped_to_grafts(_equipped)
 	_graft_cooldown.start()
 	_battle_active = true
+
 
 func cancel_graft() -> void:
 	_battle_active = true
