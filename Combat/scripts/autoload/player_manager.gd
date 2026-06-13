@@ -1,6 +1,5 @@
 extends Node
 
-#const SAVE_PATH: String = "user://player.tres"
 
 var data: PlayerData
 signal cameraswitch(toPlayer : bool, camera : Camera3D)
@@ -41,6 +40,20 @@ func sync_from_grafts() -> void:
 	data.equipped[0] = equipped_arm  # BattleManager.SLOT_ARM
 	data.equipped[1] = equipped_leg  # BattleManager.SLOT_LEG
 	data.inventory = _build_inventory(equipped_arm, equipped_leg)
+	
+	
+
+func commit_equipped_to_grafts(equipped: Array[Weapon]) -> void:
+	if equipped.size() < 2:
+		return
+	var arm_idx: int = _arm_weapons.find(equipped[0])
+	var leg_idx: int = _leg_weapons.find(equipped[1])
+	if arm_idx != -1 and arm_idx != GraftGlobals.right_arm_graft_index:
+		GraftGlobals.right_arm_graft_index = arm_idx
+		GraftGlobals.right_arm_graft_changed.emit(arm_idx)
+	if leg_idx != -1 and leg_idx != GraftGlobals.left_leg_graft_index:
+		GraftGlobals.left_leg_graft_index = leg_idx
+		GraftGlobals.left_leg_graft_changed.emit(leg_idx)
 
 # ── Inventory = base limbs + owned grafts, minus what's currently equipped ────
 func _build_inventory(equipped_arm: Weapon, equipped_leg: Weapon) -> Array[Weapon]:
