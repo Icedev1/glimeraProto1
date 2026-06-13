@@ -20,6 +20,8 @@ func _process(_delta: float) -> void:
 		show()
 		$Area3D.monitoring = true
 		$Area3D.monitorable = true
+	elif name == "Porcelain Figure" and GraftGlobals.porcelainDefeated:
+		queue_free()
 
 func DialogicSignal(arg:String):
 	#Prevents other npcs of the same type from listening to signal

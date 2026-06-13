@@ -20,7 +20,7 @@ var saved_player_rotation: float = 0.0
 func _ready():
 	$SceneTransition/ColorRect.modulate.a = 0
 	$SceneTransition2/ColorRect.modulate.a = 0
-	$OverworldMusic.play()
+
 	for child in overworld_container.get_children():
 		child.hide()
 	show_main_menu()
@@ -132,8 +132,6 @@ func _load_battle(path: String, enemy_data: EnemyData = null):
 
 func _cleanup_battle():
 	if current_battle:
-		$OverworldMusic.play()
-	if current_battle:
 		if PlayerManager.data.inventory.has(preload("res://Combat/resources/weapons/saw.tres")):
 			GraftGlobals.sawObtained = true
 			print("NYOOOOM")
@@ -162,7 +160,7 @@ func from_main_menu_to_overworld():
 	)
 
 func from_overworld_to_battle(enemy_data: EnemyData = null, battle_scene: String = "res://Combat/scenes/battle.tscn"):
-	MusicPlayer.stop_music()
+	MusicPlayer.play_music(load("res://Sounds/Music/hipstop1_2.ogg"))
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		saved_player_position = players[0].global_position

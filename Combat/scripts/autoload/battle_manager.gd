@@ -485,8 +485,9 @@ func _end_battle(player_won: bool) -> void:
 		objective_display.visible = true
 	var weapons_dropped: Array[Weapon] = []
 	var consumables_dropped: Array[Consumable] = []
-	MusicPlayer.stop_music()
+	
 	if player_won:
+		MusicPlayer.stop_music()
 		log_message("🏆 Victory! %s is defeated!" % enemy.unit_name)
 		_commit_consumables()
 		_grant_rewards(weapons_dropped, consumables_dropped)

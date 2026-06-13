@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("4_ifvd7")
-weapon_name = "Powerfull Kick"
+weapon_name = "Divine Strike"
 attack_damage = 16
 cooldown = 3.0
 hp_cost = 2

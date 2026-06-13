@@ -8,7 +8,7 @@ load_path = "res://.godot/imported/6224567.png-36ec44134c9a3057dab16d56f514db00.
 
 [resource]
 script = ExtResource("2_spgtv")
-weapon_name = "Powerfull Kick"
+weapon_name = "Powerful Kick"
 attack_damage = 15
 cooldown = 3.5
 icon = SubResource("CompressedTexture2D_mbsb0")

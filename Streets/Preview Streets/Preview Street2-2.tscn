@@ -5,10 +5,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dy6s1h86csg5m" path="res://meshes/SamGrady buildings/building_6.obj" id="6_fb081"]
 [ext_resource type="ArrayMesh" uid="uid://c7hs8xubxoxus" path="res://meshes/SamGrady buildings/building_1.obj" id="7_ebxey"]
 [ext_resource type="PackedScene" uid="uid://8b1xuokowhht" path="res://meshes/Houses/BookHouse/Book House 1.blend" id="8_0nnsm"]
-[ext_resource type="Material" path="res://Textures/Ground048_1K-JPG/Ground048_1K-JPG.tres" id="9_4r4ha"]
+[ext_resource type="Material" uid="uid://cicrse5j0qblq" path="res://Textures/Ground048_1K-JPG/Ground048_1K-JPG.tres" id="9_4r4ha"]
 [ext_resource type="ArrayMesh" uid="uid://i3g16rqeqvpo" path="res://meshes/SamGrady buildings/building_5.obj" id="9_nqp8v"]
 [ext_resource type="PackedScene" uid="uid://d3bnfaokrlk21" path="res://meshes/Houses/House1/House 1 low res.blend" id="10_q0au5"]
-[ext_resource type="PackedScene" uid="uid://ktcvfyx0hbfd" path="res://meshes/Low Res Church.blend" id="32_oktql"]
+[ext_resource type="PackedScene" uid="uid://c1uhwmdj776uj" path="res://meshes/Low Res Church.blend" id="32_oktql"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e1atp"]
 material = ExtResource("3_n4vpo")
