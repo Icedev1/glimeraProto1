@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://fodpwarglyty" path="res://Grafting/saw icon.png" id="3_n4bap"]
 [ext_resource type="Texture2D" uid="uid://lk17a0nohra3" path="res://Grafting/sledgehammer icon.png" id="4_gjxvf"]
 [ext_resource type="Texture2D" uid="uid://st4dv0rl87sd" path="res://Grafting/Hose Icon.png" id="4_n4bap"]
+[ext_resource type="Texture2D" uid="uid://julkyc7px1uq" path="res://Grafting/Broom icon.png" id="6_l5bjg"]
 [ext_resource type="Texture2D" uid="uid://b46tfu5idgkyk" path="res://images/641693.png" id="7_g7rxt"]
+[ext_resource type="Texture2D" uid="uid://85y1g3q24bed" path="res://Grafting/Bike Seat Icon.png" id="7_maqgg"]
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="9_l2vi8"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="10_l5bjg"]
 [ext_resource type="PackedScene" uid="uid://dsc3ihpwxa6w6" path="res://ui/input_remap_button.tscn" id="11_maqgg"]
@@ -251,11 +253,11 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 script = ExtResource("1_nsmwh")
 armIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("3_n4bap"), ExtResource("4_n4bap")])
-legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf")])
+legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf"), ExtResource("6_l5bjg"), ExtResource("7_maqgg")])
 armGraftNames = Array[String](["Default", "Saw", "Hose"])
 armGraftDescs = Array[String](["The Ol' Reliable", "Scissors | 4 DMG, 2s Cooldown", "Paper | 15 DMG, 2s Cooldown"])
-legGraftNames = Array[String](["Default", "Sledgehammer"])
-legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown"])
+legGraftNames = Array[String](["Default", "Sledgehammer", "Broom", "Unicycle"])
+legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown", ""])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=756244194]
 layout_mode = 1

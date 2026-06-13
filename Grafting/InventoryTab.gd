@@ -43,6 +43,20 @@ const ITEMS = [
 		"icon": "res://images/bandage.png",
 		"owned_check": "always"
 	},
+	{
+		"name": "Broom",
+		"category": "Graftable",
+		"description": "A weathered broomstick. Sweeps the floor. Sweeps the enemy. No distinction is made.",
+		"icon": "res://path/to/broom_icon.png",
+		"owned_check": "broomObtained"
+	},
+	{
+		"name": "Unicycle",
+		"category": "Graftable",
+		"description": "Looks absurd but is handy when slowed.",
+		"icon": "res://path/to/unicycle_icon.png",
+		"owned_check": "unicycleObtained"
+	},
 ]
 
 @onready var item_grid: GridContainer = $PopupBox/HBoxContainer/ScrollContainer/ItemGrid
