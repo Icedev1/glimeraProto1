@@ -3,10 +3,12 @@ var music_player: AudioStreamPlayer
 func _ready() -> void:
 	music_player = AudioStreamPlayer.new()
 	music_player.bus = "Music"
-	music_player.volume_db = -8.0
+	music_player.volume_db = -3.0
 	add_child(music_player)
 
 func play_music(music: AudioStream) -> void:
+	if music_player.playing and music_player.stream == music:
+		return
 	music_player.stream = music
 	music_player.play()
 
@@ -16,4 +18,4 @@ func stop_music() -> void:
 
 	tween.tween_callback(func():
 		music_player.stop()
-		music_player.volume_db = -8.0)
+		music_player.volume_db = -3.0)

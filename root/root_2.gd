@@ -61,7 +61,7 @@ func show_overworld():
 
 func start_battle(battle_scene_path: String, enemy_data: EnemyData = null):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	MusicPlayer.play_music(load("res://Sounds/hipstop1_2.ogg"))
+	MusicPlayer.play_music(load("res://Sounds/Music/hipstop1_2.ogg"))
 	current_state = "battle"
 	if enemy_data != null:
 		current_battle_enemy = enemy_data  
@@ -157,6 +157,7 @@ func from_main_menu_to_overworld():
 	)
 
 func from_overworld_to_battle(enemy_data: EnemyData = null, battle_scene: String = "res://Combat/scenes/battle.tscn"):
+	MusicPlayer.stop_music()
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		saved_player_position = players[0].global_position
@@ -166,6 +167,7 @@ func from_overworld_to_battle(enemy_data: EnemyData = null, battle_scene: String
 	)
 
 func from_battle_to_overworld():
+	MusicPlayer.play_music(load("res://Sounds/SFX/GLimera Ominous 1.ogg"))
 	print("unit name: ", current_battle_enemy.unit_name if current_battle_enemy else "null")
 	if current_battle_enemy != null and current_battle_enemy.unit_name == "Porcelain Figure":
 		ObjectiveManager.complete_objective("see_figure")
@@ -208,6 +210,8 @@ func transition_to_street(target_street: String, spawn_name: String):
 		character.global_transform.origin = spawn.global_transform.origin
 		character.global_rotation.y = spawn.global_rotation.y
 	)
+	MusicPlayer.play_music(load("res://Sounds/SFX/GLimera Ominous 1.ogg"))
+	
 
 func screenshake():
 	screenshakerect.material.set_shader_parameter("ShakeStrength", 0.1)
