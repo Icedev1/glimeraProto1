@@ -17,6 +17,8 @@ var _arm_weapons: Array[Weapon] = [
 var _leg_weapons: Array[Weapon] = [
 	preload("res://Combat/resources/weapons/gli_leg.tres"),       # 0: base (no graft)
 	preload("res://Combat/resources/weapons/sledge_hammer.tres"), # 1: Sledgehammer
+	preload("res://Combat/resources/weapons/broom.tres"),
+	preload("res://Combat/resources/weapons/unicycle.tres"),
 ]
 
 func _ready() -> void:
@@ -61,6 +63,10 @@ func _build_inventory(equipped_arm: Weapon, equipped_leg: Weapon) -> Array[Weapo
 	# Leg grafts (for now sledge hammer always treated as obtained)
 	if equipped_leg != _leg_weapons[1]:
 		inv.append(_leg_weapons[1])
+	if GraftGlobals.broomObtained and equipped_leg != _leg_weapons[2]:
+		inv.append(_leg_weapons[2])
+	if GraftGlobals.unicycleObtained and equipped_leg != _leg_weapons[3]:
+		inv.append(_leg_weapons[3])
 
 	return inv
 

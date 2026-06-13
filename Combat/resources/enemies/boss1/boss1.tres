@@ -7,12 +7,14 @@
 [ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="3_easjw"]
 [ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="4_p1hh2"]
 [ext_resource type="Resource" uid="uid://kof0ljggifw6" path="res://Combat/resources/enemies/boss1/boss1_attack2.tres" id="5_p1hh2"]
+[ext_resource type="Resource" uid="uid://7exwce5lhtws" path="res://Combat/resources/weapons/broom.tres" id="6_0y4n6"]
 
 [resource]
 script = ExtResource("3_easjw")
 weapons = Array[ExtResource("2_lxmyn")]([ExtResource("5_p1hh2"), ExtResource("5_p1hh2")])
 element = 1
 portrait = ExtResource("1_lxmyn")
+reward_weapons = Array[ExtResource("2_lxmyn")]([ExtResource("6_0y4n6")])
 reward_consumables = Array[ExtResource("1_oavd2")]([ExtResource("3_0y4n6"), ExtResource("4_p1hh2")])
 unit_name = "Intimidating Figure"
 max_hp = 150
