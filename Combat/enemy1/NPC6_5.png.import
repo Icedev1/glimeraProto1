@@ -2,19 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnsdy5gldk8g"
-path="res://.godot/imported/NPC6_5.png-d142e80542f937755402c21497afc6f9.ctex"
-metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "43288286756200b9cff309193930e5a1"
-}
+uid="uid://b4kxnpncaf1qc"
+valid=false
 
 [deps]
 
 source_file="res://Combat/enemy1/NPC6_5.png"
-dest_files=["res://.godot/imported/NPC6_5.png-d142e80542f937755402c21497afc6f9.ctex"]
 
 [params]
 
@@ -26,7 +19,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

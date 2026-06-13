@@ -27,6 +27,33 @@ var _inventory: Array[Weapon] = []
 var _weapon_cooldowns: Array[CooldownTracker] = []
 var _paused: bool = false
 
+# ── Save/Load ─────────────────────────────────────────────────────────────────
+var defeated_enemies: Array = []
+
+func mark_defeated(enemy_id: String):
+	if enemy_id not in defeated_enemies:
+		defeated_enemies.append(enemy_id)
+
+func is_defeated(enemy_id: String) -> bool:
+	return enemy_id in defeated_enemies
+
+func get_defeated_enemies() -> Array:
+	return defeated_enemies.duplicate()
+
+func load_defeated_enemies(data: Array):
+	defeated_enemies = data.duplicate()
+
+func get_inventory_save_data() -> Array:
+	var result = []
+	for weapon in _inventory:
+		if weapon and weapon.resource_path != "":
+			result.append(weapon.resource_path)
+	return result
+
+func load_inventory_save_data(data: Array):
+	_inventory.clear()
+	for path in data:
+		_inventory.append(load(path))
 
 var _block_active: bool = false
 const BLOCK_DURATION: float = 0.4
@@ -67,9 +94,6 @@ const ELEMENT_ENEMY_EFFECTIVE: float = 1.3
 const ELEMENT_ENEMY_NEUTRAL: float = 1.0
 const ELEMENT_ENEMY_INEFFECTIVE: float = 0.8
 const ELEMENT_ENEMY_SUPER_INEFFECTIVE: float = 0.7
-
-#audio
-@onready var sfx_hit_effective: AudioStreamPlayer = $HitEffective
 
 # ── Start ─────────────────────────────────────────────────────────────────────
 func start_battle() -> void:
@@ -258,7 +282,7 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 			was_blocked = true
 
 		defender.take_damage(dmg)
-		
+
 		# Hit visuals
 		if dmg != 0:
 			var root_node = get_tree().root.get_node_or_null("Root")
@@ -281,15 +305,6 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 
 		if defender.is_dead():
 			break
-	
-	if was_blocked:
-		play_battle_sfx("HitBlocked")
-	elif element_mult > 1.0:
-		play_battle_sfx("HitEffective")
-	elif element_mult < 1.0:
-		play_battle_sfx("HitWeak")
-	else:
-		play_battle_sfx("HitNormal")
 
 	# Log the attack
 	if was_blocked:
@@ -585,12 +600,3 @@ func apply_graft(swaps: Array[Dictionary]) -> void:
 
 func cancel_graft() -> void:
 	_battle_active = true
-
-#Sfx
-func play_battle_sfx(sfx_name: String) -> void:
-	for node in get_tree().get_nodes_in_group("battle_sfx"):
-		if node.name == sfx_name:
-			var player := node as AudioStreamPlayer
-			if player:
-				player.play()
-			return

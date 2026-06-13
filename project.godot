@@ -26,6 +26,7 @@ Dialogue="*uid://f40fbwgpnkvu"
 Dialogic="*uid://ds2q0uclmolvu"
 BattleManager="*uid://bks8pyajw4qln"
 PlayerManager="*uid://dujbeol33fjtr"
+Debug="uid://br2ibcwc8lhs4"
 ControllerIcons="*uid://d2cyg24h3ss8r"
 GraftGlobals="*uid://ddwa1wyywsuth"
 SFXPlayer="*uid://bhojwcno7gi1b"
@@ -33,6 +34,7 @@ MusicPlayer="*uid://blpcv03sdkav6"
 StoryFlags="*uid://285ib4l7abgw"
 TimeManager="*uid://ddg0be1awl7mb"
 ObjectiveManager="*uid://d2526ex77cp5f"
+SaveManager="*uid://b8bvns0atwhgq"
 
 [dialogic]
 
@@ -51,7 +53,6 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Intimidating Figure": "res://Intimidating Figure.dtl",
-"Rocks": "res://Dialogue Timelines/Rocks.dtl",
 "Talk with Bob": "res://Dialogue Timelines/Talk with Bob.dtl",
 "events": "res://Dialogue Timelines/events.dtl",
 "interactable": "res://Dialogue Timelines/interactable.dtl",
@@ -137,7 +138,6 @@ audio/channel_defaults={
 history/simple_history_enabled=true
 choices/hotkey_behaviour=1
 audio/type_sound_bus="SFX"
-animations/join_default="Fade In Up"
 
 [display]
 
