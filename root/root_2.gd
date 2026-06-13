@@ -213,7 +213,12 @@ func transition_to_street(target_street: String, spawn_name: String):
 		character.global_transform.origin = spawn.global_transform.origin
 		character.global_rotation.y = spawn.global_rotation.y
 	)
-	MusicPlayer.play_music(load("res://Sounds/SFX/GLimera Ominous 1.ogg"))
+	if target_street == "res://Streets/Church Interior.tscn":
+		MusicPlayer.play_music(load("res://Sounds/Music/Church Music.ogg"))
+	elif target_street == "res://Streets/Library.tscn":
+		MusicPlayer.play_music(load("res://Sounds/Music/Library theme.ogg"))
+	else:	
+		MusicPlayer.play_music(load("res://Sounds/SFX/GLimera Ominous 1.ogg"))
 	
 
 func screenshake():

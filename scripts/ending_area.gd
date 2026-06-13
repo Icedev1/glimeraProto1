@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	var player = get_parent() as AnimationPlayer
+	MusicPlayer.stop_music()
 	ObjectiveManager.cutsceneStart.emit()
 	player.play("Final Scene", 0,5)
 	

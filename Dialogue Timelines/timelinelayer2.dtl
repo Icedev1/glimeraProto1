@@ -15,10 +15,11 @@ elif {target} == "book_purple":
 	Gli: [color=blue]Paper[/color], [color=red]Rock[/color], and [color=green]Scissors[/color]. There's something about the order of the elements.
 elif {target} == "statue_3":
 	join statue_1 left
-	statue_1: CHAPTER 2 - After having used graftables for an extended amount of time, it should be known how to properly take care of them. When cleaning or repairing graftables, the element – be it [color=green]Scissors[/color], [color=blue]Paper[/color], or [color=red]Rock[/color] – should be taken into account. Using the wrong tools can cause damage to the graftable or injuries to a Figure themselves
+	statue_1: CHAPTER 2 - After having used graftables for an extended amount of time, it should be known how to properly take care of them. When cleaning or repairing graftables, the element – be it [color=blue]Scissors[/color], [color=red]Paper[/color], or [color=green]Rock[/color] – should be taken into account. Using the wrong tools can cause damage to the graftable or injuries to a Figure themselves
 	leave statue_1
 	join Gli left
 	Gli: [color=green]Scissors[/color], [color=blue]Paper[/color] or [color=red]Rock[/color]. Why did he mention it in this order?
+	Gli: It could have something to do with the art installation, but the colors in the text don't match  the color of the shape...
 elif {target} == "statue_4":
 	join statue_1 left
 	statue_1: The role of Communicator is one of the most important positions a Figure can ever receive. It is the Communicator's role to converse with The Guardian and pass on any important information citizens of Archeo should know. It is also the Communicator’s task to help the church with managing the city.
@@ -38,7 +39,7 @@ elif {target} == "rock":
 		[signal arg="puzzle2_complete"]
 	else:
 		set {sequence_step} = 0
-		tset
+		Gli: Thats not it...
 		[signal arg="reset_puzzle"]
 elif {target} == "paper":
 	if {sequence_step} == 0.0:
@@ -51,7 +52,7 @@ elif {target} == "paper":
 		[signal arg="paper_blue"]
 	else:
 		set {sequence_step} = 0
-		tsep
+		Dang it... This is hard...
 		[signal arg="reset_puzzle"]
 elif {target} == "scissor":
 	if {sequence_step} == 2.0:
@@ -64,7 +65,7 @@ elif {target} == "scissor":
 		[signal arg="scissor_green"]
 	else:
 		set {sequence_step} = 0.0
-		tstscs
+		Gli: Hmm... I think it has something to do with the color and the shape of each pillar...
 		[signal arg="reset_puzzle"]
 elif {target} == "churchbro_defeated":
 	join statue_1 rightmost

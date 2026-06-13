@@ -286,6 +286,8 @@ func _resolve_attack(w: Weapon, attacker: UnitData, defender: UnitData) -> void:
 		play_battle_sfx("HitBlocked")
 	elif element_mult > 1.0:
 		play_battle_sfx("HitEffective")
+		if is_player_attacking:
+			get_tree().current_scene.screenshake()
 	elif element_mult < 1.0:
 		play_battle_sfx("HitWeak")
 	else:

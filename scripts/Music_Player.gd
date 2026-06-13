@@ -31,7 +31,7 @@ func play_music(music: AudioStream) -> void:
 		music_player,
 		"volume_db",
 		-8.0,
-		1.0
+		0.3
 	)
 func stop_music() -> void:
 	var tween = create_tween()

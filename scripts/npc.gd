@@ -14,7 +14,13 @@ func _ready() -> void:
 		hide()
 		$Area3D.monitoring = false
 		$Area3D.monitorable = false
-
+	if name == "Intimidating Figure" and GraftGlobals.intimidatingDefeated:
+		var anim = get_tree().current_scene.find_child("AnimationPlayerDoor", true, false)
+		if anim:
+			anim.play("gate_opening")
+		else:
+			print("AnimationPlayerDoor not found!")
+		queue_free()
 func _process(_delta: float) -> void:
 	if name == "Intimidating Figure" and GraftGlobals.hoseObtained and not GraftGlobals.intimidatingDefeated:
 		show()
@@ -80,3 +86,4 @@ func _on_battle_ended(_won: bool, _weapons: Array, _consumables: Array):
 			anim.play("gate_opening")
 		else:
 			print("AnimationPlayerDoor not found!")
+		queue_free()
