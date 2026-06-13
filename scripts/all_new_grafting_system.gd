@@ -10,9 +10,7 @@ extends Node
 ]
 @onready var leg_graftables : Array[PackedScene] = [
 	null,
-	preload("res://Grafting/SledgehammerGraft.tscn") as PackedScene,
-	preload("res://Grafting/BroomGraft.tscn") as PackedScene,
-	preload("res://Grafting/UnicycleGraft.tscn") as PackedScene
+	preload("res://Grafting/SledgehammerGraft.tscn") as PackedScene
 ]
 
 @onready var base_leg_parts : Array[Node3D] = [
