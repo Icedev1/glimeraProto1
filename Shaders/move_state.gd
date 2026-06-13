@@ -25,3 +25,9 @@ func physics_update(delta):
 
 	player.move_horizontal(direction)
 	player.rotate_toward(direction, delta)
+
+	player.footstep_timer -= delta
+
+	if player.footstep_timer <= 0.0:
+		player.play_footstep()
+		player.footstep_timer = player.footstep_interval

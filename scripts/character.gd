@@ -8,6 +8,11 @@ const TURN_SPEED := 9.0
 @onready var camera_pivot := $CameraPivot as Node3D
 @onready var model := $"MAsked Gli" as Node3D
 
+@onready var footstep_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+var footstep_timer := 0.0
+var footstep_interval := 0.6
+
+
 var knockback_velocity := Vector3.ZERO
 var knockback_time := 0.0
 
@@ -29,6 +34,17 @@ var knockback_time := 0.0
 			#if _test_index + 1 < _test_ids.size():
 				#ObjectiveManager.reveal_objective(_test_ids[_test_index + 1])
 			#_test_index += 1
+
+func play_footstep() -> void:
+	if not is_on_floor():
+		return
+
+	if velocity.length() < 0.1:
+		return
+
+	footstep_player.pitch_scale = randf_range(0.95, 1.05)
+	footstep_player.play()
+
 func _physics_process(delta):
 	if get_tree().paused:
 		return
@@ -107,7 +123,7 @@ func face_menu_camera() -> void:
 		dir.y = 0
 		dir = dir.normalized()
 		var target_angle = atan2(dir.x, dir.z) - PI / 2
-		$"MAsked Gli".rotation.y = target_angle
+		$"MAsked Gli".rotation.y = -target_angle
 
 # Static Camera Functions
 

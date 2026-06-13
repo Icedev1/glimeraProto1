@@ -30,31 +30,23 @@ func _ready():
 # STATE SWITCHING
 # -----------------
 
-func switch_world_scene(scene_name: String, auto_show: bool = true):
+func switch_world_scene(scene_name: String):
 	if overworld_container.get_child_count() > 0:
 		overworld_container.get_child(0).queue_free()
 	var newMap = load(scene_name).instantiate()
 	overworld_container.add_child(newMap)
 	current_overworld = newMap
-	if auto_show:
-		overworld_container.show()
+	overworld_container.show()
 	get_viewport().use_occlusion_culling = false
 	ui_scene.hide()
 
 
 func show_main_menu():
 	current_state = "main_menu"
+	
 	ui_scene.show()
 	overworld_container.hide()
 	_cleanup_battle()
-	# Hide objective display on main menu
-	var obj_display = get_node_or_null("CanvasLayer/ObjectiveDisplay")
-	if obj_display:
-		obj_display.visible = false
-	await get_tree().process_frame
-	var main_menu = ui_scene.get_node_or_null("Main Menu")
-	if main_menu:
-		main_menu.call("_refresh_continue_button")
 	
 
 func show_overworld():
@@ -208,22 +200,14 @@ func from_battle_to_overworld():
 	)
 
 func transition_to_street(target_street: String, spawn_name: String):
-	var is_save_load = SaveManager.loading_from_save
-	var callback = func():
-		switch_world_scene(target_street, true)
+	transition1.playfade(func():
+		switch_world_scene(target_street)
+		var spawn = current_overworld.get_node(spawn_name)
+		
 		var character = current_overworld.get_node("CharacterBody3D")
-		if spawn_name != "":
-			var spawn = current_overworld.get_node(spawn_name)
-			character.global_transform.origin = spawn.global_transform.origin
-			character.global_rotation.y = spawn.global_rotation.y
-		elif SaveManager.loading_from_save and StoryFlags.checkpoint_position != Vector3.ZERO:
-			character.global_position = StoryFlags.checkpoint_position
-			StoryFlags.checkpoint_position = Vector3.ZERO
-			SaveManager.loading_from_save = false
-	if is_save_load:
-		transition1.playfade_long(callback, 1.0)
-	else:
-		transition1.playfade(callback)
+		character.global_transform.origin = spawn.global_transform.origin
+		character.global_rotation.y = spawn.global_rotation.y
+	)
 
 func screenshake():
 	screenshakerect.material.set_shader_parameter("ShakeStrength", 0.1)

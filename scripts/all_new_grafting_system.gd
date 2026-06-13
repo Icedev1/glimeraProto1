@@ -25,7 +25,7 @@ extends Node
 ]
 
 func _ready() -> void:
-	if GraftGlobals.violinObtained:
+	if StoryFlags.violinObtained:
 		$"../MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1".visible = true
 	GraftGlobals.menu_opened.connect(refresh)
 	GraftGlobals.left_leg_graft_changed.connect(graft_left_leg)

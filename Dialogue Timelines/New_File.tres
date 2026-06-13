@@ -15,6 +15,10 @@
 [sub_resource type="Resource" id="Resource_a1ain"]
 script = ExtResource("2_52yq1")
 scene = ExtResource("1_vs8qb")
+overrides = {
+"global_font": "\"res://fonts/CormorantGaramond-VariableFont_wght.ttf\"",
+"global_font_size": "25.0"
+}
 
 [sub_resource type="Resource" id="Resource_d3pu8"]
 script = ExtResource("2_52yq1")
@@ -34,7 +38,7 @@ scene = ExtResource("6_kspij")
 overrides = {
 "box_animation_new_text": "1",
 "box_size": "Vector2(1000, 150)",
-"text_size": "25.0"
+"text_size": "40.0"
 }
 
 [sub_resource type="Resource" id="Resource_m0ypj"]

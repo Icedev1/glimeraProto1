@@ -8,7 +8,27 @@
 script = ExtResource("2_n1rax")
 enemy_resource = ExtResource("3_n1rax")
 
-[node name="AttackTimerCard" parent="Battle_UI/EnemyArea" parent_id_path=PackedInt32Array(865877994) index="3" unique_id=1939145781]
+[node name="PlayerArea" parent="Battle_UI" parent_id_path=PackedInt32Array(1912534267) index="1" unique_id=539363790]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -928.0
+offset_top = 32.0
+offset_right = -127.99988
+offset_bottom = 132.0
+grow_vertical = 1
+
+[node name="EnemyArea" parent="Battle_UI" parent_id_path=PackedInt32Array(1912534267) index="2" unique_id=865877994]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 842.0
+offset_bottom = 284.0
+grow_horizontal = 2
+
+[node name="AttackTimerCard" parent="Battle_UI/EnemyArea" index="3" unique_id=1939145781]
 unique_name_in_owner = true
 
 [node name="Block" parent="Battle_UI/options_menu" parent_id_path=PackedInt32Array(40959146) index="2" unique_id=1767227566]
@@ -21,3 +41,5 @@ visible = false
 
 [node name="Consumables" parent="Battle_UI/options_menu" parent_id_path=PackedInt32Array(40959146) index="4" unique_id=373898980]
 visible = false
+
+[editable path="Enemy"]

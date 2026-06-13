@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cso8j2bcktlrm"
-valid=false
+uid="uid://c8d2b5jg0sf6c"
+path="res://.godot/imported/evene.png-43954aeda74d2c6c194e0bca9521d29f.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/evene.png"
+dest_files=["res://.godot/imported/evene.png-43954aeda74d2c6c194e0bca9521d29f.ctex"]
 
 [params]
 

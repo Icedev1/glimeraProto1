@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfn12updweqx"
-valid=false
+uid="uid://dejrtilo0x8lm"
+path="res://.godot/imported/somestatue.png-7ee8712a115b9c5f5a5528ed0f855cb1.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/somestatue.png"
+dest_files=["res://.godot/imported/somestatue.png-7ee8712a115b9c5f5a5528ed0f855cb1.ctex"]
 
 [params]
 

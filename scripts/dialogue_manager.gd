@@ -23,6 +23,8 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 func setNPC(npc : NPC, range : bool):
+	if npc != null:
+		print("setNPC called: ", npc.name, " range: ", range)
 	if range:
 		character = npc
 	else:
@@ -36,3 +38,4 @@ func showDialogue():
 func _on_timeline_ended():
 	character = null
 	inRange = false
+	Dialogue.interactRange.emit(null, false)

@@ -33,16 +33,55 @@ transparency = 1
 blend_mode = 1
 albedo_color = Color(0, 0.36848226, 0.93932194, 1)
 emission_enabled = true
+emission = Color(0.35906908, 0.35906908, 0.35906908, 1)
 emission_energy_multiplier = 3.0
 billboard_mode = 1
 grow_amount = -3.908
 
 [sub_resource type="QuadMesh" id="QuadMesh_2430n"]
 material = SubResource("StandardMaterial3D_dlbbv")
-size = Vector2(0.01, 0.05)
+size = Vector2(0.01, 0.01)
+
+[sub_resource type="Animation" id="Animation_she2g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nek7a"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0), Vector3(1.5707964, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05mi0"]
+_data = {
+&"RESET": SubResource("Animation_she2g"),
+&"spin": SubResource("Animation_nek7a")
+}
 
 [node name="GPUParticles3D" type="GPUParticles3D" unique_id=996667377]
-amount = 200
+amount = 400
 lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_xx1s2")
 draw_pass_1 = SubResource("QuadMesh_2430n")
@@ -50,3 +89,7 @@ draw_pass_1 = SubResource("QuadMesh_2430n")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1926707012]
 transform = Transform3D(0.245, 0, 0, 0, -1.070929e-08, -0.245, 0, 0.245, -1.070929e-08, 0, 0, 0)
 texture = ExtResource("1_t1057")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=882121116]
+libraries/ = SubResource("AnimationLibrary_05mi0")
+autoplay = &"spin"
