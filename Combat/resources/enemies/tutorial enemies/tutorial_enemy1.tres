@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pp0keh3js6c0" path="res://images/porcelainfigure head.png" id="1_aqt7o"]
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_pi8e7"]
-[ext_resource type="PackedScene" uid="uid://bvgw1gk3tqxo7" path="res://Animations/Final Porcelain Lady NPC.fbx" id="1_qw86n"]
+[ext_resource type="PackedScene" uid="uid://bwukygiqlygv6" path="res://Animations/Porcelain Lady.fbx" id="1_qw86n"]
 [ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="2_b35jh"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_7axu5"]
 [ext_resource type="Resource" uid="uid://bift21akoxrxf" path="res://Combat/resources/weapons/saw.tres" id="4_aqt7o"]

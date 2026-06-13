@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c10ro3e102i7u"]
 
-[ext_resource type="PackedScene" uid="uid://1k3jj78dq2ut" path="res://Grafting/Bike Seat.fbx" id="1_v6p5a"]
+[ext_resource type="PackedScene" uid="uid://h4j6hww4xclc" path="res://Grafting/Bike Seat.fbx" id="1_v6p5a"]
 
 [node name="Node3D" type="Node3D" unique_id=1268750824]
 
-[node name="Bike Seat" parent="." unique_id=1285218616 instance=ExtResource("1_v6p5a")]
-transform = Transform3D(-2.4793987, 0.05409848, -0.27327642, -0.055392087, -2.4943693, 0.008773244, -0.27301705, 0.014785473, 2.479973, 0, 1.9129887, 0)
+[node name="Bike Seat" parent="." unique_id=298569422 instance=ExtResource("1_v6p5a")]
+transform = Transform3D(-2.494305, 0.054423504, -0.27491927, -0.055724908, -2.5093658, 0.008826003, -0.27465844, 0.014874342, 2.494883, 0, 2, 0)

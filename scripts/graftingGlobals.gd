@@ -8,7 +8,7 @@ var right_arm_graft_index : int = 0
 var left_leg_graft_index : int = 0
 var sawObtained : bool = false
 var sledgehammerObtained : bool  = false
-var hoseObtained : bool = true
+var hoseObtained : bool = false
 var graftSFX : AudioStream = preload("res://Sounds/SFX/1101.wav")
 var porcelainDefeated: bool = false
 var angrySteveDead: bool = false
@@ -23,3 +23,6 @@ var churchman1Talked: bool = false
 var libraryDone: bool = false
 var churchmanDefeated : bool = false
 var churchmanPostLibraryTalked : bool = false
+#newgrafts
+var broomObtained: bool = false
+var unicycleObtained: bool = false
