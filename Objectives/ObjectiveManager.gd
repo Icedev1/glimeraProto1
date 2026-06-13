@@ -36,6 +36,7 @@ func _ready() -> void:
 			{ "id": "talk_npc3", "text": "Look for information", "done": false, "visible": false },
 			{ "id": "talk_churchbro", "text": "Ask about the church", "done": false, "visible": false },
 			{ "id": "enter_church", "text": "Enter the church", "done": false, "visible": false },
+			{ "id": "search_library", "text": "Go to the library", "done": false, "visible": false },
 			{ "id": "solve_puzzle", "text": "Solve the library puzzle", "done": false, "visible": false },
 			{ "id": "fight_churchman", "text": "Return to the priest", "done": false, "visible": false },
 			{ "id": "return_to_stairs", "text": "Climb the stairs", "done": false, "visible": false },

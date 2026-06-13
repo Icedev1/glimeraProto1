@@ -116,6 +116,7 @@ func DialogicSignal(arg:String):
 			GraftGlobals.libraryDone = true
 			ObjectiveManager.complete_objective("solve_puzzle")
 			ObjectiveManager.complete_objective("explore_area")
+			ObjectiveManager.complete_objective("search_library")
 			ObjectiveManager.reveal_objective("fight_churchman")
 		"angry_steve":
 			pass
@@ -154,6 +155,7 @@ func _on_body_entered(body: Node3D) -> void:
 			if Dialogic.current_timeline == null and not GraftGlobals.churchmanDefeated:
 				if not GraftGlobals.churchman1Talked:
 					Dialogic.VAR.set_variable("target", "churchman1")
+					ObjectiveManager.reveal_objective("search_library")
 				elif GraftGlobals.libraryDone and not GraftGlobals.churchmanPostLibraryTalked:
 					Dialogic.VAR.set_variable("target", "churchman_postlibrary")
 				else:
@@ -166,7 +168,9 @@ func _on_body_entered(body: Node3D) -> void:
 				if prompt:
 					prompt.visible = false
 				var game = get_tree().current_scene
-				game.from_overworld_to_battle()
+				game.from_overworld_to_battle(preload("res://Combat/resources/enemies/ChurchGuard/boss1.tres"),
+	"res://Combat/scenes/battle.tscn"
+	)
 
 func _on_body_exited(body: Node3D) -> void:
 	inRange = false
@@ -204,7 +208,9 @@ func _on_cutscene_ended():
 	if not GraftGlobals.churchmanPostLibraryTalked:
 		GraftGlobals.churchmanPostLibraryTalked = true
 		var game = get_tree().current_scene
-		game.from_overworld_to_battle()
+		game.from_overworld_to_battle(preload("res://Combat/resources/enemies/LeoPriest/boss1.tres"),
+	"res://Combat/scenes/battle.tscn"
+	)
 		return
 
 	

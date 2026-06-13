@@ -8,3 +8,4 @@ extends UnitData
 # ── Rewards on defeat ────────────────────────────────────────────────────────
 @export var reward_weapons: Array[Weapon] = []
 @export var reward_consumables: Array[Consumable] = []
+@export var model_scene: PackedScene

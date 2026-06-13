@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://d0bajsxy2od7u"]
+
+[ext_resource type="Script" uid="uid://c1nu6bnlqi3dc" path="res://Combat/scripts/data/status_effect.gd" id="1_8bksj"]
+[ext_resource type="Resource" uid="uid://ck4bwjm08hgqw" path="res://Combat/resources/status_effects/bleed_2x4.tres" id="2_8bksj"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="3_vcuht"]
+
+[resource]
+script = ExtResource("3_vcuht")
+weapon_name = "Baton "
+attack_damage = 19
+cooldown = 3.0
+hp_cost = 2
+element = 2
+effects = Array[ExtResource("1_8bksj")]([ExtResource("2_8bksj")])
