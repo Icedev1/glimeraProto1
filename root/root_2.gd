@@ -20,10 +20,9 @@ var saved_player_rotation: float = 0.0
 func _ready():
 	$SceneTransition/ColorRect.modulate.a = 0
 	$SceneTransition2/ColorRect.modulate.a = 0
-	
+	$OverworldMusic.play()
 	for child in overworld_container.get_children():
 		child.hide()
-	
 	show_main_menu()
 
 # -----------------
@@ -61,6 +60,7 @@ func show_overworld():
 
 func start_battle(battle_scene_path: String, enemy_data: EnemyData = null):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$OverworldMusic.stop() 
 	MusicPlayer.play_music(load("res://Sounds/hipstop1_2.ogg"))
 	current_state = "battle"
 	if enemy_data != null:
@@ -133,12 +133,18 @@ func _load_battle(path: String, enemy_data: EnemyData = null):
 
 func _cleanup_battle():
 	if current_battle:
+		$OverworldMusic.play()
+	if current_battle:
 		if PlayerManager.data.inventory.has(preload("res://Combat/resources/weapons/saw.tres")):
 			GraftGlobals.sawObtained = true
 			print("NYOOOOM")
 		if PlayerManager.data.inventory.has(preload("res://Combat/resources/weapons/hose.tres")):
 			GraftGlobals.hoseObtained = true
 			print("pshhhhhh")
+		if PlayerManager.data.inventory.has(preload("res://Combat/resources/weapons/broom.tres")):
+			GraftGlobals.broomObtained = true
+		if PlayerManager.data.inventory.has(preload("res://Combat/resources/weapons/unicycle.tres")):
+			GraftGlobals.unicycleObtained = true
 		#if BattleManager.enemy == preload("res://Combat/resources/enemies/boss1/boss1.tres"):
 			#if BattleManager.enemy.unit
 			#get_tree().change_scene_to_file("res://Sounds/SFX/Bye.tscn")
@@ -157,6 +163,7 @@ func from_main_menu_to_overworld():
 	)
 
 func from_overworld_to_battle(enemy_data: EnemyData = null, battle_scene: String = "res://Combat/scenes/battle.tscn"):
+	$OverworldMusic.stop()
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		saved_player_position = players[0].global_position

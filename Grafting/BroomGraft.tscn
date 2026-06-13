@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cifbbvj2mg1hw"]
+
+[ext_resource type="PackedScene" uid="uid://bhl7moyhuesqu" path="res://Grafting/Broom.fbx" id="1_1yxof"]
+
+[node name="Node3D" type="Node3D" unique_id=613911133]
+
+[node name="Broom" parent="." unique_id=1603974696 instance=ExtResource("1_1yxof")]
+transform = Transform3D(-2.499973, 0.011606552, 0, -0.011606552, -2.499973, 0, 0, 0, 2.5, 0, 3.2, 0)
