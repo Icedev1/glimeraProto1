@@ -3404,7 +3404,7 @@ bone_idx = 3
 transform = Transform3D(-1.1640927, 0.7746126, 0.0697381, 0.76763606, 1.1645077, -0.12106503, -0.12499218, -0.06242675, -1.3930111, 0.38285306, 0.81784594, -0.70476484)
 visible = false
 
-[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=2284527]
+[node name="Point" parent="MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1" index="13" unique_id=1328468791]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MAsked Gli" unique_id=1926690920]
