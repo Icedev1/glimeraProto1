@@ -362,7 +362,6 @@ func player_use_consumable() -> void:
 
 	consumable.quantity -= 1
 	_player.heal(consumable.heal_amount)
-	play_battle_sfx("Heal")
 	log_message("🧪 Used %s! Healed %d HP" % [consumable.consumable_name, consumable.heal_amount])
 	_consumable_cooldown.start()
 
