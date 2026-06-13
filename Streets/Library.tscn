@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cy4o15k7ows4u" path="res://character.tscn" id="3_qi2pv"]
 [ext_resource type="Script" uid="uid://oabljn5qu4iv" path="res://scripts/dialogue_trigger2.gd" id="3_wea6j"]
 [ext_resource type="Script" uid="uid://6iauadqfys57" path="res://scripts/character.gd" id="4_gukf4"]
-[ext_resource type="Material" uid="uid://bj4jvojq1vnrv" path="res://Textures/WoodTexture/Wood095_1K-PNG.tres" id="5_4p501"]
+[ext_resource type="Material" path="res://Textures/WoodTexture/Wood095_1K-PNG.tres" id="5_4p501"]
 [ext_resource type="Material" uid="uid://bt7o37gnl4j2j" path="res://meshes/Gli Mesh 1/skin.tres" id="5_jktro"]
 [ext_resource type="PackedScene" uid="uid://dpvcw5abp8e7a" path="res://Combat/enemy1/NPC1.fbx" id="6_4p501"]
 [ext_resource type="ArrayMesh" uid="uid://dkajpf7n6toy1" path="res://meshes/Gli Mesh 1/Upper Arm L.tres" id="6_hyusp"]
@@ -25,50 +25,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1yml1"]
 radius = 0.14355469
 height = 0.28710938
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktovg"]
-resource_name = "Material"
-cull_mode = 2
-albedo_color = Color(0.48854268, 0.48854268, 0.48854268, 1)
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_a6jf8"]
-_surfaces = [{
-"aabb": AABB(-0.33778974, -0.23169011, -0.33778974, 0.6755795, 0.46337998, 0.6755795),
-"format": 34896613377,
-"index_count": 372,
-"index_data": PackedByteArray("AAARAAIAAAAhABEAIgACABEAIQAiABEAIwAAAAIAIwAhAAAAIwACABIAAgAkABIAIgAkAAIAEAAjABIAEAASACQAJQAjABAAJQAQACQAJQAkAA8AEwAlAA8AJAAmAA8AEwAPACYAJwAlABMAJwATACYAJwAjACUAJAAoACYAIgAoACQAJwAmABQAJgAoABQABwAnABQABwAUACgAKQAnAAcAKQAHACgAKgAnACkAKgAjACcAKQAoABUAFgApABUAKgApABYAFgAVACsAKAArABUAKgAWACsAKAAsACsAKgArAAgAKwAsAAgADgAqAAgADgAIACwALQAqAA4ALQAOACwALQAsABcAGQAtABcAKAAuACwALAAvABcAGQAXAC8ALAAuAC8AMAAtABkAMAAqAC0AMAAZAC8AIgAuACgAMAAvAAMALwAuAAMABAAwAAMABAADAC4AMQAqADAAMgAwAAQAMQAwADIAMgAEAC4AMQAjACoAMgAuABgAGgAyABgAMQAyABoAGgAYADMALgAzABgAMQAaADMALgA0ADMAMQAzAA0AMwA0AA0ADAAxAA0ADAANADQANQAxAAwANQAMADQANQA0ACAAHwA1ACAALgA2ADQANAA3ACAAHwAgADcANAA2ADcAOAA1AB8AOAAxADUAOAAfADcANwA2AAYAOAA3AAYAAQA4AAYAAQAGADYAOQAxADgAOgA4AAEAOQA4ADoAOgABADYAIwAxADkAOQA6ABwAHAA6AB4AOgA2AB4AHAAeADsANgA7AB4AOQAcADsANgA8ADsAOQA7AAsAOwA8AAsABQA5AAsABQALADwAIwA5AD0APgA5AAUAPQA5AD4APgAFADwAIwA9ACEAPgA8AB0AGwA+AB0APQA+ABsAGwAdAD8APQAbAD8APAA/AB0AIQA9AAkAPQA/AAoACQA9AAoAIQAJACIACQAKACIAPwAiAAoAPAAiAD8ANgAiADwALgAiADYA"),
-"lods": [0.009184747, PackedByteArray("AAARAAIAAAACABIAAgAPABIAEQAPAAIAEAAAABIAEAASAA8AEwAQAA8AEwAAABAAEwAPABQABwATABQADwAVABQABwAUABUAEQAVAA8AFgATAAcAFgAHABUAFgAAABMAFgAVAAgADgAWAAgAFQAXAAgADgAIABcAFQAYABcAEQAYABUAGQAOABcAGQAWAA4AGQAXAAMAFwAYAAMABAAZAAMABAADABgAGgAZAAQAGgAWABkAGgAEABgAGgAAABYAAAAJABEACQAKABEAAAAbAAkACQAbAAoAAAAcABsAAAAaABwAGwAdAAoAHQARAAoAGwAFAB0AGwAcAAUABQALAB0ABQAcAAsAHgAdAAsAHgARAB0AHAAeAAsAGAARAB4AHAABAB4AAQAGAB4AHAAfAAEAAQAfAAYAHAAaAB8AIAAeAAYAGAAeACAAHwAgAAYAGgAYAA0AGAAgAA0AHwAaAAwAHwAMACAADAAaAA0ADAANACAA"), 0.045053877, PackedByteArray("AAAJAAIACQAKAAIACQAFAAoAAAAFAAkABQALAAoACwACAAoABQABAAsAAQAGAAsABQAMAAEAAQAMAAYAAAAMAAUADQALAAYADQACAAsADAANAAYADAAEAA0ABAADAA0ADAAOAAQABAAOAAMADAAAAA4ACAANAAMAAgANAAgADgAIAAMAAAACAA8AAgAIAA8ADgAHAAgADgAAAAcABwAPAAgAEAAAAA8ABwAAABAABwAQAA8A"), 0.1803075, PackedByteArray("AAAFAAIABQAGAAIABwAAAAIABQABAAYAAAABAAUAAQADAAYAAwACAAYAAQAAAAQAAQAEAAMABAAAAAcAAgADAAgABAAIAAMABwACAAgABAAHAAgA"), 0.6738883, PackedByteArray("AAABAAIAAQADAAIAAAACAAMAAQAEAAMABAAAAAMAAQAAAAQA")],
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 64,
-"vertex_data": PackedByteArray("/38AAAAAAABA9gAA+7AAAP9///8AAAAA4jj//2zqAAADTwAAQPYAAED2AAADTwAAbOr//xzHAAC+CQAAA08AAHUC///4mAAA+7AAAL4JAAAcx///khUAAIn9//8GZwAA+7AAAED2AAD4mP//if0AAL4JAAD7sAAA4jj//5IVAAADTwAAvgkAAPiY//91AgAABmf//3UCAAB9JQAAfSUAAJIV///iOAAAdQL//wZnAAAAAAAA/38AAJIV//8cxwAABmf//4n9AAB9JQAAgdoAAP9/AAD//wAAgdoAAH0lAAD//wAA/38AAGzq///iOAAAif3///iYAACB2gAAgdoAABzH//9s6gAA+JgAAHUCAAD7sP//vgkAAAZnAAB1AgAAA0///74JAADiOAAAkhUAAH0l//99JQAAkhUAAOI4AAC+Cf//A08AAHUCAAAGZwAAdQIAAPiYAAAAAP///38AAL4J///7sAAAkhUAABzHAAADT///QPYAAH0l//+B2gAA4jgAAGzqAAD4mAAAif0AAAZnAACJ/QAA/3//////AAD7sP//QPYAABzHAABs6gAAQPb///uwAACB2v//gdoAAGzqAAAcxwAAif0AAAZnAACJ/QAA+JgAAP//////fwAAQPb//wNPAAAcxwAAkhUAAGzqAADiOAAAgdr//30lAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_o5nsx"]
-resource_name = "Library_Cylinder_005"
-_surfaces = [{
-"aabb": AABB(-0.33778974, -0.23169011, -0.33778974, 0.6755795, 0.46337998, 0.6755795),
-"attribute_data": PackedByteArray("////f/+v/3///wAA/2cAAP9v/38AAP9/AAAAAML4gtf/v46CfKjC+P/P/3//pwAA/0cAAP8v/3//P46C3R0U870D+8sVcyHiPId8qML4fKj/7/9//+cAAP/HAAD/j/9//4cAAP9P/3//FwAA/w//f90d6Yz8S0H8QXwCtCFi6Yx8qDyHPIeC14LXwviC1zyH//cAAP/f/3//1wAA/7//f/+3AAD/n/9//5cAAP9//3//dwAA/1//f/9XAAD/P/9//zcAAP8nAAD/H/9//wcAAAM0vYP8S72DvQMCtOoM3Z3qDCHiAzRB/BVz3Z1BfPvLIWIU83DrjZRv/f+/cOtw6/+/b/2NlI2UjoL/v42UcOv/9/9//+8AAP/n/3//3wAA/9f/f//PAAD/x/9//78AAP+3/3//rwAA/6f/f/+fAAD/l/9//48AAP+H/3//fwAA/3f/f/9vAAD/Z/9//18AAP9X/3//TwAA/0f/f/8/AAD/N/9//y8AAP8n/3//HwAA/xf/f/8PAAD/B/9/glc8h3woPIeOFI2UPAd8qI8C/788B4LXfCjC+I4UcOv/P2/9glfC+MJ4gtdxa3DrcWuNlMJ4fKhwff+/ArS9g/vLvYMh4umMFPPdnUH8ArRB/PvLFPMh4vvLQfwh4hTzArRB/N2dFPO9g/vL6Ywh4t2d6YzpjN2dvYMCtA=="),
-"format": 34896613399,
-"index_count": 372,
-"index_data": PackedByteArray("AAAkAAIAAABEACQARABFACQARAAUAEUAFAAVAEUAFABGABUARgBHABUARgAlAEcAJQAmAEcAJQBIACYASABJACYASAAKAEkACgAWAEkACgBKABYASgBLABYASgAnAEsAJwAoAEsAJwBMACgATABNACgATAABAE0AAQALAE0AAQBOAAsATgBPAAsATgApAE8AKQAqAE8AKQBQACoAUABRACoAUAAXAFEAFwAYAFEAFwBSABgAUgBTABgAUgArAFMAKwAsAFMAKwBUACwAVABVACwAVAAEAFUABAADAFUABABWAAMAVgBXAAMAVgAtAFcALQAuAFcALQBYAC4AWABZAC4AWAAZAFkAGQAMAFkAGQBaAAwAWgBbAAwAWgAvAFsALwAwAFsALwBcADAAXABdADAAXAANAF0ADQAxAF0ADQBeADEAXgBfADEAXgAyAF8AMgAaAF8AMgBgABoAYABhABoAYAAbAGEAGwAzAGEAGwBiADMAYgAGADMAYgAFAAYAYwAOADUADgBkADQAYwBkAA4AZABlABwAZABmAGUAZQBmADcAYwBmAGQAZgBnADYAZgBoAGcAZwBoABAAZgBpAGgAYwBpAGYAaABqADgAaABpAGoAagBpAA8AaQBrADkAaQBsAGsAawBsAB0AaQBjAG0AaQBtAGwAbABuADwAbABtAG4AbgBtABEAbwBjAB8AcABjAG8AbQBjAHAAcABvADoAbQBwAHEAcQBwAB4AbQBxADsAcgBzAAgAcwB0ACMAcgB0AHMAdAB1AD0AdAB2AHUAdQB2ABMAcgB2AHQAdgB3AD4AdgB4AHcAdwB4AAcAdgB5AHgAcgB5AHYAeAB6AD8AeAB5AHoAegB5ACIAeQB7AEAAeQB8AHsAewB8AAkAeQByAH0AeQB9AHwAfAB+AEMAfAB9AH4AfgB9ACEAfwByACAAgAByAH8AfQByAIAAgAB/AEEAfQCAAIEAgQCAABIAfQCBAEIA"),
-"lods": [0.009184747, PackedByteArray("AAAkAAIAAAAUACQAFAAVACQAFAAlABUAJQAmABUAJQAKACYACgAWACYACgAnABYAJwAoABYAJwABACgAAQALACgAAQApAAsAKQAqAAsAKQAXACoAFwAYACoAFwArABgAKwAsABgAKwAEACwABAADACwABAAtAAMALQAuAAMALQAZAC4AGQAMAC4AGQAvAAwALwAwAAwALwANADAADQAxADAADQAyADEAMgAaADEAMgAbABoAGwAzABoAGwAFADMABQAGADMADgAcADQANQAcAA4AHAA2ADcANQA2ABwANgA4ABAANgA5ADgANQA5ADYAOAA5AA8AOgA1AB8AOwA1ADoAOQA1ADsAOwA6AB4AOQA7ADwAPAA7ABEAOQA8AB0ACAA9ACMAPQA+ABMACAA+AD0APgA/AAcAPgBAAD8ACABAAD4APwBAACIAQQAIACAAQgAIAEEAQAAIAEIAQgBBABIAQABCAEMAQwBCACEAQABDAAkA"), 0.045053877, PackedByteArray("AAAUAAIAFAAVAAIAFAAKABUACgAWABUACgABABYAAQALABYAAQAXAAsAFwAYAAsAFwAEABgABAADABgABAAZAAMAGQAMAAMAGQANAAwADQAaAAwADQAbABoAGwAFABoABQAGABoADgAQABwADgAdABAAEAAdAA8AHQAOAB4AHgAOAB8AHQAeABEAEgAIACAAIQAIABIAIgAIACEAIgAhAAkACAAiABMAEwAiAAcACAATACMA"), 0.1803075, PackedByteArray("AAAKAAIACgALAAIACgABAAsAAQADAAsAAQAEAAMABAAMAAMABAANAAwADQAGAAwADQAFAAYADgAPABAADwAOABEACQAIABIABwAIAAkACAAHABMA"), 0.6738883, PackedByteArray("AAABAAIAAQADAAIAAQAEAAMABAAFAAMABQAGAAMABwAIAAkA")],
-"material": SubResource("StandardMaterial3D_ktovg"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 130,
-"vertex_data": PackedByteArray("/38AAAAA//9A9gAA+7D/r/9///8AAP//4jj//2zq/5cDTwAAQPb/j/9/AAAAAP///3///wAA//9A9gAA+7D/P/9/AAAAAP8/A08AAED2/z9A9gAAA0//z2zq//8cx/+ndQL///iY/7e+CQAAA0//z/9///8AAP+/4jj//2zq/791Av//+Jj/v2zq//8cx/+/vgkAAANP/z9A9gAAA0//P/uwAAC+Cf7vHMf//5IV/+eJ/f//Bmf/x/uwAABA9v+P+Jj//4n9/4e+CQAA+7D/r+I4//+SFf/nA08AAL4J/u/iOP//khX/v/iY//+J/f+/if3//wZn/78cx///khX/vwNPAAC+Cf8/vgkAAPuw/z/7sAAAQPb/P/uwAAC+Cf8/+Jj//3UC/veB2gAAfSX/32zq///iOP/X//8AAP9//7+J/f//+Jj/t4HaAACB2v+fHMf//2zq/5f/fwAA//8AgAZn//+J/f+HfSUAAIHa/5+SFf//HMf/pwAAAAD/f/+/dQL//wZn/8eSFf//4jj/130lAAB9Jf/fBmf//3UC/vcGZ///dQL/v/iY//91Av+/dQL//wZn/7+SFf//4jj/v5IV//8cx/+/Bmf//4n9/79s6v//4jj/v4n9///4mP+/HMf//2zq/7+B2gAAfSX/P///AAD/f/8/gdoAAIHa/z//fwAA////P30lAAB9Jf8/AAAAAP9//z99JQAAgdr/P/iYAAB1Av73+7D//74J/u8cxwAAkhX/54Ha//99Jf/fbOoAAOI4/9dA9v//A0//z4n9AAAGZ//H//////9//7+J/QAA+Jj/t0D2///7sP+vbOoAABzH/6eB2v//gdr/nxzHAABs6v+X+7D//0D2/4/4mAAAif3/h/9//////wCABmcAAIn9/4cDT///QPb/j+I4AABs6v+XfSX//4Ha/5+SFQAAHMf/p74J///7sP+vdQIAAPiY/7cAAP///3//v3UCAAAGZ//Hvgn//wNP/8+SFQAA4jj/130l//99Jf/f4jgAAJIV/+cDT///vgn+7wZnAAB1Av73+7D//74J/78DT///vgn/v30l//99Jf+/vgn//wNP/78AAP///3//v74J///7sP+/A0///0D2/799Jf//gdr/v/9///////+/+7D//0D2/79A9v//+7D/v4Ha//+B2v+/gdr//30l/79A9v//A0//v///////f/+/BmcAAHUC/z/4mAAAdQL/PxzHAACSFf8/bOoAAOI4/z+J/QAABmf/P4n9AAD4mP8/bOoAABzH/z/4mAAAif3/PxzHAABs6v8/BmcAAIn9/z/iOAAAbOr/P3UCAAD4mP8/khUAABzH/z/iOAAAkhX/P5IVAADiOP8/dQIAAAZn/z//f////38AAP9/////f////3////9/////f///AAD/fwAA/38AAP9//38AAP9/AAD/f////3///////3/+//9//v//f/7//38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////v//f/7//3/+//9//v//fwAA/38AAP9/AAD/fwAA/3//fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9///////9/////f/7//3/+//9/////f/7//3////9//v//f////3////9//v//f/7//3/+//9//v//f////38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_a6jf8")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_4p501"]
-height = 0.7395935
-radius = 0.3466797
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26ilb"]
 resource_name = "Material.008"
@@ -134,6 +90,54 @@ shadow_mesh = SubResource("ArrayMesh_qvr35")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cb0gn"]
 size = Vector3(33.727844, 1, 4.02124)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktovg"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.48854268, 0.48854268, 0.48854268, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a6jf8"]
+_surfaces = [{
+"aabb": AABB(-0.33778974, -0.23169011, -0.33778974, 0.6755795, 0.46337998, 0.6755795),
+"format": 34896613377,
+"index_count": 372,
+"index_data": PackedByteArray("AAARAAIAAAAhABEAIgACABEAIQAiABEAIwAAAAIAIwAhAAAAIwACABIAAgAkABIAIgAkAAIAEAAjABIAEAASACQAJQAjABAAJQAQACQAJQAkAA8AEwAlAA8AJAAmAA8AEwAPACYAJwAlABMAJwATACYAJwAjACUAJAAoACYAIgAoACQAJwAmABQAJgAoABQABwAnABQABwAUACgAKQAnAAcAKQAHACgAKgAnACkAKgAjACcAKQAoABUAFgApABUAKgApABYAFgAVACsAKAArABUAKgAWACsAKAAsACsAKgArAAgAKwAsAAgADgAqAAgADgAIACwALQAqAA4ALQAOACwALQAsABcAGQAtABcAKAAuACwALAAvABcAGQAXAC8ALAAuAC8AMAAtABkAMAAqAC0AMAAZAC8AIgAuACgAMAAvAAMALwAuAAMABAAwAAMABAADAC4AMQAqADAAMgAwAAQAMQAwADIAMgAEAC4AMQAjACoAMgAuABgAGgAyABgAMQAyABoAGgAYADMALgAzABgAMQAaADMALgA0ADMAMQAzAA0AMwA0AA0ADAAxAA0ADAANADQANQAxAAwANQAMADQANQA0ACAAHwA1ACAALgA2ADQANAA3ACAAHwAgADcANAA2ADcAOAA1AB8AOAAxADUAOAAfADcANwA2AAYAOAA3AAYAAQA4AAYAAQAGADYAOQAxADgAOgA4AAEAOQA4ADoAOgABADYAIwAxADkAOQA6ABwAHAA6AB4AOgA2AB4AHAAeADsANgA7AB4AOQAcADsANgA8ADsAOQA7AAsAOwA8AAsABQA5AAsABQALADwAIwA5AD0APgA5AAUAPQA5AD4APgAFADwAIwA9ACEAPgA8AB0AGwA+AB0APQA+ABsAGwAdAD8APQAbAD8APAA/AB0AIQA9AAkAPQA/AAoACQA9AAoAIQAJACIACQAKACIAPwAiAAoAPAAiAD8ANgAiADwALgAiADYA"),
+"lods": [0.009184747, PackedByteArray("AAARAAIAAAACABIAAgAPABIAEQAPAAIAEAAAABIAEAASAA8AEwAQAA8AEwAAABAAEwAPABQABwATABQADwAVABQABwAUABUAEQAVAA8AFgATAAcAFgAHABUAFgAAABMAFgAVAAgADgAWAAgAFQAXAAgADgAIABcAFQAYABcAEQAYABUAGQAOABcAGQAWAA4AGQAXAAMAFwAYAAMABAAZAAMABAADABgAGgAZAAQAGgAWABkAGgAEABgAGgAAABYAAAAJABEACQAKABEAAAAbAAkACQAbAAoAAAAcABsAAAAaABwAGwAdAAoAHQARAAoAGwAFAB0AGwAcAAUABQALAB0ABQAcAAsAHgAdAAsAHgARAB0AHAAeAAsAGAARAB4AHAABAB4AAQAGAB4AHAAfAAEAAQAfAAYAHAAaAB8AIAAeAAYAGAAeACAAHwAgAAYAGgAYAA0AGAAgAA0AHwAaAAwAHwAMACAADAAaAA0ADAANACAA"), 0.045053877, PackedByteArray("AAAJAAIACQAKAAIACQAFAAoAAAAFAAkABQALAAoACwACAAoABQABAAsAAQAGAAsABQAMAAEAAQAMAAYAAAAMAAUADQALAAYADQACAAsADAANAAYADAAEAA0ABAADAA0ADAAOAAQABAAOAAMADAAAAA4ACAANAAMAAgANAAgADgAIAAMAAAACAA8AAgAIAA8ADgAHAAgADgAAAAcABwAPAAgAEAAAAA8ABwAAABAABwAQAA8A"), 0.1803075, PackedByteArray("AAAFAAIABQAGAAIABwAAAAIABQABAAYAAAABAAUAAQADAAYAAwACAAYAAQAAAAQAAQAEAAMABAAAAAcAAgADAAgABAAIAAMABwACAAgABAAHAAgA"), 0.6738883, PackedByteArray("AAABAAIAAQADAAIAAAACAAMAAQAEAAMABAAAAAMAAQAAAAQA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("/38AAAAAAABA9gAA+7AAAP9///8AAAAA4jj//2zqAAADTwAAQPYAAED2AAADTwAAbOr//xzHAAC+CQAAA08AAHUC///4mAAA+7AAAL4JAAAcx///khUAAIn9//8GZwAA+7AAAED2AAD4mP//if0AAL4JAAD7sAAA4jj//5IVAAADTwAAvgkAAPiY//91AgAABmf//3UCAAB9JQAAfSUAAJIV///iOAAAdQL//wZnAAAAAAAA/38AAJIV//8cxwAABmf//4n9AAB9JQAAgdoAAP9/AAD//wAAgdoAAH0lAAD//wAA/38AAGzq///iOAAAif3///iYAACB2gAAgdoAABzH//9s6gAA+JgAAHUCAAD7sP//vgkAAAZnAAB1AgAAA0///74JAADiOAAAkhUAAH0l//99JQAAkhUAAOI4AAC+Cf//A08AAHUCAAAGZwAAdQIAAPiYAAAAAP///38AAL4J///7sAAAkhUAABzHAAADT///QPYAAH0l//+B2gAA4jgAAGzqAAD4mAAAif0AAAZnAACJ/QAA/3//////AAD7sP//QPYAABzHAABs6gAAQPb///uwAACB2v//gdoAAGzqAAAcxwAAif0AAAZnAACJ/QAA+JgAAP//////fwAAQPb//wNPAAAcxwAAkhUAAGzqAADiOAAAgdr//30lAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o5nsx"]
+resource_name = "Library_Cylinder_005"
+_surfaces = [{
+"aabb": AABB(-0.33778974, -0.23169011, -0.33778974, 0.6755795, 0.46337998, 0.6755795),
+"attribute_data": PackedByteArray("////f/+v/3///wAA/2cAAP9v/38AAP9/AAAAAML4gtf/v46CfKjC+P/P/3//pwAA/0cAAP8v/3//P46C3R0U870D+8sVcyHiPId8qML4fKj/7/9//+cAAP/HAAD/j/9//4cAAP9P/3//FwAA/w//f90d6Yz8S0H8QXwCtCFi6Yx8qDyHPIeC14LXwviC1zyH//cAAP/f/3//1wAA/7//f/+3AAD/n/9//5cAAP9//3//dwAA/1//f/9XAAD/P/9//zcAAP8nAAD/H/9//wcAAAM0vYP8S72DvQMCtOoM3Z3qDCHiAzRB/BVz3Z1BfPvLIWIU83DrjZRv/f+/cOtw6/+/b/2NlI2UjoL/v42UcOv/9/9//+8AAP/n/3//3wAA/9f/f//PAAD/x/9//78AAP+3/3//rwAA/6f/f/+fAAD/l/9//48AAP+H/3//fwAA/3f/f/9vAAD/Z/9//18AAP9X/3//TwAA/0f/f/8/AAD/N/9//y8AAP8n/3//HwAA/xf/f/8PAAD/B/9/glc8h3woPIeOFI2UPAd8qI8C/788B4LXfCjC+I4UcOv/P2/9glfC+MJ4gtdxa3DrcWuNlMJ4fKhwff+/ArS9g/vLvYMh4umMFPPdnUH8ArRB/PvLFPMh4vvLQfwh4hTzArRB/N2dFPO9g/vL6Ywh4t2d6YzpjN2dvYMCtA=="),
+"format": 34896613399,
+"index_count": 372,
+"index_data": PackedByteArray("AAAkAAIAAABEACQARABFACQARAAUAEUAFAAVAEUAFABGABUARgBHABUARgAlAEcAJQAmAEcAJQBIACYASABJACYASAAKAEkACgAWAEkACgBKABYASgBLABYASgAnAEsAJwAoAEsAJwBMACgATABNACgATAABAE0AAQALAE0AAQBOAAsATgBPAAsATgApAE8AKQAqAE8AKQBQACoAUABRACoAUAAXAFEAFwAYAFEAFwBSABgAUgBTABgAUgArAFMAKwAsAFMAKwBUACwAVABVACwAVAAEAFUABAADAFUABABWAAMAVgBXAAMAVgAtAFcALQAuAFcALQBYAC4AWABZAC4AWAAZAFkAGQAMAFkAGQBaAAwAWgBbAAwAWgAvAFsALwAwAFsALwBcADAAXABdADAAXAANAF0ADQAxAF0ADQBeADEAXgBfADEAXgAyAF8AMgAaAF8AMgBgABoAYABhABoAYAAbAGEAGwAzAGEAGwBiADMAYgAGADMAYgAFAAYAYwAOADUADgBkADQAYwBkAA4AZABlABwAZABmAGUAZQBmADcAYwBmAGQAZgBnADYAZgBoAGcAZwBoABAAZgBpAGgAYwBpAGYAaABqADgAaABpAGoAagBpAA8AaQBrADkAaQBsAGsAawBsAB0AaQBjAG0AaQBtAGwAbABuADwAbABtAG4AbgBtABEAbwBjAB8AcABjAG8AbQBjAHAAcABvADoAbQBwAHEAcQBwAB4AbQBxADsAcgBzAAgAcwB0ACMAcgB0AHMAdAB1AD0AdAB2AHUAdQB2ABMAcgB2AHQAdgB3AD4AdgB4AHcAdwB4AAcAdgB5AHgAcgB5AHYAeAB6AD8AeAB5AHoAegB5ACIAeQB7AEAAeQB8AHsAewB8AAkAeQByAH0AeQB9AHwAfAB+AEMAfAB9AH4AfgB9ACEAfwByACAAgAByAH8AfQByAIAAgAB/AEEAfQCAAIEAgQCAABIAfQCBAEIA"),
+"lods": [0.009184747, PackedByteArray("AAAkAAIAAAAUACQAFAAVACQAFAAlABUAJQAmABUAJQAKACYACgAWACYACgAnABYAJwAoABYAJwABACgAAQALACgAAQApAAsAKQAqAAsAKQAXACoAFwAYACoAFwArABgAKwAsABgAKwAEACwABAADACwABAAtAAMALQAuAAMALQAZAC4AGQAMAC4AGQAvAAwALwAwAAwALwANADAADQAxADAADQAyADEAMgAaADEAMgAbABoAGwAzABoAGwAFADMABQAGADMADgAcADQANQAcAA4AHAA2ADcANQA2ABwANgA4ABAANgA5ADgANQA5ADYAOAA5AA8AOgA1AB8AOwA1ADoAOQA1ADsAOwA6AB4AOQA7ADwAPAA7ABEAOQA8AB0ACAA9ACMAPQA+ABMACAA+AD0APgA/AAcAPgBAAD8ACABAAD4APwBAACIAQQAIACAAQgAIAEEAQAAIAEIAQgBBABIAQABCAEMAQwBCACEAQABDAAkA"), 0.045053877, PackedByteArray("AAAUAAIAFAAVAAIAFAAKABUACgAWABUACgABABYAAQALABYAAQAXAAsAFwAYAAsAFwAEABgABAADABgABAAZAAMAGQAMAAMAGQANAAwADQAaAAwADQAbABoAGwAFABoABQAGABoADgAQABwADgAdABAAEAAdAA8AHQAOAB4AHgAOAB8AHQAeABEAEgAIACAAIQAIABIAIgAIACEAIgAhAAkACAAiABMAEwAiAAcACAATACMA"), 0.1803075, PackedByteArray("AAAKAAIACgALAAIACgABAAsAAQADAAsAAQAEAAMABAAMAAMABAANAAwADQAGAAwADQAFAAYADgAPABAADwAOABEACQAIABIABwAIAAkACAAHABMA"), 0.6738883, PackedByteArray("AAABAAIAAQADAAIAAQAEAAMABAAFAAMABQAGAAMABwAIAAkA")],
+"material": SubResource("StandardMaterial3D_ktovg"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 130,
+"vertex_data": PackedByteArray("/38AAAAA//9A9gAA+7D/r/9///8AAP//4jj//2zq/5cDTwAAQPb/j/9/AAAAAP///3///wAA//9A9gAA+7D/P/9/AAAAAP8/A08AAED2/z9A9gAAA0//z2zq//8cx/+ndQL///iY/7e+CQAAA0//z/9///8AAP+/4jj//2zq/791Av//+Jj/v2zq//8cx/+/vgkAAANP/z9A9gAAA0//P/uwAAC+Cf7vHMf//5IV/+eJ/f//Bmf/x/uwAABA9v+P+Jj//4n9/4e+CQAA+7D/r+I4//+SFf/nA08AAL4J/u/iOP//khX/v/iY//+J/f+/if3//wZn/78cx///khX/vwNPAAC+Cf8/vgkAAPuw/z/7sAAAQPb/P/uwAAC+Cf8/+Jj//3UC/veB2gAAfSX/32zq///iOP/X//8AAP9//7+J/f//+Jj/t4HaAACB2v+fHMf//2zq/5f/fwAA//8AgAZn//+J/f+HfSUAAIHa/5+SFf//HMf/pwAAAAD/f/+/dQL//wZn/8eSFf//4jj/130lAAB9Jf/fBmf//3UC/vcGZ///dQL/v/iY//91Av+/dQL//wZn/7+SFf//4jj/v5IV//8cx/+/Bmf//4n9/79s6v//4jj/v4n9///4mP+/HMf//2zq/7+B2gAAfSX/P///AAD/f/8/gdoAAIHa/z//fwAA////P30lAAB9Jf8/AAAAAP9//z99JQAAgdr/P/iYAAB1Av73+7D//74J/u8cxwAAkhX/54Ha//99Jf/fbOoAAOI4/9dA9v//A0//z4n9AAAGZ//H//////9//7+J/QAA+Jj/t0D2///7sP+vbOoAABzH/6eB2v//gdr/nxzHAABs6v+X+7D//0D2/4/4mAAAif3/h/9//////wCABmcAAIn9/4cDT///QPb/j+I4AABs6v+XfSX//4Ha/5+SFQAAHMf/p74J///7sP+vdQIAAPiY/7cAAP///3//v3UCAAAGZ//Hvgn//wNP/8+SFQAA4jj/130l//99Jf/f4jgAAJIV/+cDT///vgn+7wZnAAB1Av73+7D//74J/78DT///vgn/v30l//99Jf+/vgn//wNP/78AAP///3//v74J///7sP+/A0///0D2/799Jf//gdr/v/9///////+/+7D//0D2/79A9v//+7D/v4Ha//+B2v+/gdr//30l/79A9v//A0//v///////f/+/BmcAAHUC/z/4mAAAdQL/PxzHAACSFf8/bOoAAOI4/z+J/QAABmf/P4n9AAD4mP8/bOoAABzH/z/4mAAAif3/PxzHAABs6v8/BmcAAIn9/z/iOAAAbOr/P3UCAAD4mP8/khUAABzH/z/iOAAAkhX/P5IVAADiOP8/dQIAAAZn/z//f////38AAP9/////f////3////9/////f///AAD/fwAA/38AAP9//38AAP9/AAD/f////3///////3/+//9//v//f/7//38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////v//f/7//3/+//9//v//fwAA/38AAP9/AAD/fwAA/3//fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9///////9/////f/7//3/+//9/////f/7//3////9//v//f////3////9//v//f/7//3/+//9//v//f////38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_a6jf8")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4p501"]
+height = 0.7395935
+radius = 0.3466797
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4p501"]
+radius = 2.1000977
+height = 12.675781
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lvrpe"]
 radius = 1.7294922
@@ -248,7 +252,7 @@ graph_offset = Vector2(68, 52)
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.33720744, 5.9604645e-08, 0.22491561)
 script = ExtResource("2_4yli5")
 
-[node name="rock" type="Node3D" parent="Library/metarig" parent_id_path=PackedInt32Array(1759585649, 1961900332) index="1" unique_id=907230491]
+[node name="rock" type="Node3D" parent="Library/metarig" parent_id_path=PackedInt32Array(1759585649, 1884175072) index="1" unique_id=907230491]
 
 [node name="Area3D" type="Area3D" parent="Library/metarig/rock" unique_id=1771793825 node_paths=PackedStringArray("library")]
 collision_mask = 2
@@ -260,7 +264,7 @@ transform = Transform3D(-0.70710677, 0.70710677, -8.742274e-08, 0.70710677, 0.70
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="paper" type="Node3D" parent="Library/metarig_001" parent_id_path=PackedInt32Array(1759585649, 415890364) index="1" unique_id=1951237080]
+[node name="paper" type="Node3D" parent="Library/metarig_001" parent_id_path=PackedInt32Array(1759585649, 140568459) index="1" unique_id=1951237080]
 
 [node name="Area3D" type="Area3D" parent="Library/metarig_001/paper" unique_id=1719976741 node_paths=PackedStringArray("library")]
 collision_mask = 2
@@ -272,7 +276,7 @@ transform = Transform3D(-0.70710665, 0.70710653, -8.7422734e-08, 0.70710665, 0.7
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="scissors" type="Node3D" parent="Library/metarig_002" parent_id_path=PackedInt32Array(1759585649, 309877833) index="1" unique_id=521683534]
+[node name="scissors" type="Node3D" parent="Library/metarig_002" parent_id_path=PackedInt32Array(1759585649, 962339712) index="1" unique_id=521683534]
 
 [node name="Area3D" type="Area3D" parent="Library/metarig_002/scissors" unique_id=689171585 node_paths=PackedStringArray("library")]
 collision_mask = 2
@@ -284,415 +288,405 @@ transform = Transform3D(-0.70710677, 0.7071068, -8.742275e-08, 0.70710677, 0.707
 shape = SubResource("CapsuleShape3D_1yml1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="Point" parent="Library" index="13" unique_id=1231283212]
+[node name="Point" parent="Library" index="13" unique_id=1564315693]
 light_energy = 1.0
 omni_range = 4095.055
 
-[node name="Cylinder_006" type="MeshInstance3D" parent="Library" unique_id=944922954]
-transform = Transform3D(0.2, 0, 0, 0, 0.3, 0, 0, 0, 0.2, 0.24148026, -0.93991643, -0.08958575)
-mesh = SubResource("ArrayMesh_o5nsx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Library/Cylinder_006" unique_id=456590047]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/Cylinder_006/StaticBody3D" unique_id=614961165]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.13563585, 0)
-shape = SubResource("CylinderShape3D_4p501")
-
-[node name="Books" parent="Library" index="22" unique_id=945875257]
+[node name="Books" parent="Library" index="21" unique_id=273234814]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_001" parent="Library" index="23" unique_id=1722667202]
+[node name="Books_001" parent="Library" index="22" unique_id=1574220288]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_002" parent="Library" index="24" unique_id=835557464]
+[node name="Books_002" parent="Library" index="23" unique_id=2005576696]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_003" parent="Library" index="25" unique_id=984941268]
+[node name="Books_003" parent="Library" index="24" unique_id=512137140]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_004" parent="Library" index="26" unique_id=1841762427]
+[node name="Books_004" parent="Library" index="25" unique_id=1507369745]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_005" parent="Library" index="27" unique_id=594481611]
+[node name="Books_005" parent="Library" index="26" unique_id=1322684913]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_006" parent="Library" index="28" unique_id=1412503116]
+[node name="Books_006" parent="Library" index="27" unique_id=356562782]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_007" parent="Library" index="29" unique_id=1116674764]
+[node name="Books_007" parent="Library" index="28" unique_id=1231881869]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_008" parent="Library" index="30" unique_id=1076624587]
+[node name="Books_008" parent="Library" index="29" unique_id=2147320675]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_009" parent="Library" index="31" unique_id=1942285025]
+[node name="Books_009" parent="Library" index="30" unique_id=1207797657]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_010" parent="Library" index="32" unique_id=1017868031]
+[node name="Books_010" parent="Library" index="31" unique_id=545584513]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_011" parent="Library" index="33" unique_id=1769652893]
+[node name="Books_011" parent="Library" index="32" unique_id=2145621005]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_012" parent="Library" index="34" unique_id=1397778439]
+[node name="Books_012" parent="Library" index="33" unique_id=1825581341]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_013" parent="Library" index="35" unique_id=1704903279]
+[node name="Books_013" parent="Library" index="34" unique_id=1918821940]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_014" parent="Library" index="36" unique_id=934706641]
+[node name="Books_014" parent="Library" index="35" unique_id=541954013]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_015" parent="Library" index="37" unique_id=2100372704]
+[node name="Books_015" parent="Library" index="36" unique_id=2086246863]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_016" parent="Library" index="38" unique_id=531711973]
+[node name="Books_016" parent="Library" index="37" unique_id=1640541509]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_017" parent="Library" index="39" unique_id=211394809]
+[node name="Books_017" parent="Library" index="38" unique_id=199824907]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_018" parent="Library" index="40" unique_id=1466306577]
+[node name="Books_018" parent="Library" index="39" unique_id=844658334]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_019" parent="Library" index="41" unique_id=830389368]
+[node name="Books_019" parent="Library" index="40" unique_id=1494976506]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_020" parent="Library" index="42" unique_id=904074323]
+[node name="Books_020" parent="Library" index="41" unique_id=1019767643]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_021" parent="Library" index="43" unique_id=501516558]
+[node name="Books_021" parent="Library" index="42" unique_id=1106921636]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_022" parent="Library" index="44" unique_id=2116334102]
+[node name="Books_022" parent="Library" index="43" unique_id=1598376779]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_023" parent="Library" index="45" unique_id=608143281]
+[node name="Books_023" parent="Library" index="44" unique_id=716361611]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_024" parent="Library" index="46" unique_id=1266070054]
+[node name="Books_024" parent="Library" index="45" unique_id=1031116679]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_025" parent="Library" index="47" unique_id=727532437]
+[node name="Books_025" parent="Library" index="46" unique_id=1342214566]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_026" parent="Library" index="48" unique_id=316122353]
+[node name="Books_026" parent="Library" index="47" unique_id=307672097]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_027" parent="Library" index="49" unique_id=1233313631]
+[node name="Books_027" parent="Library" index="48" unique_id=1568513544]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_028" parent="Library" index="50" unique_id=242310897]
+[node name="Books_028" parent="Library" index="49" unique_id=1240255844]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_029" parent="Library" index="51" unique_id=1774065961]
+[node name="Books_029" parent="Library" index="50" unique_id=1966448082]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_030" parent="Library" index="52" unique_id=671713675]
+[node name="Books_030" parent="Library" index="51" unique_id=149979800]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_031" parent="Library" index="53" unique_id=656407509]
+[node name="Books_031" parent="Library" index="52" unique_id=1135090116]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_032" parent="Library" index="54" unique_id=817792242]
+[node name="Books_032" parent="Library" index="53" unique_id=564498097]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_033" parent="Library" index="55" unique_id=858369896]
+[node name="Books_033" parent="Library" index="54" unique_id=1567523548]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_034" parent="Library" index="56" unique_id=946482231]
+[node name="Books_034" parent="Library" index="55" unique_id=2006617535]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_035" parent="Library" index="57" unique_id=817278437]
+[node name="Books_035" parent="Library" index="56" unique_id=1113558678]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_036" parent="Library" index="58" unique_id=859670694]
+[node name="Books_036" parent="Library" index="57" unique_id=279493110]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_037" parent="Library" index="59" unique_id=1753366001]
+[node name="Books_037" parent="Library" index="58" unique_id=1958384756]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_038" parent="Library" index="60" unique_id=245774032]
+[node name="Books_038" parent="Library" index="59" unique_id=1748684683]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_039" parent="Library" index="61" unique_id=638966565]
+[node name="Books_039" parent="Library" index="60" unique_id=238196563]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_040" parent="Library" index="62" unique_id=145438197]
+[node name="Books_040" parent="Library" index="61" unique_id=1762607315]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_041" parent="Library" index="63" unique_id=527326258]
+[node name="Books_041" parent="Library" index="62" unique_id=721722527]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_042" parent="Library" index="64" unique_id=2125817382]
+[node name="Books_042" parent="Library" index="63" unique_id=1141642799]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_043" parent="Library" index="65" unique_id=1598692695]
+[node name="Books_043" parent="Library" index="64" unique_id=1821518912]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_044" parent="Library" index="66" unique_id=460165058]
+[node name="Books_044" parent="Library" index="65" unique_id=819879082]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_045" parent="Library" index="67" unique_id=1368077321]
+[node name="Books_045" parent="Library" index="66" unique_id=709263061]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_046" parent="Library" index="68" unique_id=426685085]
+[node name="Books_046" parent="Library" index="67" unique_id=1967900646]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_047" parent="Library" index="69" unique_id=310607846]
+[node name="Books_047" parent="Library" index="68" unique_id=732340198]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_048" parent="Library" index="70" unique_id=1299961548]
+[node name="Books_048" parent="Library" index="69" unique_id=2145719026]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_049" parent="Library" index="71" unique_id=1029713954]
+[node name="Books_049" parent="Library" index="70" unique_id=1706357330]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_050" parent="Library" index="72" unique_id=230760050]
+[node name="Books_050" parent="Library" index="71" unique_id=1553484023]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_051" parent="Library" index="73" unique_id=2047803173]
+[node name="Books_051" parent="Library" index="72" unique_id=476374292]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_052" parent="Library" index="74" unique_id=1801348636]
+[node name="Books_052" parent="Library" index="73" unique_id=147488874]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_053" parent="Library" index="75" unique_id=558681623]
+[node name="Books_053" parent="Library" index="74" unique_id=1654427686]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_054" parent="Library" index="76" unique_id=1615352763]
+[node name="Books_054" parent="Library" index="75" unique_id=1816160645]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_055" parent="Library" index="77" unique_id=589581058]
+[node name="Books_055" parent="Library" index="76" unique_id=1613255562]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_056" parent="Library" index="78" unique_id=274327437]
+[node name="Books_056" parent="Library" index="77" unique_id=792185013]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_057" parent="Library" index="79" unique_id=2075590064]
+[node name="Books_057" parent="Library" index="78" unique_id=700513162]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_058" parent="Library" index="80" unique_id=909038977]
+[node name="Books_058" parent="Library" index="79" unique_id=1581768393]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_059" parent="Library" index="81" unique_id=1787943277]
+[node name="Books_059" parent="Library" index="80" unique_id=1316310712]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_060" parent="Library" index="82" unique_id=561074447]
+[node name="Books_060" parent="Library" index="81" unique_id=944829983]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_061" parent="Library" index="83" unique_id=1685920554]
+[node name="Books_061" parent="Library" index="82" unique_id=1726086056]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_062" parent="Library" index="84" unique_id=1983720679]
+[node name="Books_062" parent="Library" index="83" unique_id=74550770]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_063" parent="Library" index="85" unique_id=977540066]
+[node name="Books_063" parent="Library" index="84" unique_id=1338282371]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_064" parent="Library" index="86" unique_id=1207746902]
+[node name="Books_064" parent="Library" index="85" unique_id=666937824]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_065" parent="Library" index="87" unique_id=428844690]
+[node name="Books_065" parent="Library" index="86" unique_id=506234000]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_066" parent="Library" index="88" unique_id=1515479390]
+[node name="Books_066" parent="Library" index="87" unique_id=102088547]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_067" parent="Library" index="89" unique_id=2018173607]
+[node name="Books_067" parent="Library" index="88" unique_id=141855375]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_068" parent="Library" index="90" unique_id=377464392]
+[node name="Books_068" parent="Library" index="89" unique_id=464588184]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_069" parent="Library" index="91" unique_id=2000352645]
+[node name="Books_069" parent="Library" index="90" unique_id=1350522391]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_070" parent="Library" index="92" unique_id=28999955]
+[node name="Books_070" parent="Library" index="91" unique_id=1583687363]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_071" parent="Library" index="93" unique_id=1431407214]
+[node name="Books_071" parent="Library" index="92" unique_id=1343680106]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_072" parent="Library" index="94" unique_id=1918329002]
+[node name="Books_072" parent="Library" index="93" unique_id=559399029]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_073" parent="Library" index="95" unique_id=1383484145]
+[node name="Books_073" parent="Library" index="94" unique_id=2089641501]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_074" parent="Library" index="96" unique_id=718056520]
+[node name="Books_074" parent="Library" index="95" unique_id=1851154025]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_075" parent="Library" index="97" unique_id=977869031]
+[node name="Books_075" parent="Library" index="96" unique_id=928824383]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_076" parent="Library" index="98" unique_id=64699716]
+[node name="Books_076" parent="Library" index="97" unique_id=1418540995]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_077" parent="Library" index="99" unique_id=687866111]
+[node name="Books_077" parent="Library" index="98" unique_id=1281440354]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_078" parent="Library" index="100" unique_id=358099441]
+[node name="Books_078" parent="Library" index="99" unique_id=1858821405]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_079" parent="Library" index="101" unique_id=1692746525]
+[node name="Books_079" parent="Library" index="100" unique_id=243038374]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_080" parent="Library" index="102" unique_id=1127094498]
+[node name="Books_080" parent="Library" index="101" unique_id=723488353]
 mesh = SubResource("ArrayMesh_ys0kg")
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_081" parent="Library" index="103" unique_id=592236342]
+[node name="Books_081" parent="Library" index="102" unique_id=1104733074]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_082" parent="Library" index="104" unique_id=667234278]
+[node name="Books_082" parent="Library" index="103" unique_id=706728855]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_083" parent="Library" index="105" unique_id=1419258559]
+[node name="Books_083" parent="Library" index="104" unique_id=1322226091]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_084" parent="Library" index="106" unique_id=531378795]
+[node name="Books_084" parent="Library" index="105" unique_id=1473205038]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_085" parent="Library" index="107" unique_id=1321222568]
+[node name="Books_085" parent="Library" index="106" unique_id=130396308]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_086" parent="Library" index="108" unique_id=1215432842]
+[node name="Books_086" parent="Library" index="107" unique_id=1715873293]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_087" parent="Library" index="109" unique_id=46739828]
+[node name="Books_087" parent="Library" index="108" unique_id=1685660880]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_088" parent="Library" index="110" unique_id=1821309735]
+[node name="Books_088" parent="Library" index="109" unique_id=107886539]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_089" parent="Library" index="111" unique_id=89231898]
+[node name="Books_089" parent="Library" index="110" unique_id=66547320]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_090" parent="Library" index="112" unique_id=428544935]
+[node name="Books_090" parent="Library" index="111" unique_id=1873669362]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_091" parent="Library" index="113" unique_id=647741208]
+[node name="Books_091" parent="Library" index="112" unique_id=1402432181]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_092" parent="Library" index="114" unique_id=881644535]
+[node name="Books_092" parent="Library" index="113" unique_id=1121379205]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_093" parent="Library" index="115" unique_id=1518529457]
+[node name="Books_093" parent="Library" index="114" unique_id=590160017]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_094" parent="Library" index="116" unique_id=1335892618]
+[node name="Books_094" parent="Library" index="115" unique_id=336037556]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_095" parent="Library" index="117" unique_id=244358901]
+[node name="Books_095" parent="Library" index="116" unique_id=950783927]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_096" parent="Library" index="118" unique_id=319878649]
+[node name="Books_096" parent="Library" index="117" unique_id=1764461239]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_097" parent="Library" index="119" unique_id=1204978900]
+[node name="Books_097" parent="Library" index="118" unique_id=439377355]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_098" parent="Library" index="120" unique_id=1145856869]
+[node name="Books_098" parent="Library" index="119" unique_id=843051058]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_099" parent="Library" index="121" unique_id=1628359388]
+[node name="Books_099" parent="Library" index="120" unique_id=845706332]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_100" parent="Library" index="122" unique_id=309867287]
+[node name="Books_100" parent="Library" index="121" unique_id=590256926]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_101" parent="Library" index="123" unique_id=577779528]
+[node name="Books_101" parent="Library" index="122" unique_id=1119441556]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_102" parent="Library" index="124" unique_id=1903905648]
+[node name="Books_102" parent="Library" index="123" unique_id=1904498264]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_103" parent="Library" index="125" unique_id=16991431]
+[node name="Books_103" parent="Library" index="124" unique_id=2082383744]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_104" parent="Library" index="126" unique_id=613153455]
+[node name="Books_104" parent="Library" index="125" unique_id=882286430]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_105" parent="Library" index="127" unique_id=1643169090]
+[node name="Books_105" parent="Library" index="126" unique_id=1602843541]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_106" parent="Library" index="128" unique_id=556510420]
+[node name="Books_106" parent="Library" index="127" unique_id=225462867]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_107" parent="Library" index="129" unique_id=360836680]
+[node name="Books_107" parent="Library" index="128" unique_id=200053737]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_108" parent="Library" index="130" unique_id=654375562]
+[node name="Books_108" parent="Library" index="129" unique_id=2081656327]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_109" parent="Library" index="131" unique_id=2019955559]
+[node name="Books_109" parent="Library" index="130" unique_id=407639735]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_110" parent="Library" index="132" unique_id=2135410306]
+[node name="Books_110" parent="Library" index="131" unique_id=661527072]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_111" parent="Library" index="133" unique_id=430938550]
+[node name="Books_111" parent="Library" index="132" unique_id=2063639674]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_112" parent="Library" index="134" unique_id=1071384699]
+[node name="Books_112" parent="Library" index="133" unique_id=147445817]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_113" parent="Library" index="135" unique_id=1264553627]
+[node name="Books_113" parent="Library" index="134" unique_id=1076334602]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_114" parent="Library" index="136" unique_id=1554974959]
+[node name="Books_114" parent="Library" index="135" unique_id=326230497]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_115" parent="Library" index="137" unique_id=381690527]
+[node name="Books_115" parent="Library" index="136" unique_id=240979298]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_116" parent="Library" index="138" unique_id=459766450]
+[node name="Books_116" parent="Library" index="137" unique_id=1289479133]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_117" parent="Library" index="139" unique_id=489440371]
+[node name="Books_117" parent="Library" index="138" unique_id=1762168257]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_118" parent="Library" index="140" unique_id=2132533647]
+[node name="Books_118" parent="Library" index="139" unique_id=2028574592]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_119" parent="Library" index="141" unique_id=1829755454]
+[node name="Books_119" parent="Library" index="140" unique_id=1485395683]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_120" parent="Library" index="142" unique_id=509900771]
+[node name="Books_120" parent="Library" index="141" unique_id=1566311509]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_121" parent="Library" index="143" unique_id=907881617]
+[node name="Books_121" parent="Library" index="142" unique_id=742355989]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_123" parent="Library" index="144" unique_id=1354195937]
+[node name="Books_123" parent="Library" index="143" unique_id=1672444766]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_124" parent="Library" index="145" unique_id=182176009]
+[node name="Books_124" parent="Library" index="144" unique_id=436449043]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_126" parent="Library" index="146" unique_id=471438740]
+[node name="Books_126" parent="Library" index="145" unique_id=852875028]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_127" parent="Library" index="147" unique_id=1615850878]
+[node name="Books_127" parent="Library" index="146" unique_id=770946560]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_128" parent="Library" index="148" unique_id=1971273828]
+[node name="Books_128" parent="Library" index="147" unique_id=685219722]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_129" parent="Library" index="149" unique_id=1998254514]
+[node name="Books_129" parent="Library" index="148" unique_id=756963954]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_130" parent="Library" index="150" unique_id=614952719]
+[node name="Books_130" parent="Library" index="149" unique_id=2138486464]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_131" parent="Library" index="151" unique_id=738233284]
+[node name="Books_131" parent="Library" index="150" unique_id=1042319373]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_122" parent="Library" index="152" unique_id=161322317]
+[node name="Books_122" parent="Library" index="151" unique_id=1206398036]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_125" parent="Library" index="153" unique_id=1077308301]
+[node name="Books_125" parent="Library" index="152" unique_id=1859024610]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
 [node name="book_pink" type="Node3D" parent="Library/Books_125" index="0" unique_id=1634532113]
@@ -705,10 +699,10 @@ script = ExtResource("3_wea6j")
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.99998355, 16.363922, 0, 1.5106068)
 shape = SubResource("BoxShape3D_cb0gn")
 
-[node name="Books_132" parent="Library" index="154" unique_id=2029187906]
+[node name="Books_132" parent="Library" index="153" unique_id=435838070]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_133" parent="Library" index="155" unique_id=778771036]
+[node name="Books_133" parent="Library" index="154" unique_id=1946764728]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
 [node name="book_blue" type="Node3D" parent="Library/Books_133" index="0" unique_id=2045086]
@@ -721,10 +715,10 @@ script = ExtResource("3_wea6j")
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.99998355, 16.363922, 0, 1.5106068)
 shape = SubResource("BoxShape3D_cb0gn")
 
-[node name="Books_134" parent="Library" index="156" unique_id=457126999]
+[node name="Books_134" parent="Library" index="155" unique_id=1733668079]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_135" parent="Library" index="157" unique_id=1996045496]
+[node name="Books_135" parent="Library" index="156" unique_id=1076472432]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
 [node name="book_green" type="Node3D" parent="Library/Books_135" index="0" unique_id=1451896749]
@@ -737,10 +731,10 @@ script = ExtResource("3_wea6j")
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.99998355, 16.363922, 0, 1.5106068)
 shape = SubResource("BoxShape3D_cb0gn")
 
-[node name="Books_136" parent="Library" index="158" unique_id=1490779612]
+[node name="Books_136" parent="Library" index="157" unique_id=1541875747]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_137" parent="Library" index="159" unique_id=1690973692]
+[node name="Books_137" parent="Library" index="158" unique_id=675977848]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
 [node name="book_purple" type="Node3D" parent="Library/Books_137" index="0" unique_id=566820360]
@@ -753,40 +747,62 @@ script = ExtResource("3_wea6j")
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.99998355, 16.363922, 0, 1.5106068)
 shape = SubResource("BoxShape3D_cb0gn")
 
-[node name="Books_154" parent="Library" index="160" unique_id=504721032]
+[node name="Books_154" parent="Library" index="159" unique_id=1464744261]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_155" parent="Library" index="161" unique_id=322673320]
+[node name="Books_155" parent="Library" index="160" unique_id=791162523]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_156" parent="Library" index="162" unique_id=941970771]
+[node name="Books_156" parent="Library" index="161" unique_id=346430947]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_157" parent="Library" index="163" unique_id=679891435]
+[node name="Books_157" parent="Library" index="162" unique_id=1469351984]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_158" parent="Library" index="164" unique_id=604312603]
+[node name="Books_158" parent="Library" index="163" unique_id=1698425409]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_159" parent="Library" index="165" unique_id=1196724539]
+[node name="Books_159" parent="Library" index="164" unique_id=2072571515]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_160" parent="Library" index="166" unique_id=118608558]
+[node name="Books_160" parent="Library" index="165" unique_id=2059900744]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Books_161" parent="Library" index="167" unique_id=1786724464]
+[node name="Books_161" parent="Library" index="166" unique_id=445652836]
 surface_material_override/0 = ExtResource("2_ys0kg")
 
-[node name="Door" parent="Library" index="168" unique_id=1347314857]
+[node name="Door" parent="Library" index="167" unique_id=732999339]
 surface_material_override/0 = ExtResource("5_4p501")
+
+[node name="Cylinder_006" type="MeshInstance3D" parent="Library" unique_id=944922954]
+transform = Transform3D(0.2, 0, 0, 0, 0.3, 0, 0, 0, 0.2, 0.24148026, -0.93991643, -0.08958575)
+mesh = SubResource("ArrayMesh_o5nsx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Library/Cylinder_006" unique_id=456590047]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/Cylinder_006/StaticBody3D" unique_id=614961165]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.13563585, 0)
+shape = SubResource("CylinderShape3D_4p501")
 
 [node name="Node3D" type="Node3D" parent="Library" unique_id=1672375317]
 
 [node name="NPC1" parent="Library/Node3D" unique_id=544360793 instance=ExtResource("6_4p501")]
 transform = Transform3D(0.0019581646, 0, 0.04495738, 0, 0.045, 0, -0.04495738, 0, 0.0019581646, 2.279274, -0.73667634, 1.6287159)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Library/Node3D/NPC1" unique_id=363890153]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/Node3D/NPC1/StaticBody3D" unique_id=561327181]
+transform = Transform3D(1, 0, 0, 0, 0.9999944, 0, 0, 0, 1, 0, -0.5195141, 0)
+shape = SubResource("CapsuleShape3D_4p501")
+
 [node name="NPC2" parent="Library/Node3D" unique_id=568328063 instance=ExtResource("6_4p501")]
 transform = Transform3D(0.0019581646, 0, 0.04495738, 0, 0.045, 0, -0.04495738, 0, 0.0019581646, 2.2987523, -0.73466086, -0.4078061)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Library/Node3D/NPC2" unique_id=742434810]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/Node3D/NPC2/StaticBody3D" unique_id=51605215]
+transform = Transform3D(1, 0, 0, 0, 0.9999944, 0, 0, 0, 1, 0, -0.5195141, 0)
+shape = SubResource("CapsuleShape3D_4p501")
 
 [node name="Statue3" parent="Library/Node3D" unique_id=600729602 instance=ExtResource("6_4p501")]
 transform = Transform3D(-0.045, 0, -3.934025e-09, 0, 0.045, 0, 3.934025e-09, 0, -0.045, 1.8040023, -0.73466086, -1.7645546)
@@ -815,8 +831,20 @@ shape = SubResource("CapsuleShape3D_lvrpe")
 [node name="NPC5" parent="Library/Node3D" unique_id=1196630154 instance=ExtResource("6_4p501")]
 transform = Transform3D(-1.9670128e-09, 0, -0.045000006, 0, 0.045, 0, 0.045000006, 0, -1.9670128e-09, -2.2069795, -0.7366763, 1.1286591)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Library/Node3D/NPC5" unique_id=926005346]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/Node3D/NPC5/StaticBody3D" unique_id=2026032836]
+transform = Transform3D(1, 0, 0, 0, 0.9999944, 0, 0, 0, 1, 0, -0.5195141, 0)
+shape = SubResource("CapsuleShape3D_4p501")
+
 [node name="NPC6" parent="Library/Node3D" unique_id=280446062 instance=ExtResource("6_4p501")]
 transform = Transform3D(-1.9670128e-09, 0, -0.045000006, 0, 0.045, 0, 0.045000006, 0, -1.9670128e-09, -2.1875012, -0.73466086, -0.90786284)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Library/Node3D/NPC6" unique_id=2089092016]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Library/Node3D/NPC6/StaticBody3D" unique_id=862082031]
+transform = Transform3D(1, 0, 0, 0, 0.9999944, 0, 0, 0, 1, 0, -0.5195141, 0)
+shape = SubResource("CapsuleShape3D_4p501")
 
 [node name="CharacterBody3D" parent="." unique_id=1051319031 instance=ExtResource("3_qi2pv")]
 transform = Transform3D(0, 0, 0.06999999, 0, 0.07, 0, -0.06999999, 0, 0, -0.20381689, -0.6986491, 1.5062106)
@@ -832,170 +860,170 @@ transform = Transform3D(0.99999976, 0, 7.0699e-13, 0, 0.99999976, 0, -7.0699e-13
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Skeleton" parent="CharacterBody3D/MAsked Gli/Armature" index="0" unique_id=311386290]
-bones/0/position = Vector3(0.031640593, 5.2806683, -0.04719706)
-bones/0/rotation = Quaternion(-0.03884655, -0.36644813, -0.013558613, 0.9295284)
-bones/1/rotation = Quaternion(0.04882464, 0.040110823, -0.008905178, 0.997962)
-bones/2/rotation = Quaternion(0.09737734, 0.08065277, -0.017650118, 0.9918172)
-bones/3/rotation = Quaternion(0.09737735, 0.08065276, -0.017650103, 0.9918172)
-bones/4/rotation = Quaternion(-0.027254317, -0.010736657, 0.0021854662, 0.9995685)
-bones/5/rotation = Quaternion(-0.06588517, 0.1777218, -0.006566605, 0.98185086)
-bones/8/rotation = Quaternion(0.4722743, 0.51325, 0.4845093, -0.52799845)
-bones/9/rotation = Quaternion(-0.016344601, 0.9698213, -0.21160851, 0.12000656)
-bones/10/rotation = Quaternion(0.13660227, -0.85996795, 0.26399654, 0.4148504)
-bones/11/rotation = Quaternion(0.0039637983, 0.73348504, 0.1776617, 0.6560642)
-bones/13/rotation = Quaternion(0.44224662, -0.5425554, -0.5288079, -0.4800143)
-bones/14/rotation = Quaternion(0.20263378, 0.9607833, -0.18774638, 0.024215143)
-bones/15/rotation = Quaternion(0.11583975, 0.87904835, -0.15801592, 0.43461037)
-bones/16/rotation = Quaternion(0.14912333, -0.65342546, 0.012941874, 0.7420444)
-bones/18/rotation = Quaternion(0.06870398, 0.21513228, 0.9721633, -0.062420905)
-bones/19/rotation = Quaternion(0.03954951, 0.9456208, -0.30916607, -0.09302494)
-bones/20/rotation = Quaternion(-0.014723977, 0.6627112, -0.74856824, 0.015579002)
-bones/21/rotation = Quaternion(0.02806938, 0.99936855, 0.020365678, -0.0077378927)
-bones/24/rotation = Quaternion(-0.12525709, 0.0026023109, 0.9884328, 0.08546668)
-bones/25/rotation = Quaternion(0.02517942, 0.9574939, -0.27012837, -0.097990274)
-bones/26/rotation = Quaternion(0.080867276, 0.5475679, -0.8289942, -0.07999049)
-bones/27/rotation = Quaternion(0.0036805817, 0.99985665, 0.016148962, -0.0035387073)
+bones/0/position = Vector3(0.031514972, 5.269486, -0.069498554)
+bones/0/rotation = Quaternion(-0.037296288, -0.36716768, -0.012746282, 0.9293194)
+bones/1/rotation = Quaternion(0.050234716, 0.04029716, -0.009284598, 0.99788105)
+bones/2/rotation = Quaternion(0.10020779, 0.08099709, -0.018356306, 0.99149436)
+bones/3/rotation = Quaternion(0.10020777, 0.080997, -0.018356282, 0.9914943)
+bones/4/rotation = Quaternion(-0.036252294, -0.010899403, 0.0017945733, 0.99928164)
+bones/5/rotation = Quaternion(-0.056324348, 0.17687061, -0.011968509, 0.9825483)
+bones/8/rotation = Quaternion(0.4751936, 0.5121036, 0.4925984, -0.51892954)
+bones/9/rotation = Quaternion(-0.019465508, 0.9708943, -0.20382407, 0.12426299)
+bones/10/rotation = Quaternion(0.12896626, -0.8593718, 0.2615075, 0.42007342)
+bones/11/rotation = Quaternion(-0.015060671, 0.72990185, 0.20117661, 0.65310377)
+bones/13/rotation = Quaternion(0.44445756, -0.5407681, -0.5375175, -0.4702153)
+bones/14/rotation = Quaternion(0.2090234, 0.9623803, -0.17291296, 0.015315047)
+bones/15/rotation = Quaternion(0.10032249, 0.8832473, -0.15457827, 0.43117887)
+bones/16/rotation = Quaternion(0.15157412, -0.65376115, 0.0033693393, 0.7413571)
+bones/18/rotation = Quaternion(0.06794303, 0.21984257, 0.9710702, -0.06384155)
+bones/19/rotation = Quaternion(0.03971447, 0.94493127, -0.31151348, -0.09212483)
+bones/20/rotation = Quaternion(-0.016053997, 0.6627948, -0.7484367, 0.016964767)
+bones/21/rotation = Quaternion(0.027931703, 0.99937195, 0.020436343, -0.007616108)
+bones/24/rotation = Quaternion(-0.12467617, 0.011612483, 0.9884896, 0.08490793)
+bones/25/rotation = Quaternion(0.025462627, 0.95416576, -0.28192386, -0.09715147)
+bones/26/rotation = Quaternion(0.08012595, 0.5430876, -0.8321156, -0.07886285)
+bones/27/rotation = Quaternion(0.0032899692, 0.99986494, 0.015790692, -0.0031699294)
 
 [node name="Hair_012" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="0" unique_id=1287714080]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_012" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_012" index="0" unique_id=1951361331]
 surface_material_override/0 = null
 
 [node name="Hair_013" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="1" unique_id=873901604]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_013" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_013" index="0" unique_id=1333574479]
 surface_material_override/0 = null
 
 [node name="Hair_014" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="2" unique_id=476379738]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_014" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_014" index="0" unique_id=290898784]
 surface_material_override/0 = null
 
 [node name="Hair_015" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="3" unique_id=1497028541]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_015" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_015" index="0" unique_id=2084059942]
 surface_material_override/0 = null
 
 [node name="Hair_016" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="4" unique_id=2050593926]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_016" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_016" index="0" unique_id=1877561009]
 surface_material_override/0 = null
 
 [node name="Hair_017" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="5" unique_id=524858109]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_017" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_017" index="0" unique_id=225561398]
 surface_material_override/0 = null
 
 [node name="Hair_018" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="6" unique_id=1687165182]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_018" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_018" index="0" unique_id=1092096268]
 surface_material_override/0 = null
 
 [node name="Hair_019" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="7" unique_id=1727726647]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_019" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_019" index="0" unique_id=1971207923]
 surface_material_override/0 = null
 
 [node name="Hair_020" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="8" unique_id=25484365]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_020" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_020" index="0" unique_id=880474033]
 surface_material_override/0 = null
 
 [node name="Hair_021" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="9" unique_id=1073871996]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_021" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_021" index="0" unique_id=698937131]
 surface_material_override/0 = null
 
 [node name="Hair_022" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="10" unique_id=1561061912]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_022" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_022" index="0" unique_id=6161038]
 surface_material_override/0 = null
 
 [node name="Hair_023" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="11" unique_id=1993777387]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_023" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_023" index="0" unique_id=1994695443]
 surface_material_override/0 = null
 
 [node name="Hair_024" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="12" unique_id=232467729]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_024" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_024" index="0" unique_id=1189578407]
 surface_material_override/0 = null
 
 [node name="Hair_025" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="13" unique_id=1273808181]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_025" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_025" index="0" unique_id=104699520]
 surface_material_override/0 = null
 
 [node name="Hair_026" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="14" unique_id=724191067]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_026" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_026" index="0" unique_id=1360980819]
 surface_material_override/0 = null
 
 [node name="Hair_027" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="15" unique_id=1791855920]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_027" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_027" index="0" unique_id=185309685]
 surface_material_override/0 = null
 
 [node name="Hair_028" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="16" unique_id=752217555]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_028" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_028" index="0" unique_id=140129784]
 surface_material_override/0 = null
 
 [node name="Hair_029" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="17" unique_id=1986281236]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_029" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_029" index="0" unique_id=146510434]
 surface_material_override/0 = null
 
 [node name="Hair_030" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="18" unique_id=532791653]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_030" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_030" index="0" unique_id=1646815624]
 surface_material_override/0 = null
 
 [node name="Hair_031" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="19" unique_id=274816526]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_031" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_031" index="0" unique_id=2059392675]
 surface_material_override/0 = null
 
 [node name="Hair_032" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="20" unique_id=138949315]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_032" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_032" index="0" unique_id=2005110713]
 surface_material_override/0 = null
 
 [node name="Hair_033" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="21" unique_id=765586267]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_033" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_033" index="0" unique_id=352850340]
 surface_material_override/0 = null
 
 [node name="Hair_034" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="22" unique_id=1974956672]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Hair_034" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton/Hair_034" index="0" unique_id=1307167061]
 surface_material_override/0 = null
 
 [node name="Icosphere" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="23" unique_id=257716365]
-transform = Transform3D(0.9974497, -0.07134089, -0.0021363497, 0.069191225, 0.97387147, -0.21630283, 0.017511725, 0.2156034, 0.9763239, -0.16276738, 8.443499, 0.6570995)
+transform = Transform3D(0.9979345, -0.06423505, -0.0008792281, 0.062212598, 0.96974593, -0.23605612, 0.016015649, 0.2355138, 0.97173905, -0.17664692, 8.425402, 0.6588813)
 
 [node name="Boot" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="24" unique_id=1004540596]
 surface_material_override/0 = null
@@ -1051,13 +1079,13 @@ surface_material_override/0 = null
 surface_material_override/0 = null
 
 [node name="RightArmGraft" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="46" unique_id=1562468153]
-transform = Transform3D(-0.08579552, -0.9353359, -0.34319937, 0.97185266, -0.1544277, 0.17791718, -0.21941182, -0.31827468, 0.9222578, -1.4290664, 6.616724, -0.99744236)
+transform = Transform3D(-0.056211293, -0.9326088, -0.3564848, 0.976079, -0.12643914, 0.17687011, -0.2100242, -0.3380152, 0.9174071, -1.4467846, 6.5799174, -0.99983466)
 
 [node name="LeftLegGraft" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="47" unique_id=1148643271]
-transform = Transform3D(-0.8325238, -0.21663485, -0.5098758, -0.08152193, -0.862445, 0.4995425, -0.5479581, 0.45744705, 0.7003456, 0.5099834, 4.978137, 0.44492322)
+transform = Transform3D(-0.831221, -0.21845411, -0.51122344, -0.08486544, -0.85892564, 0.5050195, -0.5494264, 0.463168, 0.6954179, 0.5099499, 4.967137, 0.42264414)
 
 [node name="ViolinPlace" parent="CharacterBody3D/MAsked Gli/Armature/Skeleton" index="48" unique_id=329092666]
-transform = Transform3D(0.94187385, -0.12091762, -0.31345257, -0.01702208, 0.9146136, -0.40397042, 0.33553508, 0.3858248, 0.8593924, 0.040449828, 7.195997, 0.039162084)
+transform = Transform3D(0.9421728, -0.12742683, -0.3099563, -0.015455738, 0.90738446, -0.42001748, 0.33477098, 0.4005196, 0.8529434, 0.031939983, 7.18337, 0.02879399)
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D/MAsked Gli" parent_id_path=PackedInt32Array(1051319031, 1915688629) index="2" unique_id=1697429499]
 tree_root = SubResource("AnimationNodeStateMachine_4yli5")

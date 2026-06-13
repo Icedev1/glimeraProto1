@@ -194,10 +194,10 @@ func _on_cutscene_ended():
 	if not inRange:
 		return
 	if GraftGlobals.churchmanDefeated:
-		get_node("Church Man1")
+		var man = get_node("Church Man1")
 		Dialogic.VAR.set_variable("target", "churchman_defeated")
 		Dialogic.start_timeline("timelinelayer2")
-		queue_free()
+		man.queue_free()
 		return
 	if not GraftGlobals.churchman1Talked:
 		GraftGlobals.churchman1Talked = true
@@ -236,5 +236,6 @@ func _on_battle_ended(player_won: bool, weapons_dropped: Array[Weapon], consumab
 		if not player_won:
 			return
 		GraftGlobals.churchmanDefeated = true
+		_on_cutscene_ended()
 		ObjectiveManager.complete_objective("fight_churchman")
 		ObjectiveManager.reveal_objective("return_to_stairs")

@@ -36,6 +36,8 @@ var knockback_time := 0.0
 			#_test_index += 1
 
 func play_footstep() -> void:
+	if BattleManager._battle_active:
+		pass
 	if not is_on_floor():
 		return
 
@@ -43,6 +45,7 @@ func play_footstep() -> void:
 		return
 
 	footstep_player.pitch_scale = randf_range(0.95, 1.05)
+	
 	footstep_player.play()
 
 func _physics_process(delta):

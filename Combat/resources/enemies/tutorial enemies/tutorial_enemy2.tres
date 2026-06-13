@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cvvj0tqpd238a"]
 
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="1_qiitc"]
-[ext_resource type="Texture2D" uid="uid://bclknao6yvhuo" path="res://images/spikyhead.png" id="1_xf6w8"]
+[ext_resource type="Texture2D" uid="uid://cuqqutbxkacqg" path="res://images/spikyhead.png" id="1_xf6w8"]
 [ext_resource type="Resource" uid="uid://bosfy5u65tjoy" path="res://Combat/resources/consumables/bandage_2.tres" id="2_r0uam"]
 [ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="2_varue"]
 [ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="3_r0uam"]

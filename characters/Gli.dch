@@ -21,7 +21,7 @@
 "export_overrides": {
 "image": "\"res://images/Gli Portrait.png\""
 },
-"mirror": false,
+"mirror": true,
 "offset": Vector2(-250, 0),
 "scale": 0.8,
 "scene": "",
