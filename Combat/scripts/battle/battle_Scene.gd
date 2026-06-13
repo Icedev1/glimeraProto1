@@ -79,6 +79,8 @@ func _ready() -> void:
 		style.corner_radius_bottom_left = 4
 		style.corner_radius_bottom_right = 4
 		flash.add_theme_stylebox_override("panel", style)
+	if enemy_resource and enemy_resource.model_scene:
+		_swap_enemy_model(enemy_resource.model_scene)
 
 func _process(_delta: float) -> void:
 	_refresh_effects(player_effects_container, PlayerManager.data)
@@ -337,3 +339,13 @@ func _refresh_effects(container: HBoxContainer, unit: UnitData) -> void:
 		lbl.add_theme_font_size_override("font_size", 12)
 		hbox.add_child(lbl)
 		container.add_child(hbox)
+#model swapping
+func _swap_enemy_model(new_model_scene: PackedScene) -> void:
+	var enemy_node = $Enemy
+	for child in enemy_node.get_children():
+		child.queue_free()
+	var new_model = new_model_scene.instantiate()
+	enemy_node.add_child(new_model)
+	var anim_player = new_model.get_node_or_null("AnimationPlayer")
+	if anim_player and anim_player.has_animation("Idle Straight"):
+		anim_player.play("Idle Straight")

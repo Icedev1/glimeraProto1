@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://xjvdy76nqndp"]
+
+[ext_resource type="PackedScene" uid="uid://c1hceou2lj81e" path="res://meshes/Church Man1.blend" id="1_77qye"]
+[ext_resource type="Texture2D" uid="uid://c35vmwf7m5bsf" path="res://images/ChurchManLeo.png" id="2_0xl4v"]
+[ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="3_pvcq4"]
+[ext_resource type="Resource" uid="uid://cxqlrf3r0weyn" path="res://Combat/resources/consumables/health_potion.tres" id="4_tr1p6"]
+[ext_resource type="Resource" uid="uid://vel3gluw4ovk" path="res://Combat/resources/consumables/bandage_1.tres" id="5_ihwr7"]
+[ext_resource type="Script" uid="uid://b1exkd2nbk06k" path="res://Combat/scripts/data/weapon.gd" id="6_ihvp1"]
+[ext_resource type="Script" uid="uid://b3ri4vlr52i3f" path="res://Combat/scripts/data/enemy_data.gd" id="8_3gkp3"]
+[ext_resource type="Resource" uid="uid://dr8pwgeouq7u2" path="res://Combat/resources/enemies/LeoPriest/boss1_attack2.tres" id="9_g7raj"]
+
+[resource]
+script = ExtResource("8_3gkp3")
+weapons = Array[ExtResource("6_ihvp1")]([ExtResource("9_g7raj"), ExtResource("9_g7raj")])
+element = 1
+portrait = ExtResource("2_0xl4v")
+reward_consumables = Array[ExtResource("3_pvcq4")]([ExtResource("4_tr1p6"), ExtResource("5_ihwr7")])
+model_scene = ExtResource("1_77qye")
+unit_name = "Intimidating Figure"
+max_hp = 200

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c10ro3e102i7u"]
 
-[ext_resource type="PackedScene" uid="uid://h4j6hww4xclc" path="res://Grafting/Bike Seat.fbx" id="1_v6p5a"]
+[ext_resource type="PackedScene" uid="uid://1k3jj78dq2ut" path="res://Grafting/Bike Seat.fbx" id="1_v6p5a"]
 
 [node name="Node3D" type="Node3D" unique_id=1268750824]
 
