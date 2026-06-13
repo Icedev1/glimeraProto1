@@ -10,7 +10,7 @@ extends Node3D
 @onready var enemy_name_label: Label = %EnemyNameLabel
 @onready var enemy_hp_bar: ProgressBar = %EnemyHPBar
 @onready var enemy_hp_label: Label = %enemy_hp_label
-@onready var enemy_element: Label = %EnemyElement
+@onready var enemy_element: TextureRect = %EnemyElement
 
 @onready var player_hp_bar: ProgressBar = %PlayerHPBar
 @onready var player_hp_label: Label = %player_hp_label
@@ -31,9 +31,6 @@ extends Node3D
 
 @onready var graft_menu: Control = %GraftMenu
 
-
-#@onready var player_effects_label: RichTextLabel = %player_effects_label
-#@onready var enemy_effects_label: RichTextLabel = %enemy_effects_label
 @onready var enemy_effects_container: HBoxContainer = %EnemyEffectsContainer
 @onready var low_hp_effect: ColorRect = %LowHpEffect
 
@@ -47,6 +44,24 @@ const OUTLINE_RED    := Color(1.0, 0.3, 0.2, 1.0)
 const OUTLINE_ORANGE := Color(1.0, 0.55, 0.1, 1.0)
 const OUTLINE_LIME   := Color(0.7, 1.0, 0.3, 1.0)
 const OUTLINE_OFF    := Color(0.0, 0.0, 0.0, 0.0)
+
+# ── Enemy element icon  ──────────────────────────────────────────────
+
+const ELEMENT_ICONS := {
+	Weapon.Element.ROCK:    preload("res://images/6224567.png"),
+	Weapon.Element.PAPER:   preload("res://images/paper.png"),
+	Weapon.Element.SCISSOR: preload("res://images/18937218.png"),
+}
+
+# ── ENV ──────────────────────────────────────────────
+
+const AREA_ENVIRONMENTS := {
+	1: preload("res://Combat/resources/environments/street1_env.tscn"),
+	2: preload("res://Combat/resources/environments/market1_env.tscn"),
+	3: preload("res://Combat/resources/environments/street2_env.tscn"),
+	4: preload("res://Combat/resources/environments/church_env.tscn")
+}
+
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
 func _ready() -> void:
@@ -66,7 +81,8 @@ func _ready() -> void:
 	enemy_name_label.text = BattleManager.enemy.unit_name
 	if enemy_portrait and BattleManager.enemy.portrait:
 		enemy_portrait.texture = BattleManager.enemy.portrait
-	enemy_element.text = "Element: %s" % Weapon.element_name(BattleManager.enemy.element)
+	if enemy_element:
+		enemy_element.texture = ELEMENT_ICONS.get(BattleManager.enemy.element)
 	_on_player_hp(PlayerManager.data.current_hp, PlayerManager.data.max_hp)
 	_on_enemy_hp(BattleManager.enemy.current_hp, BattleManager.enemy.max_hp)
 	player_hit_flash.modulate.a = 0.0
@@ -81,6 +97,7 @@ func _ready() -> void:
 		flash.add_theme_stylebox_override("panel", style)
 	if enemy_resource and enemy_resource.model_scene:
 		_swap_enemy_model(enemy_resource.model_scene)
+	_setup_environment()
 
 func _process(_delta: float) -> void:
 	_refresh_effects(player_effects_container, PlayerManager.data)
@@ -349,3 +366,13 @@ func _swap_enemy_model(new_model_scene: PackedScene) -> void:
 	var anim_player = new_model.get_node_or_null("AnimationPlayer")
 	if anim_player and anim_player.has_animation("Idle Straight"):
 		anim_player.play("Idle Straight")
+		
+func _setup_environment() -> void:
+	if enemy_resource == null:
+		return
+	var scene: PackedScene = AREA_ENVIRONMENTS.get(enemy_resource.area)
+	if scene == null:
+		return  # falls back to the default Env already in the scene
+	if has_node("Env"):
+		$Env.queue_free()
+	add_child(scene.instantiate())

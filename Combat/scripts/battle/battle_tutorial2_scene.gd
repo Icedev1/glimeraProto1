@@ -131,7 +131,7 @@ func _run_damage_tutorial(damage: int, was_blocked: bool) -> void:
 	_tutorial_overlay.show_step(
 		"Know your enemy",
 		"Meet %s a %s type enemy that uses %s attacks.\n(An enemy's type and its attacks can have different elements, but here they match.)" % [enemy_name, enemy_element_name, enemy_element_name],
-		true, enemy_name_label)
+		true, enemy_element)
 	await _tutorial_overlay.next_pressed
 
 	# 2b. Enemy attack timer
@@ -259,7 +259,7 @@ func _run_graft_menu_tutorial() -> void:
 
 	_tutorial_overlay.show_step(
 		"Pick a counter",
-		"Scissor beats Paper. Find a Scissor limb in your inventory and swap it in.",
+		"Find a Scissor limb in your inventory and swap it in.",
 		true)
 	await _tutorial_overlay.next_pressed
 
