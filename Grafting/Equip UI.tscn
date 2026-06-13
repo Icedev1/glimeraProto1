@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://fodpwarglyty" path="res://Grafting/saw icon.png" id="3_n4bap"]
 [ext_resource type="Texture2D" uid="uid://lk17a0nohra3" path="res://Grafting/sledgehammer icon.png" id="4_gjxvf"]
 [ext_resource type="Texture2D" uid="uid://st4dv0rl87sd" path="res://Grafting/Hose Icon.png" id="4_n4bap"]
-[ext_resource type="Texture2D" uid="uid://julkyc7px1uq" path="res://Grafting/Broom icon.png" id="6_l5bjg"]
 [ext_resource type="Texture2D" uid="uid://b46tfu5idgkyk" path="res://images/641693.png" id="7_g7rxt"]
-[ext_resource type="Texture2D" uid="uid://85y1g3q24bed" path="res://Grafting/Bike Seat Icon.png" id="7_maqgg"]
 [ext_resource type="Script" uid="uid://c34dxhktvhmap" path="res://ui/audio_control.gd" id="9_l2vi8"]
 [ext_resource type="Script" uid="uid://d36oofhkq5sxy" path="res://ui/window_options.gd" id="10_l5bjg"]
 [ext_resource type="PackedScene" uid="uid://dsc3ihpwxa6w6" path="res://ui/input_remap_button.tscn" id="11_maqgg"]
@@ -185,6 +183,9 @@ thickness = 6
 color = Color(0.6745098, 0, 0, 1)
 thickness = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otxuf"]
+bg_color = Color(0, 0, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd6uk"]
 bg_color = Color(0.66895264, 5.9441477e-06, 3.946722e-06, 1)
 
@@ -253,11 +254,11 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 script = ExtResource("1_nsmwh")
 armIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("3_n4bap"), ExtResource("4_n4bap")])
-legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf"), ExtResource("6_l5bjg"), ExtResource("7_maqgg")])
+legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf")])
 armGraftNames = Array[String](["Default", "Saw", "Hose"])
 armGraftDescs = Array[String](["The Ol' Reliable", "Scissors | 4 DMG, 2s Cooldown", "Paper | 15 DMG, 2s Cooldown"])
-legGraftNames = Array[String](["Default", "Sledgehammer", "Broom", "Unicycle"])
-legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown", ""])
+legGraftNames = Array[String](["Default", "Sledgehammer"])
+legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown"])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=756244194]
 layout_mode = 1
@@ -814,7 +815,24 @@ script = ExtResource("12_xl5b8")
 action = "jump"
 action_event_index = 1
 
-[node name="MainMenuButton" type="Button" parent="SettingsPage" unique_id=1136497698]
+[node name="MainMenuButton" type="Button" parent="SettingsPage" unique_id=1011149919]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 101.0
+offset_right = 69.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_otxuf")
+text = "Main Menu"
+
+[node name="QuitGameButton" type="Button" parent="SettingsPage" unique_id=1136497698]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -829,17 +847,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_kd6uk")
-text = "Quit Game"
+text = "Quit"
 
 [node name="QuitConfirmDialog" type="ConfirmationDialog" parent="SettingsPage" unique_id=373234671]
 size = Vector2i(400, 200)
 
 [node name="Label" type="Label" parent="SettingsPage" unique_id=1701887490]
 layout_mode = 0
-offset_left = 891.0
-offset_top = 648.0
-offset_right = 1031.0
-offset_bottom = 676.0
+offset_left = 892.0
+offset_top = 602.0
+offset_right = 1032.0
+offset_bottom = 630.0
 theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9411765, 1)
 theme_override_font_sizes/font_size = 20
 text = "ESC to go back"
@@ -987,7 +1005,8 @@ text = "Inventory"
 [connection signal="value_changed" from="SettingsPage/Settings/TabContainer/Audio/SfxControl" to="SettingsPage/Settings/TabContainer/Audio/SfxControl" method="_on_value_changed"]
 [connection signal="toggled" from="SettingsPage/Settings/TabContainer/Video/CheckButton" to="SettingsPage/Settings/TabContainer/Video/WindowOptions" method="_on_check_button_toggled"]
 [connection signal="item_selected" from="SettingsPage/Settings/TabContainer/Video/WindowOptions" to="SettingsPage/Settings/TabContainer/Video/WindowOptions" method="_on_item_selected"]
-[connection signal="pressed" from="SettingsPage/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="SettingsPage/MainMenuButton" to="." method="_on_go_to_main_menu_button_pressed"]
+[connection signal="pressed" from="SettingsPage/QuitGameButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="confirmed" from="SettingsPage/QuitConfirmDialog" to="." method="_on_quit_confirm_dialog_confirmed"]
 [connection signal="pressed" from="TabBar/SettingsTab" to="." method="_on_settings_tab_pressed"]
 [connection signal="pressed" from="TabBar/GraftsTab" to="." method="_on_grafts_tab_pressed"]

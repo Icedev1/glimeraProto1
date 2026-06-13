@@ -22,9 +22,9 @@ shadow_size = 6
 
 [node name="ObjectiveDisplay" type="PanelContainer" unique_id=1278662137]
 offset_left = 10.0
-offset_top = -687.0
-offset_right = 182.0
-offset_bottom = -615.0
+offset_top = -400.0
+offset_right = 171.0
+offset_bottom = -338.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wtsf6")
 script = ExtResource("1_byb75")

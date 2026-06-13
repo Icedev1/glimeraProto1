@@ -12,10 +12,8 @@ var hoseObtained : bool = true
 var graftSFX : AudioStream = preload("res://Sounds/SFX/1101.wav")
 var porcelainDefeated: bool = false
 var angrySteveDead: bool = false
-var violinObtained: bool = false
+var violinObtained: bool = true
 var intimidatingDefeated: bool = false
-var broomObtained: bool = false
-var unicycleObtained: bool = false
 
 #layer2
 var churchbroDefeated: bool = false

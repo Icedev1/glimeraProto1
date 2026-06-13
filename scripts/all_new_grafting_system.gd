@@ -10,9 +10,7 @@ extends Node
 ]
 @onready var leg_graftables : Array[PackedScene] = [
 	null,
-	preload("res://Grafting/SledgehammerGraft.tscn") as PackedScene,
-	preload("res://Grafting/BroomGraft.tscn") as PackedScene,
-	preload("res://Grafting/UnicycleGraft.tscn") as PackedScene
+	preload("res://Grafting/SledgehammerGraft.tscn") as PackedScene
 ]
 
 @onready var base_leg_parts : Array[Node3D] = [
@@ -27,7 +25,7 @@ extends Node
 ]
 
 func _ready() -> void:
-	if StoryFlags.violinObtained:
+	if GraftGlobals.violinObtained:
 		$"../MAsked Gli/Armature/Skeleton/ViolinPlace/Violin 1".visible = true
 	GraftGlobals.menu_opened.connect(refresh)
 	GraftGlobals.left_leg_graft_changed.connect(graft_left_leg)

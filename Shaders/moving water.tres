@@ -12,7 +12,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_ybmi7")
-shader_parameter/scroll_speed = Vector2(0, 0.4)
+shader_parameter/scroll_speed = Vector2(0, 0.2)
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("2_3kwpc")
 shader_parameter/albedo_texture_size = Vector2i(1024, 1024)
@@ -36,7 +36,7 @@ shader_parameter/heightmap_scale = 5.0
 shader_parameter/heightmap_min_layers = 8
 shader_parameter/heightmap_max_layers = 32
 shader_parameter/heightmap_flip = Vector2(1, 1)
-shader_parameter/uv1_scale = Vector3(4.332, 9.315, -0.028)
+shader_parameter/uv1_scale = Vector3(4.227, 3.665, -0.028)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)

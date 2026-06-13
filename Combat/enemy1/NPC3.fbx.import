@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cg4ogxvkcwxdq"
+uid="uid://bjv5lhq6g8wut"
 path="res://.godot/imported/NPC3.fbx-7400ead37bf78a058aeee5dd5fcbc031.scn"
 
 [deps]
@@ -37,14 +37,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Armature/Skeleton3D": {
-"retarget/bone_map": Resource("uid://f4nlmwbenpnb", "res://new_bone_map.tres"),
-"retarget/bone_renamer/unique_node/skeleton_name": "Skeleton"
-}
-}
-}
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

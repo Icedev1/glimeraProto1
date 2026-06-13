@@ -8,7 +8,7 @@ extends Control
 @export var legGraftDescs : Array[String]
 
 var selected_slot : String = ""
-#var is_open : bool = false
+var _confirm_action: String = ""
 
 signal close_requested
 
@@ -25,10 +25,8 @@ signal close_requested
 @onready var settings_page = $SettingsPage
 @onready var quit_confirm_dialog = $SettingsPage/QuitConfirmDialog
 
-
 func _ready() -> void:
 	set_process_input(true)
-	#visible = false
 	info_card.visible = false
 	graft_grid.visible = false
 	$GraftsPage/LeftArmSlot.disabled = true
@@ -41,7 +39,6 @@ func _ready() -> void:
 		leg_slot.icon = legIcons[GraftGlobals.left_leg_graft_index]
 		leg_slot.add_theme_constant_override("icon_max_width", 150)
 
-
 func _show_page(page: String) -> void:
 	grafts_page.visible = page == "grafts"
 	inventory_page.visible = page == "inventory"
@@ -51,11 +48,9 @@ func _on_grafts_tab_pressed() -> void:
 	_show_page("grafts")
 
 func _on_inventory_tab_pressed() -> void:
-	#print("inventory tab pressed")
 	_show_page("inventory")
 
 func _on_settings_tab_pressed() -> void:
-	#print("settings tab pressed")
 	_show_page("settings")
 
 func _on_right_arm_slot_pressed() -> void:
@@ -87,8 +82,6 @@ func _populate_grid(icons: Array[Texture2D], names: Array[String]) -> void:
 			if i == 2 and !GraftGlobals.hoseObtained: is_locked = true
 		elif selected_slot == "leg":
 			if i == 1 and !GraftGlobals.sledgehammerObtained: is_locked = true
-			if i == 2 and !GraftGlobals.broomObtained: is_locked = true
-			if i == 3 and !GraftGlobals.unicycleObtained: is_locked = true
 		btn.disabled = is_locked
 		btn.modulate = Color(0.4, 0.4, 0.4) if is_locked else Color.WHITE
 		var idx = i
@@ -122,13 +115,26 @@ func _on_graft_hovered(index: int) -> void:
 		info_desc.text = legGraftDescs[index] if index < legGraftDescs.size() else ""
 		info_icon.texture = legIcons[index]
 
+
 func _on_main_menu_button_pressed() -> void:
+	_confirm_action = "quit"
 	quit_confirm_dialog.dialog_text = "This will close the game completely. Are you sure?"
 	quit_confirm_dialog.popup_centered()
 
-func _on_quit_confirm_dialog_confirmed() -> void:
-	get_tree().quit()
+func _on_go_to_main_menu_button_pressed() -> void:
+	_confirm_action = "main_menu"
+	quit_confirm_dialog.dialog_text = "Return to main menu? Unsaved progress will be lost."
+	quit_confirm_dialog.popup_centered()
 
+func _on_quit_confirm_dialog_confirmed() -> void:
+	if _confirm_action == "quit":
+		SaveManager.save(0)
+		get_tree().quit()
+	elif _confirm_action == "main_menu":
+		SaveManager.save(0)
+		get_tree().paused = false
+		get_tree().root.get_node("Root").show_main_menu()
+		queue_free()
 
 func _on_es_cbutton_pressed() -> void:
 	close_requested.emit()
