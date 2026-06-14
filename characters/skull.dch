@@ -10,22 +10,12 @@
 "style": "myStyle",
 "suffix": ""
 },
-&"default_portrait": "New portrait",
+&"default_portrait": "",
 &"description": "",
-&"display_name": "Skull Fella",
+&"display_name": "Strange Figure",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {
-"New portrait": {
-"export_overrides": {
-"image": "\"res://images/aaaaah.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-}
-},
+&"portraits": {},
 &"scale": 0.3
 }
