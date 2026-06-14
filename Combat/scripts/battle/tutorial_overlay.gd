@@ -16,6 +16,16 @@ func _ready() -> void:
 	_spotlight2.hide()
 	hide()
 
+
+func _input(event: InputEvent) -> void:
+	# Only advance when a popup with a visible Next button is showing.
+	if not visible or not _next_btn.visible:
+		return
+	if event.is_action_pressed("graft_select"):
+		next_pressed.emit()
+		get_viewport().set_input_as_handled()
+
+
 ## higlight null = no highlight .
 func show_step(title: String, body: String, show_next: bool, highlight = null) -> void:
 	visible = true
