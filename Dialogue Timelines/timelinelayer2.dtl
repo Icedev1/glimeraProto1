@@ -30,6 +30,7 @@ elif {target} == "rock":
 	if {sequence_step} == 1.0:
 		set {sequence_step} = 2.0
 		2
+		audio "res://Sounds/SFX/the-sound-of-the-note-mi.mp3"
 		[signal arg="rock_red"]
 	elif {sequence_step} == 5.0:
 		set {sequence_step} = 6.0
@@ -45,10 +46,12 @@ elif {target} == "paper":
 	if {sequence_step} == 0.0:
 		set {sequence_step} = 1.0
 		1
+		audio "res://Sounds/SFX/the-sound-of-the-note-do.mp3"
 		[signal arg="paper_blue"]
 	elif {sequence_step} == 4.0:
 		set {sequence_step} = 5.0
 		5
+		audio "res://Sounds/SFX/the-sound-of-the-note-do.mp3"
 		[signal arg="paper_blue"]
 	else:
 		set {sequence_step} = 0
@@ -58,10 +61,12 @@ elif {target} == "scissor":
 	if {sequence_step} == 2.0:
 		set {sequence_step} = 3.0
 		3
+		audio "res://Sounds/SFX/the-sound-of-the-note-do.mp3"
 		[signal arg="scissor_green"]
 	elif {sequence_step} == 3.0:
 		set {sequence_step} = 4.0
 		4
+		audio "res://Sounds/SFX/the-sound-of-the-note-mi.mp3"
 		[signal arg="scissor_green"]
 	else:
 		set {sequence_step} = 0.0

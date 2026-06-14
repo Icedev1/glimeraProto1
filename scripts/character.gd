@@ -37,7 +37,7 @@ var knockback_time := 0.0
 
 func play_footstep() -> void:
 	if BattleManager._battle_active:
-		pass
+		return
 	if not is_on_floor():
 		return
 
