@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://q7yo1xb4ewrr"]
 
-[ext_resource type="PackedScene" uid="uid://otx0rnod80qp" path="res://Combat/enemy1/NPC5.fbx" id="1_ss53h"]
+[ext_resource type="PackedScene" uid="uid://dvuvnv7efbg71" path="res://Prop Scenes/npc_5.tscn" id="1_ss53h"]
 [ext_resource type="Texture2D" uid="uid://bln6t6tbkwwms" path="res://images/armless.png" id="2_e667v"]
 [ext_resource type="Script" uid="uid://dnsrxvj5qtw4x" path="res://Combat/scripts/data/consumable.gd" id="3_wulpp"]
 [ext_resource type="Resource" uid="uid://cxqlrf3r0weyn" path="res://Combat/resources/consumables/health_potion.tres" id="4_01eid"]
