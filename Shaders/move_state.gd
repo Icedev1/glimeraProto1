@@ -8,6 +8,9 @@ func enter():
 	state_machine.animMachine.travel("Walk")
 
 func physics_update(delta):
+	print(BattleManager._battle_active)
+	if BattleManager._battle_active:
+		pass	
 	var direction = player.get_move_direction()
 	
 	if Input.is_action_just_pressed("jump"):

@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b1pldpe4chka1" path="res://images/11279725.png" id="18_fr5r2"]
 [ext_resource type="AudioStream" uid="uid://cq6i78xknws42" path="res://Sounds/SFX/se_battle_115.ogg" id="19_x13a4"]
 [ext_resource type="AudioStream" uid="uid://cle1imm5my468" path="res://Sounds/SFX/se_battle_103.ogg" id="20_onrm6"]
-[ext_resource type="AudioStream" uid="uid://cef4j0wajnqyb" path="res://Sounds/SFX/sectionsound-shield-block-shortsword-143940.mp3" id="22_3inix"]
-[ext_resource type="AudioStream" uid="uid://fg2lnnwpet4m" path="res://Sounds/SFX/yodguard-healing-magic-2-378663.mp3" id="23_lcmqg"]
+[ext_resource type="AudioStream" uid="uid://s011sm52q5h" path="res://Sounds/SFX/sectionsound-shield-block-shortsword-143940.mp3" id="22_3inix"]
+[ext_resource type="AudioStream" uid="uid://drtl21vxn1si1" path="res://Sounds/SFX/yodguard-healing-magic-2-378663.mp3" id="23_lcmqg"]
 [ext_resource type="Environment" uid="uid://iddx60r1gtlb" path="res://EnvironmentSettings.tres" id="24_7r0cw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1uve"]
@@ -274,10 +274,10 @@ unique_name_in_owner = true
 transform = Transform3D(0.41304907, 0, -0.28176302, 0, 0.5, 0, 0.28176302, 0, 0.41304907, 5.214, -0.103043936, 3.405)
 script = ExtResource("6_r8c2t")
 
-[node name="Armature" parent="Enemy" index="0" unique_id=1000175401]
+[node name="Armature" parent="Enemy" index="0" unique_id=552203477]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
 
-[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=964141446]
+[node name="Skeleton" parent="Enemy/Armature" index="0" unique_id=100595146]
 bones/0/position = Vector3(-0.19295849, 5.616861, 0.039618105)
 bones/0/rotation = Quaternion(-0.022635806, 0.008890023, -0.001056021, 0.99970376)
 bones/1/rotation = Quaternion(0.01116827, -0.004045971, 0.0038487185, 0.99992204)
@@ -304,7 +304,7 @@ bones/26/rotation = Quaternion(-0.023818854, 0.64443403, -0.76383644, -0.0262928
 bones/27/rotation = Quaternion(-5.8975763e-07, 1, 0.00012577094, 3.261923e-07)
 bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
 
-[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=1452804772]
+[node name="AnimationPlayer" parent="Enemy" index="1" unique_id=184410815]
 libraries/ = SubResource("AnimationLibrary_7r0cw")
 autoplay = &"Idle Straight"
 
@@ -810,16 +810,16 @@ theme_override_font_sizes/font_size = 48
 icon = SubResource("Texture2D_1fagd")
 
 [node name="SubViewportContainer1" type="SubViewportContainer" parent="." unique_id=1847338007]
-anchors_preset = -1
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 965.0
+grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer1" unique_id=123518556]
 handle_input_locally = false
-size = Vector2i(1925, 1080)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer1/SubViewport2" unique_id=1976917586]
