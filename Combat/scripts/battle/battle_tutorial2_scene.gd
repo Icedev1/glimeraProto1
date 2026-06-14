@@ -7,9 +7,6 @@ var _damage_tutorial_done: bool = false
 var _consumable_tutorial_done: bool = false
 var _graft_tutorial_done: bool = false
 
-var _saved_arm_idx: int = 0
-var _saved_leg_idx: int = 0
-
 # Input gates
 var _attacks_enabled: bool = true
 var _consumables_enabled: bool = false
@@ -26,9 +23,7 @@ var _graft_menu_tutorial_active: bool = false
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
 func _ready() -> void:
-	# Force default limbs for this tutorial battle 
-	_saved_arm_idx = GraftGlobals.right_arm_graft_index
-	_saved_leg_idx = GraftGlobals.left_leg_graft_index
+	# Force default limbs for the START of this tutorial battle.
 	GraftGlobals.right_arm_graft_index = 0
 	GraftGlobals.left_leg_graft_index = 0
 
@@ -270,8 +265,6 @@ func _run_graft_menu_tutorial() -> void:
 
 # ── End ──────────────────────────────────────────────────────────────────────
 func _on_battle_ended_tutorial(_won: bool, _w: Array, _c: Array) -> void:
-	GraftGlobals.right_arm_graft_index = _saved_arm_idx
-	GraftGlobals.left_leg_graft_index = _saved_leg_idx
 	if _tutorial_overlay:
 		_tutorial_overlay.hide()
 	if _graft_menu_tutorial_active:

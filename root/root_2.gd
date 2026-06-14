@@ -68,6 +68,7 @@ func start_battle(battle_scene_path: String, enemy_data: EnemyData = null):
 	ui_scene.hide()
 	overworld_container.hide()
 	overworld_container.process_mode = Node.PROCESS_MODE_DISABLED
+	_disable_overworld_dof()
 	
 	print($CanvasLayer/ObjectiveDisplay)
 	$CanvasLayer/ObjectiveDisplay.hide()
@@ -111,6 +112,33 @@ func show_street(street_name: String):
 		street.show()
 		street.process_mode = Node.PROCESS_MODE_INHERIT
 
+
+
+func _find_world_environment(node: Node) -> WorldEnvironment:
+	if node is WorldEnvironment:
+		return node
+	for child in node.get_children():
+		var found := _find_world_environment(child)
+		if found:
+			return found
+	return null
+
+func _disable_overworld_dof() -> void:
+	_set_overworld_dof(false)
+
+func _restore_overworld_dof() -> void:
+	_set_overworld_dof(true)
+
+func _set_overworld_dof(enabled: bool) -> void:
+	var we := _find_world_environment(overworld_container)
+	if we == null:
+		push_warning("DOF: no WorldEnvironment found under Overworld3D")
+		return
+	var attrs = we.camera_attributes
+	if attrs is CameraAttributesPractical:
+		attrs.dof_blur_far_enabled = enabled
+	else:
+		push_warning("DOF: WorldEnvironment has no CameraAttributesPractical")
 
 
 # -----------------
@@ -189,6 +217,7 @@ func from_battle_to_overworld():
 	transition1.playfade(func():
 		show_overworld()
 		overworld_container.process_mode = Node.PROCESS_MODE_ALWAYS
+		_restore_overworld_dof()
 		var players = get_tree().get_nodes_in_group("player")
 		for p in players:
 			if not p.is_inside_tree():
