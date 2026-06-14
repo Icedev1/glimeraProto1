@@ -43,6 +43,20 @@ const ITEMS = [
 		"icon": "res://images/bandage.png",
 		"owned_check": "always"
 	},
+	{
+		"name": "『 Broom 』",
+		"category": "Graftable",
+		"description": "A broom grafted to the leg socket.",
+		"icon": "res://Grafting/Broom icon.png",
+		"owned_check": "broomObtained"
+	},
+	{
+		"name": "『 Unicycle 』",
+		"category": "Graftable",
+		"description": "A unicycle welded to the leg socket.",
+		"icon": "res://Grafting/Bike Seat Icon.png",
+		"owned_check": "unicycleObtained"
+	},
 ]
 
 @onready var item_grid: GridContainer = $PopupBox/HBoxContainer/ScrollContainer/ItemGrid

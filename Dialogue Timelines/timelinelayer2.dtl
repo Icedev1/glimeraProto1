@@ -174,4 +174,5 @@ if {target} == "npc5_postchurch":
 	Gli: Thank you, sir.
 	"Armless figure": It's the least I can do. You did the right thing Gli. Even if it doesn't feel that way.
 	[signal arg="open_gate"]
+	[signal arg="end_game"]
 [end_timeline]
