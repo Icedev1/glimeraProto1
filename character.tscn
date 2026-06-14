@@ -2864,7 +2864,7 @@ bones/8/parent = 3
 bones/8/rest = Transform3D(0, 1, 0, 0, 0, 1, 1, 0, 0, 0.4241892, 0.72463864, -0.023858625)
 bones/8/enabled = true
 bones/8/position = Vector3(0.4241892, 0.72463864, -0.023858625)
-bones/8/rotation = Quaternion(0.4999991, 0.5000009, 0.49999917, -0.500001)
+bones/8/rotation = Quaternion(0.44928032, 0.53055197, 0.588273, -0.41303343)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LeftUpperArm"
 bones/9/parent = 8
@@ -2934,7 +2934,7 @@ bones/18/parent = 0
 bones/18/rest = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, 0.6844859, -0.30648077, 0.008246556)
 bones/18/enabled = true
 bones/18/position = Vector3(0.6844859, -0.30648077, 0.008246556)
-bones/18/rotation = Quaternion(6.5485874e-11, -7.288713e-10, 1, -5.960508e-08)
+bones/18/rotation = Quaternion(0.056282654, 0.203151, 0.97752535, 0.0024967017)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "LeftLowerLeg"
 bones/19/parent = 18
@@ -3391,7 +3391,7 @@ bone_name = "RightLowerArm"
 bone_idx = 15
 
 [node name="LeftLegGraft" type="BoneAttachment3D" parent="MAsked Gli/Armature/Skeleton" unique_id=1148643271]
-transform = Transform3D(-0.9986829, -0.022142306, 0.046283044, 0.021340884, -0.9996149, -0.017738687, 0.04665799, -0.016727604, 0.99877083, 0.681738, 5.290284, -0.06575653)
+transform = Transform3D(-0.986683, 0.016043654, 0.16186126, 0.047009885, -0.92452765, 0.37820452, 0.15571299, 0.38077706, 0.9114616, 0.681738, 5.290284, -0.06575653)
 bone_name = "LeftUpperLeg"
 bone_idx = 18
 

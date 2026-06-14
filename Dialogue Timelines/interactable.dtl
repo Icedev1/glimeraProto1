@@ -202,7 +202,6 @@ elif {target} == "quest_npc_1":
 		[signal arg="reset_quest_1"]
 	elif {StoryFlags.statueQuestComplete} == true:
 		join Gli left
-		join skull right
 		"Tall Miss": You actually found them!
 		Gli: Well, everybody is kind of frozen in place around here so-
 		skull: Thank you so much!
