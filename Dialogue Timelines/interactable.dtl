@@ -246,6 +246,7 @@ elif {target} == "quest_npc_1":
 	else:
 		"Tall Miss": Look for a Figure wearing a [color=red]red[/color] scarf.
 		"Tall Miss": I would really appreciate it if you could find them.
+		[signal arg="start_quest_1"]
 if {target} == "porcelain_figure_defeated":
 	join Gli center
 	Gli: I'm sorry... but what you did wasn't nice.
