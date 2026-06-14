@@ -8,7 +8,7 @@ var player: Node3D = null
 var chasing: bool = false
 var active = true
 
-@onready var anim: AnimationPlayer = $NPC1/AnimationPlayer
+@onready var anim: AnimationPlayer = $NPC6/AnimationPlayer
 func _ready() -> void:
 	BattleManager.connect("battle_ended", die)
 	
@@ -28,7 +28,9 @@ func _process(delta):
 		look_at(player.global_position)
 		# Play walk animation
 		if anim.current_animation != "Walk2":
+			anim.speed_scale = 5
 			anim.play("Walk2")
+			
 
 	else:
 		# Idle animation
