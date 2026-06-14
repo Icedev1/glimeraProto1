@@ -19,5 +19,6 @@ func _on_body_entered(body: Node3D) -> void:
 	ObjectiveManager.cutsceneStart.emit()
 	player.play("Final Scene", 0,5)
 	await player.animation_finished
+	await get_tree().create_timer(10.0).timeout
 	get_tree().quit()
 	
