@@ -18,4 +18,6 @@ func _on_body_entered(body: Node3D) -> void:
 	MusicPlayer.stop_music()
 	ObjectiveManager.cutsceneStart.emit()
 	player.play("Final Scene", 0,5)
+	await player.animation_finished
+	get_tree().quit()
 	
