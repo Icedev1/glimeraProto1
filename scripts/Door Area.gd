@@ -30,8 +30,7 @@ func _process(delta: float) -> void:
 				return
 		var game = get_tree().current_scene
 		game.transition_to_street(streetPath, spawnName)
-		if GraftGlobals.churchmanDefeated:
-			
+
 
 func _on_body_entered(body: Node3D) -> void:
 	inRange = true
