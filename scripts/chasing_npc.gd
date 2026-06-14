@@ -35,7 +35,8 @@ func _process(delta):
 	else:
 		# Idle animation
 		if anim.current_animation != "Idle":
-			anim.play("Idle")
+				if anim.has_animation("Idle"):
+					anim.play("Idle")
 
 func die():
 	#var statue = preload("res://statue.tscn").instantiate()
