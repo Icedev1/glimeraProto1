@@ -257,7 +257,7 @@ legIcons = Array[Texture2D]([ExtResource("2_l3mp2"), ExtResource("4_gjxvf"), Ext
 armGraftNames = Array[String](["Default", "Saw", "Hose"])
 armGraftDescs = Array[String](["The Ol' Reliable", "Scissors | 4 DMG, 2s Cooldown", "Paper | 15 DMG, 2s Cooldown"])
 legGraftNames = Array[String](["Default", "Sledgehammer", "Broom", "Unicycle"])
-legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown", "Paper", "Scissors"])
+legGraftDescs = Array[String](["", "Rock | 15 DMG, 4s Cooldown", "Scissors | 5 DMG , 2.5s Cooldown", "Paper | 15 DMG , 7s Cooldown"])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=756244194]
 layout_mode = 1
