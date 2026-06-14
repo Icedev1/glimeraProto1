@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce5n35ksdj6f0" path="res://Combat/scripts/battle/tutorial_overlay.gd" id="1_tut"]
 [ext_resource type="Shader" uid="uid://cdcl2033e21gn" path="res://Combat/scripts/tutorial_spotlight.gdshader" id="2_shader_spot"]
+[ext_resource type="Script" uid="uid://d1n6m4bvwsjum" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="3_f6mhn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_spot"]
 shader = ExtResource("2_shader_spot")
@@ -23,6 +24,13 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="Texture2D" id="Texture2D_xmu2b"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("3_f6mhn")
+path = "graft_select"
+metadata/_custom_type_script = "uid://d1n6m4bvwsjum"
 
 [node name="TutorialOverlay" type="CanvasLayer" unique_id=1734035027]
 layer = 5
@@ -98,5 +106,7 @@ autowrap_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_constants/icon_max_width = 44
 theme_override_font_sizes/font_size = 28
-text = "Next ▶"
+text = "Next "
+icon = SubResource("Texture2D_xmu2b")
