@@ -75,10 +75,10 @@ _data = {
 [node name="NPC1" parent="." unique_id=34665434 instance=ExtResource("1_ag30x")]
 transform = Transform3D(-0.053033013, 0, 0.053033005, 0, 0.075, 0, -0.053033005, 0, -0.053033013, 0, 0, 0)
 
-[node name="Armature" parent="NPC1" index="0" unique_id=1457454407]
+[node name="Armature" parent="NPC1" index="0" unique_id=552203477]
 transform = Transform3D(0.7071067, -5.3385072e-08, 0.7071067, -1.7763566e-15, 1, 7.549789e-08, -0.7071067, -5.3385072e-08, 0.7071067, 0, 0, 0)
 
-[node name="Skeleton" parent="NPC1/Armature" index="0" unique_id=1932734427]
+[node name="Skeleton" parent="NPC1/Armature" index="0" unique_id=100595146]
 bones/0/position = Vector3(0.0045582294, 5.6114006, -0.036929518)
 bones/0/rotation = Quaternion(0.008619729, 0.023243777, -0.010874842, 0.99963355)
 bones/1/rotation = Quaternion(0.0017031501, 0.003404579, -1.7922686e-05, 0.9999928)
@@ -105,7 +105,7 @@ bones/26/rotation = Quaternion(-0.055623844, 0.64759123, -0.75729173, 0.06356667
 bones/27/rotation = Quaternion(0.0056009036, 0.99905694, 0.042725086, -0.0053382185)
 bones/28/position = Vector3(0.09396688, 0.35152736, 0.0076552075)
 
-[node name="AnimationPlayer" parent="NPC1" index="1" unique_id=1220414115]
+[node name="AnimationPlayer" parent="NPC1" index="1" unique_id=184410815]
 libraries/ = SubResource("AnimationLibrary_ujeyq")
 autoplay = &"Idle Straight"
 
